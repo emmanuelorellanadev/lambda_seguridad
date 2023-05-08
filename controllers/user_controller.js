@@ -53,7 +53,9 @@ const userPost = async(req, res) => {
         }
     } catch (error) {                           
         console.log('USER CANT BE SAVED'.bgRed);
-        throw(error);      
+        return res.status(400).json({
+            msg: error.errors
+        })   
     }
 }
 

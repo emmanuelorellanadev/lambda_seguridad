@@ -32,10 +32,13 @@ class Server {
         //     methods: ['GET', 'POST', 'PUT'],
         //     // allowedHeaders: ['Content-Type', 'Authorization']
         // }));
+        this.app.use(cors({ 
+            "Access-Control-Allow-Origin" : "*" 
+        }));
     }
 //ROUTES
     routes(){
-        this.app.use('/security/login', require('../routes/login_route'));
+        this.app.use('/auth', require('../routes/login_route'));
         this.app.use('/role', require('../routes/role_route'));
         this.app.use('/user', require('../routes/user_route'));
     }
