@@ -6,7 +6,7 @@
 const { Sequelize } =  require('sequelize');
 
 const db_connection = new Sequelize('db_lambda', 'root', 'Phanter5919', {
-    host: 'localhost',
+    host: '127.0.0.1',
     dialect: 'mariadb' //DBMS type
 });
 

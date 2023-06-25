@@ -13,15 +13,15 @@ const router = Router();
 router.get('/', [
     checkJWT,
     requiredRole('ROLE_ADMIN', 'ROLE_USER'),
-    check('user_name', 'The user name is required').not().isEmpty(),
-    check('user_password', 'The password is required').not().isEmpty(),
+    // check('user_name', 'The user name is required').not().isEmpty(),
+    // check('user_password', 'The password is required').not().isEmpty(),
     checkFields
 ], userGet);
 
 //CREATE USER
 router.post('/', [
-    // checkJWT,
-    // requiredRole('ROLE_ADMIN', 'ROLE_SUPERUSER'),
+    checkJWT,
+    requiredRole('ROLE_ADMIN', 'ROLE_SUPERUSER'),
     check('user_name', 'The user name is required').not().isEmpty(),
     check('user_password', 'The password is required').not().isEmpty(),
     check('user_status', 'The status is required').not().isEmpty(),

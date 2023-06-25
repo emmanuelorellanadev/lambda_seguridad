@@ -49,6 +49,7 @@ class Server {
             await db_connection.authenticate()
             console.log('database connected'.bgBlue)
         } catch (error) {
+            console.log('Error on connection with database'.bgRed);
             throw Error(error);
         }
     }

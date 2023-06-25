@@ -12,7 +12,6 @@ const userGet = async(req, res) => {
         const users = await User.findAll();
 
         res.json({
-            msg: 'get user works!!',
             users       
         });
 

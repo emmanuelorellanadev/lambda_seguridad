@@ -40,8 +40,10 @@ const login = async(req, res) => {
                     }else{
                        
                         //create JWT
-                        const token = await generatorJWT( user.id )
-                        res.json({ msg: 'Wellcome User', token,});
+                        const token = await generatorJWT( user.id );
+
+                        //send the user logued and his token
+                        res.json({ name, token });
                     }
                 }
 
