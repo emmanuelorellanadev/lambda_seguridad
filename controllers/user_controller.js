@@ -5,19 +5,44 @@ const bcryptjs = require('bcryptjs');
 
 const userGet = async(req, res) => {
 
-    const userData = req.body;
+    // const userData = req.body;
+    // console.log('userData: ',userData);
+    const { id } = req.query;
+    
+    //if id is sended search the user with that id, else search all users
 
-    try {
-        
-        const users = await User.findAll();
+    if ( !id ){
 
-        res.json({
-            users       
-        });
+        try {
+            
+            const users = await User.findAll();
+    
+            res.json({
+                users       
+            });
+    
+        } catch (error) {
+            console.log('Filed to fetch users'.bgRed, error);
+            res.status(400).json({
+                msg: "Usuarios no encontrados"
+            })
+        }
+    }else{
 
-    } catch (error) {
-        console.log('Filed to fetch users'.bgRed);
-        throw (error)
+        try {
+            console.log('dentro de busqueda con id', id);
+            const user = await User.findByPk(id);
+    
+            res.json({
+                user
+            });
+    
+        } catch (error) {
+            console.log('Filed to fetch user'.bgRed);
+            res.status(400).json({
+                msg: "Usuario no encontrado"
+            })
+        }
     }
 } 
 
@@ -51,9 +76,11 @@ const userPost = async(req, res) => {
             })
         }
     } catch (error) {                           
-        console.log('USER CANT BE SAVED'.bgRed);
+        console.log('USER WAS NOT SAVED'.bgRed, error);
+
         return res.status(400).json({
-            msg: error.errors
+            msg: 'Error al guardar el usuario nuevo',
+            error
         })   
     }
 }
@@ -87,21 +114,51 @@ const userPut = async(req, res) => {
 
                 res.json({
                     msg: 'Put user works!!!',
-                    userUpdated,
-                    
+                    userUpdated,                    
                 })
         }
-
     } catch (error) {
         console.log('Problem updating User'.bgRed);
         throw(error);
     }
-    
+}
 
+const userDelete = async(req, res) => {
+
+    const userToDelete = req.body;
+
+    try {
+        const userDeleted = await User.destroy({
+            where: { "id" : userToDelete.id}
+        })
+        if (userDeleted) {
+
+            console.log('User deleted successfully');
+            res.json({
+                msg: "Usuario eliminado exitosamente."
+            })
+
+        }else{
+
+            console.log('The user was not found to be deleted');
+            res.status(401).json({
+                msg:"No se encontro usuario para eliminar"
+            })
+        }
+    } catch (error) {
+
+        console.log('User was not deleted'.bgRed, error);
+
+        res.status(400).json({
+            msg:"Error al liminar el usuario",
+            error
+        })
+    }
 }
 
 module.exports = {
     userGet,
     userPost,
-    userPut
+    userPut,
+    userDelete
 }

@@ -1,7 +1,7 @@
 const { Router } = require('express');
 const { check } = require('express-validator');
 
-const { userGet, userPost, userPut } = require('../controllers/user_controller');
+const { userGet, userPost, userPut, userDelete } = require('../controllers/user_controller');
 const { checkFields, checkJWT, requiredRole } = require('../middlewares')
 // const { checkFields } = require('../middlewares/check_fields');
 // const { checkJWT } = require('../middlewares/check-jwt');
@@ -39,5 +39,7 @@ router.put('/:id', [
     checkFields
  
 ], userPut)
+
+router.delete('/', userDelete)
 
 module.exports = router;
