@@ -1,0 +1,41 @@
+
+#login-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#login{
+
+    border:2px solid grey;
+    width: 25rem;
+    height: 35rem;
+    border-radius: 5px;
+}
+    #loginHeader{
+        height: 25%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+        img{
+            width: 25%;
+            margin: 0 auto;
+        }
+    
+    #loginBody{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+        #loginBody input{
+            display: block;
+            /* color: black; */
+            border-radius: 7px;
+            padding: 1rem;
+            margin: auto;
+            margin-top: 1rem;
+        }
+
+        

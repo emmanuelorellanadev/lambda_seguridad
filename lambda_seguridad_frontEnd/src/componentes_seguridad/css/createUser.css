@@ -1,0 +1,43 @@
+#createUser-container{
+    padding: 2rem;
+    /* background-color: #aaa; */
+}
+
+    #formCreateUser{
+        max-width: 40rem;
+        margin: 0 auto;
+        padding: 2rem 2rem;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+        #createUser-container input {
+            margin: 0.5rem 1rem;
+            height: 2rem;
+            width: 12rem;
+        }
+        
+        #selectRole{
+            height: 2.3rem;
+            width: 12rem;
+            margin: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        #userState {
+            margin: 0.5rem 1rem;
+            padding: 0 auto;
+            width: 12rem;
+            height: 2rem;
+            display: flex;
+            justify-content: centser;
+        }
+
+        #saveButton{
+            position: relative;
+            display: block;
+            margin: 0 5rem;
+            margin: 3rem auto;
+        }
+

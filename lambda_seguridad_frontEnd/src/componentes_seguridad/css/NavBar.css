@@ -1,0 +1,144 @@
+#navBar{
+    background-color: rgba(49, 49, 49, 0);
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    height: 5rem;
+    border-bottom: 1px solid rgb(33, 157, 192);
+    box-shadow: 2.5px 3px 3px rgb(33, 157, 192);
+}
+
+    #navBar #icono-menu{
+        display: none;
+        width: 2.5rem;
+        height: 2.5rem;
+        border: 1px solid rgb(17, 97, 200);
+        padding: 0.25rem;
+        margin: 0;
+    }
+
+    #navBar ul{
+        list-style: none;
+        display: flex;
+        align-items: center;
+        padding: 0;
+        margin: auto;
+    }
+
+        #navBar ul li{
+            text-decoration: none;
+            cursor: pointer;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            /* border-bottom: 1px solid rgb(17, 97, 200) ; */
+            /* margin: .5rem; */
+            transition: .25s
+        }
+        
+        #navBar ul li:hover{
+            text-decoration: none;
+            color: whitesmoke;
+            background-size: cover;
+            align-items: center;
+            margin: 0.2rem;
+            box-shadow: 2.5px 5px 7px rgb(17, 97, 200);
+            transition: .25s;
+        }     
+        
+            #navBar ul li a{
+                text-decoration: none;
+                color: black;
+                border-radius: 5px;
+                padding: .5rem;
+                margin-left: .25rem;
+                margin-right: .25rem;
+                background-size:cover;
+                }
+
+            #navBar ul .liImagen{
+            }
+            #navBar ul .subMenu{
+                display: none;
+            }    
+            
+            #navBar ul .subMenuVisible {
+                display: block;
+                position: absolute;
+                top: 3.5rem;
+                width: 10rem;
+                background-color: rgb(255, 255, 255);
+                box-shadow: 2.5px 5px 7px rgb(17, 97, 200);
+                margin: 0;
+                padding: 0;
+            }
+/* CHECK THIS */
+/* MEDIA: CHECK THE CORRECT WIDTH FOR MOBILE DEVICES */
+@media (max-width: 500px) {
+
+#navBar {
+    box-shadow:none;
+    /* box-shadow: 5px 10px 20px rgb(17, 97, 200); */
+    display: block;
+    position: absolute;
+    /* transform: 2s; */
+    border-bottom: none;
+    }   
+
+    #navBar #icono-menu{
+        display: flex;
+        cursor: pointer;
+        }
+
+    #navBar ul{
+        /* border: 2px solid blue; */
+        background-color: rgb(255, 255, 255);
+        box-shadow: 2px 4px 6px rgb(33, 157, 192);
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        width: 10rem;
+        padding: 0;
+        margin: .1rem;
+        position: absolute;
+        left: -15rem;
+        top: -10rem;
+        transition: .45s;
+        border-radius: 5px;
+        }
+
+    #navBar .showMenu{
+        position: absolute;
+        left: 0;
+        top: 2.5rem;
+        transition: .45s;
+        /* border: 5px solid black; */
+    }    
+
+        #navBar ul li{
+            /* border: 1px solid black; */
+            text-decoration: none;
+            border-bottom: none;
+            margin: 0;
+            width: 10rem;
+            }
+        
+        #navBar ul li:hover{
+            text-decoration: none;
+            cursor: pointer;
+            align-items: center;
+            margin: 2px;
+            box-shadow: 2.5px 5px 7px rgb(33, 157, 192);
+            border-radius: 5px;
+
+            }
+        
+        #navBar ul li a{
+                text-decoration: none;
+                text-align: center;
+                margin-left: .25rem;
+                margin-right: .25rem;
+                border-radius: 5px;
+                width: 10rem;
+                }
+    }
