@@ -5,7 +5,7 @@ import '../css/NavBar.css'
 import usuario from'../../assets/img/usuario.png';
 import menu from'../../assets/img/menu.png';
 import { ContainerUser } from'../ContainerUser';
-import { Admin } from'../Admin.jsx';
+import { ContainerPerson } from'../ContainerPerson.jsx';
 import { NavBarUser } from './NavBarUser';
 import { NavBarSuper } from './NavBarSuper';
 import { NavBarAdmin } from './NavBarAdmin'
@@ -16,7 +16,7 @@ export const NavBar = () => {
     
     const [menuActive, setMenuActive] = useState(false);
     const [userFrame, setUserFrame] = useState(0);
-    const [adminFrame, setAdminFrame] = useState(0);
+    const [personFrame, setPersonFrame] = useState(0);
     const [profileFrame, setProfileFrame] = useState(0);
     const [role, setRole] = useState(0);
     const [subMenuUser, setSubMenuUser] = useState(false);
@@ -25,12 +25,11 @@ export const NavBar = () => {
     const subMenuUserVisibility = () => {
         subMenuSecurity ? subMenuSecurityVisibility() : '';
         setSubMenuUser(!subMenuUser);
-        // menuActive
     }
+
     const subMenuSecurityVisibility = () => {
         subMenuUser ? subMenuUserVisibility() : '';
         setSubMenuSecurity(!subMenuSecurity);
-        // menuActive
     } 
 
     const closeSubMenus = () => {
@@ -49,23 +48,23 @@ export const NavBar = () => {
         (menuActive == true) ? closeSubMenus() : '';//close the submenus when menu is pressed and menu is visible
     }
 
-    const showUsersFrame = ( ) => {
+    const showUserFrame = ( ) => {
         setUserFrame(1);
-        setAdminFrame(0);
+        setPersonFrame(0);
         setProfileFrame(0);
         showMenu();
     }
 
-    const showInventoriesFrame = ( ) => {
+    const showPersonFrame = ( ) => {
         setUserFrame(0);
-        setAdminFrame(1);
+        setPersonFrame(1);
         setProfileFrame(0);
         showMenu();
     }
 
     const showProfileFrame = ( ) => {
         setUserFrame(0);
-        setAdminFrame(0);
+        setPersonFrame(0);
         setProfileFrame(1);
         showMenu();
     }
@@ -80,36 +79,48 @@ export const NavBar = () => {
                 <img id={'icono-menu'} src={menu} alt="" onClick={showMenu} />
 
                 { role == '3' && < NavBarUser 
-                    menuActive={ menuActive } 
-                    showUsersFrame={ showUsersFrame } 
-                    showProfileFrame={ showProfileFrame } 
+                    menuActive={ menuActive }
+                    showMenu={ showMenu }
+                    subMenuUser={subMenuUser}
+                    showProfileFrame={ showProfileFrame }
+                    showPersonFrame={ showPersonFrame }
+                    subMenuUserVisibility={subMenuUserVisibility}
+                    closeSubMenus={closeSubMenus}
                     closeSession={ closeSession } 
+
                 />}
                 { role == '2' && < NavBarSuper 
-                    menuActive={menuActive} 
-                    showUsersFrame={ showUsersFrame } 
-                    showProfileFrame={ showProfileFrame }
-                    closeSession={ closeSession } 
+                    menuActive={ menuActive } 
+                    showMenu={ showMenu }
+                    subMenuUser={subMenuUser}
+                    subMenuUserVisibility={subMenuUserVisibility}
+                    subMenuSecurity={subMenuSecurity}
+                    subMenuSecurityVisibility={subMenuSecurityVisibility}
+                    closeSubMenus={closeSubMenus}
+                    showUserFrame={showUserFrame} 
+                    showProfileFrame={ showProfileFrame } 
+                    showPersonFrame={ showPersonFrame }
+                    closeSession={ closeSession }  
                 />}
                 { role == '1' && < NavBarAdmin 
                     menuActive={ menuActive } 
                     showMenu={ showMenu }
-                    showUsersFrame={showUsersFrame} 
-                    showProfileFrame={ showProfileFrame } 
-                    showInventoriesFrame={ showInventoriesFrame }
-                    closeSession={ closeSession } 
-                    subMenuSecurityVisibility={subMenuSecurityVisibility}
-                    subMenuUserVisibility={subMenuUserVisibility}
-                    closeSubMenus={closeSubMenus}
                     subMenuUser={subMenuUser}
+                    subMenuUserVisibility={subMenuUserVisibility}
                     subMenuSecurity={subMenuSecurity}
+                    subMenuSecurityVisibility={subMenuSecurityVisibility}
+                    closeSubMenus={closeSubMenus}
+                    showUserFrame={showUserFrame} 
+                    showProfileFrame={ showProfileFrame } 
+                    showPersonFrame={ showPersonFrame }
+                    closeSession={ closeSession } 
 
                 />}
 
         </div>
         { userFrame === 1 && <ContainerUser/>}
         { profileFrame === 1 && <UserProfile/>}
-        { adminFrame === 1 && <Admin />}
+        { personFrame === 1 && <ContainerPerson />}
     </>
   )
 }
