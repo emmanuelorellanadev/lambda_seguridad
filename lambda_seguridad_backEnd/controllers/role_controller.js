@@ -11,6 +11,13 @@ const getRole = async(req, res) => {
             })
         }
 
+// Check if the role of userLogued is less than the role to show.
+// That doesnt allow a suerpuser to create a admin user
+        roles.map( (role, i = 0) => {
+            role.id < req.userLoggedIn.RoleId ? roles.splice(i, 1) : '';
+            i++
+        })
+
         return res.json({
             roles
         })

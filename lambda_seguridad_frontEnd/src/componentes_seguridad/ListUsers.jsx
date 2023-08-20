@@ -14,7 +14,7 @@ export const ListUsers = (props) => {
         await axios.get(url, {
             headers: { "x-token": sessionStorage.getItem('token-xL') }
         })
-        .then( dbUsers => setUsers(dbUsers.data.users))
+        .then( dbUsers => {setUsers(dbUsers.data.users)})
         .catch( error => console.log(error))
     }
     
@@ -81,7 +81,7 @@ export const ListUsers = (props) => {
                                     return (<tr key={user.id}>
                                         <th>{user.id}</th>
                                         <th>{user.user_name}</th>
-                                        <th>{user.RoleId}</th>
+                                        <th>{user.Role.role_name}</th>
                                         <th><input type='checkbox' checked={user.user_status} disabled/></th>
                                         <th><button className='btn btn-primary' type="button" onClick={ () => updateUser( user.id ) } >Editar</button></th>
                                         <th><button className='btn btn-outline-danger' onClick={() => {deleteUser(user.id, user.user_name)}}><i className='bi bi-trash3-fill'></i></button></th>

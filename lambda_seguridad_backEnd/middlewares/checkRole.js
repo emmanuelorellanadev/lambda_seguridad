@@ -38,13 +38,13 @@ const Role = require('../models/role_model');
 const requiredRole = ( ...roles ) => {
 
     return (req, res, next)=>{
-        if ( !req.userLogued ){
+        if ( !req.userLoggedIn ){
             return res.json({
                 Err: 'you want check the role, but the token it wasnt checked'
             })
         }
 
-        if ( !roles.includes( req.userLogued.role )){
+        if ( !roles.includes( req.userLoggedIn.role )){
             return res.status(401).json({
                 msg: `Role is not the required`
             })

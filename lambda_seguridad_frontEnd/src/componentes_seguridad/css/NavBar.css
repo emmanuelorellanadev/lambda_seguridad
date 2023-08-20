@@ -42,7 +42,7 @@
             background-size: cover;
             align-items: center;
             margin: 0.2rem;
-            box-shadow: 2.5px 5px 7px rgb(17, 97, 200);
+            box-shadow: 2.5px 5px 7px rgb(33, 157, 192);
             transition: .25s;
         }     
         
@@ -56,19 +56,19 @@
                 background-size:cover;
                 }
 
-            #navBar ul .liImagen{
-            }
-            #navBar ul .subMenu{
+            /* #navBar ul li ul */
+
+            #navBar ul li .subMenu{
                 display: none;
             }    
             
-            #navBar ul .subMenuVisible {
+            #navBar ul li .subMenuVisible {
                 display: block;
                 position: absolute;
                 top: 3.5rem;
                 width: 10rem;
                 background-color: rgb(255, 255, 255);
-                box-shadow: 2.5px 5px 7px rgb(17, 97, 200);
+                box-shadow: 2.5px 5px 7px rgb(33, 157, 192);
                 margin: 0;
                 padding: 0;
             }
@@ -78,20 +78,17 @@
 
 #navBar {
     box-shadow:none;
-    /* box-shadow: 5px 10px 20px rgb(17, 97, 200); */
     display: block;
     position: absolute;
-    /* transform: 2s; */
     border-bottom: none;
+    right: 0rem;
     }   
 
     #navBar #icono-menu{
         display: flex;
-        cursor: pointer;
         }
 
     #navBar ul{
-        /* border: 2px solid blue; */
         background-color: rgb(255, 255, 255);
         box-shadow: 2px 4px 6px rgb(33, 157, 192);
         list-style: none;
@@ -101,44 +98,68 @@
         padding: 0;
         margin: .1rem;
         position: absolute;
-        left: -15rem;
-        top: -10rem;
+        right: -10rem;
         transition: .45s;
         border-radius: 5px;
         }
 
     #navBar .showMenu{
         position: absolute;
-        left: 0;
-        top: 2.5rem;
+        right: 0rem;
         transition: .45s;
-        /* border: 5px solid black; */
-    }    
+        }  
 
-        #navBar ul li{
+        #navBar ul li {
             /* border: 1px solid black; */
             text-decoration: none;
             border-bottom: none;
             margin: 0;
             width: 10rem;
             }
-        
-        #navBar ul li:hover{
-            text-decoration: none;
-            cursor: pointer;
-            align-items: center;
-            margin: 2px;
-            box-shadow: 2.5px 5px 7px rgb(33, 157, 192);
-            border-radius: 5px;
 
-            }
-        
-        #navBar ul li a{
+            #navBar ul li a{
                 text-decoration: none;
                 text-align: center;
                 margin-left: .25rem;
                 margin-right: .25rem;
                 border-radius: 5px;
                 width: 10rem;
+                }
+
+            #navBar ul li ul{
+                /* display: block;
+                position: absolute; */
+                text-decoration: none;
+                border-bottom: none;
+                margin: 0;
+                width: 10rem;
+                right: -15rem;
+                top: 0rem;
+                transition: 0.45s;
+                }
+                
+                #navBar ul #subMenuUser .subMenuVisible {
+                    display: block;
+                    position: absolute;
+                    width: 10rem;
+                    background-color: rgb(255, 255, 255);
+                    box-shadow: 2.5px 5px 7px rgb(33, 157, 192);
+                    margin: 0;
+                    padding: 0;
+                    right: 10rem;
+                    top: 0rem;
+                    transition: 0.45s;
+                }
+
+                #navBar ul #subMenuSecurity .subMenuVisible {
+                    display: block;
+                    position: absolute;
+                    width: 10rem;
+                    background-color: rgb(255, 255, 255);
+                    box-shadow: 2.5px 5px 7px rgb(33, 157, 192);
+                    margin: 0;
+                    padding: 0;
+                    right: 10rem;
+                    transition: 0.45s;
                 }
     }

@@ -1,0 +1,31 @@
+#userProfileContainer{
+    border: 1px solid grey;
+    padding: auto;
+    margin: auto;
+}
+
+    #headerUserProfile{
+        text-align: center;
+        display: block;
+        width: 80%;
+        margin: auto;        
+    }
+
+    #formChangePass{
+        border: 1px solid grey;
+        width: 80%;
+        margin: auto;
+    }
+
+        #formChangePass input{
+            max-width: 15rem;
+            margin: auto;
+            margin-top: 1rem;
+        }
+
+        #formChangePass button{
+            display: block;
+            margin: auto;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }

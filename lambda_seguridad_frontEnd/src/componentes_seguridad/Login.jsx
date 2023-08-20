@@ -52,7 +52,6 @@ export const Login = () => {
     }
     
     const cleanAll = (e) => {
-        
         setUser('');
         setPass('');
     }
@@ -65,7 +64,7 @@ export const Login = () => {
                       <img src={login} alt="" />  
                 </div>
                 <div id='loginBody'>
-                    <form id='formularioLogin' onSubmit={ e => loginController(e)}>
+                    <form id='loginForm' onSubmit={ e => loginController(e)}>
                         <input className='form-control form-control-lg text-center' type="text" name="user" id="user" value={user} placeholder='Usuario' onChange={ (e) => setUser(e.target.value) } autoFocus required/>
                         <input className='form-control form-control-lg text-center' type="password" name="password" id="password" value={pass} placeholder='Contrasena' onChange={ (e) => setPass(e.target.value)} required />
                         <input type='submit' className='btn btn-primary btn-lg' value='Ingresar'/>

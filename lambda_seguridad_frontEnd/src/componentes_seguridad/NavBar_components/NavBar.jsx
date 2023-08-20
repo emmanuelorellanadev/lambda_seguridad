@@ -3,6 +3,7 @@ import React, { useState, useEffect} from 'react';
 
 import '../css/NavBar.css'
 import usuario from'../../assets/img/usuario.png';
+import menu from'../../assets/img/menu.png';
 import { ContainerUser } from'../ContainerUser';
 import { Admin } from'../Admin.jsx';
 import { NavBarUser } from './NavBarUser';
@@ -18,6 +19,24 @@ export const NavBar = () => {
     const [adminFrame, setAdminFrame] = useState(0);
     const [profileFrame, setProfileFrame] = useState(0);
     const [role, setRole] = useState(0);
+    const [subMenuUser, setSubMenuUser] = useState(false);
+    const [subMenuSecurity, setSubMenuSecurity] = useState(false);
+    
+    const subMenuUserVisibility = () => {
+        subMenuSecurity ? subMenuSecurityVisibility() : '';
+        setSubMenuUser(!subMenuUser);
+        // menuActive
+    }
+    const subMenuSecurityVisibility = () => {
+        subMenuUser ? subMenuUserVisibility() : '';
+        setSubMenuSecurity(!subMenuSecurity);
+        // menuActive
+    } 
+
+    const closeSubMenus = () => {
+        setSubMenuUser(false);
+        setSubMenuSecurity(false);
+    }
     
     const closeSession = () => {
         sessionStorage.removeItem('token-xL');
@@ -27,6 +46,7 @@ export const NavBar = () => {
     
     const showMenu = () => {
         setMenuActive(!menuActive);
+        (menuActive == true) ? closeSubMenus() : '';//close the submenus when menu is pressed and menu is visible
     }
 
     const showUsersFrame = ( ) => {
@@ -57,7 +77,7 @@ export const NavBar = () => {
     return (
     <>
         <div id={'navBar'}>
-                <img id={'icono-menu'} src={usuario} alt="" onClick={showMenu} />
+                <img id={'icono-menu'} src={menu} alt="" onClick={showMenu} />
 
                 { role == '3' && < NavBarUser 
                     menuActive={ menuActive } 
@@ -73,10 +93,17 @@ export const NavBar = () => {
                 />}
                 { role == '1' && < NavBarAdmin 
                     menuActive={ menuActive } 
+                    showMenu={ showMenu }
                     showUsersFrame={showUsersFrame} 
                     showProfileFrame={ showProfileFrame } 
                     showInventoriesFrame={ showInventoriesFrame }
                     closeSession={ closeSession } 
+                    subMenuSecurityVisibility={subMenuSecurityVisibility}
+                    subMenuUserVisibility={subMenuUserVisibility}
+                    closeSubMenus={closeSubMenus}
+                    subMenuUser={subMenuUser}
+                    subMenuSecurity={subMenuSecurity}
+
                 />}
 
         </div>

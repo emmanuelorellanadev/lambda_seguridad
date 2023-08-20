@@ -14,22 +14,22 @@ const checkJWT = async(req = request, res, next) => {
     }
      
     try {
-        //If the token was sended, teke the user id (uid) of the token and search the user.        
+        //If the token was sended, take the user id (uid) of the token and search the user.        
         const userToken = jwt.verify(token, process.env.SECRETKEY);
-        const userLogued = await User.findByPk(userToken.uid);
+        const userLoggedIn = await User.findByPk(userToken.uid);
         
-        if ( !userLogued ){
+        if ( !userLoggedIn ){
             return res.status(401).json({
                 msg: 'User doesnt exist in DB'
             })
         }
-        if ( !userLogued.user_status ){
+        if ( !userLoggedIn.user_status ){
             return res.status(401).json({
                 msg: 'user disabled'
             })
         }
         //get the role name of user
-        const role = await Role.findByPk(userLogued.RoleId);
+        const role = await Role.findByPk(userLoggedIn.RoleId);
         
         //check if role is active
         if( !role.role_status ){
@@ -38,9 +38,9 @@ const checkJWT = async(req = request, res, next) => {
             })
         }
 
-        //save the userLogued in to request to use it after
-        req.userLogued = userLogued;
-        req.userLogued.role = role.role_name;
+        //save the userLoggedIn in to request to use it after
+        req.userLoggedIn = userLoggedIn;
+        req.userLoggedIn.role = role.role_name;
         next();
 
     } catch (error) {

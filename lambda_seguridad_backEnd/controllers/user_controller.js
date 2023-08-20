@@ -5,12 +5,18 @@ const { encryptPass } = require("../helpers/encrypt")
 const userGet = async(req, res) => {
     const { id }  = req.params;
     // const {id}  = req.query;
-    console.log(id)
+    
     //if id is sended search the user with that id, else search all users
     if ( !id ){
         try {
-            const users = await User.findAll();
+            const users = await User.findAll({include: Role});
             
+            //Delete the users than role is less than the user logued
+            users.map( (user, i = 0) => {
+                user.RoleId < req.userLoggedIn.RoleId ? users.splice(i, 1) : ''
+                i++
+            })
+
             res.json({
                 users       
             });
@@ -23,6 +29,12 @@ const userGet = async(req, res) => {
     }else{
         try {
             const user = await User.findByPk(id);
+            console.log(id, user)
+            //if userLoggued tries to get a higher privileged user
+            if(user.RoleId < req.userLoggedIn.RoleId){
+                throw 'You dont have the required roleeee'                
+            }
+
             res.json({
                 user
             });
