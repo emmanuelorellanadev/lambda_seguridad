@@ -42,6 +42,10 @@ class Server {
         this.app.use('/auth', require('../routes/login_route'));
         this.app.use('/role', require('../routes/role_route'));
         this.app.use('/user', require('../routes/user_route'));
+        this.app.use('/company', require('../routes/company_route'))
+        this.app.use('/branchType', require('../routes/branchType_route'));
+        this.app.use('/branch',     require('../routes/branch_route'));
+        this.app.use('/data', express.static('./data/img/company/'));//get folder data
     }
 
 //DATABASE

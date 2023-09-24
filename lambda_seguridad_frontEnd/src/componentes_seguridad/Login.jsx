@@ -72,7 +72,7 @@ export const Login = () => {
                 </div>   
             </div>
         </div>
-        { isUser === true && < NavBar usLogued = {sessionStorage.getItem('user-xL')} roleLogued = { sessionStorage.getItem('role-xL')}/>}
+        { isUser === true && < NavBar />}
     </>
   )
 }

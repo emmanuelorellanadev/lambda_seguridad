@@ -2,7 +2,7 @@ import React, {useState, useEffect}from 'react';
 import axios from'axios';
 import Swal from 'sweetalert2';
 
-import './css/updateUser.css';
+import '../css/user/updateUser.css';
 
 export const UpdateUser = (props) => {
     const [user, setUser] = useState('');

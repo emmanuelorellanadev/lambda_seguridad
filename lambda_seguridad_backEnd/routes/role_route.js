@@ -10,12 +10,12 @@ const route = Router();
 
 route.get('/', [
     checkJWT,
-    requiredRole('ROLE_ADMIN', 'ROLE_SUPERUSER')
+    requiredRole('ROLE_ADMINSYS', 'ROLE_ADMIN', 'ROLE_SUPERUSER')
 ], getRole)
 
 route.post('/', [
     checkJWT,
-    requiredRole('ROLE_ADMIN'),
+    requiredRole('ROLE_ADMINSYS'),
     check('role_name', 'The role is required').not().isEmpty(),
     check('role_status', 'the status is required').not().isEmpty(),
     checkFields
@@ -23,7 +23,7 @@ route.post('/', [
 
 route.put('/:id', [
     checkJWT,
-    requiredRole('ROLE_ADMIN'),
+    requiredRole('ROLE_ADMINSYS',),
     check('role_name', 'The role is required').not().isEmpty(),
     check('role_status', 'the status is required').not().isEmpty(),
     checkFields

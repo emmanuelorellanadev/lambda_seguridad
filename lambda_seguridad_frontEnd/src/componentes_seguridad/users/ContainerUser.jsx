@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-import './css/containerUser.css'
+import '../css/user/containerUser.css'
 import { CreateUser } from './CreateUser';
 import { ListUsers } from './ListUsers';
 import { UpdateUser } from './UpdateUser';
@@ -36,9 +36,10 @@ export const ContainerUser = () => {
 
   return (
     <>
+    {/* CHANGE THE ID HERE AND IN THE CSS FILE */}
     <div id='subMenuUsers'>
         <ul>
- 
+            {/* CHANGE THIS, THE ACTIONS ARE NOT THE CORECT FOR THE NEW CONFIGURATION WITH ROLE_ADMINSYS */}
             { role == '3' && <> <center> No Tienes los permisos necesarios </center></>}
             { role == '2' && <><li onClick={navNewUser}>Registrar</li><li onClick={navListUsers}>Listar</li></>}
             { role == '1' && <><li onClick={navNewUser}>Registrar</li> <li onClick={navListUsers}>Listar</li> </>}

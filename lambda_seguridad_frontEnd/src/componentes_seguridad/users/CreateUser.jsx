@@ -1,8 +1,8 @@
-import React, { useState, useEffect} from 'react';
+import { useState, useEffect} from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 
-import './css/createUser.css'
+import '../css/user/createUser.css'
 
 
 export const CreateUser = ( ) => {
@@ -10,7 +10,11 @@ export const CreateUser = ( ) => {
     const [pass, setPass] = useState('');
     const [state, setState] = useState(false);
     const [roles, setRoles] = useState([]);
-    const [selectedRole, setSelectedRole] = useState('')
+    const [selectedRole, setSelectedRole] = useState('');
+    const [companies, setCompanies] = useState([]);
+    const [selectedCompany, setSelectedCompany] = useState('');
+    const [branches, setBranches] = useState([]);
+    const [selectedBranch, setSelectedBranch] = useState('');
 
     const saveButton = (e) => {
         e.preventDefault();
@@ -25,16 +29,17 @@ export const CreateUser = ( ) => {
             "user_name": user,
             "user_password": pass, 
             "user_status": state, 
-            "RoleId": selectedRole
+            "RoleId": selectedRole,
+            "BranchId": selectedBranch
             },
             {   
                 headers: { "x-token": sessionStorage.getItem('token-xL') }
             })
             .then( response => {
-                if (response.data.user_name) {
+                if (response.data.msg) {
                     Swal.fire({
                         icon: 'success',
-                        title: `Usuario ${response.data.user_name}, guardado con exito`,
+                        title: `Usuario ${user}, guardado con exito`,
                         footer: response.data.msg,
                         confirmButtonColor: '#0d6efd'
                     })
@@ -54,12 +59,32 @@ export const CreateUser = ( ) => {
 
     //Fetch roles used in select
     const fetchRoles = async() => {
-        const url = 'http://localhost:8080/role';
+        const urlRole = 'http://localhost:8080/role';
+
+        await axios(urlRole, {
+            headers: { "x-token": sessionStorage.getItem('token-xL') }
+            })
+            .then( roles => setRoles(roles.data.roles))
+            .catch(error => console.log(error))
+    }
+    //Fetch companies used in select
+    const fetchCompanies = async() => {
+        const url = 'http://localhost:8080/company';
 
         await axios(url, {
             headers: { "x-token": sessionStorage.getItem('token-xL') }
             })
-            .then( roles => setRoles(roles.data.roles))
+            .then( companies => setCompanies(companies.data.companies))
+            .catch(error => console.log(error))
+    }
+//Fetch branches used in select
+    const fetchBranches = async() => {
+        const url = 'http://localhost:8080/branch';
+
+        await axios(url, {
+            headers: { "x-token": sessionStorage.getItem('token-xL') }
+            })
+            .then( branches => setBranches(branches.data.branches))
             .catch(error => console.log(error))
     }
 
@@ -72,6 +97,8 @@ export const CreateUser = ( ) => {
 
     useEffect( () => {
         fetchRoles();
+        fetchCompanies();
+        fetchBranches();
     }, [])
 
     return (
@@ -95,6 +122,22 @@ export const CreateUser = ( ) => {
                         <label className='' htmlFor="estadoUsuario">Estado</label>
                         <input className='' type='checkbox' id='estadoUsuario' onChange={ () => setState( !state ) } checked={ state } />  
                     </section>
+                    <select className='form-select text-center' id='selectCompany' onChange={ (e) => {setSelectedCompany(e.target.value)}} required disabled>
+                        {/* <option value="">selecciona Empresa</option> */}
+                            { 
+                                companies.map( (c) => {
+                                    return <option value={c.id} key={c.id}>{c.company_name}</option>
+                                })
+                            }
+                    </select>
+                    <select className='form-select text-center' id='selectBranch' onChange={ (e) => {setSelectedBranch(e.target.value)}} required>
+                        <option value="">selecciona Sucursal</option>
+                            { 
+                                branches.map( (b) => {
+                                    return <option value={b.id} key={b.id}>{b.branch_name}</option>
+                                })
+                            }
+                    </select>
                     <button id='saveButton' className='btn btn-primary'>Guardar Usuario</button>
                  </form>
         </div>

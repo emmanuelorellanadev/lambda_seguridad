@@ -1,0 +1,42 @@
+#updateCompany-container{
+    padding: 2rem;
+
+    /* background-color: #aaa; */
+}
+
+    #form-update-company{
+        max-width: 40rem;
+        margin: auto;
+        padding: 2rem 2rem;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        border: 1px solid rgb(240, 240, 243);
+    }
+    #form-update-company div{
+        margin: auto;
+        margin-top: .5rem;
+        display: inline-block;
+    }
+    #form-update-company input {
+        height: 2rem;
+        width: 15rem;
+    }
+    #form-update-company textarea {
+        height: 10rem;
+        width: 15rem;
+    }
+    #form-update-company input[type=file] {
+        height: 2rem;
+        width: 100%;
+        border: 1px solid grey;
+    }
+    #form-update-company div > *{
+        display: flex
+    }
+    #saveButton{
+        position: relative;
+        display: inline-block;
+        margin: 0 5rem;
+        margin: 3rem auto;
+    }

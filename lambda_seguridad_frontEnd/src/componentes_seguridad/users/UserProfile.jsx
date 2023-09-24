@@ -1,9 +1,9 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { parseJwt } from './helpers/parseJwt';
+import { parseJwt } from '../helpers/parseJwt';
 import Swal from 'sweetalert2';
 
-import './css/userProfile.css'
+import '../css/user/userProfile.css'
 
 export const UserProfile = (props) => {
     
@@ -46,7 +46,7 @@ export const UserProfile = (props) => {
                     footer: response.data.msg,
                     confirmButtonColor: '#0d6edf'
                 })
-                cleanForm()
+                cleanForm();
             })
             .catch( (error) => {
                 console.log(error.response.data);

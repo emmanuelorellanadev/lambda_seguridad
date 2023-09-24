@@ -1,13 +1,11 @@
 const Role = require("../models/role_model");
 const User = require("../models/user_model");
-const { encryptPass } = require("../helpers/encrypt")
+const Branch_User = require('../models/branch_user_model');
+const Branch = require('../models/branch_model');
+const { encryptPass } = require("../helpers/encrypt");
 
-const userGet = async(req, res) => {
-    const { id }  = req.params;
-    // const {id}  = req.query;
-    
-    //if id is sended search the user with that id, else search all users
-    if ( !id ){
+const usersGet = async(req, res) => {
+
         try {
             const users = await User.findAll({include: Role});
             
@@ -26,7 +24,12 @@ const userGet = async(req, res) => {
                 msg: "Usuarios no encontrados"
             })
         }
-    }else{
+}
+
+const userGet = async(req, res) => {
+    const { id }  = req.params;
+
+    //if id is sended search the user with that id, else search all users
         try {
             const user = await User.findByPk(id);
             console.log(id, user)
@@ -44,12 +47,15 @@ const userGet = async(req, res) => {
                 msg: "Usuario no encontrado"
             })
         }
-    }
 }
 
 const userPost = async(req, res) => {
     const userToSave  = req.body;
     
+    if ( !userToSave ){
+        return res.status(401).json({ error : 'Error: Data required'})
+    }
+
     //Encript password before save
     userToSave.user_password = encryptPass(userToSave.user_password);   
     
@@ -57,19 +63,31 @@ const userPost = async(req, res) => {
         //check if Role exist
         const role = await Role.findByPk( userToSave.RoleId ); 
         
-        if( !( role && role.role_status ) ){        //if Role exist and role is active save if not request error
+        if( !( role && role.role_status ) ){        //if Role exist and role is active, save. If not request error
             throw 'Check Role'
-        }else{
+        }
             
-            const { user_name  } = await User.create(userToSave);
+        //Search Branch
+        console.log(userToSave);
+        const branch = await Branch.findByPk(userToSave.BranchId);
+        if ( !branch ){ //if branch doesnt exist error
+            throw 'Branch not found'
+        }
             
+        //Save User
+        const userSaved = await User.create(userToSave);
+        //save Branch_User
+        await Branch_User.create({ 
+                BranchId: userToSave.BranchId,
+                UserId: userSaved.id
+            })
+
             res.json({
                 msg: "userSaved",
-                user_name,
             })
-        }
+
     } catch (error) {                           
-        console.log('USER WAS NOT SAVE'.bgRed, error);
+        console.log('USER WAS NOT SAVED'.bgRed, error);
 
         res.status(400).json({
             error
@@ -151,6 +169,7 @@ try {
 }
 
 module.exports = {
+    usersGet,
     userGet,
     userPost,
     userPut,
