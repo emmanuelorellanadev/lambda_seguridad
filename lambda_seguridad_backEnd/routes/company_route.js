@@ -1,7 +1,5 @@
 const { Router } = require('express');
 const { check } = require('express-validator');
-// const multer = require('multer')
-// const upload = multer({ dest: '../data/img/company'});
 
 const { requiredRole } = require('../middlewares/checkRole');
 const { checkJWT } = require('../middlewares/check-jwt');
@@ -9,10 +7,9 @@ const { createCompany,
         getCompanies, 
         getCompanyId, 
         updateCompany,
-        deleteCompany,
-        multerUpload
-    } = require('../controllers/company_controller');
+        deleteCompany    } = require('../controllers/company_controller');
 const { checkFields } = require('../middlewares/check_fields');
+const { uploadImage } = require('../helpers/uploadImage');
 
 const route = Router();
 
@@ -34,7 +31,7 @@ route.post('/', [
     // check('company_phone', 'The company phone is required').not().isEmpty(),
     // check('company_description', 'The company description is required').not().isEmpty(),
     checkFields,
-], multerUpload.any('img'), createCompany);
+], uploadImage.any('img'), createCompany);
 
 route.put('/:id', [
     checkJWT,
@@ -47,13 +44,13 @@ route.put('/:id', [
     // check('company_vision', 'The company vision is required').not().isEmpty(),
     checkFields,
 
-], multerUpload.any('img'), updateCompany);
+], uploadImage.any('img'), updateCompany);
 
 route.delete('/:id',[
     checkJWT,
     requiredRole('ROLE_ADMINSYS')
-], deleteCompany)
+], deleteCompany);
 
 
 
-module.exports = route
+module.exports = route;

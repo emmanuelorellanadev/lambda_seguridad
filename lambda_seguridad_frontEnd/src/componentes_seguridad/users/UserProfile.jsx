@@ -32,7 +32,7 @@ export const UserProfile = (props) => {
 
             await axios.put(url, {
                 "user_name": userData.user_name,
-                "user_password": pass,
+                "user_pass": pass,
                 "user_status": userData.user_status,
                 "RoleId": userData.RoleId,
             },
@@ -64,7 +64,7 @@ export const UserProfile = (props) => {
     const getUser = async() => {
         //fetch userData
         await axios.get(url, { headers:{ "x-token": token }}) 
-            .then( async res => {setUserData(res.data.user)})
+            .then( res => {setUserData(res.data.user)})
             .catch(error => { console.log(error)})
         }
     

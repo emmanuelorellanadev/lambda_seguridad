@@ -1,0 +1,37 @@
+#main-company{
+    border: 1px solid black;
+    width: 80%;
+    margin: auto;
+    }
+
+    #header-company center {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+    #body1-company{
+        max-width: 45rem;
+        }
+
+        #block-data {
+
+            display: flex;
+            width: 85%;
+            margin: auto;
+            
+
+            }
+            #img-company img{
+                width: 50%;
+            }
+        
+        #block-mission-vision{
+            display: flex;
+            max-width:85%;
+            margin: auto;
+            }
+        
+#main-branchs{
+    border: 1px solid black;
+    width: 80%;
+    margin: auto;   
+}

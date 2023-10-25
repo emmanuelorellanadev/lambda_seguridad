@@ -8,8 +8,13 @@ export const UpdateUser = (props) => {
     const [user, setUser] = useState('');
     const [pass, setPass] = useState('');
     const [state, setState] = useState(false);
+    const [userImage, setUserImage] = useState('');
     const [roles, setRoles] = useState([]);
-    const [selectedRole, setSelectedRole] = useState('')
+    const [roleId, setRoleId] = useState('');
+    const [companies, setCompanies] = useState([]);
+    const [companyId, setCompanyId] = useState('');
+    const [branches, setBranches] = useState([]);
+    const [branchId, setBranchId] = useState('');
 
     const updateButton = (e) => {
         e.preventDefault();
@@ -17,15 +22,15 @@ export const UpdateUser = (props) => {
     }
 
     const updateUser = async() => {
-
     const url = `http://localhost:8080/user/${props.userToEdit}`;
 
-    await axios.put(url, {
-        "user_name": user, 
-        "user_password": pass, 
-        "user_status": state, 
-        "RoleId": selectedRole,
-    },
+    const userData = new FormData(document.querySelector('#formUpdateUser'));
+
+    userData.set('user_state', state)
+    userData.append('img', userImage)
+
+    await axios.put(url, 
+        userData,
     {
         headers: { "x-token": sessionStorage.getItem('token-xL') 
     }})
@@ -74,19 +79,62 @@ export const UpdateUser = (props) => {
             .catch(error => console.log(error))
     }   
 
+    //Fetch companies used in select
+    const fetchCompanies = async() => {
+        const url = 'http://localhost:8080/company';
+
+        await axios(url, {
+            headers: { "x-token": sessionStorage.getItem('token-xL') }
+            })
+            .then( companies => setCompanies(companies.data.companies))
+            .catch(error => console.log(error))
+    }
+//Fetch branches used in select
+    const fetchBranches = async() => {
+        const url = 'http://localhost:8080/branch';
+
+        await axios(url, {
+            headers: { "x-token": sessionStorage.getItem('token-xL') }
+            })
+            .then( branches => setBranches(branches.data.branches))
+            .catch(error => console.log(error))
+    }
+
+    //WORK HERE
+    //you need to show the branches depending on the selected company
+
+    const fetchCompanyId = async() => {
+        const url = `http://localhost:8080/BranchUser/${props.userToEdit}`
+
+        await axios(url, { headers: {"x-token": sessionStorage.getItem('token-xL')}} )
+            .then( resp => resp.data.branchData)
+            .then( branchData => setBranchId( branchData.id ) )
+            .catch( error => console.log( error ))
+    }
+
+    const fetchBranchId = async() => {
+        const url = `http://localhost:8080/BranchUser/${props.userToEdit}`
+
+        await axios(url, { headers: {"x-token": sessionStorage.getItem('token-xL')}} )
+            .then( resp => resp.data.branchData)
+            .then( branchData => setBranchId( branchData.id ) )
+            .catch( error => console.log( error ))
+    }
+
     const fillFields = (userData) => {
-        
-        setUser( userData.user_name )
-        setPass( userData.user_password )
-        setSelectedRole( userData.RoleId)
-        setState( userData.user_status )
+        setUser( userData.user_name );
+        setPass( userData.user_pass );
+        setRoleId( userData.RoleId );
+        setState( userData.user_state );
     }
 
     useEffect( () => {
         fetchRoles();
         searchUserToEdit();
+        fetchCompanies();
+        fetchBranches();
+        fetchBranchId();
     }, [])
-
 
   return (
       <div id='updateUser-container'>
@@ -94,10 +142,10 @@ export const UpdateUser = (props) => {
         <br />
         
 
-        <form id='formUpdateUser' onSubmit={updateButton}>
-            <input className='form-control text-center' id='userName' type="text" value={user} onChange={ (e) => setUser(e.target.value)} required />
-            <input className='form-control text-center' id='userPassword' type="password" value={pass} autoComplete='off' onChange={ (e) => setPass(e.target.value)} required/>
-            <select className='form-select text-center' id='selectRole' value={selectedRole} onChange={ (e) => {setSelectedRole(e.target.value)}} required>
+        <form encType='multipart/form-data' id='formUpdateUser' onSubmit={updateButton}>
+            <input className='form-control text-center' name='user_name' id='userName' type="text" value={user} onChange={ (e) => setUser(e.target.value)} required />
+            <input className='form-control text-center' name='user_pass' id='userPassword' type="password" value={pass} autoComplete='off' onChange={ (e) => setPass(e.target.value)} required/>
+            <select className='form-select text-center' name='RoleId' id='selectRole' value={roleId} onChange={ (e) => {setRoleId(e.target.value)}} required>
                 <option value="">selecciona Opcion</option>
                     { 
                         roles.map( (r) => {
@@ -106,9 +154,26 @@ export const UpdateUser = (props) => {
                     }
             </select>
             <div id='userState'>
-                <label className='' htmlFor="userState">Estado</label>
-                <input className='' name='userState' type='checkbox' id='userStatus' onChange={ () => setState( !state ) } checked={ state } />  
+                <label className='' htmlFor="user_state">Estado</label>
+                <input className='' type='checkbox' name='user_state' id='userState' onChange={ () => setState( !state ) } checked={ state } />  
             </div>
+            <select className='form-select text-center' id='selectCompany' value={companyId} onChange={ (e) => {setCompanyId(e.target.value)}} required disabled>
+                        {/* <option value="">selecciona Empresa</option> */}
+                            { 
+                                companies.map( (c) => {
+                                    return <option value={c.id} key={c.id}>{c.company_name}</option>
+                                })
+                            }
+                    </select>
+                    <select className='form-select text-center' name='BranchId' id='selectBranch' value={ branchId } onChange={ (e) => {setBranchId(e.target.value)}} required>
+                        <option value="">selecciona Sucursal</option>
+                            { 
+                                branches.map( (b) => {
+                                    return <option value={b.id} key={b.id}>{b.branch_name}</option>
+                                })
+                            }
+                    </select>
+            <input type="file" name="img" id="img" value={ userImage } onChange={ (e) => setUserImage(e.target.value)}/>
             <button id='btnGuardar' className='btn btn-primary'>Guardar Datos</button>
          </form>
 </div>

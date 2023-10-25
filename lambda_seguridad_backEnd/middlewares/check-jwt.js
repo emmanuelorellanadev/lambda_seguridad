@@ -23,7 +23,7 @@ const checkJWT = async(req = request, res, next) => {
                 msg: 'User doesnt exist in DB'
             })
         }
-        if ( !userLoggedIn.user_status ){
+        if ( !userLoggedIn.user_state ){
             return res.status(401).json({
                 msg: 'user disabled'
             })
@@ -32,7 +32,7 @@ const checkJWT = async(req = request, res, next) => {
         const role = await Role.findByPk(userLoggedIn.RoleId);
         
         //check if role is active
-        if( !role.role_status ){
+        if( !role.role_state ){
             return res.status(401).json({
                 msg: 'Role is not active'
             })

@@ -11,7 +11,10 @@ const ListCompanies = (props) => {
   const editCompany = (companyToEditId) => {
     props.navUpdateCompany(companyToEditId)
   }
+
   const deleteCompany = (companyId, companyName) => {
+
+
     Swal.fire({
       icon: 'question',
       text: `Seguro que desea eliminar la empresa ${companyName} ?`,
@@ -22,7 +25,10 @@ const ListCompanies = (props) => {
       cancelButtonColor: '#dc3545'
   }).then( async( result ) => {
       if ( result.isConfirmed ) {
-          await axios.delete(url+companyId, {data: {"id": companyId}, headers:{'x-token': sessionStorage.getItem('token-xL')}} )  
+          await axios.delete(url+companyId, {
+            data: {"id": companyId},
+            headers:{'x-token': sessionStorage.getItem('token-xL')}
+            } )  
           .then( () => {
               Swal.fire({
                   icon: 'success',
@@ -71,7 +77,7 @@ const ListCompanies = (props) => {
                             {
                                 companies.map( ( company ) => {
                                     return (<tr key={company.id}>
-                                        <th><img src={`http://localhost:8080/data/${company.company_logo}`} alt="" /></th>
+                                        <th><img src={`http://localhost:8080/public/${company.company_logo}`} alt="" /></th>
                                         <th>{company.company_name}</th>
                                         <th>{company.company_phone}</th>
                                         <th>{company.company_address}</th>

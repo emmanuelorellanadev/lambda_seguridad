@@ -57,8 +57,7 @@ const UpdateCompany = (props) => {
     <>
         <div id='updateCompany-container'>
             <h2><center>ACTUALIZAR EMPRESA {company} id {companyId}</center></h2>
-            <div>
-            </div>
+            
             <form encType='multipart/form-data' id='form-update-company' onSubmit={updateButton} >
                  <div>
                     <img src={`http://localhost:8080/data/${logo}`} alt="" />

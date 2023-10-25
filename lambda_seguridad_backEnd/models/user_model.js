@@ -9,17 +9,26 @@ const Branch = require('./branch_model');
 const User = db_connection.define('User', {
     user_name: {
         type: DataTypes.STRING,
-        require: true,
+        allowNull: false,
         unique: true
     },
-    user_password: {
+    user_pass: {
         type: DataTypes.STRING,
-        require: true
+        allowNull: false,
     },
-    user_status: {
+    user_state: {
         type: DataTypes.BOOLEAN,
-        defaultValue: true
+        defaultValue: false
     },
+    user_img:{
+        type: DataTypes.STRING,
+        defaultValue: 'defaultUserImage.png'
+    },
+    user_creation:{
+        type: DataTypes.DATE,
+        defaultValue: DataTypes.NOW
+        // defaultValue: Date.now()
+    }
 },
 {
     timestamps: false
@@ -28,7 +37,7 @@ const User = db_connection.define('User', {
 Role.hasMany(User, { 
 
     foreignKey: {
-        // name: 'tablaId',
+        name: 'RoleId',
         allowNull: false
     },
         onDelete: 'CASCADE',

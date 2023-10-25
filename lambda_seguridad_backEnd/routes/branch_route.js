@@ -37,9 +37,9 @@ route.put('/:id', [
     requiredRole('ROLE_ADMINSYS'),
     check('branch_name', 'The branch name is required').not().isEmpty(),
     check('branch_phone', 'The branch phone is required').not().isEmpty(),
-    check('branch_direction', 'The branch direction is required').not().isEmpty(),
+    check('branch_address', 'The branch address is required').not().isEmpty(),
     check('CompanyId', 'The company is required').not().isEmpty(),
-    check('branch_direction', 'The branchTpype is required').not().isEmpty(),
+    check('BranchTypeId', 'The branchType is required').not().isEmpty(),
     checkFields,
 ], updateBranch);
 

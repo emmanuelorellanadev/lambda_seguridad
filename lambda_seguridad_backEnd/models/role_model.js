@@ -9,7 +9,7 @@ const Role = db_connection.define('Role', {
         required: true,
         unique: true
     },
-    role_status: {
+    role_state: {
         type: DataTypes.BOOLEAN,
         required: true,
         defaultValue: true
@@ -19,6 +19,6 @@ const Role = db_connection.define('Role', {
     timestamps: false
 })
 
-Role.sync({ force: false });
+Role.sync();
 
 module.exports = Role;

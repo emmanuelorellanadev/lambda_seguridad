@@ -4,25 +4,39 @@ import {useState, useEffect} from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 
-const url = 'http://localhost:8080/user'
 
 export const ListUsers = (props) => {
     const [users, setUsers] = useState([]);
     const [editUser, setEditUser] = useState(0);
-
+    const [branches, setBranches] = useState([]);
+    const [branch, setBranch] = useState('');
+    
+    const url = `http://localhost:8080/user`;
     
     const fetchUsers = async() => {
+        const urlUsersByBranch = `http://localhost:8080/usersByBranch/${branch}`;
 
-        await axios.get(url, {
+        await axios.get(urlUsersByBranch, {
             headers: { "x-token": sessionStorage.getItem('token-xL') }
         })
         .then( dbUsers => {setUsers(dbUsers.data.users)})
         .catch( error => console.log(error))
     }
     
+    const fetchBranches = async() => {
+        const urlBranches = 'http://localhost:8080/branch'
+
+        await axios.get(urlBranches, {
+            headers: { "x-token": sessionStorage.getItem('token-xL') }
+        })
+        .then( resp => setBranches(resp.data.branches))
+        .catch( error => console.log(error))
+    }
+
     useEffect( () => {
+        fetchBranches()
         fetchUsers()
-    }, [])
+    }, [branch])
 
     const updateUser = (userId) => {
         setEditUser(userId);
@@ -64,6 +78,16 @@ export const ListUsers = (props) => {
             <div className='bg-light' style={{ marginTop: 20, padding: 20 }}>
                 <div className='h3'>
                     Listado de Usuarios
+                    <p/>
+                    <label htmlFor="branch">Sucursales: </label>
+                    <select name="branch" id="branch" value={branch} onChange={(e) => setBranch(e.target.value)}>
+                        <option value={''} >Todas</option>
+                        {
+                            branches.map( b => {
+                                return (<option key={b.id} value={b.id}>{b.branch_name}</option>)
+                            })
+                        }
+                    </select>
                 </div>
                 <div className='table-responsive' >
                     <table className='table table-bordered table-hover' style={{ marginTop: 12}}>
@@ -81,10 +105,10 @@ export const ListUsers = (props) => {
                             {
                                 users.map( ( user ) => {
                                     return (<tr key={user.id}>
-                                        <th>{user.id}</th>
+                                        <th><img src={`http://localhost:8080/public/${user.user_img}`} alt="" /></th>
                                         <th>{user.user_name}</th>
-                                        <th>{user.Role.role_name}</th>
-                                        <th><input type='checkbox' checked={user.user_status} disabled/></th>
+                                        <th>{user.role_name}</th>
+                                        <th><input type='checkbox' checked={user.user_state} disabled/></th>
                                         <th><button className='btn btn-primary' type="button" onClick={ () => updateUser( user.id ) } >Editar</button></th>
                                         <th><button className='btn btn-outline-danger' onClick={() => {deleteUser(user.id, user.user_name)}}><i className='bi bi-trash3-fill'></i></button></th>
                                     </tr>)

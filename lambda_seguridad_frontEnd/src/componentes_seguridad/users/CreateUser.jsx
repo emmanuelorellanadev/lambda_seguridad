@@ -10,11 +10,12 @@ export const CreateUser = ( ) => {
     const [pass, setPass] = useState('');
     const [state, setState] = useState(false);
     const [roles, setRoles] = useState([]);
-    const [selectedRole, setSelectedRole] = useState('');
+    const [roleId, setRoleId] = useState('');
     const [companies, setCompanies] = useState([]);
     const [selectedCompany, setSelectedCompany] = useState('');
     const [branches, setBranches] = useState([]);
-    const [selectedBranch, setSelectedBranch] = useState('');
+    const [branchId, setBranchId] = useState('');
+    const [userImage, setUserImage] = useState(''); 
 
     const saveButton = (e) => {
         e.preventDefault();
@@ -23,38 +24,41 @@ export const CreateUser = ( ) => {
     }
     
     const saveUser = async() => {
-        const url = 'http://localhost:8080/user';
-
-        await axios.post(url, {
-            "user_name": user,
-            "user_password": pass, 
-            "user_status": state, 
-            "RoleId": selectedRole,
-            "BranchId": selectedBranch
-            },
-            {   
-                headers: { "x-token": sessionStorage.getItem('token-xL') }
-            })
-            .then( response => {
-                if (response.data.msg) {
+        try {
+            
+            const url = 'http://localhost:8080/user';
+            
+            const userData = new FormData(document.querySelector('#formCreateUser'));
+            userData.append('img', userImage)
+            
+            userData.set('user_state', state);
+            await axios.post(url, userData,
+                {   
+                    headers: { "x-token": sessionStorage.getItem('token-xL') }
+                })
+                .then( response => {
+                    if (response.data.msg) {
+                        Swal.fire({
+                            icon: 'success',
+                            title: `Usuario ${user}, guardado con exito`,
+                            // footer: response.data.msg,
+                            confirmButtonColor: '#0d6efd'
+                        })
+                    }else{console.log(response);}
+                })
+                .catch( (error) => {
+                    console.log(error)
                     Swal.fire({
-                        icon: 'success',
-                        title: `Usuario ${user}, guardado con exito`,
-                        footer: response.data.msg,
+                        icon: 'error',
+                        title: 'ERROR',
+                        text: 'El usuario no pudo ser guardado',
+                        footer: error.response.data.error.name,
                         confirmButtonColor: '#0d6efd'
                     })
-                }else{console.log(response);}
-            })
-            .catch( (error) => {
-                console.log(error)
-                Swal.fire({
-                    icon: 'error',
-                    title: 'ERROR',
-                    text: 'El usuario no pudo ser guardado',
-                    footer: error.response.data.error.name,
-                    confirmButtonColor: '#0d6efd'
                 })
-            })
+            } catch (error) {
+                console.log(error, ups)    
+            }
     }
 
     //Fetch roles used in select
@@ -92,6 +96,7 @@ export const CreateUser = ( ) => {
         setUser('');
         setPass('');
         setState(false);
+        setUserImage('')
         document.getElementById('formCreateUser').reset();
     } 
 
@@ -106,11 +111,11 @@ export const CreateUser = ( ) => {
             <center> <h2>Formulario De Registro de Usuarios </h2> </center>
                 <br />
 
-                <form id='formCreateUser' onSubmit={saveButton}>
+                <form encType='multipart/form-data' id='formCreateUser' onSubmit={saveButton}>
                     
-                    <input className='form-control text-center' type="text" name='user' value={user} placeholder='Nombre del Usuario' onChange={ (e) => setUser(e.target.value)} autoFocus required />
-                    <input className='form-control text-center' type="password" name='pass' placeholder='Contrasena' onChange={ (e) => setPass(e.target.value)} autoComplete='off' required/>
-                    <select className='form-select text-center' id='selectRole' onChange={ (e) => {setSelectedRole(e.target.value)}} required>
+                    <input className='form-control text-center' type="text" name='user_name' value={user} placeholder='Nombre del Usuario' onChange={ (e) => setUser(e.target.value)} autoFocus required />
+                    <input className='form-control text-center' type="password" name='user_pass' placeholder='Contrasena' onChange={ (e) => setPass(e.target.value)} autoComplete='off' required/>
+                    <select className='form-select text-center' name='RoleId' id='selectRole' onChange={ (e) => {setRoleId(e.target.value)}} required>
                         <option value="">selecciona Opcion</option>
                             { 
                                 roles.map( (r) => {
@@ -120,7 +125,7 @@ export const CreateUser = ( ) => {
                     </select>
                     <section id='userState'>
                         <label className='' htmlFor="estadoUsuario">Estado</label>
-                        <input className='' type='checkbox' id='estadoUsuario' onChange={ () => setState( !state ) } checked={ state } />  
+                        <input className='' type='checkbox' name='user_state' id='estadoUsuario' onChange={ () => setState( !state ) } checked={ state } />  
                     </section>
                     <select className='form-select text-center' id='selectCompany' onChange={ (e) => {setSelectedCompany(e.target.value)}} required disabled>
                         {/* <option value="">selecciona Empresa</option> */}
@@ -130,7 +135,7 @@ export const CreateUser = ( ) => {
                                 })
                             }
                     </select>
-                    <select className='form-select text-center' id='selectBranch' onChange={ (e) => {setSelectedBranch(e.target.value)}} required>
+                    <select className='form-select text-center' name='BranchId' id='selectBranch' onChange={ (e) => {setBranchId(e.target.value)}} required>
                         <option value="">selecciona Sucursal</option>
                             { 
                                 branches.map( (b) => {
@@ -138,6 +143,7 @@ export const CreateUser = ( ) => {
                                 })
                             }
                     </select>
+                    <input type="file" name="img" id="img" value={ userImage } onChange={ (e) => setUserImage(e.target.value)}/>
                     <button id='saveButton' className='btn btn-primary'>Guardar Usuario</button>
                  </form>
         </div>

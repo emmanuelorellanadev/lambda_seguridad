@@ -15,13 +15,13 @@ const login = async(req, res) => {
                 throw 'ERROR: check user/password ';
             }else{
                 //check password sha
-                const passOK = await checkPassword(pass, user.user_password)
+                const passOK = await checkPassword(pass, user.user_pass)
                 
                 if ( !passOK ) {
                     throw 'ERROR: check user/password ';
                 }else{    
                     //Check User status
-                    if ( !user.user_status ){
+                    if ( !user.user_state ){
                         throw 'ERROR: User disabled ';
                     }else{
                         //create JWT

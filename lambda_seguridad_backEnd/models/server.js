@@ -26,7 +26,6 @@ class Server {
 //MIDDLEWARES
     middlewares(){
         this.app.use(express.json());
-
         //handles transactions whith client 
         // this.app.use(cors({
         //     origin: '*',
@@ -45,7 +44,9 @@ class Server {
         this.app.use('/company', require('../routes/company_route'))
         this.app.use('/branchType', require('../routes/branchType_route'));
         this.app.use('/branch',     require('../routes/branch_route'));
-        this.app.use('/data', express.static('./data/img/company/'));//get folder data
+        this.app.use('/branchUser', require('../routes/branch_user_route'));
+        this.app.use('/usersByBranch', require('../routes/users_by_branch_route'));
+        this.app.use('/public', express.static('./data/img/public/'));//get folder data
     }
 
 //DATABASE

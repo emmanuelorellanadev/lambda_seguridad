@@ -1,9 +1,5 @@
 //COMPANY CONTROLLER
 const Company = require('../models/company_model');
-const multer = require('multer')
-const { extname } = require('path');
-
-const MIMETYPES = ['image/jpeg', 'image/png'];
 
 const getCompanies = async(req, res) => {
     try {
@@ -98,33 +94,6 @@ const updateCompany = async(req, res) => {
         }
     }
     
-    const multerUpload = multer({
-        //FILE NAME STORED
-        storage: multer.diskStorage({
-            destination: './data/img/company/',
-            filename: (req, file, callBack) => {
-                // console.log('pas[o por multerUpload')
-                const fileExtension = extname( file.originalname );
-                // console.log(fileExtension)
-                const fileName = file.originalname.split( fileExtension[0] );
-                // console.log(fileName)
-                //create the filename to put it on the file and put the variable on the request
-                const fileNameToSave = `${fileName} - ${Date.now()}${fileExtension}`;
-                req.fileNameToSave = fileNameToSave;
-                callBack( null, fileNameToSave); 
-            }
-        }),
-        //FILE TYPE
-        fileFilter: ( req, file, callBack) => {
-            if ( MIMETYPES.includes( file.mimetype) ) callBack( null, true)
-            else callBack( new Error( `Only ${MIMETYPES.join('')} mimetypes are acepted`)) 
-        },
-        //FILE SIZE
-        limits: {
-            fieldSize: 2000000 
-        }
-    })
-
 const deleteCompany = async( req, res ) =>{
     const { id } = req.params;
     // const id = req.body;
@@ -146,25 +115,10 @@ const deleteCompany = async( req, res ) =>{
     }
 }
 
-// const uploadImage = multer.diskStorage({
-//     destination: function ( req, file, cb){
-//         cb( null, '../data/img/company' )
-//     },
-//     filename: function (req, file, cb) {
-//         cb( null, `${Date.now()} - ${file.originalname}` )
-//     }
-// })
-// const upload = multer({ uploadImage: uploadImage});
-// module.exports.upload = upload.single('img');
-
-
-
-
 module.exports = {
     getCompanies,
     getCompanyId,
     createCompany,
     updateCompany,
     deleteCompany,
-    multerUpload
 }
