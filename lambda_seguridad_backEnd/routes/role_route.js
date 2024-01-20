@@ -1,17 +1,22 @@
 const { Router } = require('express');
 const { check } = require('express-validator')
 
-const { getRole, createRole, updateRole } = require('../controllers/role_controller');
 const { checkFields } = require('../middlewares/check_fields');
 const { checkJWT } = require('../middlewares/check-jwt');
 const { requiredRole } = require('../middlewares/checkRole');
+const { roleController } = require('../controllers');
 
 const route = Router();
 
 route.get('/', [
     checkJWT,
     requiredRole('ROLE_ADMINSYS', 'ROLE_ADMIN', 'ROLE_SUPERUSER')
-], getRole)
+], roleController.getRoles)
+
+route.get('/:id', [
+    checkJWT,
+    requiredRole('ROLE_ADMINSYS', 'ROLE_ADMIN', 'ROLE_SUPERUSER')
+], roleController.getRole);
 
 route.post('/', [
     checkJWT,
@@ -19,7 +24,7 @@ route.post('/', [
     check('role_name', 'The role is required').not().isEmpty(),
     check('role_status', 'the status is required').not().isEmpty(),
     checkFields
-], createRole);
+], roleController.saveRole);
 
 route.put('/:id', [
     checkJWT,
@@ -28,6 +33,8 @@ route.put('/:id', [
     check('role_status', 'the status is required').not().isEmpty(),
     checkFields
 ],
- updateRole)
+ roleController.updateRole)
+
+ route.delete('/:id', roleController.deleteRole)
 
 module.exports = route; 

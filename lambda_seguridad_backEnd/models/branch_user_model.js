@@ -6,11 +6,11 @@ const User = require('../models/user_model');
 
 const Branch_User = db_connection.define('Branch_User', 
     {
-        id: {
-            type: DataTypes.INTEGER,
-            primaryKey: true,
-            autoIncrement: true
-        } 
+    id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
+    } 
     },
     {
         timestamps: false
@@ -20,6 +20,6 @@ const Branch_User = db_connection.define('Branch_User',
 Branch.belongsToMany(User, { through: Branch_User });
 User.belongsToMany(Branch, { through: Branch_User });
 
-Branch_User.sync({});
+Branch_User.sync({force: false});
 
 module.exports = Branch_User; 

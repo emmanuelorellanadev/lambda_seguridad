@@ -4,7 +4,6 @@ import axios from'axios';
 
 const url = 'http://localhost:8080/company/';
 
-
 const ListCompanies = (props) => {
   const [ companies, setCompanies ] = useState([]);
 
@@ -13,7 +12,6 @@ const ListCompanies = (props) => {
   }
 
   const deleteCompany = (companyId, companyName) => {
-
 
     Swal.fire({
       icon: 'question',
@@ -46,7 +44,7 @@ const ListCompanies = (props) => {
   const fetchCompanies = async() => {
 
       await axios(url, { headers: {"x-token": sessionStorage.getItem('token-xL')}})
-        .then( resp => setCompanies(resp.data.companies))
+        .then( resp => setCompanies(resp.data.resData))
         .catch(error => console.log(error))
         
 

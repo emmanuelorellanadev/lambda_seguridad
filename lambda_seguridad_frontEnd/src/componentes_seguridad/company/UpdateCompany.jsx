@@ -25,15 +25,15 @@ const UpdateCompany = (props) => {
 
         axios.put(url, 
             companyData,
-        {headers: {"x-token": sessionStorage.getItem("token-xL")}})
-            .then( resp => console.log(resp))
-            .catch( error => console.log(error))
+            {headers: {"x-token": sessionStorage.getItem("token-xL")}})
+        .then( resp => console.log(resp))
+        .catch( error => console.log(error))
     }
 
     const fetchCompanyData = async() => {
         const url = `http://localhost:8080/company/${props.companyToEditId}`;
         axios(url, {headers: {"x-token": sessionStorage.getItem('token-xL')}})
-            .then( resp => resp.data.company )
+            .then( resp => resp.data.resData )
             .then( companyData => { fillCompanyData(companyData) })
             .catch(error => console.log(error))
     }
@@ -60,7 +60,7 @@ const UpdateCompany = (props) => {
             
             <form encType='multipart/form-data' id='form-update-company' onSubmit={updateButton} >
                  <div>
-                    <img src={`http://localhost:8080/data/${logo}`} alt="" />
+                    <img src={`http://localhost:8080/public/${logo}`} alt="" />
                     <input type="file" name="img" id="img" onChange={ (e) => setLogoFile(e.target.value)}/>
                 </div> 
                 <div>

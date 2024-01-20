@@ -17,7 +17,7 @@ const UpdateBranch = (props) => {
         const url = `http://localhost:8080/branch/${props.branchId}`;
 
         await axios.get(url, { headers: {'x-token': sessionStorage.getItem('token-xL')}})
-          .then( resp => resp.data.branch)
+          .then( resp => resp.data.resData)
           .then( bra => fillBranchData(bra))
           .catch( error => console.log(error))
 
@@ -27,7 +27,7 @@ const UpdateBranch = (props) => {
       const url = `http://localhost:8080/company/`;
 
       await axios.get(url, {headers: {'x-token': sessionStorage.getItem('token-xL')}})
-        .then( resp => resp.data.companies)
+        .then( resp => resp.data.resData)
         .then( companiesData => { setComapanies(companiesData) } )
         .catch( error => console.log(error))
     } 
@@ -36,7 +36,7 @@ const UpdateBranch = (props) => {
       const url = `http://localhost:8080/branchType/`;
 
       await axios.get( url, { headers: { 'x-token': sessionStorage.getItem('token-xL')} })
-        .then( resp => resp.data.branchTypes )
+        .then( resp => resp.data.resData )
         .then( branchTypeData => setBranchTypes(branchTypeData))
         .catch( error => console.log(error))
     }

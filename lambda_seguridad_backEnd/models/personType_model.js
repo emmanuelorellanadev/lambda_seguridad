@@ -1,18 +1,17 @@
-//ROLE MODEL
+// PERSONTYPE MODEL
 
 const { DataTypes } = require('sequelize');
 
 const db_connection = require('../database/conf_database');
 
-const Role = db_connection.define('Role', {
-    role_name: {
+const PersonType = db_connection.define('PersonType', {
+    personType_name: {
         type: DataTypes.STRING,
-        allowNull: false,
-        unique: true
+        unique: true,
+        allowNull: false
     },
-    role_state: {
+    personType_state:{
         type: DataTypes.BOOLEAN,
-        allowNull: false,
         defaultValue: true
     }
 },
@@ -20,6 +19,6 @@ const Role = db_connection.define('Role', {
     timestamps: false
 });
 
-Role.sync({force: false});
+PersonType.sync({ force: false});
 
-module.exports = Role;
+module.exports = PersonType;

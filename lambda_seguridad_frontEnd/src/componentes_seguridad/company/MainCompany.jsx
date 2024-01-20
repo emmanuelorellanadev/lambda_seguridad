@@ -47,7 +47,7 @@ const fetchCompany = async () => {
   const url = `http://localhost:8080/company/${1}`;
 
   await axios.get(url, {headers: {"x-token": sessionStorage.getItem('token-xL')}})
-    .then( resp => resp.data.company)
+    .then( resp => resp.data.resData)
     .then( comp => setCompany(comp))
     .catch( error => console.log(error))
 }
@@ -57,7 +57,7 @@ const fetchCompany = async () => {
     await axios.get(url, 
       {headers: {'x-token': sessionStorage.getItem('token-xL')},
       where: {'CompanyId': company.id}})
-        .then( resp => resp.data.branches)
+        .then( resp => resp.data.resData)
         .then( branchesData => setBranchs(branchesData))
         .catch( error => console.log(error))
   }

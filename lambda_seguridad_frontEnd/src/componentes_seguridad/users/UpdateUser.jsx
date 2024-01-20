@@ -63,7 +63,7 @@ export const UpdateUser = (props) => {
         await axios(url, {
             headers: { "x-token": sessionStorage.getItem('token-xL') }
             })
-            .then( roles => setRoles(roles.data.roles))
+            .then( roles => setRoles(roles.data.resData))
             .catch(error => console.log(error))
     }
 
@@ -74,7 +74,7 @@ export const UpdateUser = (props) => {
             headers: { "x-token": sessionStorage.getItem('token-xL')},
             // params: {id: props.userToEdit}// req.query
         })
-            .then( res => res.data.user )
+            .then( res => res.data.resData )
             .then( userData => fillFields(userData) )
             .catch(error => console.log(error))
     }   
@@ -86,7 +86,7 @@ export const UpdateUser = (props) => {
         await axios(url, {
             headers: { "x-token": sessionStorage.getItem('token-xL') }
             })
-            .then( companies => setCompanies(companies.data.companies))
+            .then( companies => setCompanies(companies.data.resData))
             .catch(error => console.log(error))
     }
 //Fetch branches used in select
@@ -96,7 +96,7 @@ export const UpdateUser = (props) => {
         await axios(url, {
             headers: { "x-token": sessionStorage.getItem('token-xL') }
             })
-            .then( branches => setBranches(branches.data.branches))
+            .then( branches => setBranches(branches.data.resData))
             .catch(error => console.log(error))
     }
 

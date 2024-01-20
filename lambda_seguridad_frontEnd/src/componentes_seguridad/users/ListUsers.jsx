@@ -11,7 +11,7 @@ export const ListUsers = (props) => {
     const [branches, setBranches] = useState([]);
     const [branch, setBranch] = useState('');
     
-    const url = `http://localhost:8080/user`;
+    const url = `http://localhost:8080/user/`;
     
     const fetchUsers = async() => {
         const urlUsersByBranch = `http://localhost:8080/usersByBranch/${branch}`;
@@ -19,7 +19,7 @@ export const ListUsers = (props) => {
         await axios.get(urlUsersByBranch, {
             headers: { "x-token": sessionStorage.getItem('token-xL') }
         })
-        .then( dbUsers => {setUsers(dbUsers.data.users)})
+        .then( users => setUsers(users.data.resData) )
         .catch( error => console.log(error))
     }
     
@@ -29,13 +29,13 @@ export const ListUsers = (props) => {
         await axios.get(urlBranches, {
             headers: { "x-token": sessionStorage.getItem('token-xL') }
         })
-        .then( resp => setBranches(resp.data.branches))
+        .then( resp => setBranches(resp.data.resData))
         .catch( error => console.log(error))
     }
 
     useEffect( () => {
-        fetchBranches()
-        fetchUsers()
+        fetchBranches();
+        fetchUsers();
     }, [branch])
 
     const updateUser = (userId) => {
@@ -55,7 +55,7 @@ export const ListUsers = (props) => {
             cancelButtonColor: '#dc3545'
         }).then( async( result ) => {
             if ( result.isConfirmed ) {
-                await axios.delete(url, {data: {"id": userId}, headers:{'x-token': sessionStorage.getItem('token-xL')}} )  
+                await axios.delete(`${url}${userId}`, {data: {"id": userId}, headers:{'x-token': sessionStorage.getItem('token-xL')}} )  
                 .then( () => {
                     Swal.fire({
                         icon: 'success',

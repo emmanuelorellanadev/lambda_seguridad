@@ -1,7 +1,7 @@
 const { Router } = require('express');
 const { check } = require('express-validator')
 
-const { getBranchTypes, getBranchType, createBranchType, updateBranchType } = require('../controllers/branchType_controller');
+const { branchTypeController } = require('../controllers');
 const { checkFields } = require('../middlewares/check_fields');
 const { checkJWT } = require('../middlewares/check-jwt');
 const { requiredRole } = require('../middlewares/checkRole');
@@ -9,29 +9,31 @@ const { requiredRole } = require('../middlewares/checkRole');
 const route = Router();
 
 route.get('/', [
-    checkJWT,
-    requiredRole('ROLE_ADMINSYS')
-], getBranchTypes)
+    // checkJWT,
+    // requiredRole('ROLE_ADMINSYS')
+], branchTypeController.getBranchTypes)
 
 route.get('/:id', [
-    checkJWT,
-    requiredRole('ROLE_ADMINSYS')
-], getBranchType)
+    // checkJWT,
+    // requiredRole('ROLE_ADMINSYS')
+], branchTypeController.getBranchType)
 
 route.post('/', [
-    checkJWT,
-    requiredRole('ROLE_ADMINSYS'),
+    // checkJWT,
+    // requiredRole('ROLE_ADMINSYS'),
     check('branchType_name', 'The type branch is required').not().isEmpty(),
-    check('branchType_status', 'the status branch is required').not().isEmpty(),
+    check('branchType_state', 'The state branch is required').not().isEmpty(),
     checkFields
-], createBranchType);
+], branchTypeController.saveBranchType);
 
 route.put('/:id', [
-    checkJWT,
-    requiredRole('ROLE_ADMINSYS'),
+    // checkJWT,
+    // requiredRole('ROLE_ADMINSYS'),
     check('branchType_name', 'The type branch is required').not().isEmpty(),
-    check('branchType_status', 'the status branch is required').not().isEmpty(),
+    check('branchType_state', 'The state branch is required').not().isEmpty(),
     checkFields
-], updateBranchType)
+], branchTypeController.updateBranchType);
+
+route.delete('/:id', branchTypeController.deleteBranchType)
 
 module.exports = route;

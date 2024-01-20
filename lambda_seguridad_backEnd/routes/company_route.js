@@ -3,11 +3,7 @@ const { check } = require('express-validator');
 
 const { requiredRole } = require('../middlewares/checkRole');
 const { checkJWT } = require('../middlewares/check-jwt');
-const { createCompany, 
-        getCompanies, 
-        getCompanyId, 
-        updateCompany,
-        deleteCompany    } = require('../controllers/company_controller');
+const { companyController} = require('../controllers');
 const { checkFields } = require('../middlewares/check_fields');
 const { uploadImage } = require('../helpers/uploadImage');
 
@@ -16,41 +12,41 @@ const route = Router();
 route.get('/', [
     checkJWT,
     requiredRole('ROLE_ADMINSYS')
-],getCompanies);
+],companyController.getCompanies);
 
 route.get('/:id', [
     checkJWT,
     requiredRole('ROLE_ADMINSYS')
-], getCompanyId)
+], companyController.getCompany)
 
 route.post('/', [
     checkJWT,
     requiredRole('ROLE_ADMINSYS'),
-    // check('company_name', 'The company name is required').not().isEmpty(),
-    // check('company_address', 'The company address is required').not().isEmpty(),
-    // check('company_phone', 'The company phone is required').not().isEmpty(),
-    // check('company_description', 'The company description is required').not().isEmpty(),
+    uploadImage.any('img'),
+    check('company_name', 'The company name is required').not().isEmpty(),
+    check('company_address', 'The company address is required').not().isEmpty(),
+    check('company_phone', 'The company phone is required').not().isEmpty(),
+    check('company_description', 'The company description is required').not().isEmpty(),
     checkFields,
-], uploadImage.any('img'), createCompany);
+], companyController.saveCompany);
 
 route.put('/:id', [
     checkJWT,
     requiredRole('ROLE_ADMINSYS'),
-    // check('company_name', 'The company name is required').not().isEmpty(),
-    // check('company_address', 'The company address is required').not().isEmpty(),
-    // check('company_phone', 'The company phone is required').not().isEmpty(),
-    // check('company_description', 'The company description is required').not().isEmpty(),
-    // check('company_mission', 'The company mission is required').not().isEmpty(),
-    // check('company_vision', 'The company vision is required').not().isEmpty(),
+    uploadImage.any('img'),
+    check('company_name', 'The company name is required').not().isEmpty(),
+    check('company_address', 'The company address is required').not().isEmpty(),
+    check('company_phone', 'The company phone is required').not().isEmpty(),
+    check('company_description', 'The company description is required').not().isEmpty(),
+    check('company_mission', 'The company mission is required').not().isEmpty(),
+    check('company_vision', 'The company vision is required').not().isEmpty(),
     checkFields,
-
-], uploadImage.any('img'), updateCompany);
+],  companyController.updateCompany);
 
 route.delete('/:id',[
     checkJWT,
     requiredRole('ROLE_ADMINSYS')
-], deleteCompany);
-
+], companyController.deleteCompany);
 
 
 module.exports = route;

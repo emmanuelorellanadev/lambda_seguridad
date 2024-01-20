@@ -9,8 +9,8 @@ const Branch = require('./branch_model');
 const User = db_connection.define('User', {
     user_name: {
         type: DataTypes.STRING,
+        unique: true,
         allowNull: false,
-        unique: true
     },
     user_pass: {
         type: DataTypes.STRING,
@@ -48,6 +48,6 @@ User.Role = User.belongsTo(Role);
 
 Branch.belongsToMany(User, { through: "branch_user"});
 
-User.sync( );
+User.sync({force: false} );
 
 module.exports = User;

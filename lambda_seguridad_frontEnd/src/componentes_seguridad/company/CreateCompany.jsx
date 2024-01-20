@@ -32,7 +32,7 @@ const CreateCompany = () => {
         }).then( resp => {
             Swal.fire({
                 icon: 'success',
-                text: 'Usuario creado exitosamente',
+                text: 'Empresa creada exitosamente',
                 showCloseButton: true,
                 showCancelButton: true,
                 confirmButtonColor: '#0d6efd',
@@ -43,7 +43,7 @@ const CreateCompany = () => {
             console.log(error);
             Swal.fire({
                 icon: 'error',
-                title: 'Error al crear el usaurio',
+                title: 'Error al crear la empresa',
                 text: `${error}`,
                 showCloseButton: true,
                 confirmButtonColor: '#0d6efd',

@@ -1,124 +1,76 @@
 //COMPANY CONTROLLER
 const Company = require('../models/company_model');
+const catchedAsync = require('../errors_handler/catchedAsync');
+const { deleteImage } = require('../helpers/uploadImage');
+const { resSuccessful } = require('../response/resSucessful');
+const { DBError, GeneralError } = require('../errors_handler/errors');
 
 const getCompanies = async(req, res) => {
-    try {
-        const companies = await Company.findAll();
-        if ( !companies ) {
-            return res.status(401).json({
-                error: "Companies void"
-            })
-        }
-        res.json({companies});
-    } catch (error) {
-        res.status(401).json({
-            error: error
-        })
-    }
-}
 
-const getCompanyId = async(req, res) => {
-    const { id } = req.params;
-    try {
-        const company = await Company.findByPk(id);
-
-        if( !company ){
-            throw "Company doesn't exist"
-        }
-
-        res.json({company});
-    } catch (error) {
-        res.status(400).json({error})
-    }
-}
-
-const createCompany = async(req, res) => {
-    try {
-        // const dataFile = req.file;
-        const company = Object.assign({}, req.body)// fix [Object: null prototype]{xxx: xxxx}
-        company.logo= req.fileNameToSave;
-        console.log(company);
-
-        const companySaved = await Company.create({
-            "company_name": company.company,
-            "company_phone": company.phone,
-            "company_address": company.address,
-            "company_description": company.description,
-            "company_mission": company.mission,
-            "company_vision": company.vision,
-            "company_logo": company.logo,
-        });
-            res.json({
-                companySaved
-                // "companySaved": 1
-            })
+    const companies = await Company.findAll();
+        if ( !companies ) throw new DBError (null, 'No se encontraron empresas', 404)
         
-    } catch (error) {
-        res.status(401).json({
-            error
-        })
-    }
+        resSuccessful(res, companies)
+}
+
+const getCompany = async(req, res) => {
+    const { id } = req.params;
+
+    const company = await Company.findByPk(id);
+
+    if( !company ) throw new DBError(null, "Empresa no encontrada", 404);
     
+    resSuccessful(res, company)
+}
+
+const saveCompany = async(req, res) => {
+        // const dataFile = req.file;
+        // const company = Object.assign({}, req.body)// fix [Object: null prototype]{xxx: xxxx}
+        const company = req.body;
+        company.company_logo = req.fileNameToSave;
+
+        await Company.create( company )
+            .then( ({company_name, ...companySaved}) => {
+                resSuccessful(res, `${company_name} guardada exitosamente`) })
+            .catch( error => {
+                deleteImage(company.company_logo);
+                throw new DBError(error, 'Error al guardar la empresa', 400) })
+            
 }
     
 const updateCompany = async(req, res) => {
+    // const company = Object.assign({}, req.body)// fix [Object: null prototype]{xxx: xxxx}
         const { id } = req.params;
-        const company = Object.assign({}, req.body)// fix [Object: null prototype]{xxx: xxxx}
-
-        try {
+        const company = req.body
             
             const companyToUpdate = await Company.findByPk( id );
             
-            if( !companyToUpdate ){
-                return res.status(401).json({
-                    error: "Company doesn't exist."
-                })
-            }
+            if( !companyToUpdate ) throw new GeneralError('Error: Empresa no encontrada');
+            
             //Add fileName to object to save
-            company.logo = req.fileNameToSave;
+            company.company_logo = req.fileNameToSave;
 
-            const companyUpdated = await Company.update({
-                "company_name": company.company,
-                "company_phone": company.phone,
-                "company_address": company.address,
-                "company_description": company.description,
-                "company_mission": company.mission,
-                "company_vision": company.vision,
-                "company_logo": company.logo,
-            }, { where: { id: id }})
-            res.json({companyUpdated})        
-            // res.json({"status" : 1})        
-        } catch (error) {
-            // req.status(400).json(error); 
-            console.log(error)
-        }
+            await Company.update(company, { where: { id: id }})
+                .then( companyUpdated => resSuccessful(res, 'Empresa actualizada correctamente'))
+                .catch( error => { throw new DBError(error, 'Error al actualizar la empresa.', 400) })
     }
     
 const deleteCompany = async( req, res ) =>{
     const { id } = req.params;
-    // const id = req.body;
-    console.log(req.body)
-    try {
         const companyToDelete = await Company.findByPk( id );
 
-        if( !companyToDelete ){
-            return res.status(401).json({
-                error: "Company doesn't exist"
-            })
-        }
+        if( !companyToDelete ) throw new DBError(null, 'Empresa no encontrada')
 
-        const companyDestroy = await Company.destroy({ where: {id: id}})
-        res.json({companyToDelete})
-    } catch (error) {
-        console.log(error);
-
-    }
+        await Company.destroy({ where: {id: id}});
+            deleteImage(companyToDelete.company_logo);
+            resSuccessful(res, 'Empresa eliminada correctamente');
+            
 }
 
 module.exports = {
-    getCompanies,
-    getCompanyId,
-    createCompany,
-    updateCompany,
-    deleteCompany,
+    getCompanies: catchedAsync(getCompanies),
+    getCompany: catchedAsync(getCompany),
+    saveCompany: catchedAsync(saveCompany),
+    updateCompany: catchedAsync(updateCompany),
+    deleteCompany: catchedAsync(deleteCompany),
 }

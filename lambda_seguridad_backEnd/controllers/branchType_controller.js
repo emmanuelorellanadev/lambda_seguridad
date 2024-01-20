@@ -1,98 +1,66 @@
+const catchedAsync = require('../errors_handler/catchedAsync');
+const { DBError, GeneralError } = require('../errors_handler/errors');
 const BranchType = require('../models/branchType_model');
+const { resSuccessful } = require('../response/resSucessful');
 
 const getBranchTypes = async(req, res) => {
-    try {
-        const branchTypes = await BranchType.findAll();
 
-        if( !branchTypes ){
-            return res.status(401).json({
-                msg: 'There are no branch types on database'
-            })
-        }
-        console.log('all users')
-        return res.json({
-            branchTypes
+    await BranchType.findAll()
+        .then( branchTypes => {
+            if(branchTypes.length == 0){
+                throw new DBError(null, 'No se encontraron tipos de sucursal', 404)
+            }
+            resSuccessful(res, branchTypes)
         })
-
-    } catch (error) {
-        console.log('Cant fetch branch types of the database'.bgRed);
-        throw(error)
-    }
 }
 
 const getBranchType = async(req, res) => {
     const { id } = req.params;
 
-    try {
-
-        const branchType = await BranchType.findByPk(id);
-
-        if( !branchType ){
-            return res.status(401).json({
-                msg: 'There are no branch type on database'
-            })
-        }
-        res.json({
-            branchType
-        })
-    } catch (error) {
-        console.log('Cant fetch branch type of the database'.bgRed);
-        console.log(error)
-        res.json({
-            error
-        })
-    }
+    await BranchType.findByPk(id)
+        .then( branchType => {
+            if(!branchType){
+                throw new DBError(null, `Error: Tipo de sucursal no encontrada`)
+            }
+            resSuccessful(res, branchType)
+        });
 }
 
-const createBranchType = async(req, res) => {
+const saveBranchType = async(req, res) => {
     const body = req.body;
 
-    try { 
-        const branchTypeWrited = await BranchType.create( body );
-        res.json({    
-            branchTypeWrited
-        })
-    } catch (error) {
-        console.log('Error writing branch type'.bgRed);
-        res.status(400).json({
-            error
-        })
-        throw(error);
-    } 
+    await BranchType.create( body )
+        .then( branchType => resSuccessful(res, `Tipo de sucursal ${branchType.branchType_name} creada exitosamente.`))
+        .catch( error => { throw new DBError( error, 'Error al guardar el tipo de sucursal', 400 ) } )
+
 }
 
 const updateBranchType = async(req, res) => {
     const { id } = req.params;
     const branchType = req.body
 
-    try {
-        const branchTypeToUpdate = await BranchType.findByPk( id );
+    await BranchType.findByPk( id )
+        .then( branchType => { if (!branchType)  { throw new DBError(null, 'Error: no se encontró el tipo de sucursal', 404) } })
+    
+    await BranchType.update( branchType, { where: { id: id} } )
+        .then( () => resSuccessful( res, `Tipo de sucursal actualizado correctamente.`) )
+        .catch( error => { throw new DBError( error, 'Error: No se pudo actualizar el tipo de sucursal', 400 ) })
+}
 
-        if( !branchTypeToUpdate ) {
-            
-            return res.status(401).json({ error: "BranchType not founded"});
-            
-        }
+const deleteBranchType = async(req, res) => {
+    const { id } = req.params;
 
-        const branchTypeUpdated = await BranchType.update( 
-            branchType,
-            { where: { id: id} }
-            );
-        res.json({    
-            branchTypeUpdated
+    await BranchType.destroy({ where: {"id": id}})
+        .then((resp) => {
+            if(!resp) { throw new GeneralError('Tipo de sucursal no encontrado.', 404) }
+            resSuccessful(res, 'Eliminacion realizada correctamente.')
         })
-    } catch (error) {
-        console.log('Error update branch type'.bgRed);
-        res.status(400).json({
-            error
-        })
-        throw(error);
-    } 
 }
 
 module.exports = {
-    getBranchTypes,
-    getBranchType,
-    createBranchType,
-    updateBranchType
+    getBranchTypes: catchedAsync(getBranchTypes),
+    getBranchType: catchedAsync(getBranchType),
+    saveBranchType: catchedAsync(saveBranchType),
+    updateBranchType: catchedAsync(updateBranchType),
+    deleteBranchType: catchedAsync(deleteBranchType)
 }

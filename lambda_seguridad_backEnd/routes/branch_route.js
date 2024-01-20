@@ -4,25 +4,25 @@ const { check } = require('express-validator');
 const { checkFields } = require('../middlewares/check_fields');
 const { checkJWT } = require('../middlewares/check-jwt');
 const { requiredRole } = require('../middlewares/checkRole');
-const { saveBranch, getBranchs, getBranch, updateBranch, deleteBranch } = require('../controllers/branch_controller');
+const { branchController } = require('../controllers');
 
 const route = Router();
 
 route.get('/', [
-    checkJWT,
-    requiredRole('ROLE_ADMINSYS')
+    // checkJWT,
+    // requiredRole('ROLE_ADMINSYS')
 ], 
-getBranchs);
+branchController.getBranches);
 
 route.get('/:id', [
-    checkJWT,
-    requiredRole('ROLE_ADMINSYS')
+    // checkJWT,
+    // requiredRole('ROLE_ADMINSYS')
 ], 
-getBranch);
+branchController.getBranch);
 
 route.post('/', [
-    checkJWT,
-    requiredRole('ROLE_ADMINSYS'),
+    // checkJWT,
+    // requiredRole('ROLE_ADMINSYS'),
     check('branch_name', 'The branch name is required').not().isEmpty(),
     check('branch_phone', 'The branch phone is required').not().isEmpty(),
     check('branch_address', 'The branch address is required').not().isEmpty(),
@@ -30,22 +30,22 @@ route.post('/', [
     check('CompanyId', 'The company is required').not().isEmpty(),
     check('BranchTypeId', 'The branchTpype is required').not().isEmpty(),
     checkFields,
-], saveBranch)
+], branchController.saveBranch)
 
 route.put('/:id', [
-    checkJWT,
-    requiredRole('ROLE_ADMINSYS'),
+    // checkJWT,
+    // requiredRole('ROLE_ADMINSYS'),
     check('branch_name', 'The branch name is required').not().isEmpty(),
     check('branch_phone', 'The branch phone is required').not().isEmpty(),
     check('branch_address', 'The branch address is required').not().isEmpty(),
     check('CompanyId', 'The company is required').not().isEmpty(),
     check('BranchTypeId', 'The branchType is required').not().isEmpty(),
     checkFields,
-], updateBranch);
+], branchController.updateBranch);
 
 route.delete('/:id', [
-    checkJWT,
-    requiredRole('ROLE_ADMINSYS'),
-], deleteBranch);
+    // checkJWT,
+    // requiredRole('ROLE_ADMINSYS'),
+], branchController.deleteBranch);
 
 module.exports = route;

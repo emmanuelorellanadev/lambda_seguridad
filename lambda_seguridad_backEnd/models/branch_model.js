@@ -5,23 +5,23 @@ const BranchType = require('./branchType_model');
 const Company = require('./company_model');
 
 
-
 const Branch = db_connection.define('Branch', {
     branch_name: {
         type: DataTypes.STRING,
-        required: true,
-        unique: true
+        unique: true,
+        allowNull: false,
     },
     branch_address:{
         type: DataTypes.STRING,
-        required: true,
+        allowNull: false,
     },
     branch_phone:{
         type: DataTypes.STRING(11),
-        required: false,
+        allowNull: false,
     },
     branch_state:{
         type: DataTypes.BOOLEAN,
+        allowNull: false,
         default: true
     }
 },

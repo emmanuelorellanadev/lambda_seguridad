@@ -14,7 +14,7 @@ const ListBranchs = (props) => {
     
         await axios.get(url, 
           { headers: {'x-token': sessionStorage.getItem('token-xL')} })
-            .then( resp => resp.data.branches)
+            .then( resp => resp.data.resData)
             .then( branchesData => setBranchs(branchesData))
             .catch( error => console.log(error))
       }
@@ -49,13 +49,10 @@ const ListBranchs = (props) => {
                     })
                 })
                 .catch( error => console.log(error))
-        fetchBranchs();
-      }
-
-  })
-
-}
-
+                fetchBranchs();
+            }
+        })
+    }
 
     useEffect( () => {
         fetchBranchs()

@@ -1,51 +1,45 @@
+const catchedAsync = require('../errors_handler/catchedAsync');
+const { GeneralError, DBError } = require('../errors_handler/errors');
 const Role = require('../models/role_model');
+const { resSuccessful } = require('../response/resSucessful');
 
-const getRole = async(req, res) => {
-    try {
+const getRoles = async(req, res) => {
 
         const roles = await Role.findAll();
 
-        if( !roles ){
-            return res.status(401).json({
-                msg: 'There are no roles on database'
-            })
-        }
-
+        if( !roles ) throw new GeneralError('No se encontraron roles en la base de datos', 400)
 // Check if the role of userLogued is less than the role to show.
-// That doesnt allow a suerpuser to create a admin user
-        roles.map( (role, i = 0) => {
-            role.id < req.userLoggedIn.RoleId ? roles.splice(i, 1) : '';
-            i++
-        })
+// That doesnt allow suerpuser create admin user, etc.
 
-        return res.json({
-            roles
-        })
+    roles.map( (role, i = 0) => {
+        role.id < req.userLoggedIn.RoleId ? roles.splice(i, 1) : '';
+        i++
+    })
 
-    } catch (error) {
-        console.log('Cant fetch roles of the database'.bgRed);
-        throw(error)
-    }
+        resSuccessful(res, roles);
+
 }
 
-const createRole = async(req, res) => {
+const getRole = async(req, res) => {
 
-    const body = req.body;
+    const { id } = req.params;
 
-    try { 
-        const roleWrited = await Role.create( body );
-        
-        res.json({    
-            msg: 'post works',
-            roleWrited
-        })
-    } catch (error) {
-        console.log('ERROR WRITING DATA'.bgRed);
-        res.status(400).json({
-            error
-        })
-        throw(error);
-    } 
+    const role = await Role.findByPk(id);
+
+    if( !role ) throw new GeneralError('No se enconto el rol en la base de datos', 400)
+// Check if the role of userLogued is less than the role to show.
+    if( role.id < req.userLoggedIn.RoleId ) {
+        GeneralError('No tienes permiso para acceder a esta información', 401);
+    }
+    resSuccessful(res, role);
+}
+
+const saveRole = async(req, res) => {
+
+    const role = req.body;
+
+        await Role.create( role )
+            .then( resp => resSuccessful(res, `Rol ${resp.role_name} creado exitosamente`)); 
 
 }
 
@@ -54,27 +48,26 @@ const updateRole = async(req, res) => {
     const { id } = req.params;
     const usuarioEdit = req.body
 
-    try {
-        const roleUpdated = await Role.update( 
-            usuarioEdit,
-            { where: { id: id} }
-            );
-        console.log(id);
-        res.json({    
-            msg: 'post works',
-            roleUpdated
-        })
-    } catch (error) {
-        console.log('ERROR WRITING DATA'.bgRed);
-        res.status(400).json({
-            error
-        })
-        throw(error);
-    } 
+        await Role.update( usuarioEdit, { where: { id: id} } )
+            .then( resp => resSuccessful(res, `Rol ${resp.role_name} actualizado correctamente`) )
+            .catch( error => { throw new DBError(error, 'No fue posible actualizar el Rol', 400)})
+
 }
 
+const deleteRole = async(req, res) => {
+    const { id } = req.params;
+
+    const roleToDelete = await Role.findByPk(id);
+    
+    if(!roleToDelete) throw new GeneralError('Rol no encontrado', 404);
+
+    await Role.destroy( {where: {"id": id}} )
+        .then(() => resSuccessful(res, `Rol eliminado correctamente`))
+}
 module.exports = {
-    getRole,
-    createRole,
-    updateRole
+    getRoles: catchedAsync(getRoles),
+    getRole: catchedAsync(getRole),
+    saveRole: catchedAsync(saveRole),
+    updateRole: catchedAsync(updateRole),
+    deleteRole: catchedAsync(deleteRole)
 }

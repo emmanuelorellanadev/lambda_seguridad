@@ -24,7 +24,7 @@ export const CreateUser = ( ) => {
     }
     
     const saveUser = async() => {
-        try {
+        // try {
             
             const url = 'http://localhost:8080/user';
             
@@ -37,58 +37,51 @@ export const CreateUser = ( ) => {
                     headers: { "x-token": sessionStorage.getItem('token-xL') }
                 })
                 .then( response => {
-                    if (response.data.msg) {
+                    if (response.data.resData) {
                         Swal.fire({
                             icon: 'success',
                             title: `Usuario ${user}, guardado con exito`,
-                            // footer: response.data.msg,
+                            timer: 2000,
                             confirmButtonColor: '#0d6efd'
                         })
-                    }else{console.log(response);}
+                    }
                 })
                 .catch( (error) => {
-                    console.log(error)
                     Swal.fire({
                         icon: 'error',
                         title: 'ERROR',
                         text: 'El usuario no pudo ser guardado',
-                        footer: error.response.data.error.name,
+                        footer: error.response.data.name,
                         confirmButtonColor: '#0d6efd'
                     })
                 })
-            } catch (error) {
-                console.log(error, ups)    
-            }
+            // } catch (error) {
+            //     console.log(error, 'ups')    
+            // }
     }
 
     //Fetch roles used in select
     const fetchRoles = async() => {
         const urlRole = 'http://localhost:8080/role';
 
-        await axios(urlRole, {
-            headers: { "x-token": sessionStorage.getItem('token-xL') }
-            })
-            .then( roles => setRoles(roles.data.roles))
+        await axios(urlRole, { headers: { "x-token": sessionStorage.getItem('token-xL') } })
+            .then( roles => setRoles(roles.data.resData))
             .catch(error => console.log(error))
     }
     //Fetch companies used in select
     const fetchCompanies = async() => {
-        const url = 'http://localhost:8080/company';
+        const urlCompany = 'http://localhost:8080/company';
 
-        await axios(url, {
-            headers: { "x-token": sessionStorage.getItem('token-xL') }
-            })
-            .then( companies => setCompanies(companies.data.companies))
+        await axios(urlCompany, { headers: { "x-token": sessionStorage.getItem('token-xL') } })
+            .then( companies => setCompanies(companies.data.resData))
             .catch(error => console.log(error))
     }
 //Fetch branches used in select
     const fetchBranches = async() => {
         const url = 'http://localhost:8080/branch';
 
-        await axios(url, {
-            headers: { "x-token": sessionStorage.getItem('token-xL') }
-            })
-            .then( branches => setBranches(branches.data.branches))
+        await axios(url, { headers: { "x-token": sessionStorage.getItem('token-xL') } })
+            .then( branches => setBranches(branches.data.resData))
             .catch(error => console.log(error))
     }
 

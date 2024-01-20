@@ -1,5 +1,6 @@
 import axios from 'axios';
 import {useState, useEffect} from 'react'
+import Swal from 'sweetalert2';
 
 const CreateBranch = () => {
 
@@ -32,8 +33,25 @@ const CreateBranch = () => {
       {
         headers: { "x-token": sessionStorage.getItem("token-xL") }
       })
-      .then( resp => console.log(resp))
-      .catch( error => console.log(error))
+      .then( response => {
+        if (response.data.resData) {
+        Swal.fire({
+            icon: 'success',
+            title: `Sucursal ${branch}, guardada con exito`,
+            timer: 2000,
+            confirmButtonColor: '#0d6efd'
+        })
+      }
+    })
+      .catch( error => {
+        Swal.fire({
+        icon: 'error',
+        title: 'ERROR',
+        text: 'La sucursal no pudo ser guardado',
+        footer: error,
+        confirmButtonColor: '#0d6efd'
+        })
+      })
 
       cleanForm();
     }
@@ -46,14 +64,14 @@ const CreateBranch = () => {
         await axios.get(urlCompany, {
           headers: {'x-token': sessionStorage.getItem('token-xL')}
         })
-        .then( companies => {setComapanies(companies.data.companies)})
+        .then( companies => {setComapanies(companies.data.resData)})
         .catch(error => console.log(error));
 
         //Get BranchType
         await axios.get(urlBranchType, {
           headers: {'x-token': sessionStorage.getItem('token-xL')}
         })
-        .then( branchT => {setBranchTypes(branchT.data.branchTypes)})
+        .then( branchT => {setBranchTypes(branchT.data.resData)})
         .catch(error => console.log(error));
         
       } catch (error) {

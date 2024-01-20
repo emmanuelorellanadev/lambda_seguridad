@@ -1,77 +1,47 @@
 //Branch Controller
 
+const catchedAsync = require('../errors_handler/catchedAsync');
+const { DBError, GeneralError } = require('../errors_handler/errors');
 const Branch = require('../models/branch_model');
 const BranchType = require("../models/branchType_model");
 const Company = require("../models/company_model");
+const { resSuccessful } = require('../response/resSucessful');
 
 //GET BRANCHS
-const getBranchs = async( req, res ) => {
-    try {
+const getBranches = async( req, res ) => {
         const branches = await Branch.findAll();
-        if(!branches){
-            return (
-                res.status(401).json({
-                    msg: 'There are no branchs in database'
-                })
-            )
-        }
-        res.json({
-            branches
-        })
-    } catch (error) {
-        console.log(error)
-        throw error;
-    }
-}
+        if(branches.length == 0) {throw new DBError(null, `Error: No se encontraron sucursales.`, 404)}
+        resSuccessful(res, branches)
+}   
 
 //GET BRANCH
 const getBranch = async( req, res ) => {
     const { id } = req.params;
-    try {
-        const branch = await Branch.findByPk(id, {include: [{ model: Company }, { model: BranchType }]});
-        if(!branch){
-            return (
-                res.status(401).json({
-                    msg: 'There are no branch with that id'
-                })
-            )
-        }
-        res.json({
-            branch
+
+    await Branch.findByPk(id, {include: [{ model: Company }, { model: BranchType }]})
+        .then( branch => {
+            if( !branch ) {throw new DBError(null, 'Error: No se encontró la sucursal', 404)}
+            resSuccessful(res, branch);
         })
-    } catch (error) {
-        console.log(error)
-        throw error;
-    }
 }
 
 //SAVE BRANCH
 const saveBranch = async(req, res) => {
     const branchToSave = req.body;
 
-    try {
     const company = await Company.findByPk(branchToSave.CompanyId);
     const branchType = await BranchType.findByPk(branchToSave.BranchTypeId);
 
     if( !company || !branchType ){
-        return(
-            res.status(401).json({
-                error: "Company or branchType doesn't exist"
-            })
-        );     
+        throw new GeneralError('Error: Empresa o tipo de sucursal no encontradas', 404)     
     }
 
     branchToSave.CompanyId = company.id;
     branchToSave.BranchTypeId = branchType.id;
 
-    const branchSaved = await Branch.create(branchToSave);
-    res.json({
-        branchSaved
-    })
-    } catch (error) {
-        console.log(error);
-        res.status(400).json(error)
-    }
+    const branchSaved = await Branch.create(branchToSave)
+        .then( branch => resSuccessful(res, `Sucursal ${branch.branch_name} creada exitosamente`))
+        .catch(error => { throw new DBError(error, 'Error: No se pudo guardar la sucursal', 400) })
 }
 
 //UPDATE BRANCH
@@ -79,34 +49,15 @@ const updateBranch = async(req, res) => {
     const { id } = req.params;
     const branchToUpdate = req.body;
     
-    try {
         const company = await Company.findByPk(branchToUpdate.CompanyId);
         const branchType = await BranchType.findByPk(branchToUpdate.BranchTypeId);
-        const branch = await Branch.findByPk(branchToUpdate.id);
+        const branch = await Branch.findByPk(id);
 
-        console.log(company, branchType, branch)
+        if (!company || !branchType || !branch) {throw new DBError(null, `Empresa, sucursal o tipo de sucursal no encontradas`, 401)}
 
-        if (!company || !branchType || !branch){
-            return(
-                res.status(401).json({
-                    error: 'Error on data, check Ids'
-                })     
-            );
-        }
-
-        const branchUpdated = await Branch.update(
-            branchToUpdate,
-            {
-                 where:{id: id}
-            });
-
-        res.json({
-            branchUpdated
-        });
-    } catch (error) {
-        console.log(error);
-        res.status(400).json(error)
-    }
+        await Branch.update( branchToUpdate, { where:{id: id} } )
+            .then( ( branch ) => { resSuccessful(res, `Sucursal ${branchToUpdate.branch_name} actualizada correctamente`)})
+            .catch( error => { console.log(error)})//throw new DBError(error, `Error al actualizar la sucursal`, 400)})
 }
 
 //DELETE BRANCH
@@ -114,26 +65,17 @@ const deleteBranch = async(req, res) => {
     const { id } = req.params;
 
     const branchToDelete = await Branch.findByPk(id);
-    if (!branchToDelete){
-        return(
-            res.status(401).json({
-                error: "No se encontro branch"
-            })
-        )
-    }
+    if (!branchToDelete) { throw new DBError(null, 'Error: No se encontró la sucursal', 404) }
 
-    const branchDeleted = await Branch.destroy({
-        where: {id : id}
-    })
-        res.json({
-            msg: branchDeleted
-        })
-}
+    await Branch.destroy({ where: {id : id} })
+        .then( () => resSuccessful(res, 'Sucursal eliminada correctamente.'))
+        .catch( error => { console.log(error); throw new DBError(error, 'No se pudo eliminar la sucursal', 400) } )
+}   
 
 module.exports = {
-    getBranchs,
-    getBranch,
-    saveBranch,
-    updateBranch,
-    deleteBranch
+    getBranches: catchedAsync(getBranches),
+    getBranch: catchedAsync(getBranch),
+    saveBranch: catchedAsync(saveBranch),
+    updateBranch: catchedAsync(updateBranch),
+    deleteBranch: catchedAsync(deleteBranch)
 }

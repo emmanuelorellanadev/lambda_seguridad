@@ -6,12 +6,12 @@ const db_connection = require('../database/conf_database');
 const BranchType = db_connection.define('BranchType',{
     branchType_name: {
         type: DataTypes.STRING,
-        required: true,
-        unique: true
+        unique: true,
+        allowNull: false,
     },
-    branchType_status: {
+    branchType_state: {
         type: DataTypes.BOOLEAN,
-        required: true,
+        allowNull: false,
         defaultValue: true
     }
 },
@@ -19,6 +19,6 @@ const BranchType = db_connection.define('BranchType',{
     timestamps: false
 })
 
-BranchType.sync();
+BranchType.sync({force: false});
 
 module.exports = BranchType;

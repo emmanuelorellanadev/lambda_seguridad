@@ -6,32 +6,29 @@ const db_connection = require('../database/conf_database');
 const Company = db_connection.define('Company', {
     company_name: {
         type: DataTypes.STRING(100),
-        required: true,
+        allowNull: false,
         unique: true
     },
     company_address: {
         type: DataTypes.STRING(100),
-        required: true,
+        allowNull: false
     },
     company_phone:{
         type: DataTypes.STRING(11),
-        required: true,
+        allowNull: false,
     },
     company_description: {
         type: DataTypes.STRING,
-        required: false,
     },
     company_mission: {
         type: DataTypes.STRING,
-        required: false,
     },
     company_vision: {
         type: DataTypes.STRING,
-        required: false,
     },
     company_logo:{
         type: DataTypes.STRING(100),
-        required: false
+        defaultValue: 'defaultCompanyImage.png'
     }
 },
 {
