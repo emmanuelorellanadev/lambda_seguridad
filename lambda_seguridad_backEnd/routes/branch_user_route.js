@@ -1,8 +1,8 @@
 const { Router } = require('express');
-const { branchUserGet } = require('../controllers/branch_user_controller');
+const { branchUserController } = require('../controllers');
 
 const router = Router();
 
-router.get('/:id', branchUserGet);
+router.get('/:id', branchUserController.branchUserController);
 
 module.exports = router;

@@ -37,14 +37,14 @@ const Person = db_connection.define('Person', {
 });
 
 //RELATIONS
-//MANY TO ONE, PersonType -> Person
+//ONE TO MANY, PersonType -> Person
 PersonType.hasMany(Person, {
     onDelete: 'CASCADE',
     onUpdate: 'CASCADE'
 });
 Person.PersonType = Person.belongsTo(PersonType)
 
-//MANY TO ONE, Branch -> Person
+//ONE TO MANY, Branch -> Person
 Branch.hasMany(Person, {
     foreignKey: {
         name: 'BranchId',

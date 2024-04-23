@@ -6,11 +6,11 @@ const User = require('../models/user_model');
 
 const Branch_User = db_connection.define('Branch_User', 
     {
-    id: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true
-    } 
+        id: {
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true
+        } 
     },
     {
         timestamps: false

@@ -10,7 +10,6 @@ const { errorsHandler } = require('../errors_handler/errorsHandler');
 
 //MAIN CLASS
 
-
 class Server {
     constructor (){
         this.app = express();
@@ -38,18 +37,28 @@ class Server {
 
 //ROUTES
     routes(){
-        this.app.use('/auth',           require('../routes/login_route'));
-        this.app.use('/branch',         require('../routes/branch_route'));
-        this.app.use('/branchUser',     require('../routes/branch_user_route'));
-        this.app.use('/branchType',     require('../routes/branchType_route'));
-        this.app.use('/company',        require('../routes/company_route'));
-        this.app.use('/person',         require('../routes/person_route'));
-        this.app.use('/personType',     require('../routes/personType_route'));
-        this.app.use('/public',         express.static('./data/img/public/'));//get folder data
-        this.app.use('/role',           require('../routes/role_route'));
-        this.app.use('/user',           require('../routes/user_route'));
-        this.app.use('/usersByBranch',  require('../routes/users_by_branch_route'));
-        this.app.use('/*',              require('../routes/error_route'));
+        this.app.use('/auth',               require('../routes/login_route'));
+        this.app.use('/branch',             require('../routes/branch_route'));
+        this.app.use('/branchUser',         require('../routes/branch_user_route'));
+        this.app.use('/branchType',         require('../routes/branchType_route'));
+        this.app.use('/company',            require('../routes/company_route'));
+        this.app.use('/log',                require('../routes/log_route'));
+        this.app.use('/payment',            require('../routes/payment_route'));
+        this.app.use('/paymentState',       require('../routes/paymentState_route'));
+        this.app.use('/paymentDetail',      require('../routes/paymentDetail_route'));
+        this.app.use('/person',             require('../routes/person_route'));
+        this.app.use('/personType',         require('../routes/personType_route'));
+        this.app.use('/public',             express.static('./data/img/public/'));//get folder data
+        this.app.use('/reservation',        require('../routes/reservation_route'));
+        this.app.use('/reservationDetail',  require('../routes/reservationDetail_route'));
+        this.app.use('/reservationState',   require('../routes/reservationState_route'));
+        this.app.use('/role',               require('../routes/role_route'));
+        this.app.use('/room',               require('../routes/room_route'));
+        this.app.use('/roomState',          require('../routes/roomState_route'));
+        this.app.use('/service',            require('../routes/service_route'));
+        this.app.use('/user',               require('../routes/user_route'));
+        this.app.use('/usersByBranch',      require('../routes/users_by_branch_route'));
+        this.app.use('/*',                  require('../routes/error_route'));
             
     }
     

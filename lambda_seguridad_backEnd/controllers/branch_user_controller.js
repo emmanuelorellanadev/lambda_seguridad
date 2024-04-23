@@ -23,5 +23,5 @@ const branchUserGet = async( req, res ) => {
 }
 
 module.exports = {
-    branchUserGet: catchAsync(branchUserGet)
+    branchUserController: catchAsync(branchUserGet)
 }

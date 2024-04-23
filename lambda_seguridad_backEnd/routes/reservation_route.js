@@ -1,0 +1,42 @@
+const { Router } = require('express');
+
+const { reservationController } = require('../controllers');
+const { checkJWT, requiredRole, checkFields } = require('../middlewares');
+const { check } = require('express-validator');
+
+const router = Router();
+
+router.get('/', [
+    checkJWT,
+    requiredRole('ROLE_ADMINSYS', 'ROLE_ADMIN', 'ROLE_SUPERUSER', 'ROLE_USER')
+], reservationController.getReservations);
+
+router.get('/:id', [
+    checkJWT,
+    requiredRole('ROLE_ADMINSYS', 'ROLE_ADMIN', 'ROLE_SUPERUSER', 'ROLE_USER')
+], reservationController.getReservation);
+
+router.post('/', [
+    checkJWT,
+    requiredRole('ROLE_ADMINSYS', 'ROLE_ADMIN', 'ROLE_SUPERUSER', 'ROLE_USER'),
+    check('PersonId', 'Persona no recibida.').not().isEmpty(),
+    check('ReservationStateId', 'Estado de reservacion no recibido.').not().isEmpty(),
+    check('BranchId', 'Sucursal no seleccionada.').not().isEmpty(),
+    checkFields
+], reservationController.saveReservation);
+
+router.put('/:id', [
+    checkJWT,
+    requiredRole('ROLE_ADMINSYS', 'ROLE_ADMIN', 'ROLE_SUPERUSER'),
+    check('PersonId', 'Persona no recibida.').not().isEmpty(),
+    check('ReservationStateId', 'Estado de reservacion no recibido.').not().isEmpty(),
+    check('BranchId', 'Sucursal no recibida.').not().isEmpty(),
+    checkFields
+], reservationController.updateReservation);
+
+router.delete('/:id', [
+    checkJWT,
+    requiredRole('ROLE_ADMINSYS', 'ROLE_ADMIN')
+], reservationController.deleteReservation);
+
+module.exports = router;

@@ -58,4 +58,4 @@ module.exports = {
     savePerson: catchedAsync(savePerson),
     updatePerson: catchedAsync(updatePerson),
     deletePerson: catchedAsync(deletePerson),
-}
+} 
