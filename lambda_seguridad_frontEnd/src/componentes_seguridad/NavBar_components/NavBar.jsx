@@ -4,7 +4,7 @@ import '../css/NavBar.css'
 import usuario from'../../assets/img/usuario.png';
 import menu from'../../assets/img/menu.png';
 import { ContainerUser } from'../users/ContainerUser';
-import { ContainerPerson } from'../ContainerPerson.jsx';
+import { ContainerPerson } from'../people/ContainerPerson.jsx';
 import { NavBarUser } from './NavBarUser';
 import { NavBarSuper } from './NavBarSuper';
 import { NavBarAdmin } from './NavBarAdmin'
@@ -15,10 +15,14 @@ import ContainerBranch from '../branches/ContainerBranch';
 
 export const NavBar = () => {
     
+    //Handle menu states
     const [menuActive, setMenuActive] = useState(false);
     const [subMenuUser, setSubMenuUser] = useState(false);
+    const [subMenuAdmin, setSubMenuAdmin] = useState(false);
     const [subMenuSecurity, setSubMenuSecurity] = useState(false);
+    const [subMenuPerson, setSubMenuPerson] = useState(false);
 
+    //Frame handlers
     const [userFrame, setUserFrame] = useState(0);
     const [personFrame, setPersonFrame] = useState(0);
     const [profileFrame, setProfileFrame] = useState(0);
@@ -29,17 +33,38 @@ export const NavBar = () => {
     //subMenu user, close session
     const subMenuUserVisibility = () => {
         subMenuSecurity ? subMenuSecurityVisibility() : '';
+        subMenuAdmin ? subMenuAdminVisibility() : '';
+        subMenuPerson ? subMenuPersonVisibility() : '';
         setSubMenuUser(!subMenuUser);
+    }
+    //subMenu Admin
+    const subMenuAdminVisibility = () => {
+        subMenuUser ? subMenuUserVisibility() : '';
+        subMenuSecurity ? subMenuSecurityVisibility() : '';
+        subMenuPerson ? subMenuPersonVisibility() : '';
+        setSubMenuAdmin(!subMenuAdmin);
     }
     //subMenu security
     const subMenuSecurityVisibility = () => {
         subMenuUser ? subMenuUserVisibility() : '';
+        subMenuAdmin ? subMenuAdminVisibility() : '';
+        subMenuPerson ? subMenuPersonVisibility() : '';
         setSubMenuSecurity(!subMenuSecurity);
     } 
+    //subMenu Person
+    const subMenuPersonVisibility = () => {
+        subMenuSecurity ? subMenuSecurityVisibility() : '';
+        subMenuAdmin ? subMenuAdminVisibility() : '';
+        subMenuUser ? subMenuUserVisibility() : '';
+        setSubMenuPerson(!subMenuPerson);
+    }
+
     //close the subMenus
     const closeSubMenus = () => {
+        setSubMenuAdmin(false);
         setSubMenuUser(false);
         setSubMenuSecurity(false);
+        setSubMenuPerson(false);
     }
     //Close session
     const closeSession = () => {
@@ -107,7 +132,8 @@ export const NavBar = () => {
     return (
     <>
         <div id={'navBar'}>
-                <img id={'icono-menu'} src={menu} alt="" onClick={showMenu} />
+            {/* show menu icon in mobile vetrsion */}
+                <img id={'menu-icon'} src={menu} alt="" onClick={showMenu} />
 
                 { role == '4' && < NavBarUser 
                     menuActive={ menuActive }
@@ -130,6 +156,7 @@ export const NavBar = () => {
                     closeSubMenus={closeSubMenus}
                     showUserFrame={showUserFrame} 
                     showProfileFrame={ showProfileFrame } 
+                    subMenuSecurity={subMenuSecurity}
                     showPersonFrame={ showPersonFrame }
                     closeSession={ closeSession }  
                 />}
@@ -139,7 +166,6 @@ export const NavBar = () => {
                     showMenu={ showMenu }
                     subMenuUser={subMenuUser}
                     subMenuUserVisibility={subMenuUserVisibility}
-                    subMenuSecurity={subMenuSecurity}
                     subMenuSecurityVisibility={subMenuSecurityVisibility}
                     closeSubMenus={closeSubMenus}
                     showUserFrame={showUserFrame} 
@@ -151,8 +177,12 @@ export const NavBar = () => {
                 { role == '1' && < NavBarAdminSys
                     menuActive={ menuActive } 
                     showMenu={ showMenu }
+                    subMenuAdmin={subMenuAdmin}
+                    subMenuAdminVisibility={subMenuAdminVisibility}
                     subMenuUser={subMenuUser}
                     subMenuUserVisibility={subMenuUserVisibility}
+                    subMenuPerson={subMenuPerson}
+                    subMenuPersonVisibility={subMenuPersonVisibility}
                     subMenuSecurity={subMenuSecurity}
                     subMenuSecurityVisibility={subMenuSecurityVisibility}
                     closeSubMenus={closeSubMenus}

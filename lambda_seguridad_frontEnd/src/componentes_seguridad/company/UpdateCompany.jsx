@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
 import axios from 'axios';
+import Swal from'sweetalert2';
 
 import '../css/company/updateCompany.css'
 
@@ -18,16 +19,36 @@ const UpdateCompany = (props) => {
         e.preventDefault();
         const url = `http://localhost:8080/company/${props.companyToEditId}`;
 
-        !logoFile ? console.log('no hay aarchivo') : console.log('logoFile')
-
-        const companyData = new FormData(document.querySelector('#form-update-company'))
+        const companyData = new FormData(document.querySelector('#UpdateCompany_form'))
         companyData.append('img', logo);
 
         axios.put(url, 
             companyData,
             {headers: {"x-token": sessionStorage.getItem("token-xL")}})
-        .then( resp => console.log(resp))
-        .catch( error => console.log(error))
+        .then( resp => {
+            Swal.fire({
+                icon: 'success',
+                text: resp.data.resData,
+                timer: 3000,
+                showCloseButton: true,
+                // showCancelButton: true,
+                confirmButtonColor: '#0d6efd',
+                cancelButtonColor: '#dc3545'
+            })
+        })
+        .catch( error => {
+            console.log(error)
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Error al actualizar la empresa.',
+                showCloseButton: true,
+                // showCancelButton: true,
+                confirmButtonColor: '#0d6efd',
+                cancelButtonColor: '#dc3545',
+                footer: error.response.data.errors
+            })
+        })
     }
 
     const fetchCompanyData = async() => {
@@ -55,39 +76,46 @@ const UpdateCompany = (props) => {
 
   return (
     <>
-        <div id='updateCompany-container'>
-            <h2><center>ACTUALIZAR EMPRESA {company} id {companyId}</center></h2>
+        <div id='UpdateCompany_container'>
+            <p className='p_header'>Actualizar Empresa</p>
             
-            <form encType='multipart/form-data' id='form-update-company' onSubmit={updateButton} >
-                 <div>
+            <form encType='multipart/form-data' id='UpdateCompany_form' onSubmit={updateButton} >
+                 <div id='UpdateCompany_logo'>
                     <img src={`http://localhost:8080/public/${logo}`} alt="" />
-                    <input type="file" name="img" id="img" onChange={ (e) => setLogoFile(e.target.value)}/>
                 </div> 
-                <div>
-                    <label htmlFor="company">Empresa</label>
-                    <input type="text" name="company" id="company" value={company} onChange={ (e) => setCompany(e.target.value)} required/>
+                <div id='UpdateCompany_data'>
+                    <div>
+                        <label htmlFor="company">Empresa</label>
+                        <input className='form-control text-center' type="text" name="company_name" id="company" value={company} onChange={ (e) => setCompany(e.target.value)} required/>
+                    </div>
+                    <div>
+                        <label htmlFor="address">Dirección</label>
+                        <input className='form-control text-center' type="text" name="company_address" id="address"  value={address} onChange={ (e) => setAddress(e.target.value)} required/>
+                    </div>
+                    <div>
+                        <label htmlFor="phone">Teléfono</label>
+                        <input className='form-control text-center' type="number" name="company_phone" id="phone" value={phone} onChange={ (e) => setPhone(e.target.value)}required/>
+                    </div>
+                    <div>
+                        <label htmlFor="description">Descripción</label>
+                        <input className='form-control text-center' type="text" name="company_description" id="description" value={description} onChange={ (e) => setDescription(e.target.value)} required/>
+                    </div>
                 </div>
-                <div>
-                    <label htmlFor="address">Dirección</label>
-                    <input type="text" name="address" id="address"  value={address} onChange={ (e) => setAddress(e.target.value)} required/>
+                <div id='UpdateCompany_misionVision'>
+                    <div>
+                        <label htmlFor="mission">Misión</label>
+                        <textarea className='form-control text-center' type="text" name="company_mission" id="mission" value={mission} onChange={ (e) => setMission(e.target.value)} required/>
+                    </div>
+                    <div>
+                        <label htmlFor="vision">Visión</label>
+                        <textarea className='form-control text-center' type="area" name="company_vision" id="vision"  value={vision} onChange={ (e) => setVision(e.target.value)} required/>
+                    </div>
                 </div>
-                <div>
-                    <label htmlFor="phone">Teléfono</label>
-                    <input type="number" name="phone" id="phone" value={phone} onChange={ (e) => setPhone(e.target.value)}required/>
+                    <p className="p_header" id='UpdateCompany_headerUpdateImg'>Cambiar Imágen</p>
+                <div id="UpdateCompany_updateImg">
+                    <input className='form-control text-center' type="file" name="img"  onChange={ (e) => setLogoFile(e.target.value)}/>
                 </div>
-                <div>
-                    <label htmlFor="description">Descripción</label>
-                    <input type="text" name="description" id="description" value={description} onChange={ (e) => setDescription(e.target.value)} required/>
-                </div>
-                <div>
-                    <label htmlFor="mission">Misión</label>
-                    <textarea type="text" name="mission" id="mission" value={mission} onChange={ (e) => setMission(e.target.value)} required/>
-                </div>
-                <div>
-                    <label htmlFor="vision">Vision</label>
-                    <textarea type="area" name="vision" id="vision"  value={vision} onChange={ (e) => setVision(e.target.value)}required/>
-                </div>
-                <button id='saveButton' >Guardar</button>
+                    <button className='btn btn-primary' id='UpdateCompany_updateButton' >Actualizar</button>
             </form>
         </div>
     </>

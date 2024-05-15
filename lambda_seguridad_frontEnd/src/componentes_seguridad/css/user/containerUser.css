@@ -1,19 +1,18 @@
 #subMenuUsers{
-    background-color: #ddd;
+    box-shadow: 1px 1px 5px rgb(33, 157, 192);
     display: flex;
     justify-content: center;
-    /* align-items: center; */
     padding: 0.5rem;
 
 }
 #subMenuUsers ul {
     padding: 0;
     margin: 0;
+    display: flex;
     list-style: none;
 }
 
 #subMenuUsers ul li {
-    display: inline;
     padding: 5px;
     cursor: pointer;
 }

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 
-import '../css/user/containerUser.css'
+import '../css/user/containerUser.css';
+
+
 import { CreateUser } from './CreateUser';
 import { ListUsers } from './ListUsers';
 import { UpdateUser } from './UpdateUser';

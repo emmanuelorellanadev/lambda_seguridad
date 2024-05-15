@@ -24,10 +24,10 @@ export const UpdateUser = (props) => {
     const updateUser = async() => {
     const url = `http://localhost:8080/user/${props.userToEdit}`;
 
-    const userData = new FormData(document.querySelector('#formUpdateUser'));
+    const userData = new FormData(document.querySelector('#UpdateUser_form'));
 
     userData.set('user_state', state)
-    userData.append('img', userImage)
+    // userData.append('img', userImage)
 
     await axios.put(url, 
         userData,
@@ -73,7 +73,7 @@ export const UpdateUser = (props) => {
         await axios.get(url, {
             headers: { "x-token": sessionStorage.getItem('token-xL')},
             // params: {id: props.userToEdit}// req.query
-        })
+            })
             .then( res => res.data.resData )
             .then( userData => fillFields(userData) )
             .catch(error => console.log(error))
@@ -101,14 +101,12 @@ export const UpdateUser = (props) => {
     }
 
     //WORK HERE
-    //you need to show the branches depending on the selected company
 
     const fetchCompanyId = async() => {
-        const url = `http://localhost:8080/BranchUser/${props.userToEdit}`
+        const url = `http://localhost:8080/BranchUser/${props.userToEdit}`;
 
         await axios(url, { headers: {"x-token": sessionStorage.getItem('token-xL')}} )
-            .then( resp => resp.data.branchData)
-            .then( branchData => setBranchId( branchData.id ) )
+            .then( resp => setBranchId(resp.data.resData.id))
             .catch( error => console.log( error ))
     }
 
@@ -116,8 +114,7 @@ export const UpdateUser = (props) => {
         const url = `http://localhost:8080/BranchUser/${props.userToEdit}`
 
         await axios(url, { headers: {"x-token": sessionStorage.getItem('token-xL')}} )
-            .then( resp => resp.data.branchData)
-            .then( branchData => setBranchId( branchData.id ) )
+            .then( resp => setBranchId(resp.data.resData.id))
             .catch( error => console.log( error ))
     }
 
@@ -128,53 +125,55 @@ export const UpdateUser = (props) => {
         setState( userData.user_state );
     }
 
+    const erasePassword = () => {
+        setPass('');
+    }
+
     useEffect( () => {
         fetchRoles();
         searchUserToEdit();
         fetchCompanies();
         fetchBranches();
         fetchBranchId();
+        fetchCompanyId();
     }, [])
 
   return (
-      <div id='updateUser-container'>
-    <center> <h2> Actualizacion </h2> </center>
-        <br />
-        
-
-        <form encType='multipart/form-data' id='formUpdateUser' onSubmit={updateButton}>
+      <div id='UpdateUser_container'>
+    <p className='p_header'> Actualizacion de usuario </p>
+        <form encType='multipart/form-data' id='UpdateUser_form' onSubmit={updateButton}>
             <input className='form-control text-center' name='user_name' id='userName' type="text" value={user} onChange={ (e) => setUser(e.target.value)} required />
-            <input className='form-control text-center' name='user_pass' id='userPassword' type="password" value={pass} autoComplete='off' onChange={ (e) => setPass(e.target.value)} required/>
+            <input className='form-control text-center' name='user_pass' id='userPassword' type="password" value={pass} autoComplete='off' onChange={ (e) => setPass(e.target.value)} onClick={ (e) => erasePassword()} required/>
             <select className='form-select text-center' name='RoleId' id='selectRole' value={roleId} onChange={ (e) => {setRoleId(e.target.value)}} required>
-                <option value="">selecciona Opcion</option>
-                    { 
-                        roles.map( (r) => {
-                            return <option value={r.id} key={r.id} >{r.role_name} </option>
-                        })
-                    }
+                { 
+                    roles.map( (r) => {
+                        return <option value={r.id} key={r.id} >{r.role_name} </option>
+                    })
+                }
             </select>
             <div id='userState'>
                 <label className='' htmlFor="user_state">Estado</label>
                 <input className='' type='checkbox' name='user_state' id='userState' onChange={ () => setState( !state ) } checked={ state } />  
             </div>
             <select className='form-select text-center' id='selectCompany' value={companyId} onChange={ (e) => {setCompanyId(e.target.value)}} required disabled>
-                        {/* <option value="">selecciona Empresa</option> */}
-                            { 
-                                companies.map( (c) => {
-                                    return <option value={c.id} key={c.id}>{c.company_name}</option>
-                                })
-                            }
-                    </select>
-                    <select className='form-select text-center' name='BranchId' id='selectBranch' value={ branchId } onChange={ (e) => {setBranchId(e.target.value)}} required>
-                        <option value="">selecciona Sucursal</option>
-                            { 
-                                branches.map( (b) => {
-                                    return <option value={b.id} key={b.id}>{b.branch_name}</option>
-                                })
-                            }
-                    </select>
-            <input type="file" name="img" id="img" value={ userImage } onChange={ (e) => setUserImage(e.target.value)}/>
-            <button id='btnGuardar' className='btn btn-primary'>Guardar Datos</button>
+                { 
+                    companies.map( (c) => {
+                        return <option value={c.id} key={c.id}>{c.company_name}</option>
+                    })
+                }
+            </select>
+            <select className='form-select text-center' name='BranchId' id='selectBranch' value={ branchId } onChange={ (e) => {setBranchId(e.target.value)}} required>
+                { 
+                    branches.map( (b) => {
+                        return <option value={b.id} key={b.id}>{b.branch_name}</option>
+                    })
+                }
+            </select>
+            <div id='UpdateUser_changeImg'>
+                <p className='p_header'>Cambiar Imagen</p>
+                <input type="file" name="img" id="imgUser" value={ userImage } onChange={ (e) => setUserImage(e.target.value)}/>
+            </div>
+            <button id='saveUserButton' className='btn btn-primary'>Actualizar Usuario</button>
          </form>
 </div>
   )

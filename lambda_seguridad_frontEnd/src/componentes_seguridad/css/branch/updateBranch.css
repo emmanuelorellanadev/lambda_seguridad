@@ -1,0 +1,80 @@
+@media( max-width: 576px){
+
+    #UpdateBranch_container{
+        margin: auto;
+        width: 95%;
+        display: flex;
+        flex-flow: column wrap;
+
+    }
+
+    #UpdateBranch_form div{
+        margin: 1rem;
+        display: flex;
+        align-items: center;
+
+    }
+
+    #UpdateBranch_form div > input{
+        flex: 1 1 60%;        
+    }
+
+    #UpdateBranch_form div > label{
+        flex: 1 1 35%;        
+    }
+
+    #UpdateBranch_form div > select{
+        flex: 1 1 60%;        
+    }
+
+    #UpdateBranch_updateButton{
+        display: flex;
+        justify-content: center;
+        padding-top: 2rem;
+    }
+
+}
+
+@media( min-width: 577px){
+    #UpdateBranch_container{
+        margin: auto;
+        width: 80%;
+        display: flex;
+        flex-flow: column wrap;
+    }
+
+    #UpdateBranch_form{
+        display: flex;
+        flex-flow: row wrap;
+
+    }
+
+    #UpdateBranch_form div{
+        margin: 1rem;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        flex: 1 1 40%;
+    }
+
+    #UpdateBranch_form div > input{
+        flex: 1 1 60%;        
+    }
+
+    #UpdateBranch_form div > label{
+        flex: 1 1 35%;        
+    }
+
+    #UpdateBranch_form div > select{
+        flex: 1 1 60%;        
+    }
+
+    #UpdateBranch_updateButton{
+        min-width: 60%;
+        padding-top: 2rem;
+    }
+
+    #UpdateBranch_updateButton button{
+        margin: auto;
+    }
+}

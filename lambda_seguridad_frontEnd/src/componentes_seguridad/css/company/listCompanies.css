@@ -1,0 +1,21 @@
+@media(max-width: 576px){
+    #ListCompanies_container{
+        /* border: 5px solid red; */
+        max-width: 95%;
+    }
+
+    .ListCompanies_logo{
+        width: 2rem;
+    }
+}
+
+@media(min-width: 577px){
+    #ListCompanies_container{
+        /* border: 5px solid red; */
+        max-width: 95%;
+    }
+
+    .ListCompanies_logo{
+        width: 4rem;
+    }
+}

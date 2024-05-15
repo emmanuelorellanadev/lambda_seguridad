@@ -20,27 +20,28 @@ const CreateCompany = () => {
     }
 
     const saveCompany = async() => {
+        
         const url = 'http://localhost:8080/company';
 
-        const companyData = new FormData(document.querySelector('#form-create-company'));
-      
+        const companyData = new FormData(document.querySelector('#CreateCompany_form'));
         companyData.append('img', logo);
-
-        await axios.post(url, companyData,
+await axios.post(url, companyData,
         {
             headers: {'x-token': sessionStorage.getItem('token-xL')}
         }).then( resp => {
+            cleanForm();
             Swal.fire({
                 icon: 'success',
                 text: 'Empresa creada exitosamente',
                 showCloseButton: true,
-                showCancelButton: true,
+                // showCancelButton: true,
+                timer: 3000,
                 confirmButtonColor: '#0d6efd',
                 cancelButtonColor: '#dc3545'
             });
-            cleanForm();
         }).catch(error => {
             console.log(error);
+            cleanForm()
             Swal.fire({
                 icon: 'error',
                 title: 'Error al crear la empresa',
@@ -53,42 +54,50 @@ const CreateCompany = () => {
     }
 
     const cleanForm = () =>{
-        document.querySelector('form-create-company');
+        setCompany('');
+        setAddress('');
+        setPhone('');
+        setDescription('');
+        setMission('');
+        setVision('');
+        setLogo('');
     }
   return (
     <>
-        <div id='createCompany-container'>
-            <h2><center>CREAR EMPRESA</center></h2>
-            <form encType='multipart/form-data' id='form-create-company' onSubmit={saveButton} >
+        <div id='CreateCompany_container'>
+            <p className='p_header'>Crear Empresa</p>
+            <form className='form-control' encType='multipart/form-data' id='CreateCompany_form' onSubmit={saveButton}>
                 <div>
                     <label htmlFor="company">Empresa</label>
-                    <input type="text" name="company" id="company"  value={company} onChange={ (e) => setCompany(e.target.value)} required/>
+                    <input className='form-control text-center' type="text" name="company_name" id="company"  value={company} onChange={ (e) => setCompany(e.target.value)} required/>
                 </div>
                 <div>
                     <label htmlFor="address">Dirección</label>
-                    <input type="text" name="address" id="address"  value={address} onChange={ (e) => setAddress(e.target.value)} required/>
+                    <input className='form-control text-center' type="text" name="company_address" id="address"  value={address} onChange={ (e) => setAddress(e.target.value)} required/>
                 </div>
                 <div>
                     <label htmlFor="phone">Teléfono</label>
-                    <input type="number" name="phone" id="phone" value={phone} onChange={ (e) => setPhone(e.target.value)}required/>
+                    <input className='form-control text-center' type="number" name="company_phone" id="phone" value={phone} onChange={ (e) => setPhone(e.target.value)}required/>
                 </div>
                 <div>
                     <label htmlFor="description">Descripción</label>
-                    <input type="text" name="description" id="description" value={description} onChange={ (e) => setDescription(e.target.value)} required/>
+                    <input className='form-control text-center' type="text" name="company_description" id="description" value={description} onChange={ (e) => setDescription(e.target.value)} required/>
                 </div>
                 <div>
                     <label htmlFor="mission">Misión</label>
-                    <textarea type="text" name="mission" id="mission" value={mission} onChange={ (e) => setMission(e.target.value)} required/>
+                    <textarea className='form-control text-center' type="text" name="company_mission" id="mission" value={mission} onChange={ (e) => setMission(e.target.value)} required/>
                 </div>
                 <div>
-                    <label htmlFor="vision">Vision</label>
-                    <textarea type="area" name="vision" id="vision"  value={vision} onChange={ (e) => setVision(e.target.value)}required/>
+                    <label htmlFor="company_vision">Vision</label>
+                    <textarea className='form-control text-center' type="area" name="company_vision" id="vision"  value={vision} onChange={ (e) => setVision(e.target.value)} required/>
                 </div>
-                <div>
-                    <label htmlFor="logo">Logo</label>
-                    <input type="file" name="img" id="img" value={logo} onChange={ (e) => setLogo(e.target.value)}  />
+                <div id='CreateCompany_updateImg'>
+                    <label htmlFor="company_logo">Logo</label>
+                    <input className='form-control text-center' type="file" name="img" id="img" value={logo} onChange={ (e) => setLogo(e.target.value)}  />
                 </div>
-                <button id='saveButton' >Guardar</button>
+                <div id='CreateCompany_saveButton'>
+                    <button className='btn btn-primary' id='saveButton' >Guardar</button>
+                </div>
             </form>
         </div>
     </>

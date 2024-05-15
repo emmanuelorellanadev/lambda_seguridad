@@ -68,76 +68,72 @@ const fetchCompany = async () => {
   }, []) 
   return (
     <>
-      <div id='main-company'>
-        <div id='header-company'>
-          <center><h1>EMPRESA</h1></center>
-        </div>
-        <div id='body1-company'>
-          <div id='block-data'>
-            <div id='img-company'>
+      <div id='MainCompany_container'>
+        <p className='p_header'>Empresa</p>
+        <div id='MainCompany_body'>
+          <div id='bodyMainCompany_block1'>
+            <div id='MainCompany_img'>
               <img src={`http://localhost:8080/public/${company.company_logo}`} alt="" />
             </div>
-            <div id='data-company'>
-              <div>
+            <div id='data_company'>
+              <div className=' MainCompany_divData'>
                 <label htmlFor="name">Nombre</label>
-                <input type="text" value={company.company_name} readOnly />
+                <input className='form-control text-center' type="text" value={company.company_name} readOnly />
               </div>
-              <div>
+              <div className=' MainCompany_divData'>
                 <label htmlFor="phone">Teléfono</label>
-                <input type="number" value={company.company_phone} readOnly/>
+                <input className='form-control text-center' type="number" value={company.company_phone} readOnly/>
               </div>
-              <div>
+              <div className=' MainCompany_divData'>
                 <label htmlFor="address">Dirección</label>
-                <input type="text" value={company.company_address} readOnly />
+                <input className='form-control text-center' type="text" value={company.company_address} readOnly />
               </div>
             </div>
           </div>
-
-          <div id='block-mission-vision'>
+          <div className='block-mission-vision'>
             <div>
-              <label htmlFor="mission">Misión</label>
-                <textarea value={company.company_mission} readOnly name="mission" id="mission" cols="30" rows="10"></textarea>
+            <p className='p_header'>Misión</p>
+              <textarea value={company.company_mission} readOnly name="mission" id="mission" cols="30" rows="10"></textarea>
             </div>
             <div>
-              <label htmlFor="vision">Visión</label>
-                <textarea value={company.company_vision} readOnly name="vision" id="vision" cols="30" rows="10"></textarea>
+              <p className='p_header'>Visión</p>
+              <textarea value={company.company_vision} readOnly name="vision" id="vision" cols="30" rows="10"></textarea>
             </div>
           </div>
         </div>
       </div>
-      <div id='main-branchs'>
-        <div id='header-branchs'>
-          <center>Sucursales</center>
+      <div id='MainCompany_branchesTable'>
+          <p className='p_header'>Sucursales</p>
+          <div className='table-responsive' id='body-branchs'> 
+          <table className='table table-bordered table-hover' style={{ marginTop: 12}}>
+              <thead className='text-center' style={{background: 'lightgrey'}}>
+                  <tr >
+                      <th>#</th>
+                      <th>Sucursal</th>
+                      <th>Teléfono</th>
+                      <th>Dirección</th>
+                      <th>Editar</th>
+                      <th>Eliminar</th>
+                  </tr>      
+              </thead>
+              <tbody className='text-center align-baseline'>
+                {
+                  branchs.map( ( branch ) => {
+                    return (<tr key={branch.id}>
+                      <th>{branch.id}</th>
+                      <th>{branch.branch_name}</th>
+                      <th>{branch.branch_phone}</th>
+                      <th>{branch.branch_address}</th>
+                      <th><button className='btn btn-primary' type="button" onClick={ () => editBranch( branch.id ) } >Editar</button></th>
+                      <th><button className='btn btn-outline-danger' onClick={() => {deleteBranch(branch.id, branch.branch_name)}}><i className='bi bi-trash3-fill'></i></button></th>
+                    </tr>)
+                  })
+                }
+              </tbody>
+          </table>
+          </div>
         </div>
-        <div id='body-branchs'> 
-        <table className='table table-bordered table-hover' style={{ marginTop: 12}}>
-                        <thead className='text-center' style={{background: 'lightgrey'}}>
-                            <tr >
-                                <th>#</th>
-                                <th>Sucursal</th>
-                                <th>Teléfono</th>
-                                <th>Dirección</th>
-                                <th>Editar</th>
-                                <th>Eliminar</th>
-                            </tr>      
-                        </thead>
-                        <tbody className='text-center align-baseline'>
-                            {
-                                branchs.map( ( branch ) => {
-                                    return (<tr key={branch.id}>
-                                        <th>{branch.id}</th>
-                                        <th>{branch.branch_name}</th>
-                                        <th>{branch.branch_phone}</th>
-                                        <th>{branch.branch_address}</th>
-                                        <th><button className='btn btn-primary' type="button" onClick={ () => editBranch( branch.id ) } >Editar</button></th>
-                                        <th><button className='btn btn-outline-danger' onClick={() => {deleteBranch(branch.id, branch.branch_name)}}><i className='bi bi-trash3-fill'></i></button></th>
-                                    </tr>)
-                                })
-                            }
-                        </tbody>
-                    </table>
-        </div>
-      </div>
+        
     </>
   )
 }

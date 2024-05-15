@@ -4,6 +4,7 @@ import {useState, useEffect} from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 
+import '../css/user/listUsers.css';
 
 export const ListUsers = (props) => {
     const [users, setUsers] = useState([]);
@@ -75,25 +76,30 @@ export const ListUsers = (props) => {
 
     return (
         <>
-            <div className='bg-light' style={{ marginTop: 20, padding: 20 }}>
-                <div className='h3'>
-                    Listado de Usuarios
-                    <p/>
-                    <label htmlFor="branch">Sucursales: </label>
-                    <select name="branch" id="branch" value={branch} onChange={(e) => setBranch(e.target.value)}>
-                        <option value={''} >Todas</option>
-                        {
-                            branches.map( b => {
-                                return (<option key={b.id} value={b.id}>{b.branch_name}</option>)
-                            })
-                        }
-                    </select>
+            <div id='ListUsers_main' style={{ marginTop: 20, padding: 20 }}>
+                    <p className='p_header'>Listado de Usuarios</p>
+                <div id='ListUsers_header' >
+                        <div>
+                            <label htmlFor="branch">Sucursales: </label>
+                            <select className='form-control text-center' name="branch" id="branch" value={branch} onChange={(e) => setBranch(e.target.value)}>
+                                <option value={''} >Todas</option>
+                                {
+                                    branches.map( b => {
+                                        return (<option key={b.id} value={b.id}>{b.branch_name}</option>)
+                                    })
+                                }
+                            </select>
+                        </div>
+                        <div>
+                            <label>Buscar: </label>
+                            <input className='form-control text-center' type="text" name="searchUser" id="searchUser" />
+                        </div>
                 </div>
                 <div className='table-responsive' >
                     <table className='table table-bordered table-hover' style={{ marginTop: 12}}>
                         <thead className='text-center' style={{background: 'lightgrey'}}>
                             <tr >
-                                <th>#</th>
+                                {/* <th>#</th> */}
                                 <th>Usuario</th>
                                 <th>Role</th>
                                 <th>Estado</th>
@@ -105,7 +111,7 @@ export const ListUsers = (props) => {
                             {
                                 users.map( ( user ) => {
                                     return (<tr key={user.id}>
-                                        <th><img src={`http://localhost:8080/public/${user.user_img}`} alt="" /></th>
+                                        {/* <th><img src={`http://localhost:8080/public/${user.user_img}`} alt="" /></th> */}
                                         <th>{user.user_name}</th>
                                         <th>{user.role_name}</th>
                                         <th><input type='checkbox' checked={user.user_state} disabled/></th>

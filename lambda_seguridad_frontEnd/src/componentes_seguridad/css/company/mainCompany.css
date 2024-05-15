@@ -1,37 +1,138 @@
-#main-company{
-    border: 1px solid black;
-    width: 80%;
-    margin: auto;
+@media (max-width: 576px){
+#MainCompany_container{
+        padding: auto;
+        margin: auto;
+        display: flex;
+        flex-flow: column wrap;
     }
 
-    #header-company center {
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-        }
-
-    #body1-company{
+    #MainCompany_body{
         max-width: 45rem;
         }
-
-        #block-data {
-
-            display: flex;
-            width: 85%;
+        #MainCompany_img{
             margin: auto;
-            
-
+        }
+        #bodyMainCompany_block1 {
+            /* border: thin solid green; */
+            width: 95%;
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            margin: auto;
             }
+
             #img-company img{
                 width: 50%;
+                margin: auto;
             }
         
-        #block-mission-vision{
+            #bodyMainCompany_block1 #data_company{
+                display: flex;
+                flex-flow: column wrap;
+
+            }
+
+            #bodyMainCompany_block1 #data_company .MainCompany_divData{
+                margin: .5rem auto;
+                width: 95%;
+                /* border: thin solid greenyellow; */
+                display: flex;
+                flex: row wrap;
+                justify-content: space-evenly;
+                align-items: center;
+            }
+
+            .MainCompany_divData input{
+                flex: 0 0 12rem;
+            }
+        .block-mission-vision{
             display: flex;
-            max-width:85%;
-            margin: auto;
+            flex-flow: column wrap;
+            justify-content: center;
+            align-items: center;
+            }
+
+            .block-mission-vision textarea{
+                box-shadow: 1px 1px 5px rgb(33, 157, 192);
+                text-align: center;
+                border: none;
             }
         
-#main-branchs{
-    border: 1px solid black;
-    width: 80%;
-    margin: auto;   
+    #MainCompany_branchesTable{
+        /* border: 1px solid black; */
+        width: 95%;
+        margin: auto;
+    }
 }
+
+@media (min-width: 577px){
+    #MainCompany_container{
+            padding: auto;
+            margin: auto;
+            display: flex;
+            flex-flow: column wrap;
+        }
+    
+            #MainCompany_img{
+                margin: auto;
+            }
+            #bodyMainCompany_block1 {
+                /* border: thin solid green; */
+                width: 95%;
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-evenly;
+                margin: auto;
+                }
+                #MainCompany_img{
+                    margin: 0;
+                    padding: 0;
+                    }
+
+                    /* #MainCompany_img img{
+                        width: 50%;
+                        margin: auto;
+                    } */
+            
+                #bodyMainCompany_block1 #data_company{
+                    display: flex;
+                    flex-flow: column wrap;
+    
+                }
+    
+                #bodyMainCompany_block1 #data_company .MainCompany_divData{
+                    margin: .5rem auto;
+                    width: 95%;
+                    /* border: thin solid greenyellow; */
+                    display: flex;
+                    flex: row wrap;
+                    justify-content: space-evenly;
+                    align-items: center;
+                }
+    
+                .MainCompany_divData input{
+                    flex: 0 0 12rem;
+                }
+            .block-mission-vision{
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: center;
+                }
+    
+                .block-mission-vision div{
+                    /* box-shadow: 1px 1px 5px rgb(33, 157, 192); */
+                    padding: 1rem
+                }
+
+                .block-mission-vision textarea{
+                    border: none;
+                    box-shadow: 1px 1px 5px rgb(33, 157, 192);
+                    text-align: center;
+                }
+            
+        #MainCompany_branchesTable{
+            /* border: 1px solid black; */
+            width: 95%;
+            margin: auto;
+        }
+    }

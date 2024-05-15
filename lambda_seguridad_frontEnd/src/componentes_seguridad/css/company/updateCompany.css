@@ -1,42 +1,121 @@
-#updateCompany-container{
-    padding: 2rem;
+@media(max-width: 576px){
+    #UpdateCompany_container{
+        width: 95%;
+        margin: auto;
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+    }
 
-    /* background-color: #aaa; */
+        #UpdateCompany_form{
+            display: flex;
+            flex-flow: column wrap;
+            align-items: center;
+        }
+
+        #UpdateCompany_form #UpdateCompany_logo{
+            /* border: thin solid red; */
+            display: flex;
+            flex-flow: column wrap;
+            align-items: center;
+        }
+
+        #UpdateCompany_form #UpdateCompany_logo img{
+            max-width: 70%;
+        }
+
+        #UpdateCompany_form div{
+            margin-bottom: 1rem ;
+            width: 100%;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+        }
+
+        #UpdateCompany_form div input {
+            padding: 0px;
+            flex: 1 1 60%
+        }
+
+        #UpdateCompany_form div label {
+            padding: 0px;
+            flex: 1 1 40%
+        }
+
+        #UpdateCompany_form div textarea {
+            padding: 0px;
+            flex: 1 1 60%
+        }
+
+        /* #UpdateCompany_form div input[type=file] {
+            height: 2rem;
+            width: 100%;
+        } */
 }
 
-    #form-update-company{
-        max-width: 40rem;
+@media(min-width: 577px){
+    #UpdateCompany_container{
+        width: 80%;
         margin: auto;
-        padding: 2rem 2rem;
         display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        border: 1px solid rgb(240, 240, 243);
+        flex-flow: column wrap;
+        /* align-items: center; */
     }
-    #form-update-company div{
-        margin: auto;
-        margin-top: .5rem;
-        display: inline-block;
-    }
-    #form-update-company input {
-        height: 2rem;
-        width: 15rem;
-    }
-    #form-update-company textarea {
-        height: 10rem;
-        width: 15rem;
-    }
-    #form-update-company input[type=file] {
-        height: 2rem;
-        width: 100%;
-        border: 1px solid grey;
-    }
-    #form-update-company div > *{
-        display: flex
-    }
-    #saveButton{
-        position: relative;
-        display: inline-block;
-        margin: 0 5rem;
-        margin: 3rem auto;
-    }
+
+        #UpdateCompany_form{
+            border: thin solid green;
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #UpdateCompany_form #UpdateCompany_logo{
+            flex: 0 0 50% ;
+            display: flex;
+            justify-content: center;
+
+        }
+
+        #UpdateCompany_data{
+            padding: 1rem;
+            flex: 0 0 50%;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+        }
+        #UpdateCompany_data div{
+            width: 90%;
+            margin-bottom: 1rem;
+            display: flex;
+        }
+
+        #UpdateCompany_misionVision{
+            width: 100%;
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        #UpdateCompany_form div label {
+            padding: 0px;
+            flex: 0 0 30%
+        }
+
+        #UpdateCompany_headerUpdateImg{
+            min-width: 90%;
+            margin-top: 2rem;
+
+            /* margin: auto; */
+        }
+
+        #UpdateCompany_updateImg{
+            min-width: 90%;
+        }
+
+        #UpdateCompany_updateButton{
+            margin-top: 2rem;
+        }
+
+}
+

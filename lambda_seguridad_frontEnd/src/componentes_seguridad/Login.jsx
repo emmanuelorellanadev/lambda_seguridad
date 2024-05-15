@@ -47,7 +47,7 @@ export const Login = () => {
 
             setIsUser(true);
             cleanAll(e);
-            document.getElementById('login-container').style.display = 'none';
+            document.getElementById('login_container').style.display = 'none';
         }
     }
     
@@ -58,15 +58,15 @@ export const Login = () => {
 
   return (
     <>
-        <div id="login-container">
+        <div id="login_container">
             <div id='login'>
                 <div id='loginHeader'>
                       <img src={login} alt="" />  
                 </div>
                 <div id='loginBody'>
                     <form id='loginForm' onSubmit={ e => loginController(e)}>
-                        <input className='form-control form-control-lg text-center' type="text" name="user" id="user" value={user} placeholder='Usuario' onChange={ (e) => setUser(e.target.value) } autoFocus required/>
-                        <input className='form-control form-control-lg text-center' type="password" name="password" id="password" value={pass} placeholder='Contrasena' onChange={ (e) => setPass(e.target.value)} required />
+                        <input className='form-control text-center' type="text" name="user" id="user" value={user} placeholder='Usuario' onChange={ (e) => setUser(e.target.value) } autoFocus required/>
+                        <input className='form-control text-center' type="password" name="password" id="password" value={pass} placeholder='Contrasena' onChange={ (e) => setPass(e.target.value)} required />
                         <input type='submit' className='btn btn-primary btn-lg' value='Ingresar'/>
                     </form>
                 </div>   

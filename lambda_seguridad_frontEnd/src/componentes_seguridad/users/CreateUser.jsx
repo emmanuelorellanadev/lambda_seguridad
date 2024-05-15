@@ -8,7 +8,7 @@ import '../css/user/createUser.css'
 export const CreateUser = ( ) => {
     const [user, setUser] = useState('');
     const [pass, setPass] = useState('');
-    const [state, setState] = useState(false);
+    const [state, setState] = useState(true);
     const [roles, setRoles] = useState([]);
     const [roleId, setRoleId] = useState('');
     const [companies, setCompanies] = useState([]);
@@ -24,13 +24,11 @@ export const CreateUser = ( ) => {
     }
     
     const saveUser = async() => {
-        // try {
             
             const url = 'http://localhost:8080/user';
             
             const userData = new FormData(document.querySelector('#formCreateUser'));
             userData.append('img', userImage)
-            
             userData.set('user_state', state);
             await axios.post(url, userData,
                 {   
@@ -55,9 +53,7 @@ export const CreateUser = ( ) => {
                         confirmButtonColor: '#0d6efd'
                     })
                 })
-            // } catch (error) {
-            //     console.log(error, 'ups')    
-            // }
+
     }
 
     //Fetch roles used in select
@@ -100,44 +96,46 @@ export const CreateUser = ( ) => {
     }, [])
 
     return (
-        <div id='createUser-container'>
-            <center> <h2>Formulario De Registro de Usuarios </h2> </center>
-                <br />
-
+        <div id='CreateUser_container'>
+            <p className='p_header'>Formulario De Registro de Usuarios </p>
                 <form encType='multipart/form-data' id='formCreateUser' onSubmit={saveButton}>
-                    
-                    <input className='form-control text-center' type="text" name='user_name' value={user} placeholder='Nombre del Usuario' onChange={ (e) => setUser(e.target.value)} autoFocus required />
-                    <input className='form-control text-center' type="password" name='user_pass' placeholder='Contrasena' onChange={ (e) => setPass(e.target.value)} autoComplete='off' required/>
-                    <select className='form-select text-center' name='RoleId' id='selectRole' onChange={ (e) => {setRoleId(e.target.value)}} required>
-                        <option value="">selecciona Opcion</option>
-                            { 
-                                roles.map( (r) => {
-                                    return <option value={r.id} key={r.id}>{r.role_name}</option>
-                                })
-                            }
-                    </select>
-                    <section id='userState'>
-                        <label className='' htmlFor="estadoUsuario">Estado</label>
-                        <input className='' type='checkbox' name='user_state' id='estadoUsuario' onChange={ () => setState( !state ) } checked={ state } />  
-                    </section>
-                    <select className='form-select text-center' id='selectCompany' onChange={ (e) => {setSelectedCompany(e.target.value)}} required disabled>
-                        {/* <option value="">selecciona Empresa</option> */}
-                            { 
-                                companies.map( (c) => {
-                                    return <option value={c.id} key={c.id}>{c.company_name}</option>
-                                })
-                            }
-                    </select>
-                    <select className='form-select text-center' name='BranchId' id='selectBranch' onChange={ (e) => {setBranchId(e.target.value)}} required>
-                        <option value="">selecciona Sucursal</option>
-                            { 
-                                branches.map( (b) => {
-                                    return <option value={b.id} key={b.id}>{b.branch_name}</option>
-                                })
-                            }
-                    </select>
-                    <input type="file" name="img" id="img" value={ userImage } onChange={ (e) => setUserImage(e.target.value)}/>
-                    <button id='saveButton' className='btn btn-primary'>Guardar Usuario</button>
+                        <input className='form-control text-center' type="text" name='user_name' id='user_name' value={user} placeholder='Nombre del Usuario' onChange={ (e) => setUser(e.target.value)} autoFocus required />
+                        <input className='form-control text-center' type="password" name='user_pass' id='user_pass' placeholder='Contrasena' onChange={ (e) => setPass(e.target.value)} autoComplete='off' required/>
+                        <select className='form-select text-center' name='RoleId' id='selectRole' onChange={ (e) => {setRoleId(e.target.value)}} required>
+                            <option value="">Seleccionar Rol</option>
+                                { 
+                                    roles.map( (r) => {
+                                        return <option value={r.id} key={r.id}>{r.role_name}</option>
+                                    })
+                                }
+                        </select>
+                        <section id='userState'>
+                            <label className='form-check-label' htmlFor="estadoUsuario">Estado</label>
+                            <input className='' type='checkbox' name='user_state' id='user_state' onChange={ () => setState( !state ) } checked={ state } />  
+                        </section>
+                        <select className='form-select text-center' id='selectCompany' onChange={ (e) => {setSelectedCompany(e.target.value)}} required disabled>
+                            {/* <option value="">selecciona Empresa</option> */}
+                                { 
+                                    companies.map( (c) => {
+                                        return <option value={c.id} key={c.id}>{c.company_name}</option>
+                                    })
+                                }
+                        </select>
+                        <select className='form-select text-center' name='BranchId' id='selectBranch' onChange={ (e) => {setBranchId(e.target.value)}} required>
+                            <option value="">Seleccionar Sucursal</option>
+                                { 
+                                    branches.map( (b) => {
+                                        return <option value={b.id} key={b.id}>{b.branch_name}</option>
+                                    })
+                                }
+                        </select>
+                        <section id='uploadUserImg'>
+                            <label htmlFor="img" id='labelImg'>Subir imágen</label>
+                            <input className='form-control' type="file" name="img" id="img" value={ userImage } onChange={ (e) => setUserImage(e.target.value)}/>
+                        </section>
+                    <center>
+                        <button id='saveButton' className='btn btn-primary'>Guardar Usuario</button>
+                    </center>
                  </form>
         </div>
     )
