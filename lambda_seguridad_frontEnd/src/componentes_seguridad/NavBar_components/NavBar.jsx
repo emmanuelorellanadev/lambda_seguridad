@@ -156,16 +156,16 @@ export const NavBar = () => {
                     closeSubMenus={closeSubMenus}
                     showUserFrame={showUserFrame} 
                     showProfileFrame={ showProfileFrame } 
-                    subMenuSecurity={subMenuSecurity}
                     showPersonFrame={ showPersonFrame }
                     closeSession={ closeSession }  
-                />}
+                    />}
 
                 { role == '2' && < NavBarAdmin
                     menuActive={ menuActive } 
                     showMenu={ showMenu }
                     subMenuUser={subMenuUser}
                     subMenuUserVisibility={subMenuUserVisibility}
+                    subMenuSecurity={subMenuSecurity}
                     subMenuSecurityVisibility={subMenuSecurityVisibility}
                     closeSubMenus={closeSubMenus}
                     showUserFrame={showUserFrame} 
