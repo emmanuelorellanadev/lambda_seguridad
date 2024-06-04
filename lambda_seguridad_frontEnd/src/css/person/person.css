@@ -1,0 +1,73 @@
+@media (max-width: 576px){
+    .person_container{
+        width: 95%;
+        margin: auto;
+        display: flex;
+        flex-flow: column wrap;
+    }
+
+    .person_form{
+        display: flex;
+        flex-flow: column wrap;
+        width: 100%;
+    }
+    
+    .person_form div{
+        margin: .5rem auto;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .personTable_container{
+        width: 100%;
+        border-radius: 7px;
+    }
+
+    .sendPerson_button button{
+        margin: auto;
+    }
+    
+}
+
+@media (min-width: 577px){
+    .person_container{
+        width: 95%;
+        margin: 0 auto;
+        display: flex;
+        flex-flow: column wrap;
+    }
+
+    .person_form{
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+    }
+
+    .person_form div{
+        margin: .5rem .5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-width: 45%;
+        /* border: thin solid purple */
+    }
+
+    .personTable_container{
+        width: 100%;
+        border-radius: 7px;
+    }
+
+    .sendPerson_button{
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+
+    .sendPerson_button button{
+        margin: 3rem auto;
+    }
+}

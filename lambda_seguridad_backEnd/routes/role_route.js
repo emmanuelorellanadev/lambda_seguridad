@@ -22,7 +22,7 @@ route.post('/', [
     checkJWT,
     requiredRole('ROLE_ADMINSYS'),
     check('role_name', 'The role is required').not().isEmpty(),
-    check('role_status', 'the status is required').not().isEmpty(),
+    check('role_state', 'the state is required').not().isEmpty(),
     checkFields
 ], roleController.saveRole);
 
@@ -30,7 +30,7 @@ route.put('/:id', [
     checkJWT,
     requiredRole('ROLE_ADMINSYS',),
     check('role_name', 'The role is required').not().isEmpty(),
-    check('role_status', 'the status is required').not().isEmpty(),
+    check('role_state', 'the status is required').not().isEmpty(),
     checkFields
 ],
  roleController.updateRole)

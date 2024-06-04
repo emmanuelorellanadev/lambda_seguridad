@@ -15,12 +15,10 @@ const Person = db_connection.define('Person', {
     },
     person_cui: {
         type: DataTypes.STRING,
-        unique: true,
         required: false
     },
     person_nit: {
         type: DataTypes.STRING(10),
-        unique: true,
         required: false
     },
     person_phone: {

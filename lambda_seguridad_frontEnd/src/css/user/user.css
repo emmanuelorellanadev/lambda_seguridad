@@ -1,0 +1,80 @@
+@media (max-width: 576px){
+    .user_container{
+        width: 95%;
+        margin: auto;
+        display: flex;
+        flex-flow: column wrap;
+    }
+
+    .user_form{
+        display: flex;
+        flex-flow: column wrap;
+        width: 100%;
+    }
+    
+    .user_form div{
+        margin: .5rem auto;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .userTable_container{
+        width: 100%;
+        border-radius: 7px;
+    }
+
+    .sendUser_button button{
+        margin: auto;
+    }
+    
+    .div_table{
+        width: 100%;
+        border-radius: 7px;
+    }
+}
+
+@media (min-width: 577px){
+    .user_container{
+        width: 95%;
+        margin: 0 auto;
+        display: flex;
+        flex-flow: column wrap;
+    }
+
+    .user_form{
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+    }
+
+    .user_form div{
+        margin: .5rem .5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-width: 45%;
+    }
+
+    .user_form section{
+        width: 90%;
+    }
+
+    .userTable_container{
+        width: 100%;
+        border-radius: 7px;
+    }
+
+    .sendUser_button{
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+
+    .sendUser_button button{
+        margin: 3rem auto;
+    }
+}

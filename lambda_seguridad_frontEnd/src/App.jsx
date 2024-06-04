@@ -1,8 +1,5 @@
-// import './App.css';
-
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Login } from './componentes_seguridad/Login';
-// import { NavBar } from './componentes_seguridad/NavBar_components/NavBar';//eliminar
+import { Login } from './lambda_components/Login';
 
 export const App = () => {
   return (

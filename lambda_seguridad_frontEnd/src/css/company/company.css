@@ -1,0 +1,123 @@
+@media (max-width: 576px){
+    .company_container{
+        width: 95%;
+        margin: auto;
+        display: flex;
+        flex-flow: column wrap;
+    }
+
+    .company_form{
+        display: flex;
+        flex-flow: column wrap;
+        width: 100%;
+    }
+    
+        .company_form .companyLogo_container{
+            display: flex;
+            flex-flow: column wrap;
+        }
+
+        .company_form .companyData_container{
+            display: flex;
+            flex-flow: column wrap;
+        }
+
+        .company_form .companyMissionVision_container{
+            display: flex;
+            flex-flow: column wrap;
+        }
+
+        .company_form div{
+            margin: .5rem auto;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        
+    .companyTable_container{
+        width: 100%;
+        border-radius: 7px;
+    }
+
+    .sendCompany_button button{
+        margin: 2rem auto;
+    }
+}
+
+@media (min-width: 577px){
+    .company_container{
+        width: 95%;
+        margin: 0 auto;
+        display: flex;
+        flex-flow: column wrap;
+    }
+
+    .company_form{
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+    }
+
+    .companyLogo_container{
+        flex: 1 1 40%;
+        display: flex;
+        flex-flow: row wrap;
+        
+    }
+    .companyLogo_container img{
+        margin: auto;
+    }
+
+    .companyLogo_container section{
+        margin: auto;
+    }
+
+    .companyData_container {
+        flex: 1 1 40%;
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    .companyMissionVision_container{
+        padding-top: 10px;
+        flex: 1 1 100%;
+    }
+
+    .companyData_container div {
+        flex: 1 1 90%;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: baseline;
+    }
+
+    .company_form div{
+        margin: .5rem .5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-width: 45%;
+    }
+
+    .company_form section{
+        width: 90%;
+    }
+
+    .companyTable_container{
+        width: 100%;
+        border-radius: 7px;
+    }
+
+    .sendCompany_button{
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+
+    .sendCompany_button button{
+        margin: 3rem auto;
+    }
+}

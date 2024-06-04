@@ -8,11 +8,12 @@ const { errorsHandler } = require('../errors_handler/errorsHandler');
 
 const checkJWT = async(req = request, res, next) => {
 
-    const token = req.header('x-token');
-
-    if( !token )throw new GeneralError('Token no recibido', 400)
-     
+    
+    
     try {
+        if( !req.header('x-token') ) throw new GeneralError('Token no recibido', 400)
+        
+            const token = req.header('x-token');
 
         //If the token was sended, take the user id (uid) of the token and search the user.        
         const userToken = await jwt.verify(token, process.env.SECRETKEY);
