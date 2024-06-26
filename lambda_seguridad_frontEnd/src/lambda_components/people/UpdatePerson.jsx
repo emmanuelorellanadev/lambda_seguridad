@@ -1,4 +1,3 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 
 import '../../css/person/person.css'
@@ -6,10 +5,15 @@ import { P_Head } from '../ui/P_Head';
 import { Input } from '../ui/Input';
 import { Label } from '../ui/Label';
 import { Select } from '../ui/Select';
-import Swal from 'sweetalert2';
+import useGetPersonType from '../personTypes/hooks/useGetPersonType';
+import { useGetBranch } from '../branches/hooks/useGetBranch';
+import { useGetPerson } from './hooks/useGetPerson';
+import { useUpdatePerson } from './hooks/useUpdatePerson';
+import { Toaster } from 'react-hot-toast';
 
 const UpdatePerson = (props) => {
 
+  const urlPerson = `http://localhost:8080/person/${props.personId}`;
   const [names, setNames] =useState('');
   const [surNames, setSurNames] =useState('');
   const [cui, setCui] =useState('');
@@ -21,86 +25,18 @@ const UpdatePerson = (props) => {
   const [personTypes, setPersonTypes] =useState([]);
   const [branches, setBranches] =useState([]);
 
-  
   const updatePerson = async(e) => {
     e.preventDefault();
-    
-    const url = `http://localhost:8080/person/${props.personId}`;
-    await axios.put(url, 
-      {
-        "person_name": names,
-        "person_surnames": surNames,
-        "person_cui": cui,
-        "person_nit": nit,
-        "person_phone": phone,
-        "person_address": address,
-        "PersonTypeId": personTypeId,
-        "BranchId": branchId
-      }, {headers: {"x-token": sessionStorage.getItem("token-xL")}} )
-        .then( () =>{
-          Swal.fire({
-            icon: 'success',
-            title: `Actualización realizada correctamente`,
-            timer: 3000,
-            confirmButtonColor: '#0d6efd'
-          })
-        })
-        .catch(error => {
-          Swal.fire({
-            icon: 'error',
-            title: 'ERROR',
-            text: 'El usuario no pudo ser guardado',
-            footer: error.response.data.name,
-            confirmButtonColor: '#0d6efd',
-            footer: error.response.data.errors
-          })
-        })
+    useUpdatePerson(urlPerson, names, surNames, cui, nit, phone, address, personTypeId, branchId)
   }
-  
-  
-  const fetchData = async() => {
-    const urlPerson = `http://localhost:8080/person/${props.personId}`
-
-    //Fetch and fill Person data
-    await axios.get(urlPerson, {headers: {"x-token": sessionStorage.getItem("token-xL")}})
-      .then( resp => resp.data.resData)
-      .then( person => {
-        setNames(person.person_names);
-        setSurNames(person.person_surnames);
-        setCui(person.person_cui);
-        setNit(person.person_nit);
-        setPhone(person.person_phone);
-        setAddress(person.person_address);        
-        setPersonTypeId(person.PersonTypeId);
-        setBranchId(person.BranchId);
-      })
-      .catch( error => console.log(error))
-
-    //Fetch and fill personTypes data
-    const urlPersonType = 'http://localhost:8080/personType/'
-    await axios.get(urlPersonType, {headers: {"x-token": sessionStorage.getItem("token-xL")}})
-      .then( resp => resp.data.resData)
-      .then( personTypes => {
-        setPersonTypes(personTypes)
-      })
-      .catch( error => console.log(error))
-
-      //Fetch and fill Branches data
-      const urlBranch = 'http://localhost:8080/branch/'
-      await axios.get(urlBranch, {headers: {"x-token":  sessionStorage.getItem("token-xL")}})
-      .then( resp => resp.data.resData)
-      .then(branches =>{
-        setBranches(branches)
-      })
-      .catch( error => console.log(error))
-    }
-
 
   useEffect( () => {
-    fetchData();
-    console.log()
+    const urlPersonType = 'http://localhost:8080/personType/';
+    const urlBranch = 'http://localhost:8080/branch/';
+    useGetPerson(urlPerson, {setNames, setSurNames, setCui, setNit, setPhone, setAddress, setPersonTypeId, setBranchId });
+    useGetPersonType(urlPersonType, { setPersonTypes });
+    useGetBranch(urlBranch, { setBranches });
   },[])
-
 
   return (
     <>
@@ -144,6 +80,7 @@ const UpdatePerson = (props) => {
               </div>
         </form>
     </div>
+    <Toaster/>
     </>
   )
 }

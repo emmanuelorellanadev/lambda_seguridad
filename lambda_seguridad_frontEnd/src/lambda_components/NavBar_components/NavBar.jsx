@@ -2,11 +2,13 @@ import { useState, useEffect} from 'react';
 
 import '../../css/NavBar.css';
 import '../../css/subMenu/subMenu.css';
-import usuario from'../../assets/img/usuario.png';
+// import usuario from'../../assets/img/usuario.png';
 import menu from'../../assets/img/menu.png';
 import SubMenuBranch from '../branches/SubMenuBranch.jsx';
-import SubMenuCompany from '../company/SubMenuCompany.jsx';
+import SubMenuBranchType from '../branchTypes/SubMenuBranchType.jsx';
+import SubMenuCompany from '../companies/SubMenuCompany.jsx';
 import SubMenuPerson from'../people/SubMenuPerson.jsx';
+import SubMenuPersonType from'../personTypes/SubMenuPersonType.jsx';
 import SubMenuUser from'../users/SubMenuUser.jsx';
 import SubMenuRole from'../roles/SubMenuRoles.jsx';
 import { NavBarUser } from './NavBarUser';
@@ -18,20 +20,21 @@ import { UserProfile } from '../users/UserProfile';
 export const NavBar = () => {
     
     //Handle menu states
-    const [menuActive, setMenuActive] = useState(false);
-    const [subMenuUser, setSubMenuUser] = useState(false);
-    const [subMenuAdmin, setSubMenuAdmin] = useState(false);
+    const [menuActive,      setMenuActive]      = useState(false);
+    const [subMenuUser,     setSubMenuUser]     = useState(false);
+    const [subMenuAdmin,    setSubMenuAdmin]    = useState(false);
     const [subMenuSecurity, setSubMenuSecurity] = useState(false);
-    const [subMenuPerson, setSubMenuPerson] = useState(false);
-
+    const [subMenuPerson,   setSubMenuPerson]   = useState(false);
     //Frame handlers
-    const [userFrame, setUserFrame] = useState(0);
-    const [personFrame, setPersonFrame] = useState(0);
-    const [profileFrame, setProfileFrame] = useState(0);
-    const [companyFrame, setCompanyFrame] = useState(0);
-    const [branchFrame, setBranchFrame] = useState(0);
-    const [roleFrame, setRoleFrame] = useState(0);
-    const [role, setRole] = useState(0);
+    const [userFrame,       setUserFrame]       = useState(0);
+    const [personTypeFrame, setPersonTypeFrame] = useState(0);
+    const [personFrame,     setPersonFrame]     = useState(0);
+    const [profileFrame,    setProfileFrame]    = useState(0);
+    const [companyFrame,    setCompanyFrame]    = useState(0);
+    const [branchFrame,     setBranchFrame]     = useState(0);
+    const [branchTypeFrame, setBranchTypeFrame] = useState(0);
+    const [roleFrame,       setRoleFrame]       = useState(0);
+    const [role,            setRole]            = useState(0);
     
     //subMenu user, close session
     const subMenuUserVisibility = () => {
@@ -56,6 +59,13 @@ export const NavBar = () => {
     } 
     //subMenu Person
     const subMenuPersonVisibility = () => {
+        subMenuSecurity ? subMenuSecurityVisibility() : '';
+        subMenuAdmin ? subMenuAdminVisibility() : '';
+        subMenuUser ? subMenuUserVisibility() : '';
+        setSubMenuPerson(!subMenuPerson);
+    }
+
+    const subMenuTransactionVisibility = () => {
         subMenuSecurity ? subMenuSecurityVisibility() : '';
         subMenuAdmin ? subMenuAdminVisibility() : '';
         subMenuUser ? subMenuUserVisibility() : '';
@@ -88,7 +98,9 @@ export const NavBar = () => {
         setUserFrame(0);
         setCompanyFrame(0);
         setBranchFrame(0);
+        setBranchTypeFrame(0);
         setPersonFrame(0);
+        setPersonTypeFrame(0);
         setRoleFrame(0);
         showMenu();
     }
@@ -98,6 +110,8 @@ export const NavBar = () => {
         setUserFrame(1);
         setCompanyFrame(0);
         setBranchFrame(0);
+        setBranchTypeFrame(0);
+        setPersonTypeFrame(0);
         setPersonFrame(0);
         setRoleFrame(0);
         showMenu();
@@ -108,6 +122,8 @@ export const NavBar = () => {
         setUserFrame(0);
         setCompanyFrame(1);
         setBranchFrame(0);
+        setBranchTypeFrame(0);
+        setPersonTypeFrame(0);
         setPersonFrame(0);
         setRoleFrame(0);
         showMenu();
@@ -118,16 +134,44 @@ export const NavBar = () => {
         setUserFrame(0);
         setCompanyFrame(0);
         setBranchFrame(1);
+        setBranchTypeFrame(0);
+        setPersonTypeFrame(0);
         setPersonFrame(0);
         setRoleFrame(0);
         showMenu();
     }
 
+    const showBranchTypeFrame = ( ) => {
+        setProfileFrame(0);
+        setUserFrame(0);
+        setCompanyFrame(0);
+        setBranchFrame(0);
+        setBranchTypeFrame(1);
+        setPersonTypeFrame(0);
+        setPersonFrame(0);
+        setRoleFrame(0);
+        showMenu();
+    }
+
+    const showPersonTypeFrame = ( ) => {
+        setProfileFrame(0);
+        setUserFrame(0);
+        setCompanyFrame(0);
+        setBranchFrame(0);
+        setBranchTypeFrame(0);
+        setPersonTypeFrame(1);
+        setPersonFrame(0);
+        setRoleFrame(0);
+        showMenu();
+    }
+    
     const showPersonFrame = ( ) => {
         setProfileFrame(0);
         setUserFrame(0);
         setCompanyFrame(0);
         setBranchFrame(0);
+        setBranchTypeFrame(0);
+        setPersonTypeFrame(0);
         setPersonFrame(1);
         setRoleFrame(0);
         showMenu();
@@ -138,6 +182,8 @@ export const NavBar = () => {
         setUserFrame(0);
         setCompanyFrame(0);
         setBranchFrame(0);
+        setBranchTypeFrame(0);
+        setPersonTypeFrame(0);
         setPersonFrame(0);
         setRoleFrame(1);
         showMenu();
@@ -208,21 +254,25 @@ export const NavBar = () => {
                     //show the submenu frames
                     showUserFrame={showUserFrame} 
                     showProfileFrame={ showProfileFrame } 
+                    showPersonTypeFrame={ showPersonTypeFrame }
                     showPersonFrame={ showPersonFrame }
                     showCompanyFrame={ showCompanyFrame }
                     showBranchFrame={ showBranchFrame }
+                    showBranchTypeFrame={ showBranchTypeFrame }
                     showRoleFrame={ showRoleFrame }
                     closeSession={ closeSession } 
 
                 />}
 
         </div>
-        { userFrame === 1 && <SubMenuUser/>}
-        { profileFrame === 1 && <UserProfile/>}
-        { personFrame === 1 && <SubMenuPerson />}
-        { companyFrame === 1 && <SubMenuCompany />}
-        { branchFrame === 1 && <SubMenuBranch />}
-        { roleFrame === 1 && <SubMenuRole />}
+        { userFrame         ===     1 && <SubMenuUser/>}
+        { profileFrame      ===     1 && <UserProfile/>}
+        { personTypeFrame   ===     1 && <SubMenuPersonType />}
+        { personFrame       ===     1 && <SubMenuPerson />}
+        { companyFrame      ===     1 && <SubMenuCompany />}
+        { branchFrame       ===     1 && <SubMenuBranch />}
+        { branchTypeFrame   ===     1 && <SubMenuBranchType />}
+        { roleFrame         ===     1 && <SubMenuRole />}
     </>
   )
 }

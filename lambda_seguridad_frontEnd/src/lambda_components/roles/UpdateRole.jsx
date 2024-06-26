@@ -1,11 +1,12 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import Swal from 'sweetalert2';
+import { Toaster } from 'react-hot-toast';
 
 import '../../css/role/role.css'
 import { P_Head } from '../ui/P_Head';
 import { Label } from '../ui/Label';
 import { Input } from '../ui/Input';
+import { useGetRole } from './hooks/useGetRole';
+import { useUpdateRole } from './hooks/useUpdateRole';
 
 const UpdateRole = (props) => {
 
@@ -16,63 +17,13 @@ const UpdateRole = (props) => {
     const updateRole = async(e ) => {
         e.preventDefault();
 
-        const url = `http://localhost:8080/role/${props.roleId}`;
-        await axios.put(url, {
-            "id": id,
-            "role_name": roleName,
-            "role_state": roleState
-        },  {
-            headers: {"x-token": sessionStorage.getItem('token-xL')
-        }})
-            .then( resp => {
-              Swal.fire({
-                icon: 'success',
-                title: `Rol actualizado correctamente`,
-                showCloseButton: true,
-                confirmButtonText: 'Aceptar',
-                confirmButtonColor: '#0d6efd',
-                cancelButtonColor: '#dc3545',
-                timer: 3000
-
-              })
-            })
-            .catch( error => {
-              Swal.fire({
-                icon: 'error',
-                title: `Error al actualizar el rol?`,
-                showCloseButton: true,
-                confirmButtonText: 'Aceptar',
-                confirmButtonColor: '#0d6efd',
-                footer: error.response.data.errors
-              })
-            })
-    }
-
-    const fillData = async( ) => {
-        const url = `http://localhost:8080/role/${props.roleId}`
-        
-        await axios.get(url, {
-          headers: { "x-token": sessionStorage.getItem('token-xL') }
-        })
-        .then( resp => resp.data.resData)
-        .then( role => {
-          setId(role.id)
-          setRoleName(role.role_name)
-          setRoleState(role.role_state)
-        })
-        .catch( error => { console.log(error)
-          Swal.fire({
-            icon: 'error',
-            title: 'ERROR',
-            text: 'El Rol no pudo ser guardado',
-            footer: error.response.data.name,
-            confirmButtonColor: '#0d6efd'
-          })
-        })
+        const urlRole = `http://localhost:8080/role/${props.roleId}`;
+        useUpdateRole(urlRole, id, roleName, roleState)
     }
     
     useEffect( () => {
-        fillData();
+      const urlRole = `http://localhost:8080/role/${props.roleId}`
+        useGetRole(urlRole, { setId, setRoleName, setRoleState })
     }, [])
 
   return (
@@ -99,6 +50,7 @@ const UpdateRole = (props) => {
           </div>
         </form>
     </div>
+    <Toaster/>
     </>
   )
 }

@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import axios from 'axios';
-import Swal from 'sweetalert2';
 
 import '../../css/company/company.css';
+import { Toaster } from 'react-hot-toast'
+import { createCompany } from './hooks/useCreateCompany.js';
 import { P_Head } from '../ui/P_Head.jsx';import { Input } from '../ui/Input';
 import { Label } from '../ui/Label';
 import { TextArea } from '../ui/TextArea.jsx';
@@ -19,41 +19,8 @@ const CreateCompany = () => {
 
     const saveButton = (e) => {
         e.preventDefault();
-        saveCompany();
-    }
-
-    const saveCompany = async() => {
-        
-        const url = 'http://localhost:8080/company';
-
-        const companyData = new FormData(document.querySelector('#CreateCompany_form'));
-        companyData.append('img', logo);
-await axios.post(url, companyData,
-        {
-            headers: {'x-token': sessionStorage.getItem('token-xL')}
-        }).then( resp => {
-            cleanForm();
-            Swal.fire({
-                icon: 'success',
-                text: 'Empresa creada exitosamente',
-                showCloseButton: true,
-                // showCancelButton: true,
-                timer: 3000,
-                confirmButtonColor: '#0d6efd',
-                cancelButtonColor: '#dc3545'
-            });
-        }).catch(error => {
-            console.log(error);
-            cleanForm()
-            Swal.fire({
-                icon: 'error',
-                title: 'Error al crear la empresa',
-                text: `${error}`,
-                showCloseButton: true,
-                confirmButtonColor: '#0d6efd',
-                cancelButtonColor: '#dc3545'
-            })
-        })
+        createCompany(logo);
+        cleanForm();
     }
 
     const cleanForm = () =>{
@@ -103,6 +70,7 @@ await axios.post(url, companyData,
                 </div>
             </form>
         </div>
+        <Toaster />
     </>
   )
 }

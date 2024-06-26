@@ -1,0 +1,73 @@
+@media (max-width: 576px){
+    .branchType_container{
+        width: 95%;
+        margin: auto;
+        display: flex;
+        flex-flow: column wrap;
+    }
+
+    .branchType_form{
+        display: flex;
+        flex-flow: column wrap;
+        width: 100%;
+    }
+
+    .branchType_form div{
+        margin: .5rem auto;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .branchTypeTable_container{
+        width: 100%;
+        border-radius: 7px;
+    }
+
+    .sendBranchType_button button{
+        margin: auto;
+    }
+
+}
+
+@media (min-width: 577px){
+    .branchType_container{
+        width: 95%;
+        margin: 0 auto;
+        display: flex;
+        flex-flow: column wrap;
+    }
+
+    .branchType_form{
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+    }
+
+    .branchType_form div{
+        margin: .5rem .5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-width: 40%;
+    }
+
+    .branchTypeTable_container{
+        width: 100%;
+        border-radius: 7px;
+    }
+
+    .sendBranchType_button{
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+
+    .sendBranchType_button button{
+        margin: auto;
+    }
+
+}

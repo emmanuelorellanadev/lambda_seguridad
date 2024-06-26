@@ -1,0 +1,74 @@
+@media (max-width: 576px){
+    .personType_container{
+        width: 95%;
+        margin: auto;
+        display: flex;
+        flex-flow: column wrap;
+    }
+
+    .personType_form{
+        display: flex;
+        flex-flow: column wrap;
+        width: 100%;
+    }
+
+    .personType_form div{
+        margin: .5rem auto;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .personTypeTable_container{
+        width: 100%;
+        border-radius: 7px;
+    }
+
+    .sendPersonType_button button{
+        margin: auto;
+    }
+
+}
+
+@media (min-width: 577px){
+    .personType_container{
+        width: 95%;
+        margin: 0 auto;
+        display: flex;
+        flex-flow: column wrap;
+    }
+
+    .personType_form{
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        margin-bottom: 2rem;
+    }
+
+    .personType_form div{
+        margin: .5rem .5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-width: 40%;
+    }
+
+    .personTypeTable_container{
+        width: 100%;
+        border-radius: 7px;
+    }
+
+    .sendPersonType_button{
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+
+    .sendPersonType_button button{
+        margin: auto;
+    }
+
+}

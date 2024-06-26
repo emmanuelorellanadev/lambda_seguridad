@@ -7,6 +7,8 @@ import {P_Head} from'../ui/P_Head';
 import { Label } from '../ui/Label';
 import { Input } from '../ui/Input';
 import { Select } from '../ui/Select';
+import { useCreateUser } from './hooks/useCreateUser';
+import { Toaster } from 'react-hot-toast';
 
 
 export const CreateUser = ( ) => {
@@ -20,49 +22,23 @@ export const CreateUser = ( ) => {
     const [branches, setBranches] = useState([]);
     const [branchId, setBranchId] = useState('');
     const [userImage, setUserImage] = useState(''); 
+    const [onLoad, setOnLoad] = useState(true)
 
     const saveButton = (e) => {
         e.preventDefault();
-        saveUser();
-        cleanForm();
+        const urlUser = 'http://localhost:8080/user/';
+        useCreateUser(urlUser, userImage, state, {setOnLoad});
+        // cleanForm();
     }
+
+
+    //WORK HERE!!
+// intentar usar onLoad para limpiar campos
     
-    const saveUser = async() => {
-            
-            const url = 'http://localhost:8080/user';
-            
-            const userData = new FormData(document.querySelector('#formCreateUser'));
-            userData.append('img', userImage)
-            userData.set('user_state', state);
-            await axios.post(url, userData,
-                {   
-                    headers: { "x-token": sessionStorage.getItem('token-xL') }
-                })
-                .then( response => {
-                    if (response.data.resData) {
-                        Swal.fire({
-                            icon: 'success',
-                            title: `Usuario ${user}, guardado con exito`,
-                            timer: 3000,
-                            confirmButtonColor: '#0d6efd'
-                        })
-                    }
-                })
-                .catch( (error) => {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'ERROR',
-                        text: 'El usuario no pudo ser guardado',
-                        footer: error.response.data.name,
-                        confirmButtonColor: '#0d6efd'
-                    })
-                })
 
-    }
-
-    //Fetch roles used in select
+//Fetch roles used in select
     const fetchRoles = async() => {
-        const urlRole = 'http://localhost:8080/role';
+        const urlRole = 'http://localhost:8080/role/';
 
         await axios(urlRole, { headers: { "x-token": sessionStorage.getItem('token-xL') } })
             .then( roles => setRoles(roles.data.resData))
@@ -70,7 +46,7 @@ export const CreateUser = ( ) => {
     }
     //Fetch companies used in select
     const fetchCompanies = async() => {
-        const urlCompany = 'http://localhost:8080/company';
+        const urlCompany = 'http://localhost:8080/company/';
 
         await axios(urlCompany, { headers: { "x-token": sessionStorage.getItem('token-xL') } })
             .then( companies => setCompanies(companies.data.resData))
@@ -78,20 +54,20 @@ export const CreateUser = ( ) => {
     }
 //Fetch branches used in select
     const fetchBranches = async() => {
-        const url = 'http://localhost:8080/branch';
+        const url = 'http://localhost:8080/branch/';
 
         await axios(url, { headers: { "x-token": sessionStorage.getItem('token-xL') } })
             .then( branches => setBranches(branches.data.resData))
             .catch(error => console.log(error))
     }
 
-    const cleanForm = () => {
-        setUser('');
-        setPass('');
-        setState(false);
-        setUserImage('')
-        document.getElementById('formCreateUser').reset();
-    } 
+    // const cleanForm = () => {
+    //     setUser('');
+    //     setPass('');
+    //     setState(true);
+    //     setUserImage('')
+    //     document.getElementById('formCreateUser').reset();
+    // } 
 
     useEffect( () => {
         fetchRoles();
@@ -132,10 +108,11 @@ export const CreateUser = ( ) => {
                         <P_Head className="p_h3" text={'Subir Imágen'}/>
                             <Input lambdaClassInput={""} type="file" name="img" id="img" value={ userImage } onChange={ (e) => setUserImage(e.target.value)}/>
                         </section>
-                    <div className='sendUser_button'>
+                    <div className='User_button'>
                         <button className={'btn btn-primary'} id='saveButton'>Guardar</button>
                     </div>
                  </form>
+                 <Toaster/>
         </div>
     )
 }

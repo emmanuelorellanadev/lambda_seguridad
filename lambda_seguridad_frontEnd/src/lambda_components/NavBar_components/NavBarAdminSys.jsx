@@ -19,6 +19,7 @@ export const NavBarAdminSys = (props) => {
                 <ul className={props.subMenuAdmin ? 'subMenuVisible' : 'subMenuHide' }>
                     <li><a href="#" onClick={props.showCompanyFrame} >Empresa</a></li>
                     <li><a href="#" onClick={props.showBranchFrame} >Sucursales</a></li>
+                    <li><a href="#" onClick={props.showBranchTypeFrame} >Tipo de Sucursal</a></li>
                 </ul>
             </li>
             <li id='subMenuSecurity' onClick={props.subMenuSecurityVisibility}  onMouseLeave={props.closeSubMenus}>
@@ -31,8 +32,8 @@ export const NavBarAdminSys = (props) => {
             <li id='subMenuPerson' onClick={props.subMenuPersonVisibility} onMouseLeave={props.closeSubMenus}>
                 <a href="#"> Clientes</a>
                 <ul className={props.subMenuPerson ? 'subMenuVisible' : 'subMenuHide' } >
-                    <li><a href="#" onClick={props.showPersonFrame} >Clientes</a></li>
-                    {/* <li><a href="#" onClick={props.showRoleFrame} >Tipos</a></li> */}
+                    <li><a href="#" onClick={props.showPersonFrame} >Personas</a></li>
+                    <li><a href="#" onClick={props.showPersonTypeFrame} >Tipos</a></li>
                 </ul>            
             </li>
         </ul>

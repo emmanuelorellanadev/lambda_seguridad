@@ -1,103 +1,47 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
-import Swal from 'sweetalert2';
+import { Toaster } from 'react-hot-toast';
 
 import '../../css/branch/branch.css';
 import { P_Head } from '../ui/P_Head';
 import { Label } from '../ui/Label';
 import { Input } from '../ui/Input';
 import { Select } from '../ui/Select';
+import { useGetCompany } from '../companies/hooks/useGetCompany';
+import { useGetBranch } from './hooks/useGetBranch';
+import { useUpdateBranch } from './hooks/useUpdateBranch';
+import { useGetBranchType } from '../branchTypes/hooks/useGetBranchType';
 
 const UpdateBranch = (props) => {
 
-    const [ branch, setBranch ] = useState('');
-    const [ address, setAddress ] = useState('');
-    const [ phone, setPhone ] = useState('');
-    const [ state, setState ] = useState(false);
-    const [ branchId, setBranchId ] = useState('');
-    const [ companyId, setCompanyId ] = useState('1');
-    const [ companies, setComapanies ] = useState([]);
-    const [ branchTypes, setBranchTypes ] = useState([]);
+  const urlBranch = `http://localhost:8080/branch/${props.branchId}`;
 
+  const [ branch, setBranch ]             = useState('');
+  const [ address, setAddress ]           = useState('');
+  const [ phone, setPhone ]               = useState('');
+  const [ state, setState ]               = useState(false);
+  const [ branchTypeId, setBranchTypeId ] = useState('');
+  const [ companyId, setCompanyId ]       = useState('1');
+  const [ companies, setCompanies ]       = useState([]);
+  const [ branchTypes, setBranchTypes ]   = useState([]);
 
-    const fetchBranch = async() => {
-        const url = `http://localhost:8080/branch/${props.branchId}`;
-
-        await axios.get(url, { headers: {'x-token': sessionStorage.getItem('token-xL')}})
-          .then( resp => resp.data.resData)
-          .then( bra => fillBranchData(bra))
-          .catch( error => console.log(error))
-
-      }
-
-    const fetchCompany = async() => {
-      const url = `http://localhost:8080/company/`;
-
-      await axios.get(url, {headers: {'x-token': sessionStorage.getItem('token-xL')}})
-        .then( resp => resp.data.resData)
-        .then( companiesData => { setComapanies(companiesData) } )
-        .catch( error => console.log(error))
-    } 
-
-    const fetchBranchTypes = async() => {
-      const url = `http://localhost:8080/branchType/`;
-
-      await axios.get( url, { headers: { 'x-token': sessionStorage.getItem('token-xL')} })
-        .then( resp => resp.data.resData )
-        .then( branchTypeData => setBranchTypes(branchTypeData))
-        .catch( error => console.log(error))
-    }
-
-    const fillBranchData = (branchData) => {
-      setBranch(branchData.branch_name);
-      setAddress(branchData.branch_address);
-      setPhone(branchData.branch_phone);
-      setState(branchData.branch_state);
-      setBranchId(branchData.BranchTypeId);
-      setCompanyId(branchData.CompanyId);
-
-    }
-
-    const saveButton = async(e) => {
-      e.preventDefault();
-
-      const url = `http://localhost:8080/branch/${props.branchId}`
-
-      await axios.put(url, {
-        "id": props.branchId,
-        "branch_name": branch,
-        "branch_address": address,
-        "branch_phone": phone,
-        "branch_state": state,
-        "CompanyId": companyId,
-        "BranchTypeId": branchId,
-      },
-      {
-        headers:{'x-token': sessionStorage.getItem('token-xL')}
-      }
-       )
-      .then( resp => {
-        Swal.fire({
-          icon: 'success',
-          text: `${resp.data.resData}`,
-          timer: 2500,
-          confirmButtonColor: '#0d6efd'
-        })
-      })
-      .catch(error => console.log(error))
-    }
-
-useEffect( () => {
-    fetchBranch();
-    fetchCompany();
-    fetchBranchTypes();
-}, [])
+  const updateButton = async(e) => {
+    e.preventDefault();
+    useUpdateBranch(urlBranch, branch, address, phone, state, branchTypeId, companyId)
+  }
+  
+  useEffect( () => {
+    const urlCompany = "http://localhost:8080/company/";
+    const urlBranchType = `http://localhost:8080/branchType/`;
+    useGetCompany(urlCompany, { setCompanies });
+    useGetBranchType(urlBranchType, {setBranchTypes});
+    useGetBranch(urlBranch, { setBranch, setAddress, setPhone, setState, setBranchTypeId, setCompanyId });
+  }, [])
 
   return (
     <>
     <div className='branch_container'>
     <P_Head className="p_h1" text={'Actualizar Sucursal'}/>
-        <form className='branch_form' onSubmit={saveButton} >
+        <form className='branch_form' onSubmit={updateButton} >
                 <div>
                     <Label lambdaClassLabel="" text="Sucursal" />
                     <Input lambdaClassInput={""} type="text" name="branch" id="branch"  value={branch} onChange={ (e) => setBranch(e.target.value)} required/>
@@ -117,17 +61,18 @@ useEffect( () => {
                 </div>
                 <div>
                     <Label lambdaClassLabel="" text="Empresa" />
-                    <Select data={companies} name="" id="company" value={companyId} onChange={(e) => setCompanyId(e.target.value)}  disabled/>
+                    <Select data={companies} name="" id="company" value={companyId} onChange={(e) => setCompanyId(e.target.value)}  disabled={false}/>
                 </div>
                 <div>
                     <Label lambdaClassLabel="" text="Sucursal" />
-                    <Select data={branchTypes} name="" id="" value={branchId} onChange={ ( e ) => setBranchId( e.target.value)} required />
+                    <Select data={branchTypes} name="" id="" value={branchTypeId} onChange={ ( e ) => setBranchTypeId( e.target.value)} required />
                 </div>
                 <div className='sendBranch_button'>
                   <button className='btn btn-primary' >Actualizar</button>
                 </div>
             </form>
     </div>
+    <Toaster/>
     </>
   )
 }

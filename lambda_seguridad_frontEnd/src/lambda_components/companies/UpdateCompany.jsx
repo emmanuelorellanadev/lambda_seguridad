@@ -1,82 +1,34 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
-import Swal from'sweetalert2';
+import { Toaster } from 'react-hot-toast';
 
 import '../../css/company/company.css';
 import { P_Head } from '../ui/P_Head';
 import { Input } from '../ui/Input';
 import { Label } from '../ui/Label';
 import { TextArea } from '../ui/TextArea';
+import { useUpdateCompany } from './hooks/useUpdateCompany';
+import { useGetCompany } from './hooks/useGetCompany';
 
 
 const UpdateCompany = (props) => {
-    const [companyId, setCompanyId] = useState('');
-    const [company, setCompany] = useState('');
-    const [address, setAddress] = useState('');
-    const [phone, setPhone] = useState('');
+    const [company, setCompany]         = useState('');
+    const [address, setAddress]         = useState('');
+    const [phone, setPhone]             = useState('');
     const [description, setDescription] = useState('');
-    const [mission, setMission] = useState('');
-    const [vision, setVision] = useState('');
-    const [logo, setLogo] = useState('');
-    const [logoFile, setLogoFile] = useState('');
+    const [mission, setMission]         = useState('');
+    const [vision, setVision]           = useState('');
+    const [logo, setLogo]               = useState('');
+    const [logoFile, setLogoFile]       = useState('');
 
     const updateButton = (e) => {
         e.preventDefault();
-        const url = `http://localhost:8080/company/${props.companyToEditId}`;
-
-        const companyData = new FormData(document.querySelector('#UpdateCompany_form'))
-        companyData.append('img', logo);
-
-        axios.put(url, 
-            companyData,
-            {headers: {"x-token": sessionStorage.getItem("token-xL")}})
-        .then( resp => {
-            Swal.fire({
-                icon: 'success',
-                text: resp.data.resData,
-                timer: 3000,
-                showCloseButton: true,
-                // showCancelButton: true,
-                confirmButtonColor: '#0d6efd',
-                cancelButtonColor: '#dc3545'
-            })
-        })
-        .catch( error => {
-            console.log(error)
-            Swal.fire({
-                icon: 'error',
-                title: 'Error',
-                text: 'Error al actualizar la empresa.',
-                showCloseButton: true,
-                // showCancelButton: true,
-                confirmButtonColor: '#0d6efd',
-                cancelButtonColor: '#dc3545',
-                footer: error.response.data.errors
-            })
-        })
-    }
-
-    const fetchCompanyData = async() => {
-        const url = `http://localhost:8080/company/${props.companyToEditId}`;
-        axios(url, {headers: {"x-token": sessionStorage.getItem('token-xL')}})
-            .then( resp => resp.data.resData )
-            .then( companyData => { fillCompanyData(companyData) })
-            .catch(error => console.log(error))
-    }
-
-    const fillCompanyData = (companyData) => {
-        setCompanyId(companyData.id);
-        setCompany(companyData.company_name);
-        setAddress(companyData.company_address);
-        setPhone(companyData.company_phone);
-        setDescription(companyData.company_description);
-        setMission(companyData.company_mission);
-        setVision(companyData.company_vision);
-        setLogo(companyData.company_logo);
+        const urlCompany = `http://localhost:8080/company/${props.companyToEditId}`;
+        useUpdateCompany(urlCompany, logoFile)
     }
 
     useEffect( () => {
-        fetchCompanyData();
+        const urlCompany = `http://localhost:8080/company/${props.companyToEditId}`;
+        useGetCompany(urlCompany, { setCompany, setAddress, setPhone, setDescription, setMission, setVision, setLogo});
     }, [])
 
   return (
@@ -124,6 +76,7 @@ const UpdateCompany = (props) => {
                 </div>
             </form>
         </div>
+        <Toaster/>
     </>
   )
 }

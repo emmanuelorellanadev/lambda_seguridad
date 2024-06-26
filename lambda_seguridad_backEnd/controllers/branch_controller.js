@@ -57,7 +57,7 @@ const updateBranch = async(req, res) => {
 
         await Branch.update( branchToUpdate, { where:{id: id} } )
             .then( ( branch ) => { resSuccessful(res, `Sucursal ${branchToUpdate.branch_name} actualizada correctamente`)})
-            .catch( error => { console.log(error)})//throw new DBError(error, `Error al actualizar la sucursal`, 400)})
+            .catch( error => {throw new DBError(error, `Error al actualizar la sucursal`, 400)})
 }
 
 //DELETE BRANCH

@@ -1,12 +1,14 @@
-import axios from 'axios';
 import {useState, useEffect} from 'react'
-import Swal from 'sweetalert2';
+import { Toaster } from 'react-hot-toast'; 
 
 import '../../css/branch/branch.css'
 import {P_Head} from'../ui/P_Head';
 import { Label } from '../ui/Label';
 import { Input } from '../ui/Input';
 import { Select } from '../ui/Select';
+import { useGetCompany } from '../companies/hooks/useGetCompany.js'
+import { useCreateBranch } from './hooks/useCreateBranch.js';
+import { useGetBranchType } from '../branchTypes/hooks/useGetBranchType.js';
 
 const CreateBranch = () => {
 
@@ -14,76 +16,15 @@ const CreateBranch = () => {
     const [ address, setAddress ] = useState('');
     const [ phone, setPhone ] = useState('');
     const [ state, setState ] = useState(true);
-    const [ companies, setComapanies ] = useState([]);
-    const [ branchId, setBranchId ] = useState('');
+    const [ companies, setCompanies ] = useState([]);
     const [ branchTypes, setBranchTypes ] = useState([]);
     const [ companySelected, setCompanySelected ] = useState(1);
     const [ branchTypeSelected, setBranchTypeSelected ] = useState('');
 
     const saveButton = (e) => {
         e.preventDefault();
-
-        saveBranch();
-    }
-
-    const saveBranch = async() => {
-      const url = 'http://localhost:8080/branch'
-
-      await axios.post(url, {
-        "branch_name": branch,
-        "branch_address": address,
-        "branch_phone": phone,
-        "branch_state": state,
-        "BranchTypeId": branchTypeSelected,
-        "CompanyId": companySelected
-      },
-      {
-        headers: { "x-token": sessionStorage.getItem("token-xL") }
-      })
-      .then( response => {
-        if (response.data.resData) {
-        Swal.fire({
-            icon: 'success',
-            title: `Sucursal ${branch}, guardada con exito`,
-            timer: 2500,
-            confirmButtonColor: '#0d6efd'
-        })
-      }
-    })
-      .catch( error => {
-        Swal.fire({
-        icon: 'error',
-        title: 'ERROR',
-        text: 'La sucursal no pudo ser guardado',
-        footer: error,
-        confirmButtonColor: '#0d6efd'
-        })
-      })
-
-      cleanForm();
-    }
-
-    const fetchData = async() => {
-      const urlBranchType = 'http://localhost:8080/branchType'
-      const urlCompany = 'http://localhost:8080/company'
-      try {
-        //get Company
-        await axios.get(urlCompany, {
-          headers: {'x-token': sessionStorage.getItem('token-xL')}
-        })
-        .then( companies => {setComapanies(companies.data.resData)})
-        .catch(error => console.log(error));
-
-        //Get BranchType
-        await axios.get(urlBranchType, {
-          headers: {'x-token': sessionStorage.getItem('token-xL')}
-        })
-        .then( branchT => {setBranchTypes(branchT.data.resData)})
-        .catch(error => console.log(error));
-        
-      } catch (error) {
-        console.log(error)
-      }
+        useCreateBranch( branch, address, phone, state, branchTypeSelected, companySelected );
+        cleanForm();
     }
 
     const cleanForm = () => {
@@ -95,7 +36,10 @@ const CreateBranch = () => {
     }
 
     useEffect( () => {
-      fetchData()
+      const urlCompany = 'http://localhost:8080/company'
+      const urlBranchType = 'http://localhost:8080/branchType'
+      useGetCompany(urlCompany, { setCompanies })
+      useGetBranchType(urlBranchType, {setBranchTypes})
     }, []);
  
   return (
@@ -108,7 +52,7 @@ const CreateBranch = () => {
                     <Input lambdaClassInput={""}  type="text" name="branch" id="branch"  value={branch} onChange={ (e) => setBranch(e.target.value)} required/>
                 </div>
                 <div>
-                    <Label lambdaClassLabel={""}  text="irección"/>
+                    <Label lambdaClassLabel={""}  text="Dirección"/>
                     <Input lambdaClassInput={""}  type="text" name="address" id="address"  value={address} onChange={ (e) => setAddress(e.target.value)} required/>
                 </div>
                 <div>
@@ -125,13 +69,14 @@ const CreateBranch = () => {
                 </div>
                 <div>
                     <Label lambdaClassLabel={""}  text="Sucursal"/>
-                    <Select data={branchTypes} text="Selecciona Empresa" name="" id="" value={branchTypeSelected} onChange={ ( e ) => setBranchTypeSelected( e.target.value)} required />
+                    <Select data={branchTypes} text="Selecciona tipo sucursal" name="" id="" value={branchTypeSelected} onChange={ ( e ) => setBranchTypeSelected( e.target.value)} required />
                 </div>
                 <div className='sendBranch_button'>
                   <button className='btn btn-primary'  >Guardar</button>
                 </div>
             </form>
     </div>
+    <Toaster/>
     </>
   )
 }

@@ -1,0 +1,13 @@
+.pagination_container{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+}
+
+/* .pagination_container input{
+    width: 3rem;
+} */
+
+.data_search{
+    margin-bottom: 1rem;
+}
