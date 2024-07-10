@@ -11,15 +11,16 @@ class DBError extends Error{
     constructor (error, message, status = 400){
         super(message),
         this.name = 'DBError',
+        this.details = '',
         this.statusCode = status,
         this.errorData = JSON.stringify(error).replaceAll('{', `{\n`)
-        // this.errorData = JSON.stringify(error)
+        this.errorLambda = ''
     }
 }
 
 class GeneralError extends Error{
-    constructor(message, status = 500){
-        super(message);
+    constructor(message, status = 400){
+        super(message),
         this.statusCode = status
     }
 }

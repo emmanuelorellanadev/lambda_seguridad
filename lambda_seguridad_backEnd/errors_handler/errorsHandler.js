@@ -1,19 +1,18 @@
-const { InstanceError } = require("sequelize");
 const { logFailedLogin, logError, logErrorDB } = require("../errors_handler/log_handler");
 const { resError } = require("../response/resError");
+const { error_db_unique } = require("./DBError/error_db_unique");
 const { LoginError, DBError, GeneralError } = require("./errors");
 
 const errorsHandler = async(error, res) => {
     
-    console.error(error);
-    // console.log(error);
+    console.log(error)
 
     if(error instanceof LoginError){
-        console.error('error logFailedLogin'.yellow)
+        console.error('Error. FailedLogin'.yellow)
         await logFailedLogin(error);
         
         }else if(error instanceof DBError){
-            console.error('Error: DBError'.yellow);
+            error_db_unique(error);
             await logErrorDB(error);
 
             }else if(error instanceof GeneralError){

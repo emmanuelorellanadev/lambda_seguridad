@@ -56,7 +56,7 @@ const updateBranch = async(req, res) => {
         if (!company || !branchType || !branch) {throw new DBError(null, `Empresa, sucursal o tipo de sucursal no encontradas`, 401)}
 
         await Branch.update( branchToUpdate, { where:{id: id} } )
-            .then( ( branch ) => { resSuccessful(res, `Sucursal ${branchToUpdate.branch_name} actualizada correctamente`)})
+            .then( () => { resSuccessful(res, `Sucursal ${branchToUpdate.branch_name} actualizada correctamente`)})
             .catch( error => {throw new DBError(error, `Error al actualizar la sucursal`, 400)})
 }
 

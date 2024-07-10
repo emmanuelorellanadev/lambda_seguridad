@@ -1,8 +1,4 @@
-//submenu from User
-
 import {useState, useEffect} from 'react';
-import axios from 'axios';
-import Swal from 'sweetalert2';
 
 import '../../css/user/user.css';
 import { useDeleteUser } from './hooks/useDeleteUser';
@@ -10,7 +6,7 @@ import {P_Head} from'../ui/P_Head';
 import { Table } from'../ui/Table'
 import Table_user from '../ui/Table_user';
 import { useGetBranch } from '../branches/hooks/useGetBranch';
-import { userGetUser } from './hooks/userGetUser';
+import { useGetUserByBranch } from './hooks/useGetUsersByBranch';
 import { Toaster } from 'react-hot-toast';
 
 export const ListUsers = (props) => {
@@ -35,7 +31,7 @@ export const ListUsers = (props) => {
         const urlBranch = 'http://localhost:8080/branch'
         const urlUsersByBranch = `http://localhost:8080/usersByBranch/${branch}`;
         useGetBranch(urlBranch, {setBranches});
-        userGetUser(urlUsersByBranch, {setUsers});
+        useGetUserByBranch(urlUsersByBranch, {setUsers});
     }, [branch, onLoad])
 
     return (

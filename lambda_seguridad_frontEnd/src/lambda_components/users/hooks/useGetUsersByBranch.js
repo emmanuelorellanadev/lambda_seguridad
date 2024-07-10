@@ -1,7 +1,6 @@
 import axios from "axios";
-import toast from "react-hot-toast";
 
-export const userGetUser = async(urlUsersByBranch, {setUsers}) => {
+export const useGetUserByBranch = async(urlUsersByBranch, {setUsers}) => {
     await axios.get(urlUsersByBranch, {
         headers: { "x-token": sessionStorage.getItem('token-xL') }
     })

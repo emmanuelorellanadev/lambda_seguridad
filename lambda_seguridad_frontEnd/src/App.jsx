@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Login } from './lambda_components/Login';
+import { Login } from './lambda_components/auth/Login';
 
 export const App = () => {
   return (

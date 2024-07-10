@@ -7,6 +7,13 @@ import {P_Head} from'../ui/P_Head';
 import { Label } from '../ui/Label';
 import { Input } from '../ui/Input';
 import { Select } from '../ui/Select';
+import { useUpdateUser } from './hooks/useUpdateUser';
+import { Toaster } from 'react-hot-toast';
+import { useGetRole } from '../roles/hooks/useGetRole';
+import { useGetUserByBranch } from './hooks/useGetUsersByBranch';
+import { useGetCompany } from '../companies/hooks/useGetCompany';
+import { useGetUser } from './hooks/useGetUser';
+import { useGetBranch } from '../branches/hooks/useGetBranch';
 
 export const UpdateUser = (props) => {
     const [user, setUser] = useState('');
@@ -22,90 +29,9 @@ export const UpdateUser = (props) => {
 
     const updateButton = (e) => {
         e.preventDefault();
-        updateUser();        
+        const urlUser = `http://localhost:8080/user/${props.userToEdit}`;
+        useUpdateUser(urlUser, state, props);
     }
-
-    const updateUser = async() => {
-    const url = `http://localhost:8080/user/${props.userToEdit}`;
-
-    const userData = new FormData(document.querySelector('#UpdateUser_form'));
-
-    userData.set('user_state', state)
-    // userData.append('img', userImage)
-
-    await axios.put(url, 
-        userData,
-    {
-        headers: { "x-token": sessionStorage.getItem('token-xL') 
-    }})
-        .then( response => {
-            Swal.fire({
-                icon: 'success',
-                title: 'Usuario actualizado correctamente',
-                footer: response.data.msg,
-                timer: 2500,
-                confirmButtonColor: '#0d6edf'
-
-            })
-            props.navListUsers();
-        })
-        .catch( (error) => {
-            console.log(error);
-            Swal.fire({
-                icon: 'error',
-                title: 'Error',
-                text: 'No se pudo actualizar el usuario',
-                footer: error.response.data.error.name,
-                confirmButtonColor: '#0d6edf'
-            })
-        })
-    }
-
-    //Fetch roles user in select
-    const fetchRoles = async() => {
-        const url = 'http://localhost:8080/role';
-
-        await axios(url, {
-            headers: { "x-token": sessionStorage.getItem('token-xL') }
-            })
-            .then( roles => setRoles(roles.data.resData))
-            .catch(error => console.log(error))
-    }
-
-    const searchUserToEdit = async() => {
-        const url = `http://localhost:8080/user/${props.userToEdit}`;
-
-        await axios.get(url, {
-            headers: { "x-token": sessionStorage.getItem('token-xL')},
-            // params: {id: props.userToEdit}// req.query
-            })
-            .then( res => res.data.resData )
-            .then( userData => fillFields(userData) )
-            .catch(error => console.log(error))
-    }   
-
-    //Fetch companies used in select
-    const fetchCompanies = async() => {
-        const url = 'http://localhost:8080/company';
-
-        await axios(url, {
-            headers: { "x-token": sessionStorage.getItem('token-xL') }
-            })
-            .then( companies => setCompanies(companies.data.resData))
-            .catch(error => console.log(error))
-    }
-//Fetch branches used in select
-    const fetchBranches = async() => {
-        const url = 'http://localhost:8080/branch';
-
-        await axios(url, {
-            headers: { "x-token": sessionStorage.getItem('token-xL') }
-            })
-            .then( branches => setBranches(branches.data.resData))
-            .catch(error => console.log(error))
-    }
-
-    //WORK HERE
 
     const fetchCompanyId = async() => {
         const url = `http://localhost:8080/BranchUser/${props.userToEdit}`;
@@ -135,10 +61,15 @@ export const UpdateUser = (props) => {
     }
 
     useEffect( () => {
-        fetchRoles();
-        searchUserToEdit();
-        fetchCompanies();
-        fetchBranches();
+        const urlRole = 'http://localhost:8080/role/'
+        const urlUser = `http://localhost:8080/user/${props.userToEdit}`;
+        const urlCompany = 'http://localhost:8080/company/';
+        const urlBranch = 'http://localhost:8080/branch/';
+
+        useGetRole(urlRole, {setRoles});
+        useGetUser(urlUser, {fillFields})
+        useGetCompany(urlCompany, {setCompanies});
+        useGetBranch(urlBranch, {setBranches})
         fetchBranchId();
         fetchCompanyId();
     }, [])
@@ -179,6 +110,7 @@ export const UpdateUser = (props) => {
                 <button className='btn btn-primary'>Actualizar Usuario</button>
             </div>
          </form>
+         <Toaster/>
 </div>
   )
 }

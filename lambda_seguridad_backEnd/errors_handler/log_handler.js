@@ -6,7 +6,7 @@ const logSuccessfulLogin = async(user, RoleId) => {
         
         const e = (`\n ${Date()} SUCCESSFUL LOGIN ${user} whit Role ${RoleId} `);
 
-        await appendFile(url, e, {flag: 'a'})
+        await appendFile(url, e, {flag: 'a'}) //create file and or write data
 }
 
 const logFailedLogin = async(error) => {

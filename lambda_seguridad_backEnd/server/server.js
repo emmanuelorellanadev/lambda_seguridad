@@ -42,7 +42,7 @@ class Server {
         this.app.use('/branchUser',         require('../routes/branch_user_route'));
         this.app.use('/branchType',         require('../routes/branchType_route'));
         this.app.use('/company',            require('../routes/company_route'));
-        this.app.use('/log',                require('../routes/log_route'));
+        this.app.use('/log',                require('../routes/log_route')); //what's this?
         this.app.use('/payment',            require('../routes/payment_route'));
         this.app.use('/paymentState',       require('../routes/paymentState_route'));
         this.app.use('/paymentDetail',      require('../routes/paymentDetail_route'));

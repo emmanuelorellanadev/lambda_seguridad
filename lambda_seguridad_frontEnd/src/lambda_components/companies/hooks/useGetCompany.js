@@ -6,7 +6,7 @@ export const useGetCompany = async( urlCompany, { setCompanies, setCompany, setA
     .then( resp => resp.data.resData )
     .then( data => {
       if(setCompanies){
-        setOnLoad(false)
+        if(setOnLoad) setOnLoad(false)
         setCompanies( data ) 
       }else if(setCompany){
         setCompany(data.company_name), 

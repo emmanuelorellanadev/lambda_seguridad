@@ -7,7 +7,8 @@ const resError = async(error, res) => {
     res.status(error.statusCode).json({
         error: true,
         errors: error.message,
-        name: error.name
+        name: error.name,
+        errorLambda: error.errorLambda
     })
 }
 

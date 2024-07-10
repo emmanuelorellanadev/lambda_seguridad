@@ -36,6 +36,16 @@ const getUser = async(req, res) => {
         resSuccessful(res, user);
 }
 
+
+
+// WORK HERE!!!
+// Error al guardar usuario.
+//
+
+
+
+
+
 const saveUser = async(req, res) => {
     // const userToSave  = Object.assign({}, req.body); // fix [Object: null prototype]{xxx: xxxx}
     const userToSave  = req.body; 
@@ -69,7 +79,7 @@ const saveUser = async(req, res) => {
             throw new DBError(error, 'Error al guardar el usuario', 400);
         })
 
-    resSuccessful(res, 'Usuario guardado exitosamente')
+    resSuccessful(res, `Usuario ${userToSave.user_name} guardado exitosamente.`)
 }
 
 const updateUser = async(req, res) => {
@@ -110,7 +120,7 @@ const updateUser = async(req, res) => {
                 } })
         })
         .catch( error => {
-            throw new DBError(error, error.message, 400)
+            throw new DBError(error, "Error al actualizar el usuario.", 400)
         })
 
     resSuccessful(res, `Usuario ${userExist.user_name} actualizado correctamente`)

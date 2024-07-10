@@ -9,6 +9,9 @@ import { Input } from '../ui/Input';
 import { Select } from '../ui/Select';
 import { useCreateUser } from './hooks/useCreateUser';
 import { Toaster } from 'react-hot-toast';
+import { useGetRole } from '../roles/hooks/useGetRole';
+import { useGetCompany } from '../companies/hooks/useGetCompany';
+import { useGetBranch } from '../branches/hooks/useGetBranch';
 
 
 export const CreateUser = ( ) => {
@@ -28,51 +31,24 @@ export const CreateUser = ( ) => {
         e.preventDefault();
         const urlUser = 'http://localhost:8080/user/';
         useCreateUser(urlUser, userImage, state, {setOnLoad});
-        // cleanForm();
+        cleanForm();
     }
-
-
-    //WORK HERE!!
-// intentar usar onLoad para limpiar campos
     
-
-//Fetch roles used in select
-    const fetchRoles = async() => {
-        const urlRole = 'http://localhost:8080/role/';
-
-        await axios(urlRole, { headers: { "x-token": sessionStorage.getItem('token-xL') } })
-            .then( roles => setRoles(roles.data.resData))
-            .catch(error => console.log(error))
-    }
-    //Fetch companies used in select
-    const fetchCompanies = async() => {
-        const urlCompany = 'http://localhost:8080/company/';
-
-        await axios(urlCompany, { headers: { "x-token": sessionStorage.getItem('token-xL') } })
-            .then( companies => setCompanies(companies.data.resData))
-            .catch(error => console.log(error))
-    }
-//Fetch branches used in select
-    const fetchBranches = async() => {
-        const url = 'http://localhost:8080/branch/';
-
-        await axios(url, { headers: { "x-token": sessionStorage.getItem('token-xL') } })
-            .then( branches => setBranches(branches.data.resData))
-            .catch(error => console.log(error))
-    }
-
-    // const cleanForm = () => {
-    //     setUser('');
-    //     setPass('');
-    //     setState(true);
-    //     setUserImage('')
-    //     document.getElementById('formCreateUser').reset();
-    // } 
+    const cleanForm = () => {
+        setUser('');
+        setPass('');
+        setState(true);
+        setUserImage('')
+        document.getElementById('formCreateUser').reset();
+    } 
 
     useEffect( () => {
-        fetchRoles();
-        fetchCompanies();
-        fetchBranches();
+        const urlRole = 'http://localhost:8080/role/';
+        const urlCompany = 'http://localhost:8080/company/';
+        const urlBranch = 'http://localhost:8080/branch/';
+        useGetRole(urlRole, {setRoles});
+        useGetCompany(urlCompany, {setCompanies, setOnLoad});
+        useGetBranch(urlBranch, {setBranches});
     }, [])
 
     return (

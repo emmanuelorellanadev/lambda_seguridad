@@ -2,7 +2,7 @@ import axios from "axios";
 import { toast } from 'react-hot-toast'
 
 
-export const useGetBranch = async(urlBranch, { setBranches, setBranch, setAddress, setPhone, setState, setBranchTypeId, setCompanyId  }) => {
+export const useGetBranch = async(urlBranch, { setBranches, setId, setBranch, setAddress, setPhone, setState, setBranchTypeId, setCompanyId  }) => {
     await axios.get(urlBranch, 
       { headers: {'x-token': sessionStorage.getItem('token-xL')} })
         .then( resp => resp.data.resData)
@@ -10,6 +10,7 @@ export const useGetBranch = async(urlBranch, { setBranches, setBranch, setAddres
             if(setBranches){
                 setBranches(data)
             } else if(setBranch){
+                setId(data.id)
                 setBranch(data.branch_name)
                 setAddress(data.branch_address)
                 setPhone(data.branch_phone)
