@@ -12,7 +12,7 @@ export const useUserProfile = async(urlUser, {setUserName, setUserRole, setUserC
         })
         .catch(error => {
             console.log(error)
-            toast.error('Error al recuperar Usuario.',{
+            toast.error(`${error.response.data.errors} \n ${error.response.data.errorLambda}`,{
                 duration: 3000,
                 position: "top-right",
                 style: {

@@ -20,7 +20,7 @@ export const useGetCompany = async( urlCompany, { setCompanies, setCompany, setA
     })
     .catch( error => {
       console.log(error)
-      toast.error("Error al recuperar Empresa", {
+      toast.error(`${error.response.data.errors}`, {
           duration: 4000,
           position: "top-right",
           style: {

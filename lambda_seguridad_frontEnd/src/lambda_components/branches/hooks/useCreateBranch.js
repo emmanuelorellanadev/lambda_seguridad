@@ -15,21 +15,22 @@ export const useCreateBranch = async( branch, address, phone, state, branchTypeS
     {
       headers: { "x-token": sessionStorage.getItem("token-xL") }
     })
-    .then( response => {
-        if (response.data.resData) {
-            toast.success("Sucursal creada exitosamente", {
-                duration: 3000,
-                position: "top-right",
-                style: {
-                    background: "rgb(33, 157, 192)",
-                    color: "#ffff",
-                    height: "4rem"
-                }
-            })
-        }
+    .then( resp => {
+        //WORK HERE!!!
+        //show the message sended by backEnd and the error
+        toast.success(`${resp.data.resData}`, {
+            duration: 3000,
+            position: "top-right",
+            style: {
+                background: "rgb(33, 157, 192)",
+                color: "#ffff",
+                height: "4rem"
+            }
+        })
     })
     .catch( error => {
-        toast.error('Error al guardar la Sucursal', {
+        console.log(error)
+        toast.error(`${error.response.data.errors} \n ${error.response.data.errorLambda}`, {
             duration: 3000,
             position: "top-right",
             style: {

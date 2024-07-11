@@ -7,7 +7,7 @@ const getRoles = async(req, res) => {
 
         const roles = await Role.findAll();
 
-        if( !roles ) throw new GeneralError('No se encontraron roles en la base de datos', 400)
+        if( !roles ) throw new GeneralError('No se encontraron roles en la base de datos', 404)
 // Check if the role of userLogued is less than the role to show.
 // That doesnt allow suerpuser create admin user, etc.
 
@@ -26,10 +26,10 @@ const getRole = async(req, res) => {
 
     const role = await Role.findByPk(id);
 
-    if( !role ) throw new GeneralError('No se enconto el rol en la base de datos', 400)
+    if( !role ) throw new GeneralError('No se encontró el rol en la base de datos', 404)
 // Check if the role of userLogued is less than the role to show.
     if( role.id < req.userLoggedIn.RoleId ) {
-        GeneralError('No tienes permiso para acceder a esta información', 401);
+        throw new GeneralError('No tienes permiso para acceder a esta información', 401);
     }
     resSuccessful(res, role);
 }
@@ -39,7 +39,10 @@ const saveRole = async(req, res) => {
     const role = req.body;
 
         await Role.create( role )
-            .then( resp => resSuccessful(res, `Rol ${resp.role_name} creado exitosamente`)); 
+            .then( resp => resSuccessful(res, `Rol ${resp.role_name} creado exitosamente`))
+            .catch(error => {
+                throw new DBError(error, 'Error al guardar el Rol.')
+            })
 
 }
 
@@ -49,7 +52,9 @@ const updateRole = async(req, res) => {
     const usuarioEdit = req.body
 
         await Role.update( usuarioEdit, { where: { id: id} } )
-            .then( resp => resSuccessful(res, `Rol ${resp.role_name} actualizado correctamente`) )
+            .then( resp => {
+                resSuccessful(res, `Rol ${resp.role_name} actualizado correctamente.`)
+            } )
             .catch( error => { throw new DBError(error, 'No fue posible actualizar el Rol', 400)})
 
 }

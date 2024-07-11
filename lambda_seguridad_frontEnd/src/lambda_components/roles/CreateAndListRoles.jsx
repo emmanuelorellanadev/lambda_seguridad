@@ -49,11 +49,9 @@ const CreateAndListRoles = (props) => {
   return (
     <>
       {/* Create section */}
-      {/* <div className='roles_container'> */}
       <div className='role_container'>
         <P_Head text={'Administración De Roles'} className={'p_h1'}/>
         <P_Head text={'Crear Rol'} className={'p_h2'}/>
-        {/* <form className='role_form' onSubmit={e => saveRole(e)}> */}
         <form className={'role_form'} onSubmit={e => saveRole(e)}>
           <div>
             <Label lambdaClassLabel="" text="Id:"/>

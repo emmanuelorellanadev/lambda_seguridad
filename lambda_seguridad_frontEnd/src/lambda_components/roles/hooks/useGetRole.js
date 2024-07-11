@@ -10,7 +10,6 @@ export const useGetRole = async (urlRole, { setRoles, setId, setRoleName, setRol
         }else if(setId){
             setId(data.id);
             setRoleName(data.role_name);
-            console.log(data.role_name)
             setRoleState(data.role_state);
         }
     }) 

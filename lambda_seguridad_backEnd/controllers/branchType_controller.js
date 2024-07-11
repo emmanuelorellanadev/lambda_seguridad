@@ -20,7 +20,7 @@ const getBranchType = async(req, res) => {
     await BranchType.findByPk(id)
         .then( branchType => {
             if(!branchType){
-                throw new DBError(null, `Error: Tipo de sucursal no encontrada`)
+                throw new DBError(null, `Error: Tipo de sucursal no encontrada`, 404)
             }
             resSuccessful(res, branchType)
         });
@@ -44,7 +44,7 @@ const updateBranchType = async(req, res) => {
     
     await BranchType.update( branchType, { where: { id: id} } )
         .then( () => resSuccessful( res, `Tipo de sucursal actualizado correctamente.`) )
-        .catch( error => { throw new DBError( error, 'Error: No se pudo actualizar el tipo de sucursal', 400 ) })
+        .catch( error => { throw new DBError( error, 'Error: No se pudo actualizar el tipo de sucursal.', 400 ) })
 }
 
 const deleteBranchType = async(req, res) => {
@@ -53,7 +53,7 @@ const deleteBranchType = async(req, res) => {
     await BranchType.destroy({ where: {"id": id}})
         .then((resp) => {
             if(!resp) { throw new GeneralError('Tipo de sucursal no encontrado.', 404) }
-            resSuccessful(res, 'Eliminacion realizada correctamente.')
+            resSuccessful(res, `Tipo de sucursal eliminada correctamente.`)
         })
 }
 

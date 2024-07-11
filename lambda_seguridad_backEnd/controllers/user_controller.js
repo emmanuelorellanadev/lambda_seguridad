@@ -36,16 +36,6 @@ const getUser = async(req, res) => {
         resSuccessful(res, user);
 }
 
-
-
-// WORK HERE!!!
-// Error al guardar usuario.
-//
-
-
-
-
-
 const saveUser = async(req, res) => {
     // const userToSave  = Object.assign({}, req.body); // fix [Object: null prototype]{xxx: xxxx}
     const userToSave  = req.body; 

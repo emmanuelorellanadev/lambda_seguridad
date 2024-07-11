@@ -9,8 +9,8 @@ export const useUpdateCompany = async(urlCompany, logoFile) => {
     axios.put(urlCompany, 
         companyData,
         {headers: {"x-token": sessionStorage.getItem("token-xL")}})
-    .then( () => {
-        toast.success('Empresa actualizada correctamente', {
+    .then( (resp) => {
+        toast.success(`${resp.data.resData}`, {
             duration: 3000,
             position: "top-right",
             style: {
@@ -22,8 +22,8 @@ export const useUpdateCompany = async(urlCompany, logoFile) => {
     })
     .catch( error => {
         console.log(error)
-        toast.error('Error al guardar la Empresa', {
-            duration: 3000,
+        toast.error(`${error.response.data.errors} \n ${error.response.data.errorLambda}`, {
+            duration: 4000,
             position: "top-right",
             style: {
                 background: "rgb(33, 157, 192)",

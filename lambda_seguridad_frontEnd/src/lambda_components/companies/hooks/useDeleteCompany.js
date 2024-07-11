@@ -18,10 +18,10 @@ export const useDeleteCompany = (urlCompany, companyId, companyName, setOnLoad) 
             data: {"id": companyId},
             headers:{'x-token': sessionStorage.getItem('token-xL')}
             } )  
-          .then( () => {
+          .then( (resp) => {
             setOnLoad(false);
-            toast.success("Empresa eliminada correctamente", {
-              duration: 4000,
+            toast.success(`${resp.data.resData}`, {
+              duration: 3000,
               position: "top-right",
               style: {
                   background: "rgb(33, 157, 192)",
@@ -30,7 +30,7 @@ export const useDeleteCompany = (urlCompany, companyId, companyName, setOnLoad) 
               }
             });
           })
-          .catch( error => toast.error("Error al eliminar la Empresa", {
+          .catch( error => toast.error(`${error.response.data.errors}`, {
             duration: 4000,
             position: "top-right",
             style: {

@@ -23,10 +23,10 @@ const getPersonType = async( req, res) => {
 
 const savePersonType = async( req, res) => {
     const personTypeData = req.body;
-
+    console.log(personTypeData)
     await PersonType.create(personTypeData)
-        .then( personTypeSaved => resSuccessful(res, `Tipo de persona "${personTypeData.personType_name}", guardado exitosamente`))
-        .catch( error => {throw new DBError(error, 'Error al guardar tipo de persona.', 500)})
+        .then( () => resSuccessful(res, `Tipo de persona "${personTypeData.personType_name}", guardado exitosamente`))
+        .catch( error => {throw new DBError(error, 'Error al guardar tipo de persona.', 400)})
 
     }
 
@@ -38,8 +38,8 @@ const updatePersonType = async( req, res) => {
     if( !personTypeDB ) { throw new GeneralError('Tipo de persona no encontrado', 404)}
 
     await PersonType.update(personTypeData, { where: {id: id}})
-        .then( personTypeUpdated => resSuccessful(res, `Tipo de persona ${personTypeData.personType_name}, actualizada correctamente.`))
-        .catch( error => {throw new DBError(error, 'Error al guardar tipo de persona.', 500)})
+        .then( () => resSuccessful(res, `Tipo de persona ${personTypeData.personType_name}, actualizada correctamente.`))
+        .catch( error => {throw new DBError(error, 'Error al guardar tipo de persona.', 400)})
 
 }
 

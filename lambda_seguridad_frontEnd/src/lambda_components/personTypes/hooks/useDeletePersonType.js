@@ -18,10 +18,10 @@ export const useDeletePersonType = async(id, { setOnLoad }) => {
         .then( async (result) =>{
           if( result.isConfirmed ){
     await axios.delete(url, {headers: {"x-token": sessionStorage.getItem("token-xL")}})
-        .then( () => {
+        .then( (resp) => {
             setOnLoad(false);
-            toast.success("Tipo de Persona eliminado correctamente.", {
-                duration: 4000,
+            toast.success(resp.data.resData, {
+                duration: 3000,
                 position: "top-right",
                 style: {
                     background: "rgb(33, 157, 192)",
@@ -32,7 +32,7 @@ export const useDeletePersonType = async(id, { setOnLoad }) => {
         })
         .catch( error =>{
             console.log(error)
-            toast.error("Error al recuperar tipos de persona.", {
+            toast.error(`${error.request.data.errors}\n${error.request.data.errorLambda}`, {
                 duration: 4000,
                 position: "top-right",
                 style: {

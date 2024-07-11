@@ -22,9 +22,9 @@ export const useDeleteBranchType = async(urlBranchType, id, branchType, setOnLoa
         .then( async (result) =>{
           if( result.isConfirmed ){
             await axios.delete(urlBranchType, {where: {id: id}})
-              .then( () => {
+              .then( (resp) => {
                 setOnLoad(false)
-                toast.success("Tipo de Sucursal eliminado exitosamente", {
+                toast.success(resp.data.resData, {
                     duration: 4000,
                     position: "top-right",
                     style: {
@@ -36,7 +36,8 @@ export const useDeleteBranchType = async(urlBranchType, id, branchType, setOnLoa
               })
               .catch(error => {
                 console.log(error)
-                toast.error("Error al eliminar el tipo de sucursal", {
+          console.log(error)
+                toast.error(`${error.response.data.errors} \n ${error.response.data.errorLambda}`, {
                     duration: 4000,
                     position: "top-right",
                     style: {

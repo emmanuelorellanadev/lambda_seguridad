@@ -65,7 +65,6 @@ export const UpdateUser = (props) => {
         const urlUser = `http://localhost:8080/user/${props.userToEdit}`;
         const urlCompany = 'http://localhost:8080/company/';
         const urlBranch = 'http://localhost:8080/branch/';
-
         useGetRole(urlRole, {setRoles});
         useGetUser(urlUser, {fillFields})
         useGetCompany(urlCompany, {setCompanies});

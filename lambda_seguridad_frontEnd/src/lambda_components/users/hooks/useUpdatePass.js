@@ -24,8 +24,8 @@ export const useUpdatePass = async(urlUser, pass, passConfirm, userName, RoleId 
         {
             headers: { "x-token": sessionStorage.getItem("token-xL") }
         })
-        .then( () => {
-            toast.success('Contraseña actualizada correctamente.',{
+        .then( (resp) => {
+            toast.success(resp.data.resData,{
                 duration: 3000,
                 position: "top-right",
                 style: {

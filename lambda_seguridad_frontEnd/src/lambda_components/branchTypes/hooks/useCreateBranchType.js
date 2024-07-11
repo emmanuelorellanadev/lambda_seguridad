@@ -10,10 +10,10 @@ export const useCreateBranchType = async(urlBranchType, branchType, branchTypeSt
         "branchType_state": branchTypeState
       }, 
       { headers: { "x-token": sessionStorage.getItem("token-xL") } })
-        .then( () => {
+        .then( (resp) => {
           setOnLoad(false)
-          toast.success("Tipo de Sucursal creado exitosamente", {
-            duration: 4000,
+          toast.success(`${resp.data.resData}`, {
+            duration: 3000,
             position: "top-right",
             style: {
                 background: "rgb(33, 157, 192)",
@@ -23,8 +23,7 @@ export const useCreateBranchType = async(urlBranchType, branchType, branchTypeSt
           });
         } )
         .catch( error => {
-          console.log(error)
-          toast.error("Error al guardar el tipo de sucursal.", {
+          toast.error(`${error.response.data.errors} \n ${error.response.data.errorLambda}`, {
             duration: 4000,
             position: "top-right",
             style: {

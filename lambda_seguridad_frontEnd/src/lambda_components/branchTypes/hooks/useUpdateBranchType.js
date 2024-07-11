@@ -9,8 +9,8 @@ export const useUpdateBranchType = async(urlBranchType, id, branchTypeName, bran
     },  {
         headers: {"x-token": sessionStorage.getItem('token-xL')
     }})
-        .then( () => {
-            toast.success("Tipo de Sucursal actualizado exitosamente", {
+        .then( (resp) => {
+            toast.success(`${resp.data.resData}`, {
                 duration: 4000,
                 position: "top-right",
                 style: {
@@ -22,7 +22,7 @@ export const useUpdateBranchType = async(urlBranchType, id, branchTypeName, bran
         })
         .catch( error => {
             console.log(error)
-            toast.error("Error al actualizar el Tipo de Sucursal", {
+            toast.error(`${error.response.data.errors} \n ${error.response.data.errorLambda}`, {
                 duration: 4000,
                 position: "top-right",
                 style: {

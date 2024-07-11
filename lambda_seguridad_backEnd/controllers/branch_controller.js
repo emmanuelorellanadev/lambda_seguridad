@@ -39,8 +39,8 @@ const saveBranch = async(req, res) => {
     branchToSave.CompanyId = company.id;
     branchToSave.BranchTypeId = branchType.id;
 
-    const branchSaved = await Branch.create(branchToSave)
-        .then( branch => resSuccessful(res, `Sucursal ${branch.branch_name} creada exitosamente`))
+    await Branch.create(branchToSave)
+        .then( branch => resSuccessful(res, `Sucursal ${branch.branch_name} creada exitosamente.`))
         .catch(error => { throw new DBError(error, 'Error: No se pudo guardar la sucursal', 400) })
 }
 
@@ -53,7 +53,7 @@ const updateBranch = async(req, res) => {
         const branchType = await BranchType.findByPk(branchToUpdate.BranchTypeId);
         const branch = await Branch.findByPk(id);
 
-        if (!company || !branchType || !branch) {throw new DBError(null, `Empresa, sucursal o tipo de sucursal no encontradas`, 401)}
+        if (!company || !branchType || !branch) {throw new DBError(null, `Empresa, sucursal o tipo de sucursal no encontradas`, 404)}
 
         await Branch.update( branchToUpdate, { where:{id: id} } )
             .then( () => { resSuccessful(res, `Sucursal ${branchToUpdate.branch_name} actualizada correctamente`)})
@@ -69,7 +69,7 @@ const deleteBranch = async(req, res) => {
 
     await Branch.destroy({ where: {id : id} })
         .then( () => resSuccessful(res, 'Sucursal eliminada correctamente.'))
-        .catch( error => { console.log(error); throw new DBError(error, 'No se pudo eliminar la sucursal', 400) } )
+        .catch( error => { throw new DBError(error, 'Error al eliminar la sucursal', 400) } )
 }   
 
 module.exports = {

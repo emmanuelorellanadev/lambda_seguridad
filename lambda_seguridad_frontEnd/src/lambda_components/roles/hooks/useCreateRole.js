@@ -9,9 +9,9 @@ export const useCreateRole = async(urlRole, id, roleName, roleState, { setOnLoad
         "role_state": roleState
       }, 
       { headers: { "x-token": sessionStorage.getItem("token-xL") } })
-        .then( () => {
+        .then( (resp) => {
             setOnLoad(false);
-            toast.success("Rol creado exitosamente..", {
+            toast.success(resp.data.resData, {
                 duration: 4000,
                 position: "top-right",
                 style: {
@@ -22,8 +22,7 @@ export const useCreateRole = async(urlRole, id, roleName, roleState, { setOnLoad
               });
         } )
         .catch( error => {
-            console.log(error)
-            toast.error("Error al crear el Rol.", {
+            toast.error(`${error.response.data.errors} \n ${error.response.data.errorLambda}`, {
                 duration: 4000,
                 position: "top-right",
                 style: {

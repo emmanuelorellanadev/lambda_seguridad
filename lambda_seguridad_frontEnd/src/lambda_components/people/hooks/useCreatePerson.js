@@ -13,8 +13,8 @@ export const useCreatePerson = async(urlPerson, names, surNames, cui, nit, phone
         "PersonTypeId": personTypeId,
         "BranchId": branchId
         }, {headers: {"x-token": sessionStorage.getItem('token-xL')}})
-        .then(() => {
-            toast.success('Persona guardada exitosamente.',{
+        .then((resp) => {
+            toast.success(resp.data.resData,{
                 duration: 3000,
                 position: "top-right",
                 style: {
@@ -25,7 +25,7 @@ export const useCreatePerson = async(urlPerson, names, surNames, cui, nit, phone
             })
         })
         .catch(error => {
-            toast.error('Error al guardar la persona.',{
+            toast.error(`${error.response.data.errors} \n ${error.response.data.errorLambda}`,{
                 duration: 3000,
                 position: "top-right",
                 style: {

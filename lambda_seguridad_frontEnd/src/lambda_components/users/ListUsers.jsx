@@ -3,7 +3,6 @@ import {useState, useEffect} from 'react';
 import '../../css/user/user.css';
 import { useDeleteUser } from './hooks/useDeleteUser';
 import {P_Head} from'../ui/P_Head';
-import { Table } from'../ui/Table'
 import Table_user from '../ui/Table_user';
 import { useGetBranch } from '../branches/hooks/useGetBranch';
 import { useGetUserByBranch } from './hooks/useGetUsersByBranch';
@@ -28,6 +27,7 @@ export const ListUsers = (props) => {
     }
         
     useEffect( () => {
+        setOnLoad(true)
         const urlBranch = 'http://localhost:8080/branch'
         const urlUsersByBranch = `http://localhost:8080/usersByBranch/${branch}`;
         useGetBranch(urlBranch, {setBranches});

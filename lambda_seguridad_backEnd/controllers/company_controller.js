@@ -31,7 +31,7 @@ const saveCompany = async(req, res) => {
 
         await Company.create( company )
             .then( ({company_name, ...companySaved}) => {
-                resSuccessful(res, `${company_name} guardada exitosamente`) })
+                resSuccessful(res, `Empresa ${company_name} guardada exitosamente.`) })
             .catch( error => {
                 deleteImage(company.company_logo);
                 throw new DBError(error, 'Error al guardar la empresa', 400) })
@@ -51,7 +51,7 @@ const updateCompany = async(req, res) => {
             company.company_logo = req.fileNameToSave;
 
             await Company.update(company, { where: { id: id }})
-                .then( companyUpdated => resSuccessful(res, 'Empresa actualizada correctamente'))
+                .then( () => resSuccessful(res, 'Empresa actualizada correctamente'))
                 .catch( error => { throw new DBError(error, 'Error al actualizar la empresa.', 400) })
     }
     
@@ -61,9 +61,14 @@ const deleteCompany = async( req, res ) =>{
 
         if( !companyToDelete ) throw new DBError(null, 'Empresa no encontrada')
 
-        await Company.destroy({ where: {id: id}});
-            deleteImage(companyToDelete.company_logo);
-            resSuccessful(res, 'Empresa eliminada correctamente');
+        await Company.destroy({ where: {id: id}})
+            .then( () => {
+                deleteImage(companyToDelete.company_logo);
+                resSuccessful(res, `Empresa ${companyToDelete.company_name} eliminada correctamente`);
+            })
+            .catch( error => {
+                DBError(error, 'Error al eliminar la Empresa', 400)
+            })
             
 }
 

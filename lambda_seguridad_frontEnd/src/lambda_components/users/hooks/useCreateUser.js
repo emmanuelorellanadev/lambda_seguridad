@@ -12,7 +12,7 @@ export const useCreateUser = async(urlUser, userImage, state, { setOnLoad }) => 
                 .then( response => {
                     setOnLoad(false);
                     toast.success(`${response.data.resData}`,{
-                        duration: 6000,
+                        duration: 3000,
                         position: "top-right",
                         style: {
                             background: "rgb(33, 157, 192)",

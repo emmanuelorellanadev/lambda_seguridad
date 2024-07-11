@@ -25,8 +25,8 @@ const savePerson = async( req, res) => {
     const personData = req.body;
 
     await Person.create(personData)
-        .then( personSaved => resSuccessful(res, `Persona "${personData.person_names}", guardada exitosamente.`))
-        .catch( error => {throw new DBError(error, 'Error al guardar persona.', 500)})
+        .then( () => resSuccessful(res, `Persona guardada exitosamente.`))
+        .catch( error => {throw new DBError(error, 'Error al guardar persona.', 400)})
 
     }
 
@@ -38,8 +38,8 @@ const updatePerson = async( req, res) => {
     if( !personDB ) { throw new GeneralError('Tipo de persona no encontrado', 404)}
 
     await Person.update(personData, { where: {id: id}})
-        .then( personUpdated => resSuccessful(res, `Persona, actualizada correctamente.`))
-        .catch( error => {throw new DBError(error, 'Error al guardar persona.', 500)})
+        .then( () => resSuccessful(res, `Persona actualizada correctamente.`))
+        .catch( error => {throw new DBError(error, 'Error al guardar persona.', 400)})
 
 }
 

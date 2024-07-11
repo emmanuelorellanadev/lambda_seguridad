@@ -25,6 +25,7 @@ const ListPerson = (props) => {
   }
 
   useEffect( () => {
+    setOnLoad(true)
     const urlPerson = 'http://localhost:8080/person';
     useGetPerson(urlPerson, {setPeople, setOnLoad})
   }, [onLoad])

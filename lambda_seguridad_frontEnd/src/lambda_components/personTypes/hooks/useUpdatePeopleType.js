@@ -8,9 +8,9 @@ export const useUpdatePeopleType = async(url, id, personTypeName, personTypeStat
         "personType_name": personTypeName,
         "personType_state": personTypeState
     }, {headers: {"x-token": sessionStorage.getItem("token-xL")}})
-        .then( () => {
-            toast.success("Tipo de Persona Actualizado correctamente.", {
-                duration: 4000,
+        .then( (resp) => {
+            toast.success(resp.data.resData, {
+                duration: 3000,
                 position: "top-right",
                 style: {
                     background: "rgb(33, 157, 192)",
@@ -20,8 +20,7 @@ export const useUpdatePeopleType = async(url, id, personTypeName, personTypeStat
             });
         })
         .catch( error =>{
-            console.log(error)
-            toast.error("Error al actualizar tipo de persona.", {
+                toast.error(`${error.response.data.errors} \n ${error.response.data.errorLambda}`,{
                 duration: 4000,
                 position: "top-right",
                 style: {

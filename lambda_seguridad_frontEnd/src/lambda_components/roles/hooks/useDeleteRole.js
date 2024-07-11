@@ -17,9 +17,9 @@ export const useDeleteRole = async(urlRole, id, { setOnLoad }) => {
       .then( async (result) =>{
         if( result.isConfirmed ){
           await axios.delete(urlRole, {where: {id: id}})
-            .then( () => {
+            .then( (resp) => {
                 setOnLoad(false)
-                toast.success("Rol eliminado correctamente.", {
+                toast.success(`${resp.data.resData}`, {
                     duration: 4000,
                     position: "top-right",
                     style: {
@@ -31,7 +31,7 @@ export const useDeleteRole = async(urlRole, id, { setOnLoad }) => {
             })
             .catch(error => {
                 console.log(error)
-                toast.error("Error al eliminar el Rol.", {
+                toast.error(`${error.response.data.errors} \n ${error.response.data.errorLambda}`, {
                     duration: 4000,
                     position: "top-right",
                     style: {

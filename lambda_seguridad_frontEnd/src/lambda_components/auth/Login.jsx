@@ -9,7 +9,7 @@ import { useLogin } from './hook/useLogin.js';
 export const Login = () => {
 
     const [isUser, setIsUser] = useState(false);
-    const [user, setUser] = useState('julie');
+    const [user, setUser] = useState('emmanuel');
     const [pass, setPass] = useState('pass');
 
     const loginButton = async(e) => {

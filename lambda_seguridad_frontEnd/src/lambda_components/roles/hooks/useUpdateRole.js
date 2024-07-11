@@ -10,9 +10,9 @@ export const useUpdateRole = async(urlRole, id, roleName, roleState) => {
     },  {
         headers: {"x-token": sessionStorage.getItem('token-xL')
     }})
-        .then( () => {
-            toast.success("Rol actualizado correctamente.", {
-                duration: 4000,
+        .then( (resp) => {
+            toast.success(resp.data.resData, {
+                duration: 3000,
                 position: "top-right",
                 style: {
                     background: "rgb(33, 157, 192)",
@@ -22,8 +22,7 @@ export const useUpdateRole = async(urlRole, id, roleName, roleState) => {
               });
         })
         .catch( error => {
-            console.log(error)
-            toast.error("Error al actualizar el Rol", {
+            toast.error(`${error.response.data.errors} \n ${error.response.data.errorLambda}`, {
                 duration: 4000,
                 position: "top-right",
                 style: {

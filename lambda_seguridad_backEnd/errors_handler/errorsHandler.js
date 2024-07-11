@@ -1,6 +1,6 @@
 const { logFailedLogin, logError, logErrorDB } = require("../errors_handler/log_handler");
 const { resError } = require("../response/resError");
-const { error_db_unique } = require("./DBError/error_db_unique");
+const { dbError_handler } = require("./DBError/dbError_handler");
 const { LoginError, DBError, GeneralError } = require("./errors");
 
 const errorsHandler = async(error, res) => {
@@ -12,7 +12,7 @@ const errorsHandler = async(error, res) => {
         await logFailedLogin(error);
         
         }else if(error instanceof DBError){
-            error_db_unique(error);
+            dbError_handler(error);
             await logErrorDB(error);
 
             }else if(error instanceof GeneralError){
