@@ -32,7 +32,7 @@ export const useDeletePersonType = async(id, { setOnLoad }) => {
         })
         .catch( error =>{
             console.log(error)
-            toast.error(`${error.request.data.errors}\n${error.request.data.errorLambda}`, {
+            toast.error(`${error.request.data.error}\n${error.request.data.errorLambda}`, {
                 duration: 4000,
                 position: "top-right",
                 style: {

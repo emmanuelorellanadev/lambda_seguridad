@@ -2,7 +2,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 
 
-export const useUserProfile = async(urlUser, {setUserName, setUserRole, setUserCompany, setUserBranch, setUserCreation, setUserImg}) => {
+export const useUserProfile = async(urlUser, {setUserName, setUserCreation, setUserImg}) => {
     await axios.get( urlUser, { headers: {"x-token": sessionStorage.getItem("token-xL")}})
         .then(resp => resp.data.resData)
         .then( data => {
@@ -12,7 +12,7 @@ export const useUserProfile = async(urlUser, {setUserName, setUserRole, setUserC
         })
         .catch(error => {
             console.log(error)
-            toast.error(`${error.response.data.errors} \n ${error.response.data.errorLambda}`,{
+            toast.error(`${error.response.data.error} \n ${error.response.data.errorLambda}`,{
                 duration: 3000,
                 position: "top-right",
                 style: {

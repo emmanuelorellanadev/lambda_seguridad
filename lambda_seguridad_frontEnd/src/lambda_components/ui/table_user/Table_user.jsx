@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
-import { Input } from './Input';
+import '../../../css/ui/table.css'
+import { Input } from '../Input';
+import { Label } from '../Label';
 
 export const Table_user = ({ columns, rows, editData, deleteData, ...props}) => {
 
@@ -50,7 +52,7 @@ export const Table_user = ({ columns, rows, editData, deleteData, ...props}) => 
 
   return (
     <>
-    <Input lambdaClassInput={""} type="search" value={search} onChange={ e => onSearchChange(e.target.value)} placeholder="Buscar" />
+    <Input lambdaClassInput={"data_search"} type="search" value={search} onChange={ e => onSearchChange(e.target.value)} placeholder="Buscar" />
       <table className='table table-bordered table-hover table-striped' {...props}>
         <thead className='text-center t_header'>
           <tr key={0}>  
@@ -101,10 +103,21 @@ export const Table_user = ({ columns, rows, editData, deleteData, ...props}) => 
           }
         </tbody>
     </table>
-    <div>
-          <button className='btn btn-primary' onClick={ prevPage }>Anterior</button>
-          <label htmlFor="">{` ${pageCounter} / ${Math.ceil(rows.length/rowsByPage)}`}</label>
-          <button className='btn btn-primary' onClick={ nextPage }>Siguiente</button>
+    <div className='pagination_container'>
+      <div>
+        <button className='btn btn-primary' onClick={  prevPage }>Anterior</button>
+        <label htmlFor="">{` ${pageCounter} / ${Math.ceil(rows.length/rowsByPage)}`}</label>
+        <button className='btn btn-primary' onClick={ nextPage }>Siguiente</button>
+      </div>
+      <div>
+        <Label lambdaClassLabel={""} text={"Registros por página "}/>
+        <select value={rowsByPage} onChange={e => setRowsByPage(e.target.value)}>
+          <option key={"5"} value="5">5</option>
+          <option key={"10"} value="10">10</option>
+          <option key={"20"} value="20">20</option>
+          <option key={"50"} value="50">50</option>
+        </select>
+      </div>
     </div>
   </>
   )

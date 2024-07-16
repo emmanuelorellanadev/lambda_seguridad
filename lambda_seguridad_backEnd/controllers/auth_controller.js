@@ -3,9 +3,9 @@ const { checkPassword } = require("../helpers/encrypt");
 const { generatorJWT } = require("../helpers/generator_jwt");
 const catchedAsync = require("../errors_handler/catchedAsync");
 const { LoginError } = require("../errors_handler/errors");
-const { logSuccessfulLogin } = require("../errors_handler/log_handler");
+const { logSuccessfulAuth } = require("../errors_handler/log_handler");
 
-const login = async (req, res) => {
+const auth = async (req, res) => {
 
     const { name, pass } = req.body;
 
@@ -14,14 +14,14 @@ const login = async (req, res) => {
 
     //user not found
     if (!user) {
-        throw new LoginError(`ERROR: Usuario o contraseña no validos`, 401);
+        throw new LoginError(`Contraseña no valida`, 401);
     } else {
         //check password sha
         const passOK = await checkPassword(pass, user.user_pass)
 
         if (!passOK) {
 
-            throw new LoginError( `ERROR: Usuario o contraseña no validos`, 401);
+            throw new LoginError( `Contraseña no valida.`, 401);
 
         } else {
             //Check User status
@@ -32,7 +32,7 @@ const login = async (req, res) => {
                 const token = await generatorJWT(user.id, user.RoleId, user.user_name);
                 //send the user logued and his token
                 console.log(`User ${user.user_name} registered successfully ${new Date()}`.green)
-                await logSuccessfulLogin(user.user_name, user.RoleId);
+                await logSuccessfulAuth(user.user_name, user.RoleId);
                 res.json({ token });
             }
         }
@@ -40,5 +40,5 @@ const login = async (req, res) => {
 }
 
 module.exports = {
-    login: catchedAsync(login),
+    auth: catchedAsync(auth),
 }

@@ -14,7 +14,6 @@ export const useGetRole = async (urlRole, { setRoles, setId, setRoleName, setRol
         }
     }) 
     .catch( error => {
-        console.log(error)
         toast.error("Error al recuperar los roles", {
             duration: 4000,
             position: "top-right",

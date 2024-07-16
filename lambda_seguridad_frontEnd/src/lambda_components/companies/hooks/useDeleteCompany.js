@@ -30,7 +30,7 @@ export const useDeleteCompany = (urlCompany, companyId, companyName, setOnLoad) 
               }
             });
           })
-          .catch( error => toast.error(`${error.response.data.errors}`, {
+          .catch( error => toast.error(`${error.response.data.error}`, {
             duration: 4000,
             position: "top-right",
             style: {

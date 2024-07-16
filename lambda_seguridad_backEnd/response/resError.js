@@ -5,9 +5,9 @@ const resError = async(error, res) => {
     if(!error.statusCode) error.statusCode = 500;
 
     res.status(error.statusCode).json({
-        error: true,
-        errors: error.message,
+        status: "FAILED",
         name: error.name,
+        error: error.message,
         errorLambda: error.errorLambda
     })
 }

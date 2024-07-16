@@ -22,7 +22,7 @@ export const useCreateRole = async(urlRole, id, roleName, roleState, { setOnLoad
               });
         } )
         .catch( error => {
-            toast.error(`${error.response.data.errors} \n ${error.response.data.errorLambda}`, {
+            toast.error(`${error.response.data.error} \n ${error.response.data.errorLambda}`, {
                 duration: 4000,
                 position: "top-right",
                 style: {

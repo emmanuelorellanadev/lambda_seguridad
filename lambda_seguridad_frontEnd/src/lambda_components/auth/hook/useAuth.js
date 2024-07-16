@@ -3,7 +3,7 @@ import { toast } from 'react-hot-toast'
 
 import { parseJwt } from '../../helpers/parseJwt.js';
 
-export const useLogin = async(urlAuth, user, pass, { setIsUser }) => {
+export const useAuth = async(urlAuth, user, pass, { setIsUser }) => {
     await axios.post(urlAuth, { 'name': user, 'pass': pass })
         .then( resp => resp.data)
         .then( (userData) => {
@@ -27,7 +27,7 @@ export const useLogin = async(urlAuth, user, pass, { setIsUser }) => {
         })
         .catch( error => {
             // console.log(error);
-            toast.error(`${error.response.data.errors}`, {
+            toast.error(`${error.response.data.error}`, {
                 duration: 3000,
                 position: "top-right",
                 style: {

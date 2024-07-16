@@ -1,11 +1,11 @@
 module.exports = {
+    authController : require('./auth_controller'),
     branchController: require('./branch_controller'),
     branchTypeController: require('./branchType_controller'),
     branchUserController: require('./branch_user_controller'),
+    changePasswordController: require('./changePassword_controller'),
     companyController : require('./company_controller'),
     logController : require('./log_controller'),
-    loginController : require('./login_controller'),
-    userController : require('./user_controller'),
     paymentController : require('./payment_controller'),
     paymentStateController : require('./paymentState_controller'),
     paymentDetailController : require('./paymentDetail_controller'),
@@ -19,4 +19,5 @@ module.exports = {
     roomServiceController: require('./room_service_controller'),
     roomStateController: require('./roomState_controller'),
     serviceController: require('./service_controller'),
+    userController : require('./user_controller'),
 }

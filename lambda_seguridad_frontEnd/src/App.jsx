@@ -1,12 +1,12 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Login } from './lambda_components/auth/Login';
+import { Auth } from './lambda_components/auth/Auth';
 
 export const App = () => {
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route exect path='/' element={<Login/>}/>
+          <Route exect path='/' element={<Auth/>}/>
         </Routes>
       </BrowserRouter>
     </div>

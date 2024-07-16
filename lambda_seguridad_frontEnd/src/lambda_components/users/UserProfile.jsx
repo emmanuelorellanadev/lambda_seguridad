@@ -26,8 +26,9 @@ export const UserProfile = () => {
     
     const updatePassword = async(e) => {
         e.preventDefault();
-        const urlUser = `http://localhost:8080/user/${sessionData.uid}`;
-        useUpdatePass(urlUser, pass, passConfirm, userName, roles.id);
+        const urlUser = `http://localhost:8080/changePassword/${sessionData.uid}`;
+        // useUpdatePass(urlUser, pass, passConfirm, currentPass, userName, roles.id);
+        useUpdatePass(urlUser, pass, passConfirm, currentPass);
         cleanForm();
     }
      
@@ -83,7 +84,7 @@ export const UserProfile = () => {
             </form>
                 <P_Head className='p_h3' text="Cambiar Contraseña" />
             <form id='formChangePass' onSubmit={updatePassword}>
-                {/* <input className='form-control text-center' type="password" name="currentPass" id="currentPass" value={currentPass || ''} onChange={ e => setCurrentPass( e.target.value)}  placeholder='Ingrese contraseña actual' autoFocus required/> */}
+                <input className='form-control text-center' type="password" name="currentPass" id="currentPass" value={currentPass || ''} onChange={ e => setCurrentPass( e.target.value)}  placeholder='Ingrese contraseña actual' autoFocus required/>
                 <input className='form-control text-center' type="password" name="pass" id="pass" value={pass || ''} onChange={ e => setPass( e.target.value)}  placeholder='Ingrese nueva contraseña' required/>
                 <input className='form-control text-center' type="password" name="passConfirm" id="passConfirm" value={passConfirm || ''} onChange={ e => setPassConfirm( e.target.value)} placeholder='Confirme nueva contraseña'required/>
                 <button className='btn btn-primary'>Guardar</button>

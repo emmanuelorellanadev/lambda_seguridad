@@ -1,10 +1,10 @@
 import axios from "axios";
 import toast from "react-hot-toast";
 
-export const useUpdatePass = async(urlUser, pass, passConfirm, userName, RoleId ) => {
+export const useUpdatePass = async(urlUser, pass, passConfirm, currentPass) => {
     //check if the passwords are the same
     if (pass != passConfirm){
-        toast.error('Error. Las contraseñas no coinciden.',{
+        toast.error('Error. Las contraseñas no coinciden. \n Intentalo de nuevo.',{
             duration: 3000,
             position: "top-right",
             style: {
@@ -16,10 +16,8 @@ export const useUpdatePass = async(urlUser, pass, passConfirm, userName, RoleId 
     }else{
         // Update password of logged user
         await axios.put(urlUser, {
-            "user_name": userName,
             "user_pass": pass,
-            "user_state": true,
-            "RoleId": RoleId,
+            "current_pass": currentPass
         },
         {
             headers: { "x-token": sessionStorage.getItem("token-xL") }
@@ -36,9 +34,8 @@ export const useUpdatePass = async(urlUser, pass, passConfirm, userName, RoleId 
             })
         })
         .catch( (error) => {
-            console.log(error.response.data);
-            toast.error('Error al actualizar la contraseña.',{
-                duration: 3000,
+            toast.error(`${error.response.data.error}`,{
+                duration: 4000,
                 position: "top-right",
                 style: {
                     background: "rgb(33, 157, 192)",

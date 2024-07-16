@@ -3,21 +3,20 @@ import {useState, useEffect} from 'react';
 import '../../css/user/user.css';
 import { useDeleteUser } from './hooks/useDeleteUser';
 import {P_Head} from'../ui/P_Head';
-import Table_user from '../ui/Table_user';
+import Table_user from '../ui/table_user/Table_user';
 import { useGetBranch } from '../branches/hooks/useGetBranch';
 import { useGetUserByBranch } from './hooks/useGetUsersByBranch';
 import { Toaster } from 'react-hot-toast';
 
 export const ListUsers = (props) => {
     const [users, setUsers] = useState([]);
-    const [editUser, setEditUser] = useState(0);
+    // const [editUser, setEditUser] = useState(0);
     const [branches, setBranches] = useState([]);
     const [branch, setBranch] = useState('');
     const [onLoad, setOnLoad] = useState(true);
     
-    
     const updateUser = (userId) => {
-        setEditUser(userId);
+        // setEditUser(userId);
         props.navEditUser(userId)
     }
     

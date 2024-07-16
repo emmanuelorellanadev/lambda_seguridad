@@ -20,7 +20,7 @@ export const useGetCompany = async( urlCompany, { setCompanies, setCompany, setA
     })
     .catch( error => {
       console.log(error)
-      toast.error(`${error.response.data.errors}`, {
+      toast.error(`${error.response.data.error}`, {
           duration: 4000,
           position: "top-right",
           style: {

@@ -1,7 +1,7 @@
 const { appendFile } = require('fs/promises');
 const catchedAsync = require('./catchedAsync');
 
-const logSuccessfulLogin = async(user, RoleId) => {
+const logSuccessfulAuth = async(user, RoleId) => {
     const url = `./data/logs/security.log`
         
         const e = (`\n ${Date()} SUCCESSFUL LOGIN ${user} whit Role ${RoleId} `);
@@ -40,7 +40,7 @@ const logErrorDB = async( error ) => {
 
 module.exports = {
     logFailedLogin: catchedAsync(logFailedLogin),
-    logSuccessfulLogin: catchedAsync(logSuccessfulLogin),
+    logSuccessfulAuth: catchedAsync(logSuccessfulAuth),
     logErrorDB: catchedAsync(logErrorDB),
     logError: catchedAsync(logError)
 }

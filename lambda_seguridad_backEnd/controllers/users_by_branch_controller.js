@@ -16,7 +16,6 @@ const usersGetByBranch = async(req, res) => {
         query = `SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND BranchId = ${branchId}`;
     }
 
-    // const users = await db_connection.query(`SELECT Users.id, user_name, user_state, RoleId, user_img from Branch_Users INNER JOIN Users WHERE UserId = Users.id AND BranchId = ${branchId}`, {type: QueryTypes.SELECT});
     const users = await db_connection.query(query, {type: QueryTypes.SELECT})
     .then( users => resSuccessful(res, users))
     .catch( error => { throw new DBError(error, 'Usuarios no encontrados', 400)})

@@ -4,9 +4,9 @@ import '../../css/login.css'
 import login from'../../assets/img/login.png'
 import { NavBar } from'../NavBar_components/NavBar.jsx'
 import { Toaster } from 'react-hot-toast';
-import { useLogin } from './hook/useLogin.js';
+import { useAuth } from './hook/useAuth.js';
 
-export const Login = () => {
+export const Auth = () => {
 
     const [isUser, setIsUser] = useState(false);
     const [user, setUser] = useState('emmanuel');
@@ -15,7 +15,7 @@ export const Login = () => {
     const loginButton = async(e) => {
         e.preventDefault();
         const urlAuth = 'http://localhost:8080/auth'
-        useLogin(urlAuth, user, pass, {setIsUser})
+        useAuth(urlAuth, user, pass, {setIsUser})
         cleanAll();
     }
     

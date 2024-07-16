@@ -1,10 +1,15 @@
 const express = require('express');
+const router = expres.Router();
+
+router
+    .route("/")
+    .get((req, res) => {
+        // res.json({
+        //     "hello": "hello"
+        // })
+        res.send(`<h1>Hello desde ${req.baseUrl}</h1>`)
+    })
 
 
 
-const app = express();
-
-module.exports = {
-    lambdaRoutes: app.use('/auth', require('../routes/login_route'))
-
-}
+module.exports = router

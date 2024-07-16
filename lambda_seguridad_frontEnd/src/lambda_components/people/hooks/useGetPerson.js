@@ -1,13 +1,12 @@
 import axios from 'axios';
 import toast from 'react-hot-toast';
 
-export const useGetPerson = async(urlPerson, {setPeople, setNames, setSurNames, setCui, setNit, setPhone, setAddress, setPersonTypeId, setBranchId, setOnLoad }) => {
+export const useGetPerson = async(urlPerson, {setPeople, setNames, setSurNames, setCui, setNit, setPhone, setAddress, setPersonTypeId, setBranchId}) => {
     await axios.get(urlPerson, {headers: {"x-token": sessionStorage.getItem('token-xL') }})
     .then( resp => resp.data.resData)
     .then( data => {
         if(setPeople){
             setPeople(data);
-            setOnLoad(false);
         }else if(setNames){
             setNames(data.person_names)
             setSurNames(data.person_surnames)

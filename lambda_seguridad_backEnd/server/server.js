@@ -4,6 +4,7 @@ const express   =   require('express');
 const cors      =   require('cors');
                     require('dotenv').config();
                     require('colors');
+const v1Router = require('../v1/auth_routes') 
 
 const db_connection = require('../database/conf_database');
 const { errorsHandler } = require('../errors_handler/errorsHandler');
@@ -37,10 +38,12 @@ class Server {
 
 //ROUTES
     routes(){
-        this.app.use('/auth',               require('../routes/login_route'));
+        // this.app.use('/', v1Router)
+        this.app.use('/auth',               require('../routes/auth_route'));
         this.app.use('/branch',             require('../routes/branch_route'));
         this.app.use('/branchUser',         require('../routes/branch_user_route'));
         this.app.use('/branchType',         require('../routes/branchType_route'));
+        this.app.use('/changePassword',     require('../routes/changePassword_route'));
         this.app.use('/company',            require('../routes/company_route'));
         this.app.use('/log',                require('../routes/log_route')); //what's this?
         this.app.use('/payment',            require('../routes/payment_route'));
