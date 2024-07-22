@@ -10,7 +10,7 @@ import Table_type from '../ui/table_type/Table_type';
 import { useDeleteBranchType } from './hooks/useDeleteBranchType';
 import { useGetBranchType } from './hooks/useGetBranchType';
 
-const CreateAndListRoles = (props) => {
+const CreateListRoles = (props) => {
 
   const [ branchTypeName, setBranchTypeName ] = useState('');
   const [ branchTypeState, setBranchTypeState ] = useState(true);
@@ -76,4 +76,4 @@ const CreateAndListRoles = (props) => {
   )
 }
 
-export default CreateAndListRoles
+export default CreateListRoles

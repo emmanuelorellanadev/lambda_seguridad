@@ -8,18 +8,39 @@ const catchedAsync = require("../errors_handler/catchedAsync");
 const { resSuccessful } = require("../response/resSucessful");
 const { GeneralError, DBError } = require("../errors_handler/errors");
 const { deleteImage } = require("../helpers/uploadImage");
+// const { paginate } = require("../helpers/paginate");
 
 const getUsers = async(req, res) => {
-        const users = await User.findAll({include: Role});
-        if (users.length == 0) throw new GeneralError('Usuarios no encontrados')
+    //used to paginate 
+    // const {q, page, limit, order_by, order_direction} = req.query;
+    // console.log(limit)
+    // const search = {};
+    // let order = [];
 
-        //Delete the users than role is less than the user logued
-        users.map( (user, i = 0) => {
-            user.RoleId < req.userLoggedIn.RoleId ? users.splice(i, 1) : '';
-            i++
-        })
-        
-        resSuccessful(res, users);
+    // if (q){
+    //     search = {
+    //         where: {
+    //             user_name: {
+    //                 [Op.like]: `%${q}%`
+    //             }
+    //         }
+    //     }
+    // }
+
+    // const users = await paginate(User, page, limit, search, order)
+
+
+
+    const users = await User.findAll({include: Role});
+    if (users.length == 0) throw new GeneralError('Usuarios no encontrados')
+
+    //Delete the users than role is less than the user logued
+    users.map( (user, i = 0) => {
+        user.RoleId < req.userLoggedIn.RoleId ? users.splice(i, 1) : '';
+        i++
+    })
+    
+    resSuccessful(res, users);
 }
 
 const getUser = async(req, res) => {

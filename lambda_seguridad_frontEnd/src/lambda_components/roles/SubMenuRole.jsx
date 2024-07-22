@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 
-import CreateListRole from './CreateAndListRoles';
+import CreateListRole from './CreateListRole';
 import UpdateRole from './UpdateRole';
 
-const SubMenuRoles = () => {
+const SubMenuRole = () => {
 
   const [ createListRole, setCreateListRole ] = useState(1);
   const [ updateRole, setUpdateRole ] = useState(0);
@@ -36,4 +36,4 @@ const SubMenuRoles = () => {
 
 }
 
-export default SubMenuRoles
+export default SubMenuRole

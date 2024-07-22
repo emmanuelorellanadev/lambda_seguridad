@@ -10,7 +10,7 @@ import { useDeleteRole } from './hooks/useDeleteRole';
 import { useCreateRole } from './hooks/useCreateRole';
 import { Toaster } from 'react-hot-toast';
 
-const CreateAndListRoles = (props) => {
+const CreateListRoles = (props) => {
 
   const [ id, setId ] = useState('');
   const [ roleName, setRoleName ] = useState('');
@@ -81,4 +81,4 @@ const CreateAndListRoles = (props) => {
   )
 }
 
-export default CreateAndListRoles
+export default CreateListRoles

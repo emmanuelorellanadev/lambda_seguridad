@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import CreateListBranchType from './CreateAndListBranchType';
+import CreateListBranchType from './CreateListBranchType';
 import UpdateBranchType from './UpdateBranchType';
 
 const SubMenuBranchType = () => {

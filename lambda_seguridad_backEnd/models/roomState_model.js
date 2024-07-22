@@ -11,7 +11,7 @@ const RoomState = db_connection.define('RoomState', {
         unique: true,
     },
     roomState: {
-        type: DataTypes.STRING,
+        type: DataTypes.BOOLEAN,
         allowNull: false,
         defaultValue: true
     },

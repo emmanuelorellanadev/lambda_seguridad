@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 
 import '../../css/company/company.css';
-import {P_Head} from '../ui/P_Head';
+import {P_Head} from '../ui/P_Head.jsx';
 import Table from '../ui/table/Table.jsx';
-import { useGetCompany } from './hooks/useGetCompany';
-import { useDeleteCompany } from './hooks/useDeleteCompany';
+import { useGetCompany } from './hooks/useGetCompany.js';
+import { useDeleteCompany } from './hooks/useDeleteCompany.js';
 
-const ListCompanies = (props) => {
+const ListCompany = (props) => {
     const urlCompany = 'http://localhost:8080/company/';
     const [ companies, setCompanies ] = useState([]);
     const [ onLoad, setOnLoad ] = useState( true )
@@ -33,4 +33,4 @@ const ListCompanies = (props) => {
   )
 }
 
-export default ListCompanies
+export default ListCompany

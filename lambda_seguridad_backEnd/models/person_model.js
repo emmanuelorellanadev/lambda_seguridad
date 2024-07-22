@@ -15,19 +15,19 @@ const Person = db_connection.define('Person', {
     },
     person_cui: {
         type: DataTypes.STRING,
-        required: false
+        allowNull: true
     },
     person_nit: {
         type: DataTypes.STRING(10),
-        required: false
+        allowNull: true
     },
     person_phone: {
         type: DataTypes.STRING(14),
-        required: false
+        allowNull: true
     },
     person_address: {
         type: DataTypes.STRING(50),
-        required: false
+        allowNull: true
     }
 },
 {

@@ -10,7 +10,8 @@ import SubMenuCompany from '../companies/SubMenuCompany.jsx';
 import SubMenuPerson from'../people/SubMenuPerson.jsx';
 import SubMenuPersonType from'../personTypes/SubMenuPersonType.jsx';
 import SubMenuUser from'../users/SubMenuUser.jsx';
-import SubMenuRole from'../roles/SubMenuRoles.jsx';
+import SubMenuRole from'../roles/SubMenuRole.jsx';
+import SubMenuRoomState from '../roomStates/SubMenuRoomState.jsx';
 import { NavBarUser } from './NavBarUser';
 import { NavBarSuper } from './NavBarSuper';
 import { NavBarAdmin } from './NavBarAdmin'
@@ -35,6 +36,7 @@ export const NavBar = () => {
     const [branchTypeFrame, setBranchTypeFrame] = useState(0);
     const [roleFrame,       setRoleFrame]       = useState(0);
     const [role,            setRole]            = useState(0);
+    const [roomStateFrame,  setRoomStateFrame ] = useState(0);
     
     //subMenu user, close session
     const subMenuUserVisibility = () => {
@@ -102,6 +104,7 @@ export const NavBar = () => {
         setPersonFrame(0);
         setPersonTypeFrame(0);
         setRoleFrame(0);
+        setRoomStateFrame(0);
         showMenu();
     }
 
@@ -114,6 +117,7 @@ export const NavBar = () => {
         setPersonTypeFrame(0);
         setPersonFrame(0);
         setRoleFrame(0);
+        setRoomStateFrame(0);
         showMenu();
     }
 
@@ -126,6 +130,7 @@ export const NavBar = () => {
         setPersonTypeFrame(0);
         setPersonFrame(0);
         setRoleFrame(0);
+        setRoomStateFrame(0);
         showMenu();
     }
     
@@ -138,6 +143,7 @@ export const NavBar = () => {
         setPersonTypeFrame(0);
         setPersonFrame(0);
         setRoleFrame(0);
+        setRoomStateFrame(0);
         showMenu();
     }
 
@@ -150,6 +156,7 @@ export const NavBar = () => {
         setPersonTypeFrame(0);
         setPersonFrame(0);
         setRoleFrame(0);
+        setRoomStateFrame(0);
         showMenu();
     }
 
@@ -162,6 +169,7 @@ export const NavBar = () => {
         setPersonTypeFrame(1);
         setPersonFrame(0);
         setRoleFrame(0);
+        setRoomStateFrame(0);
         showMenu();
     }
     
@@ -174,6 +182,7 @@ export const NavBar = () => {
         setPersonTypeFrame(0);
         setPersonFrame(1);
         setRoleFrame(0);
+        setRoomStateFrame(0);
         showMenu();
     }
 
@@ -186,9 +195,23 @@ export const NavBar = () => {
         setPersonTypeFrame(0);
         setPersonFrame(0);
         setRoleFrame(1);
+        setRoomStateFrame(0);
         showMenu();
     }
-
+    
+    const showRoomStateFrame = ( ) => {
+        setProfileFrame(0);
+        setUserFrame(0);
+        setCompanyFrame(0);
+        setBranchFrame(0);
+        setBranchTypeFrame(0);
+        setPersonTypeFrame(0);
+        setPersonFrame(0);
+        setRoleFrame(0);
+        setRoomStateFrame(1);
+        showMenu();
+    }
+    
     useEffect( () => {
         setRole(sessionStorage.getItem('role-xL'))
     }, [])
@@ -260,6 +283,7 @@ export const NavBar = () => {
                     showBranchFrame={ showBranchFrame }
                     showBranchTypeFrame={ showBranchTypeFrame }
                     showRoleFrame={ showRoleFrame }
+                    showRoomStateFrame={ showRoomStateFrame }
                     closeSession={ closeSession } 
 
                 />}
@@ -273,6 +297,7 @@ export const NavBar = () => {
         { branchFrame       ===     1 && <SubMenuBranch />}
         { branchTypeFrame   ===     1 && <SubMenuBranchType />}
         { roleFrame         ===     1 && <SubMenuRole />}
+        { roomStateFrame    ===     1 && <SubMenuRoomState />}
     </>
   )
 }

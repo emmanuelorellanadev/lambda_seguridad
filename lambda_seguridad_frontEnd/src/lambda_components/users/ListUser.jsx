@@ -8,7 +8,7 @@ import { useGetBranch } from '../branches/hooks/useGetBranch';
 import { useGetUserByBranch } from './hooks/useGetUsersByBranch';
 import { Toaster } from 'react-hot-toast';
 
-export const ListUsers = (props) => {
+export const ListUser = (props) => {
     const [users, setUsers] = useState([]);
     // const [editUser, setEditUser] = useState(0);
     const [branches, setBranches] = useState([]);
@@ -29,6 +29,7 @@ export const ListUsers = (props) => {
         setOnLoad(true)
         const urlBranch = 'http://localhost:8080/branch'
         const urlUsersByBranch = `http://localhost:8080/usersByBranch/${branch}`;
+        const urlUserPagination  = `http://localhost:8080/user/${branch}/?limit=5`;
         useGetBranch(urlBranch, {setBranches});
         useGetUserByBranch(urlUsersByBranch, {setUsers});
     }, [branch, onLoad])

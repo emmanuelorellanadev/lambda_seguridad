@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 import { CreateUser } from './CreateUser';
-import { ListUsers } from './ListUsers';
+import { ListUser } from './ListUser';
 import { UpdateUser } from './UpdateUser';
 
 const SubMenuUser = () => {
@@ -46,7 +46,7 @@ const SubMenuUser = () => {
         </ul>
     </div>
     { createUser === 1 && < CreateUser />}
-    { listUsers === 1 && < ListUsers navEditUser = {navEditUser} />}
+    { listUsers === 1 && < ListUser navEditUser = {navEditUser} />}
     { updateUser === 1 && < UpdateUser userToEdit={userToEdit} navListUsers = {navListUsers}/>}
     </>
   )

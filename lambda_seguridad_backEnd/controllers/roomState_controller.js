@@ -1,15 +1,33 @@
+const { Op } = require('sequelize')
 const catchedAsync = require('../errors_handler/catchedAsync');
 const { GeneralError, DBError } = require('../errors_handler/errors');
 const RoomState = require('../models/roomState_model');
-const { resError } = require('../response/resError');
 const { resSuccessful } = require('../response/resSucessful');
+const { paginate } = require("../helpers/paginate");
 
 const getRoomStates = async(req, res) => {
-    const roomState = await RoomState.findAll();
-    if( roomState.length == 0 ) {
-        throw new GeneralError('No se encontraron status para habitaciones.')
+    const {q, page, limit, order_by, order_direction} = req.query;
+    let search = {};
+    let order = [];
+
+    if (q){
+        search = {
+            where: {
+                roomState_name: {
+                    [Op.like]: `%${q}%`
+                }
+            }
+        }
     }
-    resSuccessful(res, roomState);    
+
+    const roomStates = await paginate(RoomState, page, limit, search, order)
+
+
+    // const roomState = await RoomState.findAll();
+    // if( roomState.length == 0 ) {
+    //     throw new GeneralError('No se encontraron status para habitaciones.')
+    // }
+    resSuccessful(res, roomStates);    
 }
 
 const getRoomState = async(req, res) => {
@@ -24,7 +42,6 @@ const getRoomState = async(req, res) => {
 
 const saveRoomState = async(req, res) => {
     const roomState = req.body;
-    
     await RoomState.create(roomState)
     .catch( error => {
         throw new DBError( error, 'Error al guardar el estado')

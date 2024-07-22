@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 import CreateCompany from './CreateCompany';
-import ListCompanies from './ListCompanies';
+import ListCompanies from './ListCompany';
 import MainCompany from './MainCompany';
 import UpdateCompany from './updateCompany';
 
