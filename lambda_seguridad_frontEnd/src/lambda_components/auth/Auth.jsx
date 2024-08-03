@@ -6,6 +6,7 @@ import { NavBar } from'../NavBar_components/NavBar.jsx'
 import { Toaster } from 'react-hot-toast';
 import { useAuth } from './hook/useAuth.js';
 
+
 export const Auth = () => {
 
     const [isUser, setIsUser] = useState(false);
@@ -41,7 +42,7 @@ export const Auth = () => {
             </div>
         </div>
         <Toaster/>
-        { isUser === true && < NavBar />}
+            { isUser === true && < NavBar />}
     </>
   )
 }

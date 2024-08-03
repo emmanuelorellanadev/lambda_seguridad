@@ -1,0 +1,991 @@
+
+ Mon Jul 29 2024 11:49:31 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Mon Jul 29 2024 11:49:31 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 12:05:56 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 12:05:56 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 12:15:43 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 12:15:43 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 12:15:54 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 12:15:54 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 12:16:06 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 12:16:06 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 12:29:37 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 12:29:37 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 12:55:28 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 12:55:28 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 12:57:05 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 12:57:05 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 12:57:11 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 12:57:11 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 14:44:56 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 14:44:56 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 14:46:25 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 14:46:25 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 14:46:50 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 14:46:50 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 14:48:51 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 14:48:51 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 14:48:57 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 14:48:57 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 14:48:59 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 14:48:59 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 15:11:49 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 15:11:50 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 15:11:54 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 15:11:54 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 15:12:17 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 15:12:17 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 15:12:20 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 15:12:20 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 15:37:04 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 15:37:04 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 15:40:33 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 15:40:33 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 15:42:06 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 15:42:06 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 15:50:54 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 15:50:54 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 15:51:07 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 15:51:07 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 15:51:10 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 15:51:10 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 16:01:36 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 16:01:36 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 16:01:38 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 16:01:38 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 16:05:02 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 16:05:02 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 16:05:04 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 16:05:04 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 16:08:30 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 16:08:30 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 16:08:34 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 16:08:34 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 16:10:39 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 16:10:39 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 16:10:42 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Thu Aug 01 2024 16:10:42 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)

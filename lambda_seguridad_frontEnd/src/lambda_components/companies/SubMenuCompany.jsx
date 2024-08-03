@@ -3,7 +3,7 @@ import { useState } from 'react'
 import CreateCompany from './CreateCompany';
 import ListCompanies from './ListCompany';
 import MainCompany from './MainCompany';
-import UpdateCompany from './updateCompany';
+import UpdateCompany from './UpdateCompany';
 
 const SubMenuCompany = () => {
   const [ createCompany, setCreateCompany ] = useState(0);
