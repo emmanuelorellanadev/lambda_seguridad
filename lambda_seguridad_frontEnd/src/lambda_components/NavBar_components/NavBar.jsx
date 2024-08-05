@@ -97,7 +97,7 @@ export const NavBar = () => {
                         subMenuSecurityVisibility={subMenuSecurityVisibility}
                     />}
 
-                    { role == '1' && < NavBarAdminSys
+                    { role == '1' && < NavBarAdminSys 
                         subMenuAdminVisibility={subMenuAdminVisibility}
                         subMenuUserVisibility={subMenuUserVisibility}
                         subMenuPersonVisibility={subMenuPersonVisibility}
