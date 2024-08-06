@@ -2,7 +2,7 @@ import React, { useState } from'react'
 
 import '../../css/login.css'
 import login from'../../assets/img/login.png'
-import { NavBar } from'../NavBar_components/NavBar.jsx'
+import { NavBar } from'../navBar/NavBar.jsx'
 import { Toaster } from 'react-hot-toast';
 import { useAuth } from './hook/useAuth.js';
 

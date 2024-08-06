@@ -8,17 +8,17 @@ export const NavBarAdminSys = (props) => {
 
     const {  
         menuActive,
-        subMenuUser, setSubMenuUser,
-        subMenuAdmin, setSubMenuAdmin,
-        subMenuSecurity, setSubMenuSecurity,
-        subMenuPerson, setSubMenuPerson,
+        subMenuUser,
+        subMenuAdmin,
+        subMenuSecurity,
+        subMenuPerson,
          } = useContext(SubMenuContext);
     
     const {
         showProfileFrame, showUserFrame, showCompanyFrame,
         showBranchFrame, showBranchTypeFrame, showPersonTypeFrame,
         showPersonFrame, showRoleFrame, showRoomStateFrame, 
-        closeSubMenus, showMenu } = useContext(FrameContext)
+        closeSubMenus} = useContext(FrameContext)
   return (
     <>
         <ul id='menu' className={ menuActive ? 'showMenu': ''} onMouseLeave={closeSubMenus}>

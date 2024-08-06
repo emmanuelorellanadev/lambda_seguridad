@@ -4,7 +4,6 @@ const express   =   require('express');
 const cors      =   require('cors');
                     require('dotenv').config();
                     require('colors');
-const v1Router = require('../v1/auth_routes') 
 
 const db_connection = require('../database/conf_database');
 const { errorsHandler } = require('../errors_handler/errorsHandler');
@@ -61,7 +60,7 @@ class Server {
         this.app.use('/service',            require('../routes/service_route'));
         this.app.use('/user',               require('../routes/user_route'));
         this.app.use('/usersByBranch',      require('../routes/users_by_branch_route'));
-        this.app.use('/*',                  require('../routes/error_route'));
+        // this.app.use('/*',                  require('../routes/error_route'));
             
     }
     

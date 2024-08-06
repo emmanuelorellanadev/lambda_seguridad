@@ -15,7 +15,7 @@ route.get('/', [
 
 route.get('/:id', [
     checkJWT,
-    requiredRole('ROLE_ADMINSYS', 'ROLE_ADMIN', 'ROLE_SUPERUSER')
+    requiredRole('ROLE_ADMINSYS', 'ROLE_ADMIN', 'ROLE_SUPERUSER', 'ROLE_USER')
 ], roleController.getRole);
 
 route.post('/', [

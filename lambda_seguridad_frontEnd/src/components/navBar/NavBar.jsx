@@ -86,15 +86,23 @@ export const NavBar = () => {
 
                     { role == '4' && < NavBarUser 
                         subMenuUserVisibility={subMenuUserVisibility}
+                        subMenuPersonVisibility={subMenuPersonVisibility}
+                        closeSession={ closeSession } 
                     />}
                     { role == '3' && < NavBarSuper 
+                        subMenuAdminVisibility={subMenuAdminVisibility}
                         subMenuUserVisibility={subMenuUserVisibility}
+                        subMenuPersonVisibility={subMenuPersonVisibility}
                         subMenuSecurityVisibility={subMenuSecurityVisibility}
+                        closeSession={ closeSession } 
                         />}
 
                     { role == '2' && < NavBarAdmin
+                        subMenuAdminVisibility={subMenuAdminVisibility}
                         subMenuUserVisibility={subMenuUserVisibility}
+                        subMenuPersonVisibility={subMenuPersonVisibility}
                         subMenuSecurityVisibility={subMenuSecurityVisibility}
+                        closeSession={ closeSession } 
                     />}
 
                     { role == '1' && < NavBarAdminSys 
@@ -103,7 +111,6 @@ export const NavBar = () => {
                         subMenuPersonVisibility={subMenuPersonVisibility}
                         subMenuSecurityVisibility={subMenuSecurityVisibility}
                         closeSession={ closeSession } 
-
                     />}
 
         </div>

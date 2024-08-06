@@ -1049,3 +1049,501 @@
     at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
     at Function.handle (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
     at router (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Mon Aug 05 2024 10:56:51 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Mon Aug 05 2024 10:56:51 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Mon Aug 05 2024 10:59:47 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Mon Aug 05 2024 10:59:47 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Mon Aug 05 2024 11:00:25 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Mon Aug 05 2024 11:00:25 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Mon Aug 05 2024 11:01:04 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Mon Aug 05 2024 11:16:09 GMT-0600 (Central Standard Time) 
+ Error: Algo a salido mal. 404 
+ Error 
+ undefined 
+ Error: Algo a salido mal. 404
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/routes/error_route.js:8:11
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+    at router (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:47:12)
+ Mon Aug 05 2024 13:34:18 GMT-0600 (Central Standard Time) 
+ Error: Error: El Role no es el requerido. 
+ Error 
+ undefined 
+ Error: Error: El Role no es el requerido.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:12:62
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 05 2024 13:34:18 GMT-0600 (Central Standard Time) 
+ Error: Error: El Role no es el requerido. 
+ Error 
+ undefined 
+ Error: Error: El Role no es el requerido.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:12:62
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 05 2024 13:34:44 GMT-0600 (Central Standard Time) 
+ Error: Error: El Role no es el requerido. 
+ Error 
+ undefined 
+ Error: Error: El Role no es el requerido.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:12:62
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 05 2024 13:34:44 GMT-0600 (Central Standard Time) 
+ Error: Error: El Role no es el requerido. 
+ Error 
+ undefined 
+ Error: Error: El Role no es el requerido.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:12:62
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 05 2024 13:34:54 GMT-0600 (Central Standard Time) 
+ Error: Error: El Role no es el requerido. 
+ Error 
+ undefined 
+ Error: Error: El Role no es el requerido.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:12:62
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 05 2024 13:34:54 GMT-0600 (Central Standard Time) 
+ Error: Error: El Role no es el requerido. 
+ Error 
+ undefined 
+ Error: Error: El Role no es el requerido.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:12:62
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 05 2024 13:35:00 GMT-0600 (Central Standard Time) 
+ Error: Error: El Role no es el requerido. 
+ Error 
+ undefined 
+ Error: Error: El Role no es el requerido.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:12:62
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 05 2024 13:35:00 GMT-0600 (Central Standard Time) 
+ Error: Error: El Role no es el requerido. 
+ Error 
+ undefined 
+ Error: Error: El Role no es el requerido.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:12:62
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 05 2024 13:36:44 GMT-0600 (Central Standard Time) 
+ Error: Error: El Role no es el requerido. 
+ Error 
+ undefined 
+ Error: Error: El Role no es el requerido.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:12:62
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 05 2024 13:36:44 GMT-0600 (Central Standard Time) 
+ Error: Error: El Role no es el requerido. 
+ Error 
+ undefined 
+ Error: Error: El Role no es el requerido.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:12:62
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 05 2024 13:38:18 GMT-0600 (Central Standard Time) 
+ Error: Error: El Role no es el requerido. 
+ Error 
+ undefined 
+ Error: Error: El Role no es el requerido.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:12:62
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 05 2024 13:38:18 GMT-0600 (Central Standard Time) 
+ Error: Error: El Role no es el requerido. 
+ Error 
+ undefined 
+ Error: Error: El Role no es el requerido.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:12:62
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 05 2024 13:38:38 GMT-0600 (Central Standard Time) 
+ Error: Error: El Role no es el requerido. 
+ Error 
+ undefined 
+ Error: Error: El Role no es el requerido.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:12:62
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 05 2024 13:38:38 GMT-0600 (Central Standard Time) 
+ Error: Error: El Role no es el requerido. 
+ Error 
+ undefined 
+ Error: Error: El Role no es el requerido.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:12:62
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 05 2024 13:42:47 GMT-0600 (Central Standard Time) 
+ Error: Error: El Role no es el requerido. 
+ Error 
+ undefined 
+ Error: Error: El Role no es el requerido.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:12:62
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 05 2024 13:42:47 GMT-0600 (Central Standard Time) 
+ Error: Error: El Role no es el requerido. 
+ Error 
+ undefined 
+ Error: Error: El Role no es el requerido.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:12:62
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 05 2024 13:44:46 GMT-0600 (Central Standard Time) 
+ Error: Error: El Role no es el requerido. 
+ Error 
+ undefined 
+ Error: Error: El Role no es el requerido.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:12:62
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 05 2024 13:44:46 GMT-0600 (Central Standard Time) 
+ Error: No tienens permisos suficientes para realizar esta operación 
+ Error 
+ undefined 
+ Error: No tienens permisos suficientes para realizar esta operación
+    at getUser (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/user_controller.js:54:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 05 2024 13:44:46 GMT-0600 (Central Standard Time) 
+ Error: No tienens permisos suficientes para realizar esta operación 
+ Error 
+ undefined 
+ Error: No tienens permisos suficientes para realizar esta operación
+    at getUser (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/user_controller.js:54:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 05 2024 13:44:46 GMT-0600 (Central Standard Time) 
+ Error: Error: El Role no es el requerido. 
+ Error 
+ undefined 
+ Error: Error: El Role no es el requerido.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:12:62
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 05 2024 14:02:50 GMT-0600 (Central Standard Time) 
+ Error: Error: El Role no es el requerido. 
+ Error 
+ undefined 
+ Error: Error: El Role no es el requerido.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:12:62
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 05 2024 14:02:50 GMT-0600 (Central Standard Time) 
+ Error: Error: El Role no es el requerido. 
+ Error 
+ undefined 
+ Error: Error: El Role no es el requerido.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:12:62
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 05 2024 14:02:50 GMT-0600 (Central Standard Time) 
+ Error: Error: El Role no es el requerido. 
+ Error 
+ undefined 
+ Error: Error: El Role no es el requerido.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:12:62
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 05 2024 14:03:03 GMT-0600 (Central Standard Time) 
+ Error: Error: El Role no es el requerido. 
+ Error 
+ undefined 
+ Error: Error: El Role no es el requerido.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:12:62
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 05 2024 14:03:03 GMT-0600 (Central Standard Time) 
+ Error: Error: El Role no es el requerido. 
+ Error 
+ undefined 
+ Error: Error: El Role no es el requerido.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:12:62
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 05 2024 14:05:30 GMT-0600 (Central Standard Time) 
+ Error: Error: El Role no es el requerido. 
+ Error 
+ undefined 
+ Error: Error: El Role no es el requerido.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:12:62
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 05 2024 14:05:30 GMT-0600 (Central Standard Time) 
+ Error: Error: El Role no es el requerido. 
+ Error 
+ undefined 
+ Error: Error: El Role no es el requerido.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:12:62
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 05 2024 14:05:30 GMT-0600 (Central Standard Time) 
+ Error: Error: El Role no es el requerido. 
+ Error 
+ undefined 
+ Error: Error: El Role no es el requerido.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:12:62
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 05 2024 14:06:05 GMT-0600 (Central Standard Time) 
+ Error: Error: El Role no es el requerido. 
+ Error 
+ undefined 
+ Error: Error: El Role no es el requerido.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:12:62
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 05 2024 14:06:05 GMT-0600 (Central Standard Time) 
+ Error: Error: El Role no es el requerido. 
+ Error 
+ undefined 
+ Error: Error: El Role no es el requerido.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:12:62
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 05 2024 14:06:05 GMT-0600 (Central Standard Time) 
+ Error: Error: El Role no es el requerido. 
+ Error 
+ undefined 
+ Error: Error: El Role no es el requerido.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:12:62
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 05 2024 14:06:57 GMT-0600 (Central Standard Time) 
+ Error: Error: El Role no es el requerido. 
+ Error 
+ undefined 
+ Error: Error: El Role no es el requerido.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:12:62
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 05 2024 14:06:57 GMT-0600 (Central Standard Time) 
+ Error: Error: El Role no es el requerido. 
+ Error 
+ undefined 
+ Error: Error: El Role no es el requerido.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:12:62
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 05 2024 14:07:05 GMT-0600 (Central Standard Time) 
+ Error: No tienens permisos suficientes para realizar esta operación 
+ Error 
+ undefined 
+ Error: No tienens permisos suficientes para realizar esta operación
+    at getUser (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/user_controller.js:54:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 05 2024 14:07:05 GMT-0600 (Central Standard Time) 
+ Error: Error: El Role no es el requerido. 
+ Error 
+ undefined 
+ Error: Error: El Role no es el requerido.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:12:62
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 05 2024 14:07:05 GMT-0600 (Central Standard Time) 
+ Error: No tienens permisos suficientes para realizar esta operación 
+ Error 
+ undefined 
+ Error: No tienens permisos suficientes para realizar esta operación
+    at getUser (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/user_controller.js:54:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 05 2024 14:07:05 GMT-0600 (Central Standard Time) 
+ Error: Error: El Role no es el requerido. 
+ Error 
+ undefined 
+ Error: Error: El Role no es el requerido.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:12:62
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 05 2024 14:07:09 GMT-0600 (Central Standard Time) 
+ Error: Error: El Role no es el requerido. 
+ Error 
+ undefined 
+ Error: Error: El Role no es el requerido.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:12:62
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 05 2024 14:07:09 GMT-0600 (Central Standard Time) 
+ Error: Error: El Role no es el requerido. 
+ Error 
+ undefined 
+ Error: Error: El Role no es el requerido.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:12:62
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
