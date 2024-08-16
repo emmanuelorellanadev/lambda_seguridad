@@ -1,13 +1,15 @@
 import axios from "axios";
 import toast from "react-hot-toast";
 
-export const useGetCompany = async( urlCompany, { setCompanies, setCompany, setAddress, setPhone, setDescription, setMission, setVision, setLogo, setOnLoad}) => {
+export const useGetCompany = async( urlCompany, { setCompanies, setCompany, setAddress, setPhone, setDescription, setMission, setVision, setLogo, setOnLoad, setNextPage, setPrevPage}) => {
   await axios(urlCompany, { headers: {"x-token": sessionStorage.getItem('token-xL')}})
     .then( resp => resp.data.resData )
     .then( data => {
       if(setCompanies){
         if(setOnLoad) setOnLoad(false)
-        setCompanies( data ) 
+        setCompanies( data )
+        setNextPage(data.nextPage) 
+        setPrevPage(data.prevPage)
       }else if(setCompany){
         setCompany(data.company_name), 
         setAddress(data.company_address),

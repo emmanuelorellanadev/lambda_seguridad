@@ -13,20 +13,13 @@ const getRoomStates = async(req, res) => {
     if (q){
         search = {
             where: {
-                roomState_name: {
-                    [Op.like]: `%${q}%`
-                }
+                roomState_name: { [Op.like]: `%${q}%` }
             }
         }
     }
 
     const roomStates = await paginate(RoomState, page, limit, search, order)
 
-
-    // const roomState = await RoomState.findAll();
-    // if( roomState.length == 0 ) {
-    //     throw new GeneralError('No se encontraron status para habitaciones.')
-    // }
     resSuccessful(res, roomStates);    
 }
 

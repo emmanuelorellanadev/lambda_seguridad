@@ -19,7 +19,6 @@ export const UpdatePeopleType = (props) => {
   const updatePersonType = (e) => {
     e.preventDefault();
     useUpdatePeopleType(urlPersonType, id, personTypeName, personTypeState);
-    console.log(personTypeState)
   }
   
 useEffect( () => {

@@ -2,17 +2,36 @@ const catchedAsync = require('../errors_handler/catchedAsync');
 const { GeneralError, DBError } = require('../errors_handler/errors');
 const Role = require('../models/role_model');
 const { resSuccessful } = require('../response/resSucessful');
+const { paginate } = require("../helpers/paginate");
+const { Op } = require('sequelize');
 
 const getRoles = async(req, res) => {
 
-        const roles = await Role.findAll();
+        // const roles = await Role.findAll();
 
-        if( !roles ) throw new GeneralError('No se encontraron roles en la base de datos', 404)
+        // if( !roles ) throw new GeneralError('No se encontraron roles en la base de datos', 404)
+
+    //used to paginate 
+    const {q, page, limit, order_by, order_direction} = req.query;
+    let search = {};
+    let order = [];
+
+    if (q){
+        search = {
+            where: {
+                role_name: {
+                    [Op.like]: `%${q}%`
+                }
+            }
+        }
+    }
+
+    const roles = await paginate(Role, page, limit, search, order)
 // Check if the role of userLogued is less than the role to show.
 // That doesnt allow suerpuser create admin user, etc.
-
-    roles.map( (role, i = 0) => {
-        role.id < req.userLoggedIn.RoleId ? roles.splice(i, 1) : '';
+    roles.data?.map( (role, i = 0) => {
+        // console.log(!(role.id  <  req.userLoggedIn.RoleId))
+        role.id < req.userLoggedIn.RoleId ? roles.data?.splice(i, 1) : '';
         i++
     })
 

@@ -1547,3 +1547,1893 @@
     at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
     at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Tue Aug 06 2024 12:14:16 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar el estado 
+ DBError 
+ {
+"name":"SequelizeUniqueConstraintError","errors":[{
+"message":"roomState_name must be unique","type":"unique violation","path":"roomState_name","value":"a","origin":"DB","instance":{
+"id":null,"roomState_name":"a","roomState":true},"validatorKey":"not_unique","validatorName":null,"validatorArgs":[]}],"parent":{
+"name":"SqlError","text":"Duplicate entry 'a' for key 'roomState_name'","sql":"INSERT INTO `RoomStates` (`id`,`roomState_name`,`roomState`) VALUES (DEFAULT,?,?);","fatal":false,"errno":1062,"sqlState":"23000","code":"ER_DUP_ENTRY","parameters":["a",true]},"original":{
+"name":"SqlError","text":"Duplicate entry 'a' for key 'roomState_name'","sql":"INSERT INTO `RoomStates` (`id`,`roomState_name`,`roomState`) VALUES (DEFAULT,?,?);","fatal":false,"errno":1062,"sqlState":"23000","code":"ER_DUP_ENTRY","parameters":["a",true]},"fields":{
+"roomState_name":"a"},"sql":"INSERT INTO `RoomStates` (`id`,`roomState_name`,`roomState`) VALUES (DEFAULT,?,?);"} 
+ DBError: Error al guardar el estado
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/roomState_controller.js:45:15
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async saveRoomState (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/roomState_controller.js:43:5)
+ Tue Aug 06 2024 14:31:01 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getBranchTypes (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/branchType_controller.js:16:37)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+ Tue Aug 06 2024 14:31:01 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getBranchTypes (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/branchType_controller.js:16:37)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+ Tue Aug 06 2024 14:31:05 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getBranchTypes (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/branchType_controller.js:16:37)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+ Tue Aug 06 2024 14:31:05 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getBranchTypes (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/branchType_controller.js:16:37)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+ Fri Aug 09 2024 09:32:20 GMT-0600 (Central Standard Time) 
+ ReferenceError: paginate is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: paginate is not defined
+    at getBranches (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/branch_controller.js:24:22)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+ Fri Aug 09 2024 09:32:20 GMT-0600 (Central Standard Time) 
+ ReferenceError: paginate is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: paginate is not defined
+    at getBranches (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/branch_controller.js:24:22)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+ Fri Aug 09 2024 09:33:26 GMT-0600 (Central Standard Time) 
+ DBError: Error: No se encontró la sucursal 
+ DBError 
+ null 
+ DBError: Error: No se encontró la sucursal
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/branch_controller.js:34:34
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async getBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/branch_controller.js:32:5)
+ Fri Aug 09 2024 09:33:26 GMT-0600 (Central Standard Time) 
+ DBError: Error: No se encontró la sucursal 
+ DBError 
+ null 
+ DBError: Error: No se encontró la sucursal
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/branch_controller.js:34:34
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async getBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/branch_controller.js:32:5)
+ Fri Aug 09 2024 09:49:25 GMT-0600 (Central Standard Time) 
+ DBError: Error: No se encontró la sucursal 
+ DBError 
+ null 
+ DBError: Error: No se encontró la sucursal
+    at deleteBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/branch_controller.js:79:34)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Fri Aug 09 2024 09:57:24 GMT-0600 (Central Standard Time) 
+ DBError: Error: No se encontró la sucursal 
+ DBError 
+ null 
+ DBError: Error: No se encontró la sucursal
+    at deleteBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/branch_controller.js:79:34)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Fri Aug 09 2024 10:00:40 GMT-0600 (Central Standard Time) 
+ DBError: Error: No se encontró la sucursal 
+ DBError 
+ null 
+ DBError: Error: No se encontró la sucursal
+    at deleteBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/branch_controller.js:80:34)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Fri Aug 09 2024 10:23:08 GMT-0600 (Central Standard Time) 
+ ReferenceError: paginate is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: paginate is not defined
+    at getBranches (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/branch_controller.js:24:22)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Fri Aug 09 2024 20:21:41 GMT-0600 (Central Standard Time) 
+ ReferenceError: paginate is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: paginate is not defined
+    at usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:24:23)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+ Fri Aug 09 2024 20:21:41 GMT-0600 (Central Standard Time) 
+ ReferenceError: paginate is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: paginate is not defined
+    at usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:24:23)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+ Fri Aug 09 2024 20:22:38 GMT-0600 (Central Standard Time) 
+ ReferenceError: Company is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Company is not defined
+    at usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:25:38)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+ Fri Aug 09 2024 20:22:38 GMT-0600 (Central Standard Time) 
+ ReferenceError: Company is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Company is not defined
+    at usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:25:38)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+ Fri Aug 09 2024 20:28:26 GMT-0600 (Central Standard Time) 
+ ReferenceError: Company is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Company is not defined
+    at usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:25:38)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+ Fri Aug 09 2024 20:28:26 GMT-0600 (Central Standard Time) 
+ ReferenceError: Company is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Company is not defined
+    at usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:25:38)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+ Sat Aug 10 2024 11:21:21 GMT-0600 (Central Standard Time) 
+ DBError: Usuarios no encontrados 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"Unknown column 'q' in 'on clause'","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND BranchId = q=j","fatal":false,"errno":1054,"sqlState":"42S22","code":"ER_BAD_FIELD_ERROR"},"original":{
+"name":"SqlError","text":"Unknown column 'q' in 'on clause'","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND BranchId = q=j","fatal":false,"errno":1054,"sqlState":"42S22","code":"ER_BAD_FIELD_ERROR"},"sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND BranchId = q=j","parameters":{
+}} 
+ DBError: Usuarios no encontrados
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:36:30
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:34:5)
+ Sat Aug 10 2024 11:21:22 GMT-0600 (Central Standard Time) 
+ DBError: Usuarios no encontrados 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"Unknown column 'q' in 'on clause'","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND BranchId = q=ju","fatal":false,"errno":1054,"sqlState":"42S22","code":"ER_BAD_FIELD_ERROR"},"original":{
+"name":"SqlError","text":"Unknown column 'q' in 'on clause'","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND BranchId = q=ju","fatal":false,"errno":1054,"sqlState":"42S22","code":"ER_BAD_FIELD_ERROR"},"sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND BranchId = q=ju","parameters":{
+}} 
+ DBError: Usuarios no encontrados
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:36:30
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:34:5)
+ Sat Aug 10 2024 11:21:23 GMT-0600 (Central Standard Time) 
+ DBError: Usuarios no encontrados 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"Unknown column 'q' in 'on clause'","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND BranchId = q=jul","fatal":false,"errno":1054,"sqlState":"42S22","code":"ER_BAD_FIELD_ERROR"},"original":{
+"name":"SqlError","text":"Unknown column 'q' in 'on clause'","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND BranchId = q=jul","fatal":false,"errno":1054,"sqlState":"42S22","code":"ER_BAD_FIELD_ERROR"},"sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND BranchId = q=jul","parameters":{
+}} 
+ DBError: Usuarios no encontrados
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:36:30
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:34:5)
+ Sat Aug 10 2024 11:21:23 GMT-0600 (Central Standard Time) 
+ DBError: Usuarios no encontrados 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"Unknown column 'q' in 'on clause'","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND BranchId = q=juli","fatal":false,"errno":1054,"sqlState":"42S22","code":"ER_BAD_FIELD_ERROR"},"original":{
+"name":"SqlError","text":"Unknown column 'q' in 'on clause'","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND BranchId = q=juli","fatal":false,"errno":1054,"sqlState":"42S22","code":"ER_BAD_FIELD_ERROR"},"sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND BranchId = q=juli","parameters":{
+}} 
+ DBError: Usuarios no encontrados
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:36:30
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:34:5)
+ Sat Aug 10 2024 11:21:23 GMT-0600 (Central Standard Time) 
+ DBError: Usuarios no encontrados 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"Unknown column 'q' in 'on clause'","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND BranchId = q=julie","fatal":false,"errno":1054,"sqlState":"42S22","code":"ER_BAD_FIELD_ERROR"},"original":{
+"name":"SqlError","text":"Unknown column 'q' in 'on clause'","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND BranchId = q=julie","fatal":false,"errno":1054,"sqlState":"42S22","code":"ER_BAD_FIELD_ERROR"},"sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND BranchId = q=julie","parameters":{
+}} 
+ DBError: Usuarios no encontrados
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:36:30
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:34:5)
+ Sat Aug 10 2024 11:23:02 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:20:31)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+ Sat Aug 10 2024 11:31:45 GMT-0600 (Central Standard Time) 
+ DBError: Usuarios no encontrados 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '= undefined' at line 1","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name == undefined","fatal":false,"errno":1064,"sqlState":"42000","code":"ER_PARSE_ERROR"},"original":{
+"name":"SqlError","text":"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '= undefined' at line 1","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name == undefined","fatal":false,"errno":1064,"sqlState":"42000","code":"ER_PARSE_ERROR"},"sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name == undefined","parameters":{
+}} 
+ DBError: Usuarios no encontrados
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:40:30
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:38:5)
+ Sat Aug 10 2024 11:31:45 GMT-0600 (Central Standard Time) 
+ DBError: Usuarios no encontrados 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '= undefined' at line 1","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name == undefined","fatal":false,"errno":1064,"sqlState":"42000","code":"ER_PARSE_ERROR"},"original":{
+"name":"SqlError","text":"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '= undefined' at line 1","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name == undefined","fatal":false,"errno":1064,"sqlState":"42000","code":"ER_PARSE_ERROR"},"sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name == undefined","parameters":{
+}} 
+ DBError: Usuarios no encontrados
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:40:30
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:38:5)
+ Sat Aug 10 2024 11:32:20 GMT-0600 (Central Standard Time) 
+ DBError: Usuarios no encontrados 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '= undefined' at line 1","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name == undefined","fatal":false,"errno":1064,"sqlState":"42000","code":"ER_PARSE_ERROR"},"original":{
+"name":"SqlError","text":"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '= undefined' at line 1","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name == undefined","fatal":false,"errno":1064,"sqlState":"42000","code":"ER_PARSE_ERROR"},"sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name == undefined","parameters":{
+}} 
+ DBError: Usuarios no encontrados
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:40:30
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:38:5)
+ Sat Aug 10 2024 11:32:20 GMT-0600 (Central Standard Time) 
+ DBError: Usuarios no encontrados 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '= undefined' at line 1","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name == undefined","fatal":false,"errno":1064,"sqlState":"42000","code":"ER_PARSE_ERROR"},"original":{
+"name":"SqlError","text":"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '= undefined' at line 1","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name == undefined","fatal":false,"errno":1064,"sqlState":"42000","code":"ER_PARSE_ERROR"},"sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name == undefined","parameters":{
+}} 
+ DBError: Usuarios no encontrados
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:40:30
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:38:5)
+ Sat Aug 10 2024 11:33:00 GMT-0600 (Central Standard Time) 
+ DBError: Usuarios no encontrados 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"Unknown column 'undefined' in 'on clause'","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = undefined","fatal":false,"errno":1054,"sqlState":"42S22","code":"ER_BAD_FIELD_ERROR"},"original":{
+"name":"SqlError","text":"Unknown column 'undefined' in 'on clause'","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = undefined","fatal":false,"errno":1054,"sqlState":"42S22","code":"ER_BAD_FIELD_ERROR"},"sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = undefined","parameters":{
+}} 
+ DBError: Usuarios no encontrados
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:40:30
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:38:5)
+ Sat Aug 10 2024 11:33:00 GMT-0600 (Central Standard Time) 
+ DBError: Usuarios no encontrados 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"Unknown column 'undefined' in 'on clause'","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = undefined","fatal":false,"errno":1054,"sqlState":"42S22","code":"ER_BAD_FIELD_ERROR"},"original":{
+"name":"SqlError","text":"Unknown column 'undefined' in 'on clause'","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = undefined","fatal":false,"errno":1054,"sqlState":"42S22","code":"ER_BAD_FIELD_ERROR"},"sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = undefined","parameters":{
+}} 
+ DBError: Usuarios no encontrados
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:40:30
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:38:5)
+ Sat Aug 10 2024 11:33:40 GMT-0600 (Central Standard Time) 
+ DBError: Usuarios no encontrados 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"Unknown column 'q' in 'on clause'","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = q","fatal":false,"errno":1054,"sqlState":"42S22","code":"ER_BAD_FIELD_ERROR"},"original":{
+"name":"SqlError","text":"Unknown column 'q' in 'on clause'","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = q","fatal":false,"errno":1054,"sqlState":"42S22","code":"ER_BAD_FIELD_ERROR"},"sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = q","parameters":{
+}} 
+ DBError: Usuarios no encontrados
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:41:30
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:39:5)
+ Sat Aug 10 2024 11:33:40 GMT-0600 (Central Standard Time) 
+ DBError: Usuarios no encontrados 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"Unknown column 'undefined' in 'on clause'","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = undefined","fatal":false,"errno":1054,"sqlState":"42S22","code":"ER_BAD_FIELD_ERROR"},"original":{
+"name":"SqlError","text":"Unknown column 'undefined' in 'on clause'","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = undefined","fatal":false,"errno":1054,"sqlState":"42S22","code":"ER_BAD_FIELD_ERROR"},"sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = undefined","parameters":{
+}} 
+ DBError: Usuarios no encontrados
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:41:30
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:39:5)
+ Sat Aug 10 2024 11:33:40 GMT-0600 (Central Standard Time) 
+ DBError: Usuarios no encontrados 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"Unknown column 'qu' in 'on clause'","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = qu","fatal":false,"errno":1054,"sqlState":"42S22","code":"ER_BAD_FIELD_ERROR"},"original":{
+"name":"SqlError","text":"Unknown column 'qu' in 'on clause'","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = qu","fatal":false,"errno":1054,"sqlState":"42S22","code":"ER_BAD_FIELD_ERROR"},"sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = qu","parameters":{
+}} 
+ DBError: Usuarios no encontrados
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:41:30
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:39:5)
+ Sat Aug 10 2024 11:33:40 GMT-0600 (Central Standard Time) 
+ DBError: Usuarios no encontrados 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"Unknown column 'undefined' in 'on clause'","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = undefined","fatal":false,"errno":1054,"sqlState":"42S22","code":"ER_BAD_FIELD_ERROR"},"original":{
+"name":"SqlError","text":"Unknown column 'undefined' in 'on clause'","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = undefined","fatal":false,"errno":1054,"sqlState":"42S22","code":"ER_BAD_FIELD_ERROR"},"sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = undefined","parameters":{
+}} 
+ DBError: Usuarios no encontrados
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:41:30
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:39:5)
+ Sat Aug 10 2024 11:33:40 GMT-0600 (Central Standard Time) 
+ DBError: Usuarios no encontrados 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"Unknown column 'que' in 'on clause'","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = que","fatal":false,"errno":1054,"sqlState":"42S22","code":"ER_BAD_FIELD_ERROR"},"original":{
+"name":"SqlError","text":"Unknown column 'que' in 'on clause'","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = que","fatal":false,"errno":1054,"sqlState":"42S22","code":"ER_BAD_FIELD_ERROR"},"sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = que","parameters":{
+}} 
+ DBError: Usuarios no encontrados
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:41:30
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:39:5)
+ Sat Aug 10 2024 11:33:40 GMT-0600 (Central Standard Time) 
+ DBError: Usuarios no encontrados 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"Unknown column 'undefined' in 'on clause'","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = undefined","fatal":false,"errno":1054,"sqlState":"42S22","code":"ER_BAD_FIELD_ERROR"},"original":{
+"name":"SqlError","text":"Unknown column 'undefined' in 'on clause'","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = undefined","fatal":false,"errno":1054,"sqlState":"42S22","code":"ER_BAD_FIELD_ERROR"},"sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = undefined","parameters":{
+}} 
+ DBError: Usuarios no encontrados
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:41:30
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:39:5)
+ Sat Aug 10 2024 11:33:41 GMT-0600 (Central Standard Time) 
+ DBError: Usuarios no encontrados 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"Unknown column 'que' in 'on clause'","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = que","fatal":false,"errno":1054,"sqlState":"42S22","code":"ER_BAD_FIELD_ERROR"},"original":{
+"name":"SqlError","text":"Unknown column 'que' in 'on clause'","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = que","fatal":false,"errno":1054,"sqlState":"42S22","code":"ER_BAD_FIELD_ERROR"},"sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = que","parameters":{
+}} 
+ DBError: Usuarios no encontrados
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:41:30
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:39:5)
+ Sat Aug 10 2024 11:33:41 GMT-0600 (Central Standard Time) 
+ DBError: Usuarios no encontrados 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"Unknown column 'undefined' in 'on clause'","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = undefined","fatal":false,"errno":1054,"sqlState":"42S22","code":"ER_BAD_FIELD_ERROR"},"original":{
+"name":"SqlError","text":"Unknown column 'undefined' in 'on clause'","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = undefined","fatal":false,"errno":1054,"sqlState":"42S22","code":"ER_BAD_FIELD_ERROR"},"sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = undefined","parameters":{
+}} 
+ DBError: Usuarios no encontrados
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:41:30
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:39:5)
+ Sat Aug 10 2024 11:33:41 GMT-0600 (Central Standard Time) 
+ DBError: Usuarios no encontrados 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'c' at line 1","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = que c","fatal":false,"errno":1064,"sqlState":"42000","code":"ER_PARSE_ERROR"},"original":{
+"name":"SqlError","text":"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'c' at line 1","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = que c","fatal":false,"errno":1064,"sqlState":"42000","code":"ER_PARSE_ERROR"},"sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = que c","parameters":{
+}} 
+ DBError: Usuarios no encontrados
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:41:30
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:39:5)
+ Sat Aug 10 2024 11:33:41 GMT-0600 (Central Standard Time) 
+ DBError: Usuarios no encontrados 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"Unknown column 'undefined' in 'on clause'","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = undefined","fatal":false,"errno":1054,"sqlState":"42S22","code":"ER_BAD_FIELD_ERROR"},"original":{
+"name":"SqlError","text":"Unknown column 'undefined' in 'on clause'","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = undefined","fatal":false,"errno":1054,"sqlState":"42S22","code":"ER_BAD_FIELD_ERROR"},"sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = undefined","parameters":{
+}} 
+ DBError: Usuarios no encontrados
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:41:30
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:39:5)
+ Sat Aug 10 2024 11:33:41 GMT-0600 (Central Standard Time) 
+ DBError: Usuarios no encontrados 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'co' at line 1","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = que co","fatal":false,"errno":1064,"sqlState":"42000","code":"ER_PARSE_ERROR"},"original":{
+"name":"SqlError","text":"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'co' at line 1","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = que co","fatal":false,"errno":1064,"sqlState":"42000","code":"ER_PARSE_ERROR"},"sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = que co","parameters":{
+}} 
+ DBError: Usuarios no encontrados
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:41:30
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:39:5)
+ Sat Aug 10 2024 11:33:41 GMT-0600 (Central Standard Time) 
+ DBError: Usuarios no encontrados 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"Unknown column 'undefined' in 'on clause'","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = undefined","fatal":false,"errno":1054,"sqlState":"42S22","code":"ER_BAD_FIELD_ERROR"},"original":{
+"name":"SqlError","text":"Unknown column 'undefined' in 'on clause'","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = undefined","fatal":false,"errno":1054,"sqlState":"42S22","code":"ER_BAD_FIELD_ERROR"},"sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = undefined","parameters":{
+}} 
+ DBError: Usuarios no encontrados
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:41:30
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:39:5)
+ Sat Aug 10 2024 11:33:41 GMT-0600 (Central Standard Time) 
+ DBError: Usuarios no encontrados 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'cos' at line 1","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = que cos","fatal":false,"errno":1064,"sqlState":"42000","code":"ER_PARSE_ERROR"},"original":{
+"name":"SqlError","text":"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'cos' at line 1","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = que cos","fatal":false,"errno":1064,"sqlState":"42000","code":"ER_PARSE_ERROR"},"sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = que cos","parameters":{
+}} 
+ DBError: Usuarios no encontrados
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:41:30
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:39:5)
+ Sat Aug 10 2024 11:33:41 GMT-0600 (Central Standard Time) 
+ DBError: Usuarios no encontrados 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"Unknown column 'undefined' in 'on clause'","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = undefined","fatal":false,"errno":1054,"sqlState":"42S22","code":"ER_BAD_FIELD_ERROR"},"original":{
+"name":"SqlError","text":"Unknown column 'undefined' in 'on clause'","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = undefined","fatal":false,"errno":1054,"sqlState":"42S22","code":"ER_BAD_FIELD_ERROR"},"sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = undefined","parameters":{
+}} 
+ DBError: Usuarios no encontrados
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:41:30
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:39:5)
+ Sat Aug 10 2024 11:33:41 GMT-0600 (Central Standard Time) 
+ DBError: Usuarios no encontrados 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'cosa' at line 1","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = que cosa","fatal":false,"errno":1064,"sqlState":"42000","code":"ER_PARSE_ERROR"},"original":{
+"name":"SqlError","text":"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'cosa' at line 1","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = que cosa","fatal":false,"errno":1064,"sqlState":"42000","code":"ER_PARSE_ERROR"},"sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = que cosa","parameters":{
+}} 
+ DBError: Usuarios no encontrados
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:41:30
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:39:5)
+ Sat Aug 10 2024 11:33:41 GMT-0600 (Central Standard Time) 
+ DBError: Usuarios no encontrados 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"Unknown column 'undefined' in 'on clause'","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = undefined","fatal":false,"errno":1054,"sqlState":"42S22","code":"ER_BAD_FIELD_ERROR"},"original":{
+"name":"SqlError","text":"Unknown column 'undefined' in 'on clause'","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = undefined","fatal":false,"errno":1054,"sqlState":"42S22","code":"ER_BAD_FIELD_ERROR"},"sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = undefined","parameters":{
+}} 
+ DBError: Usuarios no encontrados
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:41:30
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:39:5)
+ Sat Aug 10 2024 11:33:42 GMT-0600 (Central Standard Time) 
+ DBError: Usuarios no encontrados 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'cosas' at line 1","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = que cosas","fatal":false,"errno":1064,"sqlState":"42000","code":"ER_PARSE_ERROR"},"original":{
+"name":"SqlError","text":"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'cosas' at line 1","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = que cosas","fatal":false,"errno":1064,"sqlState":"42000","code":"ER_PARSE_ERROR"},"sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = que cosas","parameters":{
+}} 
+ DBError: Usuarios no encontrados
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:41:30
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:39:5)
+ Sat Aug 10 2024 11:33:42 GMT-0600 (Central Standard Time) 
+ DBError: Usuarios no encontrados 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"Unknown column 'undefined' in 'on clause'","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = undefined","fatal":false,"errno":1054,"sqlState":"42S22","code":"ER_BAD_FIELD_ERROR"},"original":{
+"name":"SqlError","text":"Unknown column 'undefined' in 'on clause'","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = undefined","fatal":false,"errno":1054,"sqlState":"42S22","code":"ER_BAD_FIELD_ERROR"},"sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = undefined","parameters":{
+}} 
+ DBError: Usuarios no encontrados
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:41:30
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:39:5)
+ Sat Aug 10 2024 11:34:21 GMT-0600 (Central Standard Time) 
+ DBError: Usuarios no encontrados 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name =","fatal":false,"errno":1064,"sqlState":"42000","code":"ER_PARSE_ERROR"},"original":{
+"name":"SqlError","text":"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name =","fatal":false,"errno":1064,"sqlState":"42000","code":"ER_PARSE_ERROR"},"sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name =","parameters":{
+}} 
+ DBError: Usuarios no encontrados
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:41:30
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:39:5)
+ Sat Aug 10 2024 11:34:21 GMT-0600 (Central Standard Time) 
+ DBError: Usuarios no encontrados 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"Unknown column 'undefined' in 'on clause'","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = undefined","fatal":false,"errno":1054,"sqlState":"42S22","code":"ER_BAD_FIELD_ERROR"},"original":{
+"name":"SqlError","text":"Unknown column 'undefined' in 'on clause'","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = undefined","fatal":false,"errno":1054,"sqlState":"42S22","code":"ER_BAD_FIELD_ERROR"},"sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles ON RoleId = Roles.id AND user_name = undefined","parameters":{
+}} 
+ DBError: Usuarios no encontrados
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:41:30
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:39:5)
+ Sat Aug 10 2024 11:38:52 GMT-0600 (Central Standard Time) 
+ DBError: Usuarios no encontrados 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND user_name = e ON RoleId = Roles.id' at line 1","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles  AND user_name = e ON RoleId = Roles.id","fatal":false,"errno":1064,"sqlState":"42000","code":"ER_PARSE_ERROR"},"original":{
+"name":"SqlError","text":"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND user_name = e ON RoleId = Roles.id' at line 1","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles  AND user_name = e ON RoleId = Roles.id","fatal":false,"errno":1064,"sqlState":"42000","code":"ER_PARSE_ERROR"},"sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles  AND user_name = e ON RoleId = Roles.id","parameters":{
+}} 
+ DBError: Usuarios no encontrados
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:41:30
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:39:5)
+ Sat Aug 10 2024 11:38:52 GMT-0600 (Central Standard Time) 
+ DBError: Usuarios no encontrados 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND user_name = undefined ON RoleId = Roles.id' at line 1","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles  AND user_name = undefined ON RoleId = Roles.id","fatal":false,"errno":1064,"sqlState":"42000","code":"ER_PARSE_ERROR"},"original":{
+"name":"SqlError","text":"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND user_name = undefined ON RoleId = Roles.id' at line 1","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles  AND user_name = undefined ON RoleId = Roles.id","fatal":false,"errno":1064,"sqlState":"42000","code":"ER_PARSE_ERROR"},"sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id INNER JOIN Roles  AND user_name = undefined ON RoleId = Roles.id","parameters":{
+}} 
+ DBError: Usuarios no encontrados
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:41:30
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:39:5)
+ Sat Aug 10 2024 11:39:52 GMT-0600 (Central Standard Time) 
+ DBError: Usuarios no encontrados 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INNER JOIN Roles ON RoleId = Roles.id' at line 1","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id AND user_name =  INNER JOIN Roles ON RoleId = Roles.id","fatal":false,"errno":1064,"sqlState":"42000","code":"ER_PARSE_ERROR"},"original":{
+"name":"SqlError","text":"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INNER JOIN Roles ON RoleId = Roles.id' at line 1","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id AND user_name =  INNER JOIN Roles ON RoleId = Roles.id","fatal":false,"errno":1064,"sqlState":"42000","code":"ER_PARSE_ERROR"},"sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id AND user_name =  INNER JOIN Roles ON RoleId = Roles.id","parameters":{
+}} 
+ DBError: Usuarios no encontrados
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:41:30
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:39:5)
+ Sat Aug 10 2024 11:39:52 GMT-0600 (Central Standard Time) 
+ DBError: Usuarios no encontrados 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"Unknown column 'undefined' in 'on clause'","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id AND user_name = undefined INNER JOIN Roles ON RoleId = Roles.id","fatal":false,"errno":1054,"sqlState":"42S22","code":"ER_BAD_FIELD_ERROR"},"original":{
+"name":"SqlError","text":"Unknown column 'undefined' in 'on clause'","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id AND user_name = undefined INNER JOIN Roles ON RoleId = Roles.id","fatal":false,"errno":1054,"sqlState":"42S22","code":"ER_BAD_FIELD_ERROR"},"sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id AND user_name = undefined INNER JOIN Roles ON RoleId = Roles.id","parameters":{
+}} 
+ DBError: Usuarios no encontrados
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:41:30
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:39:5)
+ Sat Aug 10 2024 12:23:26 GMT-0600 (Central Standard Time) 
+ DBError: Usuarios no encontrados 
+ DBError 
+ {
+} 
+ DBError: Usuarios no encontrados
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:41:30
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:39:5)
+ Sat Aug 10 2024 12:23:26 GMT-0600 (Central Standard Time) 
+ DBError: Usuarios no encontrados 
+ DBError 
+ {
+} 
+ DBError: Usuarios no encontrados
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:41:30
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:39:5)
+ Sat Aug 10 2024 13:56:49 GMT-0600 (Central Standard Time) 
+ ReferenceError: q is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: q is not defined
+    at usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:32:9)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+ Sat Aug 10 2024 14:02:31 GMT-0600 (Central Standard Time) 
+ DBError: Usuarios no encontrados 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''' at line 1","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id AND user_name LIKE 'r%' INNER JOIN Roles ON RoleId = Roles.id '","fatal":false,"errno":1064,"sqlState":"42000","code":"ER_PARSE_ERROR"},"original":{
+"name":"SqlError","text":"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''' at line 1","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id AND user_name LIKE 'r%' INNER JOIN Roles ON RoleId = Roles.id '","fatal":false,"errno":1064,"sqlState":"42000","code":"ER_PARSE_ERROR"},"sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id AND user_name LIKE 'r%' INNER JOIN Roles ON RoleId = Roles.id '","parameters":{
+}} 
+ DBError: Usuarios no encontrados
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:41:30
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:39:5)
+ Sat Aug 10 2024 14:02:32 GMT-0600 (Central Standard Time) 
+ DBError: Usuarios no encontrados 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''' at line 1","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id AND user_name LIKE 'ro%' INNER JOIN Roles ON RoleId = Roles.id '","fatal":false,"errno":1064,"sqlState":"42000","code":"ER_PARSE_ERROR"},"original":{
+"name":"SqlError","text":"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''' at line 1","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id AND user_name LIKE 'ro%' INNER JOIN Roles ON RoleId = Roles.id '","fatal":false,"errno":1064,"sqlState":"42000","code":"ER_PARSE_ERROR"},"sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id AND user_name LIKE 'ro%' INNER JOIN Roles ON RoleId = Roles.id '","parameters":{
+}} 
+ DBError: Usuarios no encontrados
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:41:30
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:39:5)
+ Sat Aug 10 2024 14:02:34 GMT-0600 (Central Standard Time) 
+ DBError: Usuarios no encontrados 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''' at line 1","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id AND user_name LIKE 'rol%' INNER JOIN Roles ON RoleId = Roles.id '","fatal":false,"errno":1064,"sqlState":"42000","code":"ER_PARSE_ERROR"},"original":{
+"name":"SqlError","text":"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''' at line 1","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id AND user_name LIKE 'rol%' INNER JOIN Roles ON RoleId = Roles.id '","fatal":false,"errno":1064,"sqlState":"42000","code":"ER_PARSE_ERROR"},"sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id AND user_name LIKE 'rol%' INNER JOIN Roles ON RoleId = Roles.id '","parameters":{
+}} 
+ DBError: Usuarios no encontrados
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:41:30
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:39:5)
+ Sat Aug 10 2024 14:02:34 GMT-0600 (Central Standard Time) 
+ DBError: Usuarios no encontrados 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''' at line 1","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id AND user_name LIKE 'role%' INNER JOIN Roles ON RoleId = Roles.id '","fatal":false,"errno":1064,"sqlState":"42000","code":"ER_PARSE_ERROR"},"original":{
+"name":"SqlError","text":"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''' at line 1","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id AND user_name LIKE 'role%' INNER JOIN Roles ON RoleId = Roles.id '","fatal":false,"errno":1064,"sqlState":"42000","code":"ER_PARSE_ERROR"},"sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id AND user_name LIKE 'role%' INNER JOIN Roles ON RoleId = Roles.id '","parameters":{
+}} 
+ DBError: Usuarios no encontrados
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:41:30
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:39:5)
+ Sat Aug 10 2024 14:02:35 GMT-0600 (Central Standard Time) 
+ DBError: Usuarios no encontrados 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''' at line 1","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id AND user_name LIKE 'rol%' INNER JOIN Roles ON RoleId = Roles.id '","fatal":false,"errno":1064,"sqlState":"42000","code":"ER_PARSE_ERROR"},"original":{
+"name":"SqlError","text":"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''' at line 1","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id AND user_name LIKE 'rol%' INNER JOIN Roles ON RoleId = Roles.id '","fatal":false,"errno":1064,"sqlState":"42000","code":"ER_PARSE_ERROR"},"sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id AND user_name LIKE 'rol%' INNER JOIN Roles ON RoleId = Roles.id '","parameters":{
+}} 
+ DBError: Usuarios no encontrados
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:41:30
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:39:5)
+ Sat Aug 10 2024 14:02:35 GMT-0600 (Central Standard Time) 
+ DBError: Usuarios no encontrados 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''' at line 1","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id AND user_name LIKE 'ro%' INNER JOIN Roles ON RoleId = Roles.id '","fatal":false,"errno":1064,"sqlState":"42000","code":"ER_PARSE_ERROR"},"original":{
+"name":"SqlError","text":"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''' at line 1","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id AND user_name LIKE 'ro%' INNER JOIN Roles ON RoleId = Roles.id '","fatal":false,"errno":1064,"sqlState":"42000","code":"ER_PARSE_ERROR"},"sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id AND user_name LIKE 'ro%' INNER JOIN Roles ON RoleId = Roles.id '","parameters":{
+}} 
+ DBError: Usuarios no encontrados
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:41:30
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:39:5)
+ Sat Aug 10 2024 14:02:35 GMT-0600 (Central Standard Time) 
+ DBError: Usuarios no encontrados 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''' at line 1","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id AND user_name LIKE 'r%' INNER JOIN Roles ON RoleId = Roles.id '","fatal":false,"errno":1064,"sqlState":"42000","code":"ER_PARSE_ERROR"},"original":{
+"name":"SqlError","text":"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''' at line 1","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id AND user_name LIKE 'r%' INNER JOIN Roles ON RoleId = Roles.id '","fatal":false,"errno":1064,"sqlState":"42000","code":"ER_PARSE_ERROR"},"sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id AND user_name LIKE 'r%' INNER JOIN Roles ON RoleId = Roles.id '","parameters":{
+}} 
+ DBError: Usuarios no encontrados
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:41:30
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:39:5)
+ Sat Aug 10 2024 14:02:36 GMT-0600 (Central Standard Time) 
+ DBError: Usuarios no encontrados 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''' at line 1","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id AND user_name LIKE 'j%' INNER JOIN Roles ON RoleId = Roles.id '","fatal":false,"errno":1064,"sqlState":"42000","code":"ER_PARSE_ERROR"},"original":{
+"name":"SqlError","text":"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''' at line 1","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id AND user_name LIKE 'j%' INNER JOIN Roles ON RoleId = Roles.id '","fatal":false,"errno":1064,"sqlState":"42000","code":"ER_PARSE_ERROR"},"sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id AND user_name LIKE 'j%' INNER JOIN Roles ON RoleId = Roles.id '","parameters":{
+}} 
+ DBError: Usuarios no encontrados
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:41:30
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:39:5)
+ Sat Aug 10 2024 14:02:36 GMT-0600 (Central Standard Time) 
+ DBError: Usuarios no encontrados 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''' at line 1","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id AND user_name LIKE 'ju%' INNER JOIN Roles ON RoleId = Roles.id '","fatal":false,"errno":1064,"sqlState":"42000","code":"ER_PARSE_ERROR"},"original":{
+"name":"SqlError","text":"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''' at line 1","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id AND user_name LIKE 'ju%' INNER JOIN Roles ON RoleId = Roles.id '","fatal":false,"errno":1064,"sqlState":"42000","code":"ER_PARSE_ERROR"},"sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id AND user_name LIKE 'ju%' INNER JOIN Roles ON RoleId = Roles.id '","parameters":{
+}} 
+ DBError: Usuarios no encontrados
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:41:30
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:39:5)
+ Sat Aug 10 2024 14:02:36 GMT-0600 (Central Standard Time) 
+ DBError: Usuarios no encontrados 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''' at line 1","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id AND user_name LIKE 'jul%' INNER JOIN Roles ON RoleId = Roles.id '","fatal":false,"errno":1064,"sqlState":"42000","code":"ER_PARSE_ERROR"},"original":{
+"name":"SqlError","text":"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''' at line 1","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id AND user_name LIKE 'jul%' INNER JOIN Roles ON RoleId = Roles.id '","fatal":false,"errno":1064,"sqlState":"42000","code":"ER_PARSE_ERROR"},"sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id AND user_name LIKE 'jul%' INNER JOIN Roles ON RoleId = Roles.id '","parameters":{
+}} 
+ DBError: Usuarios no encontrados
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:41:30
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:39:5)
+ Sat Aug 10 2024 14:02:36 GMT-0600 (Central Standard Time) 
+ DBError: Usuarios no encontrados 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''' at line 1","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id AND user_name LIKE 'juli%' INNER JOIN Roles ON RoleId = Roles.id '","fatal":false,"errno":1064,"sqlState":"42000","code":"ER_PARSE_ERROR"},"original":{
+"name":"SqlError","text":"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''' at line 1","sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id AND user_name LIKE 'juli%' INNER JOIN Roles ON RoleId = Roles.id '","fatal":false,"errno":1064,"sqlState":"42000","code":"ER_PARSE_ERROR"},"sql":"SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users INNER JOIN Users ON UserId = Users.id AND user_name LIKE 'juli%' INNER JOIN Roles ON RoleId = Roles.id '","parameters":{
+}} 
+ DBError: Usuarios no encontrados
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:41:30
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:39:5)
+ Sat Aug 10 2024 14:29:29 GMT-0600 (Central Standard Time) 
+ Error: Error: El Role no es el requerido. 
+ Error 
+ undefined 
+ Error: Error: El Role no es el requerido.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:12:62
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 10 2024 14:29:29 GMT-0600 (Central Standard Time) 
+ Error: No tienens permisos suficientes para realizar esta operación 
+ Error 
+ undefined 
+ Error: No tienens permisos suficientes para realizar esta operación
+    at getUser (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/user_controller.js:54:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 10 2024 14:29:29 GMT-0600 (Central Standard Time) 
+ Error: No tienens permisos suficientes para realizar esta operación 
+ Error 
+ undefined 
+ Error: No tienens permisos suficientes para realizar esta operación
+    at getUser (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/user_controller.js:54:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 10 2024 14:29:29 GMT-0600 (Central Standard Time) 
+ Error: Error: El Role no es el requerido. 
+ Error 
+ undefined 
+ Error: Error: El Role no es el requerido.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:12:62
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 10 2024 14:30:54 GMT-0600 (Central Standard Time) 
+ Error: Error: El Role no es el requerido. 
+ Error 
+ undefined 
+ Error: Error: El Role no es el requerido.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:12:62
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 10 2024 14:30:54 GMT-0600 (Central Standard Time) 
+ Error: No tienens permisos suficientes para realizar esta operación 
+ Error 
+ undefined 
+ Error: No tienens permisos suficientes para realizar esta operación
+    at getUser (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/user_controller.js:54:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 10 2024 14:30:54 GMT-0600 (Central Standard Time) 
+ Error: Error: El Role no es el requerido. 
+ Error 
+ undefined 
+ Error: Error: El Role no es el requerido.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:12:62
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 10 2024 14:30:54 GMT-0600 (Central Standard Time) 
+ Error: No tienens permisos suficientes para realizar esta operación 
+ Error 
+ undefined 
+ Error: No tienens permisos suficientes para realizar esta operación
+    at getUser (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/user_controller.js:54:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 10 2024 14:31:48 GMT-0600 (Central Standard Time) 
+ Error: Error: El Role no es el requerido. 
+ Error 
+ undefined 
+ Error: Error: El Role no es el requerido.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:12:62
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 10 2024 14:31:48 GMT-0600 (Central Standard Time) 
+ Error: Error: El Role no es el requerido. 
+ Error 
+ undefined 
+ Error: Error: El Role no es el requerido.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:12:62
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 10 2024 14:58:44 GMT-0600 (Central Standard Time) 
+ ReferenceError: paginate is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: paginate is not defined
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:28:19)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 10 2024 14:59:59 GMT-0600 (Central Standard Time) 
+ ReferenceError: order is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: order is not defined
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:29:61)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 10 2024 14:59:59 GMT-0600 (Central Standard Time) 
+ ReferenceError: order is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: order is not defined
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:29:61)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 10 2024 15:00:25 GMT-0600 (Central Standard Time) 
+ TypeError: roles.map is not a function 
+ TypeError 
+ undefined 
+ TypeError: roles.map is not a function
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:33:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 10 2024 15:00:25 GMT-0600 (Central Standard Time) 
+ TypeError: roles.map is not a function 
+ TypeError 
+ undefined 
+ TypeError: roles.map is not a function
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:33:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 10 2024 15:01:08 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:23:22)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 10 2024 15:01:08 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:23:22)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 10 2024 15:50:57 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:23:22)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 10 2024 15:50:57 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:23:22)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 10 2024 15:51:48 GMT-0600 (Central Standard Time) 
+ TypeError: Assignment to constant variable. 
+ TypeError 
+ undefined 
+ TypeError: Assignment to constant variable.
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:21:16)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 10 2024 15:51:48 GMT-0600 (Central Standard Time) 
+ TypeError: Assignment to constant variable. 
+ TypeError 
+ undefined 
+ TypeError: Assignment to constant variable.
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:21:16)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 10 2024 15:52:34 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of undefined (reading 'data') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of undefined (reading 'data')
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:34:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 10 2024 15:52:34 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of undefined (reading 'data') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of undefined (reading 'data')
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:34:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 10 2024 16:02:36 GMT-0600 (Central Standard Time) 
+ TypeError: roles.splice is not a function 
+ TypeError 
+ undefined 
+ TypeError: roles.splice is not a function
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:36:51
+    at Array.map (<anonymous>)
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:34:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 10 2024 16:02:36 GMT-0600 (Central Standard Time) 
+ TypeError: roles.splice is not a function 
+ TypeError 
+ undefined 
+ TypeError: roles.splice is not a function
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:36:51
+    at Array.map (<anonymous>)
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:34:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 10 2024 16:07:53 GMT-0600 (Central Standard Time) 
+ TypeError: roles.splice is not a function 
+ TypeError 
+ undefined 
+ TypeError: roles.splice is not a function
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:36:52
+    at Array.map (<anonymous>)
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:34:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 10 2024 16:07:53 GMT-0600 (Central Standard Time) 
+ TypeError: roles.splice is not a function 
+ TypeError 
+ undefined 
+ TypeError: roles.splice is not a function
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:36:52
+    at Array.map (<anonymous>)
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:34:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 10 2024 16:08:54 GMT-0600 (Central Standard Time) 
+ TypeError: roles.splice is not a function 
+ TypeError 
+ undefined 
+ TypeError: roles.splice is not a function
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:36:52
+    at Array.map (<anonymous>)
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:34:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 10 2024 16:08:55 GMT-0600 (Central Standard Time) 
+ TypeError: roles.splice is not a function 
+ TypeError 
+ undefined 
+ TypeError: roles.splice is not a function
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:36:52
+    at Array.map (<anonymous>)
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:34:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 10 2024 16:10:05 GMT-0600 (Central Standard Time) 
+ TypeError: roles.splice is not a function 
+ TypeError 
+ undefined 
+ TypeError: roles.splice is not a function
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:36:52
+    at Array.map (<anonymous>)
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:34:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 10 2024 16:10:05 GMT-0600 (Central Standard Time) 
+ TypeError: roles.splice is not a function 
+ TypeError 
+ undefined 
+ TypeError: roles.splice is not a function
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:36:52
+    at Array.map (<anonymous>)
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:34:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 10 2024 16:12:54 GMT-0600 (Central Standard Time) 
+ TypeError: roles.splice is not a function 
+ TypeError 
+ undefined 
+ TypeError: roles.splice is not a function
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:36:52
+    at Array.map (<anonymous>)
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:34:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 10 2024 16:12:54 GMT-0600 (Central Standard Time) 
+ TypeError: roles.splice is not a function 
+ TypeError 
+ undefined 
+ TypeError: roles.splice is not a function
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:36:52
+    at Array.map (<anonymous>)
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:34:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 10 2024 16:16:22 GMT-0600 (Central Standard Time) 
+ TypeError: console.log(...) is not a function 
+ TypeError 
+ undefined 
+ TypeError: console.log(...) is not a function
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:36:9
+    at Array.map (<anonymous>)
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:34:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 10 2024 16:16:22 GMT-0600 (Central Standard Time) 
+ TypeError: console.log(...) is not a function 
+ TypeError 
+ undefined 
+ TypeError: console.log(...) is not a function
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:36:9
+    at Array.map (<anonymous>)
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:34:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 10 2024 16:17:22 GMT-0600 (Central Standard Time) 
+ TypeError: roles.splice is not a function 
+ TypeError 
+ undefined 
+ TypeError: roles.splice is not a function
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:36:57
+    at Array.map (<anonymous>)
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:34:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 10 2024 16:17:22 GMT-0600 (Central Standard Time) 
+ TypeError: roles.splice is not a function 
+ TypeError 
+ undefined 
+ TypeError: roles.splice is not a function
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:36:57
+    at Array.map (<anonymous>)
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:34:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 10 2024 16:17:53 GMT-0600 (Central Standard Time) 
+ TypeError: roles.splice is not a function 
+ TypeError 
+ undefined 
+ TypeError: roles.splice is not a function
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:36:56
+    at Array.map (<anonymous>)
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:34:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 10 2024 16:17:53 GMT-0600 (Central Standard Time) 
+ TypeError: roles.splice is not a function 
+ TypeError 
+ undefined 
+ TypeError: roles.splice is not a function
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:36:56
+    at Array.map (<anonymous>)
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:34:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 10 2024 16:18:28 GMT-0600 (Central Standard Time) 
+ TypeError: roles.splice is not a function 
+ TypeError 
+ undefined 
+ TypeError: roles.splice is not a function
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:36:51
+    at Array.map (<anonymous>)
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:34:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 10 2024 16:18:28 GMT-0600 (Central Standard Time) 
+ TypeError: roles.splice is not a function 
+ TypeError 
+ undefined 
+ TypeError: roles.splice is not a function
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:36:51
+    at Array.map (<anonymous>)
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:34:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 10 2024 16:18:55 GMT-0600 (Central Standard Time) 
+ TypeError: roles.splice is not a function 
+ TypeError 
+ undefined 
+ TypeError: roles.splice is not a function
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:36:51
+    at Array.map (<anonymous>)
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:34:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 10 2024 16:18:55 GMT-0600 (Central Standard Time) 
+ TypeError: roles.splice is not a function 
+ TypeError 
+ undefined 
+ TypeError: roles.splice is not a function
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:36:51
+    at Array.map (<anonymous>)
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:34:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 10 2024 16:22:49 GMT-0600 (Central Standard Time) 
+ TypeError: roles.splice is not a function 
+ TypeError 
+ undefined 
+ TypeError: roles.splice is not a function
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:36:51
+    at Array.map (<anonymous>)
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:34:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 10 2024 16:22:49 GMT-0600 (Central Standard Time) 
+ Error: Error: El Role no es el requerido. 
+ Error 
+ undefined 
+ Error: Error: El Role no es el requerido.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:12:62
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 10 2024 16:22:49 GMT-0600 (Central Standard Time) 
+ Error: Error: El Role no es el requerido. 
+ Error 
+ undefined 
+ Error: Error: El Role no es el requerido.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:12:62
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 10 2024 16:22:49 GMT-0600 (Central Standard Time) 
+ TypeError: roles.splice is not a function 
+ TypeError 
+ undefined 
+ TypeError: roles.splice is not a function
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:36:51
+    at Array.map (<anonymous>)
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:34:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 10 2024 16:23:20 GMT-0600 (Central Standard Time) 
+ TypeError: roles.splice is not a function 
+ TypeError 
+ undefined 
+ TypeError: roles.splice is not a function
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:36:51
+    at Array.map (<anonymous>)
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:34:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 10 2024 16:23:20 GMT-0600 (Central Standard Time) 
+ Error: Error: El Role no es el requerido. 
+ Error 
+ undefined 
+ Error: Error: El Role no es el requerido.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:12:62
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 10 2024 16:23:20 GMT-0600 (Central Standard Time) 
+ Error: Error: El Role no es el requerido. 
+ Error 
+ undefined 
+ Error: Error: El Role no es el requerido.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:12:62
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 10 2024 16:23:20 GMT-0600 (Central Standard Time) 
+ TypeError: roles.splice is not a function 
+ TypeError 
+ undefined 
+ TypeError: roles.splice is not a function
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:36:51
+    at Array.map (<anonymous>)
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:34:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 12 2024 14:17:08 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar el Rol. 
+ DBError 
+ {
+"name":"SequelizeUniqueConstraintError","errors":[{
+"message":"role_name must be unique","type":"unique violation","path":"role_name","value":"3","origin":"DB","instance":{
+"id":"9","role_name":"3","role_state":true},"validatorKey":"not_unique","validatorName":null,"validatorArgs":[]}],"parent":{
+"name":"SqlError","text":"Duplicate entry '3' for key 'role_name'","sql":"INSERT INTO `Roles` (`id`,`role_name`,`role_state`) VALUES (?,?,?);","fatal":false,"errno":1062,"sqlState":"23000","code":"ER_DUP_ENTRY","parameters":["9","3",true]},"original":{
+"name":"SqlError","text":"Duplicate entry '3' for key 'role_name'","sql":"INSERT INTO `Roles` (`id`,`role_name`,`role_state`) VALUES (?,?,?);","fatal":false,"errno":1062,"sqlState":"23000","code":"ER_DUP_ENTRY","parameters":["9","3",true]},"fields":{
+"role_name":"3"},"sql":"INSERT INTO `Roles` (`id`,`role_name`,`role_state`) VALUES (?,?,?);"} 
+ DBError: Error al guardar el Rol.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:65:23
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async saveRole (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:62:9)
+ Mon Aug 12 2024 14:23:20 GMT-0600 (Central Standard Time) 
+ TypeError: Assignment to constant variable. 
+ TypeError 
+ undefined 
+ TypeError: Assignment to constant variable.
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:21:16)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 12 2024 14:23:20 GMT-0600 (Central Standard Time) 
+ TypeError: Assignment to constant variable. 
+ TypeError 
+ undefined 
+ TypeError: Assignment to constant variable.
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:21:16)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 12 2024 14:23:21 GMT-0600 (Central Standard Time) 
+ TypeError: Assignment to constant variable. 
+ TypeError 
+ undefined 
+ TypeError: Assignment to constant variable.
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:21:16)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 12 2024 14:23:21 GMT-0600 (Central Standard Time) 
+ TypeError: Assignment to constant variable. 
+ TypeError 
+ undefined 
+ TypeError: Assignment to constant variable.
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:21:16)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 12 2024 14:23:21 GMT-0600 (Central Standard Time) 
+ TypeError: Assignment to constant variable. 
+ TypeError 
+ undefined 
+ TypeError: Assignment to constant variable.
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:21:16)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 12 2024 14:23:21 GMT-0600 (Central Standard Time) 
+ TypeError: Assignment to constant variable. 
+ TypeError 
+ undefined 
+ TypeError: Assignment to constant variable.
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:21:16)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 12 2024 14:23:21 GMT-0600 (Central Standard Time) 
+ TypeError: Assignment to constant variable. 
+ TypeError 
+ undefined 
+ TypeError: Assignment to constant variable.
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:21:16)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 12 2024 14:23:21 GMT-0600 (Central Standard Time) 
+ TypeError: Assignment to constant variable. 
+ TypeError 
+ undefined 
+ TypeError: Assignment to constant variable.
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:21:16)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 12 2024 14:23:51 GMT-0600 (Central Standard Time) 
+ TypeError: Assignment to constant variable. 
+ TypeError 
+ undefined 
+ TypeError: Assignment to constant variable.
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:21:16)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 12 2024 14:23:51 GMT-0600 (Central Standard Time) 
+ TypeError: Assignment to constant variable. 
+ TypeError 
+ undefined 
+ TypeError: Assignment to constant variable.
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:21:16)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 12 2024 14:24:16 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of undefined (reading 'data') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of undefined (reading 'data')
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:34:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 12 2024 14:24:16 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of undefined (reading 'data') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of undefined (reading 'data')
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:34:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 12 2024 14:26:13 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of undefined (reading 'data') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of undefined (reading 'data')
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:34:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 12 2024 14:26:13 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of undefined (reading 'data') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of undefined (reading 'data')
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:34:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 12 2024 14:28:43 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of undefined (reading 'data') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of undefined (reading 'data')
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:34:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 12 2024 14:28:58 GMT-0600 (Central Standard Time) 
+ TypeError: roles.splice is not a function 
+ TypeError 
+ undefined 
+ TypeError: roles.splice is not a function
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:36:51
+    at Array.map (<anonymous>)
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:34:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 12 2024 14:28:58 GMT-0600 (Central Standard Time) 
+ TypeError: roles.splice is not a function 
+ TypeError 
+ undefined 
+ TypeError: roles.splice is not a function
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:36:51
+    at Array.map (<anonymous>)
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:34:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 12 2024 14:29:42 GMT-0600 (Central Standard Time) 
+ TypeError: role.splice is not a function 
+ TypeError 
+ undefined 
+ TypeError: role.splice is not a function
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:36:50
+    at Array.map (<anonymous>)
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:34:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 12 2024 15:07:42 GMT-0600 (Central Standard Time) 
+ TypeError: roles?.splice is not a function 
+ TypeError 
+ undefined 
+ TypeError: roles?.splice is not a function
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:36:52
+    at Array.map (<anonymous>)
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:34:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 12 2024 15:07:42 GMT-0600 (Central Standard Time) 
+ TypeError: roles?.splice is not a function 
+ TypeError 
+ undefined 
+ TypeError: roles?.splice is not a function
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:36:52
+    at Array.map (<anonymous>)
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:34:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 12 2024 15:16:26 GMT-0600 (Central Standard Time) 
+ TypeError: roles?.splice is not a function 
+ TypeError 
+ undefined 
+ TypeError: roles?.splice is not a function
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:34:52
+    at Array.map (<anonymous>)
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:32:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 12 2024 15:16:26 GMT-0600 (Central Standard Time) 
+ TypeError: roles?.splice is not a function 
+ TypeError 
+ undefined 
+ TypeError: roles?.splice is not a function
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:34:52
+    at Array.map (<anonymous>)
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:32:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 12 2024 15:18:41 GMT-0600 (Central Standard Time) 
+ Error: Error: El Role no es el requerido. 
+ Error 
+ undefined 
+ Error: Error: El Role no es el requerido.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:12:62
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 12 2024 15:18:41 GMT-0600 (Central Standard Time) 
+ Error: Error: El Role no es el requerido. 
+ Error 
+ undefined 
+ Error: Error: El Role no es el requerido.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:12:62
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 12 2024 15:20:48 GMT-0600 (Central Standard Time) 
+ Error: Error: El Role no es el requerido. 
+ Error 
+ undefined 
+ Error: Error: El Role no es el requerido.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:12:62
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 12 2024 15:20:48 GMT-0600 (Central Standard Time) 
+ Error: Error: El Role no es el requerido. 
+ Error 
+ undefined 
+ Error: Error: El Role no es el requerido.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:12:62
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 12 2024 15:27:07 GMT-0600 (Central Standard Time) 
+ DBError: Error al actualizar el usuario. 
+ DBError 
+ {
+"name":"SequelizeForeignKeyConstraintError","parent":{
+"name":"SqlError","text":"Cannot add or update a child row: a foreign key constraint fails (`db_lambda`.`users`, CONSTRAINT `users_ibfk_1` FOREIGN KEY (`RoleId`) REFERENCES `Roles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)","sql":"UPDATE `Users` SET `user_name`=?,`RoleId`=?,`user_state`=? WHERE `id` = ?","fatal":false,"errno":1452,"sqlState":"23000","code":"ER_NO_REFERENCED_ROW_2","parameters":["julie","0",true,"48"]},"original":{
+"name":"SqlError","text":"Cannot add or update a child row: a foreign key constraint fails (`db_lambda`.`users`, CONSTRAINT `users_ibfk_1` FOREIGN KEY (`RoleId`) REFERENCES `Roles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)","sql":"UPDATE `Users` SET `user_name`=?,`RoleId`=?,`user_state`=? WHERE `id` = ?","fatal":false,"errno":1452,"sqlState":"23000","code":"ER_NO_REFERENCED_ROW_2","parameters":["julie","0",true,"48"]},"sql":"UPDATE `Users` SET `user_name`=?,`RoleId`=?,`user_state`=? WHERE `id` = ?","parameters":["julie","0",true,"48"],"table":"Roles","fields":["RoleId"],"index":"users_ibfk_1","reltype":"child"} 
+ DBError: Error al actualizar el usuario.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/user_controller.js:134:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async updateUser (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/user_controller.js:116:5)
+ Mon Aug 12 2024 15:33:40 GMT-0600 (Central Standard Time) 
+ Error: No tienens permisos suficientes para realizar esta operación 
+ Error 
+ undefined 
+ Error: No tienens permisos suficientes para realizar esta operación
+    at getUser (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/user_controller.js:54:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 12 2024 15:33:40 GMT-0600 (Central Standard Time) 
+ Error: No tienens permisos suficientes para realizar esta operación 
+ Error 
+ undefined 
+ Error: No tienens permisos suficientes para realizar esta operación
+    at getUser (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/user_controller.js:54:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 12 2024 15:35:51 GMT-0600 (Central Standard Time) 
+ Error: No tienens permisos suficientes para realizar esta operación 
+ Error 
+ undefined 
+ Error: No tienens permisos suficientes para realizar esta operación
+    at getUser (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/user_controller.js:54:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 12 2024 15:36:12 GMT-0600 (Central Standard Time) 
+ Error: No tienens permisos suficientes para realizar esta operación 
+ Error 
+ undefined 
+ Error: No tienens permisos suficientes para realizar esta operación
+    at getUser (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/user_controller.js:54:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Aug 12 2024 15:36:12 GMT-0600 (Central Standard Time) 
+ Error: No tienens permisos suficientes para realizar esta operación 
+ Error 
+ undefined 
+ Error: No tienens permisos suficientes para realizar esta operación
+    at getUser (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/user_controller.js:54:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Thu Aug 15 2024 10:35:57 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar tipo de persona. 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"Incorrect integer value: '' for column `db_lambda`.`persontypes`.`personType_state` at row 1","sql":"INSERT INTO `PersonTypes` (`id`,`personType_name`,`personType_state`) VALUES (DEFAULT,?,?);","fatal":false,"errno":1366,"sqlState":"22007","code":"ER_TRUNCATED_WRONG_VALUE_FOR_FIELD","parameters":["2",""]},"original":{
+"name":"SqlError","text":"Incorrect integer value: '' for column `db_lambda`.`persontypes`.`personType_state` at row 1","sql":"INSERT INTO `PersonTypes` (`id`,`personType_name`,`personType_state`) VALUES (DEFAULT,?,?);","fatal":false,"errno":1366,"sqlState":"22007","code":"ER_TRUNCATED_WRONG_VALUE_FOR_FIELD","parameters":["2",""]},"sql":"INSERT INTO `PersonTypes` (`id`,`personType_name`,`personType_state`) VALUES (DEFAULT,?,?);","parameters":["2",""]} 
+ DBError: Error al guardar tipo de persona.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/personType_controller.js:43:33
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async savePersonType (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/personType_controller.js:41:5)
+ Thu Aug 15 2024 10:36:33 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar tipo de persona. 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"Incorrect integer value: '' for column `db_lambda`.`persontypes`.`personType_state` at row 1","sql":"INSERT INTO `PersonTypes` (`id`,`personType_name`,`personType_state`) VALUES (DEFAULT,?,?);","fatal":false,"errno":1366,"sqlState":"22007","code":"ER_TRUNCATED_WRONG_VALUE_FOR_FIELD","parameters":["3",""]},"original":{
+"name":"SqlError","text":"Incorrect integer value: '' for column `db_lambda`.`persontypes`.`personType_state` at row 1","sql":"INSERT INTO `PersonTypes` (`id`,`personType_name`,`personType_state`) VALUES (DEFAULT,?,?);","fatal":false,"errno":1366,"sqlState":"22007","code":"ER_TRUNCATED_WRONG_VALUE_FOR_FIELD","parameters":["3",""]},"sql":"INSERT INTO `PersonTypes` (`id`,`personType_name`,`personType_state`) VALUES (DEFAULT,?,?);","parameters":["3",""]} 
+ DBError: Error al guardar tipo de persona.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/personType_controller.js:43:33
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async savePersonType (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/personType_controller.js:41:5)
+ Thu Aug 15 2024 10:37:08 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar tipo de persona. 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"Incorrect integer value: '' for column `db_lambda`.`persontypes`.`personType_state` at row 1","sql":"INSERT INTO `PersonTypes` (`id`,`personType_name`,`personType_state`) VALUES (DEFAULT,?,?);","fatal":false,"errno":1366,"sqlState":"22007","code":"ER_TRUNCATED_WRONG_VALUE_FOR_FIELD","parameters":["8",""]},"original":{
+"name":"SqlError","text":"Incorrect integer value: '' for column `db_lambda`.`persontypes`.`personType_state` at row 1","sql":"INSERT INTO `PersonTypes` (`id`,`personType_name`,`personType_state`) VALUES (DEFAULT,?,?);","fatal":false,"errno":1366,"sqlState":"22007","code":"ER_TRUNCATED_WRONG_VALUE_FOR_FIELD","parameters":["8",""]},"sql":"INSERT INTO `PersonTypes` (`id`,`personType_name`,`personType_state`) VALUES (DEFAULT,?,?);","parameters":["8",""]} 
+ DBError: Error al guardar tipo de persona.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/personType_controller.js:43:33
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async savePersonType (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/personType_controller.js:41:5)
+ Thu Aug 15 2024 10:37:21 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar tipo de persona. 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"Incorrect integer value: '' for column `db_lambda`.`persontypes`.`personType_state` at row 1","sql":"INSERT INTO `PersonTypes` (`id`,`personType_name`,`personType_state`) VALUES (DEFAULT,?,?);","fatal":false,"errno":1366,"sqlState":"22007","code":"ER_TRUNCATED_WRONG_VALUE_FOR_FIELD","parameters":["9",""]},"original":{
+"name":"SqlError","text":"Incorrect integer value: '' for column `db_lambda`.`persontypes`.`personType_state` at row 1","sql":"INSERT INTO `PersonTypes` (`id`,`personType_name`,`personType_state`) VALUES (DEFAULT,?,?);","fatal":false,"errno":1366,"sqlState":"22007","code":"ER_TRUNCATED_WRONG_VALUE_FOR_FIELD","parameters":["9",""]},"sql":"INSERT INTO `PersonTypes` (`id`,`personType_name`,`personType_state`) VALUES (DEFAULT,?,?);","parameters":["9",""]} 
+ DBError: Error al guardar tipo de persona.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/personType_controller.js:43:33
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async savePersonType (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/personType_controller.js:41:5)
+ Thu Aug 15 2024 10:59:37 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getPersonTypes (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/personType_controller.js:18:22)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Thu Aug 15 2024 10:59:37 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getPersonTypes (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/personType_controller.js:18:22)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Thu Aug 15 2024 11:15:15 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getBranches (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/branch_controller.js:20:33)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Thu Aug 15 2024 11:15:15 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getBranches (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/branch_controller.js:20:33)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Thu Aug 15 2024 11:15:16 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getBranches (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/branch_controller.js:20:33)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Thu Aug 15 2024 11:15:16 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getBranches (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/branch_controller.js:20:33)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Thu Aug 15 2024 11:17:52 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of undefined (reading 'data') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of undefined (reading 'data')
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:32:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Thu Aug 15 2024 11:17:52 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of undefined (reading 'data') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of undefined (reading 'data')
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:32:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Thu Aug 15 2024 11:17:52 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of undefined (reading 'data') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of undefined (reading 'data')
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:32:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Thu Aug 15 2024 11:17:52 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of undefined (reading 'data') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of undefined (reading 'data')
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:32:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Thu Aug 15 2024 11:17:53 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of undefined (reading 'data') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of undefined (reading 'data')
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:32:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Thu Aug 15 2024 11:17:53 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of undefined (reading 'data') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of undefined (reading 'data')
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:32:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Thu Aug 15 2024 11:17:53 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of undefined (reading 'data') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of undefined (reading 'data')
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:32:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Thu Aug 15 2024 11:17:53 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of undefined (reading 'data') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of undefined (reading 'data')
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:32:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Thu Aug 15 2024 11:26:12 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar tipo de persona. 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"Incorrect integer value: '' for column `db_lambda`.`persontypes`.`personType_state` at row 1","sql":"INSERT INTO `PersonTypes` (`id`,`personType_name`,`personType_state`) VALUES (DEFAULT,?,?);","fatal":false,"errno":1366,"sqlState":"22007","code":"ER_TRUNCATED_WRONG_VALUE_FOR_FIELD","parameters":["cosa",""]},"original":{
+"name":"SqlError","text":"Incorrect integer value: '' for column `db_lambda`.`persontypes`.`personType_state` at row 1","sql":"INSERT INTO `PersonTypes` (`id`,`personType_name`,`personType_state`) VALUES (DEFAULT,?,?);","fatal":false,"errno":1366,"sqlState":"22007","code":"ER_TRUNCATED_WRONG_VALUE_FOR_FIELD","parameters":["cosa",""]},"sql":"INSERT INTO `PersonTypes` (`id`,`personType_name`,`personType_state`) VALUES (DEFAULT,?,?);","parameters":["cosa",""]} 
+ DBError: Error al guardar tipo de persona.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/personType_controller.js:44:33
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async savePersonType (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/personType_controller.js:42:5)
+ Thu Aug 15 2024 13:20:42 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar persona. 
+ DBError 
+ {
+"name":"SequelizeUniqueConstraintError","errors":[{
+"message":"person_nit must be unique","type":"unique violation","path":"person_nit","value":"34534534","origin":"DB","instance":{
+"id":null,"person_names":"24354545","person_surnames":"45434534","person_cui":"345345","person_nit":"34534534","person_phone":"345","person_address":"345345","PersonTypeId":"1","BranchId":"1"},"validatorKey":"not_unique","validatorName":null,"validatorArgs":[]}],"parent":{
+"name":"SqlError","text":"Duplicate entry '34534534' for key 'person_nit'","sql":"INSERT INTO `People` (`id`,`person_names`,`person_surnames`,`person_cui`,`person_nit`,`person_phone`,`person_address`,`PersonTypeId`,`BranchId`) VALUES (DEFAULT,?,?,?,?,?,?,?,?);","fatal":false,"errno":1062,"sqlState":"23000","code":"ER_DUP_ENTRY","parameters":["24354545","45434534","345345","34534534","345","345345","1","1"]},"original":{
+"name":"SqlError","text":"Duplicate entry '34534534' for key 'person_nit'","sql":"INSERT INTO `People` (`id`,`person_names`,`person_surnames`,`person_cui`,`person_nit`,`person_phone`,`person_address`,`PersonTypeId`,`BranchId`) VALUES (DEFAULT,?,?,?,?,?,?,?,?);","fatal":false,"errno":1062,"sqlState":"23000","code":"ER_DUP_ENTRY","parameters":["24354545","45434534","345345","34534534","345","345345","1","1"]},"fields":{
+"person_nit":"34534534"},"sql":"INSERT INTO `People` (`id`,`person_names`,`person_surnames`,`person_cui`,`person_nit`,`person_phone`,`person_address`,`PersonTypeId`,`BranchId`) VALUES (DEFAULT,?,?,?,?,?,?,?,?);"} 
+ DBError: Error al guardar persona.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/person_controller.js:47:33
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async savePerson (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/person_controller.js:45:5)

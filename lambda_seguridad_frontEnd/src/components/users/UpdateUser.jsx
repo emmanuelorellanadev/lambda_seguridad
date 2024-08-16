@@ -1,6 +1,5 @@
 import React, {useState, useEffect}from 'react';
 import axios from'axios';
-import Swal from 'sweetalert2';
 
 import '../../css/user/user.css';
 import {P_Head} from'../ui/P_Head';
@@ -10,7 +9,6 @@ import { Select } from '../ui/Select';
 import { useUpdateUser } from './hooks/useUpdateUser';
 import { Toaster } from 'react-hot-toast';
 import { useGetRole } from '../roles/hooks/useGetRole';
-import { useGetUserByBranch } from './hooks/useGetUsersByBranch';
 import { useGetCompany } from '../companies/hooks/useGetCompany';
 import { useGetUser } from './hooks/useGetUser';
 import { useGetBranch } from '../branches/hooks/useGetBranch';
@@ -26,6 +24,8 @@ export const UpdateUser = (props) => {
     const [companyId, setCompanyId] = useState('1');
     const [branches, setBranches] = useState([]);
     const [branchId, setBranchId] = useState('');
+    const [nextPage, setNextPage] = useState({});
+    const [prevPage, setPrevPage] = useState({});
 
     const updateButton = (e) => {
         e.preventDefault();
@@ -65,10 +65,10 @@ export const UpdateUser = (props) => {
         const urlUser = `http://localhost:8080/user/${props.userToEdit}`;
         const urlCompany = 'http://localhost:8080/company/';
         const urlBranch = 'http://localhost:8080/branch/';
-        useGetRole(urlRole, {setRoles});
+        useGetRole(urlRole, {setRoles, setNextPage, setPrevPage});
         useGetUser(urlUser, {fillFields})
-        useGetCompany(urlCompany, {setCompanies});
-        useGetBranch(urlBranch, {setBranches})
+        useGetCompany(urlCompany, {setCompanies, setNextPage, setPrevPage});
+        useGetBranch(urlBranch, {setBranches, setNextPage, setPrevPage})
         fetchBranchId();
         fetchCompanyId();
     }, [])
@@ -87,7 +87,7 @@ export const UpdateUser = (props) => {
             </div>
             <div>
                 <Label text="Rol:" lambdaClassLabel={""}/>
-                <Select data={roles} name='RoleId' id='selectRole' value={roleId} onChange={ (e) => {setRoleId(e.target.value)}} required/>
+                <Select data={roles.data} name='RoleId' id='selectRole' value={roleId} onChange={ (e) => {setRoleId(e.target.value)}} required/>
             </div>
             <div id='userState'>
                 <Label text="Estado:" lambdaClassLabel={""}/>
@@ -95,11 +95,11 @@ export const UpdateUser = (props) => {
             </div>
             <div>
                 <Label text="Empresa:" lambdaClassLabel={""}/>
-                <Select data={companies} className='form-select text-center' id='selectCompany' value={companyId} onChange={ (e) => {setCompanyId(e.target.value)}} required disabled />
+                <Select data={companies.data} className='form-select text-center' id='selectCompany' value={companyId} onChange={ (e) => {setCompanyId(e.target.value)}} required disabled />
             </div>
             <div>
                 <Label text="Sucursal:" lambdaClassLabel={""}/>
-                <Select data={branches} name='BranchId' id='selectBranch' value={ branchId } onChange={ (e) => {setBranchId(e.target.value)}} required />
+                <Select data={branches.data} name='BranchId' id='selectBranch' value={ branchId } onChange={ (e) => {setBranchId(e.target.value)}} required />
             </div>
             <section>
                 <P_Head className="p_h3" text={'Cambiar Imágen'}/>

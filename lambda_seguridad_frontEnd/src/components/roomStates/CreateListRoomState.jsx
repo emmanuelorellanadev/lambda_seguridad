@@ -4,7 +4,7 @@ import { Toaster } from 'react-hot-toast';
 import { P_Head } from '../ui/P_Head';
 import { Label } from '../ui/Label';
 import { Input } from '../ui/Input';
-import { Table_roomState } from '../ui/table_roomState/Table_roomState';
+import { Table_roomState } from '../ui/tables/Table_roomState';
 import { useDeleteRoomState } from './hooks/useDeleteRoomState';
 import { useCreateRoomState } from './hooks/useCreateRoomState';
 

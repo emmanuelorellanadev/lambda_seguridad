@@ -22,6 +22,8 @@ const CreatePerson = () => {
     const [address, setAddress] = useState('');
     const [personTypeId, setPersonTypeId] = useState('');
     const [branchId, setBranchId] = useState('');
+    const [nextPage, setNextPage ] = useState('');
+    const [prevPage, setPrevPage ] = useState('');
 
     const savePerson = async(e) => {
         e.preventDefault();
@@ -44,8 +46,8 @@ const CreatePerson = () => {
     useEffect( () => {
         const urlPersonType = "http://localhost:8080/personType/";
         const urlBranch = "http://localhost:8080/branch/";
-        useGetPersonType( urlPersonType, { setPersonTypes } );
-        useGetBranch(urlBranch, {setBranches})
+        useGetPersonType( urlPersonType, { setPersonTypes, setNextPage, setPrevPage} );
+        useGetBranch(urlBranch, {setBranches, setNextPage, setPrevPage})
     }, [])
 
     return (
@@ -79,11 +81,11 @@ const CreatePerson = () => {
             </div>
             <div>
                 <Label lambdaClassLabel={''} text="Tipo:"/>
-                <Select data={personTypes} text={'Selecciona Tipo' } value={personTypeId} onChange={ (e) => {setPersonTypeId(e.target.value)}} required/>
+                <Select data={personTypes.data} text={'Selecciona Tipo' } value={personTypeId} onChange={ (e) => {setPersonTypeId(e.target.value)}} required/>
             </div>
             <div>
                 <Label lambdaClassLabel={''} text="Sucursal:"/>
-                <Select data={branches} text={'Selecciona Sucursal' } value={branchId} onChange={ (e) => {setBranchId(e.target.value)}} required/>
+                <Select data={branches.data} text={'Selecciona Sucursal' } value={branchId} onChange={ (e) => {setBranchId(e.target.value)}} required/>
             </div>
             <div className='sendPerson_button'>
                 <button className='btn btn-primary'>Guardar</button>

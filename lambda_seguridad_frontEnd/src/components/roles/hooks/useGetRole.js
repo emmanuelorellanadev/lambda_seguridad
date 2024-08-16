@@ -1,12 +1,14 @@
 import axios from "axios";
 import toast from "react-hot-toast";
 
-export const useGetRole = async (urlRole, { setRoles, setId, setRoleName, setRoleState} ) => {
+export const useGetRole = async (urlRole, { setRoles, setId, setRoleName, setRoleState, setNextPage, setPrevPage} ) => {
     await axios.get(urlRole, { headers: {'x-token': sessionStorage.getItem('token-xL')}})
     .then( (resp) => resp.data.resData)
     .then( data => {
         if(setRoles){
-            setRoles(data)
+            setRoles(data);
+            setNextPage(data.nextPage);
+            setPrevPage(data.prevPage)
         }else if(setId){
             setId(data.id);
             setRoleName(data.role_name);
@@ -14,6 +16,7 @@ export const useGetRole = async (urlRole, { setRoles, setId, setRoleName, setRol
         }
     }) 
     .catch( error => {
+        console.log(error)
         toast.error("Error al recuperar los roles", {
             duration: 4000,
             position: "top-right",

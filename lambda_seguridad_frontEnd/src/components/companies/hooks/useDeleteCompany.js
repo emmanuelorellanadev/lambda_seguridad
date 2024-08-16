@@ -1,8 +1,10 @@
 import axios from "axios"
 import Swal from "sweetalert2"
-import { Toaster, toast } from 'react-hot-toast'
+import { toast } from 'react-hot-toast'
 
-export const useDeleteCompany = (urlCompany, companyId, companyName, setOnLoad) => {
+export const useDeleteCompany = (companyId, companyName, setOnLoad) => {
+
+  const urlCompany = 'http://localhost:8080/company/';
 
     Swal.fire({
       icon: 'question',
@@ -30,7 +32,8 @@ export const useDeleteCompany = (urlCompany, companyId, companyName, setOnLoad) 
               }
             });
           })
-          .catch( error => toast.error(`${error.response.data.error}`, {
+          .catch( error => {console.log(error)
+            toast.error(`${error.response.data.error}`, {
             duration: 4000,
             position: "top-right",
             style: {
@@ -38,7 +41,7 @@ export const useDeleteCompany = (urlCompany, companyId, companyName, setOnLoad) 
                 color: "#fff",
                 height: "4rem"
             }
-          }))
+          })})
       }
   })
 

@@ -1,13 +1,16 @@
 const paginate = async (model, pageSize, pageLimit, search = {}, order = []) => {
     try {
         const limit = parseInt(pageLimit, 10) || 10;
+        // const limit = parseInt(pageLimit, 10);
         const page = parseInt(pageSize, 10) || 1;
 
         // create an options object
-        let options = {
-            offset: getOffset(page, limit),
-            limit: limit,
-        };
+        let options = {};
+
+        //check if limit was recibed
+        if(pageLimit){
+            options = {limit: limit, offset: getOffset(page, limit)}
+        }
 
         // check if the search object is empty
         if (Object.keys(search).length) {
@@ -19,8 +22,6 @@ const paginate = async (model, pageSize, pageLimit, search = {}, order = []) => 
         //     options['order'] = order;
         // }
 
-        console.log(options)
-
         // take in the model, take in the options
         let {count, rows} = await model.findAndCountAll(options);
 
@@ -30,7 +31,7 @@ const paginate = async (model, pageSize, pageLimit, search = {}, order = []) => 
         // }
 
         return {
-            previousPage: getPreviousPage(page),
+            prevPage: getPrevPage(page),
             currentPage: page,
             nextPage: getNextPage(page, limit, count),
             total: count,
@@ -54,7 +55,7 @@ const getNextPage = (page, limit, total) => {
     return null
 }
 
-const getPreviousPage = (page) => {
+const getPrevPage = (page) => {
     if (page <= 1) {
         return null
     }

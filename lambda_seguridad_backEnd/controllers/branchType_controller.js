@@ -1,17 +1,28 @@
+const { Op } = require('sequelize')
 const catchedAsync = require('../errors_handler/catchedAsync');
 const { DBError, GeneralError } = require('../errors_handler/errors');
+const { paginate } = require('../helpers/paginate');
 const BranchType = require('../models/branchType_model');
 const { resSuccessful } = require('../response/resSucessful');
 
 const getBranchTypes = async(req, res) => {
 
-    await BranchType.findAll()
-        .then( branchTypes => {
-            if(branchTypes.length == 0){
-                throw new DBError(null, 'No se encontraron tipos de sucursal', 404)
+    const { q, page, limit, order_by, order_direction } = req.query;
+
+    let search = {};
+    let order = [];
+
+    if (q) {
+        search = {
+            where: {
+                branchType_name: { [Op.like]: `%${q}%`}
             }
-            resSuccessful(res, branchTypes)
-        })
+        }
+    }
+
+    const branchTypes = await paginate(BranchType, page, limit, search, order )
+
+    resSuccessful(res, branchTypes)
 }
 
 const getBranchType = async(req, res) => {

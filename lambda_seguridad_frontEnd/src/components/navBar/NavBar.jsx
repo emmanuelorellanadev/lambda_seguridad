@@ -59,13 +59,6 @@ export const NavBar = () => {
         setSubMenuPerson(!subMenuPerson);
     }
 
-    const subMenuTransactionVisibility = () => {
-        subMenuSecurity ? subMenuSecurityVisibility() : '';
-        subMenuAdmin ? subMenuAdminVisibility() : '';
-        subMenuUser ? subMenuUserVisibility() : '';
-        setSubMenuPerson(!subMenuPerson);
-    }
-
     //Close session
     const closeSession = () => {
         sessionStorage.removeItem('token-xL');

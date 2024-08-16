@@ -1,15 +1,19 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import '../../../css/ui/table.css'
 import { Label } from '../Label';
 import { Input } from '../Input';
+import Pagination from '../Pagination';
+import { useGetRole } from '../../roles/hooks/useGetRole';
 
-export const Table_role = ({ columns, rows, editData, deleteData, ...props}) => {
+export const Table_role = ({ columns, rows, editData, deleteData, onLoad, setOnLoad, ...props}) => {
 
-  const [currentPage, setCurrentPage] = useState(0);
+  const [ roles, setRoles ] = useState({})
   const [search, setSearch] = useState('');
-  const [rowsByPage, setRowsByPage] = useState(5);
-  const [pageCounter, setPageCounter] = useState(1);
+  const [ rowsByPage, setRowsByPage ] = useState( 10 );
+  const [ page, setPage ] = useState( 1 );
+  const [ prevPage, setPrevPage ] = useState('');
+  const [ nextPage, setNextPage ] = useState('');
 
   if(editData && !columns.includes("Editar") ){
       columns.push("Editar")
@@ -19,45 +23,30 @@ export const Table_role = ({ columns, rows, editData, deleteData, ...props}) => 
     columns.push("Eliminar")
 }
 
-  const filterData = () => {
+const getRoles = async() => {
+  const urlRole = `http://localhost:8080/role/?limit=${rowsByPage}&page=${page}&q=${search}`;
+  await useGetRole(urlRole, {setRoles, setNextPage, setPrevPage});
+}
 
-    if(search.length === 0)
-     return rows.slice(currentPage, (currentPage + rowsByPage));//pagination
+const searching = (query) => {
+  setSearch(query); 
+  setPage(1);
+  setOnLoad(false);
+}
 
-    //filter data
-    const filteredData = rows.filter( row => {
-      return (row.role_name.toLocaleLowerCase().includes(search.toLocaleLowerCase()) )
-    })
-    return ( filteredData.slice(currentPage, (currentPage + rowsByPage)))//pagination
-  }
-
-  const onSearchChange = (text) =>{
-      setCurrentPage(0);
-      setSearch(text);
-  }
-
-  const prevPage = () => {
-    if(currentPage != 0){
-      setCurrentPage(currentPage - rowsByPage);
-      setPageCounter(pageCounter - 1);
-    }
-  }
-
-  const nextPage = () => {
-    if(currentPage < Math.ceil(rows.length/rowsByPage)){
-      setCurrentPage(currentPage + rowsByPage);
-      setPageCounter(pageCounter + 1);
-    }
-  }
+useEffect( () => {
+  setOnLoad(true)
+  getRoles()
+}, [onLoad, search])
 
   return (
     <>
-    <Input lambdaClassInput={"data_search"} type="search" value={search} onChange={ e => onSearchChange(e.target.value)} placeholder="Buscar" />
+    <Input lambdaClassInput={"data_search"} type="search" value={search} onChange={ e => searching(e.target.value)} placeholder="Buscar" />
       <table className='table table-bordered table-hover table-striped' {...props}>
         <thead className='text-center t_header'>
           <tr key={0}>  
             {
-              columns.map( (column) => {
+              columns?.map( (column) => {
                 return (
                     <th key={column}>{column}</th>
                 )
@@ -67,7 +56,7 @@ export const Table_role = ({ columns, rows, editData, deleteData, ...props}) => 
         </thead>
         <tbody className='text-center align-baseline'>
           {
-            filterData().map( ( role ) => {
+            roles.data?.map( ( role ) => {
               if(editData && deleteData){
                   return (
                     <tr key={role.id}>
@@ -102,22 +91,7 @@ export const Table_role = ({ columns, rows, editData, deleteData, ...props}) => 
           }
         </tbody>
     </table>
-    <div className='pagination_container'>
-      <div>
-        <button className='btn btn-primary' onClick={  prevPage }>Anterior</button>
-        <label htmlFor="">{` ${pageCounter} / ${Math.ceil(rows.length/rowsByPage)}`}</label>
-        <button className='btn btn-primary' onClick={ nextPage }>Siguiente</button>
-      </div>
-      <div>
-        <Label lambdaClassLabel={""} text={"Registros por página "}/>
-        <select value={rowsByPage} onChange={e => setRowsByPage(e.target.value)}>
-          <option key={"5"} value="5">5</option>
-          <option key={"10"} value="10">10</option>
-          <option key={"20"} value="20">20</option>
-          <option key={"50"} value="50">50</option>
-        </select>
-      </div>
-    </div>
+    <Pagination page={page} setPage={setPage} rowsByPage={rowsByPage} setRowsByPage={setRowsByPage} prevPage={prevPage} nextPage={nextPage} total={roles.total} setOnLoad={setOnLoad}/>
   </>
   )
 }

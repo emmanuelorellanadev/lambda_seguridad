@@ -1,7 +1,9 @@
 //Branch Controller
 
+const { Op } = require('sequelize');
 const catchedAsync = require('../errors_handler/catchedAsync');
 const { DBError, GeneralError } = require('../errors_handler/errors');
+const { paginate } = require('../helpers/paginate');
 const Branch = require('../models/branch_model');
 const BranchType = require("../models/branchType_model");
 const Company = require("../models/company_model");
@@ -9,9 +11,20 @@ const { resSuccessful } = require('../response/resSucessful');
 
 //GET BRANCHS
 const getBranches = async( req, res ) => {
-        const branches = await Branch.findAll();
-        if(branches.length == 0) {throw new DBError(null, `Error: No se encontraron sucursales.`, 404)}
-        resSuccessful(res, branches)
+    const { q, page, limit } = req.query;
+    let search = {};
+    let order = [];
+
+    if (q){
+        search = {
+            where: {
+                branch_name: { [Op.like]: `%${q}%` }
+            }
+        }
+    }
+
+    const branches = await paginate(Branch, page, limit, search, order);
+    resSuccessful(res, branches)
 }   
 
 //GET BRANCH

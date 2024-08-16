@@ -24,7 +24,9 @@ const UpdatePerson = (props) => {
   const [personTypeId, setPersonTypeId] =useState('');
   const [personTypes, setPersonTypes] =useState([]);
   const [branches, setBranches] =useState([]);
-
+  const [nextPage, setNextPage ] = useState('');
+  const [prevPage, setPrevPage ] = useState('');
+  
   const updatePerson = async(e) => {
     e.preventDefault();
     useUpdatePerson(urlPerson, names, surNames, cui, nit, phone, address, personTypeId, branchId)
@@ -34,8 +36,8 @@ const UpdatePerson = (props) => {
     const urlPersonType = 'http://localhost:8080/personType/';
     const urlBranch = 'http://localhost:8080/branch/';
     useGetPerson(urlPerson, {setNames, setSurNames, setCui, setNit, setPhone, setAddress, setPersonTypeId, setBranchId });
-    useGetPersonType(urlPersonType, { setPersonTypes });
-    useGetBranch(urlBranch, { setBranches });
+    useGetPersonType(urlPersonType, { setPersonTypes, setNextPage, setPrevPage });
+    useGetBranch(urlBranch, { setBranches, setNextPage, setPrevPage });
   },[])
 
   return (
@@ -69,11 +71,11 @@ const UpdatePerson = (props) => {
             </div>
             <div>
               <Label lambdaClassLabel={""} text="Tipo"/>
-              <Select data={personTypes} text={'Selecciona Tipo'} value={personTypeId} onChange={ (e) => {setPersonTypeId(e.target.value)}} required />
+              <Select data={personTypes.data} text={'Selecciona Tipo'} value={personTypeId} onChange={ (e) => {setPersonTypeId(e.target.value)}} required />
               </div>            
               <div>
               <Label lambdaClassLabel={""} text="Sucursal"/>
-                <Select data={branches} text={'Selecciona Sucursal'} value={branchId} onChange={ (e) => {setBranchId(e.target.value)}} required />
+                <Select data={branches.data} text={'Selecciona Sucursal'} value={branchId} onChange={ (e) => {setBranchId(e.target.value)}} required />
               </div>
               <div className='sendPerson_button'>
                 <button className='btn btn-primary'>Actualizar</button>

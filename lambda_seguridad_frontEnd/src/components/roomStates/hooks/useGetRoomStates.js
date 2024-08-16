@@ -11,7 +11,7 @@ export const useGetRoomStates = async (urlRoomState, {setRoomStatesRes, setNextP
             }else{
                 setRoomStatesRes(data);
                 setNextPage(data?.nextPage);
-                setPrevPage(data?.previousPage);
+                setPrevPage(data?.prevPage);
             }
         })    
         .catch( error => {

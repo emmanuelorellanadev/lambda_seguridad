@@ -1,17 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 
 import '../../../css/ui/table.css'
 import { Input } from '../Input';
-import { Label } from '../Label';
+import Pagination from '../Pagination';
+import { useGetBranchType } from '../../branchTypes/hooks/useGetBranchType';
 
-export const Table_type = ({ columns, rows, editData, deleteData, ...props}) => {
+export const Table_type = ({ columns, editData, deleteData, setOnLoad, onLoad, ...props}) => {
 
-  const [currentPage, setCurrentPage] = useState(0);
-  const [search, setSearch] = useState('');
-  const [rowsByPage, setRowsByPage] = useState(5);
-  const [pageCounter, setPageCounter] = useState(1);
+  const [ branchTypes, setBranchTypes ] = useState({});
+  const [ search, setSearch ] = useState('');
+  const [ rowsByPage, setRowsByPage ] = useState( 10 );
+  const [ page, setPage ] = useState( 1 );
+  const [ prevPage, setPrevPage ] = useState('');
+  const [ nextPage, setNextPage ] = useState('');
 
-  if(editData && !columns.includes("Editar") ){
+  if( editData && !columns.includes("Editar" ) ){
       columns.push("Editar")
   }
 
@@ -19,40 +22,25 @@ export const Table_type = ({ columns, rows, editData, deleteData, ...props}) => 
     columns.push("Eliminar")
 }
 
-  const filterData = () => {
-
-    if(search.length === 0)
-     return rows.slice(currentPage, (currentPage + rowsByPage));//pagination
-
-    //filter data
-    const filteredData = rows.filter( row => {
-      return (row.role_name.toLocaleLowerCase().includes(search.toLocaleLowerCase()) )
-    })
-    return ( filteredData.slice(currentPage, (currentPage + rowsByPage)))//pagination
+  const getBranchTypes = async() => {
+    const urlBranchType = `http://localhost:8080/branchType/?limit=${rowsByPage}&page=${page}&q=${search}`;
+    await useGetBranchType(urlBranchType, {setBranchTypes, setNextPage, setPrevPage});
+  }
+  const searching = (query) => {
+    setSearch(query); 
+    setPage(1);
+    setOnLoad(false);
   }
 
-  const onSearchChange = (text) =>{
-      setCurrentPage(0);
-      setSearch(text);
-  }
+  useEffect( () => {
+    setOnLoad(true)
+    getBranchTypes()
+  }, [onLoad, search])
 
-  const prevPage = () => {
-    if(currentPage != 0){
-      setCurrentPage(currentPage - rowsByPage);
-      setPageCounter(pageCounter - 1);
-    }
-  }
-
-  const nextPage = () => {
-    if(currentPage < Math.ceil(rows.length/rowsByPage)){
-      setCurrentPage(currentPage + rowsByPage);
-      setPageCounter(pageCounter + 1);
-    }
-  }
 
   return (
     <>
-    <Input lambdaClassInput={"data_search"} type="search" value={search} onChange={ e => onSearchChange(e.target.value)} placeholder="Buscar" />
+    <Input lambdaClassInput={"data_search"} type="search" value={search} onChange={ e => searching(e.target.value)} placeholder="Buscar" />
       <table className='table table-bordered table-hover table-striped' {...props}>
         <thead className='text-center t_header'>
           <tr key={0}>  
@@ -67,7 +55,7 @@ export const Table_type = ({ columns, rows, editData, deleteData, ...props}) => 
         </thead>
         <tbody className='text-center align-baseline'>
           {
-            filterData().map( ( data ) => {
+            branchTypes.data?.map( ( data ) => {
               let values = Object.values(data)
               if(editData && deleteData){
                   return (
@@ -101,22 +89,7 @@ export const Table_type = ({ columns, rows, editData, deleteData, ...props}) => 
           }
         </tbody>
     </table>
-    <div className='pagination_container'>
-      <div>
-        <button className='btn btn-primary' onClick={  prevPage }>Anterior</button>
-        <label htmlFor="">{` ${pageCounter} / ${Math.ceil(rows.length/rowsByPage)}`}</label>
-        <button className='btn btn-primary' onClick={ nextPage }>Siguiente</button>
-      </div>
-      <div>
-        <Label lambdaClassLabel={""} text={"Registros por página "}/>
-        <select value={rowsByPage} onChange={e => setRowsByPage(e.target.value)}>
-          <option key={"5"} value="5">5</option>
-          <option key={"10"} value="10">10</option>
-          <option key={"20"} value="20">20</option>
-          <option key={"50"} value="50">50</option>
-        </select>
-      </div>
-    </div>
+    <Pagination page={page} setPage={setPage} rowsByPage={rowsByPage} setRowsByPage={setRowsByPage} prevPage={prevPage} nextPage={nextPage} total={branchTypes.total} setOnLoad={setOnLoad}/>
   </>
   )
 }

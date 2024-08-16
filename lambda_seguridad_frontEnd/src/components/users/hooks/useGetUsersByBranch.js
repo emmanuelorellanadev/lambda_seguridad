@@ -5,6 +5,8 @@ export const useGetUserByBranch = async(urlUsersByBranch, {setUsers}) => {
         headers: { "x-token": sessionStorage.getItem('token-xL') }
     })
     .then(resp => resp.data.resData)
-    .then( data => setUsers(data))
+    .then( data => {
+        setUsers(data);
+    })
     .catch( error => console.log(error))
 }

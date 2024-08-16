@@ -25,7 +25,9 @@ export const CreateUser = ( ) => {
     const [branches, setBranches] = useState([]);
     const [branchId, setBranchId] = useState('');
     const [userImage, setUserImage] = useState(''); 
-    const [onLoad, setOnLoad] = useState(true)
+    const [onLoad, setOnLoad] = useState(true);
+    const [nextPage, setNextPage] = useState({});
+    const [prevPage, setPrevPage] = useState({});
 
     const saveButton = (e) => {
         e.preventDefault();
@@ -46,10 +48,10 @@ export const CreateUser = ( ) => {
         const urlRole = 'http://localhost:8080/role/';
         const urlCompany = 'http://localhost:8080/company/';
         const urlBranch = 'http://localhost:8080/branch/';
-        useGetRole(urlRole, {setRoles});
-        useGetCompany(urlCompany, {setCompanies, setOnLoad});
-        useGetBranch(urlBranch, {setBranches});
-    }, [])
+        useGetRole(urlRole, {setRoles, setNextPage, setPrevPage});
+        useGetCompany(urlCompany, {setCompanies, setNextPage, setPrevPage, setOnLoad});
+        useGetBranch(urlBranch, {setBranches, setNextPage, setPrevPage});
+    }, [onLoad])
 
     return (
         <div id='user_container'>
@@ -62,11 +64,10 @@ export const CreateUser = ( ) => {
                         <div>
                             <Label lambdaClassLabel={""} text="Contraseña:"/>
                             <Input lambdaClassInput={""} type="password" name='user_pass' id='user_pass' placeholder='Contrasena' onChange={ (e) => setPass(e.target.value)} autoComplete='off' required/>
-
                         </div>
                         <div>
                             <Label lambdaClassLabel={""} text="Rol:"/>
-                            <Select data={roles} text="Selecciona Rol" name='RoleId' id='selectRole' onChange={ (e) => {setRoleId(e.target.value)}} required />
+                            <Select data={roles.data} text="Selecciona Rol" name='RoleId' id='selectRole' onChange={ (e) => {setRoleId(e.target.value)}} required />
                         </div>
                         <div>
                             <Label lambdaClassLabel={""} text="Estado"/>
@@ -74,11 +75,11 @@ export const CreateUser = ( ) => {
                         </div>
                         <div>
                         <Label lambdaClassLabel={""} text="Empresa:"/>
-                        <Select data={companies} value="1" id='selectCompany' onChange={ (e) => {setSelectedCompany(e.target.value)}} required disabled />
+                        <Select data={companies.data} value="1" id='selectCompany' onChange={ (e) => {setSelectedCompany(e.target.value)}} required disabled />
                         </div>
                         <div>
                         <Label lambdaClassLabel={""} text="Sucursal:"/>
-                        <Select data={branches} text="Selecciona Sucursal" name='BranchId' id='selectBranch' onChange={ (e) => {setBranchId(e.target.value)}} required />
+                        <Select data={branches.data} text="Selecciona Sucursal" name='BranchId' id='selectBranch' onChange={ (e) => {setBranchId(e.target.value)}} required />
                         </div>
                         <section id='uploadUserImg'>
                         <P_Head className="p_h3" text={'Subir Imágen'}/>

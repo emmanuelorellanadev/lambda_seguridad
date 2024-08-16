@@ -2,13 +2,11 @@ import { useEffect, useState } from 'react';
 
 import '../../css/company/company.css';
 import {P_Head} from '../ui/P_Head.jsx';
-import Table from '../ui/table/Table.jsx';
-import { useGetCompany } from './hooks/useGetCompany.js';
+import Table_company from '../ui/tables/Table_company.jsx';
 import { useDeleteCompany } from './hooks/useDeleteCompany.js';
 
 const ListCompany = (props) => {
-    const urlCompany = 'http://localhost:8080/company/';
-    const [ companies, setCompanies ] = useState([]);
+    
     const [ onLoad, setOnLoad ] = useState( true )
 
     const editCompany = (companyToEditId) => {
@@ -17,7 +15,6 @@ const ListCompany = (props) => {
 
     useEffect( () => {
     setOnLoad(true);
-    useGetCompany(urlCompany, { setCompanies });
     }, [onLoad])
     
   return (<>
@@ -26,7 +23,7 @@ const ListCompany = (props) => {
             <P_Head className="p_h1" text="Listado de Empresas"/>
         </div>
         <div className='table-responsive companyTable_container' >
-            <Table columns={["#", "Empresa", "Dirección", "Teléfono "]} rows={companies} editData={editCompany} deleteData={useDeleteCompany} url={urlCompany} setOnLoad={setOnLoad}/>
+            <Table_company columns={["#", "Empresa", "Dirección", "Teléfono "]} editData={editCompany} deleteData={useDeleteCompany} setOnLoad={setOnLoad} onLoad={onLoad}/>
         </div>
     </div>
   </>

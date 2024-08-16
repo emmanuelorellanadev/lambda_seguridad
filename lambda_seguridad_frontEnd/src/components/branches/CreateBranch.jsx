@@ -20,6 +20,8 @@ const CreateBranch = () => {
     const [ branchTypes, setBranchTypes ] = useState([]);
     const [ companySelected, setCompanySelected ] = useState(1);
     const [ branchTypeSelected, setBranchTypeSelected ] = useState('');
+    const [nextPage, setNextPage] = useState({});
+    const [prevPage, setPrevPage] = useState({});
 
     const saveButton = (e) => {
         e.preventDefault();
@@ -38,8 +40,8 @@ const CreateBranch = () => {
     useEffect( () => {
       const urlCompany = 'http://localhost:8080/company'
       const urlBranchType = 'http://localhost:8080/branchType'
-      useGetCompany(urlCompany, { setCompanies })
-      useGetBranchType(urlBranchType, {setBranchTypes})
+      useGetCompany(urlCompany, { setCompanies, setNextPage, setPrevPage })
+      useGetBranchType(urlBranchType, {setBranchTypes, setNextPage, setPrevPage})
     }, []);
  
   return (
@@ -65,11 +67,11 @@ const CreateBranch = () => {
                 </div>
                 <div>
                     <Label lambdaClassLabel={""}  text="Empresa"/>
-                    <Select data={companies} text="Selecciona Empresa" name="" id="company" value={companySelected} onChange={(e) => setCompanySelected(e.target.value)} disabled />
+                    <Select data={companies.data} text="Selecciona Empresa" name="" id="company" value={companySelected} onChange={(e) => setCompanySelected(e.target.value)} disabled />
                 </div>
                 <div>
-                    <Label lambdaClassLabel={""}  text="Sucursal"/>
-                    <Select data={branchTypes} text="Selecciona tipo sucursal" name="" id="" value={branchTypeSelected} onChange={ ( e ) => setBranchTypeSelected( e.target.value)} required />
+                    <Label lambdaClassLabel={""}  text="Tipo"/>
+                    <Select data={branchTypes.data} text="Selecciona tipo sucursal" name="" id="" value={branchTypeSelected} onChange={ ( e ) => setBranchTypeSelected( e.target.value)} required />
                 </div>
                 <div className='sendBranch_button'>
                   <button className='btn btn-primary'  >Guardar</button>

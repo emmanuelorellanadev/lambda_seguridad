@@ -4,7 +4,7 @@ import '../../css/role/role.css';
 import { P_Head } from '../ui/P_Head'; 
 import { Label } from '../ui/Label';
 import { Input } from '../ui/Input';
-import Table_role from '../ui/table_role/Table_role';
+import Table_role from '../ui/tables/Table_role';
 import { useGetRole } from './hooks/useGetRole';
 import { useDeleteRole } from './hooks/useDeleteRole';
 import { useCreateRole } from './hooks/useCreateRole';
@@ -15,7 +15,6 @@ const CreateListRoles = (props) => {
   const [ id, setId ] = useState('');
   const [ roleName, setRoleName ] = useState('');
   const [ roleState, setRoleState ] = useState(true);
-  const [ roles, setRoles ] = useState([]);
   const [ onLoad, setOnLoad ] = useState(true);
 
   const saveRole = async (e) => {
@@ -39,12 +38,6 @@ const CreateListRoles = (props) => {
     const urlRole = `http://localhost:8080/role/${id}`;
     useDeleteRole(urlRole, id, {setOnLoad})
   }
-
-  useEffect( () => {
-    setOnLoad(true);
-    const urlRole = 'http://localhost:8080/role/';
-    useGetRole(urlRole, {setRoles})
-  }, [onLoad])
 
   return (
     <>
@@ -73,7 +66,7 @@ const CreateListRoles = (props) => {
         {/* Table section */}
           <P_Head text={'Lista de Roles'} className={'p_h2'}/>
         <div className='table-responsive roleTable_container'>
-          <Table_role columns={["Id", "Nombre", "Estado"]} rows={roles} editData={editRole} deleteData={deleteRole}/>
+          <Table_role columns={["Id", "Nombre", "Estado"]} editData={editRole} deleteData={deleteRole} onLoad={onLoad} setOnLoad={setOnLoad}/>
         </div>
       </div>
       <Toaster/>

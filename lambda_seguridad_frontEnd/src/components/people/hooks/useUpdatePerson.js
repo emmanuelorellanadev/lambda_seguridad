@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 export const useUpdatePerson = async(urlPerson, names, surNames, cui, nit, phone, address, personTypeId, branchId) => {
     await axios.put(urlPerson, 
       {
-        "person_name": names,
+        "person_names": names,
         "person_surnames": surNames,
         "person_cui": cui,
         "person_nit": nit,

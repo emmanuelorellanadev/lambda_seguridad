@@ -2,7 +2,9 @@ import axios from "axios"
 import Swal from "sweetalert2"
 import { toast } from "react-hot-toast"
 
-export const useDeleteBranch = async(url, id, branch_name, setOnLoad) => {
+export const useDeleteBranch = async(id, branch_name, setOnLoad) => {
+
+        const urlBranchToDelete =`http://localhost:8080/branch/${id}`;
 
         Swal.fire({
             icon: 'question',
@@ -14,7 +16,7 @@ export const useDeleteBranch = async(url, id, branch_name, setOnLoad) => {
             cancelButtonColor: '#dc3545'
         }).then( async( result ) => {
             if ( result.isConfirmed ) {
-                await axios.delete(url+id, {
+                await axios.delete(urlBranchToDelete, {
                     data: {"id": id}, 
                     headers:{'x-token': sessionStorage.getItem('token-xL')}
                 } )  

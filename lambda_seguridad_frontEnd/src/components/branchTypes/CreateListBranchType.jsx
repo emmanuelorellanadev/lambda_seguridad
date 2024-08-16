@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Toaster } from 'react-hot-toast';
 
 import '../../css/branchType/branchType.css';
@@ -6,9 +6,8 @@ import { useCreateBranchType } from './hooks/useCreateBranchType';
 import { P_Head } from '../ui/P_Head'; 
 import { Label } from '../ui/Label';
 import { Input } from '../ui/Input';
-import Table_type from '../ui/table_type/Table_type';
+import Table_branchType from '../ui/tables/Table_branchType';
 import { useDeleteBranchType } from './hooks/useDeleteBranchType';
-import { useGetBranchType } from './hooks/useGetBranchType';
 
 const CreateListRoles = (props) => {
 
@@ -39,12 +38,6 @@ const CreateListRoles = (props) => {
     setBranchTypeState(true);
   }
 
-  useEffect( () => {
-    setOnLoad(true)
-    const urlBranchType = 'http://localhost:8080/branchType/';
-    useGetBranchType(urlBranchType, { setBranchTypes })
-  }, [onLoad])
-
   return (
     <>
       <div className='branchType_container'>
@@ -68,7 +61,7 @@ const CreateListRoles = (props) => {
         {/* Table section */}
           <P_Head text={'Lista de Tipos de Sucursal'} className={'p_h2'}/>
         <div className='table-responsive branchTypeTable_container'>
-          <Table_type columns={["Id", "Nombre", "Estado"]} rows={branchTypes} editData={editBranchType} deleteData={deleteRole}/>
+          <Table_branchType columns={["Id", "Nombre", "Estado"]} editData={editBranchType} deleteData={deleteRole} setOnLoad={setOnLoad} onLoad={onLoad}/>
         </div>
       </div>
       <Toaster/>

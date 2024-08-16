@@ -1,14 +1,13 @@
-import React, { useEffect ,useState } from 'react';
+import React, { useState, useEffect} from 'react';
 
 import '../../../css/ui/table.css'
 import { Input } from '../Input';
-import { useGetRoomStates } from '../../roomStates/hooks/useGetRoomStates';
 import Pagination from '../Pagination';
+import { useGetCompany } from '../../companies/hooks/useGetCompany';
 
+export const Table_company = ({ columns, editData, deleteData, setOnLoad, onLoad, ...props}) => {
 
-export const Table_roomState = ({ columns, editData, deleteData, setOnLoad, onLoad, ...props}) => {
-
-  const [ roomStatesRes, setRoomStatesRes ] = useState({});
+  const [ companies, setCompanies ] = useState({});
   const [ search, setSearch ] = useState('');
   const [ rowsByPage, setRowsByPage ] = useState( 10 );
   const [ page, setPage ] = useState( 1 );
@@ -23,25 +22,30 @@ export const Table_roomState = ({ columns, editData, deleteData, setOnLoad, onLo
     columns.push("Eliminar")
 }
 
-  const getRoomStates = async() => {
-    const urlRoomState = `http://localhost:8080/roomState/?limit=${rowsByPage}&page=${page}&q=${search}`;
-    await useGetRoomStates(urlRoomState, {setRoomStatesRes, setNextPage, setPrevPage});
+  const getCompany = async() => {
+    const urlCompany = `http://localhost:8080/company/?limit=${rowsByPage}&page=${page}&q=${search}`;
+    await useGetCompany(urlCompany, {setCompanies, setNextPage, setPrevPage});
   }
-
+  const searching = (query) => {
+    setSearch(query); 
+    setPage(1);
+    setOnLoad(false);
+  }
 
   useEffect( () => {
     setOnLoad(true)
-    getRoomStates()
+    getCompany()
   }, [onLoad, search])
+
 
   return (
     <>
-    <Input lambdaClassInput={"data_search"} type="search" value={search} onChange={ e => {setSearch(e.target.value); setOnLoad(false)}} placeholder="Buscar" />
+    <Input lambdaClassInput={"data_search"} type="search" value={search} onChange={ e => searching(e.target.value)} placeholder="Buscar" />
       <table className='table table-bordered table-hover table-striped' {...props}>
         <thead className='text-center t_header'>
           <tr key={0}>  
             {
-              columns?.map( (column) => {
+              columns.map( (column) => {
                 return (
                     <th key={column}>{column}</th>
                 )
@@ -51,16 +55,17 @@ export const Table_roomState = ({ columns, editData, deleteData, setOnLoad, onLo
         </thead>
         <tbody className='text-center align-baseline'>
           {
-            roomStatesRes.data?.map( ( data ) => {
+            companies.data?.map( ( data ) => {
               let values = Object.values(data)
               if(editData && deleteData){
                   return (
                     <tr key={values[0]}>
                       <th>{values[0]}</th>
                       <th>{values[1]}</th>
-                      <th><input type='checkbox' checked={values[2]} disabled/></th>
-                      <th><button className='btn btn-primary' type="button" onClick={ () => { editData( values[0] ) }} >Editar</button></th>
-                      <th><button className='btn btn-outline-danger' onClick={ () => { deleteData(values[0], values[1], { setOnLoad }) } }><i className='bi bi-trash3-fill'></i></button></th>
+                      <th>{values[2]}</th>
+                      <th>{values[3]}</th>
+                      <th><button className='btn btn-primary' type="button" onClick={ () => editData( values[0] ) } >Editar</button></th>
+                      <th><button className='btn btn-outline-danger' onClick={ () => deleteData(values[0], values[1], setOnLoad) }><i className='bi bi-trash3-fill'></i></button></th>
                     </tr>
                   )
               }else if(editData){
@@ -68,8 +73,9 @@ export const Table_roomState = ({ columns, editData, deleteData, setOnLoad, onLo
                   <tr key={values[0]}>
                     <th>{values[0]}</th>
                     <th>{values[1]}</th>
-                    <th><input type='checkbox' checked={values[2]} disabled/></th>
-                    <th><button className='btn btn-primary' type="button" onClick={ () => editData( values[0] ) } >Editar</button></th>
+                    <th>{values[2]}</th>
+                    <th>{values[3]}</th>
+                    <th><button className='btn btn-primary' type="button" onClick={ () => editData( values[0], values[1], setOnLoad ) } >Editar</button></th>
                   </tr>
                 )
               }else{
@@ -77,7 +83,8 @@ export const Table_roomState = ({ columns, editData, deleteData, setOnLoad, onLo
                   <tr key={values[0]}>
                     <th>{values[0]}</th>
                     <th>{values[1]}</th>
-                    <th><input type='checkbox' checked={values[2]} disabled/></th>
+                    <th>{values[2]}</th>
+                    <th>{values[3]}</th>
                   </tr>
                 )
               }
@@ -85,9 +92,9 @@ export const Table_roomState = ({ columns, editData, deleteData, setOnLoad, onLo
           }
         </tbody>
     </table>
-    <Pagination page={page} setPage={setPage} rowsByPage={rowsByPage} setRowsByPage={setRowsByPage} prevPage={prevPage} nextPage={nextPage} total={roomStatesRes.total} setOnLoad={setOnLoad}/>
+    <Pagination page={page} setPage={setPage} rowsByPage={rowsByPage} setRowsByPage={setRowsByPage} prevPage={prevPage} nextPage={nextPage} total={companies.total} setOnLoad={setOnLoad}/>
   </>
   )
 }
 
-export default Table_roomState
+export default Table_company

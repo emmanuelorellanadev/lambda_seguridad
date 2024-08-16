@@ -1,13 +1,15 @@
 import axios from 'axios';
 import toast from 'react-hot-toast';
 
-const useGetPersonType = async( urlPersonType, {setId, setPersonTypeName, setPersonTypeState, setPersonTypes} ) => {
+const useGetPersonType = async( urlPersonType, {setId, setPersonTypeName, setPersonTypeState, setPersonTypes, setNextPage, setPrevPage} ) => {
 
     await axios.get(urlPersonType, {headers:{"x-token": sessionStorage.getItem("token-xL")}})
         .then( resp => resp.data.resData)
         .then( data => {
             if(setPersonTypes){
-                setPersonTypes(data)
+                setPersonTypes(data);
+                setNextPage(data.nextPage);
+                setPrevPage(data.prevPage);
             }else{
                 setId(data.id)
                 setPersonTypeName(data.personType_name)

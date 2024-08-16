@@ -1,13 +1,28 @@
 const PersonType = require("../models/personType_model");
+const { Op } = require("sequelize");
 
 const { resSuccessful } = require('../response/resSucessful');
 const catchedAsync = require('../errors_handler/catchedAsync')
 const { DBError, GeneralError } = require('../errors_handler/errors');
+const { paginate } = require("../helpers/paginate");
 
 const getPersonTypes = async( req, res) => {
 
-    const personTypes = await PersonType.findAll()
-    if( personTypes.length == 0 ) { throw new DBError(null, 'No se encontraron tipos de persona.', 404)}
+    const {q, page, limit, order_by, order_direction} = req.query;
+    let search = {};
+    let order = [];
+
+    if (q){
+        search = {
+            where: {
+                personType_name: {
+                    [Op.like]: `%${q}%`
+                }
+            }
+        }
+    }
+
+    const personTypes = await paginate(PersonType, page, limit, search, order)
 
     resSuccessful(res, personTypes);
 }
@@ -23,7 +38,6 @@ const getPersonType = async( req, res) => {
 
 const savePersonType = async( req, res) => {
     const personTypeData = req.body;
-    console.log(personTypeData)
     await PersonType.create(personTypeData)
         .then( () => resSuccessful(res, `Tipo de persona "${personTypeData.personType_name}", guardado exitosamente`))
         .catch( error => {throw new DBError(error, 'Error al guardar tipo de persona.', 400)})

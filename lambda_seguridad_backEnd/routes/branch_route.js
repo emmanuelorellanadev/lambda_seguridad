@@ -9,20 +9,20 @@ const { branchController } = require('../controllers');
 const route = Router();
 
 route.get('/', [
-    // checkJWT,
-    // requiredRole('ROLE_ADMINSYS')
+    checkJWT,
+    requiredRole('ROLE_ADMINSYS', 'ROLE_ADMIN', 'ROLE_SUPERUSER', 'ROLE_USER' )
 ], 
 branchController.getBranches);
 
 route.get('/:id', [
-    // checkJWT,
-    // requiredRole('ROLE_ADMINSYS')
+    checkJWT,
+    requiredRole('ROLE_ADMINSYS', 'ROLE_ADMIN', 'ROLE_SUPERUSER', 'ROLE_USER')
 ], 
 branchController.getBranch);
 
 route.post('/', [
-    // checkJWT,
-    // requiredRole('ROLE_ADMINSYS'),
+    checkJWT,
+    requiredRole('ROLE_ADMINSYS'),
     check('branch_name', 'The branch name is required').not().isEmpty(),
     check('branch_phone', 'The branch phone is required').not().isEmpty(),
     check('branch_address', 'The branch address is required').not().isEmpty(),
@@ -33,8 +33,8 @@ route.post('/', [
 ], branchController.saveBranch)
 
 route.put('/:id', [
-    // checkJWT,
-    // requiredRole('ROLE_ADMINSYS'),
+    checkJWT,
+    requiredRole('ROLE_ADMINSYS'),
     check('branch_name', 'The branch name is required').not().isEmpty(),
     check('branch_phone', 'The branch phone is required').not().isEmpty(),
     check('branch_address', 'The branch address is required').not().isEmpty(),
@@ -44,8 +44,8 @@ route.put('/:id', [
 ], branchController.updateBranch);
 
 route.delete('/:id', [
-    // checkJWT,
-    // requiredRole('ROLE_ADMINSYS'),
+    checkJWT,
+    requiredRole('ROLE_ADMINSYS'),
 ], branchController.deleteBranch);
 
 module.exports = route;

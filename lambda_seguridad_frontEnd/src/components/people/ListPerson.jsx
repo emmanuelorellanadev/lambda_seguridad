@@ -3,14 +3,12 @@ import { Toaster }from 'react-hot-toast';
 
 import '../../css/person/person.css';
 import { P_Head } from '../ui/P_Head';
-import { Table_person } from '../ui/table_person/Table_person';
-import { useGetPerson } from './hooks/useGetPerson';
+import { Table_person } from '../ui/tables/Table_person';
 import { useDeletePerson } from './hooks/useDeletePerson';
 
 
 const ListPerson = (props) => {
 
-  const [ people, setPeople ] = useState([]);
   const [ onLoad, setOnLoad ] =useState(true);
 
   const editPerson = (personId) => {
@@ -20,14 +18,7 @@ const ListPerson = (props) => {
   const deletePerson = async(personId) => {
     const urlPerson = `http://localhost:8080/person/${personId}`
     useDeletePerson(urlPerson, personId, {setOnLoad})
-
-    
   }
-  useEffect( () => {
-    setOnLoad(true)
-    const urlPerson = 'http://localhost:8080/person';
-    useGetPerson(urlPerson, {setPeople, setOnLoad})
-  }, [onLoad])
 
   return (
     <>
@@ -36,7 +27,7 @@ const ListPerson = (props) => {
           <P_Head className={'p_h1'} text={'Listado de Personas'}/>
         </div>
         <div className='table-responsive personTable_container'>
-          <Table_person columns={["Id", "Nombres", "Apellidos", "CUI", "NIT", "Teléfono,", "Dirección"]} rows={people} editData={editPerson} deleteData={deletePerson} />
+          <Table_person columns={["Id", "Nombres", "Apellidos", "CUI", "NIT", "Teléfono,", "Dirección"]} editData={editPerson} deleteData={deletePerson} onLoad={onLoad} setOnLoad={setOnLoad} />
         </div>
       </div>
       <Toaster/>

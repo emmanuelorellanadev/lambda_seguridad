@@ -6,16 +6,14 @@ import { Label } from '../ui/Label';
 import { Input } from '../ui/Input';
 
 import useCreatePersonType from './hooks/useCreatePersonType';
-import useGetPersonType from './hooks/useGetPersonType';
-import Table_personType from '../ui/table_personType/Table_personType';
+import Table_personType from '../ui/tables/Table_personType';
 import useDeletePersonType from './hooks/useDeletePersonType';
 import { Toaster } from 'react-hot-toast';
 
 export const CreateListPeopleType = (props) => {
   
-  const [personTypes, setPersonTypes] = useState([]);
   const [personTypeName, setPersonTypeName] = useState('');
-  const [personTypeState, setPersonTypeState] =useState(true);
+  const [personTypeState, setPersonTypeState] = useState(true);
   const [onLoad, setOnLoad] = useState(false);
 
   
@@ -37,13 +35,8 @@ export const CreateListPeopleType = (props) => {
   const cleanForm = ( ) => {
     setPersonTypeName('');
     setPersonTypeState('');
+    setPersonTypeState(true)
   }
-
-  useEffect( () => {
-    setOnLoad(true)
-    const urlPersonType="http://localhost:8080/personType/";
-    useGetPersonType( urlPersonType, { setPersonTypes } );
-  },[onLoad])
 
   return (
     <>
@@ -69,7 +62,7 @@ export const CreateListPeopleType = (props) => {
           <P_Head text={'Lista de Tipos de persona'} className={'p_h2'}/>
         <div className='table-responsive personTypeTable_container'>
           {
-            <Table_personType columns={["Id", "Nombre", "Estado"]} rows={personTypes} editData={editPersonType} deleteData={deletePersonType}/>
+            <Table_personType columns={["Id", "Nombre", "Estado"]} editData={editPersonType} deleteData={deletePersonType} onLoad={onLoad} setOnLoad={setOnLoad}/>
           }
         </div>
       </div>

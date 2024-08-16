@@ -22,12 +22,13 @@ export const UserProfile = () => {
     const [currentPass, setCurrentPass] = useState('');
     const [pass, setPass] = useState('');
     const [passConfirm, setPassConfirm] = useState('');
-    const [onLoad, setOnLoad] = useState(true)
+    const [nextPage, setNextPage] = useState({});
+    const [prevPage, setPrevPage] = useState({});
+    const [onLoad, setOnLoad] = useState(true);    
     
     const updatePassword = async(e) => {
         e.preventDefault();
         const urlUser = `http://localhost:8080/changePassword/${sessionData.uid}`;
-        // useUpdatePass(urlUser, pass, passConfirm, currentPass, userName, roles.id);
         useUpdatePass(urlUser, pass, passConfirm, currentPass);
         cleanForm();
     }
@@ -44,9 +45,9 @@ export const UserProfile = () => {
         const urlBranchUser = `http://localhost:8080/branchUser/${sessionData.uid}`;
         const urlCompany = `http://localhost:8080/company/1`
         useUserProfile(urlUser, { setUserName, setUserCreation, setUserImg });
-        useGetRole(urlRole, { setRoles });
+        useGetRole(urlRole, { setRoles, setPrevPage, setNextPage });
         useGetBranchUser(urlBranchUser, {setBranchData});
-        useGetCompany(urlCompany, {setCompanies, setOnLoad})
+        useGetCompany(urlCompany, {setCompanies, setNextPage, setPrevPage, setOnLoad})
     }, [onLoad])
 
     return (

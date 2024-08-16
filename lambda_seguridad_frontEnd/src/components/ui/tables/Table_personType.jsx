@@ -1,17 +1,21 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import '../../../css/ui/table.css'
 import { Input } from '../Input';
 import { Label } from '../Label';
+import useGetPersonType from '../../personTypes/hooks/useGetPersonType';
+import Pagination from '../Pagination';
 
 // import { prevPage, nextPage, onSearchChange, filterData } from './filterTable_personType';
 
-export const Table_personType = ({ columns, rows, editData, deleteData, ...props}) => {
+export const Table_personType = ({ columns, editData, deleteData, onLoad, setOnLoad, ...props}) => {
 
-  const [currentPage, setCurrentPage] = useState(0);
-  const [rowsByPage, setRowsByPage] = useState(5);
-  const [pageCounter, setPageCounter] = useState(1);
-  const [search, setSearch] = useState('');
+  const [personTypes, setPersonTypes] = useState([]);
+  const [ search, setSearch ] = useState('');
+  const [ rowsByPage, setRowsByPage ] = useState( 10 );
+  const [ page, setPage ] = useState( 1 );
+  const [ prevPage, setPrevPage ] = useState('');
+  const [ nextPage, setNextPage ] = useState('');
 
   if(editData && !columns.includes("Editar") ){
       columns.push("Editar")
@@ -21,40 +25,21 @@ export const Table_personType = ({ columns, rows, editData, deleteData, ...props
     columns.push("Eliminar")
 }
 
-  const filterData = () => {
-
-    if(search.length === 0)
-     return rows.slice(currentPage, (currentPage + rowsByPage));//pagination
-
-    //filter data
-    const filteredData = rows.filter( row => {
-      return (row.personType_name.toLocaleLowerCase().includes(search.toLocaleLowerCase()) )
-    })
-    return ( filteredData.slice(currentPage, (currentPage + rowsByPage)))//pagination
+  const searching = (query) => {
+    setSearch(query); 
+    setPage(1);
+    setOnLoad(false);
   }
 
-  const onSearchChange = (text) =>{
-      setCurrentPage(0);
-      setSearch(text);
-  }
-
-  const prevPage = () => {
-    if(currentPage != 0){
-      setCurrentPage(currentPage - rowsByPage);
-      setPageCounter(pageCounter - 1);
-    }
-  }
-
-  const nextPage = () => {
-    if(currentPage < Math.ceil(rows.length/rowsByPage)){
-      setCurrentPage(currentPage + rowsByPage);
-      setPageCounter(pageCounter + 1);
-    }
-  }
+  useEffect( () => {
+    setOnLoad(true)
+    const urlPersonType = `http://localhost:8080/personType/?limit=${rowsByPage}&page=${page}&q=${search}`;
+    useGetPersonType(urlPersonType, {setPersonTypes, setNextPage, setPrevPage})
+  }, [onLoad, search])
 
   return (
     <>
-    <Input lambdaClassInput={"data_search"} type="search" value={search} onChange={ e => onSearchChange(e.target.value, setCurrentPage, setSearch)} placeholder="Buscar" />
+    <Input lambdaClassInput={"data_search"} type="search" value={search} onChange={ e => searching(e.target.value)} placeholder="Buscar" />
       <table className='table table-bordered table-hover table-striped' {...props}>
         <thead className='text-center t_header'>
           <tr key={0}>  
@@ -70,7 +55,7 @@ export const Table_personType = ({ columns, rows, editData, deleteData, ...props
         <tbody className='text-center align-baseline'>
             
           {
-            filterData().map( ( personType ) => {
+            personTypes.data?.map( ( personType ) => {
               if(editData && deleteData){
                   return (
                     <tr key={personType.id}>
@@ -103,22 +88,7 @@ export const Table_personType = ({ columns, rows, editData, deleteData, ...props
           }
         </tbody>
     </table>
-    <div className='pagination_container'>
-      <div>
-        <button className='btn btn-primary' onClick={  prevPage }>Anterior</button>
-        <label htmlFor="">{` ${pageCounter} / ${Math.ceil(rows.length/rowsByPage)}`}</label>
-        <button className='btn btn-primary' onClick={ nextPage }>Siguiente</button>
-      </div>
-      <div>
-        <Label lambdaClassLabel={""} text={"Registros por página "}/>
-        <select value={rowsByPage} onChange={e => setRowsByPage(e.target.value)}>
-          <option key={"5"} value="5">5</option>
-          <option key={"10"} value="10">10</option>
-          <option key={"20"} value="20">20</option>
-          <option key={"50"} value="50">50</option>
-        </select>
-      </div>
-    </div>
+    <Pagination page={page} setPage={setPage} rowsByPage={rowsByPage} setRowsByPage={setRowsByPage} prevPage={prevPage} nextPage={nextPage} total={personTypes.total} setOnLoad={setOnLoad}/>
   </>
   )
 }

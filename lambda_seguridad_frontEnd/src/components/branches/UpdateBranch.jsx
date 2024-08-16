@@ -23,6 +23,8 @@ const UpdateBranch = (props) => {
   const [ companyId, setCompanyId ]       = useState('1');
   const [ companies, setCompanies ]       = useState([]);
   const [ branchTypes, setBranchTypes ]   = useState([]);
+  const [nextPage, setNextPage] = useState({});
+  const [prevPage, setPrevPage] = useState({});
 
   const updateButton = async(e) => {
     e.preventDefault();
@@ -32,9 +34,9 @@ const UpdateBranch = (props) => {
   useEffect( () => {
     const urlCompany = "http://localhost:8080/company/";
     const urlBranchType = `http://localhost:8080/branchType/`;
-    useGetCompany(urlCompany, { setCompanies });
-    useGetBranchType(urlBranchType, {setBranchTypes});
-    useGetBranch(urlBranch, { setBranch, setAddress, setPhone, setState, setBranchTypeId, setCompanyId });
+    useGetCompany(urlCompany, { setCompanies, setNextPage, setPrevPage  });
+    useGetBranchType(urlBranchType, {setBranchTypes, setNextPage, setPrevPage });
+    useGetBranch(urlBranch, { setBranch, setAddress, setPhone, setState, setBranchTypeId, setCompanyId, setNextPage, setPrevPage  });
   }, [])
 
   return (
@@ -61,11 +63,11 @@ const UpdateBranch = (props) => {
                 </div>
                 <div>
                     <Label lambdaClassLabel="" text="Empresa" />
-                    <Select data={companies} name="" id="company" value={companyId} onChange={(e) => setCompanyId(e.target.value)}  disabled={false}/>
+                    <Select data={companies.data} name="" id="company" value={companyId} onChange={(e) => setCompanyId(e.target.value)}  disabled={true}/>
                 </div>
                 <div>
-                    <Label lambdaClassLabel="" text="Sucursal" />
-                    <Select data={branchTypes} name="" id="" value={branchTypeId} onChange={ ( e ) => setBranchTypeId( e.target.value)} required />
+                    <Label lambdaClassLabel="" text="Tipo" />
+                    <Select data={branchTypes.data} name="" id="" value={branchTypeId} onChange={ ( e ) => setBranchTypeId( e.target.value)} required />
                 </div>
                 <div className='sendBranch_button'>
                   <button className='btn btn-primary' >Actualizar</button>

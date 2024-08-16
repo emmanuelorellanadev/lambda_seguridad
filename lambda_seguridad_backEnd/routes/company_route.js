@@ -11,7 +11,7 @@ const route = Router();
 
 route.get('/', [
     checkJWT,
-    requiredRole('ROLE_ADMINSYS')
+    requiredRole('ROLE_ADMINSYS', 'ROLE_ADMIN', 'ROLE_SUPERUSER', 'ROLE_USER')
 ],companyController.getCompanies);
 
 route.get('/:id', [

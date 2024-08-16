@@ -4,11 +4,23 @@ const catchedAsync = require('../errors_handler/catchedAsync');
 const { deleteImage } = require('../helpers/uploadImage');
 const { resSuccessful } = require('../response/resSucessful');
 const { DBError, GeneralError } = require('../errors_handler/errors');
+const { paginate } = require('../helpers/paginate');
 
 const getCompanies = async(req, res) => {
 
-    const companies = await Company.findAll();
-        if ( !companies ) throw new DBError (null, 'No se encontraron empresas', 404)
+    const { q, page, limit } = req.query;
+    let search = {};
+    let order = [];
+
+    if (q){
+        search = {
+            where: {
+                roomState_name: { [Op.like]: `%${q}%` }
+            }
+        }
+    }
+
+    const companies = await paginate(Company, page, limit, search, order);
         
         resSuccessful(res, companies)
 }

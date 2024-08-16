@@ -33,12 +33,16 @@ const getUsers = async(req, res) => {
 
     const users = await User.findAll({include: Role});
     if (users.length == 0) throw new GeneralError('Usuarios no encontrados')
+    
+    console.log('usuarios'.red)
+    console.log(users);
 
-    //Delete the users than role is less than the user logued
-    users.map( (user, i = 0) => {
-        user.RoleId < req.userLoggedIn.RoleId ? users.splice(i, 1) : '';
-        i++
-    })
+    // //Delete the users than role is less than the user logued
+    // users.map( (user, i = 0) => {
+    //     console.log(i)
+    //     user.RoleId > req.userLoggedIn.RoleId ? users.splice(i, 1) : '';
+    //     i++
+    // })
     
     resSuccessful(res, users);
 }
@@ -50,9 +54,9 @@ const getUser = async(req, res) => {
         if ( !user ) {throw new GeneralError('Usuario no encontrado', 404)} 
 
         //if userLoggued tries to get a higher privileged user
-        if(user.RoleId < req.userLoggedIn.RoleId){
-            throw new GeneralError('No tienens permisos suficientes para realizar esta operación', 401)                
-        }
+        // if(user.RoleId > req.userLoggedIn.RoleId){
+        //     throw new GeneralError('No tienens permisos suficientes para realizar esta operación', 401)                
+        // }
         
         resSuccessful(res, user);
 }

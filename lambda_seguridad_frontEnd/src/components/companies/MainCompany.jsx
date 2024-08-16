@@ -5,8 +5,7 @@ import { P_Head } from'../ui/P_Head';
 import { Label } from '../ui/Label';
 import { Input } from '../ui/Input';
 import { TextArea } from '../ui/TextArea';
-import { Table } from '../ui/table/Table.jsx';
-import { useGetBranch } from '../branches/hooks/useGetBranch.js';
+import { Table_branch } from '../ui/tables/Table_branch.jsx';
 import { useGetCompany } from './hooks/useGetCompany.js';
 
 const MainCompany = () => {
@@ -18,13 +17,12 @@ const MainCompany = () => {
   const [mission, setMission] = useState('');
   const [vision, setVision] = useState('');
   const [logo, setLogo] = useState([]);
-  const [branches, setBranches] = useState([]);
+  const [onLoad, setOnLoad] =useState(true)
 
   useEffect( () => {
-    const urlBranch = "http://localhost:8080/branch/"
+    setOnLoad(true)
     const urlCompany = `http://localhost:8080/company/1`
         useGetCompany(urlCompany, { setCompany, setAddress, setPhone, setDescription, setMission, setVision, setLogo});
-    useGetBranch(urlBranch, { setBranches });
   }, []) 
   return (
     <>
@@ -63,7 +61,7 @@ const MainCompany = () => {
         {/* Branchs table */}
         <P_Head className="p_h1" text={'Sucursales'}/>
         <div className='table-responsive companyTable_container'> 
-          <Table columns={["#", "Sucursal", "Dirección", "Teléfono"]} rows={branches} />
+          <Table_branch columns={["#", "Sucursal", "Dirección", "Teléfono"]} setOnLoad={setOnLoad}/>
         </div>
       </div>
     </>

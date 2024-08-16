@@ -1,15 +1,33 @@
 const Person = require("../models/person_model");
+const { Op, or } = require("sequelize");
 
 const { resSuccessful } = require('../response/resSucessful');
 const catchedAsync = require('../errors_handler/catchedAsync')
 const { DBError, GeneralError } = require('../errors_handler/errors');
+const { paginate } = require("../helpers/paginate");
 
 const getPeople = async( req, res) => {
 
-    const person = await Person.findAll()
-    if( person.length == 0 ) { throw new DBError(null, 'No se encontraron personas.', 404)}
+    //used to paginate 
+    const {q, page, limit, order_by, order_direction} = req.query;
+    let search = {};
+    let order = [];
 
-    resSuccessful(res, person);
+    if (q){
+        search = {
+            where: {
+                [Op.or]:{
+                    person_names: {[Op.like]: `%${q}%`}, 
+                    person_surnames: {[Op.like]: `%${q}%`},
+                    person_cui: {[Op.like]: `%${q}`},
+                    person_nit: {[Op.like]: `%${q}`},
+                }
+            }
+        }
+    }
+
+    const people = await paginate(Person, page, limit, search, order)
+    resSuccessful(res, people);
 }
 
 const getPerson = async( req, res) => {
