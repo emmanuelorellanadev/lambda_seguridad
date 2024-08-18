@@ -7,8 +7,9 @@ const Pagination = ({page, setPage, rowsByPage, setRowsByPage, prevPage, nextPag
     const nextPageBtn = () => {
         if (nextPage){
             setPage(page+1);
-            setOnLoad(false)
+            setOnLoad(false);
         }
+
       }
     
       const prevPageBtn = () => {
@@ -29,7 +30,6 @@ const Pagination = ({page, setPage, rowsByPage, setRowsByPage, prevPage, nextPag
         <div>
             <Label lambdaClassLabel={""} text={"Registros por página "}/>
             <select value={rowsByPage} onChange={e => {setRowsByPage(e.target.value); setOnLoad(false) }}>
-            <option key={"5"} value="10">5</option>
             <option key={"10"} value="10">10</option>
             <option key={"20"} value="20">20</option>
             <option key={"50"} value="50">50</option>

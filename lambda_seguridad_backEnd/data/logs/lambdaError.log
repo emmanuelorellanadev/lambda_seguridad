@@ -3437,3 +3437,586 @@
     at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/person_controller.js:47:33
     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
     at async savePerson (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/person_controller.js:45:5)
+ Fri Aug 16 2024 15:01:25 GMT-0600 (Central Standard Time) 
+ Error: La contraseña no es correcta. 
+ Intentalo de nuevo 
+ Error 
+ undefined 
+ Error: La contraseña no es correcta. 
+ Intentalo de nuevo
+    at putUserPass (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/changePassword_controller.js:17:32)
+ Fri Aug 16 2024 15:13:20 GMT-0600 (Central Standard Time) 
+ ReferenceError: then is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: then is not defined
+    at usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:51:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Fri Aug 16 2024 15:13:20 GMT-0600 (Central Standard Time) 
+ ReferenceError: then is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: then is not defined
+    at usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:51:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Fri Aug 16 2024 15:16:48 GMT-0600 (Central Standard Time) 
+ ReferenceError: Role is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Role is not defined
+    at usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:50:45)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+ Fri Aug 16 2024 15:16:49 GMT-0600 (Central Standard Time) 
+ ReferenceError: Role is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Role is not defined
+    at usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:50:45)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+ Fri Aug 16 2024 15:31:54 GMT-0600 (Central Standard Time) 
+ ReferenceError: role_name is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: role_name is not defined
+    at usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:51:49)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+ Fri Aug 16 2024 15:32:15 GMT-0600 (Central Standard Time) 
+ SequelizeDatabaseError: (conn=3232, no: 1054, SQLState: 42S22) Unknown column 'User.role_name' in 'field list'
+sql: SELECT `User`.`id`, `User`.`role_name`, `Branches`.`id` AS `Branches.id`, `Branches`.`branch_name` AS `Branches.branch_name`, `Branches`.`branch_address` AS `Branches.branch_address`, `Branches`.`branch_phone` AS `Branches.branch_phone`, `Branches`.`branch_state` AS `Branches.branch_state`, `Branches`.`BranchTypeId` AS `Branches.BranchTypeId`, `Branches`.`CompanyId` AS `Branches.CompanyId`, `Branches->Branch_User`.`id` AS `Branches.Branch_User.id`, `Branches->Branch_User`.`BranchId` AS `Branches.Branch_User.BranchId`, `Branches->Branch_User`.`UserId` AS `Branches.Branch_User.UserId`, `Role`.`id` AS `Role.id`, `Role`.`role_name` AS `Role.role_name`, `Role`.`role_state` AS `Role.role_state` FROM `Users` AS `User` LEFT OUTER JOIN ( `Branch_Users` AS `Branches->Branch_User` INNER JOIN `Branches` AS `Branches` ON `Branches`.`id` = `Branches->Branch_User`.`BranchId`) ON `User`.`id` = `Branches->Branch_User`.`UserId` LEFT OUTER JOIN `Roles` AS `Role` ON `User`.`RoleId` = `Role`.`id`; - parameters:[] 
+ SequelizeDatabaseError 
+ undefined 
+ Error
+    at Query.run (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.select (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)
+    at async User.findAll (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:1140:21)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:51:5)
+ Fri Aug 16 2024 15:36:11 GMT-0600 (Central Standard Time) 
+ SequelizeDatabaseError: (conn=3261, no: 1054, SQLState: 42S22) Unknown column 'Branch.branch_name' in 'field list'
+sql: SELECT `User`.`id`, `User`.`user_name`, `Branch`.`branch_name`, `Branches`.`id` AS `Branches.id`, `Branches`.`branch_name` AS `Branches.branch_name`, `Branches`.`branch_address` AS `Branches.branch_address`, `Branches`.`branch_phone` AS `Branches.branch_phone`, `Branches`.`branch_state` AS `Branches.branch_state`, `Branches`.`BranchTypeId` AS `Branches.BranchTypeId`, `Branches`.`CompanyId` AS `Branches.CompanyId`, `Branches->Branch_User`.`id` AS `Branches.Branch_User.id`, `Branches->Branch_User`.`BranchId` AS `Branches.Branch_User.BranchId`, `Branches->Branch_User`.`UserId` AS `Branches.Branch_User.UserId`, `Role`.`id` AS `Role.id`, `Role`.`role_name` AS `Role.role_name`, `Role`.`role_state` AS `Role.role_state` FROM `Users` AS `User` LEFT OUTER JOIN ( `Branch_Users` AS `Branches->Branch_User` INNER JOIN `Branches` AS `Branches` ON `Branches`.`id` = `Branches->Branch_User`.`BranchId`) ON `User`.`id` = `Branches->Branch_User`.`UserId` LEFT OUTER JOIN `Roles` AS `Role` ON `User`.`RoleId` = `Role`.`id`; - parameters:[] 
+ SequelizeDatabaseError 
+ undefined 
+ Error
+    at Query.run (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.select (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)
+    at async User.findAll (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:1140:21)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:51:5)
+ Fri Aug 16 2024 15:37:06 GMT-0600 (Central Standard Time) 
+ SequelizeDatabaseError: (conn=3271, no: 1054, SQLState: 42S22) Unknown column 'Users->Branch.branch_name' in 'field list'
+sql: SELECT `User`.`id`, `User`.`user_name`, `Users->Branch`.`branch_name`, `Branches`.`id` AS `Branches.id`, `Branches`.`branch_name` AS `Branches.branch_name`, `Branches`.`branch_address` AS `Branches.branch_address`, `Branches`.`branch_phone` AS `Branches.branch_phone`, `Branches`.`branch_state` AS `Branches.branch_state`, `Branches`.`BranchTypeId` AS `Branches.BranchTypeId`, `Branches`.`CompanyId` AS `Branches.CompanyId`, `Branches->Branch_User`.`id` AS `Branches.Branch_User.id`, `Branches->Branch_User`.`BranchId` AS `Branches.Branch_User.BranchId`, `Branches->Branch_User`.`UserId` AS `Branches.Branch_User.UserId`, `Role`.`id` AS `Role.id`, `Role`.`role_name` AS `Role.role_name`, `Role`.`role_state` AS `Role.role_state` FROM `Users` AS `User` LEFT OUTER JOIN ( `Branch_Users` AS `Branches->Branch_User` INNER JOIN `Branches` AS `Branches` ON `Branches`.`id` = `Branches->Branch_User`.`BranchId`) ON `User`.`id` = `Branches->Branch_User`.`UserId` LEFT OUTER JOIN `Roles` AS `Role` ON `User`.`RoleId` = `Role`.`id`; - parameters:[] 
+ SequelizeDatabaseError 
+ undefined 
+ Error
+    at Query.run (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.select (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)
+    at async User.findAll (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:1140:21)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:51:5)
+ Fri Aug 16 2024 15:37:19 GMT-0600 (Central Standard Time) 
+ SequelizeDatabaseError: (conn=3277, no: 1054, SQLState: 42S22) Unknown column 'User.branch_name' in 'field list'
+sql: SELECT `User`.`id`, `User`.`user_name`, `User`.`branch_name`, `Branches`.`id` AS `Branches.id`, `Branches`.`branch_name` AS `Branches.branch_name`, `Branches`.`branch_address` AS `Branches.branch_address`, `Branches`.`branch_phone` AS `Branches.branch_phone`, `Branches`.`branch_state` AS `Branches.branch_state`, `Branches`.`BranchTypeId` AS `Branches.BranchTypeId`, `Branches`.`CompanyId` AS `Branches.CompanyId`, `Branches->Branch_User`.`id` AS `Branches.Branch_User.id`, `Branches->Branch_User`.`BranchId` AS `Branches.Branch_User.BranchId`, `Branches->Branch_User`.`UserId` AS `Branches.Branch_User.UserId`, `Role`.`id` AS `Role.id`, `Role`.`role_name` AS `Role.role_name`, `Role`.`role_state` AS `Role.role_state` FROM `Users` AS `User` LEFT OUTER JOIN ( `Branch_Users` AS `Branches->Branch_User` INNER JOIN `Branches` AS `Branches` ON `Branches`.`id` = `Branches->Branch_User`.`BranchId`) ON `User`.`id` = `Branches->Branch_User`.`UserId` LEFT OUTER JOIN `Roles` AS `Role` ON `User`.`RoleId` = `Role`.`id`; - parameters:[] 
+ SequelizeDatabaseError 
+ undefined 
+ Error
+    at Query.run (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.select (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)
+    at async User.findAll (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:1140:21)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:51:5)
+ Fri Aug 16 2024 15:39:37 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of undefined (reading 'branch_name') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of undefined (reading 'branch_name')
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:52:52
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:51:5)
+ Fri Aug 16 2024 15:44:16 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of undefined (reading 'includes') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of undefined (reading 'includes')
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1105:22
+    at Array.map (<anonymous>)
+    at MariaDBQueryGenerator.escapeAttributes (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1069:37)
+    at MariaDBQueryGenerator.selectQuery (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:877:28)
+    at MySQLQueryInterface.select (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:59)
+    at User.findAll (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:1140:47)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:51:5)
+ Fri Aug 16 2024 15:44:39 GMT-0600 (Central Standard Time) 
+ SequelizeDatabaseError: (conn=3346, no: 1054, SQLState: 42S22) Unknown column 'User.' in 'field list'
+sql: SELECT `User`.`id`, `User`.``, `Branches`.`id` AS `Branches.id`, `Branches`.`branch_name` AS `Branches.branch_name`, `Branches`.`branch_address` AS `Branches.branch_address`, `Branches`.`branch_phone` AS `Branches.branch_phone`, `Branches`.`branch_state` AS `Branches.branch_state`, `Branches`.`BranchTypeId` AS `Branches.BranchTypeId`, `Branches`.`CompanyId` AS `Branches.CompanyId`, `Branches->Branch_User`.`id` AS `Branches.Branch_User.id`, `Branches->Branch_User`.`BranchId` AS `Branches.Branch_User.BranchId`, `Branches->Branch_User`.`UserId` AS `Branches.Branch_User.UserId` FROM `Users` AS `User` LEFT OUTER JOIN ( `Branch_Users` AS `Branches->Branch_User` INNER JOIN `Branches` AS `Branches` ON `Branches`.`id` = `Branches->Branch_User`.`BranchId`) ON `User`.`id` = `Branches->Branch_User`.`UserId`; - parameters:[] 
+ SequelizeDatabaseError 
+ undefined 
+ Error
+    at Query.run (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.select (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)
+    at async User.findAll (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:1140:21)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:51:5)
+ Fri Aug 16 2024 15:45:09 GMT-0600 (Central Standard Time) 
+ SequelizeDatabaseError: (conn=3350, no: 1054, SQLState: 42S22) Unknown column 'User.role_name' in 'field list'
+sql: SELECT `User`.`id`, `User`.`role_name`, `Role`.`id` AS `Role.id`, `Role`.`role_name` AS `Role.role_name`, `Role`.`role_state` AS `Role.role_state` FROM `Users` AS `User` LEFT OUTER JOIN `Roles` AS `Role` ON `User`.`RoleId` = `Role`.`id`; - parameters:[] 
+ SequelizeDatabaseError 
+ undefined 
+ Error
+    at Query.run (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.select (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)
+    at async User.findAll (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:1140:21)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:51:5)
+ Fri Aug 16 2024 17:20:06 GMT-0600 (Central Standard Time) 
+ Error: WHERE parameter "BranchId" has invalid "undefined" value 
+ Error 
+ undefined 
+ Error: WHERE parameter "BranchId" has invalid "undefined" value
+    at MariaDBQueryGenerator.whereItemQuery (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1743:13)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1734:25
+    at Array.forEach (<anonymous>)
+    at MariaDBQueryGenerator.whereItemsQuery (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1732:35)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1840:30
+    at Array.map (<anonymous>)
+    at MariaDBQueryGenerator._whereGroupBind (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1839:21)
+    at MariaDBQueryGenerator.whereItemQuery (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1790:19)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1734:25
+    at Array.forEach (<anonymous>)
+ Fri Aug 16 2024 17:20:06 GMT-0600 (Central Standard Time) 
+ Error: WHERE parameter "BranchId" has invalid "undefined" value 
+ Error 
+ undefined 
+ Error: WHERE parameter "BranchId" has invalid "undefined" value
+    at MariaDBQueryGenerator.whereItemQuery (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1743:13)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1734:25
+    at Array.forEach (<anonymous>)
+    at MariaDBQueryGenerator.whereItemsQuery (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1732:35)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1840:30
+    at Array.map (<anonymous>)
+    at MariaDBQueryGenerator._whereGroupBind (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1839:21)
+    at MariaDBQueryGenerator.whereItemQuery (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1790:19)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1734:25
+    at Array.forEach (<anonymous>)
+ Fri Aug 16 2024 17:44:25 GMT-0600 (Central Standard Time) 
+ Error: Invalid value {
+  model: User,
+  attributes: [ 'id', 'user_name', 'user_state' ],
+  include: [ [Object] ]
+} 
+ Error 
+ undefined 
+ Error: Invalid value {
+  model: User,
+  attributes: [ 'id', 'user_name', 'user_state' ],
+  include: [ [Object] ]
+}
+    at Object.escape (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sql-string.js:53:11)
+    at MariaDBQueryGenerator.escape (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:763:22)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1993:71
+    at Array.map (<anonymous>)
+    at MariaDBQueryGenerator._whereParseSingleValueObject (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1993:52)
+    at MariaDBQueryGenerator.whereItemQuery (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1809:19)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1734:25
+    at Array.forEach (<anonymous>)
+    at MariaDBQueryGenerator.whereItemsQuery (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1732:35)
+    at MariaDBQueryGenerator.getWhereConditions (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:2075:19)
+ Fri Aug 16 2024 17:47:08 GMT-0600 (Central Standard Time) 
+ Error: Invalid value {
+  model: User,
+  attributes: [ 'id', 'user_name', 'user_state' ],
+  include: [ [Object] ]
+} 
+ Error 
+ undefined 
+ Error: Invalid value {
+  model: User,
+  attributes: [ 'id', 'user_name', 'user_state' ],
+  include: [ [Object] ]
+}
+    at Object.escape (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sql-string.js:53:11)
+    at MariaDBQueryGenerator.escape (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:763:22)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1993:71
+    at Array.map (<anonymous>)
+    at MariaDBQueryGenerator._whereParseSingleValueObject (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1993:52)
+    at MariaDBQueryGenerator.whereItemQuery (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1809:19)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1734:25
+    at Array.forEach (<anonymous>)
+    at MariaDBQueryGenerator.whereItemsQuery (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1732:35)
+    at MariaDBQueryGenerator.getWhereConditions (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:2075:19)
+ Fri Aug 16 2024 17:47:48 GMT-0600 (Central Standard Time) 
+ Error: Invalid value {
+  model: User,
+  attributes: [ 'id', 'user_name', 'user_state' ],
+  include: [ [Object] ]
+} 
+ Error 
+ undefined 
+ Error: Invalid value {
+  model: User,
+  attributes: [ 'id', 'user_name', 'user_state' ],
+  include: [ [Object] ]
+}
+    at Object.escape (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sql-string.js:53:11)
+    at MariaDBQueryGenerator.escape (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:763:22)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1993:71
+    at Array.map (<anonymous>)
+    at MariaDBQueryGenerator._whereParseSingleValueObject (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1993:52)
+    at MariaDBQueryGenerator.whereItemQuery (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1809:19)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1734:25
+    at Array.forEach (<anonymous>)
+    at MariaDBQueryGenerator.whereItemsQuery (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1732:35)
+    at MariaDBQueryGenerator.getWhereConditions (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:2075:19)
+ Fri Aug 16 2024 17:49:27 GMT-0600 (Central Standard Time) 
+ Error: Invalid value {
+  model: User,
+  attributes: [ 'id', 'user_name', 'user_state' ],
+  include: [ [Object] ]
+} 
+ Error 
+ undefined 
+ Error: Invalid value {
+  model: User,
+  attributes: [ 'id', 'user_name', 'user_state' ],
+  include: [ [Object] ]
+}
+    at Object.escape (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sql-string.js:53:11)
+    at MariaDBQueryGenerator.escape (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:763:22)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1993:71
+    at Array.map (<anonymous>)
+    at MariaDBQueryGenerator._whereParseSingleValueObject (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1993:52)
+    at MariaDBQueryGenerator.whereItemQuery (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1809:19)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1734:25
+    at Array.forEach (<anonymous>)
+    at MariaDBQueryGenerator.whereItemsQuery (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1732:35)
+    at MariaDBQueryGenerator.getWhereConditions (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:2075:19)
+ Fri Aug 16 2024 17:51:03 GMT-0600 (Central Standard Time) 
+ Error: Invalid value {
+  model: User,
+  attributes: [ 'id', 'user_name', 'user_state' ],
+  include: [ [Object] ]
+} 
+ Error 
+ undefined 
+ Error: Invalid value {
+  model: User,
+  attributes: [ 'id', 'user_name', 'user_state' ],
+  include: [ [Object] ]
+}
+    at Object.escape (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sql-string.js:53:11)
+    at MariaDBQueryGenerator.escape (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:763:22)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1993:71
+    at Array.map (<anonymous>)
+    at MariaDBQueryGenerator._whereParseSingleValueObject (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1993:52)
+    at MariaDBQueryGenerator.whereItemQuery (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1809:19)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1734:25
+    at Array.forEach (<anonymous>)
+    at MariaDBQueryGenerator.whereItemsQuery (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1732:35)
+    at MariaDBQueryGenerator.getWhereConditions (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:2075:19)
+ Fri Aug 16 2024 18:14:05 GMT-0600 (Central Standard Time) 
+ Error: Invalid value {
+  model: User,
+  attributes: [ 'id', 'user_name', 'user_state' ],
+  include: [ [Object] ]
+} 
+ Error 
+ undefined 
+ Error: Invalid value {
+  model: User,
+  attributes: [ 'id', 'user_name', 'user_state' ],
+  include: [ [Object] ]
+}
+    at Object.escape (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sql-string.js:53:11)
+    at MariaDBQueryGenerator.escape (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:763:22)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1993:71
+    at Array.map (<anonymous>)
+    at MariaDBQueryGenerator._whereParseSingleValueObject (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1993:52)
+    at MariaDBQueryGenerator.whereItemQuery (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1809:19)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1734:25
+    at Array.forEach (<anonymous>)
+    at MariaDBQueryGenerator.whereItemsQuery (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1732:35)
+    at MariaDBQueryGenerator.getWhereConditions (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:2075:19)
+ Fri Aug 16 2024 18:16:06 GMT-0600 (Central Standard Time) 
+ Error: Invalid value {
+  model: User,
+  attributes: [ 'id', 'user_name', 'user_state' ],
+  include: Role
+} 
+ Error 
+ undefined 
+ Error: Invalid value {
+  model: User,
+  attributes: [ 'id', 'user_name', 'user_state' ],
+  include: Role
+}
+    at Object.escape (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sql-string.js:53:11)
+    at MariaDBQueryGenerator.escape (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:763:22)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1993:71
+    at Array.map (<anonymous>)
+    at MariaDBQueryGenerator._whereParseSingleValueObject (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1993:52)
+    at MariaDBQueryGenerator.whereItemQuery (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1809:19)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1734:25
+    at Array.forEach (<anonymous>)
+    at MariaDBQueryGenerator.whereItemsQuery (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1732:35)
+    at MariaDBQueryGenerator.getWhereConditions (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:2075:19)
+ Fri Aug 16 2024 18:16:52 GMT-0600 (Central Standard Time) 
+ Error: Invalid value { model: User, attributes: [ 'id', 'user_name', 'user_state' ] } 
+ Error 
+ undefined 
+ Error: Invalid value { model: User, attributes: [ 'id', 'user_name', 'user_state' ] }
+    at Object.escape (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sql-string.js:53:11)
+    at MariaDBQueryGenerator.escape (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:763:22)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1993:71
+    at Array.map (<anonymous>)
+    at MariaDBQueryGenerator._whereParseSingleValueObject (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1993:52)
+    at MariaDBQueryGenerator.whereItemQuery (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1809:19)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1734:25
+    at Array.forEach (<anonymous>)
+    at MariaDBQueryGenerator.whereItemsQuery (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1732:35)
+    at MariaDBQueryGenerator.getWhereConditions (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:2075:19)
+ Fri Aug 16 2024 18:18:30 GMT-0600 (Central Standard Time) 
+ SequelizeEagerLoadingError: User is not associated to Branch_User! 
+ SequelizeEagerLoadingError 
+ undefined 
+ SequelizeEagerLoadingError: User is not associated to Branch_User!
+    at Branch_User._getIncludedAssociation (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:565:13)
+    at Branch_User._validateIncludedElement (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:502:53)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:421:37
+    at Array.map (<anonymous>)
+    at Branch_User._validateIncludedElements (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:417:39)
+    at Branch_User.findAll (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:1124:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:29:9)
+ Fri Aug 16 2024 18:31:13 GMT-0600 (Central Standard Time) 
+ SequelizeEagerLoadingError: Branch_User is not associated to User! 
+ SequelizeEagerLoadingError 
+ undefined 
+ SequelizeEagerLoadingError: Branch_User is not associated to User!
+    at User._getIncludedAssociation (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:565:13)
+    at User._validateIncludedElement (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:502:53)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:421:37
+    at Array.map (<anonymous>)
+    at User._validateIncludedElements (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:417:39)
+    at User.findAll (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:1124:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:29:9)
+ Fri Aug 16 2024 18:55:50 GMT-0600 (Central Standard Time) 
+ ReferenceError: pageLimit is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: pageLimit is not defined
+    at usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:25:5)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+ Fri Aug 16 2024 18:55:50 GMT-0600 (Central Standard Time) 
+ ReferenceError: pageLimit is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: pageLimit is not defined
+    at usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:25:5)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+ Fri Aug 16 2024 19:07:39 GMT-0600 (Central Standard Time) 
+ SequelizeDatabaseError: (conn=3747, no: 1064, SQLState: 42000) You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''1') AS `User` LEFT OUTER JOIN `Roles` AS `Role` ON `User`.`RoleId` = `Role`....' at line 1
+sql: SELECT `User`.*, `Role`.`id` AS `Role.id`, `Role`.`role_name` AS `Role.role_name`, `Branches`.`id` AS `Branches.id`, `Branches`.`branch_name` AS `Branches.branch_name`, `Branches->Branch_User`.`id` AS `Branches.Branch_User.id`, `Branches->Branch_User`.`BranchId` AS `Branches.Branch_User.BranchId`, `Branches->Branch_User`.`UserId` AS `Branches.Branch_User.UserId` FROM (SELECT `User`.`id`, `User`.`user_name`, `User`.`user_state`, `User`.`RoleId` FROM `Users` AS `User` WHERE (`User`.`user_name` LIKE '%%') LIMIT 0, '1') AS `User` LEFT OUTER JOIN `Roles` AS `Role` ON `User`.`RoleId` = `Role`.`id` LEFT OUTER JOIN ( `Branch_Users` AS `Branches->Branch_User` INNER JOIN `Branches` AS `Branches` ON `Branches`.`id` = `Branches->Branch_User`.`BranchId`) ON `User`.`id` = `Branches->Branch_User`.`UserId`; - parameters:[] 
+ SequelizeDatabaseError 
+ undefined 
+ Error
+    at Query.run (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.select (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)
+    at async User.findAll (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:1140:21)
+    at async Promise.all (index 1)
+    at async User.findAndCountAll (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:1322:27)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:54:33)
+ Fri Aug 16 2024 20:17:30 GMT-0600 (Central Standard Time) 
+ SequelizeDatabaseError: (conn=3766, no: 1064, SQLState: 42000) You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''1') AS `User` LEFT OUTER JOIN `Roles` AS `Role` ON `User`.`RoleId` = `Role`....' at line 1
+sql: SELECT `User`.*, `Role`.`id` AS `Role.id`, `Role`.`role_name` AS `Role.role_name`, `Branches`.`id` AS `Branches.id`, `Branches`.`branch_name` AS `Branches.branch_name`, `Branches->Branch_User`.`id` AS `Branches.Branch_User.id`, `Branches->Branch_User`.`BranchId` AS `Branches.Branch_User.BranchId`, `Branches->Branch_User`.`UserId` AS `Branches.Branch_User.UserId` FROM (SELECT `User`.`id`, `User`.`user_name`, `User`.`user_state`, `User`.`RoleId` FROM `Users` AS `User` WHERE (`User`.`user_name` LIKE '%%') LIMIT 0, '1') AS `User` LEFT OUTER JOIN `Roles` AS `Role` ON `User`.`RoleId` = `Role`.`id` LEFT OUTER JOIN ( `Branch_Users` AS `Branches->Branch_User` INNER JOIN `Branches` AS `Branches` ON `Branches`.`id` = `Branches->Branch_User`.`BranchId`) ON `User`.`id` = `Branches->Branch_User`.`UserId`; - parameters:[] 
+ SequelizeDatabaseError 
+ undefined 
+ Error
+    at Query.run (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.select (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)
+    at async User.findAll (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:1140:21)
+    at async Promise.all (index 1)
+    at async User.findAndCountAll (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:1322:27)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:54:33)
+ Fri Aug 16 2024 20:18:19 GMT-0600 (Central Standard Time) 
+ SequelizeDatabaseError: (conn=3773, no: 1064, SQLState: 42000) You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''10') AS `User` LEFT OUTER JOIN `Roles` AS `Role` ON `User`.`RoleId` = `Role`...' at line 1
+sql: SELECT `User`.*, `Role`.`id` AS `Role.id`, `Role`.`role_name` AS `Role.role_name`, `Branches`.`id` AS `Branches.id`, `Branches`.`branch_name` AS `Branches.branch_name`, `Branches->Branch_User`.`id` AS `Branches.Branch_User.id`, `Branches->Branch_User`.`BranchId` AS `Branches.Branch_User.BranchId`, `Branches->Branch_User`.`UserId` AS `Branches.Branch_User.UserId` FROM (SELECT `User`.`id`, `User`.`user_name`, `User`.`user_state`, `User`.`RoleId` FROM `Users` AS `User` WHERE (`User`.`user_name` LIKE '%%') LIMIT 0, '10') AS `User` LEFT OUTER JOIN `Roles` AS `Role` ON `User`.`RoleId` = `Role`.`id` LEFT OUTER JOIN ( `Branch_Users` AS `Branches->Branch_User` INNER JOIN `Branches` AS `Branches` ON `Branches`.`id` = `Branches->Branch_User`.`BranchId`) ON `User`.`id` = `Branches->Branch_User`.`UserId`; - parameters:[] 
+ SequelizeDatabaseError 
+ undefined 
+ Error
+    at Query.run (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.select (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)
+    at async User.findAll (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:1140:21)
+    at async Promise.all (index 1)
+    at async User.findAndCountAll (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:1322:27)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:54:33)
+ Sun Aug 18 2024 08:49:57 GMT-0600 (Central Standard Time) 
+ SequelizeDatabaseError: (conn=3941, no: 1064, SQLState: 42000) You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''10') AS `User` LEFT OUTER JOIN `Roles` AS `Role` ON `User`.`RoleId` = `Role`...' at line 1
+sql: SELECT `User`.*, `Role`.`id` AS `Role.id`, `Role`.`role_name` AS `Role.role_name`, `Branches`.`id` AS `Branches.id`, `Branches`.`branch_name` AS `Branches.branch_name`, `Branches->Branch_User`.`id` AS `Branches.Branch_User.id`, `Branches->Branch_User`.`BranchId` AS `Branches.Branch_User.BranchId`, `Branches->Branch_User`.`UserId` AS `Branches.Branch_User.UserId` FROM (SELECT `User`.`id`, `User`.`user_name`, `User`.`user_state`, `User`.`RoleId` FROM `Users` AS `User` WHERE (`User`.`user_name` LIKE '%%') LIMIT 0, '10') AS `User` LEFT OUTER JOIN `Roles` AS `Role` ON `User`.`RoleId` = `Role`.`id` LEFT OUTER JOIN ( `Branch_Users` AS `Branches->Branch_User` INNER JOIN `Branches` AS `Branches` ON `Branches`.`id` = `Branches->Branch_User`.`BranchId`) ON `User`.`id` = `Branches->Branch_User`.`UserId`; - parameters:[] 
+ SequelizeDatabaseError 
+ undefined 
+ Error
+    at Query.run (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.select (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)
+    at async User.findAll (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:1140:21)
+    at async Promise.all (index 1)
+    at async User.findAndCountAll (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:1322:27)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:54:33)
+ Sun Aug 18 2024 11:32:01 GMT-0600 (Central Standard Time) 
+ Error: Include unexpected. Element has to be either a Model, an Association or an object. 
+ Error 
+ undefined 
+ Error: Include unexpected. Element has to be either a Model, an Association or an object.
+    at User._conformInclude (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:323:11)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:270:61
+    at Array.map (<anonymous>)
+    at User._conformIncludes (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:270:39)
+    at User._baseMerge (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:622:10)
+    at User._defaultsOptions (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:656:17)
+    at User._injectScope (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:2053:10)
+    at User.findAll (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:1111:10)
+    at User.findAndCountAll (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:1324:12)
+    at usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:52:44)
+ Sun Aug 18 2024 11:33:38 GMT-0600 (Central Standard Time) 
+ Error: Include unexpected. Element has to be either a Model, an Association or an object. 
+ Error 
+ undefined 
+ Error: Include unexpected. Element has to be either a Model, an Association or an object.
+    at User._conformInclude (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:323:11)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:270:61
+    at Array.map (<anonymous>)
+    at User._conformIncludes (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:270:39)
+    at User._baseMerge (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:622:10)
+    at User._defaultsOptions (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:656:17)
+    at User._injectScope (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:2053:10)
+    at User.findAll (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:1111:10)
+    at User.findAndCountAll (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:1324:12)
+    at usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:52:44)
+ Sun Aug 18 2024 11:34:28 GMT-0600 (Central Standard Time) 
+ Error: Include unexpected. Element has to be either a Model, an Association or an object. 
+ Error 
+ undefined 
+ Error: Include unexpected. Element has to be either a Model, an Association or an object.
+    at User._conformInclude (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:323:11)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:270:61
+    at Array.map (<anonymous>)
+    at User._conformIncludes (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:270:39)
+    at User._baseMerge (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:622:10)
+    at User._defaultsOptions (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:656:17)
+    at User._injectScope (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:2053:10)
+    at User.findAll (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:1111:10)
+    at User.findAndCountAll (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:1324:12)
+    at usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:52:44)
+ Sun Aug 18 2024 11:37:03 GMT-0600 (Central Standard Time) 
+ Error: Include unexpected. Element has to be either a Model, an Association or an object. 
+ Error 
+ undefined 
+ Error: Include unexpected. Element has to be either a Model, an Association or an object.
+    at User._conformInclude (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:323:11)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:270:61
+    at Array.map (<anonymous>)
+    at User._conformIncludes (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:270:39)
+    at User._baseMerge (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:622:10)
+    at User._defaultsOptions (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:656:17)
+    at User._injectScope (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:2053:10)
+    at User.findAll (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:1111:10)
+    at usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:53:48)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+ Sun Aug 18 2024 11:40:50 GMT-0600 (Central Standard Time) 
+ Error: Include unexpected. Element has to be either a Model, an Association or an object. 
+ Error 
+ undefined 
+ Error: Include unexpected. Element has to be either a Model, an Association or an object.
+    at User._conformInclude (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:323:11)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:270:61
+    at Array.map (<anonymous>)
+    at User._conformIncludes (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:270:39)
+    at User._baseMerge (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:622:10)
+    at User._defaultsOptions (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:656:17)
+    at User._injectScope (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:2053:10)
+    at User.findAll (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:1111:10)
+    at usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:53:48)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+ Sun Aug 18 2024 11:52:38 GMT-0600 (Central Standard Time) 
+ ReferenceError: sql is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: sql is not defined
+    at usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:58:33)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+ Sun Aug 18 2024 11:54:26 GMT-0600 (Central Standard Time) 
+ TypeError: sql is not a function 
+ TypeError 
+ undefined 
+ TypeError: sql is not a function
+    at usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:58:33)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)

@@ -1,8 +1,8 @@
-const paginate = async (model, pageSize, pageLimit, search = {}, order = []) => {
+const paginate = async (model, pageNumber, pageLimit, search = {}, order = []) => {
     try {
         const limit = parseInt(pageLimit, 10) || 10;
         // const limit = parseInt(pageLimit, 10);
-        const page = parseInt(pageSize, 10) || 1;
+        const page = parseInt(pageNumber, 10) || 1;
 
         // create an options object
         let options = {};
@@ -44,14 +44,13 @@ const paginate = async (model, pageSize, pageLimit, search = {}, order = []) => 
 }
 
 const getOffset = (page, limit) => {
- return (page * limit) - limit;
+    return (page * limit) - limit;
 }
 
 const getNextPage = (page, limit, total) => {
     if ((total/limit) > page) {
         return page + 1;
     }
-
     return null
 }
 
