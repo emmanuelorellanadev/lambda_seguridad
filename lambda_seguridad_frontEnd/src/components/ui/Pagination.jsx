@@ -6,10 +6,9 @@ const Pagination = ({page, setPage, rowsByPage, setRowsByPage, prevPage, nextPag
 
     const nextPageBtn = () => {
         if (nextPage){
-            setPage(page+1);
+            setPage((page+1));
             setOnLoad(false);
         }
-
       }
     
       const prevPageBtn = () => {

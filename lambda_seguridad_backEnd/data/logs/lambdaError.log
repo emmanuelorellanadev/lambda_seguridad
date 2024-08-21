@@ -4020,3 +4020,66 @@ sql: SELECT `User`.*, `Role`.`id` AS `Role.id`, `Role`.`role_name` AS `Role.role
     at Function.process_params (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
     at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:280:10)
     at Function.handle (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:175:3)
+ Sun Aug 18 2024 12:34:30 GMT-0600 (Central Standard Time) 
+ ReferenceError: count is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: count is not defined
+    at usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:44:64)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sun Aug 18 2024 12:36:28 GMT-0600 (Central Standard Time) 
+ ReferenceError: count is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: count is not defined
+    at usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:45:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sun Aug 18 2024 12:36:57 GMT-0600 (Central Standard Time) 
+ ReferenceError: rows is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: rows is not defined
+    at usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:47:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Tue Aug 20 2024 10:42:17 GMT-0600 (Central Standard Time) 
+ SequelizeDatabaseError: (conn=444, no: 1064, SQLState: 42000) You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'COUNT(*) OVER () AS total
+        INNER JOIN Users ON UserId = Users.id 
+    ...' at line 1
+sql: SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users, COUNT(*) OVER () AS total
+        INNER JOIN Users ON UserId = Users.id 
+        INNER JOIN Roles ON RoleId = Roles.id AND BranchId = 1 - parameters:[] 
+ SequelizeDatabaseError 
+ undefined 
+ Error
+    at Query.run (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:40:23)
+ Wed Aug 21 2024 09:50:16 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of null (reading 'BranchId') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of null (reading 'BranchId')
+    at branchUserGet (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/branch_user_controller.js:15:36)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Wed Aug 21 2024 09:50:16 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of null (reading 'BranchId') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of null (reading 'BranchId')
+    at branchUserGet (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/branch_user_controller.js:15:36)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Wed Aug 21 2024 09:50:16 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of null (reading 'BranchId') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of null (reading 'BranchId')
+    at branchUserGet (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/branch_user_controller.js:15:36)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Wed Aug 21 2024 09:50:16 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of null (reading 'BranchId') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of null (reading 'BranchId')
+    at branchUserGet (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/branch_user_controller.js:15:36)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)

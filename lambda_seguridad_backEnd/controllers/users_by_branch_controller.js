@@ -22,33 +22,34 @@ const usersGetByBranch = async(req, res) => {
     const pageNumber = parseInt(page, 10) || 1;
     let options = {};
     //check if limit was recibed
-    if(limit){
-        options = {limit: limitNumber, offset: getOffset(pageNumber, limitNumber)}
-    }
-    console.log(options)
-
+    // if(limit){
+    //     options = {limit: limitNumber, offset: getOffset(pageNumber, limitNumber)}
+    // }
 
     //CHECK THIS
-    //THE USER SEARCH BY BRANCH IS NOT WORKING WITH THE PAGINATION MODULE TABLE_USER.JSX
+    //THE USER BY BRANCH IS NOT WORKING WITH THE PAGINATION MODULE TABLE_USER.JSX
      //MERGE THE METOD CONFIGURATION WITH SQL QUERY 
 
-
     // if(id){
-        // console.log('branchId');
-        // await User.findAll({
-        //     attributes: ['id', 'user_name', 'user_state' ],
-        //     include: [
-        //         {model: Branch_User, where:{BranchId: `${branchId}`} },
-        //         {model: Role, }
-        //     ],
-        // })
-        // .then( users => { resSuccessful(res, users)})
-        //ERROR!!
-        //     "status": "FAILED",
-        //     "name": "SequelizeEagerLoadingError",
-        //     "error": "Branch_User is not associated to User!"
+    //     console.log('branchId'.red + id);
+    //     //work with out pagination
+    //     const {count, row} = await Branch_User.findAndCountAll({where: {BranchId: id}})
+
+    //     query = `SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users
+    //     INNER JOIN Users ON UserId = Users.id 
+    //     INNER JOIN Roles ON RoleId = Roles.id AND BranchId = ${id} LIMIT ${limit} OFFSET ${getOffset(page, limit)}`;
+    //     const users = await db_connection.query(query, {type: QueryTypes.SELECT})
+
+    //         resSuccessful(res, {
+    //             prevPage: getPrevPage(pageNumber),
+    //             currentPage: pageNumber,
+    //             nextPage: getNextPage(pageNumber, limitNumber, users.length),
+    //             total: count,
+    //             limit: limit,
+    //             data: users
+    //         })
     // }else{
-        console.log('ELSE'.yellow);
+        console.log('NO branchId'.red);
         const { count, rows } = await User.findAndCountAll({
             where: { [Op.or]: [
                 {user_name: { [Op.like]: `%${q || ''}%`}},
@@ -58,7 +59,6 @@ const usersGetByBranch = async(req, res) => {
             offset: getOffset(pageNumber, limitNumber),
             include: 
                 [
-                // [db_connection.literal(`(SELECT branch_name from Branches where '1')`), 'branch_name'],
                 {model: Role, attributes: ['role_name']}, 
                 {model: Branch, attributes: ['branch_name'] }
                 ],

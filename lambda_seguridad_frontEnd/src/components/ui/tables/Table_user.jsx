@@ -11,13 +11,13 @@ export const Table_user = ({ columns, rows, editData, deleteData, ...props}) => 
 
   const [users, setUsers] = useState([]);
   // const [branches, setBranches] = useState([]);
-  // const [branch, setBranch] = useState(59);
+  // const [branch, setBranch] = useState(0);
   const [ search, setSearch ] = useState('');
   const [ rowsByPage, setRowsByPage ] = useState( 10 );
   const [ page, setPage ] = useState( 1 );
   const [ prevPage, setPrevPage ] = useState('');
   const [ nextPage, setNextPage ] = useState('');
-  const [ onLoad, setOnLoad ] = useState(true)
+  const [ onLoad, setOnLoad ] = useState(true);
 
   if(editData && !columns.includes("Editar") ){
       columns.push("Editar")
@@ -31,28 +31,29 @@ export const Table_user = ({ columns, rows, editData, deleteData, ...props}) => 
 //THE USER SEARCH BY BRANCH IS NOT WORKING WITH THE PAGINATION MODULE
 // //MERGE THE METOD CONFIGURATION WITH SQL QUERY, USER_BY_BRANCH_CONTROLLER.JS
 
-// const selectBranch = () => {
-//   const urlUsersByBranch = `http://localhost:8080/usersByBranch/${branch}`;
+// const selectBranch = (branchSelected) => {
+//   setBranch(branchSelected);
+//   const urlUsersByBranch = `http://localhost:8080/usersByBranch/?id=${branchSelected}&limit=${rowsByPage}&page=${page}`;
 //   useGetUserByBranch(urlUsersByBranch, {setUsers, setNextPage, setPrevPage}); 
 // }
 
   const searchUser = (query) => {
-    const urlUsersByBranch = `http://localhost:8080/usersByBranch/?q=${query}`;
-    useGetUserByBranch(urlUsersByBranch, {setUsers, setNextPage, setPrevPage});
     setSearch(query);
+    setPage(1);
+    setOnLoad(false);
   }
 
   const getUsersByBranch = async() => {
-    const urlUsersByBranch = `http://localhost:8080/usersByBranch/?limit=${rowsByPage}&page=${page}`;
-    await useGetUserByBranch(urlUsersByBranch, { setUsers, setNextPage, setPrevPage });
+    const urlUsersByBranch = `http://localhost:8080/usersByBranch/?q=${search}&limit=${rowsByPage}&page=${page}`;
+    await useGetUserByBranch(urlUsersByBranch, { setUsers, setNextPage, setPrevPage});
   }
 
   useEffect( () => {
     setOnLoad(true);
-    getUsersByBranch();
     // const urlBranch = 'http://localhost:8080/branch/';
     // useGetBranch(urlBranch, {setBranches, setNextPage, setPrevPage});
-  }, [onLoad]);
+    getUsersByBranch();
+  }, [onLoad, search]);
 
   return (
     <>
@@ -60,8 +61,8 @@ export const Table_user = ({ columns, rows, editData, deleteData, ...props}) => 
       {/* <div className='' >
           <div>
               <label htmlFor="branch">Sucursales: </label>
-              <select className='form-control text-center' name="branch" id="branch" value={branch} onChange={(e) => {setBranch(e.target.value); selectBranch()}}>
-                  <option value={''} >Todas</option>
+              <select className='form-control text-center' name="branch" id="branch" value={branch} onChange={(e) => {selectBranch(e.target.value)}}>
+                  <option value={0} >Todas</option>
                   {
                       branches.data?.map( b => {
                           return (<option key={b.id} value={b.id}>{b.branch_name}</option>)
@@ -92,7 +93,7 @@ export const Table_user = ({ columns, rows, editData, deleteData, ...props}) => 
                     <tr key={user.id}>
                       <th>{user.id}</th>
                       <th>{user.user_name}</th>
-                      <th>{user.Role.role_name}</th>
+                      <th>{user.Role?.role_name}</th>
                       <th><input type='checkbox' checked={user.user_state} disabled/></th>
                       <th><button className='btn btn-primary' type="button" onClick={ () => editData( user.id ) } >Editar</button></th>
                       <th><button className='btn btn-outline-danger' onClick={ () => deleteData(user.id, user.user_name, setOnLoad) }><i className='bi bi-trash3-fill'></i></button></th>

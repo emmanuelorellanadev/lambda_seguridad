@@ -1,11 +1,11 @@
 import axios from "axios";
 
-export const useGetUserByBranch = async(urlUsersByBranch, {setUsers, setNextPage, setPrevPage}) => {
-    await axios.get(urlUsersByBranch, {
+export const useGetUserByBranch = async(url, {setUsers, setNextPage, setPrevPage}) => {
+    await axios.get(url, {
         headers: { "x-token": sessionStorage.getItem('token-xL') }
     })
     .then(resp => resp.data.resData)
-    .then( data => {
+    .then( async data => {
         setUsers(data);
         setNextPage(data.nextPage);
         setPrevPage(data.prevPage);
