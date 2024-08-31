@@ -2,13 +2,15 @@ import axios from "axios";
 import toast from "react-hot-toast";
 
 
-export const useUserProfile = async(urlUser, {setUserName, setUserCreation, setUserImg}) => {
+export const useUserProfile = async(urlUser, {setUserName, setUserCreation, setUserImg, setRole, setBranch}) => {
     await axios.get( urlUser, { headers: {"x-token": sessionStorage.getItem("token-xL")}})
         .then(resp => resp.data.resData)
         .then( data => {
-            setUserName(data.user_name)
-            setUserCreation(data.user_creation)
-            setUserImg(data.user_img)
+            setUserName(data.user_name);
+            setUserCreation(data.user_creation);
+            setUserImg(data.user_img);
+            setRole(data.Role.role_name)
+            setBranch(data.Branches[0].branch_name)
         })
         .catch(error => {
             console.log(error)

@@ -1,3 +1,4 @@
+const { Op } = require('sequelize')
 
 const Role = require("../models/role_model");
 const User = require("../models/user_model");
@@ -12,30 +13,40 @@ const { deleteImage } = require("../helpers/uploadImage");
 
 const getUsers = async(req, res) => {
     //used to paginate 
-    // const {q, page, limit, order_by, order_direction} = req.query;
-    // console.log(limit)
-    // const search = {};
-    // let order = [];
-
-    // if (q){
-    //     search = {
-    //         where: {
-    //             user_name: {
-    //                 [Op.like]: `%${q}%`
-    //             }
-    //         }
-    //     }
-    // }
-
-    // const users = await paginate(User, page, limit, search, order)
+    const {q, page, limit, order_by, order_direction} = req.query;
+    const search = {};
+    let order = [];
+    //pagination
+    const limitNumber = parseInt(limit, 10) || 10;
+    const pageNumber = parseInt(page, 10) || 1;
 
 
+    const { count, rows } = await User.findAndCountAll({
+        where: { [Op.or]: [
+            {user_name: { [Op.like]: `%${q || ''}%`}},
+        ]}, 
+        attributes: ['id', 'user_name', 'user_state'], 
+        limit: limitNumber, 
+        offset: getOffset(pageNumber, limitNumber),
+        include: 
+            [
+            {model: Role, attributes: ['role_name']}, 
+            {model: Branch, attributes: ["branch_name"] }
+            ],
+        })
+        
+        resSuccessful(res, {
+            prevPage: getPrevPage(pageNumber),
+            currentPage: pageNumber,
+            nextPage: getNextPage(pageNumber, limitNumber, count),
+            total: count,
+            limit: limit,
+            data: rows
+        })
 
-    const users = await User.findAll({include: Role});
-    if (users.length == 0) throw new GeneralError('Usuarios no encontrados')
-    
-    console.log('usuarios'.red)
-    console.log(users);
+    // const users = await User.findAll({include: [{include: Role}]});
+    // if (users.length == 0) throw new GeneralError('Usuarios no encontrados')
+
 
     // //Delete the users than role is less than the user logued
     // users.map( (user, i = 0) => {
@@ -44,20 +55,22 @@ const getUsers = async(req, res) => {
     //     i++
     // })
     
-    resSuccessful(res, users);
+    // resSuccessful(res, users);
 }
 
 const getUser = async(req, res) => {
     const { id }  = req.params;
     
-        const user = await User.findByPk(id);
+        const user = await User.findByPk(id, 
+            {include: [
+                {model: Role},
+                {model: Branch, attributes: ['id', 'branch_name']}]});
         if ( !user ) {throw new GeneralError('Usuario no encontrado', 404)} 
 
         //if userLoggued tries to get a higher privileged user
         // if(user.RoleId > req.userLoggedIn.RoleId){
         //     throw new GeneralError('No tienens permisos suficientes para realizar esta operación', 401)                
         // }
-        
         resSuccessful(res, user);
 }
 
@@ -124,15 +137,15 @@ const updateUser = async(req, res) => {
             //Update the branch
             const branchUser = await Branch_User.findOne({where:{'UserId': id}});
             if(!branchUser) throw new DBError(null, 'Error: inconsistencia en la base de datos', 400)
-
                 await Branch_User.update( 
                 {
                     'BranchId': userData.BranchId,
                     'UserId': id
                 },{
                 where:{
-                    id: branchUser.id
+                    UserId: id
                 } })
+                .catch( error => { throw new DBError(error, "Error al actualizar Branch_User") } );
         })
         .catch( error => {
             throw new DBError(error, "Error al actualizar el usuario.", 400)
@@ -157,6 +170,27 @@ const deleteUser = async(req, res) => {
     resSuccessful(res, 'Usuario Eliminado correctamente')
 }
 
+const getOffset = (page, limit) => {
+    return (page * limit) - limit;
+}
+   
+const getNextPage = (page, limit, total) => {
+    if ((total/limit) > page) {
+        console.log('nextPage ' + (page + 1))
+        return page + 1;
+    }
+    console.log('null')
+    return null
+}
+   
+const getPrevPage = (page) => {
+    if (page <= 1) {
+        console.log('null')
+        return null
+    }
+    console.log('prevPage ' + (page - 1))
+    return page - 1;
+}
 
 module.exports = {
     getUsers: catchedAsync(getUsers),

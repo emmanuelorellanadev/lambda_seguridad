@@ -1,5 +1,4 @@
 import React, {useState, useEffect}from 'react';
-import axios from'axios';
 
 import '../../css/user/user.css';
 import {P_Head} from'../ui/P_Head';
@@ -33,29 +32,6 @@ export const UpdateUser = (props) => {
         useUpdateUser(urlUser, state, props);
     }
 
-    const fetchCompanyId = async() => {
-        const url = `http://localhost:8080/BranchUser/${props.userToEdit}`;
-
-        await axios(url, { headers: {"x-token": sessionStorage.getItem('token-xL')}} )
-            .then( resp => setBranchId(resp.data.resData.id))
-            .catch( error => console.log( error ))
-    }
-
-    const fetchBranchId = async() => {
-        const url = `http://localhost:8080/BranchUser/${props.userToEdit}`
-
-        await axios(url, { headers: {"x-token": sessionStorage.getItem('token-xL')}} )
-            .then( resp => setBranchId(resp.data.resData.id))
-            .catch( error => console.log( error ))
-    }
-
-    const fillFields = (userData) => {
-        setUser( userData.user_name );
-        setPass( userData.user_pass );
-        setRoleId( userData.RoleId );
-        setState( userData.user_state );
-    }
-
     const erasePassword = () => {
         setPass('');
     }
@@ -66,11 +42,9 @@ export const UpdateUser = (props) => {
         const urlCompany = 'http://localhost:8080/company/';
         const urlBranch = 'http://localhost:8080/branch/';
         useGetRole(urlRole, {setRoles, setNextPage, setPrevPage});
-        useGetUser(urlUser, {fillFields})
+        useGetUser(urlUser, {setUser, setPass, setRoleId, setState, setBranchId, setPrevPage, setNextPage})
         useGetCompany(urlCompany, {setCompanies, setNextPage, setPrevPage});
         useGetBranch(urlBranch, {setBranches, setNextPage, setPrevPage})
-        fetchBranchId();
-        fetchCompanyId();
     }, [])
 
   return (

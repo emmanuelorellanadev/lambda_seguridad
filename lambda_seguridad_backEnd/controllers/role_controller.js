@@ -47,7 +47,7 @@ const getRole = async(req, res) => {
 
     if( !role ) throw new GeneralError('No se encontró el rol en la base de datos', 404)
 // Check if the role of userLogued is less than the role to show.
-    if( role.id < req.userLoggedIn.RoleId ) {
+    if( role.id < req.userLoggedIn?.RoleId ) {
         throw new GeneralError('No tienes permiso para acceder a esta información', 401);
     }
     resSuccessful(res, role);

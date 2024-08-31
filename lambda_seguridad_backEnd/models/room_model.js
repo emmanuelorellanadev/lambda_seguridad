@@ -23,10 +23,6 @@ const Room = db_connection.define('Room', {
     max_people_number: {
         type: DataTypes.INTEGER,
         allowNull: false,
-    },
-    cost_by_person: {
-        type: DataTypes.FLOAT,
-        allowNull: false,
     }
 },
 {

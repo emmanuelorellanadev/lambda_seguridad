@@ -36,15 +36,13 @@ class Server {
     }
 
 //ROUTES
-    routes(){
+    routes(){ 
         // this.app.use('/', v1Router)
         this.app.use('/auth',               require('../routes/auth_route'));
         this.app.use('/branch',             require('../routes/branch_route'));
-        this.app.use('/branchUser',         require('../routes/branch_user_route'));
         this.app.use('/branchType',         require('../routes/branchType_route'));
         this.app.use('/changePassword',     require('../routes/changePassword_route'));
         this.app.use('/company',            require('../routes/company_route'));
-        this.app.use('/log',                require('../routes/log_route')); //what's this?
         this.app.use('/payment',            require('../routes/payment_route'));
         this.app.use('/paymentState',       require('../routes/paymentState_route'));
         this.app.use('/paymentDetail',      require('../routes/paymentDetail_route'));
@@ -56,6 +54,9 @@ class Server {
         this.app.use('/reservationState',   require('../routes/reservationState_route'));
         this.app.use('/role',               require('../routes/role_route'));
         this.app.use('/room',               require('../routes/room_route'));
+        this.app.use('/room-service',       require('../routes/room_service_route'));
+        this.app.use('/roomPrice',          require('../routes/roomPrice_route'));
+        this.app.use('/roomPrice-room',     require('../routes/roomPrice_room_route'));
         this.app.use('/roomState',          require('../routes/roomState_route'));
         this.app.use('/service',            require('../routes/service_route'));
         this.app.use('/user',               require('../routes/user_route'));

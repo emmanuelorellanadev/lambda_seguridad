@@ -4083,3 +4083,907 @@ sql: SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Use
  TypeError: Cannot read properties of null (reading 'BranchId')
     at branchUserGet (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/branch_user_controller.js:15:36)
     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Thu Aug 22 2024 14:31:45 GMT-0600 (Central Standard Time) 
+ TokenExpiredError: jwt expired 
+ TokenExpiredError 
+ undefined 
+ TokenExpiredError: jwt expired
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/jsonwebtoken/verify.js:190:21
+    at getSecret (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/jsonwebtoken/verify.js:97:14)
+    at module.exports [as verify] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/jsonwebtoken/verify.js:101:10)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:16:37)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+ Thu Aug 22 2024 14:33:05 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar la habitación. 
+ DBError 
+ {
+"name":"SequelizeValidationError","errors":[{
+"message":"Room.max_people_number cannot be null","type":"notNull Violation","path":"max_people_number","value":null,"origin":"CORE","instance":{
+"id":null,"room_number":1,"room_location":"Segundo nivel a la derecha","number_of_beds":2,"cost_by_person":125,"RoomStateId":1,"BranchId":20},"validatorKey":"is_null","validatorName":null,"validatorArgs":[]}]} 
+ DBError: Error al guardar la habitación.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:34:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async saveRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:26:5)
+ Thu Aug 22 2024 14:38:27 GMT-0600 (Central Standard Time) 
+ Error: {"errors":[{"msg":"The number of people is required.","param":"number_of_people","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"msg":"The number of people is required.","param":"number_of_people","location":"body"}]}
+    at checkFields (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at middleware (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Thu Aug 22 2024 14:39:16 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar la habitación. 
+ DBError 
+ {
+"name":"SequelizeForeignKeyConstraintError","parent":{
+"name":"SqlError","text":"Cannot add or update a child row: a foreign key constraint fails (`db_lambda`.`rooms`, CONSTRAINT `rooms_ibfk_2` FOREIGN KEY (`BranchId`) REFERENCES `Branches` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)","sql":"INSERT INTO `Rooms` (`id`,`room_number`,`room_location`,`number_of_beds`,`max_people_number`,`cost_by_person`,`RoomStateId`,`BranchId`) VALUES (DEFAULT,?,?,?,?,?,?,?);","fatal":false,"errno":1452,"sqlState":"23000","code":"ER_NO_REFERENCED_ROW_2","parameters":[1,"Segundo nivel a la derecha",2,3,125,1,20]},"original":{
+"name":"SqlError","text":"Cannot add or update a child row: a foreign key constraint fails (`db_lambda`.`rooms`, CONSTRAINT `rooms_ibfk_2` FOREIGN KEY (`BranchId`) REFERENCES `Branches` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)","sql":"INSERT INTO `Rooms` (`id`,`room_number`,`room_location`,`number_of_beds`,`max_people_number`,`cost_by_person`,`RoomStateId`,`BranchId`) VALUES (DEFAULT,?,?,?,?,?,?,?);","fatal":false,"errno":1452,"sqlState":"23000","code":"ER_NO_REFERENCED_ROW_2","parameters":[1,"Segundo nivel a la derecha",2,3,125,1,20]},"sql":"INSERT INTO `Rooms` (`id`,`room_number`,`room_location`,`number_of_beds`,`max_people_number`,`cost_by_person`,`RoomStateId`,`BranchId`) VALUES (DEFAULT,?,?,?,?,?,?,?);","parameters":[1,"Segundo nivel a la derecha",2,3,125,1,20],"table":"Branches","fields":["BranchId"],"value":20,"index":"rooms_ibfk_2","reltype":"child"} 
+ DBError: Error al guardar la habitación.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:34:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async saveRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:26:5)
+ Thu Aug 22 2024 14:40:47 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar la habitación. 
+ DBError 
+ {
+"name":"SequelizeForeignKeyConstraintError","parent":{
+"name":"SqlError","text":"Cannot add or update a child row: a foreign key constraint fails (`db_lambda`.`room_services`, CONSTRAINT `room_services_ibfk_2` FOREIGN KEY (`ServiceId`) REFERENCES `Services` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)","sql":"INSERT INTO `Room_Services` (`RoomId`,`ServiceId`) VALUES (?,?);","fatal":false,"errno":1452,"sqlState":"23000","code":"ER_NO_REFERENCED_ROW_2","parameters":[2,1]},"original":{
+"name":"SqlError","text":"Cannot add or update a child row: a foreign key constraint fails (`db_lambda`.`room_services`, CONSTRAINT `room_services_ibfk_2` FOREIGN KEY (`ServiceId`) REFERENCES `Services` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)","sql":"INSERT INTO `Room_Services` (`RoomId`,`ServiceId`) VALUES (?,?);","fatal":false,"errno":1452,"sqlState":"23000","code":"ER_NO_REFERENCED_ROW_2","parameters":[2,1]},"sql":"INSERT INTO `Room_Services` (`RoomId`,`ServiceId`) VALUES (?,?);","parameters":[2,1],"table":"Services","fields":["ServiceId"],"value":1,"index":"room_services_ibfk_2","reltype":"child"} 
+ DBError: Error al guardar la habitación.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:34:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async saveRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:26:5)
+ Thu Aug 22 2024 14:42:07 GMT-0600 (Central Standard Time) 
+ Error: no se encontraron servicios 
+ Error 
+ undefined 
+ Error: no se encontraron servicios
+    at getServices (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/service_controller.js:10:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Thu Aug 22 2024 14:42:32 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar la habitación. 
+ DBError 
+ {
+"name":"SequelizeUniqueConstraintError","errors":[{
+"message":"room_number must be unique","type":"unique violation","path":"room_number","value":"1","origin":"DB","instance":{
+"id":null,"room_number":1,"room_location":"Segundo nivel a la derecha","number_of_beds":2,"max_people_number":3,"cost_by_person":125,"RoomStateId":1,"BranchId":1},"validatorKey":"not_unique","validatorName":null,"validatorArgs":[]}],"parent":{
+"name":"SqlError","text":"Duplicate entry '1' for key 'room_number'","sql":"INSERT INTO `Rooms` (`id`,`room_number`,`room_location`,`number_of_beds`,`max_people_number`,`cost_by_person`,`RoomStateId`,`BranchId`) VALUES (DEFAULT,?,?,?,?,?,?,?);","fatal":false,"errno":1062,"sqlState":"23000","code":"ER_DUP_ENTRY","parameters":[1,"Segundo nivel a la derecha",2,3,125,1,1]},"original":{
+"name":"SqlError","text":"Duplicate entry '1' for key 'room_number'","sql":"INSERT INTO `Rooms` (`id`,`room_number`,`room_location`,`number_of_beds`,`max_people_number`,`cost_by_person`,`RoomStateId`,`BranchId`) VALUES (DEFAULT,?,?,?,?,?,?,?);","fatal":false,"errno":1062,"sqlState":"23000","code":"ER_DUP_ENTRY","parameters":[1,"Segundo nivel a la derecha",2,3,125,1,1]},"fields":{
+"room_number":"1"},"sql":"INSERT INTO `Rooms` (`id`,`room_number`,`room_location`,`number_of_beds`,`max_people_number`,`cost_by_person`,`RoomStateId`,`BranchId`) VALUES (DEFAULT,?,?,?,?,?,?,?);"} 
+ DBError: Error al guardar la habitación.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:34:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async saveRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:26:5)
+ Thu Aug 22 2024 14:58:46 GMT-0600 (Central Standard Time) 
+ SequelizeDatabaseError: (conn=1435, no: 1054, SQLState: 42S22) Unknown column 'Room.service_name' in 'field list'
+sql: SELECT `Room`.`id`, `Room`.`service_name`, `Services`.`id` AS `Services.id`, `Services`.`service_name` AS `Services.service_name`, `Services`.`service_state` AS `Services.service_state`, `Services->Room_Service`.`RoomId` AS `Services.Room_Service.RoomId`, `Services->Room_Service`.`ServiceId` AS `Services.Room_Service.ServiceId` FROM `Rooms` AS `Room` LEFT OUTER JOIN ( `Room_Services` AS `Services->Room_Service` INNER JOIN `Services` AS `Services` ON `Services`.`id` = `Services->Room_Service`.`ServiceId`) ON `Room`.`id` = `Services->Room_Service`.`RoomId`; - parameters:[] 
+ SequelizeDatabaseError 
+ undefined 
+ Error
+    at Query.run (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.select (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)
+    at async Room.findAll (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:1140:21)
+    at async getRooms (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:9:19)
+ Fri Aug 23 2024 19:49:06 GMT-0600 (Central Standard Time) 
+ Error: Usuarios no encontrados 
+ Error 
+ undefined 
+ Error: Usuarios no encontrados
+    at getUsers (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/user_controller.js:35:34)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Fri Aug 23 2024 20:48:42 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of null (reading 'BranchId') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of null (reading 'BranchId')
+    at branchUserGet (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/branch_user_controller.js:15:36)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Fri Aug 23 2024 20:48:46 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of null (reading 'BranchId') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of null (reading 'BranchId')
+    at branchUserGet (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/branch_user_controller.js:15:36)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 24 2024 07:47:29 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of null (reading 'BranchId') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of null (reading 'BranchId')
+    at branchUserGet (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/branch_user_controller.js:15:36)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 24 2024 07:48:55 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of null (reading 'BranchId') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of null (reading 'BranchId')
+    at branchUserGet (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/branch_user_controller.js:15:36)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 24 2024 07:50:37 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of null (reading 'BranchId') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of null (reading 'BranchId')
+    at branchUserGet (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/branch_user_controller.js:15:36)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 24 2024 07:52:02 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of null (reading 'BranchId') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of null (reading 'BranchId')
+    at branchUserGet (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/branch_user_controller.js:17:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 24 2024 07:52:24 GMT-0600 (Central Standard Time) 
+ Error: Error al buscar la sucursal por usuario 
+ Error 
+ undefined 
+ Error: Error al buscar la sucursal por usuario
+    at branchUserGet (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/branch_user_controller.js:20:36)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 24 2024 07:53:02 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of null (reading 'BranchId') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of null (reading 'BranchId')
+    at branchUserGet (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/branch_user_controller.js:17:36)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 24 2024 07:54:26 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of null (reading 'BranchId') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of null (reading 'BranchId')
+    at branchUserGet (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/branch_user_controller.js:19:36)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 24 2024 07:55:11 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of null (reading 'BranchId') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of null (reading 'BranchId')
+    at branchUserGet (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/branch_user_controller.js:19:36)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Aug 24 2024 07:55:37 GMT-0600 (Central Standard Time) 
+ Error: Parametro no recibido 
+ Error 
+ undefined 
+ Error: Parametro no recibido
+    at branchUserGet (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/branch_user_controller.js:12:22)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at param (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:365:14)
+    at param (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:376:14)
+    at Function.process_params (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:421:3)
+ Sat Aug 24 2024 07:56:04 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of null (reading 'BranchId') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of null (reading 'BranchId')
+    at branchUserGet (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/branch_user_controller.js:19:36)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sun Aug 25 2024 09:13:28 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of null (reading 'BranchId') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of null (reading 'BranchId')
+    at branchUserGet (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/branch_user_controller.js:21:36)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sun Aug 25 2024 09:14:43 GMT-0600 (Central Standard Time) 
+ ReferenceError: branchData is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: branchData is not defined
+    at branchUserGet (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/branch_user_controller.js:30:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sun Aug 25 2024 09:15:36 GMT-0600 (Central Standard Time) 
+ ReferenceError: branchData is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: branchData is not defined
+    at branchUserGet (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/branch_user_controller.js:30:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sun Aug 25 2024 09:17:37 GMT-0600 (Central Standard Time) 
+ ReferenceError: branchData is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: branchData is not defined
+    at branchUserGet (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/branch_user_controller.js:30:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sun Aug 25 2024 09:18:41 GMT-0600 (Central Standard Time) 
+ ReferenceError: branchData is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: branchData is not defined
+    at branchUserGet (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/branch_user_controller.js:30:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sun Aug 25 2024 18:04:54 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of undefined (reading 'RoleId') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of undefined (reading 'RoleId')
+    at getRole (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:50:36)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sun Aug 25 2024 18:04:54 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of undefined (reading 'RoleId') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of undefined (reading 'RoleId')
+    at getRole (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:50:36)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sun Aug 25 2024 18:04:54 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of undefined (reading 'RoleId') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of undefined (reading 'RoleId')
+    at getRole (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:50:36)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sun Aug 25 2024 18:15:22 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of undefined (reading 'RoleId') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of undefined (reading 'RoleId')
+    at getRole (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:50:36)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sun Aug 25 2024 18:15:22 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of undefined (reading 'RoleId') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of undefined (reading 'RoleId')
+    at getRole (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:50:36)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sun Aug 25 2024 18:15:22 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of undefined (reading 'RoleId') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of undefined (reading 'RoleId')
+    at getRole (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:50:36)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sun Aug 25 2024 18:39:01 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of undefined (reading 'RoleId') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of undefined (reading 'RoleId')
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:34:36
+    at Array.map (<anonymous>)
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:32:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sun Aug 25 2024 18:39:01 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of undefined (reading 'RoleId') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of undefined (reading 'RoleId')
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:34:36
+    at Array.map (<anonymous>)
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:32:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sun Aug 25 2024 18:39:17 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of undefined (reading 'RoleId') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of undefined (reading 'RoleId')
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:34:36
+    at Array.map (<anonymous>)
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:32:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sun Aug 25 2024 18:39:17 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of undefined (reading 'RoleId') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of undefined (reading 'RoleId')
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:34:36
+    at Array.map (<anonymous>)
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:32:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sun Aug 25 2024 18:39:17 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of undefined (reading 'RoleId') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of undefined (reading 'RoleId')
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:34:36
+    at Array.map (<anonymous>)
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:32:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sun Aug 25 2024 18:44:41 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of undefined (reading 'RoleId') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of undefined (reading 'RoleId')
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:34:36
+    at Array.map (<anonymous>)
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:32:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sun Aug 25 2024 18:44:41 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of undefined (reading 'RoleId') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of undefined (reading 'RoleId')
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:34:36
+    at Array.map (<anonymous>)
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:32:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sun Aug 25 2024 18:44:41 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of undefined (reading 'RoleId') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of undefined (reading 'RoleId')
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:34:36
+    at Array.map (<anonymous>)
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:32:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sun Aug 25 2024 18:51:05 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of undefined (reading 'RoleId') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of undefined (reading 'RoleId')
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:35:36
+    at Array.map (<anonymous>)
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:32:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sun Aug 25 2024 18:51:05 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of undefined (reading 'RoleId') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of undefined (reading 'RoleId')
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:35:36
+    at Array.map (<anonymous>)
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:32:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sun Aug 25 2024 18:51:05 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of undefined (reading 'RoleId') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of undefined (reading 'RoleId')
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:35:36
+    at Array.map (<anonymous>)
+    at getRoles (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/role_controller.js:32:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sun Aug 25 2024 18:57:57 GMT-0600 (Central Standard Time) 
+ DBError: Error al actualizar el usuario. 
+ DBError 
+ {
+} 
+ DBError: Error al actualizar el usuario.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/user_controller.js:140:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async updateUser (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/user_controller.js:122:5)
+ Sun Aug 25 2024 19:03:42 GMT-0600 (Central Standard Time) 
+ DBError: Error al actualizar el usuario. 
+ DBError 
+ {
+} 
+ DBError: Error al actualizar el usuario.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/user_controller.js:141:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async updateUser (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/user_controller.js:122:5)
+ Sun Aug 25 2024 19:17:26 GMT-0600 (Central Standard Time) 
+ Error: Include unexpected. Element has to be either a Model, an Association or an object. 
+ Error 
+ undefined 
+ Error: Include unexpected. Element has to be either a Model, an Association or an object.
+    at User._conformInclude (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:323:11)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:270:61
+    at Array.map (<anonymous>)
+    at User._conformIncludes (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:270:39)
+    at User._baseMerge (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:622:10)
+    at User._defaultsOptions (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:656:17)
+    at User._injectScope (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:2053:10)
+    at User.findAll (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:1111:10)
+    at getUsers (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/user_controller.js:34:30)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+ Sun Aug 25 2024 19:17:33 GMT-0600 (Central Standard Time) 
+ Error: Include unexpected. Element has to be either a Model, an Association or an object. 
+ Error 
+ undefined 
+ Error: Include unexpected. Element has to be either a Model, an Association or an object.
+    at User._conformInclude (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:323:11)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:270:61
+    at Array.map (<anonymous>)
+    at User._conformIncludes (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:270:39)
+    at User._baseMerge (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:622:10)
+    at User._defaultsOptions (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:656:17)
+    at User._injectScope (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:2053:10)
+    at User.findAll (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:1111:10)
+    at getUsers (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/user_controller.js:34:30)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+ Sun Aug 25 2024 19:17:33 GMT-0600 (Central Standard Time) 
+ Error: Include unexpected. Element has to be either a Model, an Association or an object. 
+ Error 
+ undefined 
+ Error: Include unexpected. Element has to be either a Model, an Association or an object.
+    at User._conformInclude (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:323:11)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:270:61
+    at Array.map (<anonymous>)
+    at User._conformIncludes (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:270:39)
+    at User._baseMerge (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:622:10)
+    at User._defaultsOptions (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:656:17)
+    at User._injectScope (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:2053:10)
+    at User.findAll (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:1111:10)
+    at getUsers (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/user_controller.js:34:30)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+ Sun Aug 25 2024 19:25:28 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getUsers (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/user_controller.js:24:19)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkFields (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+ Sun Aug 25 2024 19:26:17 GMT-0600 (Central Standard Time) 
+ ReferenceError: getOffset is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: getOffset is not defined
+    at getUsers (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/user_controller.js:30:17)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkFields (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+ Sun Aug 25 2024 19:26:17 GMT-0600 (Central Standard Time) 
+ ReferenceError: getOffset is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: getOffset is not defined
+    at getUsers (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/user_controller.js:30:17)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkFields (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+ Sun Aug 25 2024 19:29:40 GMT-0600 (Central Standard Time) 
+ ReferenceError: getOffset is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: getOffset is not defined
+    at getUsers (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/user_controller.js:30:17)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkFields (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+ Sun Aug 25 2024 19:29:40 GMT-0600 (Central Standard Time) 
+ ReferenceError: getOffset is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: getOffset is not defined
+    at getUsers (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/user_controller.js:30:17)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkFields (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+ Sun Aug 25 2024 19:33:08 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar el usuario 
+ DBError 
+ {
+"name":"SequelizeUniqueConstraintError","errors":[{
+"message":"user_name must be unique","type":"unique violation","path":"user_name","value":"asdfasdf","origin":"DB","instance":{
+"user_img":"defaultUserImage.png","user_creation":"2024-08-26T01:33:08.412Z","id":null,"user_name":"asdfasdf","user_pass":"$2a$10$GN/g24gqUuzTwoxSdJ9dBuYQBCTr6QvZ7efO9bnb46rCU4TXWH6R.","RoleId":"2","user_state":true},"validatorKey":"not_unique","validatorName":null,"validatorArgs":[]}],"parent":{
+"name":"SqlError","text":"Duplicate entry 'asdfasdf' for key 'user_name'","sql":"INSERT INTO `Users` (`id`,`user_name`,`user_pass`,`user_state`,`user_img`,`user_creation`,`RoleId`) VALUES (DEFAULT,?,?,?,?,?,?);","fatal":false,"errno":1062,"sqlState":"23000","code":"ER_DUP_ENTRY","parameters":["asdfasdf","$2a$10$GN/g24gqUuzTwoxSdJ9dBuYQBCTr6QvZ7efO9bnb46rCU4TXWH6R.",true,"defaultUserImage.png","2024-08-25 19:33:08.412","2"]},"original":{
+"name":"SqlError","text":"Duplicate entry 'asdfasdf' for key 'user_name'","sql":"INSERT INTO `Users` (`id`,`user_name`,`user_pass`,`user_state`,`user_img`,`user_creation`,`RoleId`) VALUES (DEFAULT,?,?,?,?,?,?);","fatal":false,"errno":1062,"sqlState":"23000","code":"ER_DUP_ENTRY","parameters":["asdfasdf","$2a$10$GN/g24gqUuzTwoxSdJ9dBuYQBCTr6QvZ7efO9bnb46rCU4TXWH6R.",true,"defaultUserImage.png","2024-08-25 19:33:08.412","2"]},"fields":{
+"user_name":"asdfasdf"},"sql":"INSERT INTO `Users` (`id`,`user_name`,`user_pass`,`user_state`,`user_img`,`user_creation`,`RoleId`) VALUES (DEFAULT,?,?,?,?,?,?);"} 
+ DBError: Error al guardar el usuario
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/user_controller.js:107:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async saveUser (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/user_controller.js:99:5)
+ Mon Aug 26 2024 10:32:27 GMT-0600 (Central Standard Time) 
+ SequelizeDatabaseError: (conn=2897, no: 1064, SQLState: 42000) You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INNER JOIN Users ON UserId = Users.id 
+        INNER JOIN Roles ON RoleId = R...' at line 2
+sql: SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users WHERE user_name LIKE '%%'
+        INNER JOIN Users ON UserId = Users.id 
+        INNER JOIN Roles ON RoleId = Roles.id AND BranchId = 1 LIMIT 10 OFFSET 0 - parameters:[] 
+ SequelizeDatabaseError 
+ undefined 
+ Error
+    at Query.run (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:34:23)
+ Mon Aug 26 2024 10:33:24 GMT-0600 (Central Standard Time) 
+ SequelizeDatabaseError: (conn=2901, no: 1064, SQLState: 42000) You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INNER JOIN Users ON UserId = Users.id 
+        INNER JOIN Roles ON RoleId = R...' at line 2
+sql: SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users WHERE user_name LIKE '%%'
+        INNER JOIN Users ON UserId = Users.id 
+        INNER JOIN Roles ON RoleId = Roles.id AND BranchId = 1 LIMIT 10 OFFSET 0 - parameters:[] 
+ SequelizeDatabaseError 
+ undefined 
+ Error
+    at Query.run (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:34:23)
+ Mon Aug 26 2024 10:33:33 GMT-0600 (Central Standard Time) 
+ SequelizeDatabaseError: (conn=2905, no: 1064, SQLState: 42000) You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INNER JOIN Users ON UserId = Users.id 
+        INNER JOIN Roles ON RoleId = R...' at line 2
+sql: SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users WHERE user_name LIKE '%%'
+        INNER JOIN Users ON UserId = Users.id 
+        INNER JOIN Roles ON RoleId = Roles.id AND BranchId = 1 LIMIT 10 OFFSET 0 - parameters:[] 
+ SequelizeDatabaseError 
+ undefined 
+ Error
+    at Query.run (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:34:23)
+ Mon Aug 26 2024 10:47:46 GMT-0600 (Central Standard Time) 
+ SequelizeDatabaseError: (conn=3031, no: 1064, SQLState: 42000) You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INNER JOIN Users ON UserId = Users.id 
+        INNER JOIN Roles ON RoleId = R...' at line 2
+sql: SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users WHERE user_name LIKE '%%'
+        INNER JOIN Users ON UserId = Users.id 
+        INNER JOIN Roles ON RoleId = Roles.id AND BranchId = 1 
+        WHERE user_name LIKE '%%'LIMIT 10 OFFSET 0 - parameters:[] 
+ SequelizeDatabaseError 
+ undefined 
+ Error
+    at Query.run (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:35:23)
+ Mon Aug 26 2024 10:48:47 GMT-0600 (Central Standard Time) 
+ SequelizeDatabaseError: (conn=3035, no: 1064, SQLState: 42000) You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INNER JOIN Users ON UserId = Users.id 
+        INNER JOIN Roles ON RoleId = R...' at line 2
+sql: SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users WHERE user_name LIKE '%%'
+        INNER JOIN Users ON UserId = Users.id 
+        INNER JOIN Roles ON RoleId = Roles.id AND BranchId = 1 
+        WHERE user_name LIKE '%%'LIMIT 10 OFFSET 0 - parameters:[] 
+ SequelizeDatabaseError 
+ undefined 
+ Error
+    at Query.run (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:40:23)
+ Mon Aug 26 2024 10:51:14 GMT-0600 (Central Standard Time) 
+ SequelizeDatabaseError: (conn=3042, no: 1064, SQLState: 42000) You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INNER JOIN Users ON UserId = Users.id 
+            INNER JOIN Roles ON RoleId...' at line 2
+sql: SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users WHERE user_name LIKE '%%'
+            INNER JOIN Users ON UserId = Users.id 
+            INNER JOIN Roles ON RoleId = Roles.id AND BranchId = 1 
+            WHERE user_name LIKE '%%'LIMIT 10 OFFSET 0 - parameters:[] 
+ SequelizeDatabaseError 
+ undefined 
+ Error
+    at Query.run (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:46:23)
+ Mon Aug 26 2024 10:57:56 GMT-0600 (Central Standard Time) 
+ SequelizeDatabaseError: (conn=3048, no: 1064, SQLState: 42000) You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INNER JOIN Users ON UserId = Users.id 
+            INNER JOIN Roles ON RoleId...' at line 2
+sql: SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Users WHERE user_name LIKE '%%'
+            INNER JOIN Users ON UserId = Users.id 
+            INNER JOIN Roles ON RoleId = Roles.id AND BranchId = 2 LIMIT 10 OFFSET 0 - parameters:[] 
+ SequelizeDatabaseError 
+ undefined 
+ Error
+    at Query.run (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async usersGetByBranch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/users_by_branch_controller.js:46:23)
+ Wed Aug 28 2024 11:24:03 GMT-0600 (Central Standard Time) 
+ TokenExpiredError: jwt expired 
+ TokenExpiredError 
+ undefined 
+ TokenExpiredError: jwt expired
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/jsonwebtoken/verify.js:190:21
+    at getSecret (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/jsonwebtoken/verify.js:97:14)
+    at module.exports [as verify] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/jsonwebtoken/verify.js:101:10)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:16:37)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+ Wed Aug 28 2024 12:05:22 GMT-0600 (Central Standard Time) 
+ ReferenceError: roomPrice is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: roomPrice is not defined
+    at deleteRoomPrice (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/roomPrice_controller.js:45:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Thu Aug 29 2024 09:57:23 GMT-0600 (Central Standard Time) 
+ SequelizeUniqueConstraintError: Validation error 
+ SequelizeUniqueConstraintError 
+ undefined 
+ Error
+    at Query.run (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.insert (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-interface.js:308:21)
+    at async model.save (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:2490:35)
+    at async RoomPrice.create (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:1362:12)
+    at async saveRoomPrice (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/roomPrice_controller.js:26:5)
+ Thu Aug 29 2024 09:57:52 GMT-0600 (Central Standard Time) 
+ TokenExpiredError: jwt expired 
+ TokenExpiredError 
+ undefined 
+ TokenExpiredError: jwt expired
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/jsonwebtoken/verify.js:190:21
+    at getSecret (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/jsonwebtoken/verify.js:97:14)
+    at module.exports [as verify] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/jsonwebtoken/verify.js:101:10)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:16:37)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+ Fri Aug 30 2024 18:54:14 GMT-0600 (Central Standard Time) 
+ Error: {"errors":[{"msg":"The cost by person is required.","param":"cost_by_person","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"msg":"The cost by person is required.","param":"cost_by_person","location":"body"}]}
+    at checkFields (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at middleware (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Fri Aug 30 2024 18:55:05 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar la habitación. 
+ DBError 
+ {
+"name":"SequelizeForeignKeyConstraintError","parent":{
+"name":"SqlError","text":"Cannot add or update a child row: a foreign key constraint fails (`db_lambda`.`rooms`, CONSTRAINT `rooms_ibfk_1` FOREIGN KEY (`RoomStateId`) REFERENCES `RoomStates` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)","sql":"INSERT INTO `Rooms` (`id`,`room_number`,`room_location`,`number_of_beds`,`max_people_number`,`RoomStateId`,`BranchId`) VALUES (DEFAULT,?,?,?,?,?,?);","fatal":false,"errno":1452,"sqlState":"23000","code":"ER_NO_REFERENCED_ROW_2","parameters":[3,"Segundo nivel a la derecha",2,3,1,1]},"original":{
+"name":"SqlError","text":"Cannot add or update a child row: a foreign key constraint fails (`db_lambda`.`rooms`, CONSTRAINT `rooms_ibfk_1` FOREIGN KEY (`RoomStateId`) REFERENCES `RoomStates` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)","sql":"INSERT INTO `Rooms` (`id`,`room_number`,`room_location`,`number_of_beds`,`max_people_number`,`RoomStateId`,`BranchId`) VALUES (DEFAULT,?,?,?,?,?,?);","fatal":false,"errno":1452,"sqlState":"23000","code":"ER_NO_REFERENCED_ROW_2","parameters":[3,"Segundo nivel a la derecha",2,3,1,1]},"sql":"INSERT INTO `Rooms` (`id`,`room_number`,`room_location`,`number_of_beds`,`max_people_number`,`RoomStateId`,`BranchId`) VALUES (DEFAULT,?,?,?,?,?,?);","parameters":[3,"Segundo nivel a la derecha",2,3,1,1],"table":"RoomStates","fields":["RoomStateId"],"value":1,"index":"rooms_ibfk_1","reltype":"child"} 
+ DBError: Error al guardar la habitación.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:35:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async saveRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:27:5)
+ Fri Aug 30 2024 18:56:31 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar la habitación. 
+ DBError 
+ {
+"name":"SequelizeForeignKeyConstraintError","parent":{
+"name":"SqlError","text":"Cannot add or update a child row: a foreign key constraint fails (`db_lambda`.`room_services`, CONSTRAINT `room_services_ibfk_2` FOREIGN KEY (`ServiceId`) REFERENCES `Services` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)","sql":"INSERT INTO `Room_Services` (`RoomId`,`ServiceId`) VALUES (?,?);","fatal":false,"errno":1452,"sqlState":"23000","code":"ER_NO_REFERENCED_ROW_2","parameters":[2,1]},"original":{
+"name":"SqlError","text":"Cannot add or update a child row: a foreign key constraint fails (`db_lambda`.`room_services`, CONSTRAINT `room_services_ibfk_2` FOREIGN KEY (`ServiceId`) REFERENCES `Services` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)","sql":"INSERT INTO `Room_Services` (`RoomId`,`ServiceId`) VALUES (?,?);","fatal":false,"errno":1452,"sqlState":"23000","code":"ER_NO_REFERENCED_ROW_2","parameters":[2,1]},"sql":"INSERT INTO `Room_Services` (`RoomId`,`ServiceId`) VALUES (?,?);","parameters":[2,1],"table":"Services","fields":["ServiceId"],"value":1,"index":"room_services_ibfk_2","reltype":"child"} 
+ DBError: Error al guardar la habitación.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:35:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async saveRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:27:5)
+ Fri Aug 30 2024 18:58:08 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar la habitación. 
+ DBError 
+ {
+"name":"SequelizeUniqueConstraintError","errors":[{
+"message":"room_number must be unique","type":"unique violation","path":"room_number","value":"3","origin":"DB","instance":{
+"id":null,"room_number":3,"room_location":"Segundo nivel a la derecha","number_of_beds":2,"max_people_number":3,"RoomStateId":1,"BranchId":1},"validatorKey":"not_unique","validatorName":null,"validatorArgs":[]}],"parent":{
+"name":"SqlError","text":"Duplicate entry '3' for key 'room_number'","sql":"INSERT INTO `Rooms` (`id`,`room_number`,`room_location`,`number_of_beds`,`max_people_number`,`RoomStateId`,`BranchId`) VALUES (DEFAULT,?,?,?,?,?,?);","fatal":false,"errno":1062,"sqlState":"23000","code":"ER_DUP_ENTRY","parameters":[3,"Segundo nivel a la derecha",2,3,1,1]},"original":{
+"name":"SqlError","text":"Duplicate entry '3' for key 'room_number'","sql":"INSERT INTO `Rooms` (`id`,`room_number`,`room_location`,`number_of_beds`,`max_people_number`,`RoomStateId`,`BranchId`) VALUES (DEFAULT,?,?,?,?,?,?);","fatal":false,"errno":1062,"sqlState":"23000","code":"ER_DUP_ENTRY","parameters":[3,"Segundo nivel a la derecha",2,3,1,1]},"fields":{
+"room_number":"3"},"sql":"INSERT INTO `Rooms` (`id`,`room_number`,`room_location`,`number_of_beds`,`max_people_number`,`RoomStateId`,`BranchId`) VALUES (DEFAULT,?,?,?,?,?,?);"} 
+ DBError: Error al guardar la habitación.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:35:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async saveRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:27:5)
+ Fri Aug 30 2024 18:58:30 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar la habitación. 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"Column 'ServiceId' cannot be null","sql":"INSERT INTO `Room_Services` (`RoomId`,`ServiceId`) VALUES (?,?);","fatal":false,"errno":1048,"sqlState":"23000","code":"ER_BAD_NULL_ERROR","parameters":[4,null]},"original":{
+"name":"SqlError","text":"Column 'ServiceId' cannot be null","sql":"INSERT INTO `Room_Services` (`RoomId`,`ServiceId`) VALUES (?,?);","fatal":false,"errno":1048,"sqlState":"23000","code":"ER_BAD_NULL_ERROR","parameters":[4,null]},"sql":"INSERT INTO `Room_Services` (`RoomId`,`ServiceId`) VALUES (?,?);","parameters":[4,null]} 
+ DBError: Error al guardar la habitación.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:35:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async saveRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:27:5)
+ Fri Aug 30 2024 19:01:13 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar la habitación. 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"Column 'ServiceId' cannot be null","sql":"INSERT INTO `Room_Services` (`RoomId`,`ServiceId`) VALUES (?,?);","fatal":false,"errno":1048,"sqlState":"23000","code":"ER_BAD_NULL_ERROR","parameters":[5,null]},"original":{
+"name":"SqlError","text":"Column 'ServiceId' cannot be null","sql":"INSERT INTO `Room_Services` (`RoomId`,`ServiceId`) VALUES (?,?);","fatal":false,"errno":1048,"sqlState":"23000","code":"ER_BAD_NULL_ERROR","parameters":[5,null]},"sql":"INSERT INTO `Room_Services` (`RoomId`,`ServiceId`) VALUES (?,?);","parameters":[5,null]} 
+ DBError: Error al guardar la habitación.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:35:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async saveRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:27:5)
+ Fri Aug 30 2024 19:02:17 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar la habitación. 
+ DBError 
+ {
+"name":"SequelizeUniqueConstraintError","errors":[{
+"message":"room_number must be unique","type":"unique violation","path":"room_number","value":"5","origin":"DB","instance":{
+"id":null,"room_number":5,"room_location":"Segundo nivel a la derecha","number_of_beds":2,"max_people_number":3,"RoomStateId":1,"BranchId":1},"validatorKey":"not_unique","validatorName":null,"validatorArgs":[]}],"parent":{
+"name":"SqlError","text":"Duplicate entry '5' for key 'room_number'","sql":"INSERT INTO `Rooms` (`id`,`room_number`,`room_location`,`number_of_beds`,`max_people_number`,`RoomStateId`,`BranchId`) VALUES (DEFAULT,?,?,?,?,?,?);","fatal":false,"errno":1062,"sqlState":"23000","code":"ER_DUP_ENTRY","parameters":[5,"Segundo nivel a la derecha",2,3,1,1]},"original":{
+"name":"SqlError","text":"Duplicate entry '5' for key 'room_number'","sql":"INSERT INTO `Rooms` (`id`,`room_number`,`room_location`,`number_of_beds`,`max_people_number`,`RoomStateId`,`BranchId`) VALUES (DEFAULT,?,?,?,?,?,?);","fatal":false,"errno":1062,"sqlState":"23000","code":"ER_DUP_ENTRY","parameters":[5,"Segundo nivel a la derecha",2,3,1,1]},"fields":{
+"room_number":"5"},"sql":"INSERT INTO `Rooms` (`id`,`room_number`,`room_location`,`number_of_beds`,`max_people_number`,`RoomStateId`,`BranchId`) VALUES (DEFAULT,?,?,?,?,?,?);"} 
+ DBError: Error al guardar la habitación.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:37:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async saveRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:29:5)
+ Fri Aug 30 2024 19:17:05 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar el estado 
+ DBError 
+ {
+"name":"SequelizeUniqueConstraintError","errors":[{
+"message":"roomState_name must be unique","type":"unique violation","path":"roomState_name","value":"Mantenimiento","origin":"DB","instance":{
+"id":null,"roomState_name":"Mantenimiento","roomState":true},"validatorKey":"not_unique","validatorName":null,"validatorArgs":[]}],"parent":{
+"name":"SqlError","text":"Duplicate entry 'Mantenimiento' for key 'roomState_name'","sql":"INSERT INTO `RoomStates` (`id`,`roomState_name`,`roomState`) VALUES (DEFAULT,?,?);","fatal":false,"errno":1062,"sqlState":"23000","code":"ER_DUP_ENTRY","parameters":["Mantenimiento",true]},"original":{
+"name":"SqlError","text":"Duplicate entry 'Mantenimiento' for key 'roomState_name'","sql":"INSERT INTO `RoomStates` (`id`,`roomState_name`,`roomState`) VALUES (DEFAULT,?,?);","fatal":false,"errno":1062,"sqlState":"23000","code":"ER_DUP_ENTRY","parameters":["Mantenimiento",true]},"fields":{
+"roomState_name":"Mantenimiento"},"sql":"INSERT INTO `RoomStates` (`id`,`roomState_name`,`roomState`) VALUES (DEFAULT,?,?);"} 
+ DBError: Error al guardar el estado
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/roomState_controller.js:40:15
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async saveRoomState (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/roomState_controller.js:38:5)
+ Fri Aug 30 2024 19:25:48 GMT-0600 (Central Standard Time) 
+ SequelizeUniqueConstraintError: Validation error 
+ SequelizeUniqueConstraintError 
+ undefined 
+ Error
+    at Query.run (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.insert (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-interface.js:308:21)
+    at async model.save (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:2490:35)
+    at async Room.create (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:1362:12)
+    at async saveRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:27:18)
+ Fri Aug 30 2024 19:42:43 GMT-0600 (Central Standard Time) 
+ Error: No se recibió información de precios. 
+ Error 
+ undefined 
+ Error: No se recibió información de precios.
+    at saveRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:26:36)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkFields (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at middleware (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Fri Aug 30 2024 19:42:51 GMT-0600 (Central Standard Time) 
+ Error: No se recibió información de precios. 
+ Error 
+ undefined 
+ Error: No se recibió información de precios.
+    at saveRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:26:36)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkFields (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at middleware (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Fri Aug 30 2024 19:42:59 GMT-0600 (Central Standard Time) 
+ Error: No se recibió información de precios. 
+ Error 
+ undefined 
+ Error: No se recibió información de precios.
+    at saveRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:26:36)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkFields (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at middleware (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Fri Aug 30 2024 19:43:30 GMT-0600 (Central Standard Time) 
+ Error: No se recibió información de precios. 
+ Error 
+ undefined 
+ Error: No se recibió información de precios.
+    at saveRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:26:36)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkFields (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at middleware (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Fri Aug 30 2024 19:43:49 GMT-0600 (Central Standard Time) 
+ Error: No se recibió información de precios. 
+ Error 
+ undefined 
+ Error: No se recibió información de precios.
+    at saveRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:27:40)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkFields (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at middleware (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Fri Aug 30 2024 19:49:00 GMT-0600 (Central Standard Time) 
+ Error: No se recibió información de precios. 
+ Error 
+ undefined 
+ Error: No se recibió información de precios.
+    at saveRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:27:36)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkFields (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at middleware (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Fri Aug 30 2024 19:49:23 GMT-0600 (Central Standard Time) 
+ SequelizeUniqueConstraintError: Validation error 
+ SequelizeUniqueConstraintError 
+ undefined 
+ Error
+    at Query.run (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.insert (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-interface.js:308:21)
+    at async model.save (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:2490:35)
+    at async Room.create (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:1362:12)
+    at async saveRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:30:5)
+ Fri Aug 30 2024 19:50:29 GMT-0600 (Central Standard Time) 
+ SequelizeUniqueConstraintError: Validation error 
+ SequelizeUniqueConstraintError 
+ undefined 
+ Error
+    at Query.run (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.insert (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-interface.js:308:21)
+    at async model.save (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:2490:35)
+    at async Room.create (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:1362:12)
+    at async saveRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:30:5)
+ Fri Aug 30 2024 19:58:44 GMT-0600 (Central Standard Time) 
+ SequelizeUniqueConstraintError: Validation error 
+ SequelizeUniqueConstraintError 
+ undefined 
+ Error
+    at Query.run (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.insert (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-interface.js:308:21)
+    at async model.save (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:2490:35)
+    at async Room.create (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:1362:12)
+    at async saveRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:30:5)
+ Sat Aug 31 2024 14:47:22 GMT-0600 (Central Standard Time) 
+ TokenExpiredError: jwt expired 
+ TokenExpiredError 
+ undefined 
+ TokenExpiredError: jwt expired
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/jsonwebtoken/verify.js:190:21
+    at getSecret (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/jsonwebtoken/verify.js:97:14)
+    at module.exports [as verify] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/jsonwebtoken/verify.js:101:10)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:16:37)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at param (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:365:14)

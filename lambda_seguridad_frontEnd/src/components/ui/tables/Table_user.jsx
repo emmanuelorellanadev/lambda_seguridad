@@ -4,14 +4,14 @@ import '../../../css/ui/table.css'
 import { Input } from '../Input';
 import { P_Head } from '../P_Head';
 import { useGetBranch } from '../../branches/hooks/useGetBranch';
-import { useGetUserByBranch } from '../../users/hooks/useGetUsersByBranch';
+import { useGetUser } from '../../users/hooks/useGetUser';
 import Pagination from '../Pagination';
 
 export const Table_user = ({ columns, rows, editData, deleteData, ...props}) => {
 
   const [users, setUsers] = useState([]);
-  // const [branches, setBranches] = useState([]);
-  // const [branch, setBranch] = useState(0);
+  const [branches, setBranches] = useState([]);
+  const [branch, setBranch] = useState(0);
   const [ search, setSearch ] = useState('');
   const [ rowsByPage, setRowsByPage ] = useState( 10 );
   const [ page, setPage ] = useState( 1 );
@@ -27,15 +27,15 @@ export const Table_user = ({ columns, rows, editData, deleteData, ...props}) => 
     columns.push("Eliminar")
 }
 
-//CHECK THIS!!!
-//THE USER SEARCH BY BRANCH IS NOT WORKING WITH THE PAGINATION MODULE
-// //MERGE THE METOD CONFIGURATION WITH SQL QUERY, USER_BY_BRANCH_CONTROLLER.JS
-
-// const selectBranch = (branchSelected) => {
-//   setBranch(branchSelected);
-//   const urlUsersByBranch = `http://localhost:8080/usersByBranch/?id=${branchSelected}&limit=${rowsByPage}&page=${page}`;
-//   useGetUserByBranch(urlUsersByBranch, {setUsers, setNextPage, setPrevPage}); 
-// }
+const selectBranch = (branchSelected) => {
+  setBranch(branchSelected);
+  if ( branchSelected != 0 ){
+    const urlUsersByBranch = `http://localhost:8080/usersByBranch/?id=${branchSelected}&q=${search}&limit=${rowsByPage}&page=${page}`;
+    useGetUser(urlUsersByBranch, {setUsers, setNextPage, setPrevPage});
+  } else {
+    setOnLoad(false)
+  } 
+}
 
   const searchUser = (query) => {
     setSearch(query);
@@ -43,25 +43,29 @@ export const Table_user = ({ columns, rows, editData, deleteData, ...props}) => 
     setOnLoad(false);
   }
 
-  const getUsersByBranch = async() => {
-    const urlUsersByBranch = `http://localhost:8080/usersByBranch/?q=${search}&limit=${rowsByPage}&page=${page}`;
-    await useGetUserByBranch(urlUsersByBranch, { setUsers, setNextPage, setPrevPage});
+  const getUsers = async() => {
+    const urlUser = `http://localhost:8080/user/?q=${search}&limit=${rowsByPage}&page=${page}`;
+    await useGetUser(urlUser, { setUsers, setNextPage, setPrevPage});
   }
 
   useEffect( () => {
     setOnLoad(true);
-    // const urlBranch = 'http://localhost:8080/branch/';
-    // useGetBranch(urlBranch, {setBranches, setNextPage, setPrevPage});
-    getUsersByBranch();
+    const urlBranch = 'http://localhost:8080/branch/';
+    useGetBranch(urlBranch, {setBranches, setNextPage, setPrevPage});
+    if(branch != 0) {
+      selectBranch(branch)
+    }else{
+      getUsers()
+    }
   }, [onLoad, search]);
 
   return (
     <>
       <P_Head className="p_h1" text={'Listado de Usuarios'}/>
-      {/* <div className='' >
+      <div className='' >
           <div>
               <label htmlFor="branch">Sucursales: </label>
-              <select className='form-control text-center' name="branch" id="branch" value={branch} onChange={(e) => {selectBranch(e.target.value)}}>
+              <select className='form-control text-center' name="branch" id="branch" value={branch} onChange={(e) => {setSearch(''); selectBranch(e.target.value)}}>
                   <option value={0} >Todas</option>
                   {
                       branches.data?.map( b => {
@@ -70,7 +74,7 @@ export const Table_user = ({ columns, rows, editData, deleteData, ...props}) => 
                   }
               </select>
           </div>
-      </div> */}
+      </div>
 
     <Input lambdaClassInput={"data_search"} type="search" value={search} onChange={ e => searchUser(e.target.value)} placeholder="Buscar" />
       <table className='table table-bordered table-hover table-striped' {...props}>
@@ -123,7 +127,9 @@ export const Table_user = ({ columns, rows, editData, deleteData, ...props}) => 
           }
         </tbody>
     </table>
+    {/* Pagination does not work when you go back and forth several times. The problem does not occur when a branch is selected. */}
     <Pagination page={page} setPage={setPage} rowsByPage={rowsByPage} setRowsByPage={setRowsByPage} prevPage={prevPage} nextPage={nextPage} total={users.total} setOnLoad={setOnLoad}/>
+    <label htmlFor="">prevPage: {prevPage} nextPage: {nextPage}</label>
   </>
   )
 }

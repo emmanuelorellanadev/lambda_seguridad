@@ -4,6 +4,6 @@ const { roomServiceController } = require('../controllers');
 
 const router = Router();
 
-router.get('/', roomServiceController.getRoomService);
+router.get('/', roomServiceController.getRoomServices);
 
 module.exports = router; 

@@ -4,8 +4,6 @@ import { parseJwt } from '../helpers/parseJwt';
 import '../../css/user/userProfile.css'
 import { P_Head } from '../ui/P_Head';
 import { useUserProfile } from './hooks/useUserProfile';
-import { useGetRole } from '../roles/hooks/useGetRole';
-import { useGetBranchUser } from '../hooks/useGetBranchUser';
 import { useGetCompany } from '../companies/hooks/useGetCompany';
 import { Toaster } from 'react-hot-toast';
 import { useUpdatePass } from './hooks/useUpdatePass';
@@ -16,8 +14,8 @@ export const UserProfile = () => {
     const [userName, setUserName] = useState("");
     const [userCreation, setUserCreation] = useState("");
     const [userImg, setUserImg] = useState("");
-    const [roles, setRoles] = useState("");
-    const [branchData, setBranchData] = useState([])
+    const [role, setRole] = useState("");
+    const [branch, setBranch] = useState([])
     const [companies, setCompanies] = useState([])
     const [currentPass, setCurrentPass] = useState('');
     const [pass, setPass] = useState('');
@@ -41,12 +39,8 @@ export const UserProfile = () => {
     
     useEffect(() => {
         const urlUser = `http://localhost:8080/user/${sessionData.uid}`;
-        const urlRole = `http://localhost:8080/role/${sessionData.role}`;
-        const urlBranchUser = `http://localhost:8080/branchUser/${sessionData.uid}`;
         const urlCompany = `http://localhost:8080/company/1`
-        useUserProfile(urlUser, { setUserName, setUserCreation, setUserImg });
-        useGetRole(urlRole, { setRoles, setPrevPage, setNextPage });
-        useGetBranchUser(urlBranchUser, {setBranchData});
+        useUserProfile(urlUser, { setUserName, setUserCreation, setUserImg, setRole, setBranch });
         useGetCompany(urlCompany, {setCompanies, setNextPage, setPrevPage, setOnLoad})
     }, [onLoad])
 
@@ -66,7 +60,7 @@ export const UserProfile = () => {
                     </div>
                     <div>
                         <label >Rol:</label>
-                        <input className='form-control text-center' type="text" name="role_name" id="role_name" value={roles.role_name|| ''} readOnly/>
+                        <input className='form-control text-center' type="text" name="role_name" id="role_name" value={role || ''} readOnly/>
                     </div>
                     <div>
                         <label >Empresa:</label>
@@ -74,7 +68,7 @@ export const UserProfile = () => {
                     </div>
                     <div>
                         <label >Sucursal:</label>
-                        <input className='form-control text-center' type="text" name="branch_name" id="branch_name" value={branchData.branch_name || ''} readOnly/>
+                        <input className='form-control text-center' type="text" name="branch_name" id="branch_name" value={branch || ''} readOnly/>
                     </div> 
                     <div>
                         <label >Activo desde:</label>

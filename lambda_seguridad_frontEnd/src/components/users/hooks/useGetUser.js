@@ -1,14 +1,22 @@
-import axios from'axios';
-import Swal from 'sweetalert2';
+import axios from "axios";
 
-export const useGetUser = async (urlUser, {setUsers, fillFields}) => {
-    await axios.get(urlUser, {
-        headers: { "x-token": sessionStorage.getItem('token-xL')},
-        })
-        .then( res => res.data.resData )
-        .then( userData => {
-            if (fillFields) fillFields(userData)
-            if(setUsers) setUsers(userData)
-        } )
-        .catch(error => console.log(error))
+export const useGetUser = async(url, {setUsers, setUser, setPass, setRoleId, setState,  setBranchId, setNextPage, setPrevPage}) => {
+    await axios.get(url, {
+        headers: { "x-token": sessionStorage.getItem('token-xL') }
+    })
+    .then(resp => resp.data.resData)
+    .then( async data => {
+        if(setUsers){
+            setUsers(data);
+            setNextPage(data.nextPage);
+            setPrevPage(data.prevPage);
+        }else{
+            setUser(data.user_name);
+            setPass(data.user_pass);
+            setRoleId(data.RoleId);
+            setState(data.user_state);
+            setBranchId(data.Branches[0].id)
+        }
+    })
+    .catch( error => console.log(error))
 }

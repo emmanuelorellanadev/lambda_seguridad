@@ -3,9 +3,16 @@ const catchedAsync = require('../errors_handler/catchedAsync');
 const { resSuccessful } = require("../response/resSucessful");
 const { GeneralError, DBError } = require("../errors_handler/errors");
 const Room_Service = require('../models/room_service_model');
+const Service = require('../models/service_model');
 
 const getRooms = async(req, res) => {
-    const rooms = await Room.findAll();
+
+    //WORK HERE !!!!!!!
+    //select the data of Service than is needed for the rooms query
+    //YOU CAN DOIT
+    const rooms = await Room.findAll({include: {model: Service, through: {attributes:[]}}});
+    
+    
     if ( rooms.length == 0 ) throw new GeneralError('No se encontraron habitaciones.') 
     resSuccessful(res, rooms);
 }
@@ -21,18 +28,15 @@ const getRoom = async(req, res) => {
 const saveRoom = async(req, res) => {
     const roomData = req.body;
 
-    if ( !roomData ) throw new GeneralError('No recibió información de la habitación.') 
+    if ( !roomData ) throw new GeneralError('No se recibió información de la habitación.') 
+    const prices = roomData.prices;
 
     await Room.create(roomData)
-        .then( async (roomSaved) => {
-            await Room_Service.create({
-                RoomId: roomSaved.id,
-                ServiceId: roomData.ServiceId
-            })
+        .then( async ( room ) => {
+            for (price in prices){
+                await room.addService(prices[price]);
+            }     
         })
-        .catch(error => {
-            throw new DBError(error, 'Error al guardar la habitación.');
-        });
 
     resSuccessful(res, 'Habitación guardada exitosamente.');
 }

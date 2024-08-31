@@ -18,6 +18,6 @@ const PaymentState = db_connection.define('PaymentState', {
 timestamps: false
 });
 
-// PaymentState.sync( {force: false});
+PaymentState.sync( {force: false});
 
-module.exports = PaymentState;
+module.exports = PaymentState; 

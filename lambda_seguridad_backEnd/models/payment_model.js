@@ -19,14 +19,12 @@ const Payment = db_connection.define('Payment', {
     timestamps: false
 });
 
-//check if needed by other versions
-//PaymentStateId 
-// PaymentState.hasMany(Payment, {
-//     foreignKey: {
-//         allowNull: false
-//     }
-// });
-// Payment.PaymentState = Payment.belongsTo(PaymentState);
+PaymentState.hasMany(Payment, {
+    foreignKey: {
+        allowNull: false
+    }
+});
+Payment.PaymentState = Payment.belongsTo(PaymentState);
 
 // ReservationId
 Reservation.hasMany(Payment, {

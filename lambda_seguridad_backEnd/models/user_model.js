@@ -4,7 +4,6 @@ const { DataTypes } = require('sequelize');
 
 const db_connection = require('../database/conf_database');
 const Role = require('./role_model');
-const Branch = require('./branch_model');
 
 const User = db_connection.define('User', {
     user_name: {
@@ -45,8 +44,6 @@ Role.hasMany(User, {
 
 });
 User.Role = User.belongsTo(Role);
-
-Branch.belongsToMany(User, { through: "branch_user"});
 
 User.sync({force: false} );
 
