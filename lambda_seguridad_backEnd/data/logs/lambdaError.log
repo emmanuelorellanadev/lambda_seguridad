@@ -4987,3 +4987,163 @@ sql: SELECT Users.id, user_name, user_state, role_name, user_img from Branch_Use
     at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
     at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
     at param (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:365:14)
+ Tue Sep 03 2024 09:07:40 GMT-0600 (Central Standard Time) 
+ TokenExpiredError: jwt expired 
+ TokenExpiredError 
+ undefined 
+ TokenExpiredError: jwt expired
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/jsonwebtoken/verify.js:190:21
+    at getSecret (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/jsonwebtoken/verify.js:97:14)
+    at module.exports [as verify] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/jsonwebtoken/verify.js:101:10)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:16:37)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+ Tue Sep 03 2024 09:09:37 GMT-0600 (Central Standard Time) 
+ TokenExpiredError: jwt expired 
+ TokenExpiredError 
+ undefined 
+ TokenExpiredError: jwt expired
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/jsonwebtoken/verify.js:190:21
+    at getSecret (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/jsonwebtoken/verify.js:97:14)
+    at module.exports [as verify] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/jsonwebtoken/verify.js:101:10)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:16:37)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+ Tue Sep 03 2024 11:32:59 GMT-0600 (Central Standard Time) 
+ Error: {"errors":[{"msg":"The service name is required","param":"service_name","location":"body"},{"msg":"The service status is required","param":"service_status","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"msg":"The service name is required","param":"service_name","location":"body"},{"msg":"The service status is required","param":"service_status","location":"body"}]}
+    at checkFields (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at middleware (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Tue Sep 03 2024 11:47:29 GMT-0600 (Central Standard Time) 
+ Error: {"errors":[{"msg":"The service name is required","param":"service_name","location":"body"},{"msg":"The service status is required","param":"service_status","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"msg":"The service name is required","param":"service_name","location":"body"},{"msg":"The service status is required","param":"service_status","location":"body"}]}
+    at checkFields (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at middleware (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Tue Sep 03 2024 11:48:40 GMT-0600 (Central Standard Time) 
+ Error: {"errors":[{"msg":"The service name is required","param":"service_name","location":"body"},{"msg":"The service status is required","param":"service_status","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"msg":"The service name is required","param":"service_name","location":"body"},{"msg":"The service status is required","param":"service_status","location":"body"}]}
+    at checkFields (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at middleware (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Tue Sep 03 2024 11:52:29 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar el servicio 
+ DBError 
+ {
+"name":"SequelizeUniqueConstraintError","errors":[{
+"message":"service_name must be unique","type":"unique violation","path":"service_name","value":"tr","origin":"DB","instance":{
+"id":null,"service_name":"tr","service_state":true},"validatorKey":"not_unique","validatorName":null,"validatorArgs":[]}],"parent":{
+"name":"SqlError","text":"Duplicate entry 'tr' for key 'service_name'","sql":"INSERT INTO `Services` (`id`,`service_name`,`service_state`) VALUES (DEFAULT,?,?);","fatal":false,"errno":1062,"sqlState":"23000","code":"ER_DUP_ENTRY","parameters":["tr",true]},"original":{
+"name":"SqlError","text":"Duplicate entry 'tr' for key 'service_name'","sql":"INSERT INTO `Services` (`id`,`service_name`,`service_state`) VALUES (DEFAULT,?,?);","fatal":false,"errno":1062,"sqlState":"23000","code":"ER_DUP_ENTRY","parameters":["tr",true]},"fields":{
+"service_name":"tr"},"sql":"INSERT INTO `Services` (`id`,`service_name`,`service_state`) VALUES (DEFAULT,?,?);"} 
+ DBError: Error al guardar el servicio
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/service_controller.js:49:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async saveService (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/service_controller.js:47:5)
+ Tue Sep 03 2024 11:58:38 GMT-0600 (Central Standard Time) 
+ Error: Servicio no encontrado 
+ Error 
+ undefined 
+ Error: Servicio no encontrado
+    at deleteService (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/service_controller.js:84:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Tue Sep 03 2024 12:00:24 GMT-0600 (Central Standard Time) 
+ Error: Servicio no encontrado 
+ Error 
+ undefined 
+ Error: Servicio no encontrado
+    at deleteService (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/service_controller.js:84:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Tue Sep 03 2024 12:17:44 GMT-0600 (Central Standard Time) 
+ Error: No se encontró el servicio. 
+ Error 
+ undefined 
+ Error: No se encontró el servicio.
+    at getService (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/service_controller.js:34:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Tue Sep 03 2024 12:17:44 GMT-0600 (Central Standard Time) 
+ Error: No se encontró el servicio. 
+ Error 
+ undefined 
+ Error: No se encontró el servicio.
+    at getService (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/service_controller.js:34:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Tue Sep 03 2024 12:21:19 GMT-0600 (Central Standard Time) 
+ Error: No se encontró el servicio. 
+ Error 
+ undefined 
+ Error: No se encontró el servicio.
+    at getService (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/service_controller.js:34:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Tue Sep 03 2024 12:21:19 GMT-0600 (Central Standard Time) 
+ Error: No se encontró el servicio. 
+ Error 
+ undefined 
+ Error: No se encontró el servicio.
+    at getService (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/service_controller.js:34:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Tue Sep 03 2024 12:22:08 GMT-0600 (Central Standard Time) 
+ Error: No se encontró el servicio. 
+ Error 
+ undefined 
+ Error: No se encontró el servicio.
+    at getService (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/service_controller.js:34:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Tue Sep 03 2024 12:22:08 GMT-0600 (Central Standard Time) 
+ Error: No se encontró el servicio. 
+ Error 
+ undefined 
+ Error: No se encontró el servicio.
+    at getService (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/service_controller.js:34:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Tue Sep 03 2024 12:41:54 GMT-0600 (Central Standard Time) 
+ Error: {"errors":[{"msg":"The service status is required","param":"service_status","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"msg":"The service status is required","param":"service_status","location":"body"}]}
+    at checkFields (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at middleware (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Tue Sep 03 2024 12:44:28 GMT-0600 (Central Standard Time) 
+ Error: Servicio no encontrado 
+ Error 
+ undefined 
+ Error: Servicio no encontrado
+    at updateService (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/service_controller.js:67:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Thu Sep 05 2024 08:43:28 GMT-0600 (Central Standard Time) 
+ SequelizeDatabaseError: (conn=4728, no: 1366, SQLState: 22007) Incorrect integer value: 'we' for column `db_lambda`.`roomprices`.`room_price` at row 1
+sql: INSERT INTO `RoomPrices` (`id`,`room_price`,`room_price_state`) VALUES (DEFAULT,?,?); - parameters:['we',true] 
+ SequelizeDatabaseError 
+ undefined 
+ Error
+    at Query.run (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.insert (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-interface.js:308:21)
+    at async model.save (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:2490:35)
+    at async RoomPrice.create (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:1362:12)
+    at async saveRoomPrice (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/roomPrice_controller.js:40:5)

@@ -1,6 +1,7 @@
 import { useState, useEffect} from 'react';
 import { Toaster } from 'react-hot-toast';
 
+import '../../css/roomState/roomState.css';
 import { P_Head } from '../ui/P_Head';
 import { Label } from '../ui/Label';
 import { Input } from '../ui/Input';
@@ -34,10 +35,10 @@ const CreateListRoomState = ({ navUpdateRoomState}) => {
     return(
         <>
             {/* Create section */}
-            <div className='role_container'>
+            <div className='roomState_container'>
                 <P_Head text={'Administración de estado de Habitaciones'} className={'p_h1'}/>
                 <P_Head text={'Crear Estado de Habitación'} className={'p_h2'}/>
-            <form className={'role_form'} onSubmit={e => saveRoomState(e)}>
+            <form className={'roomState_form'} onSubmit={e => saveRoomState(e)}>
                 <div>
                     <Label lambdaClassLabel="" text="Estado:"/>
                     <Input lambdaClassInput="" type="text"  value={roomStateName} onChange={(e) => setRoomStateName( e.target.value )} placeholder='Estado de habitación' required autoFocus/>
@@ -47,13 +48,13 @@ const CreateListRoomState = ({ navUpdateRoomState}) => {
                     <Input lambdaClassInput="" type="checkbox" value={roomStateState} onChange={ (e) => setRoomStateState(!roomStateState) } checked={roomStateState} />
                 </div>
                 <div></div>
-                <div className='sendRole_button'>
+                <div className='sendRoomState_button'>
                     <button className='btn btn-primary' >Guardar</button>
                 </div>
             </form>
             {/* Table section */}
             <P_Head text={'Lista de Estados de Habitación'} className={'p_h2'}/>
-            <div className='table-responsive roleTable_container'>
+            <div className='table-responsive roomStateTable_container'>
                 <Table_roomState columns={["Id", "Nombre", "Estado"]} editData={editRoomState} deleteData={deleteRoomState} setOnLoad={setOnLoad} onLoad={onLoad}/>
             </div>
         </div>

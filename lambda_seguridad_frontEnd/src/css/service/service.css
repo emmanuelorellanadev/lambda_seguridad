@@ -1,0 +1,73 @@
+@media (max-width: 576px){
+    .service_container{
+        width: 95%;
+        margin: auto;
+        display: flex;
+        flex-flow: column wrap;
+    }
+
+    .service_form{
+        display: flex;
+        flex-flow: column wrap;
+        width: 100%;
+    }
+
+    .service_form div{
+        margin: .5rem auto;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .serviceTable_container{
+        width: 100%;
+        border-radius: 7px;
+    }
+
+    .sendService_button button{
+        margin: auto;
+    }
+
+}
+
+@media (min-width: 577px){
+    .service_container{
+        width: 95%;
+        margin: 0 auto;
+        display: flex;
+        flex-flow: column wrap;
+    }
+
+    .service_form{
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+    }
+
+    .service_form div{
+        margin: .5rem .5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-width: 40%;
+    }
+
+    .serviceTable_container{
+        width: 100%;
+        border-radius: 7px;
+    }
+
+    .sendService_button{
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+
+    .sendService_button button{
+        margin: auto;
+    }
+
+}

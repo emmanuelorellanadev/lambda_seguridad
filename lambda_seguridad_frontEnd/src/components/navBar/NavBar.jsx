@@ -19,6 +19,8 @@ import { NavBarAdminSys } from './NavBarAdminSys';
 import { UserProfile } from '../users/UserProfile';
 import SubMenuContext from '../../context/SubMenuContext.jsx';
 import { FrameContext } from '../../context/FrameContext.jsx';
+import SubMenuService from '../services/SubMenuService.jsx';
+import SubMenuPrice from '../prices/SubMenuPrice.jsx';
 
 export const NavBar = () => {
     
@@ -30,15 +32,17 @@ export const NavBar = () => {
         } = useContext(SubMenuContext);
 
     const {
-        userFrame, setUserFrame,
-        personTypeFrame, setPersonTypeFrame,
-        personFrame, setPersonFrame,
-        profileFrame, setProfileFrame,
-        companyFrame, setCompanyFrame,
-        branchFrame, setBranchFrame,
-        branchTypeFrame, setBranchTypeFrame,
-        roleFrame, setRoleFrame,
-        roomStateFrame, setRoomStateFrame, showMenu } = useContext(FrameContext)
+        userFrame,
+        personTypeFrame,
+        personFrame,
+        profileFrame,
+        companyFrame,
+        branchFrame,
+        branchTypeFrame,
+        roleFrame,
+        roomStateFrame,
+        serviceFrame, 
+        priceFrame, showMenu } = useContext(FrameContext)
 
     const [role,            setRole]            = useState(0);
     
@@ -116,6 +120,8 @@ export const NavBar = () => {
         { branchTypeFrame   ===     1 && <SubMenuBranchType />}
         { roleFrame         ===     1 && <SubMenuRole />}
         { roomStateFrame    ===     1 && <SubMenuRoomState />}
+        { serviceFrame      ===     1 && <SubMenuService />}
+        { priceFrame        ===     1 && <SubMenuPrice />}
     </>
   )
 }

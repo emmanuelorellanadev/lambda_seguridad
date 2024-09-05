@@ -22,7 +22,7 @@ router.post('/',
     [checkJWT,
     requiredRole('ROLE_ADMINSYS', 'ROLE_ADMIN'),
     check('service_name', 'The service name is required').not().isEmpty(),
-    check('service_status', 'The service status is required').not().isEmpty(),
+    check('service_state', 'The service state is required').not().isEmpty(),
     checkFields],
 serviceController.saveService);
 
@@ -30,7 +30,7 @@ router.put('/:id',
     [checkJWT,
     requiredRole('ROLE_ADMINSYS', 'ROLE_ADMIN'),
     check('service_name', 'The service name is required').not().isEmpty(),
-    check('service_status', 'The service status is required').not().isEmpty(),
+    check('service_state', 'The service state is required').not().isEmpty(),
     checkFields],
 serviceController.updateService);
 

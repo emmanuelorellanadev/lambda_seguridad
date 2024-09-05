@@ -13,7 +13,6 @@ const CreateListRoles = (props) => {
 
   const [ branchTypeName, setBranchTypeName ] = useState('');
   const [ branchTypeState, setBranchTypeState ] = useState(true);
-  const [ branchTypes, setBranchTypes ] = useState([]);
   const [ onLoad, setOnLoad ] = useState(true);
 
   //Create BranchType

@@ -18,7 +18,7 @@ export const NavBarAdminSys = (props) => {
         showProfileFrame, showUserFrame, showCompanyFrame,
         showBranchFrame, showBranchTypeFrame, showPersonTypeFrame,
         showPersonFrame, showRoleFrame, showRoomStateFrame, 
-        closeSubMenus} = useContext(FrameContext)
+        showServiceFrame, showPriceFrame, closeSubMenus} = useContext(FrameContext)
   return (
     <>
         <ul id='menu' className={ menuActive ? 'showMenu': ''} onMouseLeave={closeSubMenus}>
@@ -35,7 +35,9 @@ export const NavBarAdminSys = (props) => {
                     <li><a href="#" onClick={showCompanyFrame} >Empresa</a></li>
                     <li><a href="#" onClick={showBranchFrame} >Sucursales</a></li>
                     <li><a href="#" onClick={showBranchTypeFrame} >Tipo de Sucursal</a></li>
-                    <li><a href="#" onClick={showRoomStateFrame} >Estado de Habitación</a></li>
+                    <li><a href="#" onClick={showRoomStateFrame} >Estados de Habitación</a></li>
+                    <li><a href="#" onClick={showServiceFrame} >Servicios</a></li>
+                    <li><a href="#" onClick={showPriceFrame} >Precios</a></li>
                 </ul>
             </li>
             <li id='subMenuSecurity' onClick={props.subMenuSecurityVisibility}  onMouseLeave={closeSubMenus}>

@@ -15,8 +15,10 @@ const FrameProvider = ({children}) => {
     const [branchTypeFrame, setBranchTypeFrame] = useState(0);
     const [roleFrame,       setRoleFrame]       = useState(0);
     const [roomStateFrame,  setRoomStateFrame ] = useState(0);
+    const [serviceFrame,  setServiceFrame ] = useState(0);
+    const [priceFrame,  setPriceFrame ] = useState(0);
 
-    const { menuActive, setMenuActive, closeSubMenus, showMenu } =useContext(SubMenuContext);
+    const { menuActive, setMenuActive, closeSubMenus, showMenu } = useContext(SubMenuContext);
 
     const showProfileFrame = ( ) => {
         hideFrames()
@@ -62,7 +64,16 @@ const FrameProvider = ({children}) => {
         hideFrames();
         setRoomStateFrame(1);
     }
+    
+    const showServiceFrame = ( ) => {
+        hideFrames();
+        setServiceFrame(1);
+    }
 
+    const showPriceFrame = ( ) => {
+        hideFrames();
+        setPriceFrame(1);
+    }
 
     const hideFrames = ( ) => {
         setProfileFrame(0);
@@ -73,7 +84,9 @@ const FrameProvider = ({children}) => {
         setPersonTypeFrame(0);
         setPersonFrame(0);
         setRoleFrame(0);
-        setRoomStateFrame();
+        setRoomStateFrame(0);
+        setServiceFrame(0)
+        setPriceFrame(0)
         showMenu();
     }
 
@@ -88,11 +101,12 @@ const FrameProvider = ({children}) => {
         branchTypeFrame, setBranchTypeFrame,
         roleFrame, setRoleFrame,
         roomStateFrame, setRoomStateFrame,
+        serviceFrame, setServiceFrame,
+        priceFrame, setPriceFrame,
         showProfileFrame, showUserFrame, showCompanyFrame,
         showBranchFrame, showBranchTypeFrame, showPersonTypeFrame,
-        showPersonFrame, showRoleFrame, showRoomStateFrame, 
-        closeSubMenus, showMenu
-
+        showPersonFrame, showRoleFrame, showRoomStateFrame,
+        showServiceFrame, showServiceFrame, showPriceFrame, closeSubMenus, showMenu
     }
 
     return <FrameContext.Provider value={frameStates}>{children}</FrameContext.Provider>

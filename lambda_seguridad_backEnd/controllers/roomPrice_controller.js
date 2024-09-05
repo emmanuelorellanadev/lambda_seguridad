@@ -1,19 +1,29 @@
 const catchedAsync = require("../errors_handler/catchedAsync");
+const { paginate } = require("../helpers/paginate");
 const RoomPrice = require("../models/roomPrice_model");
 const { resSuccessful } = require("../response/resSucessful");
 
-
-
-
-
 const getRoomPrices =  async (req, res) => {
-    const roomPrices = await RoomPrice.findAll();
+    const {q, page, limit, order_by, order_direction} = req.query;
+    let search = {};
+    let order = [];
 
-    resSuccessful(res, roomPrices)
+    if (q){
+        search = {
+            where: {
+                role_name: {
+                    [Op.like]: `%${q}%`
+                }
+            }
+        }
+    }
+    const prices = await paginate(RoomPrice, page, limit, search, order)
+
+    resSuccessful(res, prices)
 }
 
 const getRoomPrice =  async (req, res) => {
-    const { id } = req.body;
+    const { id } = req.params;
 
     const roomPrice = await RoomPrice.findByPk(id);
 
@@ -21,11 +31,11 @@ const getRoomPrice =  async (req, res) => {
 }
 
 const saveRoomPrice =  async (req, res) => {
-    const roomPrice = req.body;
+    const price = req.body;
 
-    await RoomPrice.create(roomPrice);
+    await RoomPrice.create(price);
 
-    resSuccessful(res, roomPrice);
+    resSuccessful(res, price);
 }
 
 const updateRoomPrice =  async (req, res) => {
@@ -34,7 +44,7 @@ const updateRoomPrice =  async (req, res) => {
 
     await RoomPrice.update(roomPrice, {where: {id: id}});
 
-    resSuccessful(res, roomPrice);
+    resSuccessful(res, 'Precio actulaizado correctamente.');
 }
 
 const deleteRoomPrice =  async (req, res) => {

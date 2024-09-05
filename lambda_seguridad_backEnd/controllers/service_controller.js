@@ -1,21 +1,33 @@
 const catchedAsync = require('../errors_handler/catchedAsync');
 const { DBError, GeneralError } = require('../errors_handler/errors');
+const { paginate } = require('../helpers/paginate');
 const Service = require('../models/service_model');
 const { resSuccessful } = require('../response/resSucessful');
 
 const getServices = async( req, res ) => {
-    const services = await Service.findAll();
 
-    if (services.length == 0){
-        throw new GeneralError('no se encontraron servicios')
+    const {q, page, limit, order_by, order_direction} = req.query;
+    let search = {};
+    let order = [];
+
+    if (q){
+        search = {
+            where: {
+                role_name: {
+                    [Op.like]: `%${q}%`
+                }
+            }
+        }
     }
+
+    const services = await paginate(Service, page, limit, search, order);
 
     resSuccessful(res, services);
 }
 
 const getService = async( req, res ) => {
     const { id } = req.params;
-
+    console.log(id.red);
     const service = await Service.findByPk(id);
 
     if ( !service ){

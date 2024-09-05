@@ -1,0 +1,73 @@
+@media (max-width: 576px){
+    .roomState_container{
+        width: 95%;
+        margin: auto;
+        display: flex;
+        flex-flow: column wrap;
+    }
+
+    .roomState_form{
+        display: flex;
+        flex-flow: column wrap;
+        width: 100%;
+    }
+
+    .roomState_form div{
+        margin: .5rem auto;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .roomStateTable_container{
+        width: 100%;
+        border-radius: 7px;
+    }
+
+    .sendRoomState_button button{
+        margin: auto;
+    }
+
+}
+
+@media (min-width: 577px){
+    .roomState_container{
+        width: 95%;
+        margin: 0 auto;
+        display: flex;
+        flex-flow: column wrap;
+    }
+
+    .roomState_form{
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+    }
+
+    .roomState_form div{
+        margin: .5rem .5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-width: 40%;
+    }
+
+    .roomStateTable_container{
+        width: 100%;
+        border-radius: 7px;
+    }
+
+    .sendRoomState_button{
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+
+    .sendRoomState_button button{
+        margin: auto;
+    }
+
+}
