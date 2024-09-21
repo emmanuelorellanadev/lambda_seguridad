@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext} from 'react';
+import { useState, useEffect, useReducer} from 'react';
 
 import '../../css/NavBar.css';
 import '../../css/subMenu/subMenu.css';
@@ -12,55 +12,73 @@ import SubMenuPersonType from'../personTypes/SubMenuPersonType.jsx';
 import SubMenuUser from'../users/SubMenuUser.jsx';
 import SubMenuRole from'../roles/SubMenuRole.jsx';
 import SubMenuRoomState from '../roomStates/SubMenuRoomState.jsx';
+import SubMenuService from '../services/SubMenuService.jsx';
+import SubMenuPrice from '../prices/SubMenuPrice.jsx';
 import { NavBarUser } from './NavBarUser';
 import { NavBarSuper } from './NavBarSuper';
 import { NavBarAdmin } from './NavBarAdmin'
 import { NavBarAdminSys } from './NavBarAdminSys';
 import { UserProfile } from '../users/UserProfile';
-import SubMenuContext from '../../context/SubMenuContext.jsx';
-import { FrameContext } from '../../context/FrameContext.jsx';
-import SubMenuService from '../services/SubMenuService.jsx';
-import SubMenuPrice from '../prices/SubMenuPrice.jsx';
+import { subMenuReducer } from './reducer/subMenuReducer.js';
+import { frameReducer } from './reducer/frameReducer.js';
+
+export const initialSubMenuState = {menuAdmin:      false, 
+                                    menuUser:       false, 
+                                    menuSecurity:   false, 
+                                    menuPerson:     false};
+export const initialFrameState = {  profileFrame:       false, 
+                                    userFrame:          false, 
+                                    companyFrame:       false, 
+                                    branchFrame:        false,
+                                    branchTypeFrame:    false,
+                                    branchFrame:        false, 
+                                    personTypeFrame:    false, 
+                                    personFrame:        false,
+                                    roleFrame:          false, 
+                                    roomStateFrame:     false, 
+                                    roomFrame:          false, 
+                                    serviceFrame:       false, 
+                                    priceFrame:         false };
+
 
 export const NavBar = () => {
-    
-    const {  
-        subMenuUser, setSubMenuUser,
-        subMenuAdmin, setSubMenuAdmin,
-        subMenuSecurity, setSubMenuSecurity,
-        subMenuPerson, setSubMenuPerson,
-        } = useContext(SubMenuContext);
 
-    const {
-        userFrame,
-        personTypeFrame,
-        personFrame,
-        profileFrame,
-        companyFrame,
-        branchFrame,
-        branchTypeFrame,
-        roleFrame,
-        roomStateFrame,
-        serviceFrame, 
-        priceFrame, showMenu } = useContext(FrameContext)
 
+    const [ subMenuState, subMenuDispatch ] = useReducer(subMenuReducer, initialSubMenuState);
+    const [ frameState, frameDispatch ] = useReducer(frameReducer, initialFrameState);
+ 
     const [role,            setRole]            = useState(0);
-    
+    const [menuActive,      setMenuActive]      = useState(false);
+
+    //show menu
+    const showMenu = () => {
+        setMenuActive(!menuActive);
+        (menuActive == true) ? setMenuActive(false) : '';//close the submenus when menu is pressed and menu is visible
+    }
     //subMenu user, close session
     const subMenuUserVisibility = () => {
-        setSubMenuUser(!subMenuUser);
+        // setSubMenuUser(!subMenuUser);
+        subMenuDispatch({type: 'SUBMENUUSER'})
     }
     //subMenu Admin
     const subMenuAdminVisibility = () => {
-        setSubMenuAdmin(!subMenuAdmin);
+        subMenuDispatch({type: 'SUBMENUADMIN'})
+        // setSubMenuAdmin(!subMenuAdmin);
     }
     //subMenu security
     const subMenuSecurityVisibility = () => {
-        setSubMenuSecurity(!subMenuSecurity);
+        subMenuDispatch({type: 'SUBMENUSECURITY'})
+        // setSubMenuSecurity(!subMenuSecurity);
     } 
     //subMenu Person
     const subMenuPersonVisibility = () => {
-        setSubMenuPerson(!subMenuPerson);
+        subMenuDispatch({type: 'SUBMENUPERSON'})
+        // setSubMenuPerson(!subMenuPerson);
+    }
+
+    //subMenu Person
+    const subMenuReset = () => {
+        subMenuDispatch({type: 'SUBMENURESET'})
     }
 
     //Close session
@@ -70,6 +88,62 @@ export const NavBar = () => {
         sessionStorage.removeItem('role-xL');
     }
 
+
+    //FRAME CONTROLLER
+    const showProfileFrame = ( ) => {
+        frameDispatch({type: 'RESET_FRAME'});
+        frameDispatch({type: 'PROFILE_FRAME'});
+    }
+
+    const showUserFrame = ( ) => {
+        frameDispatch({type: 'RESET_FRAME'});
+        frameDispatch({type: 'USER_FRAME'});
+    }
+
+    const showCompanyFrame = ( ) => {
+        frameDispatch({type: 'RESET_FRAME'});
+        frameDispatch({type: 'COMPANY_FRAME'});
+    }
+    
+    const showBranchFrame = ( ) => {
+        frameDispatch({type: 'RESET_FRAME'});
+        frameDispatch({type: 'BRANCH_FRAME'});
+    }
+
+    const showBranchTypeFrame = ( ) => {
+        frameDispatch({type: 'RESET_FRAME'});
+        frameDispatch({type: 'BRANCHTYPE_FRAME'});
+    }
+
+    const showPersonTypeFrame = ( ) => {
+        frameDispatch({type: 'RESET_FRAME'});
+        frameDispatch({type: 'PERSONTYPE_FRAME'});
+    }
+    
+    const showPersonFrame = ( ) => {
+        frameDispatch({type: 'RESET_FRAME'});
+        frameDispatch({type: 'PERSON_FRAME'});
+    }
+
+    const showRoleFrame = ( ) => {
+        frameDispatch({type: 'RESET_FRAME'});
+        frameDispatch({type: 'ROLE_FRAME'});
+    }
+    
+    const showRoomStateFrame = ( ) => {
+        frameDispatch({type: 'RESET_FRAME'});
+        frameDispatch({type: 'ROOMSTATE_FRAME'});
+    }
+    
+    const showServiceFrame = ( ) => {
+        frameDispatch({type: 'RESET_FRAME'});
+        frameDispatch({type: 'SERVICE_FRAME'});
+    }
+
+    const showPriceFrame = ( ) => {
+        frameDispatch({type: 'RESET_FRAME'});
+        frameDispatch({type: 'PRICE_FRAME'});
+    }
     
     useEffect( () => {
         setRole(sessionStorage.getItem('role-xL'))
@@ -103,27 +177,41 @@ export const NavBar = () => {
                     />}
 
                     { role == '1' && < NavBarAdminSys 
+                        showMenu={showMenu}
+                        menuActive={menuActive}
+                        setMenuActive={setMenuActive}
+                        subMenuState={subMenuState}
                         subMenuAdminVisibility={subMenuAdminVisibility}
                         subMenuUserVisibility={subMenuUserVisibility}
                         subMenuPersonVisibility={subMenuPersonVisibility}
                         subMenuSecurityVisibility={subMenuSecurityVisibility}
+                        subMenuReset={subMenuReset}
+                        showProfileFrame={showProfileFrame}
+                        showBranchFrame={showBranchFrame}
+                        showUserFrame={showUserFrame}
+                        showCompanyFrame={showCompanyFrame}
+                        showBranchTypeFrame={showBranchTypeFrame}
+                        showPersonTypeFrame={showPersonTypeFrame}
+                        showPersonFrame={showPersonFrame}
+                        showRoleFrame={showRoleFrame}
+                        showRoomStateFrame={showRoomStateFrame}
+                        showServiceFrame={showServiceFrame}
+                        showPriceFrame={showPriceFrame}
                         closeSession={ closeSession } 
                     />}
 
         </div>
-        { userFrame         ===     1 && <SubMenuUser/>}
-        { profileFrame      ===     1 && <UserProfile/>}
-        { personTypeFrame   ===     1 && <SubMenuPersonType />}
-        { personFrame       ===     1 && <SubMenuPerson />}
-        { companyFrame      ===     1 && <SubMenuCompany />}
-        { branchFrame       ===     1 && <SubMenuBranch />}
-        { branchTypeFrame   ===     1 && <SubMenuBranchType />}
-        { roleFrame         ===     1 && <SubMenuRole />}
-        { roomStateFrame    ===     1 && <SubMenuRoomState />}
-        { serviceFrame      ===     1 && <SubMenuService />}
-        { priceFrame        ===     1 && <SubMenuPrice />}
+        { frameState.userFrame       === true && <SubMenuUser/>}
+        { frameState.profileFrame    === true && <UserProfile/>}
+        { frameState.personTypeFrame === true && <SubMenuPersonType />}
+        { frameState.personFrame     === true && <SubMenuPerson />}
+        { frameState.companyFrame    === true && <SubMenuCompany />}
+        { frameState.branchFrame     === true && <SubMenuBranch />}
+        { frameState.branchTypeFrame === true && <SubMenuBranchType />}
+        { frameState.roleFrame       === true && <SubMenuRole />}
+        { frameState.roomStateFrame  === true && <SubMenuRoomState />}
+        { frameState.serviceFrame    === true && <SubMenuService />}
+        { frameState.priceFrame      === true && <SubMenuPrice />}
     </>
   )
 }
-
-// export default NavBar;

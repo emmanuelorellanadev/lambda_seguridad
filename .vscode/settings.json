@@ -1,2 +1,17 @@
 {
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MariaDB",
+            "name": "lambdaConnection",
+            "database": "lambda_db",
+            "username": "root"
+        }
+    ]
 }

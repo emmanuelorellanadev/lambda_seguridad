@@ -5,7 +5,7 @@ import '../../css/service/service.css';
 import { P_Head } from '../ui/P_Head';
 import { Label } from '../ui/Label';
 import { Input } from '../ui/Input';
-import Table_service from '../ui/tables/Table_Service';
+import Table_service from '../ui/tables/Table_service';
 import { useCreateService } from './hooks/useCreateService';
 import { useDeleteService } from './hooks/useDeleteService';
 

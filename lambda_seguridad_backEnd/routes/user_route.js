@@ -9,21 +9,21 @@ const router = Router();
 
 //GET USER
 router.get('/', [
-    // checkJWT,
-    // requiredRole('ROLE_ADMINSYS', 'ROLE_ADMIN', 'ROLE_SUPERUSER'),
+    checkJWT,
+    requiredRole('ROLE_ADMINSYS', 'ROLE_ADMIN', 'ROLE_SUPERUSER'),
     checkFields
 ], userController.getUsers);
 
 router.get('/:id', [
-    // checkJWT,
-    // requiredRole('ROLE_ADMINSYS', 'ROLE_ADMIN', 'ROLE_SUPERUSER', 'ROLE_USER'),
+    checkJWT,
+    requiredRole('ROLE_ADMINSYS', 'ROLE_ADMIN', 'ROLE_SUPERUSER', 'ROLE_USER'),
     checkFields
 ], userController.getUser);
 
 //CREATE USER
 router.post('/', [
-    // checkJWT,
-    // requiredRole('ROLE_ADMINSYS', 'ROLE_ADMIN', 'ROLE_SUPERUSER'),
+    checkJWT,
+    requiredRole('ROLE_ADMINSYS', 'ROLE_ADMIN', 'ROLE_SUPERUSER'),
     uploadImage.any('img'), 
     check('user_name', 'The user name is required').not().isEmpty(),
     check('user_pass', 'The password is required').not().isEmpty(),
@@ -34,8 +34,8 @@ router.post('/', [
  
 //UPDATE USER
 router.put('/:id', [
-    // checkJWT, 
-    // requiredRole('ROLE_ADMINSYS', 'ROLE_ADMIN', 'ROLE_SUPERUSER', 'ROLE_USER'),
+    checkJWT, 
+    requiredRole('ROLE_ADMINSYS', 'ROLE_ADMIN', 'ROLE_SUPERUSER', 'ROLE_USER'),
     uploadImage.any('img'),
     check('user_name', 'The user name is required').not().isEmpty(),
     check('user_pass', 'The password is required').not().isEmpty(),

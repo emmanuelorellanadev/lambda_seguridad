@@ -5147,3 +5147,348 @@ sql: INSERT INTO `RoomPrices` (`id`,`room_price`,`room_price_state`) VALUES (DEF
     at async model.save (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:2490:35)
     at async RoomPrice.create (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:1362:12)
     at async saveRoomPrice (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/roomPrice_controller.js:40:5)
+ Tue Sep 10 2024 11:32:28 GMT-0600 (Central Standard Time) 
+ Error: {"errors":[{"msg":"The role is required","param":"role_name","location":"body"},{"msg":"the state is required","param":"role_state","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"msg":"The role is required","param":"role_name","location":"body"},{"msg":"the state is required","param":"role_state","location":"body"}]}
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at middleware (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Tue Sep 10 2024 12:12:51 GMT-0600 (Central Standard Time) 
+ Error: {"errors":[{"msg":"The user name is required","param":"name","location":"body"},{"msg":"The password is required","param":"pass","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"msg":"The user name is required","param":"name","location":"body"},{"msg":"The password is required","param":"pass","location":"body"}]}
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at middleware (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Tue Sep 10 2024 12:13:10 GMT-0600 (Central Standard Time) 
+ Error: {"errors":[{"msg":"The user name is required","param":"name","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"msg":"The user name is required","param":"name","location":"body"}]}
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at middleware (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Wed Sep 11 2024 11:15:16 GMT-0600 (Central Standard Time) 
+ TokenExpiredError: jwt expired 
+ TokenExpiredError 
+ undefined 
+ TokenExpiredError: jwt expired
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/jsonwebtoken/verify.js:190:21
+    at getSecret (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/jsonwebtoken/verify.js:97:14)
+    at module.exports [as verify] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/jsonwebtoken/verify.js:101:10)
+    at checkJWT (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:16:37)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+ Thu Sep 12 2024 15:30:53 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getServices (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/service_controller.js:17:22)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+ Thu Sep 12 2024 15:30:53 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getServices (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/service_controller.js:17:22)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+ Thu Sep 12 2024 15:30:53 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getServices (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/service_controller.js:17:22)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+ Thu Sep 12 2024 15:30:53 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getServices (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/service_controller.js:17:22)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+ Thu Sep 12 2024 15:30:54 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getServices (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/service_controller.js:17:22)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+ Thu Sep 12 2024 15:30:55 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getServices (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/service_controller.js:17:22)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+ Thu Sep 12 2024 15:30:55 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getServices (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/service_controller.js:17:22)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+ Thu Sep 12 2024 15:30:55 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getServices (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/service_controller.js:17:22)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+ Thu Sep 12 2024 15:30:55 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getServices (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/service_controller.js:17:22)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+ Thu Sep 12 2024 15:30:55 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getServices (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/service_controller.js:17:22)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+ Thu Sep 12 2024 15:30:59 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getServices (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/service_controller.js:17:22)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+ Thu Sep 12 2024 15:30:59 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getServices (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/service_controller.js:17:22)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+ Thu Sep 12 2024 15:30:59 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getServices (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/service_controller.js:17:22)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+ Thu Sep 12 2024 15:30:59 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getServices (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/service_controller.js:17:22)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+ Thu Sep 12 2024 15:30:59 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getServices (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/service_controller.js:17:22)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+ Thu Sep 12 2024 15:30:59 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getServices (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/service_controller.js:17:22)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+ Thu Sep 12 2024 15:30:59 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getServices (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/service_controller.js:17:22)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+ Thu Sep 12 2024 15:30:59 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getServices (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/service_controller.js:17:22)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+ Thu Sep 12 2024 15:31:22 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getServices (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/service_controller.js:17:22)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+ Thu Sep 12 2024 15:31:22 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getServices (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/service_controller.js:17:22)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)

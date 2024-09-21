@@ -10,18 +10,18 @@ const { uploadImage } = require('../helpers/uploadImage');
 const route = Router();
 
 route.get('/', [
-    // checkJWT,
-    // requiredRole('ROLE_ADMINSYS', 'ROLE_ADMIN', 'ROLE_SUPERUSER', 'ROLE_USER')
+    checkJWT,
+    requiredRole('ROLE_ADMINSYS', 'ROLE_ADMIN', 'ROLE_SUPERUSER', 'ROLE_USER')
 ],companyController.getCompanies);
 
 route.get('/:id', [
-    // checkJWT,
-    // requiredRole('ROLE_ADMINSYS', 'ROLE_ADMIN', 'ROLE_SUPERUSER', 'ROLE_USER')
+    checkJWT,
+    requiredRole('ROLE_ADMINSYS', 'ROLE_ADMIN', 'ROLE_SUPERUSER', 'ROLE_USER')
 ], companyController.getCompany)
 
 route.post('/', [
-    // checkJWT,
-    // requiredRole('ROLE_ADMINSYS'),
+    checkJWT,
+    requiredRole('ROLE_ADMINSYS'),
     uploadImage.any('img'),
     check('company_name', 'The company name is required').not().isEmpty(),
     check('company_address', 'The company address is required').not().isEmpty(),
@@ -31,8 +31,8 @@ route.post('/', [
 ], companyController.saveCompany);
 
 route.put('/:id', [
-    // checkJWT,
-    // requiredRole('ROLE_ADMINSYS'),
+    checkJWT,
+    requiredRole('ROLE_ADMINSYS'),
     uploadImage.any('img'),
     check('company_name', 'The company name is required').not().isEmpty(),
     check('company_address', 'The company address is required').not().isEmpty(),

@@ -6,52 +6,39 @@ import { FrameContext } from '../../context/FrameContext';
 
 export const NavBarAdminSys = (props) => {
 
-    const {  
-        menuActive,
-        subMenuUser,
-        subMenuAdmin,
-        subMenuSecurity,
-        subMenuPerson,
-         } = useContext(SubMenuContext);
-    
-    const {
-        showProfileFrame, showUserFrame, showCompanyFrame,
-        showBranchFrame, showBranchTypeFrame, showPersonTypeFrame,
-        showPersonFrame, showRoleFrame, showRoomStateFrame, 
-        showServiceFrame, showPriceFrame, closeSubMenus} = useContext(FrameContext)
   return (
     <>
-        <ul id='menu' className={ menuActive ? 'showMenu': ''} onMouseLeave={closeSubMenus}>
-            <li id='subMenuUser' onClick={props.subMenuUserVisibility}  onMouseLeave={closeSubMenus}>
+        <ul id='menu' className={ props.menuActive ? 'showMenu': ''} onMouseLeave={props.showMenu}>
+            <li id='subMenuUser' onClick={props.subMenuUserVisibility}  onMouseLeave={props.subMenuReset}>
                 <img  id={'logoUsuario'} src={usuario} alt="" />
-                <ul className={subMenuUser ? 'subMenuVisible' : 'subMenuHide' }>
-                    <li><a href="#" onClick={showProfileFrame} >{sessionStorage.getItem('user-xL').toUpperCase()}</a></li>
+                <ul className={props.subMenuState.menuUser ? 'subMenuVisible' : 'subMenuHide' }>
+                    <li><a href="#" onClick={props.showProfileFrame} >{sessionStorage.getItem('user-xL').toUpperCase()}</a></li>
                     <li><a href="/" onClick={props.closeSession} >Cerrar Sesion</a></li>
                 </ul>
             </li>    
-            <li id='subMenuAdmin' onClick={props.subMenuAdminVisibility}  onMouseLeave={closeSubMenus}>
+            <li id='subMenuAdmin' onClick={props.subMenuAdminVisibility}  onMouseLeave={props.subMenuReset}>
                 <a href="#" >Admin</a>
-                <ul className={subMenuAdmin ? 'subMenuVisible' : 'subMenuHide' }>
-                    <li><a href="#" onClick={showCompanyFrame} >Empresa</a></li>
-                    <li><a href="#" onClick={showBranchFrame} >Sucursales</a></li>
-                    <li><a href="#" onClick={showBranchTypeFrame} >Tipo de Sucursal</a></li>
-                    <li><a href="#" onClick={showRoomStateFrame} >Estados de Habitación</a></li>
-                    <li><a href="#" onClick={showServiceFrame} >Servicios</a></li>
-                    <li><a href="#" onClick={showPriceFrame} >Precios</a></li>
+                <ul className={props.subMenuState.menuAdmin ? 'subMenuVisible' : 'subMenuHide' }>
+                    <li><a href="#" onClick={props.showCompanyFrame} >Empresa</a></li>
+                    <li><a href="#" onClick={props.showBranchFrame} >Sucursales</a></li>
+                    <li><a href="#" onClick={props.showBranchTypeFrame} >Tipo de Sucursal</a></li>
+                    <li><a href="#" onClick={props.showRoomStateFrame} >Estados de Habitación</a></li>
+                    <li><a href="#" onClick={props.showServiceFrame} >Servicios</a></li>
+                    <li><a href="#" onClick={props.showPriceFrame} >Precios</a></li>
                 </ul>
             </li>
-            <li id='subMenuSecurity' onClick={props.subMenuSecurityVisibility}  onMouseLeave={closeSubMenus}>
+            <li id='subMenuSecurity' onClick={props.subMenuSecurityVisibility}  onMouseLeave={props.subMenuReset}>
                 <a href="#" >Seguridad</a>
-                <ul className={subMenuSecurity ? 'subMenuVisible' : 'subMenuHide' }>
-                    <li><a href="#" onClick={showUserFrame} >Usuarios</a></li>
-                    <li><a href="#" onClick={showRoleFrame} >Roles</a></li>
+                <ul className={props.subMenuState.menuSecurity ? 'subMenuVisible' : 'subMenuHide' }>
+                    <li><a href="#" onClick={props.showUserFrame} >Usuarios</a></li>
+                    <li><a href="#" onClick={props.showRoleFrame} >Roles</a></li>
                 </ul>
             </li>
-            <li id='subMenuPerson' onClick={props.subMenuPersonVisibility} onMouseLeave={closeSubMenus}>
+            <li id='subMenuPerson' onClick={props.subMenuPersonVisibility} onMouseLeave={props.subMenuReset}>
                 <a href="#"> Clientes</a>
-                <ul className={subMenuPerson ? 'subMenuVisible' : 'subMenuHide' } >
-                    <li><a href="#" onClick={showPersonFrame} >Personas</a></li>
-                    <li><a href="#" onClick={showPersonTypeFrame} >Tipos</a></li>
+                <ul className={props.subMenuState.menuPerson ? 'subMenuVisible' : 'subMenuHide' } >
+                    <li><a href="#" onClick={props.showPersonFrame} >Personas</a></li>
+                    <li><a href="#" onClick={props.showPersonTypeFrame} >Tipos</a></li>
                 </ul>            
             </li>
         </ul>
