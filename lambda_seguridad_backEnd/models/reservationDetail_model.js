@@ -7,11 +7,11 @@ const Room = require('./room_model');
 const ReservationDetail = db_connection.define('ReservationDetail', {
     date_in: {
         type: DataTypes.DATE,
-        allowNull: false
+        allowNull: true
     },
     date_out: {
         type: DataTypes.DATE,
-        allowNull: false
+        allowNull: true
     },
     date_checkIn: {
         type: DataTypes.DATE,

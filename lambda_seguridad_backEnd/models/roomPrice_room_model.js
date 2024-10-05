@@ -13,6 +13,8 @@ const RoomPrice_Room = db_connection.define('RoomPrice_Room', {},
 Room.belongsToMany(RoomPrice, {through: RoomPrice_Room});
 RoomPrice.belongsToMany(Room, {through: RoomPrice_Room});
 
+
+// SUPER MANY TO SUPER MUCH
 Room.hasMany(RoomPrice_Room);
 RoomPrice_Room.belongsTo(Room);
 RoomPrice.hasMany(RoomPrice_Room);

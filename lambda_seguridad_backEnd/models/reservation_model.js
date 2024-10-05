@@ -42,4 +42,4 @@ Reservation.Branch = Reservation.belongsTo(Branch);
 
 Reservation.sync( { force: false });
 
-module.exports = Reservation;
+module.exports = Reservation; 

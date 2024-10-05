@@ -5492,3 +5492,1155 @@ sql: INSERT INTO `RoomPrices` (`id`,`room_price`,`room_price_state`) VALUES (DEF
     at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
     at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
     at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+ Fri Sep 20 2024 19:42:31 GMT-0600 (hora estándar central) 
+ SequelizeUniqueConstraintError: Validation error 
+ SequelizeUniqueConstraintError 
+ undefined 
+ Error
+    at Query.run (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.insert (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-interface.js:308:21)
+    at async model.save (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:2490:35)
+    at async Room.create (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:1362:12)
+    at async saveRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:34:5)
+ Fri Sep 20 2024 20:42:24 GMT-0600 (hora estándar central) 
+ TypeError: room.addPrice is not a function 
+ TypeError 
+ undefined 
+ TypeError: room.addPrice is not a function
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:38:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async saveRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:35:5)
+ Fri Sep 20 2024 20:42:50 GMT-0600 (hora estándar central) 
+ SequelizeUniqueConstraintError: Validation error 
+ SequelizeUniqueConstraintError 
+ undefined 
+ Error
+    at Query.run (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.insert (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-interface.js:308:21)
+    at async model.save (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:2490:35)
+    at async Room.create (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:1362:12)
+    at async saveRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:35:5)
+ Fri Sep 20 2024 20:58:03 GMT-0600 (hora estándar central) 
+ TypeError: room.addPrice is not a function 
+ TypeError 
+ undefined 
+ TypeError: room.addPrice is not a function
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:38:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async saveRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:35:5)
+ Fri Sep 20 2024 21:07:36 GMT-0600 (hora estándar central) 
+ Error: {"errors":[{"msg":"The service state is required","param":"service_state","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"msg":"The service state is required","param":"service_state","location":"body"}]}
+    at checkFields (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at middleware (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Fri Sep 20 2024 21:08:02 GMT-0600 (hora estándar central) 
+ Error: {"errors":[{"msg":"The service state is required","param":"service_state","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"msg":"The service state is required","param":"service_state","location":"body"}]}
+    at checkFields (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at middleware (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Fri Sep 20 2024 21:09:53 GMT-0600 (hora estándar central) 
+ Error: No se encontraron habitaciones. 
+ Error 
+ undefined 
+ Error: No se encontraron habitaciones.
+    at getRooms (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:16:36)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Fri Sep 20 2024 21:10:29 GMT-0600 (hora estándar central) 
+ Error: No se encontraron habitaciones. 
+ Error 
+ undefined 
+ Error: No se encontraron habitaciones.
+    at getRooms (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:16:36)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Fri Sep 20 2024 21:12:35 GMT-0600 (hora estándar central) 
+ TypeError: room.addPrice is not a function 
+ TypeError 
+ undefined 
+ TypeError: room.addPrice is not a function
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:38:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async saveRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:35:5)
+ Fri Sep 20 2024 23:35:17 GMT-0600 (Central Standard Time) 
+ Error: {"errors":[{"msg":"The room number is required.","param":"room_number","location":"body"},{"msg":"The room location is required.","param":"room_location","location":"body"},{"msg":"The numbers of beds are required.","param":"number_of_beds","location":"body"},{"msg":"The max number of people is required.","param":"max_people_number","location":"body"},{"msg":"The room state is required.","param":"RoomStateId","location":"body"},{"msg":"The branch is required.","param":"BranchId","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"msg":"The room number is required.","param":"room_number","location":"body"},{"msg":"The room location is required.","param":"room_location","location":"body"},{"msg":"The numbers of beds are required.","param":"number_of_beds","location":"body"},{"msg":"The max number of people is required.","param":"max_people_number","location":"body"},{"msg":"The room state is required.","param":"RoomStateId","location":"body"},{"msg":"The branch is required.","param":"BranchId","location":"body"}]}
+    at checkFields (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at middleware (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Fri Sep 20 2024 23:43:15 GMT-0600 (Central Standard Time) 
+ TypeError: Sequelize.transaction is not a function 
+ TypeError 
+ undefined 
+ TypeError: Sequelize.transaction is not a function
+    at saveRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:36:21)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkFields (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at middleware (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sun Sep 22 2024 11:39:25 GMT-0600 (Central Standard Time) 
+ TokenExpiredError: jwt expired 
+ TokenExpiredError 
+ undefined 
+ TokenExpiredError: jwt expired
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/jsonwebtoken/verify.js:190:21
+    at getSecret (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/jsonwebtoken/verify.js:97:14)
+    at module.exports [as verify] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/jsonwebtoken/verify.js:101:10)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:16:37)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+ Sun Sep 22 2024 11:39:51 GMT-0600 (Central Standard Time) 
+ TokenExpiredError: jwt expired 
+ TokenExpiredError 
+ undefined 
+ TokenExpiredError: jwt expired
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/jsonwebtoken/verify.js:190:21
+    at getSecret (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/jsonwebtoken/verify.js:97:14)
+    at module.exports [as verify] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/jsonwebtoken/verify.js:101:10)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:16:37)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+ Sun Sep 22 2024 11:39:56 GMT-0600 (Central Standard Time) 
+ TokenExpiredError: jwt expired 
+ TokenExpiredError 
+ undefined 
+ TokenExpiredError: jwt expired
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/jsonwebtoken/verify.js:190:21
+    at getSecret (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/jsonwebtoken/verify.js:97:14)
+    at module.exports [as verify] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/jsonwebtoken/verify.js:101:10)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:16:37)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+ Sun Sep 22 2024 11:40:32 GMT-0600 (Central Standard Time) 
+ TypeError: Sequelize.transaction is not a function 
+ TypeError 
+ undefined 
+ TypeError: Sequelize.transaction is not a function
+    at saveRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:36:21)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkFields (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at middleware (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sun Sep 22 2024 11:41:10 GMT-0600 (Central Standard Time) 
+ ReferenceError: t is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: t is not defined
+    at saveRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:37:64)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkFields (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at middleware (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sun Sep 22 2024 11:41:39 GMT-0600 (Central Standard Time) 
+ ReferenceError: t is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: t is not defined
+    at saveRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:44:72)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sun Sep 22 2024 11:42:06 GMT-0600 (Central Standard Time) 
+ SequelizeUniqueConstraintError: Validation error 
+ SequelizeUniqueConstraintError 
+ undefined 
+ Error
+    at Query.run (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.insert (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-interface.js:308:21)
+    at async model.save (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:2490:35)
+    at async Room.create (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:1362:12)
+    at async saveRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:37:22)
+ Sun Sep 22 2024 11:43:45 GMT-0600 (Central Standard Time) 
+ TypeError: room.addPrice is not a function 
+ TypeError 
+ undefined 
+ TypeError: room.addPrice is not a function
+    at saveRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:40:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sun Sep 22 2024 11:57:37 GMT-0600 (Central Standard Time) 
+ TypeError: Sequelize.transaction is not a function 
+ TypeError 
+ undefined 
+ TypeError: Sequelize.transaction is not a function
+    at saveRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:38:31)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkFields (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at middleware (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Wed Sep 25 2024 09:33:01 GMT-0600 (Central Standard Time) 
+ Error: SequelizeUniqueConstraintError: Validation error 
+ Error 
+ undefined 
+ Error: SequelizeUniqueConstraintError: Validation error
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:68:27
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:41:13
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async saveRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:39:19)
+ Wed Sep 25 2024 09:34:43 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar Habitación 
+ DBError 
+ {
+"name":"SequelizeUniqueConstraintError","errors":[{
+"message":"room_number must be unique","type":"unique violation","path":"room_number","value":"9","origin":"DB","instance":{
+"id":null,"room_number":"9","room_location":"Segundo nivel a la derecha","number_of_beds":2,"max_people_number":3,"RoomStateId":1,"BranchId":1},"validatorKey":"not_unique","validatorName":null,"validatorArgs":[]}],"parent":{
+"name":"SqlError","text":"Duplicate entry '9' for key 'room_number'","sql":"INSERT INTO `Rooms` (`id`,`room_number`,`room_location`,`number_of_beds`,`max_people_number`,`RoomStateId`,`BranchId`) VALUES (DEFAULT,?,?,?,?,?,?);","fatal":false,"errno":1062,"sqlState":"23000","code":"ER_DUP_ENTRY","parameters":["9","Segundo nivel a la derecha",2,3,1,1]},"original":{
+"name":"SqlError","text":"Duplicate entry '9' for key 'room_number'","sql":"INSERT INTO `Rooms` (`id`,`room_number`,`room_location`,`number_of_beds`,`max_people_number`,`RoomStateId`,`BranchId`) VALUES (DEFAULT,?,?,?,?,?,?);","fatal":false,"errno":1062,"sqlState":"23000","code":"ER_DUP_ENTRY","parameters":["9","Segundo nivel a la derecha",2,3,1,1]},"fields":{
+"room_number":"9"},"sql":"INSERT INTO `Rooms` (`id`,`room_number`,`room_location`,`number_of_beds`,`max_people_number`,`RoomStateId`,`BranchId`) VALUES (DEFAULT,?,?,?,?,?,?);"} 
+ DBError: Error al guardar Habitación
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:68:27
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:41:13
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async saveRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:39:19)
+ Wed Sep 25 2024 09:45:56 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar Habitación 
+ DBError 
+ {
+"name":"SequelizeUniqueConstraintError","errors":[{
+"message":"room_number must be unique","type":"unique violation","path":"room_number","value":"9","origin":"DB","instance":{
+"id":null,"room_number":"9","room_location":"Segundo nivel a la derecha","number_of_beds":2,"max_people_number":3,"RoomStateId":1,"BranchId":1},"validatorKey":"not_unique","validatorName":null,"validatorArgs":[]}],"parent":{
+"name":"SqlError","text":"Duplicate entry '9' for key 'room_number'","sql":"INSERT INTO `Rooms` (`id`,`room_number`,`room_location`,`number_of_beds`,`max_people_number`,`RoomStateId`,`BranchId`) VALUES (DEFAULT,?,?,?,?,?,?);","fatal":false,"errno":1062,"sqlState":"23000","code":"ER_DUP_ENTRY","parameters":["9","Segundo nivel a la derecha",2,3,1,1]},"original":{
+"name":"SqlError","text":"Duplicate entry '9' for key 'room_number'","sql":"INSERT INTO `Rooms` (`id`,`room_number`,`room_location`,`number_of_beds`,`max_people_number`,`RoomStateId`,`BranchId`) VALUES (DEFAULT,?,?,?,?,?,?);","fatal":false,"errno":1062,"sqlState":"23000","code":"ER_DUP_ENTRY","parameters":["9","Segundo nivel a la derecha",2,3,1,1]},"fields":{
+"room_number":"9"},"sql":"INSERT INTO `Rooms` (`id`,`room_number`,`room_location`,`number_of_beds`,`max_people_number`,`RoomStateId`,`BranchId`) VALUES (DEFAULT,?,?,?,?,?,?);"} 
+ DBError: Error al guardar Habitación
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:41:27
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:38:26
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async saveRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:36:19)
+ Wed Sep 25 2024 09:46:53 GMT-0600 (Central Standard Time) 
+ Error: SequelizeDatabaseError: (conn=694, no: 1205, SQLState: HY000) Lock wait timeout exceeded; try restarting transaction
+sql: INSERT INTO `RoomPrice_Rooms` (`RoomId`,`RoomPriceId`) VALUES (?,?); - parameters:[45,2] 
+ Error 
+ undefined 
+ Error: SequelizeDatabaseError: (conn=694, no: 1205, SQLState: HY000) Lock wait timeout exceeded; try restarting transaction
+sql: INSERT INTO `RoomPrice_Rooms` (`RoomId`,`RoomPriceId`) VALUES (?,?); - parameters:[45,2]
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:56:31
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:53:17
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async saveRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:36:19)
+ Wed Sep 25 2024 09:50:34 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar la relacion presio - habitación 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"Lock wait timeout exceeded; try restarting transaction","sql":"INSERT INTO `RoomPrice_Rooms` (`RoomId`,`RoomPriceId`) VALUES (?,?);","fatal":false,"errno":1205,"sqlState":"HY000","code":"ER_LOCK_WAIT_TIMEOUT","parameters":[46,2]},"original":{
+"name":"SqlError","text":"Lock wait timeout exceeded; try restarting transaction","sql":"INSERT INTO `RoomPrice_Rooms` (`RoomId`,`RoomPriceId`) VALUES (?,?);","fatal":false,"errno":1205,"sqlState":"HY000","code":"ER_LOCK_WAIT_TIMEOUT","parameters":[46,2]},"sql":"INSERT INTO `RoomPrice_Rooms` (`RoomId`,`RoomPriceId`) VALUES (?,?);","parameters":[46,2]} 
+ DBError: Error al guardar la relacion presio - habitación
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:56:31
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:53:17
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async saveRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:36:19)
+ Wed Sep 25 2024 09:58:21 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar Habitación 
+ DBError 
+ {
+"name":"SequelizeUniqueConstraintError","errors":[{
+"message":"room_number must be unique","type":"unique violation","path":"room_number","value":"91","origin":"DB","instance":{
+"id":null,"room_number":"91","room_location":"Segundo nivel a la derecha","number_of_beds":2,"max_people_number":3,"RoomStateId":1,"BranchId":1},"validatorKey":"not_unique","validatorName":null,"validatorArgs":[]}],"parent":{
+"name":"SqlError","text":"Duplicate entry '91' for key 'room_number'","sql":"INSERT INTO `Rooms` (`id`,`room_number`,`room_location`,`number_of_beds`,`max_people_number`,`RoomStateId`,`BranchId`) VALUES (DEFAULT,?,?,?,?,?,?);","fatal":false,"errno":1062,"sqlState":"23000","code":"ER_DUP_ENTRY","parameters":["91","Segundo nivel a la derecha",2,3,1,1]},"original":{
+"name":"SqlError","text":"Duplicate entry '91' for key 'room_number'","sql":"INSERT INTO `Rooms` (`id`,`room_number`,`room_location`,`number_of_beds`,`max_people_number`,`RoomStateId`,`BranchId`) VALUES (DEFAULT,?,?,?,?,?,?);","fatal":false,"errno":1062,"sqlState":"23000","code":"ER_DUP_ENTRY","parameters":["91","Segundo nivel a la derecha",2,3,1,1]},"fields":{
+"room_number":"91"},"sql":"INSERT INTO `Rooms` (`id`,`room_number`,`room_location`,`number_of_beds`,`max_people_number`,`RoomStateId`,`BranchId`) VALUES (DEFAULT,?,?,?,?,?,?);"} 
+ DBError: Error al guardar Habitación
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:40:27
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:38:26
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async saveRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:36:19)
+ Wed Sep 25 2024 09:58:33 GMT-0600 (Central Standard Time) 
+ TypeError: room.addPrice is not a function 
+ TypeError 
+ undefined 
+ TypeError: room.addPrice is not a function
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:52:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async saveRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:36:19)
+ Wed Sep 25 2024 09:59:07 GMT-0600 (Central Standard Time) 
+ TypeError: room.addPrices is not a function 
+ TypeError 
+ undefined 
+ TypeError: room.addPrices is not a function
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:52:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async saveRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:36:19)
+ Wed Sep 25 2024 10:16:31 GMT-0600 (Central Standard Time) 
+ TypeError: Class constructor model cannot be invoked without 'new' 
+ TypeError 
+ undefined 
+ TypeError: Class constructor model cannot be invoked without 'new'
+    at getRooms (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:16:75)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkFields (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+ Wed Sep 25 2024 10:17:31 GMT-0600 (Central Standard Time) 
+ TypeError: include.model.getTableName is not a function 
+ TypeError 
+ undefined 
+ TypeError: include.model.getTableName is not a function
+    at Room._validateIncludedElement (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:476:30)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:421:37
+    at Array.map (<anonymous>)
+    at Room._validateIncludedElements (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:417:39)
+    at Room.findAll (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:1124:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async getRooms (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:16:19)
+ Wed Sep 25 2024 10:18:45 GMT-0600 (Central Standard Time) 
+ TypeError: room.addPrice is not a function 
+ TypeError 
+ undefined 
+ TypeError: room.addPrice is not a function
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:53:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async saveRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:37:19)
+ Thu Sep 26 2024 18:15:40 GMT-0600 (Central Standard Time) 
+ Error: {"errors":[{"msg":"The number of people is required.","param":"number_of_people","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"msg":"The number of people is required.","param":"number_of_people","location":"body"}]}
+    at checkFields (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at middleware (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Thu Sep 26 2024 18:20:05 GMT-0600 (Central Standard Time) 
+ DBError: Error al actualizar Habitación 
+ DBError 
+ {
+"name":"SequelizeUniqueConstraintError","errors":[{
+"message":"room_number must be unique","type":"unique violation","path":"room_number","value":"101","origin":"DB","instance":null,"validatorKey":"not_unique","validatorName":null,"validatorArgs":[]}],"parent":{
+"name":"SqlError","text":"Duplicate entry '101' for key 'room_number'","sql":"UPDATE `Rooms` SET `room_number`=?,`room_location`=?,`number_of_beds`=?,`max_people_number`=?,`RoomStateId`=?,`BranchId`=? WHERE `id` = ?","fatal":false,"errno":1062,"sqlState":"23000","code":"ER_DUP_ENTRY","parameters":["101","Segundo nivel a la derecha",2,3,1,1,"55"]},"original":{
+"name":"SqlError","text":"Duplicate entry '101' for key 'room_number'","sql":"UPDATE `Rooms` SET `room_number`=?,`room_location`=?,`number_of_beds`=?,`max_people_number`=?,`RoomStateId`=?,`BranchId`=? WHERE `id` = ?","fatal":false,"errno":1062,"sqlState":"23000","code":"ER_DUP_ENTRY","parameters":["101","Segundo nivel a la derecha",2,3,1,1,"55"]},"fields":{
+"room_number":"101"},"sql":"UPDATE `Rooms` SET `room_number`=?,`room_location`=?,`number_of_beds`=?,`max_people_number`=?,`RoomStateId`=?,`BranchId`=? WHERE `id` = ?"} 
+ DBError: Error al actualizar Habitación
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:79:23
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:77:22
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async updateRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:75:15)
+ Thu Sep 26 2024 18:35:04 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar la relacion servicio - habitación 
+ DBError 
+ {
+"generatedMessage":false,"code":"ERR_ASSERTION","expected":true,"operator":"=="} 
+ DBError: Error al guardar la relacion servicio - habitación
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:94:27
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:92:13
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async updateRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:76:15)
+ Thu Sep 26 2024 18:52:46 GMT-0600 (Central Standard Time) 
+ SyntaxError: Unexpected token o in JSON at position 1 
+ SyntaxError 
+ undefined 
+ SyntaxError: Unexpected token o in JSON at position 1
+    at JSON.parse (<anonymous>)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:85:39
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:80:9
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async updateRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:76:15)
+ Thu Sep 26 2024 18:53:27 GMT-0600 (Central Standard Time) 
+ SyntaxError: Unexpected token o in JSON at position 1 
+ SyntaxError 
+ undefined 
+ SyntaxError: Unexpected token o in JSON at position 1
+    at JSON.parse (<anonymous>)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:86:38
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:80:9
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async updateRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:76:15)
+ Fri Sep 27 2024 22:30:26 GMT-0600 (Central Standard Time) 
+ SyntaxError: Unexpected token o in JSON at position 1 
+ SyntaxError 
+ undefined 
+ SyntaxError: Unexpected token o in JSON at position 1
+    at JSON.parse (<anonymous>)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:86:38
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:80:9
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async updateRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:76:15)
+ Fri Sep 27 2024 22:37:57 GMT-0600 (Central Standard Time) 
+ ReferenceError: roomServices is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: roomServices is not defined
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:89:38
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:80:9
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async updateRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:76:15)
+ Fri Sep 27 2024 22:38:35 GMT-0600 (Central Standard Time) 
+ TypeError: serviceDB.insert is not a function 
+ TypeError 
+ undefined 
+ TypeError: serviceDB.insert is not a function
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:89:31
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:80:9
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async updateRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:76:15)
+ Fri Sep 27 2024 22:45:44 GMT-0600 (Central Standard Time) 
+ ReferenceError: ServiceId is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: ServiceId is not defined
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:89:47
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:80:9
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async updateRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:76:15)
+ Fri Sep 27 2024 22:54:55 GMT-0600 (Central Standard Time) 
+ SyntaxError: Unexpected token o in JSON at position 1 
+ SyntaxError 
+ undefined 
+ SyntaxError: Unexpected token o in JSON at position 1
+    at JSON.parse (<anonymous>)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:89:38
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:80:9
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async updateRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:76:15)
+ Fri Sep 27 2024 22:55:06 GMT-0600 (Central Standard Time) 
+ TypeError: JSON.parser is not a function 
+ TypeError 
+ undefined 
+ TypeError: JSON.parser is not a function
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:89:38
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:80:9
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async updateRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:76:15)
+ Fri Sep 27 2024 22:55:23 GMT-0600 (Central Standard Time) 
+ SyntaxError: Unexpected token o in JSON at position 1 
+ SyntaxError 
+ undefined 
+ SyntaxError: Unexpected token o in JSON at position 1
+    at JSON.parse (<anonymous>)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:89:38
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:80:9
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async updateRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:76:15)
+ Fri Sep 27 2024 22:55:56 GMT-0600 (Central Standard Time) 
+ SyntaxError: Unexpected token o in JSON at position 1 
+ SyntaxError 
+ undefined 
+ SyntaxError: Unexpected token o in JSON at position 1
+    at JSON.parse (<anonymous>)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:89:38
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:80:9
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async updateRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:76:15)
+ Fri Sep 27 2024 22:56:09 GMT-0600 (Central Standard Time) 
+ SyntaxError: Unexpected token u in JSON at position 0 
+ SyntaxError 
+ undefined 
+ SyntaxError: Unexpected token u in JSON at position 0
+    at JSON.parse (<anonymous>)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:89:38
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:80:9
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async updateRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:76:15)
+ Fri Sep 27 2024 22:56:21 GMT-0600 (Central Standard Time) 
+ SyntaxError: Unexpected token o in JSON at position 1 
+ SyntaxError 
+ undefined 
+ SyntaxError: Unexpected token o in JSON at position 1
+    at JSON.parse (<anonymous>)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:89:38
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:80:9
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async updateRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:76:15)
+ Fri Sep 27 2024 22:56:36 GMT-0600 (Central Standard Time) 
+ SyntaxError: Unexpected token u in JSON at position 0 
+ SyntaxError 
+ undefined 
+ SyntaxError: Unexpected token u in JSON at position 0
+    at JSON.parse (<anonymous>)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:89:38
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:80:9
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async updateRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:76:15)
+ Fri Sep 27 2024 23:24:21 GMT-0600 (Central Standard Time) 
+ SyntaxError: Unexpected token o in JSON at position 1 
+ SyntaxError 
+ undefined 
+ SyntaxError: Unexpected token o in JSON at position 1
+    at JSON.parse (<anonymous>)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:89:38
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:80:9
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async updateRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:76:15)
+ Sun Sep 29 2024 09:52:34 GMT-0600 (Central Standard Time) 
+ TokenExpiredError: jwt expired 
+ TokenExpiredError 
+ undefined 
+ TokenExpiredError: jwt expired
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/jsonwebtoken/verify.js:190:21
+    at getSecret (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/jsonwebtoken/verify.js:97:14)
+    at module.exports [as verify] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/jsonwebtoken/verify.js:101:10)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:16:37)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at param (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:365:14)
+ Sun Sep 29 2024 09:53:06 GMT-0600 (Central Standard Time) 
+ ReferenceError: room_services is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: room_services is not defined
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:84:34
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async updateRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:76:15)
+ Sun Sep 29 2024 09:54:13 GMT-0600 (Central Standard Time) 
+ TypeError: Assignment to constant variable. 
+ TypeError 
+ undefined 
+ TypeError: Assignment to constant variable.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:84:18
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async updateRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:76:15)
+ Sun Sep 29 2024 09:56:09 GMT-0600 (Central Standard Time) 
+ ReferenceError: serviceIdsDb is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: serviceIdsDb is not defined
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:93:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async updateRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:76:15)
+ Sun Sep 29 2024 12:57:47 GMT-0600 (Central Standard Time) 
+ ReferenceError: services is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: services is not defined
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:94:67
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async updateRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:76:15)
+ Sun Sep 29 2024 12:58:03 GMT-0600 (Central Standard Time) 
+ ReferenceError: services is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: services is not defined
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:105:29
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async updateRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:76:15)
+ Sun Sep 29 2024 12:59:42 GMT-0600 (Central Standard Time) 
+ ReferenceError: services is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: services is not defined
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:98:61
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async updateRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:76:15)
+ Mon Sep 30 2024 10:24:27 GMT-0600 (Central Standard Time) 
+ TokenExpiredError: jwt expired 
+ TokenExpiredError 
+ undefined 
+ TokenExpiredError: jwt expired
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/jsonwebtoken/verify.js:190:21
+    at getSecret (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/jsonwebtoken/verify.js:97:14)
+    at module.exports [as verify] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/jsonwebtoken/verify.js:101:10)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:16:37)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at param (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:365:14)
+ Mon Sep 30 2024 10:24:50 GMT-0600 (Central Standard Time) 
+ TypeError: Class constructor DBError cannot be invoked without 'new' 
+ TypeError 
+ undefined 
+ TypeError: Class constructor DBError cannot be invoked without 'new'
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:116:29
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:114:21
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async updateRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:78:15)
+ Mon Sep 30 2024 10:25:19 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar la relación room - service 
+ DBError 
+ {
+"name":"SequelizeForeignKeyConstraintError","parent":{
+"name":"SqlError","text":"Cannot add or update a child row: a foreign key constraint fails (`db_lambda`.`room_services`, CONSTRAINT `room_services_ibfk_2` FOREIGN KEY (`ServiceId`) REFERENCES `Services` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)","sql":"INSERT INTO `Room_Services` (`RoomId`,`ServiceId`) VALUES (?,?);","fatal":false,"errno":1452,"sqlState":"23000","code":"ER_NO_REFERENCED_ROW_2","parameters":["55","0"]},"original":{
+"name":"SqlError","text":"Cannot add or update a child row: a foreign key constraint fails (`db_lambda`.`room_services`, CONSTRAINT `room_services_ibfk_2` FOREIGN KEY (`ServiceId`) REFERENCES `Services` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)","sql":"INSERT INTO `Room_Services` (`RoomId`,`ServiceId`) VALUES (?,?);","fatal":false,"errno":1452,"sqlState":"23000","code":"ER_NO_REFERENCED_ROW_2","parameters":["55","0"]},"sql":"INSERT INTO `Room_Services` (`RoomId`,`ServiceId`) VALUES (?,?);","parameters":["55","0"],"table":"Services","fields":["ServiceId"],"value":"0","index":"room_services_ibfk_2","reltype":"child"} 
+ DBError: Error al guardar la relación room - service
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:116:35
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:114:21
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async updateRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:78:15)
+ Mon Sep 30 2024 10:26:41 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar la relación room - service 
+ DBError 
+ {
+"name":"SequelizeForeignKeyConstraintError","parent":{
+"name":"SqlError","text":"Cannot add or update a child row: a foreign key constraint fails (`db_lambda`.`room_services`, CONSTRAINT `room_services_ibfk_2` FOREIGN KEY (`ServiceId`) REFERENCES `Services` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)","sql":"INSERT INTO `Room_Services` (`RoomId`,`ServiceId`) VALUES (?,?);","fatal":false,"errno":1452,"sqlState":"23000","code":"ER_NO_REFERENCED_ROW_2","parameters":["55","0"]},"original":{
+"name":"SqlError","text":"Cannot add or update a child row: a foreign key constraint fails (`db_lambda`.`room_services`, CONSTRAINT `room_services_ibfk_2` FOREIGN KEY (`ServiceId`) REFERENCES `Services` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)","sql":"INSERT INTO `Room_Services` (`RoomId`,`ServiceId`) VALUES (?,?);","fatal":false,"errno":1452,"sqlState":"23000","code":"ER_NO_REFERENCED_ROW_2","parameters":["55","0"]},"sql":"INSERT INTO `Room_Services` (`RoomId`,`ServiceId`) VALUES (?,?);","parameters":["55","0"],"table":"Services","fields":["ServiceId"],"value":"0","index":"room_services_ibfk_2","reltype":"child"} 
+ DBError: Error al guardar la relación room - service
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:116:35
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:114:21
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async updateRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:78:15)
+ Mon Sep 30 2024 10:27:04 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar la relación room - service 
+ DBError 
+ {
+"name":"SequelizeForeignKeyConstraintError","parent":{
+"name":"SqlError","text":"Cannot add or update a child row: a foreign key constraint fails (`db_lambda`.`room_services`, CONSTRAINT `room_services_ibfk_2` FOREIGN KEY (`ServiceId`) REFERENCES `Services` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)","sql":"INSERT INTO `Room_Services` (`RoomId`,`ServiceId`) VALUES (?,?);","fatal":false,"errno":1452,"sqlState":"23000","code":"ER_NO_REFERENCED_ROW_2","parameters":["55","0"]},"original":{
+"name":"SqlError","text":"Cannot add or update a child row: a foreign key constraint fails (`db_lambda`.`room_services`, CONSTRAINT `room_services_ibfk_2` FOREIGN KEY (`ServiceId`) REFERENCES `Services` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)","sql":"INSERT INTO `Room_Services` (`RoomId`,`ServiceId`) VALUES (?,?);","fatal":false,"errno":1452,"sqlState":"23000","code":"ER_NO_REFERENCED_ROW_2","parameters":["55","0"]},"sql":"INSERT INTO `Room_Services` (`RoomId`,`ServiceId`) VALUES (?,?);","parameters":["55","0"],"table":"Services","fields":["ServiceId"],"value":"0","index":"room_services_ibfk_2","reltype":"child"} 
+ DBError: Error al guardar la relación room - service
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:117:35
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:115:21
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async updateRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:78:15)
+ Mon Sep 30 2024 10:27:54 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar la relación room - service 
+ DBError 
+ {
+"name":"SequelizeForeignKeyConstraintError","parent":{
+"name":"SqlError","text":"Cannot add or update a child row: a foreign key constraint fails (`db_lambda`.`room_services`, CONSTRAINT `room_services_ibfk_2` FOREIGN KEY (`ServiceId`) REFERENCES `Services` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)","sql":"INSERT INTO `Room_Services` (`RoomId`,`ServiceId`) VALUES (?,?);","fatal":false,"errno":1452,"sqlState":"23000","code":"ER_NO_REFERENCED_ROW_2","parameters":["55","0"]},"original":{
+"name":"SqlError","text":"Cannot add or update a child row: a foreign key constraint fails (`db_lambda`.`room_services`, CONSTRAINT `room_services_ibfk_2` FOREIGN KEY (`ServiceId`) REFERENCES `Services` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)","sql":"INSERT INTO `Room_Services` (`RoomId`,`ServiceId`) VALUES (?,?);","fatal":false,"errno":1452,"sqlState":"23000","code":"ER_NO_REFERENCED_ROW_2","parameters":["55","0"]},"sql":"INSERT INTO `Room_Services` (`RoomId`,`ServiceId`) VALUES (?,?);","parameters":["55","0"],"table":"Services","fields":["ServiceId"],"value":"0","index":"room_services_ibfk_2","reltype":"child"} 
+ DBError: Error al guardar la relación room - service
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:117:35
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:115:21
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async updateRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:78:15)
+ Mon Sep 30 2024 10:29:08 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar la relación room - service 
+ DBError 
+ {
+"name":"SequelizeForeignKeyConstraintError","parent":{
+"name":"SqlError","text":"Cannot add or update a child row: a foreign key constraint fails (`db_lambda`.`room_services`, CONSTRAINT `room_services_ibfk_2` FOREIGN KEY (`ServiceId`) REFERENCES `Services` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)","sql":"INSERT INTO `Room_Services` (`RoomId`,`ServiceId`) VALUES (?,?);","fatal":false,"errno":1452,"sqlState":"23000","code":"ER_NO_REFERENCED_ROW_2","parameters":["55","0"]},"original":{
+"name":"SqlError","text":"Cannot add or update a child row: a foreign key constraint fails (`db_lambda`.`room_services`, CONSTRAINT `room_services_ibfk_2` FOREIGN KEY (`ServiceId`) REFERENCES `Services` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)","sql":"INSERT INTO `Room_Services` (`RoomId`,`ServiceId`) VALUES (?,?);","fatal":false,"errno":1452,"sqlState":"23000","code":"ER_NO_REFERENCED_ROW_2","parameters":["55","0"]},"sql":"INSERT INTO `Room_Services` (`RoomId`,`ServiceId`) VALUES (?,?);","parameters":["55","0"],"table":"Services","fields":["ServiceId"],"value":"0","index":"room_services_ibfk_2","reltype":"child"} 
+ DBError: Error al guardar la relación room - service
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:115:35
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:113:21
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async updateRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:78:15)
+ Mon Sep 30 2024 10:29:44 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar la relación room - service 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"Column 'ServiceId' cannot be null","sql":"INSERT INTO `Room_Services` (`RoomId`,`ServiceId`) VALUES (?,?);","fatal":false,"errno":1048,"sqlState":"23000","code":"ER_BAD_NULL_ERROR","parameters":["55",null]},"original":{
+"name":"SqlError","text":"Column 'ServiceId' cannot be null","sql":"INSERT INTO `Room_Services` (`RoomId`,`ServiceId`) VALUES (?,?);","fatal":false,"errno":1048,"sqlState":"23000","code":"ER_BAD_NULL_ERROR","parameters":["55",null]},"sql":"INSERT INTO `Room_Services` (`RoomId`,`ServiceId`) VALUES (?,?);","parameters":["55",null]} 
+ DBError: Error al guardar la relación room - service
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:115:35
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:113:21
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async updateRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:78:15)
+ Mon Sep 30 2024 10:35:08 GMT-0600 (Central Standard Time) 
+ DBError: Error al eliminar la relación room - service 
+ DBError 
+ {
+} 
+ DBError: Error al eliminar la relación room - service
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:122:35
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:120:21
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async updateRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:78:15)
+ Mon Sep 30 2024 10:40:39 GMT-0600 (Central Standard Time) 
+ DBError: Error al eliminar la relación room - service 
+ DBError 
+ {
+} 
+ DBError: Error al eliminar la relación room - service
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:122:35
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:120:21
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async updateRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:78:15)
+ Mon Sep 30 2024 10:48:47 GMT-0600 (Central Standard Time) 
+ DBError: Error al eliminar la relación room - service 
+ DBError 
+ {
+} 
+ DBError: Error al eliminar la relación room - service
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:122:35
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:120:21
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async updateRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:78:15)
+ Mon Sep 30 2024 10:49:41 GMT-0600 (Central Standard Time) 
+ DBError: Error al eliminar la relación room - service 
+ DBError 
+ {
+} 
+ DBError: Error al eliminar la relación room - service
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:122:35
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:120:21
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async updateRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:78:15)
+ Mon Sep 30 2024 10:50:03 GMT-0600 (Central Standard Time) 
+ DBError: Error al eliminar la relación room - service 
+ DBError 
+ {
+} 
+ DBError: Error al eliminar la relación room - service
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:122:35
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:120:21
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async updateRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:78:15)
+ Mon Sep 30 2024 10:50:31 GMT-0600 (Central Standard Time) 
+ DBError: Error al eliminar la relación room - service 
+ DBError 
+ {
+} 
+ DBError: Error al eliminar la relación room - service
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:122:35
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:120:21
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async updateRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:78:15)
+ Mon Sep 30 2024 11:37:50 GMT-0600 (Central Standard Time) 
+ Error: No se encontró habitación 
+ Error 
+ undefined 
+ Error: No se encontró habitación
+    at updateRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:77:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Sep 30 2024 12:26:39 GMT-0600 (Central Standard Time) 
+ SyntaxError: Unexpected token o in JSON at position 1 
+ SyntaxError 
+ undefined 
+ SyntaxError: Unexpected token o in JSON at position 1
+    at JSON.parse (<anonymous>)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:135:30
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async updateRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:82:15)
+ Mon Sep 30 2024 12:26:47 GMT-0600 (Central Standard Time) 
+ TypeError: JSON.parser is not a function 
+ TypeError 
+ undefined 
+ TypeError: JSON.parser is not a function
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:135:30
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async updateRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:82:15)
+ Mon Sep 30 2024 12:28:17 GMT-0600 (Central Standard Time) 
+ SyntaxError: Unexpected token o in JSON at position 1 
+ SyntaxError 
+ undefined 
+ SyntaxError: Unexpected token o in JSON at position 1
+    at JSON.parse (<anonymous>)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:136:30
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async updateRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:82:15)
+ Mon Sep 30 2024 12:28:32 GMT-0600 (Central Standard Time) 
+ SyntaxError: Unexpected token o in JSON at position 1 
+ SyntaxError 
+ undefined 
+ SyntaxError: Unexpected token o in JSON at position 1
+    at JSON.parse (<anonymous>)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:136:30
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async updateRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:82:15)
+ Mon Sep 30 2024 14:09:35 GMT-0600 (Central Standard Time) 
+ TypeError: include.model.getTableName is not a function 
+ TypeError 
+ undefined 
+ TypeError: include.model.getTableName is not a function
+    at Room._validateIncludedElement (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:476:30)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:421:37
+    at Array.map (<anonymous>)
+    at Room._validateIncludedElements (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:417:39)
+    at Room.findAll (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:1124:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async getRooms (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:14:19)
+ Mon Sep 30 2024 14:39:02 GMT-0600 (Central Standard Time) 
+ DBError: Error al eliminar la relación room - price 
+ DBError 
+ {
+} 
+ DBError: Error al eliminar la relación room - price
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:163:31
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:161:17
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async updateRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:79:15)
+ Mon Sep 30 2024 14:39:28 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar la relación room - price 
+ DBError 
+ {
+"name":"SequelizeUniqueConstraintError","errors":[{
+"message":"PRIMARY must be unique","type":"unique violation","path":"PRIMARY","value":"56-1","origin":"DB","instance":{
+"RoomId":"56","RoomPriceId":1},"validatorKey":"not_unique","validatorName":null,"validatorArgs":[]}],"parent":{
+"name":"SqlError","text":"Duplicate entry '56-1' for key 'PRIMARY'","sql":"INSERT INTO `RoomPrice_Rooms` (`RoomId`,`RoomPriceId`) VALUES (?,?);","fatal":false,"errno":1062,"sqlState":"23000","code":"ER_DUP_ENTRY","parameters":["56",1]},"original":{
+"name":"SqlError","text":"Duplicate entry '56-1' for key 'PRIMARY'","sql":"INSERT INTO `RoomPrice_Rooms` (`RoomId`,`RoomPriceId`) VALUES (?,?);","fatal":false,"errno":1062,"sqlState":"23000","code":"ER_DUP_ENTRY","parameters":["56",1]},"fields":{
+"PRIMARY":"56-1"},"sql":"INSERT INTO `RoomPrice_Rooms` (`RoomId`,`RoomPriceId`) VALUES (?,?);"} 
+ DBError: Error al guardar la relación room - price
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:156:31
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:154:17
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async updateRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:79:15)
+ Mon Sep 30 2024 14:40:31 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar la relación room - price 
+ DBError 
+ {
+"name":"SequelizeUniqueConstraintError","errors":[{
+"message":"PRIMARY must be unique","type":"unique violation","path":"PRIMARY","value":"56-1","origin":"DB","instance":{
+"RoomId":"56","RoomPriceId":1},"validatorKey":"not_unique","validatorName":null,"validatorArgs":[]}],"parent":{
+"name":"SqlError","text":"Duplicate entry '56-1' for key 'PRIMARY'","sql":"INSERT INTO `RoomPrice_Rooms` (`RoomId`,`RoomPriceId`) VALUES (?,?);","fatal":false,"errno":1062,"sqlState":"23000","code":"ER_DUP_ENTRY","parameters":["56",1]},"original":{
+"name":"SqlError","text":"Duplicate entry '56-1' for key 'PRIMARY'","sql":"INSERT INTO `RoomPrice_Rooms` (`RoomId`,`RoomPriceId`) VALUES (?,?);","fatal":false,"errno":1062,"sqlState":"23000","code":"ER_DUP_ENTRY","parameters":["56",1]},"fields":{
+"PRIMARY":"56-1"},"sql":"INSERT INTO `RoomPrice_Rooms` (`RoomId`,`RoomPriceId`) VALUES (?,?);"} 
+ DBError: Error al guardar la relación room - price
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:156:31
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:154:17
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async updateRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:79:15)
+ Mon Sep 30 2024 14:41:28 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar la relación room - price 
+ DBError 
+ {
+"name":"SequelizeUniqueConstraintError","errors":[{
+"message":"PRIMARY must be unique","type":"unique violation","path":"PRIMARY","value":"56-1","origin":"DB","instance":{
+"RoomId":"56","RoomPriceId":1},"validatorKey":"not_unique","validatorName":null,"validatorArgs":[]}],"parent":{
+"name":"SqlError","text":"Duplicate entry '56-1' for key 'PRIMARY'","sql":"INSERT INTO `RoomPrice_Rooms` (`RoomId`,`RoomPriceId`) VALUES (?,?);","fatal":false,"errno":1062,"sqlState":"23000","code":"ER_DUP_ENTRY","parameters":["56",1]},"original":{
+"name":"SqlError","text":"Duplicate entry '56-1' for key 'PRIMARY'","sql":"INSERT INTO `RoomPrice_Rooms` (`RoomId`,`RoomPriceId`) VALUES (?,?);","fatal":false,"errno":1062,"sqlState":"23000","code":"ER_DUP_ENTRY","parameters":["56",1]},"fields":{
+"PRIMARY":"56-1"},"sql":"INSERT INTO `RoomPrice_Rooms` (`RoomId`,`RoomPriceId`) VALUES (?,?);"} 
+ DBError: Error al guardar la relación room - price
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:156:31
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:154:17
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async updateRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:79:15)
+ Mon Sep 30 2024 14:43:06 GMT-0600 (Central Standard Time) 
+ Error: No se encontró habitación 
+ Error 
+ undefined 
+ Error: No se encontró habitación
+    at updateRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:76:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Sep 30 2024 14:43:13 GMT-0600 (Central Standard Time) 
+ Error: No se encontró habitación 
+ Error 
+ undefined 
+ Error: No se encontró habitación
+    at updateRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:76:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Mon Sep 30 2024 15:27:05 GMT-0600 (Central Standard Time) 
+ Error: Error. No se encontraron reservaciones 
+ Error 
+ undefined 
+ Error: Error. No se encontraron reservaciones
+    at getReservations (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:14:49)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Tue Oct 01 2024 10:11:17 GMT-0600 (Central Standard Time) 
+ TokenExpiredError: jwt expired 
+ TokenExpiredError 
+ undefined 
+ TokenExpiredError: jwt expired
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/jsonwebtoken/verify.js:190:21
+    at getSecret (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/jsonwebtoken/verify.js:97:14)
+    at module.exports [as verify] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/jsonwebtoken/verify.js:101:10)
+    at checkJWT (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:16:37)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+ Tue Oct 01 2024 10:44:04 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar Habitación 
+ DBError 
+ {
+"name":"SequelizeUniqueConstraintError","errors":[{
+"message":"room_number must be unique","type":"unique violation","path":"room_number","value":"101","origin":"DB","instance":{
+"id":null,"room_number":"101","room_location":"Segundo nivel a la derecha","number_of_beds":2,"max_people_number":3,"RoomStateId":1,"BranchId":1},"validatorKey":"not_unique","validatorName":null,"validatorArgs":[]}],"parent":{
+"name":"SqlError","text":"Duplicate entry '101' for key 'room_number'","sql":"INSERT INTO `Rooms` (`id`,`room_number`,`room_location`,`number_of_beds`,`max_people_number`,`RoomStateId`,`BranchId`) VALUES (DEFAULT,?,?,?,?,?,?);","fatal":false,"errno":1062,"sqlState":"23000","code":"ER_DUP_ENTRY","parameters":["101","Segundo nivel a la derecha",2,3,1,1]},"original":{
+"name":"SqlError","text":"Duplicate entry '101' for key 'room_number'","sql":"INSERT INTO `Rooms` (`id`,`room_number`,`room_location`,`number_of_beds`,`max_people_number`,`RoomStateId`,`BranchId`) VALUES (DEFAULT,?,?,?,?,?,?);","fatal":false,"errno":1062,"sqlState":"23000","code":"ER_DUP_ENTRY","parameters":["101","Segundo nivel a la derecha",2,3,1,1]},"fields":{
+"room_number":"101"},"sql":"INSERT INTO `Rooms` (`id`,`room_number`,`room_location`,`number_of_beds`,`max_people_number`,`RoomStateId`,`BranchId`) VALUES (DEFAULT,?,?,?,?,?,?);"} 
+ DBError: Error al guardar Habitación
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:39:27
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:37:26
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async saveRoom (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:35:19)
+ Tue Oct 01 2024 11:01:20 GMT-0600 (Central Standard Time) 
+ Error: Error. Detalle no encontrado. 
+ Error 
+ undefined 
+ Error: Error. Detalle no encontrado.
+    at saveReservation (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:40:64)
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at checkFields (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at middleware (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Tue Oct 01 2024 11:23:20 GMT-0600 (Central Standard Time) 
+ Error: Habitación 101 no esta disponible. 
+ Error 
+ undefined 
+ Error: Habitación 101 no esta disponible.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:58:48
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async saveReservation (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:49:5)
+ Tue Oct 01 2024 11:25:13 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar el detalle de la reservación 
+ DBError 
+ {
+"name":"SequelizeValidationError","errors":[{
+"message":"ReservationDetail.date_in cannot be null","type":"notNull Violation","path":"date_in","value":null,"origin":"CORE","instance":{
+"id":null},"validatorKey":"is_null","validatorName":null,"validatorArgs":[]},{
+"message":"ReservationDetail.date_out cannot be null","type":"notNull Violation","path":"date_out","value":null,"origin":"CORE","instance":{
+"id":null},"validatorKey":"is_null","validatorName":null,"validatorArgs":[]},{
+"message":"ReservationDetail.nights_number cannot be null","type":"notNull Violation","path":"nights_number","value":null,"origin":"CORE","instance":{
+"id":null},"validatorKey":"is_null","validatorName":null,"validatorArgs":[]},{
+"message":"ReservationDetail.people_number cannot be null","type":"notNull Violation","path":"people_number","value":null,"origin":"CORE","instance":{
+"id":null},"validatorKey":"is_null","validatorName":null,"validatorArgs":[]},{
+"message":"ReservationDetail.ReservationId cannot be null","type":"notNull Violation","path":"ReservationId","value":null,"origin":"CORE","instance":{
+"id":null},"validatorKey":"is_null","validatorName":null,"validatorArgs":[]},{
+"message":"ReservationDetail.RoomId cannot be null","type":"notNull Violation","path":"RoomId","value":null,"origin":"CORE","instance":{
+"id":null},"validatorKey":"is_null","validatorName":null,"validatorArgs":[]}]} 
+ DBError: Error al guardar el detalle de la reservación
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:61:38
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:60:13
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async saveReservation (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:49:5)
+ Tue Oct 01 2024 11:27:48 GMT-0600 (Central Standard Time) 
+ Error: Habitación 101 no esta disponible. 
+ Error 
+ undefined 
+ Error: Habitación 101 no esta disponible.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:58:48
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async saveReservation (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:49:5)
+ Tue Oct 01 2024 11:31:10 GMT-0600 (Central Standard Time) 
+ Error: Habitación 101 no esta disponible. 
+ Error 
+ undefined 
+ Error: Habitación 101 no esta disponible.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:58:48
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async saveReservation (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:49:5)
+ Tue Oct 01 2024 11:32:06 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar el detalle de la reservación 
+ DBError 
+ {
+"name":"SequelizeValidationError","errors":[{
+"message":"ReservationDetail.date_in cannot be null","type":"notNull Violation","path":"date_in","value":null,"origin":"CORE","instance":{
+"id":null},"validatorKey":"is_null","validatorName":null,"validatorArgs":[]},{
+"message":"ReservationDetail.date_out cannot be null","type":"notNull Violation","path":"date_out","value":null,"origin":"CORE","instance":{
+"id":null},"validatorKey":"is_null","validatorName":null,"validatorArgs":[]},{
+"message":"ReservationDetail.nights_number cannot be null","type":"notNull Violation","path":"nights_number","value":null,"origin":"CORE","instance":{
+"id":null},"validatorKey":"is_null","validatorName":null,"validatorArgs":[]},{
+"message":"ReservationDetail.people_number cannot be null","type":"notNull Violation","path":"people_number","value":null,"origin":"CORE","instance":{
+"id":null},"validatorKey":"is_null","validatorName":null,"validatorArgs":[]},{
+"message":"ReservationDetail.ReservationId cannot be null","type":"notNull Violation","path":"ReservationId","value":null,"origin":"CORE","instance":{
+"id":null},"validatorKey":"is_null","validatorName":null,"validatorArgs":[]},{
+"message":"ReservationDetail.RoomId cannot be null","type":"notNull Violation","path":"RoomId","value":null,"origin":"CORE","instance":{
+"id":null},"validatorKey":"is_null","validatorName":null,"validatorArgs":[]}]} 
+ DBError: Error al guardar el detalle de la reservación
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:61:38
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:60:13
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async saveReservation (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:49:5)
+ Tue Oct 01 2024 11:32:45 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar el detalle de la reservación 
+ DBError 
+ {
+"name":"SequelizeValidationError","errors":[{
+"message":"ReservationDetail.date_in cannot be null","type":"notNull Violation","path":"date_in","value":null,"origin":"CORE","instance":{
+"id":null},"validatorKey":"is_null","validatorName":null,"validatorArgs":[]},{
+"message":"ReservationDetail.date_out cannot be null","type":"notNull Violation","path":"date_out","value":null,"origin":"CORE","instance":{
+"id":null},"validatorKey":"is_null","validatorName":null,"validatorArgs":[]},{
+"message":"ReservationDetail.nights_number cannot be null","type":"notNull Violation","path":"nights_number","value":null,"origin":"CORE","instance":{
+"id":null},"validatorKey":"is_null","validatorName":null,"validatorArgs":[]},{
+"message":"ReservationDetail.people_number cannot be null","type":"notNull Violation","path":"people_number","value":null,"origin":"CORE","instance":{
+"id":null},"validatorKey":"is_null","validatorName":null,"validatorArgs":[]},{
+"message":"ReservationDetail.ReservationId cannot be null","type":"notNull Violation","path":"ReservationId","value":null,"origin":"CORE","instance":{
+"id":null},"validatorKey":"is_null","validatorName":null,"validatorArgs":[]},{
+"message":"ReservationDetail.RoomId cannot be null","type":"notNull Violation","path":"RoomId","value":null,"origin":"CORE","instance":{
+"id":null},"validatorKey":"is_null","validatorName":null,"validatorArgs":[]}]} 
+ DBError: Error al guardar el detalle de la reservación
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:61:42
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:60:17
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async saveReservation (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:49:5)
+ Tue Oct 01 2024 11:35:12 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar el detalle de la reservación 
+ DBError 
+ {
+"name":"SequelizeValidationError","errors":[{
+"message":"ReservationDetail.nights_number cannot be null","type":"notNull Violation","path":"nights_number","value":null,"origin":"CORE","instance":{
+"id":null},"validatorKey":"is_null","validatorName":null,"validatorArgs":[]},{
+"message":"ReservationDetail.people_number cannot be null","type":"notNull Violation","path":"people_number","value":null,"origin":"CORE","instance":{
+"id":null},"validatorKey":"is_null","validatorName":null,"validatorArgs":[]},{
+"message":"ReservationDetail.ReservationId cannot be null","type":"notNull Violation","path":"ReservationId","value":null,"origin":"CORE","instance":{
+"id":null},"validatorKey":"is_null","validatorName":null,"validatorArgs":[]},{
+"message":"ReservationDetail.RoomId cannot be null","type":"notNull Violation","path":"RoomId","value":null,"origin":"CORE","instance":{
+"id":null},"validatorKey":"is_null","validatorName":null,"validatorArgs":[]}]} 
+ DBError: Error al guardar el detalle de la reservación
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:61:42
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:60:17
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async saveReservation (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:49:5)
+ Tue Oct 01 2024 11:39:08 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar el detalle de la reservación 
+ DBError 
+ {
+"name":"SequelizeValidationError","errors":[{
+"message":"ReservationDetail.nights_number cannot be null","type":"notNull Violation","path":"nights_number","value":null,"origin":"CORE","instance":{
+"id":null},"validatorKey":"is_null","validatorName":null,"validatorArgs":[]},{
+"message":"ReservationDetail.people_number cannot be null","type":"notNull Violation","path":"people_number","value":null,"origin":"CORE","instance":{
+"id":null},"validatorKey":"is_null","validatorName":null,"validatorArgs":[]},{
+"message":"ReservationDetail.ReservationId cannot be null","type":"notNull Violation","path":"ReservationId","value":null,"origin":"CORE","instance":{
+"id":null},"validatorKey":"is_null","validatorName":null,"validatorArgs":[]},{
+"message":"ReservationDetail.RoomId cannot be null","type":"notNull Violation","path":"RoomId","value":null,"origin":"CORE","instance":{
+"id":null},"validatorKey":"is_null","validatorName":null,"validatorArgs":[]}]} 
+ DBError: Error al guardar el detalle de la reservación
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:61:42
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:60:17
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async saveReservation (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:49:5)
+ Tue Oct 01 2024 11:40:06 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar el detalle de la reservación 
+ DBError 
+ {
+"name":"SequelizeValidationError","errors":[{
+"message":"ReservationDetail.ReservationId cannot be null","type":"notNull Violation","path":"ReservationId","value":null,"origin":"CORE","instance":{
+"id":null,"date_in":"2024-04-25T00:00:00.000Z","date_out":"2024-04-30T00:00:00.000Z","nights_number":2,"people_number":1,"RoomId":1},"validatorKey":"is_null","validatorName":null,"validatorArgs":[]}]} 
+ DBError: Error al guardar el detalle de la reservación
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:61:42
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:60:17
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async saveReservation (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:49:5)
+ Tue Oct 01 2024 11:41:31 GMT-0600 (Central Standard Time) 
+ Error: Habitación 101 no esta disponible. 
+ Error 
+ undefined 
+ Error: Habitación 101 no esta disponible.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:58:48
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async saveReservation (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:49:5)
+ Tue Oct 01 2024 11:49:38 GMT-0600 (Central Standard Time) 
+ DBError: Error al actualizar estado de hanbitación. 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"Lock wait timeout exceeded; try restarting transaction","sql":"UPDATE `Rooms` SET `RoomStateId`=? WHERE `id` = ?","fatal":false,"errno":1205,"sqlState":"HY000","code":"ER_LOCK_WAIT_TIMEOUT","parameters":[2,1]},"original":{
+"name":"SqlError","text":"Lock wait timeout exceeded; try restarting transaction","sql":"UPDATE `Rooms` SET `RoomStateId`=? WHERE `id` = ?","fatal":false,"errno":1205,"sqlState":"HY000","code":"ER_LOCK_WAIT_TIMEOUT","parameters":[2,1]},"sql":"UPDATE `Rooms` SET `RoomStateId`=? WHERE `id` = ?","parameters":[2,1]} 
+ DBError: Error al actualizar estado de hanbitación.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:67:40
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:66:13
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async saveReservation (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:49:5)
+ Tue Oct 01 2024 11:52:49 GMT-0600 (Central Standard Time) 
+ DBError: Error al actualizar estado de hanbitación. 
+ DBError 
+ {
+"generatedMessage":false,"code":"ERR_ASSERTION","expected":true,"operator":"=="} 
+ DBError: Error al actualizar estado de hanbitación.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:67:40
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:66:13
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async saveReservation (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:49:5)
+ Tue Oct 01 2024 11:56:46 GMT-0600 (Central Standard Time) 
+ Error: Habitación 100 no esta disponible. 
+ Error 
+ undefined 
+ Error: Habitación 100 no esta disponible.
+    at /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:58:48
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async saveReservation (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:49:5)

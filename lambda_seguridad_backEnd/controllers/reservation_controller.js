@@ -5,6 +5,7 @@ const Reservation = require("../models/reservation_model");
 const ReservationState = require("../models/reservationState_model");
 const ReservationDetail = require("../models/reservationDetail_model");
 const { resSuccessful } = require("../response/resSucessful");
+const Room = require("../models/room_model");
 
 
 const getReservations = async ( req, res ) => {
@@ -31,26 +32,50 @@ const getReservation = async ( req, res ) => {
 
 }
 
+
+
+
 const saveReservation =  async( req, res ) => {
     const reservationAndDetailToSave = req.body;
+    //check details come on body
+    if ( !reservationAndDetailToSave.reservationDetails ) throw new GeneralError('Error. Detalle no encontrado.', 400);
 
-    if ( !reservationAndDetailToSave.reservationDetail ) throw new GeneralError('Error. Detalle no encontrado.', 400);
-
-    const { reservationDetail, ...reservationToSave} = reservationAndDetailToSave
+    
+    
+    const { reservationDetails, ...reservationToSave} = reservationAndDetailToSave
     
     //transaction
     
-        await db_connection.transaction( async(transaction) => {
-            const reservationSaved = await Reservation.create( reservationToSave, {transaction} )
-                .catch(error => { throw new DBError(error, 'Error. No se pudo guardar la reservación')});
-    
-            reservationDetail.ReservationId = reservationSaved.id;
-            await ReservationDetail.create(reservationDetail, {transaction})
+    await db_connection.transaction( async(transaction) => {
+        
+        const reservationSaved = await Reservation.create( reservationToSave, {transaction} )
+            .catch(error => { throw new DBError(error, 'Error. No se pudo guardar la reservación')});
+
+        // reservationDetail.ReservationId = reservationSaved.id;
+        for(detail in reservationDetails){
+            //check if room is available
+            const room = await Room.findByPk(reservationDetails[detail].RoomId);
+            if ( room.RoomStateId != 1) {throw new GeneralError(`Habitación ${room.room_number} no esta disponible.`)}
+                
+            reservationDetails[detail].ReservationId = reservationSaved.id
+                
+            await ReservationDetail.create(reservationDetails[detail], {transaction})
                 .catch( error => {throw new DBError(error, 'Error al guardar el detalle de la reservación')});    
-            
-                resSuccessful(res, 'Reservación guardada exitosamente');
-        })
+
+            //change room state
+            await Room.update({RoomStateId: 2}, {where: {id: reservationDetails[detail].RoomId}, transaction})
+                .catch(error => {throw new DBError(error, 'Error al actualizar estado de hanbitación.')})
+        }
+        
+            resSuccessful(res, 'Reservación guardada exitosamente');
+    })
 };
+
+
+
+
+
+
 
 const updateReservation =  async( req, res ) => {
     const { id } = req.params;
