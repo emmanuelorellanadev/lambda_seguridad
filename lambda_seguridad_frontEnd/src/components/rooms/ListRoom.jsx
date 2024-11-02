@@ -22,11 +22,8 @@ const ListRoom = (props) => {
   return (
     <>
     <div className='room_container' >
-        <div>
-            <P_Head className="p_h1" text="Listado de Habitaciones"/>
-        </div>
         <div className='table-responsive companyTable_container' >
-            <Table_room columns={["Número", "Cámas", "Personas", "Teléfono ", "Estado"]} editData={editRoom} deleteData={deleteRoom} />
+            <Table_room columns={["Número", "Cámas", "Personas", "Información"]} editData={editRoom} deleteData={deleteRoom} />
         </div>
     </div>
     </>

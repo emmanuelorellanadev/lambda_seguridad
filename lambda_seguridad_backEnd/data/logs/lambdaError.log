@@ -6664,3 +6664,59 @@ sql: INSERT INTO `RoomPrice_Rooms` (`RoomId`,`RoomPriceId`) VALUES (?,?); - para
     at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
     at middleware (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Nov 02 2024 10:15:51 GMT-0600 (Central Standard Time) 
+ Error: {"errors":[{"msg":"The type branch is required","param":"branchType_name","location":"body"},{"msg":"The state branch is required","param":"branchType_state","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"msg":"The type branch is required","param":"branchType_name","location":"body"},{"msg":"The state branch is required","param":"branchType_state","location":"body"}]}
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at middleware (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Nov 02 2024 10:17:10 GMT-0600 (Central Standard Time) 
+ Error: {"errors":[{"msg":"The type branch is required","param":"branchType_name","location":"body"},{"msg":"The state branch is required","param":"branchType_state","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"msg":"The type branch is required","param":"branchType_name","location":"body"},{"msg":"The state branch is required","param":"branchType_state","location":"body"}]}
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at middleware (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Nov 02 2024 10:21:05 GMT-0600 (Central Standard Time) 
+ Error: {"errors":[{"msg":"The room state is required.","param":"RoomStateId","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"msg":"The room state is required.","param":"RoomStateId","location":"body"}]}
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at middleware (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Sat Nov 02 2024 10:21:33 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar Habitación 
+ DBError 
+ {
+"name":"SequelizeForeignKeyConstraintError","parent":{
+"name":"SqlError","text":"Cannot add or update a child row: a foreign key constraint fails (`lambda_db`.`Rooms`, CONSTRAINT `Rooms_ibfk_1` FOREIGN KEY (`RoomStateId`) REFERENCES `RoomStates` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)","sql":"INSERT INTO `Rooms` (`id`,`room_number`,`room_info`,`room_beds`,`room_people`,`room_phone`,`RoomStateId`,`BranchId`) VALUES (DEFAULT,?,?,?,?,?,?,?);","fatal":false,"errno":1452,"sqlState":"23000","code":"ER_NO_REFERENCED_ROW_2","parameters":["1-A","1 Matrimonial","1","1","",1,1]},"original":{
+"name":"SqlError","text":"Cannot add or update a child row: a foreign key constraint fails (`lambda_db`.`Rooms`, CONSTRAINT `Rooms_ibfk_1` FOREIGN KEY (`RoomStateId`) REFERENCES `RoomStates` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)","sql":"INSERT INTO `Rooms` (`id`,`room_number`,`room_info`,`room_beds`,`room_people`,`room_phone`,`RoomStateId`,`BranchId`) VALUES (DEFAULT,?,?,?,?,?,?,?);","fatal":false,"errno":1452,"sqlState":"23000","code":"ER_NO_REFERENCED_ROW_2","parameters":["1-A","1 Matrimonial","1","1","",1,1]},"sql":"INSERT INTO `Rooms` (`id`,`room_number`,`room_info`,`room_beds`,`room_people`,`room_phone`,`RoomStateId`,`BranchId`) VALUES (DEFAULT,?,?,?,?,?,?,?);","parameters":["1-A","1 Matrimonial","1","1","",1,1],"table":"RoomStates","fields":["RoomStateId"],"value":1,"index":"Rooms_ibfk_1","reltype":"child"} 
+ DBError: Error al guardar Habitación
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:56:27
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:54:26
+    at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async saveRoom (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:52:19)
+ Sat Nov 02 2024 11:19:17 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar Habitación 
+ DBError 
+ {
+"name":"SequelizeForeignKeyConstraintError","parent":{
+"name":"SqlError","text":"Cannot add or update a child row: a foreign key constraint fails (`lambda_db`.`Rooms`, CONSTRAINT `Rooms_ibfk_1` FOREIGN KEY (`RoomStateId`) REFERENCES `RoomStates` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)","sql":"INSERT INTO `Rooms` (`id`,`room_number`,`room_info`,`room_beds`,`room_people`,`room_phone`,`RoomStateId`,`BranchId`) VALUES (DEFAULT,?,?,?,?,?,?,?);","fatal":false,"errno":1452,"sqlState":"23000","code":"ER_NO_REFERENCED_ROW_2","parameters":["1-A","1 Matrimonial","1","1","",1,1]},"original":{
+"name":"SqlError","text":"Cannot add or update a child row: a foreign key constraint fails (`lambda_db`.`Rooms`, CONSTRAINT `Rooms_ibfk_1` FOREIGN KEY (`RoomStateId`) REFERENCES `RoomStates` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)","sql":"INSERT INTO `Rooms` (`id`,`room_number`,`room_info`,`room_beds`,`room_people`,`room_phone`,`RoomStateId`,`BranchId`) VALUES (DEFAULT,?,?,?,?,?,?,?);","fatal":false,"errno":1452,"sqlState":"23000","code":"ER_NO_REFERENCED_ROW_2","parameters":["1-A","1 Matrimonial","1","1","",1,1]},"sql":"INSERT INTO `Rooms` (`id`,`room_number`,`room_info`,`room_beds`,`room_people`,`room_phone`,`RoomStateId`,`BranchId`) VALUES (DEFAULT,?,?,?,?,?,?,?);","parameters":["1-A","1 Matrimonial","1","1","",1,1],"table":"RoomStates","fields":["RoomStateId"],"value":1,"index":"Rooms_ibfk_1","reltype":"child"} 
+ DBError: Error al guardar Habitación
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:56:27
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:54:26
+    at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async saveRoom (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:52:19)

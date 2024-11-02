@@ -55,6 +55,8 @@ export const Table_room = ({ columns, rows, editData, deleteData, ...props}) => 
     // }else{
     //   getUsers()
     // }
+
+    console.log(rooms.data)
   }, [onLoad, search]);
 
   return (
@@ -89,37 +91,37 @@ export const Table_room = ({ columns, rows, editData, deleteData, ...props}) => 
         </thead>
         <tbody className='text-center align-baseline'>
           {
-            rooms.data?.map( ( user ) => {
+            rooms.data?.map( ( room ) => {
               if(editData && deleteData){
                   return (
                     <tr key={user.id}>
-                      <th>{user.id}</th>
-                      <th>{user.user_name}</th>
-                      <th>{user.Role?.role_name}</th>
-                      <th><input type='checkbox' checked={user.user_state} disabled/></th>
+                      <th>{room.room_number}</th>
+                      <th>{room.room_beds}</th>
+                      <th>{room.room_people}</th>
+                      <th>{room.room_info}</th>
                       <th><button className='btn btn-primary' type="button" onClick={ () => editData( user.id ) } >Editar</button></th>
                       <th><button className='btn btn-outline-danger' onClick={ () => deleteData(user.id, user.user_name, setOnLoad) }><i className='bi bi-trash3-fill'></i></button></th>
                     </tr>
                   )
-              }else if(editData){
-                return (
-                    <tr key={user.id}>
-                    <th>{user.id}</th>
-                    <th>{user.user_name}</th>
-                    <th>{user.role_name}</th>
-                    <th><input type='checkbox' checked={user.user_state} disabled/></th>
-                    <th><button className='btn btn-primary' type="button" onClick={ () => editData( user.id ) } >Editar</button></th>
-                  </tr>
-                )
-              }else{
-                return (
-                    <tr key={user.id}>
-                    <th>{user.id}</th>
-                    <th>{user.user_name}</th>
-                    <th>{user.role_name}</th>
-                    <th><input type='checkbox' checked={user.user_state} disabled/></th>
-                  </tr>
-                )
+              // }else if(editData){
+              //   return (
+              //       <tr key={user.id}>
+              //       <th>{user.id}</th>
+              //       <th>{user.user_name}</th>
+              //       <th>{user.role_name}</th>
+              //       <th><input type='checkbox' checked={user.user_state} disabled/></th>
+              //       <th><button className='btn btn-primary' type="button" onClick={ () => editData( user.id ) } >Editar</button></th>
+              //     </tr>
+              //   )
+              // }else{
+              //   return (
+              //       <tr key={user.id}>
+              //       <th>{user.id}</th>
+              //       <th>{user.user_name}</th>
+              //       <th>{user.role_name}</th>
+              //       <th><input type='checkbox' checked={user.user_state} disabled/></th>
+              //     </tr>
+              //   )
               }
               })
           }

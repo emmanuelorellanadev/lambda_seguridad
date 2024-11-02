@@ -106,7 +106,7 @@ const FrameProvider = ({children}) => {
         showProfileFrame, showUserFrame, showCompanyFrame,
         showBranchFrame, showBranchTypeFrame, showPersonTypeFrame,
         showPersonFrame, showRoleFrame, showRoomStateFrame,
-        showServiceFrame, showServiceFrame, showPriceFrame, closeSubMenus, showMenu
+        showServiceFrame, showPriceFrame, closeSubMenus, showMenu
     }
 
     return <FrameContext.Provider value={frameStates}>{children}</FrameContext.Provider>
