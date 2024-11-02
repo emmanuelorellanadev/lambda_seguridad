@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import '../../css/room/room.css';
 import { Toaster } from 'react-hot-toast'
@@ -7,6 +7,8 @@ import { P_Head } from '../ui/P_Head.jsx';import { Input } from '../ui/Input';
 import { Label } from '../ui/Label';
 import { TextArea } from '../ui/TextArea.jsx';
 import { Select } from '../ui/Select.jsx';
+import { useGetBranch } from '../branches/hooks/useGetBranch.js'
+import { useGetRoomStates } from '../roomStates/hooks/useGetRoomStates.js'
 
 const CreateRoom = () => {
 
@@ -16,14 +18,29 @@ const CreateRoom = () => {
     const [numberPeople, setNumberPeople] = useState('');
     const [phone, setPhone] = useState('');
     const [roomState, setRoomState] = useState('');
-    const [roomStates, setRoomStates] = useState('');
-    const [roomStateId, setRoomStateId] = useState('');
+    const [roomStates, setRoomStatesRes] = useState('');
+    const [roomStateId, setRoomStateId] = useState(1);
+    const [ branches, setBranches ] = useState([])
+    const [ branchId, setBranchId ] = useState("");
+    //pagination
+    const [ search, setSearch ] = useState('');
+    const [ rowsByPage, setRowsByPage ] = useState( 10 );
+    const [ page, setPage ] = useState( 1 );
+    const [ prevPage, setPrevPage ] = useState('');
+    const [ nextPage, setNextPage ] = useState('');
+    //
 
     const saveButton = (e) => {
         e.preventDefault();
         createRoom();
         cleanForm();
     }
+
+    const searching = (query) => {
+        setSearch(query); 
+        setPage(1);
+        setOnLoad(false);
+      }
 
     const cleanForm = () =>{
         setRoom('');
@@ -32,9 +49,16 @@ const CreateRoom = () => {
         setNumberPeople('');
         setPhone('');
         setRoomState('');
-        setRoomStates('');
+        setRoomStatesRes('');
         setRoomStateId('');
     }
+
+    useEffect( () => {
+        const urlBranch = `http://localhost:8080/branch/?limit=${rowsByPage}&page=${page}&q=${search}`;
+        const urlRoomState = `http://localhost:8080/roomState/?limit=${rowsByPage}&page=${page}&q=${search}`;
+        useGetBranch(urlBranch, { setBranches,  setNextPage, setPrevPage, setPage})
+        useGetRoomStates(urlRoomState, { setRoomStatesRes,  setNextPage, setPrevPage, setPage});
+    }, [])
   return (
     <>
         <div className='room_container'>
@@ -62,7 +86,11 @@ const CreateRoom = () => {
                 </div>
                 <div>
                     <Label lambdaClassLabel={""} text="Estado:"/>
-                    <Select data={roomStates.data} text="Selecciona Estado" name='RoomStateId' id='selectState' onChange={ (e) => {setRoomStateId(e.target.value)}} required />
+                    <Select data={roomStates?.data} text="Selecciona Estado" name='RoomStates' id='selectState' onChange={ (e) => {setRoomStateId(e.target.value)}} required />
+                </div>
+                <div>
+                    <Label lambdaClassLabel={""} text="Sucursal:"/>
+                    <Select data={branches?.data} text="Selecciona Sucursal" name='branchId' id='branchId' onChange={ (e) => {setRoomStateId(e.target.value)}} required />
                 </div>
 
 
