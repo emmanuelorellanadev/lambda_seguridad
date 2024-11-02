@@ -12,18 +12,21 @@ const Room = db_connection.define('Room', {
         unique: true,
         allowNull: false,
     },
-    room_location: {
+    room_info: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    number_of_beds: {
+    room_beds: {
         type: DataTypes.INTEGER,
         allowNull: false,
     },
-    max_people_number: {
+    room_people: {
         type: DataTypes.INTEGER,
         allowNull: false,
-    }
+    },
+    room_phone: {
+        type: DataTypes.STRING
+    },
 },
 {
     timestamps: false

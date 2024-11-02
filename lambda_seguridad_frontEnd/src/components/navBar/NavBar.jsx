@@ -14,6 +14,7 @@ import SubMenuRole from'../roles/SubMenuRole.jsx';
 import SubMenuRoomState from '../roomStates/SubMenuRoomState.jsx';
 import SubMenuService from '../services/SubMenuService.jsx';
 import SubMenuPrice from '../prices/SubMenuPrice.jsx';
+import SubMenuRoom from '../rooms/SubMenuRoom.jsx';
 import { NavBarUser } from './NavBarUser';
 import { NavBarSuper } from './NavBarSuper';
 import { NavBarAdmin } from './NavBarAdmin'
@@ -38,7 +39,8 @@ export const initialFrameState = {  profileFrame:       false,
                                     roomStateFrame:     false, 
                                     roomFrame:          false, 
                                     serviceFrame:       false, 
-                                    priceFrame:         false };
+                                    priceFrame:         false,
+                                    roomFrame:          true };
 
 
 export const NavBar = () => {
@@ -144,6 +146,11 @@ export const NavBar = () => {
         frameDispatch({type: 'RESET_FRAME'});
         frameDispatch({type: 'PRICE_FRAME'});
     }
+
+    const showRoomFrame = ( ) => {
+        frameDispatch({type: 'RESET_FRAME'});
+        frameDispatch({type: 'ROOM_FRAME'});
+    }
     
     useEffect( () => {
         setRole(sessionStorage.getItem('role-xL'))
@@ -197,6 +204,7 @@ export const NavBar = () => {
                         showRoomStateFrame={showRoomStateFrame}
                         showServiceFrame={showServiceFrame}
                         showPriceFrame={showPriceFrame}
+                        showRoomFrame={showRoomFrame}
                         closeSession={ closeSession } 
                     />}
 
@@ -212,6 +220,7 @@ export const NavBar = () => {
         { frameState.roomStateFrame  === true && <SubMenuRoomState />}
         { frameState.serviceFrame    === true && <SubMenuService />}
         { frameState.priceFrame      === true && <SubMenuPrice />}
+        { frameState.roomFrame       === true && <SubMenuRoom />}
     </>
   )
 }

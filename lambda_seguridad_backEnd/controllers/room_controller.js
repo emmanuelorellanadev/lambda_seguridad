@@ -1,20 +1,37 @@
-const Room = require('../models/room_model');
-const catchedAsync = require('../errors_handler/catchedAsync');
 const { resSuccessful } = require("../response/resSucessful");
 const { GeneralError, DBError } = require("../errors_handler/errors");
-const Service = require('../models/service_model');
+const catchedAsync = require('../errors_handler/catchedAsync');
 const db_connection = require('../database/conf_database');
+const Room = require('../models/room_model');
 const RoomPrice_Room = require('../models/roomPrice_room_model');
 const RoomPrice = require('../models/roomPrice_model');
 const Room_Service = require('../models/room_service_model');
+const Service = require('../models/service_model');
+const { paginate } = require('../helpers/paginate');
 
 const getRooms = async(req, res) => {
 
     // const rooms = await Room.findAll({include: {model: Service, through: {attributes:[]}}});
-    const rooms = await Room.findAll({include: [Service, RoomPrice ]});
+    // const rooms = await Room.findAll({include: [Service, RoomPrice ]});
     
-    if ( rooms.length == 0 ) throw new GeneralError('No se encontraron habitaciones.', 404) 
-    resSuccessful(res, rooms);
+    // if ( rooms.length == 0 ) throw new GeneralError('No se encontraron habitaciones.', 404) 
+    // resSuccessful(res, rooms);
+    const { q, page, limit } = req.query;
+    let search = {};
+    let order = [];
+
+    if (q){
+        search = {
+            where: {
+                room_number: { [Op.like]: `%${q}%` }
+            }
+        }
+    }
+
+    const rooms = await paginate(Room, page, limit, search, order);
+        
+    resSuccessful(res, rooms)
+
 }
 
 const getRoom = async(req, res) => {

@@ -25,6 +25,7 @@ export const NavBarAdminSys = (props) => {
                     <li><a href="#" onClick={props.showRoomStateFrame} >Estados de Habitación</a></li>
                     <li><a href="#" onClick={props.showServiceFrame} >Servicios</a></li>
                     <li><a href="#" onClick={props.showPriceFrame} >Precios</a></li>
+                    <li><a href="#" onClick={props.showRoomFrame} >Habitaciones</a></li>
                 </ul>
             </li>
             <li id='subMenuSecurity' onClick={props.subMenuSecurityVisibility}  onMouseLeave={props.subMenuReset}>

@@ -1,0 +1,98 @@
+@media (max-width: 576px){
+    .room_container{
+        width: 95%;
+        margin: auto;
+        display: flex;
+        flex-flow: column wrap;
+    }
+
+    .room_form{
+        display: flex;
+        flex-flow: column wrap;
+        width: 100%;
+    }
+
+        .room_form div{
+            margin: .5rem auto;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        
+    .roomTable_container{
+        width: 100%;
+        border-radius: 7px;
+    }
+
+    .sendRoom_button button{
+        margin: 2rem auto;
+    }
+}
+
+@media (min-width: 577px){
+    .room_container{
+        width: 95%;
+        margin: 0 auto;
+        display: flex;
+        flex-flow: column wrap;
+    }
+
+    .room_form{
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+    }
+
+    .roomLogo_container section{
+        margin: auto;
+    }
+
+    .roomData_container {
+        flex: 1 1 40%;
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    .roomMissionVision_container{
+        padding-top: 10px;
+        flex: 1 1 100%;
+    }
+
+    .roomData_container div {
+        flex: 1 1 90%;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: baseline;
+    }
+
+    .room_form div{
+        margin: .5rem .5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-width: 45%;
+    }
+
+    .room_form section{
+        width: 90%;
+    }
+
+    .roomTable_container{
+        width: 100%;
+        border-radius: 7px;
+    }
+
+    .sendRoom_button{
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+
+    .sendRoom_button button{
+        margin: 3rem auto;
+    }
+}

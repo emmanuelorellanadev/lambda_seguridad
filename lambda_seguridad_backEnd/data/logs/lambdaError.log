@@ -6644,3 +6644,23 @@ sql: INSERT INTO `RoomPrice_Rooms` (`RoomId`,`RoomPriceId`) VALUES (?,?); - para
     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
     at async /Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
     at async saveReservation (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:49:5)
+ Fri Nov 01 2024 21:14:20 GMT-0600 (Central Standard Time) 
+ Error: {"errors":[{"msg":"The room location is required.","param":"room_location","location":"body"},{"msg":"The numbers of beds are required.","param":"number_of_beds","location":"body"},{"msg":"The max number of people is required.","param":"max_people_number","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"msg":"The room location is required.","param":"room_location","location":"body"},{"msg":"The numbers of beds are required.","param":"number_of_beds","location":"body"},{"msg":"The max number of people is required.","param":"max_people_number","location":"body"}]}
+    at checkFields (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at middleware (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Fri Nov 01 2024 21:23:58 GMT-0600 (Central Standard Time) 
+ Error: {"errors":[{"msg":"The room location is required.","param":"room_location","location":"body"},{"msg":"The numbers of beds are required.","param":"number_of_beds","location":"body"},{"msg":"The max number of people is required.","param":"max_people_number","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"msg":"The room location is required.","param":"room_location","location":"body"},{"msg":"The numbers of beds are required.","param":"number_of_beds","location":"body"},{"msg":"The max number of people is required.","param":"max_people_number","location":"body"}]}
+    at checkFields (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at middleware (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)

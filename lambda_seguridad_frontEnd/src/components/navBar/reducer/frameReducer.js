@@ -37,6 +37,9 @@ export function frameReducer (state, action){
 
         case "PRICE_FRAME":
             return { priceFrame: true}
+        
+        case "ROOM_FRAME":
+            return { roomFrame: true}
     
         case "FRAMERESET":
             return { initialFrameState }
