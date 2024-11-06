@@ -2,13 +2,14 @@ import { useEffect, useState } from 'react';
 
 import '../../css/room/room.css';
 import { Toaster } from 'react-hot-toast'
-import { createRoom } from './hooks/useCreateRoom.js';
+import { useCreateRoom } from './hooks/useCreateRoom.js';
 import { P_Head } from '../ui/P_Head.jsx';import { Input } from '../ui/Input';
 import { Label } from '../ui/Label';
 import { TextArea } from '../ui/TextArea.jsx';
 import { Select } from '../ui/Select.jsx';
 import { useGetBranch } from '../branches/hooks/useGetBranch.js'
 import { useGetRoomStates } from '../roomStates/hooks/useGetRoomStates.js'
+import Table_createRoom_price from '../ui/tables/createRoom.jsx/Table_createRoom_price.jsx';
 
 const CreateRoom = () => {
 
@@ -32,8 +33,20 @@ const CreateRoom = () => {
 
     const saveButton = (e) => {
         e.preventDefault();
-        createRoom();
-        cleanForm();
+        const urlRoom = `http://localhost:8080/room/`;
+        const roomData = {
+            "room_number": room,
+            "room_beds": numberBeds,
+            "room_people": numberPeople,
+            "room_phone": phone,
+            "room_info": info,
+            "RoomStateId": roomStateId,
+            "BranchId": branchId,
+            "services": [],
+            "prices": []
+        }
+        useCreateRoom(urlRoom, roomData);
+        // cleanForm();
     }
 
     const searching = (query) => {
@@ -41,6 +54,10 @@ const CreateRoom = () => {
         setPage(1);
         setOnLoad(false);
       }
+
+    const deletePrice = () => {
+        console.log('Delete price');
+    }
 
     const cleanForm = () =>{
         setRoom('');
@@ -63,22 +80,22 @@ const CreateRoom = () => {
     <>
         <div className='room_container'>
             <P_Head className="p_h1" text="Crear Habitación"/>
-            <form className='room_form' encType='multipart/form-data' id='CreateRoom_form' onSubmit={saveButton}>
+            <form className='room_form' onSubmit={saveButton}>
                 <div>
                     <Label lambdaClassLabel={""} text="Habitación:"/>
-                    <Input lambdaClassInput={""} type="text" name="room_number" id="room"  value={room} onChange={ (e) => setRoom(e.target.value)} placeholder={"Nombre habitación"} autoFocus required />
+                    <Input lambdaClassInput={""} type="text" name="room_number"value={room} onChange={ (e) => setRoom(e.target.value)} placeholder={"Nombre habitación"} autoFocus required />
                 </div>
                 <div>
                     <Label lambdaClassLabel={""} text="Camas:"/>
-                    <Input lambdaClassInput={""} type="number" name="room_beds"  id="beds" value={numberBeds} onChange={ (e) => setNumberBeds(e.target.value)} placeholder={"Número de camas"} required/>
+                    <Input lambdaClassInput={""} type="number" name="room_beds"   value={numberBeds} onChange={ (e) => setNumberBeds(e.target.value)} placeholder={"Número de camas"} required/>
                 </div>
                 <div>
                     <Label lambdaClassLabel={""} text="Máximo:"/>
-                    <Input lambdaClassInput={""} type="number" name="room_people" id="people" value={numberPeople} onChange={ (e) => setNumberPeople(e.target.value)} placeholder={"Número de huespedes"} required/>
+                    <Input lambdaClassInput={""} type="number" name="room_people" value={numberPeople} onChange={ (e) => setNumberPeople(e.target.value)} placeholder={"Número de huespedes"} required/>
                 </div>
                 <div>
                     <Label lambdaClassLabel={""} text="Teléfono:"/>
-                    <Input lambdaClassInput={""} type="number" name="room_phone" id="phone" value={phone} onChange={ (e) => setPhone(e.target.value)} placeholder={"Número de teléfono"}/>
+                    <Input lambdaClassInput={""} type="number" value={phone} onChange={ (e) => setPhone(e.target.value)} placeholder={"Número de teléfono"}/>
                 </div>
                 <div>
                     <Label lambdaClassLabel={""} text="Información:"/>
@@ -86,14 +103,15 @@ const CreateRoom = () => {
                 </div>
                 <div>
                     <Label lambdaClassLabel={""} text="Estado:"/>
-                    <Select data={roomStates?.data} text="Selecciona Estado" name='RoomStates' id='selectState' onChange={ (e) => {setRoomStateId(e.target.value)}} required />
+                    <Select data={roomStates?.data} text="Selecciona Estado" onChange={ (e) => {setRoomStateId(e.target.value)}} required />
                 </div>
                 <div>
                     <Label lambdaClassLabel={""} text="Sucursal:"/>
-                    <Select data={branches?.data} text="Selecciona Sucursal" name='branchId' id='branchId' onChange={ (e) => {setRoomStateId(e.target.value)}} required />
+                    <Select data={branches?.data} text="Selecciona Sucursal" onChange={ (e) => {setBranchId(e.target.value)}} required />
                 </div>
-
-
+                <div className='table-responsive roomTable_container'>
+                    <Table_createRoom_price columns={["Precio"]} deleteData={deletePrice}/>
+                </div>
                 <div className='sendRoom_button'>
                     <button className='btn btn-primary' id='saveButton' >Guardar</button>
                 </div>

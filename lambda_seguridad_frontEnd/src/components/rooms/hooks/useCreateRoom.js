@@ -1,14 +1,9 @@
 import axios from 'axios';
 import { toast } from 'react-hot-toast'
 
-export const createRoom = async(logo) => {
+export const useCreateRoom = async(urlRoom, roomData) => {
         
-    const url = 'http://localhost:8080/room';
-
-    const roomData = new FormData(document.querySelector('#CreateCompany_form'));
-    // roomData.append('img', logo);
-
-    await axios.post(url, roomData,
+    await axios.post(urlRoom, roomData,
         {
             headers: {'x-token': sessionStorage.getItem('token-xL')}
         }).then( (resp) => {
