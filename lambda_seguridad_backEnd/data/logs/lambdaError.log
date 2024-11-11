@@ -6770,3 +6770,13 @@ sql: INSERT INTO `RoomPrice_Rooms` (`RoomId`,`RoomPriceId`) VALUES (?,?); - para
     at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
     at middleware (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Wed Nov 06 2024 11:07:53 GMT-0600 (Central Standard Time) 
+ Error: {"errors":[{"value":"","msg":"The branch is required.","param":"BranchId","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"value":"","msg":"The branch is required.","param":"BranchId","location":"body"}]}
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at middleware (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)

@@ -1,6 +1,7 @@
 import React, { useReducer, useState } from 'react'
-import CreateRoom from './CreateRoom'
-import ListRoom from './ListRoom'
+import CreateRoom from './CreateRoom';
+import ListRoom from './ListRoom';
+import UpdateRoom from './UpdateRoom';
 
 
 function menuRoomReducer (state, action) {

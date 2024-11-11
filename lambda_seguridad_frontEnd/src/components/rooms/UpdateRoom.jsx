@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import '../../css/room/room.css';
 import { Toaster } from 'react-hot-toast'
-import { createRoom } from './hooks/useCreateRoom.js';
+import { useUpdateRoom } from './hooks/useUpdateRoom.js';
 import { P_Head } from '../ui/P_Head.jsx';import { Input } from '../ui/Input';
 import { Label } from '../ui/Label';
 import { TextArea } from '../ui/TextArea.jsx';
@@ -19,7 +19,7 @@ const UpdateRoom = () => {
 
     const saveButton = (e) => {
         e.preventDefault();
-        createRoom();
+        updateRoom();
         cleanForm();
     }
 

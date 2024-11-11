@@ -3,17 +3,13 @@ import toast from 'react-hot-toast';
 
 import '../../../../css/ui/table.css'
 import { Label } from '../../Label';
-import { Input } from '../../Input';
 import { Select } from '../../Select';
 import { useGetPrice } from '../../../prices/hooks/useGetPrice'
-// import Pagination from '../Pagination';
 
-export const Table_createRoom_price = ({ columns, deleteData, ...props}) => {
+export const Table_createRoom_price = ({ columns, deleteData, dispatch, ...props}) => {
 
   const [ prices, setPrices ] = useState([]);
   const [ pricesSelected, setPricesSelected ] = useState([]);
-
-
 
   const [ prevPage, setPrevPage ] = useState('');
   const [ nextPage, setNextPage ] = useState('');
@@ -63,6 +59,14 @@ const selectPrice = (priceId) => {
   setOnLoad(false)
 }
 
+const getIdOfPrices = () => {
+  const idPrices = [];
+  pricesSelected?.map( priceSelected => {
+    idPrices.push(priceSelected.id)
+  })
+  dispatch({type: 'UPDATE_PRICES', prices: idPrices })
+}
+
 const deletePrice = (id, price) => {
   const index = pricesSelected.map(price => price.id).indexOf(id);
   pricesSelected.splice(index, 1)
@@ -72,6 +76,7 @@ const deletePrice = (id, price) => {
 useEffect( () => {
   setOnLoad(true)
   getPrices()
+  getIdOfPrices();
 }, [onLoad])
 
   return (

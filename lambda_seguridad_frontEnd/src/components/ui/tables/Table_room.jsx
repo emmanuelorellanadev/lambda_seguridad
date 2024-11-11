@@ -55,8 +55,6 @@ export const Table_room = ({ columns, rows, editData, deleteData, ...props}) => 
     // }else{
     //   getUsers()
     // }
-
-    console.log(rooms.data)
   }, [onLoad, search]);
 
   return (
@@ -94,7 +92,7 @@ export const Table_room = ({ columns, rows, editData, deleteData, ...props}) => 
             rooms.data?.map( ( room ) => {
               if(editData && deleteData){
                   return (
-                    <tr key={user.id}>
+                    <tr key={room.id}>
                       <th>{room.room_number}</th>
                       <th>{room.room_beds}</th>
                       <th>{room.room_people}</th>
@@ -129,7 +127,6 @@ export const Table_room = ({ columns, rows, editData, deleteData, ...props}) => 
     </table>
     {/* Pagination does not work when you go back and forth several times. The problem does not occur when a branch is selected. */}
     <Pagination page={page} setPage={setPage} rowsByPage={rowsByPage} setRowsByPage={setRowsByPage} prevPage={prevPage} nextPage={nextPage} total={rooms.total} setOnLoad={setOnLoad}/>
-    <label htmlFor="">prevPage: {prevPage} nextPage: {nextPage}</label>
   </>
   )
 }
