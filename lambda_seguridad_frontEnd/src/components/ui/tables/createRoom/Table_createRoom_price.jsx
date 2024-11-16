@@ -6,7 +6,7 @@ import { Label } from '../../Label';
 import { Select } from '../../Select';
 import { useGetPrice } from '../../../prices/hooks/useGetPrice'
 
-export const Table_createRoom_price = ({ columns, deleteData, dispatch, ...props}) => {
+export const Table_createRoom_price = ({ columns, deleteData, onLoad, setOnLoad, roomData, dispatch, ...props}) => {
 
   const [ prices, setPrices ] = useState([]);
   const [ pricesSelected, setPricesSelected ] = useState([]);
@@ -14,7 +14,7 @@ export const Table_createRoom_price = ({ columns, deleteData, dispatch, ...props
   const [ prevPage, setPrevPage ] = useState('');
   const [ nextPage, setNextPage ] = useState('');
 
-  const [ onLoad, setOnLoad ] = useState(false);
+  // const [ onLoad, setOnLoad ] = useState(false);
 
   if(deleteData && !columns.includes("Eliminar") ){
     columns.push("Eliminar")
@@ -29,16 +29,16 @@ const selectPrice = (priceId) => {
 
   prices?.data.map( price => {
     let inList = false
-    if ( pricesSelected.length <= 0 ){
+    if ( roomData.prices.length <= 0 ){
     if (price.id == priceId) {
-      pricesSelected.push(JSON.parse(JSON.stringify(price)))
+      roomData.prices.push(JSON.parse(JSON.stringify(price)))
     }
     }else {
-      pricesSelected.map( priceInList => {
+      roomData.prices.map( priceInList => {
         if (priceInList.id == priceId) inList = true;
       } )
       if( !inList ){
-        price.id == priceId ? pricesSelected.push(JSON.parse(JSON.stringify(price))) : ''
+        price.id == priceId ? roomData.prices.push(JSON.parse(JSON.stringify(price))) : ''
         setOnLoad(true);
       }else{
         if (price.id == priceId) {
@@ -56,27 +56,18 @@ const selectPrice = (priceId) => {
     }
   })
 
-  setOnLoad(false)
-}
-
-const getIdOfPrices = () => {
-  const idPrices = [];
-  pricesSelected?.map( priceSelected => {
-    idPrices.push(priceSelected.id)
-  })
-  dispatch({type: 'UPDATE_PRICES', prices: idPrices })
+  setOnLoad(true)
 }
 
 const deletePrice = (id, price) => {
-  const index = pricesSelected.map(price => price.id).indexOf(id);
-  pricesSelected.splice(index, 1)
-  setOnLoad(false);
+  const index = roomData.prices.map(price => price.id).indexOf(id);
+  roomData.prices.splice(index, 1)
+  setOnLoad(true);
 }
 
 useEffect( () => {
-  setOnLoad(true)
-  getPrices()
-  getIdOfPrices();
+  setOnLoad(false);
+  getPrices();
 }, [onLoad])
 
   return (
@@ -99,7 +90,7 @@ useEffect( () => {
         </thead>
         <tbody className='text-center align-baseline'>
           {
-            pricesSelected.map( ( price ) => {
+            roomData.prices.map( ( price ) => {
               return (
                 <tr key={price.id}>
                   <th>{`Q. ${price.room_price}.00`}</th>

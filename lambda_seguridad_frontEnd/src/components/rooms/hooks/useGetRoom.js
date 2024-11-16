@@ -1,7 +1,7 @@
 import axios from "axios";
 import toast from "react-hot-toast";
 
-export const useGetRoom = async( urlRoom, { setRooms, setCompany, setAddress, setPhone, setDescription, setMission, setVision, setLogo, setOnLoad, setNextPage, setPrevPage}) => {
+export const useGetRoom = async( urlRoom, { setRooms, roomDispatch, setOnLoad, setNextPage, setPrevPage}) => {
   await axios(urlRoom, { headers: {"x-token": sessionStorage.getItem('token-xL')}})
     .then( resp => resp.data.resData )
     .then( data => {
@@ -10,14 +10,17 @@ export const useGetRoom = async( urlRoom, { setRooms, setCompany, setAddress, se
         setRooms( data )
         setNextPage(data.nextPage) 
         setPrevPage(data.prevPage)
-      }else if(setCompany){
-        set(data.room_number), 
-        setAddress(data.room_beds),
-        setNumberPeople(data.room_people)
-        setPhone(data.room_phone)
-        setInfo(data.room_info)
-        setStateId(data.room_StateId)
-        setRoomStateId(data.room_RoomStateId)
+      }else if(roomDispatch){
+
+        //WORK HERE!!
+        console.log(data);
+        roomDispatch({ type: 'UPDATE_ROOM', room: data.room_number});
+        roomDispatch({ type: 'UPDATE_BEDS', beds: data.room_beds});
+        roomDispatch({ type: 'UPDATE_MAXPEOPLE', maxPeople: data.room_people});
+        roomDispatch({ type: 'UPDATE_PHONE', phone: data.room_phone});
+        roomDispatch({ type: 'UPDATE_INFO', info: data.room_info});
+        roomDispatch({ type: 'UPDATE_STATEID', stateId: data.RoomStateId});
+        roomDispatch({ type: 'UPDATE_BRANCHID', branchId: data.BranchId});
       }
     })
     .catch( error => {

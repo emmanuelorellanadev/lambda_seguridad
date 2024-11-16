@@ -1,3 +1,5 @@
+const { Op } = require("sequelize");
+
 const { resSuccessful } = require("../response/resSucessful");
 const { GeneralError, DBError } = require("../errors_handler/errors");
 const catchedAsync = require('../errors_handler/catchedAsync');
@@ -11,11 +13,6 @@ const { paginate } = require('../helpers/paginate');
 
 const getRooms = async(req, res) => {
 
-    // const rooms = await Room.findAll({include: {model: Service, through: {attributes:[]}}});
-    // const rooms = await Room.findAll({include: [Service, RoomPrice ]});
-    
-    // if ( rooms.length == 0 ) throw new GeneralError('No se encontraron habitaciones.', 404) 
-    // resSuccessful(res, rooms);
     const { q, page, limit } = req.query;
     let search = {};
     let order = [];
@@ -23,7 +20,10 @@ const getRooms = async(req, res) => {
     if (q){
         search = {
             where: {
-                room_number: { [Op.like]: `%${q}%` }
+                [Op.or]:[
+                    {room_number: { [Op.like]: `%${q}%` }},
+                    {room_info: { [Op.like]: `%${q}%` }}
+                ]
             }
         }
     }

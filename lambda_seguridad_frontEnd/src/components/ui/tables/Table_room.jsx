@@ -5,11 +5,11 @@ import { Input } from '../Input';
 import { P_Head } from '../P_Head';
 import { useGetRoom } from '../../rooms/hooks/useGetRoom';
 import Pagination from '../Pagination';
+import { useDeleteRoom } from '../../rooms/hooks/useDeleteRoom';
 
 export const Table_room = ({ columns, rows, editData, deleteData, ...props}) => {
 
-  const [rooms, setRooms] = useState([]);
-  const [branch, setBranch] = useState(0);
+  const [ rooms, setRooms ] = useState([]);
   const [ search, setSearch ] = useState('');
   const [ rowsByPage, setRowsByPage ] = useState( 10 );
   const [ page, setPage ] = useState( 1 );
@@ -25,55 +25,26 @@ export const Table_room = ({ columns, rows, editData, deleteData, ...props}) => 
     columns.push("Eliminar")
 }
 
-// const selectRoom = (roomSelected) => {
-//   setBranch(roomSelected);
-//   if ( roomSelected != 0 ){
-//     const urlUsersByBranch = `http://localhost:8080/usersByBranch/?id=${roomSelected}&q=${search}&limit=${rowsByPage}&page=${page}`;
-//     useGetUser(urlUsersByBranch, {setUsers, setNextPage, setPrevPage});
-//   } else {
-//     setOnLoad(false)
-//   } 
-// }
-
   const searchUser = (query) => {
     setSearch(query);
     setPage(1);
     setOnLoad(false);
   }
 
-  // const getUsers = async() => {
-  //   const urlUser = `http://localhost:8080/user/?q=${search}&limit=${rowsByPage}&page=${page}`;
-  //   await useGetUser(urlUser, { setUsers, setNextPage, setPrevPage});
-  // }
+  const deleteRoom = (roomId, roomNumber) => {
+    const urlRoom = `http://localhost:8080/room/${roomId}`;
+    useDeleteRoom(urlRoom, roomId, roomNumber, {setOnLoad})
+  }
 
   useEffect( () => {
     setOnLoad(true);
-    const urlRoom = 'http://localhost:8080/room/';
+    const urlRoom = `http://localhost:8080/room/?limit=${rowsByPage}&page=${page}&q=${search}`;
     useGetRoom(urlRoom, {setRooms, setNextPage, setPrevPage});
-    // if(rooms != 0) {
-    //   selectRoom(rooms)
-    // }else{
-    //   getUsers()
-    // }
   }, [onLoad, search]);
 
   return (
     <>
-      <P_Head className="p_h1" text={'Listado de Habitaciones'}/>
-      <div className='' >
-          <div>
-              <label htmlFor="room">Sucursales: </label>
-              <select className='form-control text-center' name="room" id="room" value={branch} onChange={(e) => {setSearch(''); selectRoom(e.target.value)}}>
-                  <option value={0} >Todas</option>
-                  {
-                      rooms.data?.map( b => {
-                          return (<option key={b.id} value={b.id}>{b.branch_name}</option>)
-                      })
-                  }
-              </select>
-          </div>
-      </div>
-
+    <P_Head className="p_h1" text={'Listado de Habitaciones'}/>
     <Input lambdaClassInput={"data_search"} type="search" value={search} onChange={ e => searchUser(e.target.value)} placeholder="Buscar" />
       <table className='table table-bordered table-hover table-striped' {...props}>
         <thead className='text-center t_header'>
@@ -90,42 +61,20 @@ export const Table_room = ({ columns, rows, editData, deleteData, ...props}) => 
         <tbody className='text-center align-baseline'>
           {
             rooms.data?.map( ( room ) => {
-              if(editData && deleteData){
-                  return (
-                    <tr key={room.id}>
-                      <th>{room.room_number}</th>
-                      <th>{room.room_beds}</th>
-                      <th>{room.room_people}</th>
-                      <th>{room.room_info}</th>
-                      <th><button className='btn btn-primary' type="button" onClick={ () => editData( user.id ) } >Editar</button></th>
-                      <th><button className='btn btn-outline-danger' onClick={ () => deleteData(user.id, user.user_name, setOnLoad) }><i className='bi bi-trash3-fill'></i></button></th>
-                    </tr>
-                  )
-              // }else if(editData){
-              //   return (
-              //       <tr key={user.id}>
-              //       <th>{user.id}</th>
-              //       <th>{user.user_name}</th>
-              //       <th>{user.role_name}</th>
-              //       <th><input type='checkbox' checked={user.user_state} disabled/></th>
-              //       <th><button className='btn btn-primary' type="button" onClick={ () => editData( user.id ) } >Editar</button></th>
-              //     </tr>
-              //   )
-              // }else{
-              //   return (
-              //       <tr key={user.id}>
-              //       <th>{user.id}</th>
-              //       <th>{user.user_name}</th>
-              //       <th>{user.role_name}</th>
-              //       <th><input type='checkbox' checked={user.user_state} disabled/></th>
-              //     </tr>
-              //   )
-              }
-              })
+              return (
+                <tr key={room.id}>
+                  <th>{room.room_number}</th>
+                  <th>{room.room_beds}</th>
+                  <th>{room.room_people}</th>
+                  <th>{room.room_info}</th>
+                  <th><button className='btn btn-primary' type="button" onClick={ () => editData( room.id ) } >Editar</button></th>
+                  <th><button className='btn btn-outline-danger' onClick={ () => deleteRoom(room.id, room.room_number, setOnLoad) }><i className='bi bi-trash3-fill'></i></button></th>
+                </tr>
+              )
+            })
           }
         </tbody>
     </table>
-    {/* Pagination does not work when you go back and forth several times. The problem does not occur when a branch is selected. */}
     <Pagination page={page} setPage={setPage} rowsByPage={rowsByPage} setRowsByPage={setRowsByPage} prevPage={prevPage} nextPage={nextPage} total={rooms.total} setOnLoad={setOnLoad}/>
   </>
   )

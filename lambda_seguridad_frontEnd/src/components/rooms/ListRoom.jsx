@@ -1,21 +1,20 @@
 import { useEffect, useState } from 'react';
 
 import '../../css/room/room.css';
-import {P_Head} from '../ui/P_Head.jsx';
 import Table_room from '../ui/tables/Table_room.jsx';
-// import { useDeleteRoom } from './hooks/useDeleteRoom.js';
+import { Toaster } from 'react-hot-toast';
+import { useDeleteRoom } from './hooks/useDeleteRoom.js';
 
 const ListRoom = (props) => {
     
     const [ onLoad, setOnLoad ] = useState( true )
 
     const editRoom = (roomId) => {
-        props.navUpdateRoom(roomId)
+      console.log(roomId);  
+      props.navUpdateRoom(roomId)
+
     }
 
-    const deleteRoom = (roomId) => {
-        console.log(roomId)
-    }
     useEffect( () => {
     setOnLoad(true);
     }, [onLoad])
@@ -23,9 +22,10 @@ const ListRoom = (props) => {
     <>
     <div className='room_container' >
         <div className='table-responsive companyTable_container' >
-            <Table_room columns={["Número", "Cámas", "Personas", "Información"]} editData={editRoom} deleteData={deleteRoom} />
+            <Table_room columns={["Número", "Cámas", "Personas", "Información"]} editData={editRoom} />
         </div>
     </div>
+    <Toaster/>
     </>
   )
 }

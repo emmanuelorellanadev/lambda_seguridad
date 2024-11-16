@@ -6780,3 +6780,720 @@ sql: INSERT INTO `RoomPrice_Rooms` (`RoomId`,`RoomPriceId`) VALUES (?,?); - para
     at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
     at middleware (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Tue Nov 12 2024 09:09:47 GMT-0600 (Central Standard Time) 
+ Error: {"errors":[{"value":"","msg":"The room info is required.","param":"room_info","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"value":"","msg":"The room info is required.","param":"room_info","location":"body"}]}
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at middleware (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Tue Nov 12 2024 09:30:20 GMT-0600 (Central Standard Time) 
+ Error: {"errors":[{"msg":"The room info is required.","param":"room_info","location":"body"},{"msg":"The numbers of beds are required.","param":"room_beds","location":"body"},{"msg":"The number of people is required.","param":"room_people","location":"body"},{"msg":"The room state is required.","param":"RoomStateId","location":"body"},{"msg":"The branch is required.","param":"BranchId","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"msg":"The room info is required.","param":"room_info","location":"body"},{"msg":"The numbers of beds are required.","param":"room_beds","location":"body"},{"msg":"The number of people is required.","param":"room_people","location":"body"},{"msg":"The room state is required.","param":"RoomStateId","location":"body"},{"msg":"The branch is required.","param":"BranchId","location":"body"}]}
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at middleware (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Tue Nov 12 2024 09:31:37 GMT-0600 (Central Standard Time) 
+ Error: {"errors":[{"msg":"The room number is required.","param":"room_number","location":"body"},{"msg":"The room info is required.","param":"room_info","location":"body"},{"msg":"The numbers of beds are required.","param":"room_beds","location":"body"},{"msg":"The number of people is required.","param":"room_people","location":"body"},{"msg":"The room state is required.","param":"RoomStateId","location":"body"},{"msg":"The branch is required.","param":"BranchId","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"msg":"The room number is required.","param":"room_number","location":"body"},{"msg":"The room info is required.","param":"room_info","location":"body"},{"msg":"The numbers of beds are required.","param":"room_beds","location":"body"},{"msg":"The number of people is required.","param":"room_people","location":"body"},{"msg":"The room state is required.","param":"RoomStateId","location":"body"},{"msg":"The branch is required.","param":"BranchId","location":"body"}]}
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at middleware (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Tue Nov 12 2024 09:31:49 GMT-0600 (Central Standard Time) 
+ Error: {"errors":[{"msg":"The room number is required.","param":"room_number","location":"body"},{"msg":"The room info is required.","param":"room_info","location":"body"},{"msg":"The numbers of beds are required.","param":"room_beds","location":"body"},{"msg":"The room state is required.","param":"RoomStateId","location":"body"},{"msg":"The branch is required.","param":"BranchId","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"msg":"The room number is required.","param":"room_number","location":"body"},{"msg":"The room info is required.","param":"room_info","location":"body"},{"msg":"The numbers of beds are required.","param":"room_beds","location":"body"},{"msg":"The room state is required.","param":"RoomStateId","location":"body"},{"msg":"The branch is required.","param":"BranchId","location":"body"}]}
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at middleware (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Tue Nov 12 2024 09:32:25 GMT-0600 (Central Standard Time) 
+ Error: {"errors":[{"msg":"The room number is required.","param":"room_number","location":"body"},{"msg":"The room info is required.","param":"room_info","location":"body"},{"msg":"The number of people is required.","param":"room_people","location":"body"},{"msg":"The room state is required.","param":"RoomStateId","location":"body"},{"msg":"The branch is required.","param":"BranchId","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"msg":"The room number is required.","param":"room_number","location":"body"},{"msg":"The room info is required.","param":"room_info","location":"body"},{"msg":"The number of people is required.","param":"room_people","location":"body"},{"msg":"The room state is required.","param":"RoomStateId","location":"body"},{"msg":"The branch is required.","param":"BranchId","location":"body"}]}
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at middleware (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Tue Nov 12 2024 15:26:50 GMT-0600 (Central Standard Time) 
+ Error: {"errors":[{"msg":"The branch is required.","param":"BranchId","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"msg":"The branch is required.","param":"BranchId","location":"body"}]}
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at middleware (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Wed Nov 13 2024 08:50:26 GMT-0600 (Central Standard Time) 
+ Error: {"errors":[{"msg":"The room state is required.","param":"RoomStateId","location":"body"},{"msg":"The branch is required.","param":"BranchId","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"msg":"The room state is required.","param":"RoomStateId","location":"body"},{"msg":"The branch is required.","param":"BranchId","location":"body"}]}
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at middleware (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Wed Nov 13 2024 09:10:39 GMT-0600 (Central Standard Time) 
+ Error: {"errors":[{"value":"","msg":"The room number is required.","param":"room_number","location":"body"},{"value":"","msg":"The room info is required.","param":"room_info","location":"body"},{"value":"","msg":"The numbers of beds are required.","param":"room_beds","location":"body"},{"value":"","msg":"The number of people is required.","param":"room_people","location":"body"},{"msg":"The room state is required.","param":"RoomStateId","location":"body"},{"msg":"The branch is required.","param":"BranchId","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"value":"","msg":"The room number is required.","param":"room_number","location":"body"},{"value":"","msg":"The room info is required.","param":"room_info","location":"body"},{"value":"","msg":"The numbers of beds are required.","param":"room_beds","location":"body"},{"value":"","msg":"The number of people is required.","param":"room_people","location":"body"},{"msg":"The room state is required.","param":"RoomStateId","location":"body"},{"msg":"The branch is required.","param":"BranchId","location":"body"}]}
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at middleware (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Wed Nov 13 2024 09:13:12 GMT-0600 (Central Standard Time) 
+ Error: {"errors":[{"value":"","msg":"The room number is required.","param":"room_number","location":"body"},{"value":"","msg":"The room info is required.","param":"room_info","location":"body"},{"value":"","msg":"The numbers of beds are required.","param":"room_beds","location":"body"},{"value":"","msg":"The number of people is required.","param":"room_people","location":"body"},{"msg":"The room state is required.","param":"RoomStateId","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"value":"","msg":"The room number is required.","param":"room_number","location":"body"},{"value":"","msg":"The room info is required.","param":"room_info","location":"body"},{"value":"","msg":"The numbers of beds are required.","param":"room_beds","location":"body"},{"value":"","msg":"The number of people is required.","param":"room_people","location":"body"},{"msg":"The room state is required.","param":"RoomStateId","location":"body"}]}
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at middleware (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Wed Nov 13 2024 09:13:14 GMT-0600 (Central Standard Time) 
+ Error: {"errors":[{"value":"","msg":"The room number is required.","param":"room_number","location":"body"},{"value":"","msg":"The room info is required.","param":"room_info","location":"body"},{"value":"","msg":"The numbers of beds are required.","param":"room_beds","location":"body"},{"value":"","msg":"The number of people is required.","param":"room_people","location":"body"},{"msg":"The room state is required.","param":"RoomStateId","location":"body"},{"msg":"The branch is required.","param":"BranchId","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"value":"","msg":"The room number is required.","param":"room_number","location":"body"},{"value":"","msg":"The room info is required.","param":"room_info","location":"body"},{"value":"","msg":"The numbers of beds are required.","param":"room_beds","location":"body"},{"value":"","msg":"The number of people is required.","param":"room_people","location":"body"},{"msg":"The room state is required.","param":"RoomStateId","location":"body"},{"msg":"The branch is required.","param":"BranchId","location":"body"}]}
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at middleware (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Wed Nov 13 2024 09:14:19 GMT-0600 (Central Standard Time) 
+ Error: {"errors":[{"value":"","msg":"The room number is required.","param":"room_number","location":"body"},{"value":"","msg":"The room info is required.","param":"room_info","location":"body"},{"value":"","msg":"The numbers of beds are required.","param":"room_beds","location":"body"},{"value":"","msg":"The number of people is required.","param":"room_people","location":"body"},{"msg":"The room state is required.","param":"RoomStateId","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"value":"","msg":"The room number is required.","param":"room_number","location":"body"},{"value":"","msg":"The room info is required.","param":"room_info","location":"body"},{"value":"","msg":"The numbers of beds are required.","param":"room_beds","location":"body"},{"value":"","msg":"The number of people is required.","param":"room_people","location":"body"},{"msg":"The room state is required.","param":"RoomStateId","location":"body"}]}
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at middleware (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Wed Nov 13 2024 09:15:01 GMT-0600 (Central Standard Time) 
+ Error: {"errors":[{"value":"","msg":"The room number is required.","param":"room_number","location":"body"},{"value":"","msg":"The room info is required.","param":"room_info","location":"body"},{"value":"","msg":"The numbers of beds are required.","param":"room_beds","location":"body"},{"value":"","msg":"The number of people is required.","param":"room_people","location":"body"},{"msg":"The room state is required.","param":"RoomStateId","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"value":"","msg":"The room number is required.","param":"room_number","location":"body"},{"value":"","msg":"The room info is required.","param":"room_info","location":"body"},{"value":"","msg":"The numbers of beds are required.","param":"room_beds","location":"body"},{"value":"","msg":"The number of people is required.","param":"room_people","location":"body"},{"msg":"The room state is required.","param":"RoomStateId","location":"body"}]}
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at middleware (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Wed Nov 13 2024 09:15:29 GMT-0600 (Central Standard Time) 
+ Error: {"errors":[{"value":"","msg":"The room number is required.","param":"room_number","location":"body"},{"value":"","msg":"The room info is required.","param":"room_info","location":"body"},{"value":"","msg":"The numbers of beds are required.","param":"room_beds","location":"body"},{"value":"","msg":"The number of people is required.","param":"room_people","location":"body"},{"msg":"The room state is required.","param":"RoomStateId","location":"body"},{"msg":"The branch is required.","param":"BranchId","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"value":"","msg":"The room number is required.","param":"room_number","location":"body"},{"value":"","msg":"The room info is required.","param":"room_info","location":"body"},{"value":"","msg":"The numbers of beds are required.","param":"room_beds","location":"body"},{"value":"","msg":"The number of people is required.","param":"room_people","location":"body"},{"msg":"The room state is required.","param":"RoomStateId","location":"body"},{"msg":"The branch is required.","param":"BranchId","location":"body"}]}
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at middleware (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Wed Nov 13 2024 09:34:25 GMT-0600 (Central Standard Time) 
+ Error: No se encontro información de la habitación. 
+ Error 
+ undefined 
+ Error: No se encontro información de la habitación.
+    at getRoom (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:41:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Wed Nov 13 2024 09:34:32 GMT-0600 (Central Standard Time) 
+ Error: No se encontro información de la habitación. 
+ Error 
+ undefined 
+ Error: No se encontro información de la habitación.
+    at getRoom (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:41:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Wed Nov 13 2024 09:34:32 GMT-0600 (Central Standard Time) 
+ Error: No se encontro información de la habitación. 
+ Error 
+ undefined 
+ Error: No se encontro información de la habitación.
+    at getRoom (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:41:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Wed Nov 13 2024 09:34:32 GMT-0600 (Central Standard Time) 
+ Error: No se encontro información de la habitación. 
+ Error 
+ undefined 
+ Error: No se encontro información de la habitación.
+    at getRoom (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:41:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Wed Nov 13 2024 09:34:32 GMT-0600 (Central Standard Time) 
+ Error: No se encontro información de la habitación. 
+ Error 
+ undefined 
+ Error: No se encontro información de la habitación.
+    at getRoom (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:41:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Wed Nov 13 2024 09:34:38 GMT-0600 (Central Standard Time) 
+ Error: No se encontro información de la habitación. 
+ Error 
+ undefined 
+ Error: No se encontro información de la habitación.
+    at getRoom (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:41:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Wed Nov 13 2024 09:34:38 GMT-0600 (Central Standard Time) 
+ Error: No se encontro información de la habitación. 
+ Error 
+ undefined 
+ Error: No se encontro información de la habitación.
+    at getRoom (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:41:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Wed Nov 13 2024 09:35:44 GMT-0600 (Central Standard Time) 
+ Error: No se encontro información de la habitación. 
+ Error 
+ undefined 
+ Error: No se encontro información de la habitación.
+    at getRoom (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:41:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Wed Nov 13 2024 09:36:20 GMT-0600 (Central Standard Time) 
+ Error: No se encontro información de la habitación. 
+ Error 
+ undefined 
+ Error: No se encontro información de la habitación.
+    at getRoom (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:41:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Wed Nov 13 2024 09:36:20 GMT-0600 (Central Standard Time) 
+ Error: No se encontro información de la habitación. 
+ Error 
+ undefined 
+ Error: No se encontro información de la habitación.
+    at getRoom (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:41:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Wed Nov 13 2024 09:39:53 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getRooms (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:26:33)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+ Wed Nov 13 2024 09:39:53 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getRooms (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:26:33)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+ Wed Nov 13 2024 09:39:53 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getRooms (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:26:33)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+ Wed Nov 13 2024 09:39:53 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getRooms (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:26:33)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+ Wed Nov 13 2024 09:39:54 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getRooms (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:26:33)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+ Wed Nov 13 2024 09:39:54 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getRooms (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:26:33)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+ Wed Nov 13 2024 09:39:54 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getRooms (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:26:33)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+ Wed Nov 13 2024 09:39:54 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getRooms (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:26:33)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+ Wed Nov 13 2024 09:39:54 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getRooms (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:26:33)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+ Wed Nov 13 2024 09:39:54 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getRooms (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:26:33)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+ Wed Nov 13 2024 09:39:54 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getRooms (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:26:33)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+ Wed Nov 13 2024 09:39:54 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getRooms (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:26:33)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+ Wed Nov 13 2024 09:39:54 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getRooms (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:26:33)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+ Wed Nov 13 2024 09:39:54 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getRooms (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:26:33)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+ Wed Nov 13 2024 09:39:54 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getRooms (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:26:33)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+ Wed Nov 13 2024 09:39:54 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getRooms (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:26:33)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+ Wed Nov 13 2024 09:39:55 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getRooms (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:26:33)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+ Wed Nov 13 2024 09:39:55 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getRooms (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:26:33)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+ Wed Nov 13 2024 09:39:57 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getRooms (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:26:33)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+ Wed Nov 13 2024 09:39:57 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getRooms (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:26:33)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+ Wed Nov 13 2024 09:39:57 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getRooms (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:26:33)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+ Wed Nov 13 2024 09:39:57 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getRooms (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:26:33)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+ Wed Nov 13 2024 09:39:57 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getRooms (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:26:33)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+ Wed Nov 13 2024 09:39:57 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getRooms (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:26:33)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+ Wed Nov 13 2024 09:39:57 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getRooms (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:26:33)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+ Wed Nov 13 2024 09:39:57 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getRooms (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:26:33)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+ Wed Nov 13 2024 09:39:58 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getRooms (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:26:33)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+ Wed Nov 13 2024 09:39:58 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getRooms (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:26:33)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+ Wed Nov 13 2024 09:39:58 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getRooms (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:26:33)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+ Wed Nov 13 2024 09:39:58 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getRooms (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:26:33)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+ Wed Nov 13 2024 09:39:58 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getRooms (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:26:33)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+ Wed Nov 13 2024 09:39:58 GMT-0600 (Central Standard Time) 
+ ReferenceError: Op is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: Op is not defined
+    at getRooms (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:26:33)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/checkRole.js:14:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+ Wed Nov 13 2024 10:47:14 GMT-0600 (Central Standard Time) 
+ Error: Error: habitación no encontrada. 
+ Error 
+ undefined 
+ Error: Error: habitación no encontrada.
+    at deleteRoom (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:199:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Wed Nov 13 2024 12:55:07 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar Habitación 
+ DBError 
+ {
+"name":"SequelizeUniqueConstraintError","errors":[{
+"message":"room_number must be unique","type":"unique violation","path":"room_number","value":"22","origin":"DB","instance":{
+"id":null,"room_number":"22","room_beds":"1","room_people":"1","room_phone":"","room_info":"1 matrimonial","RoomStateId":"1","BranchId":"1"},"validatorKey":"not_unique","validatorName":null,"validatorArgs":[]}],"parent":{
+"name":"SqlError","text":"Duplicate entry '22' for key 'room_number'","sql":"INSERT INTO `Rooms` (`id`,`room_number`,`room_info`,`room_beds`,`room_people`,`room_phone`,`RoomStateId`,`BranchId`) VALUES (DEFAULT,?,?,?,?,?,?,?);","fatal":false,"errno":1062,"sqlState":"23000","code":"ER_DUP_ENTRY","parameters":["22","1 matrimonial","1","1","","1","1"]},"original":{
+"name":"SqlError","text":"Duplicate entry '22' for key 'room_number'","sql":"INSERT INTO `Rooms` (`id`,`room_number`,`room_info`,`room_beds`,`room_people`,`room_phone`,`RoomStateId`,`BranchId`) VALUES (DEFAULT,?,?,?,?,?,?,?);","fatal":false,"errno":1062,"sqlState":"23000","code":"ER_DUP_ENTRY","parameters":["22","1 matrimonial","1","1","","1","1"]},"fields":{
+"room_number":"22"},"sql":"INSERT INTO `Rooms` (`id`,`room_number`,`room_info`,`room_beds`,`room_people`,`room_phone`,`RoomStateId`,`BranchId`) VALUES (DEFAULT,?,?,?,?,?,?,?);"} 
+ DBError: Error al guardar Habitación
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:56:27
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:54:26
+    at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async saveRoom (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:52:19)
+ Wed Nov 13 2024 15:14:57 GMT-0600 (Central Standard Time) 
+ Error: No se encontro información de la habitación. 
+ Error 
+ undefined 
+ Error: No se encontro información de la habitación.
+    at getRoom (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:41:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Wed Nov 13 2024 15:14:57 GMT-0600 (Central Standard Time) 
+ Error: No se encontro información de la habitación. 
+ Error 
+ undefined 
+ Error: No se encontro información de la habitación.
+    at getRoom (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:41:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)

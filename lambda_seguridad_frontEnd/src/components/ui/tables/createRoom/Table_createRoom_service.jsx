@@ -6,15 +6,14 @@ import { Label } from '../../Label';
 import { Select } from '../../Select';
 import { useGetService } from '../../../services/hooks/useGetService'
 
-export const Table_createRoom_service = ({ columns, deleteData, dispatch, ...props}) => {
+export const Table_createRoom_service = ({ columns, deleteData, onLoad, setOnLoad, roomData, dispatch, ...props}) => {
 
   const [ services, setServices ] = useState([]);
-  const [ servicesSelected, setPricesSelected ] = useState([]);
 
   const [ prevPage, setPrevPage ] = useState('');
   const [ nextPage, setNextPage ] = useState('');
 
-  const [ onLoad, setOnLoad ] = useState(false);
+  // const [ onLoad, setOnLoad ] = useState(false);
 
   if(deleteData && !columns.includes("Eliminar") ){
     columns.push("Eliminar")
@@ -29,16 +28,16 @@ const selectService = (serviceId) => {
 
   services?.data.map( service => {
     let inList = false
-    if ( servicesSelected.length <= 0 ){
+    if ( roomData.services.length <= 0 ){
     if (service.id == serviceId) {
-      servicesSelected.push(JSON.parse(JSON.stringify(service)))
+      roomData.services.push(JSON.parse(JSON.stringify(service)))
     }
     }else {
-      servicesSelected.map( serviceInList => {
+      roomData.services.map( serviceInList => {
         if (serviceInList.id == serviceId) inList = true;
       } )
       if( !inList ){
-        service.id == serviceId ? servicesSelected.push(JSON.parse(JSON.stringify(service))) : ''
+        service.id == serviceId ? roomData.services.push(JSON.parse(JSON.stringify(service))) : ''
         setOnLoad(true);
       }else{
         if (service.id == serviceId) {
@@ -56,27 +55,18 @@ const selectService = (serviceId) => {
     }
   })
 
-  setOnLoad(false)
-}
-
-const getIdOfService = () => {
-  const idServices = [];
-  servicesSelected?.map( serviceSelected => {
-    idServices.push(serviceSelected.id)
-  })
-  dispatch({type: 'UPDATE_SERVICES', services: idServices })
+  setOnLoad(true)
 }
 
 const deletePrice = (id, service) => {
-  const index = servicesSelected.map(service => service.id).indexOf(id);
-  servicesSelected.splice(index, 1)
-  setOnLoad(false);
+  const index = roomData.services.map(service => service.id).indexOf(id);
+  roomData.services.splice(index, 1)
+  setOnLoad(true);
 }
 
 useEffect( () => {
-  setOnLoad(true)
+  setOnLoad(false)
   getServices()
-  getIdOfService();
 }, [onLoad])
 
   return (
@@ -99,7 +89,7 @@ useEffect( () => {
         </thead>
         <tbody className='text-center align-baseline'>
           {
-            servicesSelected.map( ( service ) => {
+            roomData?.services.map( ( service ) => {
               return (
                 <tr key={service.id}>
                   <th>{`${service.service_name}`}</th>

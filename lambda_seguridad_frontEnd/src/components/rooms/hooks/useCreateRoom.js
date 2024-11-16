@@ -1,8 +1,30 @@
 import axios from 'axios';
 import { toast } from 'react-hot-toast'
 
-export const useCreateRoom = async(urlRoom, roomData) => {
-        
+export const useCreateRoom = async(urlRoom, createRoomData) => {
+    //get the pricesid
+    const idPrices = [];
+    createRoomData?.prices.map( priceSelected => {
+        idPrices.push(priceSelected.id)
+    })
+    //get the servicesid
+    const idServices = [];
+    createRoomData?.services.map( serviceSelected => {
+        idServices.push(serviceSelected.id)
+    })
+    
+    const roomData = {
+        "room_number": createRoomData.room,
+        "room_beds": createRoomData.beds,
+        "room_people": createRoomData.maxPeople,
+        "room_phone": createRoomData.phone,
+        "room_info": createRoomData.info,
+        "RoomStateId": createRoomData.stateId,
+        "BranchId": createRoomData.branchId,
+        "services": idServices,
+        "prices": idPrices
+    }
+
     await axios.post(urlRoom, roomData,
         {
             headers: {'x-token': sessionStorage.getItem('token-xL')}
