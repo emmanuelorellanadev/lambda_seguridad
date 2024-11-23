@@ -11,16 +11,7 @@ export const useGetRoom = async( urlRoom, { setRooms, roomDispatch, setOnLoad, s
         setNextPage(data.nextPage) 
         setPrevPage(data.prevPage)
       }else if(roomDispatch){
-
-        //WORK HERE!!
-        console.log(data);
-        roomDispatch({ type: 'UPDATE_ROOM', room: data.room_number});
-        roomDispatch({ type: 'UPDATE_BEDS', beds: data.room_beds});
-        roomDispatch({ type: 'UPDATE_MAXPEOPLE', maxPeople: data.room_people});
-        roomDispatch({ type: 'UPDATE_PHONE', phone: data.room_phone});
-        roomDispatch({ type: 'UPDATE_INFO', info: data.room_info});
-        roomDispatch({ type: 'UPDATE_STATEID', stateId: data.RoomStateId});
-        roomDispatch({ type: 'UPDATE_BRANCHID', branchId: data.BranchId});
+        roomDispatch({ type: "UPDATE_ALL", roomData: data})
       }
     })
     .catch( error => {

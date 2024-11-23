@@ -7497,3 +7497,76 @@ sql: INSERT INTO `RoomPrice_Rooms` (`RoomId`,`RoomPriceId`) VALUES (?,?); - para
  Error: No se encontro información de la habitación.
     at getRoom (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:41:24)
     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Thu Nov 21 2024 15:17:07 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar la relación room - service 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"Incorrect integer value: '[object Object]' for column `lambda_db`.`Room_Services`.`ServiceId` at row 1","sql":"INSERT INTO `Room_Services` (`RoomId`,`ServiceId`) VALUES (?,?);","fatal":false,"errno":1366,"sqlState":"22007","code":"ER_TRUNCATED_WRONG_VALUE_FOR_FIELD","parameters":["20","[object Object]"]},"original":{
+"name":"SqlError","text":"Incorrect integer value: '[object Object]' for column `lambda_db`.`Room_Services`.`ServiceId` at row 1","sql":"INSERT INTO `Room_Services` (`RoomId`,`ServiceId`) VALUES (?,?);","fatal":false,"errno":1366,"sqlState":"22007","code":"ER_TRUNCATED_WRONG_VALUE_FOR_FIELD","parameters":["20","[object Object]"]},"sql":"INSERT INTO `Room_Services` (`RoomId`,`ServiceId`) VALUES (?,?);","parameters":["20","[object Object]"]} 
+ DBError: Error al guardar la relación room - service
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:130:35
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:128:21
+    at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async updateRoom (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:96:15)
+ Thu Nov 21 2024 15:20:56 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar la relación room - service 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"Incorrect integer value: '[object Object]' for column `lambda_db`.`Room_Services`.`ServiceId` at row 1","sql":"INSERT INTO `Room_Services` (`RoomId`,`ServiceId`) VALUES (?,?);","fatal":false,"errno":1366,"sqlState":"22007","code":"ER_TRUNCATED_WRONG_VALUE_FOR_FIELD","parameters":["20","[object Object]"]},"original":{
+"name":"SqlError","text":"Incorrect integer value: '[object Object]' for column `lambda_db`.`Room_Services`.`ServiceId` at row 1","sql":"INSERT INTO `Room_Services` (`RoomId`,`ServiceId`) VALUES (?,?);","fatal":false,"errno":1366,"sqlState":"22007","code":"ER_TRUNCATED_WRONG_VALUE_FOR_FIELD","parameters":["20","[object Object]"]},"sql":"INSERT INTO `Room_Services` (`RoomId`,`ServiceId`) VALUES (?,?);","parameters":["20","[object Object]"]} 
+ DBError: Error al guardar la relación room - service
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:130:35
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:128:21
+    at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async updateRoom (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:96:15)
+ Thu Nov 21 2024 15:25:29 GMT-0600 (Central Standard Time) 
+ DBError: Error al actualizar Habitación 
+ DBError 
+ {
+"name":"SequelizeUniqueConstraintError","errors":[{
+"message":"room_number must be unique","type":"unique violation","path":"room_number","value":"2-A","origin":"DB","instance":null,"validatorKey":"not_unique","validatorName":null,"validatorArgs":[]}],"parent":{
+"name":"SqlError","text":"Duplicate entry '2-A' for key 'room_number'","sql":"UPDATE `Rooms` SET `room_number`=?,`room_beds`=?,`room_people`=?,`room_phone`=?,`room_info`=?,`RoomStateId`=?,`BranchId`=? WHERE `id` = ?","fatal":false,"errno":1062,"sqlState":"23000","code":"ER_DUP_ENTRY","parameters":["2-A",3,3,"","1 Personal. 1 Doble",4,1,"20"]},"original":{
+"name":"SqlError","text":"Duplicate entry '2-A' for key 'room_number'","sql":"UPDATE `Rooms` SET `room_number`=?,`room_beds`=?,`room_people`=?,`room_phone`=?,`room_info`=?,`RoomStateId`=?,`BranchId`=? WHERE `id` = ?","fatal":false,"errno":1062,"sqlState":"23000","code":"ER_DUP_ENTRY","parameters":["2-A",3,3,"","1 Personal. 1 Doble",4,1,"20"]},"fields":{
+"room_number":"2-A"},"sql":"UPDATE `Rooms` SET `room_number`=?,`room_beds`=?,`room_people`=?,`room_phone`=?,`room_info`=?,`RoomStateId`=?,`BranchId`=? WHERE `id` = ?"} 
+ DBError: Error al actualizar Habitación
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:187:23
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:185:9
+    at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async updateRoom (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:96:15)
+ Thu Nov 21 2024 15:30:42 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar la relación room - price 
+ DBError 
+ {
+"name":"SequelizeUniqueConstraintError","errors":[{
+"message":"PRIMARY must be unique","type":"unique violation","path":"PRIMARY","value":"21-4","origin":"DB","instance":{
+"RoomId":"21","RoomPriceId":4},"validatorKey":"not_unique","validatorName":null,"validatorArgs":[]}],"parent":{
+"name":"SqlError","text":"Duplicate entry '21-4' for key 'PRIMARY'","sql":"INSERT INTO `RoomPrice_Rooms` (`RoomId`,`RoomPriceId`) VALUES (?,?);","fatal":false,"errno":1062,"sqlState":"23000","code":"ER_DUP_ENTRY","parameters":["21",4]},"original":{
+"name":"SqlError","text":"Duplicate entry '21-4' for key 'PRIMARY'","sql":"INSERT INTO `RoomPrice_Rooms` (`RoomId`,`RoomPriceId`) VALUES (?,?);","fatal":false,"errno":1062,"sqlState":"23000","code":"ER_DUP_ENTRY","parameters":["21",4]},"fields":{
+"PRIMARY":"21-4"},"sql":"INSERT INTO `RoomPrice_Rooms` (`RoomId`,`RoomPriceId`) VALUES (?,?);"} 
+ DBError: Error al guardar la relación room - price
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:173:31
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:171:17
+    at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async updateRoom (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:96:15)
+ Thu Nov 21 2024 15:30:50 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar la relación room - price 
+ DBError 
+ {
+"name":"SequelizeUniqueConstraintError","errors":[{
+"message":"PRIMARY must be unique","type":"unique violation","path":"PRIMARY","value":"21-4","origin":"DB","instance":{
+"RoomId":"21","RoomPriceId":4},"validatorKey":"not_unique","validatorName":null,"validatorArgs":[]}],"parent":{
+"name":"SqlError","text":"Duplicate entry '21-4' for key 'PRIMARY'","sql":"INSERT INTO `RoomPrice_Rooms` (`RoomId`,`RoomPriceId`) VALUES (?,?);","fatal":false,"errno":1062,"sqlState":"23000","code":"ER_DUP_ENTRY","parameters":["21",4]},"original":{
+"name":"SqlError","text":"Duplicate entry '21-4' for key 'PRIMARY'","sql":"INSERT INTO `RoomPrice_Rooms` (`RoomId`,`RoomPriceId`) VALUES (?,?);","fatal":false,"errno":1062,"sqlState":"23000","code":"ER_DUP_ENTRY","parameters":["21",4]},"fields":{
+"PRIMARY":"21-4"},"sql":"INSERT INTO `RoomPrice_Rooms` (`RoomId`,`RoomPriceId`) VALUES (?,?);"} 
+ DBError: Error al guardar la relación room - price
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:173:31
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:171:17
+    at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async updateRoom (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:96:15)

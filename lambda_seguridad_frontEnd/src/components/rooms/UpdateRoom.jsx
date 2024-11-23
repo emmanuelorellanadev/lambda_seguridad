@@ -16,9 +16,7 @@ import { useGetRoom } from './hooks/useGetRoom.js';
 
 const UpdateRoom = (props) => {
 
-
     const [roomData, roomDispatch] = useReducer(roomReducer, initialCreateRoom)
-
 
     const [ roomStatesRes, setRoomStatesRes ] = useState('');
     const [ branches, setBranches ] = useState([])
@@ -31,9 +29,8 @@ const UpdateRoom = (props) => {
     
     const updateButton = (e) => {
         e.preventDefault();
-        const urlRoom = `http://localhost:8080/room/`;
+        const urlRoom = `http://localhost:8080/room/${props.roomId}`;
         useUpdateRoom(urlRoom, roomData);
-        roomDispatch({type: 'RESET'});
         setOnLoad(true)
     }
 
@@ -44,8 +41,8 @@ const UpdateRoom = (props) => {
         useGetBranch(urlBranch, { setBranches,  setNextPage, setPrevPage, setPage})
         useGetRoomStates(urlRoomState, { setRoomStatesRes,  setNextPage, setPrevPage, setPage});
         useGetRoom(urlRoom, { roomDispatch,  setNextPage, setPrevPage, setPage});
-        console.log(roomData);
     }, [])
+    
   return (
     <>
         <div className='room_container'>
@@ -69,7 +66,7 @@ const UpdateRoom = (props) => {
                 </div>
                 <div>
                     <Label lambdaClassLabel={""} text="Información:"/>
-                    <TextArea name="room_info" id="info" value={roomData.info} onChange={  (e) => (roomDispatch({ type: "UPDATE_INFORMATION", info: e.target.value}))} required/>
+                    <TextArea lambdaClassTextArea="" name="room_info" id="info" value={roomData.info} onChange={  (e) => (roomDispatch({ type: "UPDATE_INFO", info: e.target.value}))} required/>
                 </div>
                 <div>
                     <Label lambdaClassLabel={""} text="Estado:"/>
@@ -79,11 +76,13 @@ const UpdateRoom = (props) => {
                     <Label lambdaClassLabel={""} text="Sucursal:"/>
                     <Select data={branches?.data} text="Selecciona Sucursal" value={roomData.branchId} onChange={  (e) => (roomDispatch({ type: "UPDATE_BRANCHID", branchId: e.target.value}))} />
                 </div>
-                <div className='table-responsive roomTable_container'>
-                    <Table_createRoom_price columns={["Precio"]} onLoad={onLoad} setOnLoad={setOnLoad} roomData={roomData} dispatch={roomDispatch}/>
+                <div className='room_priceTable_container table-responsive roomTable_container'>
+                    <P_Head className="p_h3" text="PRESIOS"/>
+                    <Table_createRoom_price columns={["Precio", "Eliminar"]} onLoad={onLoad} setOnLoad={setOnLoad} roomData={roomData} dispatch={roomDispatch}/>
                 </div>
-                <div className='table-responsive roomTable_container'>
-                    <Table_createRoom_service columns={["Servicios"]} onLoad={onLoad} setOnLoad={setOnLoad} roomData={roomData}  dispatch={roomDispatch}/>
+                <div className='room_priceTable_container table-responsive roomTable_container'>
+                    <P_Head className="p_h3" text="SERVICIOS"/>
+                    <Table_createRoom_service columns={["Servicios", "Eliminar"]} onLoad={onLoad} setOnLoad={setOnLoad} roomData={roomData}  dispatch={roomDispatch}/>
                 </div>
                 <div className='sendRoom_button'>
                     <button className='btn btn-primary' id='saveButton' >Guardar</button>

@@ -19,11 +19,8 @@ export const Table_room = ({ columns, rows, editData, deleteData, ...props}) => 
 
   if(editData && !columns.includes("Editar") ){
       columns.push("Editar")
+      columns.push("Eliminar")
   }
-
-  if(deleteData && !columns.includes("Eliminar") ){
-    columns.push("Eliminar")
-}
 
   const searchUser = (query) => {
     setSearch(query);

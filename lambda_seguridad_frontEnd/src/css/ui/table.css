@@ -8,6 +8,12 @@
     width: 3rem;
 } */
 
+.room_priceTable_container{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+}
+
 .data_search{
     margin-bottom: 1rem;
 }

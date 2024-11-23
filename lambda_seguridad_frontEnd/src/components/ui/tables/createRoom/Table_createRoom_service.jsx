@@ -15,7 +15,7 @@ export const Table_createRoom_service = ({ columns, deleteData, onLoad, setOnLoa
 
   // const [ onLoad, setOnLoad ] = useState(false);
 
-  if(deleteData && !columns.includes("Eliminar") ){
+  if(!columns.includes("Eliminar") ){
     columns.push("Eliminar")
 }
 
@@ -72,7 +72,6 @@ useEffect( () => {
   return (
     <>
       <div>
-          <Label lambdaClassLabel={""} text="Servicios:"/>
           <Select data={services?.data} text="Selecciona nuevo Servicio" value={0} onChange={ (e) => {selectService(e.target.value)}} required />
       </div>
       <table className='table table-bordered table-hover table-striped' {...props}>
@@ -89,7 +88,7 @@ useEffect( () => {
         </thead>
         <tbody className='text-center align-baseline'>
           {
-            roomData?.services.map( ( service ) => {
+            roomData.services?.map( ( service ) => {
               return (
                 <tr key={service.id}>
                   <th>{`${service.service_name}`}</th>

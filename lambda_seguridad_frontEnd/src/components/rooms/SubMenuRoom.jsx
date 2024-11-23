@@ -19,7 +19,7 @@ function menuRoomReducer (state, action) {
 
 const SubMenuRoom = () => {
 
-  const initialState = { createRoom: true, listRoom: false, updateRoom: false}
+  const initialState = { createRoom: false, listRoom: true, updateRoom: false}
 
   const [ menuRoomState, menuRoomDispatch ] = useReducer( menuRoomReducer, initialState )
   const [ roomId, setRoomId] = useState('');

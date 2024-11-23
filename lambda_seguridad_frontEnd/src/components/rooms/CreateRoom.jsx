@@ -40,6 +40,7 @@ const CreateRoom = () => {
         useGetBranch(urlBranch, { setBranches,  setNextPage, setPrevPage, setPage})
         useGetRoomStates(urlRoomState, { setRoomStatesRes,  setNextPage, setPrevPage, setPage});
     }, [])
+    
   return (
     <>
         <div className='room_container'>
@@ -63,7 +64,7 @@ const CreateRoom = () => {
                 </div>
                 <div>
                     <Label lambdaClassLabel={""} text="Información:"/>
-                    <TextArea name="room_info" id="info" value={createRoomData.info} onChange={  (e) => (createRoomDispatch({ type: "UPDATE_INFO", info: e.target.value}))} required/>
+                    <TextArea lambdaClassTextArea="" name="room_info" id="info" value={createRoomData.info} onChange={  (e) => (createRoomDispatch({ type: "UPDATE_INFO", info: e.target.value}))} required/>
                 </div>
                 <div>
                     <Label lambdaClassLabel={""} text="Estado:"/>
@@ -73,10 +74,12 @@ const CreateRoom = () => {
                     <Label lambdaClassLabel={""} text="Sucursal:"/>
                     <Select data={branches?.data} text="Selecciona Sucursal" onChange={  (e) => (createRoomDispatch({ type: "UPDATE_BRANCHID", branchId: e.target.value}))} />
                 </div>
-                <div className='table-responsive roomTable_container'>
+                <div className='room_priceTable_container table-responsive roomTable_container'>
+                    <P_Head className="p_h3" text="PRESIOS"/>
                     <Table_createRoom_price columns={["Precio"]} onLoad={onLoad} setOnLoad={setOnLoad} roomData={createRoomData} dispatch={createRoomDispatch}/>
                 </div>
-                <div className='table-responsive roomTable_container'>
+                <div className='room_priceTable_container table-responsive roomTable_container'>
+                    <P_Head className="p_h3" text="PRESIOS"/>
                     <Table_createRoom_service columns={["Servicios"]} onLoad={onLoad} setOnLoad={setOnLoad} roomData={createRoomData}  dispatch={createRoomDispatch}/>
                 </div>
                 <div className='sendRoom_button'>

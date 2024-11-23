@@ -34,7 +34,7 @@ const selectPrice = (priceId) => {
       roomData.prices.push(JSON.parse(JSON.stringify(price)))
     }
     }else {
-      roomData.prices.map( priceInList => {
+      roomData.prices?.map( priceInList => {
         if (priceInList.id == priceId) inList = true;
       } )
       if( !inList ){
@@ -72,35 +72,38 @@ useEffect( () => {
 
   return (
     <>
+    {/* <div className='room_priceTable_container'> */}
+
       <div>
-          <Label lambdaClassLabel={""} text="Precios:"/>
           <Select data={prices?.data} text="Selecciona nuevo Precio" value={0} onChange={ (e) => {selectPrice(e.target.value)}} required />
       </div>
-      <table className='table table-bordered table-hover table-striped' {...props}>
-        <thead className='text-center t_header'>
-          <tr key={0}>  
-            {
-              columns?.map( (column) => {
-                return (
+        <table className='table table-bordered table-hover table-striped' {...props}>
+          <thead className='text-center t_header'>
+            <tr key={0}>  
+              {
+                columns?.map( (column) => {
+                  return (
                     <th key={column}>{column}</th>
+                  )
+                })
+              }
+              </tr>
+          </thead>
+          <tbody className='text-center align-baseline'>
+            {
+              roomData.prices?.map( ( price ) => {
+                return (
+                  <tr key={price.id}>
+                    <th>{`Q. ${price.room_price}.00`}</th>
+                    <th><button className='btn btn-outline-danger' onClick={ () => deletePrice(price.id, price.room_price) }><i className='bi bi-trash3-fill'></i></button></th>
+                  </tr>
                 )
               })
             }
-            </tr>
-        </thead>
-        <tbody className='text-center align-baseline'>
-          {
-            roomData.prices.map( ( price ) => {
-              return (
-                <tr key={price.id}>
-                  <th>{`Q. ${price.room_price}.00`}</th>
-                  <th><button className='btn btn-outline-danger' onClick={ () => deletePrice(price.id, price.room_price) }><i className='bi bi-trash3-fill'></i></button></th>
-                </tr>
-              )
-            })
-          }
-        </tbody>
-    </table>
+          </tbody>
+      </table>
+    {/* </div> */}
+
   </>
   )
 }

@@ -67,6 +67,21 @@ export function roomReducer (state, action) {
                 services: action.services
             }
         }
+
+        case "UPDATE_ALL": {
+            return {
+                room: action.roomData.room_number,
+                beds: action.roomData.room_beds,
+                maxPeople: action.roomData.room_people,
+                phone: action.roomData.room_phone,
+                info: action.roomData.room_info,
+                stateId: action.roomData.RoomStateId,
+                branchId: action.roomData.BranchId,
+                prices: action.roomData.RoomPrices,
+                services: action.roomData.Services
+            }
+        }
+
         case "RESET": {
             return ( {
                 room: '',

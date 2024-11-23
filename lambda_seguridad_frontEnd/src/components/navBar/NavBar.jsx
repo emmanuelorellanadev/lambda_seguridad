@@ -38,7 +38,7 @@ export const initialFrameState = {  profileFrame:       false,
                                     roomStateFrame:     false, 
                                     serviceFrame:       false, 
                                     priceFrame:         false,
-                                    roomFrame:          true };
+                                    roomFrame:          false };
 
 
 export const NavBar = () => {
