@@ -7570,3 +7570,118 @@ sql: INSERT INTO `RoomPrice_Rooms` (`RoomId`,`RoomPriceId`) VALUES (?,?); - para
     at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:171:17
     at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
     at async updateRoom (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/room_controller.js:96:15)
+ Fri Nov 22 2024 19:41:23 GMT-0600 (Central Standard Time) 
+ Error: {"errors":[{"msg":"The room state is required.","param":"RoomStateId","location":"body"},{"msg":"The branch is required.","param":"BranchId","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"msg":"The room state is required.","param":"RoomStateId","location":"body"},{"msg":"The branch is required.","param":"BranchId","location":"body"}]}
+    at checkFields (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at middleware (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Fri Nov 22 2024 19:48:32 GMT-0600 (Central Standard Time) 
+ Error: {"errors":[{"msg":"The room state is required.","param":"RoomStateId","location":"body"},{"msg":"The branch is required.","param":"BranchId","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"msg":"The room state is required.","param":"RoomStateId","location":"body"},{"msg":"The branch is required.","param":"BranchId","location":"body"}]}
+    at checkFields (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at middleware (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Fri Nov 22 2024 19:51:30 GMT-0600 (Central Standard Time) 
+ Error: {"errors":[{"msg":"The room state is required.","param":"RoomStateId","location":"body"},{"msg":"The branch is required.","param":"BranchId","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"msg":"The room state is required.","param":"RoomStateId","location":"body"},{"msg":"The branch is required.","param":"BranchId","location":"body"}]}
+    at checkFields (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at middleware (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Fri Nov 22 2024 19:51:32 GMT-0600 (Central Standard Time) 
+ Error: {"errors":[{"msg":"The room state is required.","param":"RoomStateId","location":"body"},{"msg":"The branch is required.","param":"BranchId","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"msg":"The room state is required.","param":"RoomStateId","location":"body"},{"msg":"The branch is required.","param":"BranchId","location":"body"}]}
+    at checkFields (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at middleware (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Fri Nov 22 2024 19:51:52 GMT-0600 (Central Standard Time) 
+ Error: {"errors":[{"msg":"The room state is required.","param":"RoomStateId","location":"body"},{"msg":"The branch is required.","param":"BranchId","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"msg":"The room state is required.","param":"RoomStateId","location":"body"},{"msg":"The branch is required.","param":"BranchId","location":"body"}]}
+    at checkFields (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at middleware (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Fri Nov 22 2024 19:51:53 GMT-0600 (Central Standard Time) 
+ Error: {"errors":[{"msg":"The room state is required.","param":"RoomStateId","location":"body"},{"msg":"The branch is required.","param":"BranchId","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"msg":"The room state is required.","param":"RoomStateId","location":"body"},{"msg":"The branch is required.","param":"BranchId","location":"body"}]}
+    at checkFields (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at middleware (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Fri Nov 22 2024 19:53:39 GMT-0600 (Central Standard Time) 
+ Error: {"errors":[{"msg":"The room state is required.","param":"RoomStateId","location":"body"},{"msg":"The branch is required.","param":"BranchId","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"msg":"The room state is required.","param":"RoomStateId","location":"body"},{"msg":"The branch is required.","param":"BranchId","location":"body"}]}
+    at checkFields (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at middleware (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Fri Nov 22 2024 19:58:14 GMT-0600 (Central Standard Time) 
+ Error: {"errors":[{"msg":"The room state is required.","param":"RoomStateId","location":"body"},{"msg":"The branch is required.","param":"BranchId","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"msg":"The room state is required.","param":"RoomStateId","location":"body"},{"msg":"The branch is required.","param":"BranchId","location":"body"}]}
+    at checkFields (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at middleware (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Fri Nov 22 2024 19:58:22 GMT-0600 (Central Standard Time) 
+ Error: {"errors":[{"msg":"The room state is required.","param":"RoomStateId","location":"body"},{"msg":"The branch is required.","param":"BranchId","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"msg":"The room state is required.","param":"RoomStateId","location":"body"},{"msg":"The branch is required.","param":"BranchId","location":"body"}]}
+    at checkFields (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at middleware (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Fri Nov 22 2024 19:58:43 GMT-0600 (Central Standard Time) 
+ Error: {"errors":[{"msg":"The room state is required.","param":"RoomStateId","location":"body"},{"msg":"The branch is required.","param":"BranchId","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"msg":"The room state is required.","param":"RoomStateId","location":"body"},{"msg":"The branch is required.","param":"BranchId","location":"body"}]}
+    at checkFields (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:144:13)
+    at middleware (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Fri Nov 22 2024 20:20:22 GMT-0600 (Central Standard Time) 
+ Error: Only image/jpegimage/png mimetypes are acepted 
+ Error 
+ undefined 
+ Error: Only image/jpegimage/png mimetypes are acepted
+    at fileFilter (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/helpers/uploadImage.js:27:24)
+    at Multipart.<anonymous> (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/multer/lib/make-middleware.js:107:7)
+    at Multipart.emit (node:events:513:28)
+    at HeaderParser.cb (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/busboy/lib/types/multipart.js:358:14)
+    at HeaderParser.push (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/busboy/lib/types/multipart.js:162:20)
+    at SBMH.ssCb [as _cb] (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/busboy/lib/types/multipart.js:394:37)
+    at feed (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/streamsearch/lib/sbmh.js:219:14)
+    at SBMH.push (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/streamsearch/lib/sbmh.js:104:16)
+    at Multipart._write (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/busboy/lib/types/multipart.js:567:19)
+    at writeOrBuffer (node:internal/streams/writable:392:12)

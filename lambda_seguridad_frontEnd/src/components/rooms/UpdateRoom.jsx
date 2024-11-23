@@ -31,6 +31,7 @@ const UpdateRoom = (props) => {
         e.preventDefault();
         const urlRoom = `http://localhost:8080/room/${props.roomId}`;
         useUpdateRoom(urlRoom, roomData);
+        props.listRoom();
         setOnLoad(true)
     }
 
@@ -74,7 +75,7 @@ const UpdateRoom = (props) => {
                 </div>
                 <div>
                     <Label lambdaClassLabel={""} text="Sucursal:"/>
-                    <Select data={branches?.data} text="Selecciona Sucursal" value={roomData.branchId} onChange={  (e) => (roomDispatch({ type: "UPDATE_BRANCHID", branchId: e.target.value}))} />
+                    <Select data={branches?.data} text="Selecciona Sucursal" value={roomData.branchId} onChange={  (e) => (roomDispatch({ type: "UPDATE_BRANCHID", branchId: e.target.value}))} disabled/>
                 </div>
                 <div className='room_priceTable_container table-responsive roomTable_container'>
                     <P_Head className="p_h3" text="PRESIOS"/>

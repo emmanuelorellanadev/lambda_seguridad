@@ -46,7 +46,7 @@ const SubMenuRoom = () => {
       </div>
         { menuRoomState.createRoom === true && <CreateRoom />}
         { menuRoomState.listRoom === true && <ListRoom navUpdateRoom={navUpdateRoom} />}
-        { menuRoomState.updateRoom === true && <UpdateRoom  roomId={roomId}/>}
+        { menuRoomState.updateRoom === true && <UpdateRoom  roomId={roomId} listRoom={navListRoom}/>}
       </>
   )
 }

@@ -72,15 +72,15 @@ const CreateRoom = () => {
                 </div>
                 <div>
                     <Label lambdaClassLabel={""} text="Sucursal:"/>
-                    <Select data={branches?.data} text="Selecciona Sucursal" onChange={  (e) => (createRoomDispatch({ type: "UPDATE_BRANCHID", branchId: e.target.value}))} />
+                    <Select data={branches?.data} text="Selecciona Sucursal" value={1} onChange={  (e) => (createRoomDispatch({ type: "UPDATE_BRANCHID", branchId: e.target.value}))} disabled />
                 </div>
                 <div className='room_priceTable_container table-responsive roomTable_container'>
                     <P_Head className="p_h3" text="PRESIOS"/>
-                    <Table_createRoom_price columns={["Precio"]} onLoad={onLoad} setOnLoad={setOnLoad} roomData={createRoomData} dispatch={createRoomDispatch}/>
+                    <Table_createRoom_price columns={["Precio", "Eliminar"]} onLoad={onLoad} setOnLoad={setOnLoad} roomData={createRoomData} dispatch={createRoomDispatch}/>
                 </div>
                 <div className='room_priceTable_container table-responsive roomTable_container'>
-                    <P_Head className="p_h3" text="PRESIOS"/>
-                    <Table_createRoom_service columns={["Servicios"]} onLoad={onLoad} setOnLoad={setOnLoad} roomData={createRoomData}  dispatch={createRoomDispatch}/>
+                    <P_Head className="p_h3" text="SERVICIOS"/>
+                    <Table_createRoom_service columns={["Servicios", "Eliminar"]} onLoad={onLoad} setOnLoad={setOnLoad} roomData={createRoomData}  dispatch={createRoomDispatch}/>
                 </div>
                 <div className='sendRoom_button'>
                     <button className='btn btn-primary' id='saveButton' >Guardar</button>

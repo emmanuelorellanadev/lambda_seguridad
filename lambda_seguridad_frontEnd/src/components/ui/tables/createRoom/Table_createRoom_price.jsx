@@ -16,7 +16,7 @@ export const Table_createRoom_price = ({ columns, deleteData, onLoad, setOnLoad,
 
   // const [ onLoad, setOnLoad ] = useState(false);
 
-  if(deleteData && !columns.includes("Eliminar") ){
+  if(!columns.includes("Eliminar") ){
     columns.push("Eliminar")
 }
 
