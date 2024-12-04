@@ -1,9 +1,9 @@
 -- delete
 
 -- SET FOREIGN_KEY_CHECKS = 0;
--- DROP TABLE Rooms;
--- DROP TABLE RoomPrice_Rooms;
--- DROP TABLE Room_Services;
+-- DROP TABLE Reservations;
+-- DROP TABLE ReservationDetails;
+-- DROP TABLE ReservationStates;
 -- SET FOREIGN_KEY_CHECKS = 1;
 
-DESCRIBE Rooms;
+-- DESCRIBE Rooms;

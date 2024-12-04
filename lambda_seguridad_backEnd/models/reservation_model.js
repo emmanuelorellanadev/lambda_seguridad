@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 
 const db_connection = require('../database/conf_database');
-const Branch = require('./branch_model');
+const User = require('./user_model');
 const Person = require('./person_model');
 const ReservationState = require('./reservationState_model');
 
@@ -9,7 +9,7 @@ const Reservation = db_connection.define('Reservation', {
     reservation_date: {
         type: DataTypes.DATE,
         defaultValue:  DataTypes.NOW,
-        // allowNull: false
+        allowNull: false
     }
 },
 {
@@ -32,13 +32,13 @@ ReservationState.hasMany(Reservation, {
 });
 Reservation.ReservationState = Reservation.belongsTo(ReservationState);
 
-//foreignKey BranchId
-Branch.hasMany(Reservation, {
-    primaryKey: {
+//foreignKey UserId
+User.hasMany(Reservation, {
+    foreignKey: {
         allowNull: false
     }
 });
-Reservation.Branch = Reservation.belongsTo(Branch);
+Reservation.User = Reservation.belongsTo(User);
 
 Reservation.sync( { force: false });
 

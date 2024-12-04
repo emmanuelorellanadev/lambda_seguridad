@@ -13,10 +13,6 @@ const ReservationDetail = db_connection.define('ReservationDetail', {
         type: DataTypes.DATE,
         allowNull: true
     },
-    date_checkIn: {
-        type: DataTypes.DATE,
-        allowNull: true
-    },
     nights_number: {
         type: DataTypes.INTEGER,
         allowNull: false
@@ -25,7 +21,10 @@ const ReservationDetail = db_connection.define('ReservationDetail', {
         type: DataTypes.INTEGER,
         allowNull: false
     },
-    
+    sub_total: {
+        type: DataTypes.DOUBLE,
+        allowNull: true
+    },
 },
 {
     timestamps: false

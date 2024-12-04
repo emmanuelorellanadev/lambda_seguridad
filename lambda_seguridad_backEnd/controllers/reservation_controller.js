@@ -40,13 +40,11 @@ const saveReservation =  async( req, res ) => {
     //check details come on body
     if ( !reservationAndDetailToSave.reservationDetails ) throw new GeneralError('Error. Detalle no encontrado.', 400);
 
-    
-    
     const { reservationDetails, ...reservationToSave} = reservationAndDetailToSave
     
     //transaction
     
-    await db_connection.transaction( async(transaction) => {
+    await db_connection.transaction( async ( transaction ) => {
         
         const reservationSaved = await Reservation.create( reservationToSave, {transaction} )
             .catch(error => { throw new DBError(error, 'Error. No se pudo guardar la reservación')});
@@ -54,6 +52,7 @@ const saveReservation =  async( req, res ) => {
         // reservationDetail.ReservationId = reservationSaved.id;
         for(detail in reservationDetails){
             //check if room is available
+
             const room = await Room.findByPk(reservationDetails[detail].RoomId);
             if ( room.RoomStateId != 1) {throw new GeneralError(`Habitación ${room.room_number} no esta disponible.`)}
                 
@@ -63,8 +62,8 @@ const saveReservation =  async( req, res ) => {
                 .catch( error => {throw new DBError(error, 'Error al guardar el detalle de la reservación')});    
 
             //change room state
-            await Room.update({RoomStateId: 2}, {where: {id: reservationDetails[detail].RoomId}, transaction})
-                .catch(error => {throw new DBError(error, 'Error al actualizar estado de hanbitación.')})
+            // await Room.update({RoomStateId: 2}, {where: {id: reservationDetails[detail].RoomId}, transaction})
+            //     .catch(error => {throw new DBError(error, 'Error al actualizar estado de hanbitación.')})
         }
         
             resSuccessful(res, 'Reservación guardada exitosamente');
@@ -79,18 +78,23 @@ const saveReservation =  async( req, res ) => {
 
 const updateReservation =  async( req, res ) => {
     const { id } = req.params;
-    const { reservationDetail, ...reservationToUpdate } = req.body;
+    const { reservationDetails, ...reservationToUpdate } = req.body;
     
     const reservation = await Reservation.findByPk(id);
+    const reservationDetailDB = await ReservationDetail.findOne({where: {ReservationId: id}});
     if( !reservation ) { throw new GeneralError('Error. Reservación no encontrada.')}
 
+    await db_connection.transaction( async ( transaction ) => {
 
-    await Reservation.update(reservationToUpdate, {where: {id: id}})
-        .catch(error => { throw new DBError(error, 'Error. No se pudo actualizar la reservación')});
+        await Reservation.update(reservationToUpdate, {where: {id: id}}, { transaction })
+            .catch(error => { throw new DBError(error, 'Error. No se pudo actualizar la reservación')});
 
-    await ReservationDetail.update(reservationDetail, {where: {id: reservationDetail.id}})
-    resSuccessful(res, 'Reservación actualizada exitosamente');
-
+        for( reservationDetail in reservationDetails){
+            reservationDetails[reservationDetail].id = reservationDetailDB.Id;
+            await ReservationDetail.update(reservationDetails[reservationDetail], {where: { id: reservationDetailDB.id }}, { transaction })
+        }
+        resSuccessful(res, 'Reservación actualizada exitosamente');
+    });    
 }
 
 const deleteReservation =  async( req, res ) => {

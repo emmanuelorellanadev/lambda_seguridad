@@ -18,14 +18,14 @@ router.get('/:id', [
 router.post('/', [
     checkJWT,
     requiredRole('ROLE_ADMINSYS', 'ROLE_ADMIN'),
-    check('reservetaionState_name', 'El nombre del estado de la reservación es requerido'),
+    check('reservationState_name', 'El nombre del estado de la reservación es requerido').not().isEmpty(),
     checkFields
 ],  reservationStateController.saveReservationState);
 
 router.put('/:id', [
     checkJWT,
     requiredRole('ROLE_ADMINSYS', 'ROLE_ADMIN'),
-    check('reservetaionState_name', 'El nombre del estado de la reservación es requerido'),
+    check('reservationState_name', 'El nombre del estado de la reservación es requerido').not().isEmpty(),
     checkFields
 ], reservationStateController.updateReservationState);
 

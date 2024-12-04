@@ -21,7 +21,7 @@ router.post('/', [
     requiredRole('ROLE_ADMINSYS', 'ROLE_ADMIN', 'ROLE_SUPERUSER', 'ROLE_USER'),
     check('PersonId', 'Persona no recibida.').not().isEmpty(),
     check('ReservationStateId', 'Estado de reservacion no recibido.').not().isEmpty(),
-    check('BranchId', 'Sucursal no seleccionada.').not().isEmpty(),
+    check('UserId', 'Usuario no recibido.').not().isEmpty(),
     checkFields
 ], reservationController.saveReservation);
 
@@ -30,7 +30,7 @@ router.put('/:id', [
     requiredRole('ROLE_ADMINSYS', 'ROLE_ADMIN', 'ROLE_SUPERUSER'),
     check('PersonId', 'Persona no recibida.').not().isEmpty(),
     check('ReservationStateId', 'Estado de reservacion no recibido.').not().isEmpty(),
-    check('BranchId', 'Sucursal no recibida.').not().isEmpty(),
+    check('UserId', 'Usuario no recibido.').not().isEmpty(),
     checkFields
 ], reservationController.updateReservation);
 

@@ -7685,3 +7685,825 @@ sql: INSERT INTO `RoomPrice_Rooms` (`RoomId`,`RoomPriceId`) VALUES (?,?); - para
     at SBMH.push (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/streamsearch/lib/sbmh.js:104:16)
     at Multipart._write (/Users/emmanuelorellana/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/busboy/lib/types/multipart.js:567:19)
     at writeOrBuffer (node:internal/streams/writable:392:12)
+ Tue Nov 26 2024 08:11:26 GMT-0600 (Central Standard Time) 
+ TokenExpiredError: jwt expired 
+ TokenExpiredError 
+ undefined 
+ TokenExpiredError: jwt expired
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/jsonwebtoken/verify.js:190:21
+    at getSecret (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/jsonwebtoken/verify.js:97:14)
+    at module.exports [as verify] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/jsonwebtoken/verify.js:101:10)
+    at checkJWT (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:16:37)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:346:12)
+ Tue Nov 26 2024 08:11:40 GMT-0600 (Central Standard Time) 
+ Error: Error. Status de reservaciones no encontrados 
+ Error 
+ undefined 
+ Error: Error. Status de reservaciones no encontrados
+    at getReservationStates (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservationState_controller.js:9:48)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Tue Nov 26 2024 08:27:32 GMT-0600 (Central Standard Time) 
+ DBError: Error. No se pudo guardar el estado de la reservación 
+ DBError 
+ {
+"name":"SequelizeValidationError","errors":[{
+"message":"ReservationState.reservationState_name cannot be null","type":"notNull Violation","path":"reservationState_name","value":null,"origin":"CORE","instance":{
+"reservationState":true,"id":null},"validatorKey":"is_null","validatorName":null,"validatorArgs":[]}]} 
+ DBError: Error. No se pudo guardar el estado de la reservación
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservationState_controller.js:31:33
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async saveReservationState (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservationState_controller.js:30:5)
+ Tue Nov 26 2024 08:29:44 GMT-0600 (Central Standard Time) 
+ DBError: Error. No se pudo guardar el estado de la reservación 
+ DBError 
+ {
+"name":"SequelizeValidationError","errors":[{
+"message":"ReservationState.reservationState_name cannot be null","type":"notNull Violation","path":"reservationState_name","value":null,"origin":"CORE","instance":{
+"reservationState":true,"id":null},"validatorKey":"is_null","validatorName":null,"validatorArgs":[]}]} 
+ DBError: Error. No se pudo guardar el estado de la reservación
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservationState_controller.js:31:33
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async saveReservationState (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservationState_controller.js:30:5)
+ Tue Nov 26 2024 08:31:56 GMT-0600 (Central Standard Time) 
+ Error: {"errors":[{"msg":"El nombre del estado de la reservación es requerido","param":"reservetaionState_name","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"msg":"El nombre del estado de la reservación es requerido","param":"reservetaionState_name","location":"body"}]}
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at middleware (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Tue Nov 26 2024 08:32:34 GMT-0600 (Central Standard Time) 
+ Error: {"errors":[{"msg":"El nombre del estado de la reservación es requerido","param":"reservetaionState_name","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"msg":"El nombre del estado de la reservación es requerido","param":"reservetaionState_name","location":"body"}]}
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at middleware (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Tue Nov 26 2024 08:32:43 GMT-0600 (Central Standard Time) 
+ Error: {"errors":[{"msg":"El nombre del estado de la reservación es requerido","param":"reservetaionState_name","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"msg":"El nombre del estado de la reservación es requerido","param":"reservetaionState_name","location":"body"}]}
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at middleware (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Tue Nov 26 2024 08:35:20 GMT-0600 (Central Standard Time) 
+ Error: {"errors":[{"msg":"El nombre del estado de la reservación es requerido","param":"reservetaionState_name","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"msg":"El nombre del estado de la reservación es requerido","param":"reservetaionState_name","location":"body"}]}
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at middleware (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Tue Nov 26 2024 08:35:21 GMT-0600 (Central Standard Time) 
+ Error: {"errors":[{"msg":"El nombre del estado de la reservación es requerido","param":"reservetaionState_name","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"msg":"El nombre del estado de la reservación es requerido","param":"reservetaionState_name","location":"body"}]}
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at middleware (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Tue Nov 26 2024 08:40:00 GMT-0600 (Central Standard Time) 
+ Error: {"errors":[{"msg":"El nombre del estado de la reservación es requerido","param":"reservetaionState_name","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"msg":"El nombre del estado de la reservación es requerido","param":"reservetaionState_name","location":"body"}]}
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at middleware (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Tue Nov 26 2024 08:40:07 GMT-0600 (Central Standard Time) 
+ Error: {"errors":[{"msg":"El nombre del estado de la reservación es requerido","param":"reservetaionState_name","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"msg":"El nombre del estado de la reservación es requerido","param":"reservetaionState_name","location":"body"}]}
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at middleware (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Tue Nov 26 2024 08:40:12 GMT-0600 (Central Standard Time) 
+ Error: {"errors":[{"msg":"El nombre del estado de la reservación es requerido","param":"reservetaionState_name","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"msg":"El nombre del estado de la reservación es requerido","param":"reservetaionState_name","location":"body"}]}
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at middleware (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Tue Nov 26 2024 08:43:10 GMT-0600 (Central Standard Time) 
+ DBError: Error. No se pudo guardar el estado de la reservación 
+ DBError 
+ {
+"name":"SequelizeUniqueConstraintError","errors":[{
+"message":"reservationState_name must be unique","type":"unique violation","path":"reservationState_name","value":"Active","origin":"DB","instance":{
+"reservationState":true,"id":null,"reservationState_name":"Active"},"validatorKey":"not_unique","validatorName":null,"validatorArgs":[]}],"parent":{
+"name":"SqlError","text":"Duplicate entry 'Active' for key 'reservationState_name'","sql":"INSERT INTO `ReservationStates` (`id`,`reservationState_name`,`reservationState`) VALUES (DEFAULT,?,?);","fatal":false,"errno":1062,"sqlState":"23000","code":"ER_DUP_ENTRY","parameters":["Active",true]},"original":{
+"name":"SqlError","text":"Duplicate entry 'Active' for key 'reservationState_name'","sql":"INSERT INTO `ReservationStates` (`id`,`reservationState_name`,`reservationState`) VALUES (DEFAULT,?,?);","fatal":false,"errno":1062,"sqlState":"23000","code":"ER_DUP_ENTRY","parameters":["Active",true]},"fields":{
+"reservationState_name":"Active"},"sql":"INSERT INTO `ReservationStates` (`id`,`reservationState_name`,`reservationState`) VALUES (DEFAULT,?,?);"} 
+ DBError: Error. No se pudo guardar el estado de la reservación
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservationState_controller.js:31:33
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async saveReservationState (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservationState_controller.js:30:5)
+ Tue Nov 26 2024 09:01:13 GMT-0600 (Central Standard Time) 
+ Error: {"errors":[{"msg":"El nombre del estado de la reservación es requerido","param":"reservetaionState_name","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"msg":"El nombre del estado de la reservación es requerido","param":"reservetaionState_name","location":"body"}]}
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at middleware (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Tue Nov 26 2024 09:02:53 GMT-0600 (Central Standard Time) 
+ DBError: Error. No se pudo guardar el estado de la reservación 
+ DBError 
+ {
+"name":"SequelizeUniqueConstraintError","errors":[{
+"message":"reservationState_name must be unique","type":"unique violation","path":"reservationState_name","value":"Active","origin":"DB","instance":{
+"reservationState":true,"id":null,"reservationState_name":"Active"},"validatorKey":"not_unique","validatorName":null,"validatorArgs":[]}],"parent":{
+"name":"SqlError","text":"Duplicate entry 'Active' for key 'reservationState_name'","sql":"INSERT INTO `ReservationStates` (`id`,`reservationState_name`,`reservationState`) VALUES (DEFAULT,?,?);","fatal":false,"errno":1062,"sqlState":"23000","code":"ER_DUP_ENTRY","parameters":["Active",true]},"original":{
+"name":"SqlError","text":"Duplicate entry 'Active' for key 'reservationState_name'","sql":"INSERT INTO `ReservationStates` (`id`,`reservationState_name`,`reservationState`) VALUES (DEFAULT,?,?);","fatal":false,"errno":1062,"sqlState":"23000","code":"ER_DUP_ENTRY","parameters":["Active",true]},"fields":{
+"reservationState_name":"Active"},"sql":"INSERT INTO `ReservationStates` (`id`,`reservationState_name`,`reservationState`) VALUES (DEFAULT,?,?);"} 
+ DBError: Error. No se pudo guardar el estado de la reservación
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservationState_controller.js:31:33
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async saveReservationState (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservationState_controller.js:30:5)
+ Tue Nov 26 2024 09:13:14 GMT-0600 (Central Standard Time) 
+ Error: Error. Estado de reservación no encontrado. 
+ Error 
+ undefined 
+ Error: Error. Estado de reservación no encontrado.
+    at deleteReservationState (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservationState_controller.js:56:37)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Tue Nov 26 2024 09:18:24 GMT-0600 (Central Standard Time) 
+ Error: Error. No se encontraron reservaciones 
+ Error 
+ undefined 
+ Error: Error. No se encontraron reservaciones
+    at getReservations (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:15:49)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Tue Nov 26 2024 09:27:37 GMT-0600 (Central Standard Time) 
+ Error: {"errors":[{"msg":"Persona no recibida.","param":"PersonId","location":"body"},{"msg":"Estado de reservacion no recibido.","param":"ReservationStateId","location":"body"},{"msg":"Sucursal no seleccionada.","param":"BranchId","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"msg":"Persona no recibida.","param":"PersonId","location":"body"},{"msg":"Estado de reservacion no recibido.","param":"ReservationStateId","location":"body"},{"msg":"Sucursal no seleccionada.","param":"BranchId","location":"body"}]}
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at middleware (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Tue Nov 26 2024 09:58:56 GMT-0600 (Central Standard Time) 
+ SyntaxError: Unexpected string in JSON at position 21 
+ SyntaxError 
+ undefined 
+ SyntaxError: Unexpected string in JSON at position 21
+    at JSON.parse (<anonymous>)
+    at parse (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/body-parser/lib/types/json.js:92:19)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/body-parser/lib/read.js:128:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:203:9)
+    at invokeCallback (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/raw-body/index.js:238:16)
+    at done (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/raw-body/index.js:227:7)
+    at IncomingMessage.onEnd (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/raw-body/index.js:287:7)
+    at IncomingMessage.emit (node:events:517:28)
+    at endReadableNT (node:internal/streams/readable:1400:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+ Tue Nov 26 2024 09:59:07 GMT-0600 (Central Standard Time) 
+ Error: {"errors":[{"msg":"Estado de reservacion no recibido.","param":"ReservationStateId","location":"body"},{"msg":"Usuario no encontrado.","param":"UserId","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"msg":"Estado de reservacion no recibido.","param":"ReservationStateId","location":"body"},{"msg":"Usuario no encontrado.","param":"UserId","location":"body"}]}
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at middleware (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Tue Nov 26 2024 09:59:22 GMT-0600 (Central Standard Time) 
+ Error: {"errors":[{"msg":"Usuario no encontrado.","param":"UserId","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"msg":"Usuario no encontrado.","param":"UserId","location":"body"}]}
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at middleware (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Tue Nov 26 2024 09:59:33 GMT-0600 (Central Standard Time) 
+ Error: Error. Detalle no encontrado. 
+ Error 
+ undefined 
+ Error: Error. Detalle no encontrado.
+    at saveReservation (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:41:65)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/errors_handler/catchedAsync.js:4:9
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:14:6)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at middleware (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Tue Nov 26 2024 10:18:28 GMT-0600 (Central Standard Time) 
+ SyntaxError: Unexpected token : in JSON at position 99 
+ SyntaxError 
+ undefined 
+ SyntaxError: Unexpected token : in JSON at position 99
+    at JSON.parse (<anonymous>)
+    at parse (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/body-parser/lib/types/json.js:92:19)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/body-parser/lib/read.js:128:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:203:9)
+    at invokeCallback (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/raw-body/index.js:238:16)
+    at done (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/raw-body/index.js:227:7)
+    at IncomingMessage.onEnd (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/raw-body/index.js:287:7)
+    at IncomingMessage.emit (node:events:517:28)
+    at endReadableNT (node:internal/streams/readable:1400:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+ Tue Nov 26 2024 13:24:11 GMT-0600 (Central Standard Time) 
+ SyntaxError: Unexpected token : in JSON at position 99 
+ SyntaxError 
+ undefined 
+ SyntaxError: Unexpected token : in JSON at position 99
+    at JSON.parse (<anonymous>)
+    at parse (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/body-parser/lib/types/json.js:92:19)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/body-parser/lib/read.js:128:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:203:9)
+    at invokeCallback (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/raw-body/index.js:238:16)
+    at done (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/raw-body/index.js:227:7)
+    at IncomingMessage.onEnd (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/raw-body/index.js:287:7)
+    at IncomingMessage.emit (node:events:517:28)
+    at endReadableNT (node:internal/streams/readable:1400:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+ Tue Nov 26 2024 13:24:26 GMT-0600 (Central Standard Time) 
+ SyntaxError: Unexpected token : in JSON at position 99 
+ SyntaxError 
+ undefined 
+ SyntaxError: Unexpected token : in JSON at position 99
+    at JSON.parse (<anonymous>)
+    at parse (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/body-parser/lib/types/json.js:92:19)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/body-parser/lib/read.js:128:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:203:9)
+    at invokeCallback (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/raw-body/index.js:238:16)
+    at done (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/raw-body/index.js:227:7)
+    at IncomingMessage.onEnd (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/raw-body/index.js:287:7)
+    at IncomingMessage.emit (node:events:517:28)
+    at endReadableNT (node:internal/streams/readable:1400:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+ Tue Nov 26 2024 13:25:56 GMT-0600 (Central Standard Time) 
+ SyntaxError: Unexpected token : in JSON at position 99 
+ SyntaxError 
+ undefined 
+ SyntaxError: Unexpected token : in JSON at position 99
+    at JSON.parse (<anonymous>)
+    at parse (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/body-parser/lib/types/json.js:92:19)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/body-parser/lib/read.js:128:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:203:9)
+    at invokeCallback (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/raw-body/index.js:238:16)
+    at done (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/raw-body/index.js:227:7)
+    at IncomingMessage.onEnd (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/raw-body/index.js:287:7)
+    at IncomingMessage.emit (node:events:517:28)
+    at endReadableNT (node:internal/streams/readable:1400:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+ Tue Nov 26 2024 13:26:56 GMT-0600 (Central Standard Time) 
+ SyntaxError: Unexpected token : in JSON at position 99 
+ SyntaxError 
+ undefined 
+ SyntaxError: Unexpected token : in JSON at position 99
+    at JSON.parse (<anonymous>)
+    at parse (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/body-parser/lib/types/json.js:92:19)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/body-parser/lib/read.js:128:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:203:9)
+    at invokeCallback (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/raw-body/index.js:238:16)
+    at done (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/raw-body/index.js:227:7)
+    at IncomingMessage.onEnd (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/raw-body/index.js:287:7)
+    at IncomingMessage.emit (node:events:517:28)
+    at endReadableNT (node:internal/streams/readable:1400:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+ Tue Nov 26 2024 13:27:49 GMT-0600 (Central Standard Time) 
+ SyntaxError: Unexpected token : in JSON at position 99 
+ SyntaxError 
+ undefined 
+ SyntaxError: Unexpected token : in JSON at position 99
+    at JSON.parse (<anonymous>)
+    at parse (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/body-parser/lib/types/json.js:92:19)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/body-parser/lib/read.js:128:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:203:9)
+    at invokeCallback (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/raw-body/index.js:238:16)
+    at done (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/raw-body/index.js:227:7)
+    at IncomingMessage.onEnd (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/raw-body/index.js:287:7)
+    at IncomingMessage.emit (node:events:517:28)
+    at endReadableNT (node:internal/streams/readable:1400:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+ Tue Nov 26 2024 13:28:45 GMT-0600 (Central Standard Time) 
+ SyntaxError: Unexpected token : in JSON at position 99 
+ SyntaxError 
+ undefined 
+ SyntaxError: Unexpected token : in JSON at position 99
+    at JSON.parse (<anonymous>)
+    at parse (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/body-parser/lib/types/json.js:92:19)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/body-parser/lib/read.js:128:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:203:9)
+    at invokeCallback (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/raw-body/index.js:238:16)
+    at done (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/raw-body/index.js:227:7)
+    at IncomingMessage.onEnd (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/raw-body/index.js:287:7)
+    at IncomingMessage.emit (node:events:517:28)
+    at endReadableNT (node:internal/streams/readable:1400:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+ Tue Nov 26 2024 13:29:54 GMT-0600 (Central Standard Time) 
+ SyntaxError: Unexpected string in JSON at position 107 
+ SyntaxError 
+ undefined 
+ SyntaxError: Unexpected string in JSON at position 107
+    at JSON.parse (<anonymous>)
+    at parse (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/body-parser/lib/types/json.js:92:19)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/body-parser/lib/read.js:128:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:203:9)
+    at invokeCallback (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/raw-body/index.js:238:16)
+    at done (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/raw-body/index.js:227:7)
+    at IncomingMessage.onEnd (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/raw-body/index.js:287:7)
+    at IncomingMessage.emit (node:events:517:28)
+    at endReadableNT (node:internal/streams/readable:1400:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+ Tue Nov 26 2024 13:30:46 GMT-0600 (Central Standard Time) 
+ SyntaxError: Unexpected string in JSON at position 107 
+ SyntaxError 
+ undefined 
+ SyntaxError: Unexpected string in JSON at position 107
+    at JSON.parse (<anonymous>)
+    at parse (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/body-parser/lib/types/json.js:92:19)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/body-parser/lib/read.js:128:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:203:9)
+    at invokeCallback (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/raw-body/index.js:238:16)
+    at done (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/raw-body/index.js:227:7)
+    at IncomingMessage.onEnd (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/raw-body/index.js:287:7)
+    at IncomingMessage.emit (node:events:517:28)
+    at endReadableNT (node:internal/streams/readable:1400:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+ Tue Nov 26 2024 13:31:23 GMT-0600 (Central Standard Time) 
+ SyntaxError: Unexpected token : in JSON at position 99 
+ SyntaxError 
+ undefined 
+ SyntaxError: Unexpected token : in JSON at position 99
+    at JSON.parse (<anonymous>)
+    at parse (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/body-parser/lib/types/json.js:92:19)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/body-parser/lib/read.js:128:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:203:9)
+    at invokeCallback (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/raw-body/index.js:238:16)
+    at done (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/raw-body/index.js:227:7)
+    at IncomingMessage.onEnd (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/raw-body/index.js:287:7)
+    at IncomingMessage.emit (node:events:517:28)
+    at endReadableNT (node:internal/streams/readable:1400:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+ Tue Nov 26 2024 13:33:04 GMT-0600 (Central Standard Time) 
+ SyntaxError: Unexpected string in JSON at position 107 
+ SyntaxError 
+ undefined 
+ SyntaxError: Unexpected string in JSON at position 107
+    at JSON.parse (<anonymous>)
+    at parse (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/body-parser/lib/types/json.js:92:19)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/body-parser/lib/read.js:128:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:203:9)
+    at invokeCallback (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/raw-body/index.js:238:16)
+    at done (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/raw-body/index.js:227:7)
+    at IncomingMessage.onEnd (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/raw-body/index.js:287:7)
+    at IncomingMessage.emit (node:events:517:28)
+    at endReadableNT (node:internal/streams/readable:1400:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+ Tue Nov 26 2024 13:33:14 GMT-0600 (Central Standard Time) 
+ SyntaxError: Unexpected string in JSON at position 107 
+ SyntaxError 
+ undefined 
+ SyntaxError: Unexpected string in JSON at position 107
+    at JSON.parse (<anonymous>)
+    at parse (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/body-parser/lib/types/json.js:92:19)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/body-parser/lib/read.js:128:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:203:9)
+    at invokeCallback (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/raw-body/index.js:238:16)
+    at done (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/raw-body/index.js:227:7)
+    at IncomingMessage.onEnd (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/raw-body/index.js:287:7)
+    at IncomingMessage.emit (node:events:517:28)
+    at endReadableNT (node:internal/streams/readable:1400:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+ Tue Nov 26 2024 13:33:18 GMT-0600 (Central Standard Time) 
+ SyntaxError: Unexpected string in JSON at position 107 
+ SyntaxError 
+ undefined 
+ SyntaxError: Unexpected string in JSON at position 107
+    at JSON.parse (<anonymous>)
+    at parse (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/body-parser/lib/types/json.js:92:19)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/body-parser/lib/read.js:128:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:203:9)
+    at invokeCallback (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/raw-body/index.js:238:16)
+    at done (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/raw-body/index.js:227:7)
+    at IncomingMessage.onEnd (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/raw-body/index.js:287:7)
+    at IncomingMessage.emit (node:events:517:28)
+    at endReadableNT (node:internal/streams/readable:1400:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+ Tue Nov 26 2024 13:33:50 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of null (reading 'RoomStateId') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of null (reading 'RoomStateId')
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:58:23
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async saveReservation (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:49:5)
+ Tue Nov 26 2024 13:37:43 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of null (reading 'RoomStateId') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of null (reading 'RoomStateId')
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:58:23
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async saveReservation (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:49:5)
+ Tue Nov 26 2024 13:38:37 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of null (reading 'RoomStateId') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of null (reading 'RoomStateId')
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:59:23
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async saveReservation (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:49:5)
+ Tue Nov 26 2024 13:39:41 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of null (reading 'RoomStateId') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of null (reading 'RoomStateId')
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:59:23
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async saveReservation (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:49:5)
+ Tue Nov 26 2024 13:39:59 GMT-0600 (Central Standard Time) 
+ Error: Habitación 2-B no esta disponible. 
+ Error 
+ undefined 
+ Error: Habitación 2-B no esta disponible.
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:59:48
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async saveReservation (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:49:5)
+ Tue Nov 26 2024 13:40:44 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar el detalle de la reservación 
+ DBError 
+ {
+"name":"SequelizeValidationError","errors":[{
+"message":"ReservationDetail.nights_number cannot be null","type":"notNull Violation","path":"nights_number","value":null,"origin":"CORE","instance":{
+"id":null},"validatorKey":"is_null","validatorName":null,"validatorArgs":[]},{
+"message":"ReservationDetail.people_number cannot be null","type":"notNull Violation","path":"people_number","value":null,"origin":"CORE","instance":{
+"id":null},"validatorKey":"is_null","validatorName":null,"validatorArgs":[]},{
+"message":"ReservationDetail.ReservationId cannot be null","type":"notNull Violation","path":"ReservationId","value":null,"origin":"CORE","instance":{
+"id":null},"validatorKey":"is_null","validatorName":null,"validatorArgs":[]},{
+"message":"ReservationDetail.RoomId cannot be null","type":"notNull Violation","path":"RoomId","value":null,"origin":"CORE","instance":{
+"id":null},"validatorKey":"is_null","validatorName":null,"validatorArgs":[]}]} 
+ DBError: Error al guardar el detalle de la reservación
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:64:41
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:63:13
+    at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async saveReservation (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:49:5)
+ Tue Nov 26 2024 13:45:54 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar el detalle de la reservación 
+ DBError 
+ {
+"name":"SequelizeValidationError","errors":[{
+"message":"ReservationDetail.nights_number cannot be null","type":"notNull Violation","path":"nights_number","value":null,"origin":"CORE","instance":{
+"id":null},"validatorKey":"is_null","validatorName":null,"validatorArgs":[]},{
+"message":"ReservationDetail.people_number cannot be null","type":"notNull Violation","path":"people_number","value":null,"origin":"CORE","instance":{
+"id":null},"validatorKey":"is_null","validatorName":null,"validatorArgs":[]},{
+"message":"ReservationDetail.ReservationId cannot be null","type":"notNull Violation","path":"ReservationId","value":null,"origin":"CORE","instance":{
+"id":null},"validatorKey":"is_null","validatorName":null,"validatorArgs":[]},{
+"message":"ReservationDetail.RoomId cannot be null","type":"notNull Violation","path":"RoomId","value":null,"origin":"CORE","instance":{
+"id":null},"validatorKey":"is_null","validatorName":null,"validatorArgs":[]}]} 
+ DBError: Error al guardar el detalle de la reservación
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:65:41
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:64:13
+    at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async saveReservation (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:51:5)
+ Tue Nov 26 2024 13:47:12 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar el detalle de la reservación 
+ DBError 
+ {
+"name":"SequelizeValidationError","errors":[{
+"message":"ReservationDetail.nights_number cannot be null","type":"notNull Violation","path":"nights_number","value":null,"origin":"CORE","instance":{
+"id":null},"validatorKey":"is_null","validatorName":null,"validatorArgs":[]},{
+"message":"ReservationDetail.people_number cannot be null","type":"notNull Violation","path":"people_number","value":null,"origin":"CORE","instance":{
+"id":null},"validatorKey":"is_null","validatorName":null,"validatorArgs":[]},{
+"message":"ReservationDetail.ReservationId cannot be null","type":"notNull Violation","path":"ReservationId","value":null,"origin":"CORE","instance":{
+"id":null},"validatorKey":"is_null","validatorName":null,"validatorArgs":[]},{
+"message":"ReservationDetail.RoomId cannot be null","type":"notNull Violation","path":"RoomId","value":null,"origin":"CORE","instance":{
+"id":null},"validatorKey":"is_null","validatorName":null,"validatorArgs":[]}]} 
+ DBError: Error al guardar el detalle de la reservación
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:65:41
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:64:13
+    at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async saveReservation (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:49:5)
+ Tue Nov 26 2024 13:48:43 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar el detalle de la reservación 
+ DBError 
+ {
+"name":"SequelizeValidationError","errors":[{
+"message":"ReservationDetail.nights_number cannot be null","type":"notNull Violation","path":"nights_number","value":null,"origin":"CORE","instance":{
+"id":null},"validatorKey":"is_null","validatorName":null,"validatorArgs":[]},{
+"message":"ReservationDetail.people_number cannot be null","type":"notNull Violation","path":"people_number","value":null,"origin":"CORE","instance":{
+"id":null},"validatorKey":"is_null","validatorName":null,"validatorArgs":[]},{
+"message":"ReservationDetail.ReservationId cannot be null","type":"notNull Violation","path":"ReservationId","value":null,"origin":"CORE","instance":{
+"id":null},"validatorKey":"is_null","validatorName":null,"validatorArgs":[]},{
+"message":"ReservationDetail.RoomId cannot be null","type":"notNull Violation","path":"RoomId","value":null,"origin":"CORE","instance":{
+"id":null},"validatorKey":"is_null","validatorName":null,"validatorArgs":[]}]} 
+ DBError: Error al guardar el detalle de la reservación
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:65:41
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:64:13
+    at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async saveReservation (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:49:5)
+ Tue Nov 26 2024 13:49:37 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar el detalle de la reservación 
+ DBError 
+ {
+"name":"SequelizeValidationError","errors":[{
+"message":"ReservationDetail.ReservationId cannot be null","type":"notNull Violation","path":"ReservationId","value":null,"origin":"CORE","instance":{
+"id":null,"RoomId":22,"nights_number":1,"people_number":1,"sub_total":125},"validatorKey":"is_null","validatorName":null,"validatorArgs":[]}]} 
+ DBError: Error al guardar el detalle de la reservación
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:65:41
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:64:13
+    at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async saveReservation (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:49:5)
+ Tue Nov 26 2024 13:52:06 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar el detalle de la reservación 
+ DBError 
+ {
+"name":"SequelizeValidationError","errors":[{
+"message":"ReservationDetail.ReservationId cannot be null","type":"notNull Violation","path":"ReservationId","value":null,"origin":"CORE","instance":{
+"id":null,"RoomId":22,"nights_number":1,"people_number":1,"sub_total":125},"validatorKey":"is_null","validatorName":null,"validatorArgs":[]}]} 
+ DBError: Error al guardar el detalle de la reservación
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:65:41
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:64:13
+    at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async saveReservation (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:49:5)
+ Tue Nov 26 2024 13:55:38 GMT-0600 (Central Standard Time) 
+ ReferenceError: ReservationDetails is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: ReservationDetails is not defined
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:58:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async saveReservation (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:49:5)
+ Tue Nov 26 2024 13:56:03 GMT-0600 (Central Standard Time) 
+ Error: Argument passed to findByPk is invalid: [object Object] 
+ Error 
+ undefined 
+ Error: Argument passed to findByPk is invalid: [object Object]
+    at Room.findByPk (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:1219:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:58:37
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async saveReservation (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:49:5)
+ Tue Nov 26 2024 13:56:36 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar el detalle de la reservación 
+ DBError 
+ {
+} 
+ DBError: Error al guardar el detalle de la reservación
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:64:41
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:63:13
+    at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async saveReservation (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:49:5)
+ Tue Nov 26 2024 14:10:37 GMT-0600 (Central Standard Time) 
+ Error: Habitación 1-B no esta disponible. 
+ Error 
+ undefined 
+ Error: Habitación 1-B no esta disponible.
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:59:48
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async saveReservation (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:49:5)
+ Tue Nov 26 2024 14:26:04 GMT-0600 (Central Standard Time) 
+ DBError: Error al guardar el detalle de la reservación 
+ DBError 
+ {
+"name":"SequelizeDatabaseError","parent":{
+"name":"SqlError","text":"Incorrect datetime value: 'Invalid date' for column `lambda_db`.`ReservationDetails`.`date_in` at row 1","sql":"INSERT INTO `ReservationDetails` (`id`,`date_in`,`date_out`,`nights_number`,`people_number`,`sub_total`,`ReservationId`,`RoomId`) VALUES (DEFAULT,?,?,?,?,?,?,?);","fatal":false,"errno":1292,"sqlState":"22007","code":"ER_TRUNCATED_WRONG_VALUE","parameters":["Invalid date","Invalid date",1,1,125,20,22]},"original":{
+"name":"SqlError","text":"Incorrect datetime value: 'Invalid date' for column `lambda_db`.`ReservationDetails`.`date_in` at row 1","sql":"INSERT INTO `ReservationDetails` (`id`,`date_in`,`date_out`,`nights_number`,`people_number`,`sub_total`,`ReservationId`,`RoomId`) VALUES (DEFAULT,?,?,?,?,?,?,?);","fatal":false,"errno":1292,"sqlState":"22007","code":"ER_TRUNCATED_WRONG_VALUE","parameters":["Invalid date","Invalid date",1,1,125,20,22]},"sql":"INSERT INTO `ReservationDetails` (`id`,`date_in`,`date_out`,`nights_number`,`people_number`,`sub_total`,`ReservationId`,`RoomId`) VALUES (DEFAULT,?,?,?,?,?,?,?);","parameters":["Invalid date","Invalid date",1,1,125,20,22]} 
+ DBError: Error al guardar el detalle de la reservación
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:64:41
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:63:13
+    at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async saveReservation (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:49:5)
+ Tue Nov 26 2024 14:46:19 GMT-0600 (Central Standard Time) 
+ Error: {"errors":[{"msg":"Sucursal no recibida.","param":"BranchId","location":"body"}]} 
+ Error 
+ undefined 
+ Error: {"errors":[{"msg":"Sucursal no recibida.","param":"BranchId","location":"body"}]}
+    at checkFields (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check_fields.js:11:15)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at middleware (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express-validator/src/middlewares/check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Tue Nov 26 2024 14:47:08 GMT-0600 (Central Standard Time) 
+ Error: Error. Reservación no encontrada. 
+ Error 
+ undefined 
+ Error: Error. Reservación no encontrada.
+    at updateReservation (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:86:32)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Tue Nov 26 2024 14:48:08 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of undefined (reading 'id') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of undefined (reading 'id')
+    at updateReservation (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:92:86)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ Tue Nov 26 2024 15:15:54 GMT-0600 (Central Standard Time) 
+ DBError: Error. No se pudo actualizar la reservación 
+ DBError 
+ {
+"name":"SequelizeForeignKeyConstraintError","parent":{
+"name":"SqlError","text":"Cannot add or update a child row: a foreign key constraint fails (`lambda_db`.`Reservations`, CONSTRAINT `Reservations_ibfk_2` FOREIGN KEY (`ReservationStateId`) REFERENCES `ReservationStates` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)","sql":"UPDATE `Reservations` SET `PersonId`=?,`ReservationStateId`=?,`UserId`=? WHERE `id` = ?","fatal":false,"errno":1452,"sqlState":"23000","code":"ER_NO_REFERENCED_ROW_2","parameters":[1,2,1,"21"]},"original":{
+"name":"SqlError","text":"Cannot add or update a child row: a foreign key constraint fails (`lambda_db`.`Reservations`, CONSTRAINT `Reservations_ibfk_2` FOREIGN KEY (`ReservationStateId`) REFERENCES `ReservationStates` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)","sql":"UPDATE `Reservations` SET `PersonId`=?,`ReservationStateId`=?,`UserId`=? WHERE `id` = ?","fatal":false,"errno":1452,"sqlState":"23000","code":"ER_NO_REFERENCED_ROW_2","parameters":[1,2,1,"21"]},"sql":"UPDATE `Reservations` SET `PersonId`=?,`ReservationStateId`=?,`UserId`=? WHERE `id` = ?","parameters":[1,2,1,"21"],"table":"ReservationStates","fields":["ReservationStateId"],"index":"Reservations_ibfk_2","reltype":"child"} 
+ DBError: Error. No se pudo actualizar la reservación
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:91:37
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:90:9
+    at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async updateReservation (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:88:5)
+ Tue Nov 26 2024 15:29:31 GMT-0600 (Central Standard Time) 
+ ReferenceError: reservationDetils is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: reservationDetils is not defined
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:96:44
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async updateReservation (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:87:5)
+ Tue Nov 26 2024 15:31:04 GMT-0600 (Central Standard Time) 
+ Error: WHERE parameter "id" has invalid "undefined" value 
+ Error 
+ undefined 
+ Error: WHERE parameter "id" has invalid "undefined" value
+    at MariaDBQueryGenerator.whereItemQuery (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1743:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1734:25
+    at Array.forEach (<anonymous>)
+    at MariaDBQueryGenerator.whereItemsQuery (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1732:35)
+    at MariaDBQueryGenerator.whereQuery (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1714:24)
+    at MariaDBQueryGenerator.updateQuery (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:371:116)
+    at MySQLQueryInterface.bulkUpdate (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-interface.js:361:37)
+    at ReservationDetail.update (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:2010:54)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:96:13
+ Tue Nov 26 2024 15:50:30 GMT-0600 (Central Standard Time) 
+ Error: WHERE parameter "id" has invalid "undefined" value 
+ Error 
+ undefined 
+ Error: WHERE parameter "id" has invalid "undefined" value
+    at MariaDBQueryGenerator.whereItemQuery (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1743:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1734:25
+    at Array.forEach (<anonymous>)
+    at MariaDBQueryGenerator.whereItemsQuery (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1732:35)
+    at MariaDBQueryGenerator.whereQuery (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1714:24)
+    at MariaDBQueryGenerator.updateQuery (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:371:116)
+    at MySQLQueryInterface.bulkUpdate (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-interface.js:361:37)
+    at ReservationDetail.update (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:2010:54)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:96:13
+ Tue Nov 26 2024 15:52:28 GMT-0600 (Central Standard Time) 
+ Error: WHERE parameter "id" has invalid "undefined" value 
+ Error 
+ undefined 
+ Error: WHERE parameter "id" has invalid "undefined" value
+    at MariaDBQueryGenerator.whereItemQuery (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1743:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1734:25
+    at Array.forEach (<anonymous>)
+    at MariaDBQueryGenerator.whereItemsQuery (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1732:35)
+    at MariaDBQueryGenerator.whereQuery (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1714:24)
+    at MariaDBQueryGenerator.updateQuery (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:371:116)
+    at MySQLQueryInterface.bulkUpdate (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-interface.js:361:37)
+    at ReservationDetail.update (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:2010:54)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:96:13
+ Tue Nov 26 2024 15:55:14 GMT-0600 (Central Standard Time) 
+ Error: WHERE parameter "id" has invalid "undefined" value 
+ Error 
+ undefined 
+ Error: WHERE parameter "id" has invalid "undefined" value
+    at MariaDBQueryGenerator.whereItemQuery (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1743:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1734:25
+    at Array.forEach (<anonymous>)
+    at MariaDBQueryGenerator.whereItemsQuery (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1732:35)
+    at MariaDBQueryGenerator.whereQuery (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1714:24)
+    at MariaDBQueryGenerator.updateQuery (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:371:116)
+    at MySQLQueryInterface.bulkUpdate (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-interface.js:361:37)
+    at ReservationDetail.update (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:2010:54)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:96:13
+ Tue Nov 26 2024 15:56:47 GMT-0600 (Central Standard Time) 
+ Error: WHERE parameter "id" has invalid "undefined" value 
+ Error 
+ undefined 
+ Error: WHERE parameter "id" has invalid "undefined" value
+    at MariaDBQueryGenerator.whereItemQuery (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1743:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1734:25
+    at Array.forEach (<anonymous>)
+    at MariaDBQueryGenerator.whereItemsQuery (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1732:35)
+    at MariaDBQueryGenerator.whereQuery (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1714:24)
+    at MariaDBQueryGenerator.updateQuery (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:371:116)
+    at MySQLQueryInterface.bulkUpdate (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-interface.js:361:37)
+    at ReservationDetail.update (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:2010:54)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:96:13
+ Tue Nov 26 2024 15:57:07 GMT-0600 (Central Standard Time) 
+ Error: WHERE parameter "id" has invalid "undefined" value 
+ Error 
+ undefined 
+ Error: WHERE parameter "id" has invalid "undefined" value
+    at MariaDBQueryGenerator.whereItemQuery (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1743:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1734:25
+    at Array.forEach (<anonymous>)
+    at MariaDBQueryGenerator.whereItemsQuery (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1732:35)
+    at MariaDBQueryGenerator.whereQuery (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1714:24)
+    at MariaDBQueryGenerator.updateQuery (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:371:116)
+    at MySQLQueryInterface.bulkUpdate (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-interface.js:361:37)
+    at ReservationDetail.update (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:2010:54)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:96:13
+ Tue Nov 26 2024 15:57:36 GMT-0600 (Central Standard Time) 
+ Error: WHERE parameter "id" has invalid "undefined" value 
+ Error 
+ undefined 
+ Error: WHERE parameter "id" has invalid "undefined" value
+    at MariaDBQueryGenerator.whereItemQuery (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1743:13)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1734:25
+    at Array.forEach (<anonymous>)
+    at MariaDBQueryGenerator.whereItemsQuery (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1732:35)
+    at MariaDBQueryGenerator.whereQuery (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:1714:24)
+    at MariaDBQueryGenerator.updateQuery (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-generator.js:371:116)
+    at MySQLQueryInterface.bulkUpdate (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/dialects/abstract/query-interface.js:361:37)
+    at ReservationDetail.update (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/model.js:2010:54)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:96:13
+ Tue Dec 03 2024 11:20:29 GMT-0600 (Central Standard Time) 
+ Error: Habitación 1-B no esta disponible. 
+ Error 
+ undefined 
+ Error: Habitación 1-B no esta disponible.
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:57:48
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async saveReservation (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:47:5)
+ Tue Dec 03 2024 15:37:21 GMT-0600 (Central Standard Time) 
+ TokenExpiredError: jwt expired 
+ TokenExpiredError 
+ undefined 
+ TokenExpiredError: jwt expired
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/jsonwebtoken/verify.js:190:21
+    at getSecret (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/jsonwebtoken/verify.js:97:14)
+    at module.exports [as verify] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/jsonwebtoken/verify.js:101:10)
+    at checkJWT (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/middlewares/check-jwt.js:16:37)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:284:15
+    at param (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/express/lib/router/index.js:365:14)
+ Tue Dec 03 2024 15:37:48 GMT-0600 (Central Standard Time) 
+ TypeError: Cannot read properties of undefined (reading 'red') 
+ TypeError 
+ undefined 
+ TypeError: Cannot read properties of undefined (reading 'red')
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:93:44
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async updateReservation (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:87:5)
+ Tue Dec 03 2024 15:55:41 GMT-0600 (Central Standard Time) 
+ ReferenceError: eservationDetailDB is not defined 
+ ReferenceError 
+ undefined 
+ ReferenceError: eservationDetailDB is not defined
+    at /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:96:97
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/node_modules/sequelize/lib/sequelize.js:507:18
+    at async updateReservation (/home/tuxem/Development/lambda_seguridad/lambda_seguridad_backEnd/controllers/reservation_controller.js:87:5)

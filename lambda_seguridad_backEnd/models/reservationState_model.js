@@ -1,4 +1,4 @@
-//RESERVATIONSTATUS MODEL
+//RESERVATIONSTATE MODEL
 const { DataTypes } = require('sequelize');
 
 const db_connection = require('../database/conf_database');
@@ -10,7 +10,7 @@ const ReservationState = db_connection.define('ReservationState', {
         allowNull: false,
     },
     reservationState: {
-        type: DataTypes.STRING,
+        type: DataTypes.BOOLEAN,
         allowNull: false,
         defaultValue: true
     }
