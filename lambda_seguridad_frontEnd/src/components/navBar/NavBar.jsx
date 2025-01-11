@@ -22,11 +22,13 @@ import { NavBarAdminSys } from './NavBarAdminSys';
 import { UserProfile } from '../users/UserProfile';
 import { subMenuReducer } from './reducer/subMenuReducer.js';
 import { frameReducer } from './reducer/frameReducer.js';
+import SubMenuReservation from '../reservations/SubMenuReservation.jsx';
 
 export const initialSubMenuState = {menuAdmin:      false, 
                                     menuUser:       false, 
                                     menuSecurity:   false, 
-                                    menuPerson:     false};
+                                    menuPerson:     false,
+                                    menuOperation:  false};
 export const initialFrameState = {  profileFrame:       false, 
                                     userFrame:          false, 
                                     companyFrame:       false, 
@@ -38,6 +40,7 @@ export const initialFrameState = {  profileFrame:       false,
                                     roomStateFrame:     false, 
                                     serviceFrame:       false, 
                                     priceFrame:         false,
+                                    reservationFrame:   false,
                                     roomFrame:          false };
 
 
@@ -73,6 +76,12 @@ export const NavBar = () => {
     //subMenu Person
     const subMenuPersonVisibility = () => {
         subMenuDispatch({type: 'SUBMENUPERSON'})
+        // setSubMenuPerson(!subMenuPerson);
+    }
+
+    //subMenu Operation
+    const subMenuOperationVisibility = () => {
+        subMenuDispatch({type: 'SUBMENUOPERATION'})
         // setSubMenuPerson(!subMenuPerson);
     }
 
@@ -145,6 +154,11 @@ export const NavBar = () => {
         frameDispatch({type: 'PRICE_FRAME'});
     }
 
+    const showReservationFrame = ( ) => {
+        frameDispatch({type: 'RESET_FRAME'});
+        frameDispatch({type: 'RESERVATION_FRAME'});
+    }
+
     const showRoomFrame = ( ) => {
         frameDispatch({type: 'RESET_FRAME'});
         frameDispatch({type: 'ROOM_FRAME'});
@@ -190,6 +204,7 @@ export const NavBar = () => {
                         subMenuUserVisibility={subMenuUserVisibility}
                         subMenuPersonVisibility={subMenuPersonVisibility}
                         subMenuSecurityVisibility={subMenuSecurityVisibility}
+                        subMenuOperationVisibility={subMenuOperationVisibility}
                         subMenuReset={subMenuReset}
                         showProfileFrame={showProfileFrame}
                         showBranchFrame={showBranchFrame}
@@ -203,6 +218,7 @@ export const NavBar = () => {
                         showServiceFrame={showServiceFrame}
                         showPriceFrame={showPriceFrame}
                         showRoomFrame={showRoomFrame}
+                        showReservationFrame={showReservationFrame}
                         closeSession={ closeSession } 
                     />}
 
@@ -219,6 +235,7 @@ export const NavBar = () => {
         { frameState.serviceFrame    === true && <SubMenuService />}
         { frameState.priceFrame      === true && <SubMenuPrice />}
         { frameState.roomFrame       === true && <SubMenuRoom />}
+        { frameState.reservationFrame=== true && <SubMenuReservation />}
     </>
   )
 }

@@ -42,6 +42,14 @@ export const NavBarAdminSys = (props) => {
                     <li><a href="#" onClick={props.showPersonTypeFrame} >Tipos</a></li>
                 </ul>            
             </li>
+            <li id='subMenuOperation' onClick={props.subMenuOperationVisibility} onMouseLeave={props.subMenuReset}>
+                <a href="#"> Operaciones</a>
+                <ul className={props.subMenuState.menuOperation ? 'subMenuVisible' : 'subMenuHide' } >
+                    <li><a href="#" onClick={props.showReservationFrame} >Reservaciones</a></li>
+                    <li><a href="#"  >Entradas</a></li>
+                    <li><a href="#"  >Pagos</a></li>
+                </ul>            
+            </li>
         </ul>
     </>
   )

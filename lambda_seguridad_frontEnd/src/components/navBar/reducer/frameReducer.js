@@ -41,6 +41,9 @@ export function frameReducer (state, action){
         case "ROOM_FRAME":
             return { roomFrame: true}
     
+        case "RESERVATION_FRAME":
+            return { reservationFrame: true}
+
         case "FRAMERESET":
             return { initialFrameState }
 

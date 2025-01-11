@@ -13,6 +13,9 @@ export function subMenuReducer (state, action){
 
         case "SUBMENUPERSON":
             return { menuPerson: !state.menuPerson}
+        
+        case "SUBMENUOPERATION":
+            return { menuOperation: !state.menuOperation}
 
         case "SUBMENURESET":
             return { initialSubMenuState }

@@ -8,6 +8,7 @@ const SubMenuProvider = ({children}) => {
     const [subMenuAdmin,    setSubMenuAdmin]    = useState(false);
     const [subMenuSecurity, setSubMenuSecurity] = useState(false);
     const [subMenuPerson,   setSubMenuPerson]   = useState(false);
+    const [subMenuOperation,   setSubMenuOperation]   = useState(false);
 
     //show menu
     const showMenu = () => {
@@ -21,6 +22,7 @@ const SubMenuProvider = ({children}) => {
         setSubMenuUser(false);
         setSubMenuSecurity(false);
         setSubMenuPerson(false);
+        setSubMenuOperation(false);
     }
 
     const subMenuStates = {  
@@ -29,6 +31,7 @@ const SubMenuProvider = ({children}) => {
         subMenuAdmin, setSubMenuAdmin,
         subMenuSecurity, setSubMenuSecurity,
         subMenuPerson, setSubMenuPerson,
+        subMenuOperation, setSubMenuOperation,
         closeSubMenus, showMenu
     }
 
