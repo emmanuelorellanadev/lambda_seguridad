@@ -1,5 +1,4 @@
 /node_modules
-/data/logs/security.log
-/data/logs/lambdaError.log
+/data/logs/*
 /data/img/public/
 .env

@@ -1,5 +1,5 @@
 import React, { useReducer, useState } from 'react'
-// import CreateReservation from './CreateReservation';
+import CreateReservation from './CreateReservation';
 import ListReservation from './ListReservation';
 // import UpdateReservation from './UpdateReservation';
 
@@ -46,7 +46,7 @@ const SubMenuReservation = () => {
           <li onClick={navListReservation}>Listar</li>
         </ul>
       </div>
-        {/* { menuReservationState.createReservation === true && <CreateReservation />} */}
+        { menuReservationState.createReservation === true && <CreateReservation />}
         { menuReservationState.listReservation   === true && <ListReservation navUpdateReservation={navUpdateReservation} />}
         {/* { menuReservationState.updateReservation === true && <UpdateReservation  reservationId={reservationId} listReservation={navListReservation}/>} */}
       </>

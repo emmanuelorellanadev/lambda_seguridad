@@ -1,4 +1,4 @@
-const paginate = async (model, pageNumber, pageLimit, search = {}, order = []) => {
+const paginate = async (model, pageNumber, pageLimit, search = {}, include = {}, order = []) => {
     try {
         const limit = parseInt(pageLimit, 10) || 10;
         // const limit = parseInt(pageLimit, 10);
@@ -15,6 +15,11 @@ const paginate = async (model, pageNumber, pageLimit, search = {}, order = []) =
         // check if the search object is empty
         if (Object.keys(search).length) {
             options = {options, ...search};
+        }
+
+        //check if include was recibed
+        if (include) {
+            options = {options, ...include}
         }
 
         // check if the order array is empty

@@ -1,12 +1,11 @@
 import axios from "axios";
 import toast from "react-hot-toast";
 
-export const useGetReservation = async( urlReservation, { setReservations, setOnLoad, setNextPage, setPrevPage}) => {
+export const useGetReservation = async( urlReservation, { setReservations, setNextPage, setPrevPage}) => {
   await axios(urlReservation, { headers: {"x-token": sessionStorage.getItem('token-xL')}})
     .then( resp => resp.data.resData )
     .then( data => {
       if(setReservations){
-        if(setOnLoad) setOnLoad(false)
         setReservations( data )
         setNextPage(data.nextPage) 
         setPrevPage(data.prevPage)

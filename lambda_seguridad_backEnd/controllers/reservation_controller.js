@@ -1,20 +1,46 @@
 const db_connection = require("../database/conf_database");
-const catchedAsync = require("../errors_handler/catchedAsync");
 const { GeneralError, DBError } = require("../errors_handler/errors");
+const Person = require("../models/person_model");
 const Reservation = require("../models/reservation_model");
 const ReservationState = require("../models/reservationState_model");
 const ReservationDetail = require("../models/reservationDetail_model");
-const { resSuccessful } = require("../response/resSucessful");
 const Room = require("../models/room_model");
+const { paginate } = require("../helpers/paginate");
+const catchedAsync = require("../errors_handler/catchedAsync");
+const { resSuccessful } = require("../response/resSucessful");
+const { Op, DATE } = require("sequelize");
 
 
 const getReservations = async ( req, res ) => {
 
-    const reservationsData = await Reservation.findAll({include: [{model: ReservationState}]});
+    const {q, page, limit, order_by, order_direction} = req.query;
+    let search = {};
+    let order = [];
 
-    if ( reservationsData.length == 0 ) { throw new GeneralError('Error. No se encontraron reservaciones') };
+    //WORK HERE !!!
+    //search doesnt work
+
+    // if (q){
+    //     search = {
+    //         where: {
+    //             role_name: {
+    //                 [Op.like]: `%${q}%`
+    //             }
+    //         }
+    //     }
+    // }
+    
+    include = {
+        include: [
+            {model: Person},
+            {model: ReservationDetail},
+            {model: ReservationState}
+        ]
+    }
         
-    resSuccessful(res, reservationsData)
+    const reservations = await paginate(Reservation, page, limit, search, include, order);
+
+    resSuccessful(res, reservations);
 
 }
 
@@ -42,32 +68,65 @@ const saveReservation =  async( req, res ) => {
 
     const { reservationDetails, ...reservationToSave} = reservationAndDetailToSave
     
+    //before save, check the room is abailable\
+    //on the date sended
+    const reservationDateDB = []
+    const reservationData = await Reservation.findAll({include: [
+            {model: ReservationDetail, attributes: ["date_in", "date_out"], include: [{model: Room, where : {id: reservationDetails[0].RoomId}, attributes: [] }]},
+            {model: ReservationState, attributes: ["reservationState_name"], where : {reservationState_name: 'Activo'}},
+            ], 
+            attributes: ["id"]
+        })
+        .catch( error => {throw new DBError(error, "Error al consultar reservaciones anteriores")})
+
+    //transform the date data on json to create date objects and compare
+    const reservationDetail = JSON.parse(JSON.stringify(reservationData[0].ReservationDetails[0]));
+
+    for( reservationDet in reservationDetail){
+        reservationDateDB.push(reservationDetail[reservationDet])
+    }
+    
+    //WORK HERE!!!
+    //Compare date objects or json
+    //you can do it !!!
+
+    console.log(reservationDateDB[0])
+    const date = new Date(reservationDateDB[0].split(' ', 1))
+    console.log(date )
+
+
+    // if ( reservationData.ReservationDetails ){
+    //     console.log("datos encontrados".red, reservationData.ReservationDetails)
+    // }else{
+    //     console.log("datos NO encontrados puede guardar".red, reservationData.ReservationDetails)
+    // }
+
     //transaction
     
-    await db_connection.transaction( async ( transaction ) => {
+    // await db_connection.transaction( async ( transaction ) => {
         
-        const reservationSaved = await Reservation.create( reservationToSave, {transaction} )
-            .catch(error => { throw new DBError(error, 'Error. No se pudo guardar la reservación')});
+    //     const reservationSaved = await Reservation.create( reservationToSave, {transaction} )
+    //         .catch(error => { throw new DBError(error, 'Error. No se pudo guardar la reservación')});
 
-        // reservationDetail.ReservationId = reservationSaved.id;
-        for(detail in reservationDetails){
-            //check if room is available
+    //     // reservationDetail.ReservationId = reservationSaved.id;
+    //     for(detail in reservationDetails){
+    //         //check if room is available
 
-            const room = await Room.findByPk(reservationDetails[detail].RoomId);
-            if ( room.RoomStateId != 1) {throw new GeneralError(`Habitación ${room.room_number} no esta disponible.`)}
+    //         const room = await Room.findByPk(reservationDetails[detail].RoomId);
+    //         if ( room.RoomStateId != 1) {throw new GeneralError(`Habitación ${room.room_number} no esta disponible.`)}
                 
-            reservationDetails[detail].ReservationId = reservationSaved.id
+    //         reservationDetails[detail].ReservationId = reservationSaved.id
                 
-            await ReservationDetail.create(reservationDetails[detail], {transaction})
-                .catch( error => {throw new DBError(error, 'Error al guardar el detalle de la reservación')});    
+    //         await ReservationDetail.create(reservationDetails[detail], {transaction})
+    //             .catch( error => {throw new DBError(error, 'Error al guardar el detalle de la reservación')});    
 
-            //change room state
-            // await Room.update({RoomStateId: 2}, {where: {id: reservationDetails[detail].RoomId}, transaction})
-            //     .catch(error => {throw new DBError(error, 'Error al actualizar estado de hanbitación.')})
-        }
+    //         //change room state
+    //         // await Room.update({RoomStateId: 2}, {where: {id: reservationDetails[detail].RoomId}, transaction})
+    //         //     .catch(error => {throw new DBError(error, 'Error al actualizar estado de hanbitación.')})
+    //     }
         
-            resSuccessful(res, 'Reservación guardada exitosamente');
-    })
+            resSuccessful(res, reservationData);
+    // })
 };
 
 

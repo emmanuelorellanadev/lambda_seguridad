@@ -20,7 +20,7 @@ const ListReservation = (props) => {
     <>
       <div className='reservation_container' >
           <div className='table-responsive companyTable_container' >
-              <Table_reservation columns={["Habitación", "Cliente", "Datos de reservación", "Estado"]} editData={editReservation} />
+              <Table_reservation columns={["Cliente", "Fecha Reservacion", "Noches", "Huespedes", "Estado"]} editData={editReservation} />
           </div>
       </div>
       <Toaster/>
