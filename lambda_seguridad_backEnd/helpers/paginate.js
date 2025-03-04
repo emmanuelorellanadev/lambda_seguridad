@@ -35,6 +35,9 @@ const paginate = async (model, pageNumber, pageLimit, search = {}, include = {},
         //    rows = transform(rows);
         // }
 
+        //check if response is not empty
+        // count == 0 ? console.log('0') : console.log(rows);
+
         return {
             prevPage: getPrevPage(page),
             currentPage: page,

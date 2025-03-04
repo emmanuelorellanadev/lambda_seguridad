@@ -75,7 +75,7 @@ const CreateRoom = () => {
                     <Select data={branches?.data} text="Selecciona Sucursal" value={1} onChange={  (e) => (createRoomDispatch({ type: "UPDATE_BRANCHID", branchId: e.target.value}))} disabled />
                 </div>
                 <div className='room_priceTable_container table-responsive roomTable_container'>
-                    <P_Head className="p_h3" text="PRESIOS"/>
+                    <P_Head className="p_h3" text="PRECIOS"/>
                     <Table_createRoom_price columns={["Precio", "Eliminar"]} onLoad={onLoad} setOnLoad={setOnLoad} roomData={createRoomData} dispatch={createRoomDispatch}/>
                 </div>
                 <div className='room_priceTable_container table-responsive roomTable_container'>
