@@ -31,9 +31,9 @@ export const Table_person = ({ columns, rows, editData, deleteData, onLoad, setO
   }
 
   useEffect( () => {
-    setOnLoad(true)
+    // setOnLoad(true)
     const urlPerson = `http://localhost:8080/person/?limit=${rowsByPage}&page=${page}&q=${search}`;
-    useGetPerson(urlPerson, {setPeople, setNextPage, setPrevPage})
+    useGetPerson(urlPerson, {setPeople, setNextPage, setPrevPage});
   }, [onLoad, search])
 
   return (

@@ -1,72 +1,113 @@
 
 export const initialCreateReservation = {
+    query: '',
     PersonId: '',
+    name: '',
+    phone: '',
+    cui: '',
+    nit: '',
     BranchId: '',
     ReservationStateId: '',
     UserId: '',
-    reservationDetails: [{
+    // reservationDetails: [{
         date_in: '',
         date_out: '',
         nights_number: '',
         people_number: '',
         RoomId: ''
-    }]
+    // }]
 }
 
 export function reservationReducer (state, action) {
     switch (action.type){
+        case "UPDATE_QUERY": {
+            return {
+                ...state,
+                query : action.query
+            }
+        }
+
         case "UPDATE_PERSON": {
             return {
                 ...state,
-                room: action.room
+                PersonId: action.PersonId
             }
         }
-        case "UPDATE_BRANCH": {
+
+        case "UPDATE_NAME": {
             return {
                 ...state,
-                beds: action.beds
+                name: action.name
             }
         }
-        case "UPDATE_STATE": {
-            return {
-                ...state,
-                maxPeople: action.maxPeople
-            }
-        }
-        case "UPDATE_USER": {
+
+        case "UPDATE_PHONE": {
             return {
                 ...state,
                 phone: action.phone
             }
         }
+
+        case "UPDATE_CUI": {
+            return {
+                ...state,
+                cui: action.cui
+            }
+        }
+        
+        case "UPDATE_NIT": {
+            return {
+                ...state,
+                nit: action.nit
+            }
+        }
+        case "UPDATE_BRANCH": {
+            return {
+                ...state,
+                BranchId: action.BranchId
+            }
+        }
+        case "UPDATE_STATE": {
+            return {
+                ...state,
+                ReservationStateId: action.ReservationStateId
+            }
+        }
+        case "UPDATE_USER": {
+            return {
+                ...state,
+                UserId: action.UserId
+            }
+        }
         case "UPDATE_DATEIN": {
             return {
                 ...state,
-                info: action.info
+                date_in: action.date_in
+                // reservationDetails: {date_in: action.date_in}
             }
         }
         case "UPDATE_DATEOUT": {
             return {
                 ...state,
-                stateId: action.stateId
+                date_out: action.date_out
             }
         }
         case "UPDATE_NIGHTS": {
             return {
                 ...state,
-                branchId: action.branchId
+                nights_number: action.nights_number
             }
         }
         case "UPDATE_PEOPLE": {
             return {
                 ...state,
-                prices: action.prices
+                people_number: action.people_number
             }
         }
         case "UPDATE_ROOM": {
             return {
                 ...state,
-                services: action.services
+                RoomId: action.RoomId
             }
         }
 

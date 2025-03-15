@@ -18,8 +18,8 @@ const paginate = async (model, pageNumber, pageLimit, search = {}, include = {},
         }
 
         //check if include was recibed
-        if (include) {
-            options = {options, ...include}
+        if (Object.keys(include).length) {
+            options = {options, ...include};
         }
 
         // check if the order array is empty

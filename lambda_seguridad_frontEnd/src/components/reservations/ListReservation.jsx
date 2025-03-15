@@ -9,7 +9,7 @@ const ListReservation = (props) => {
   const [ onLoad, setOnLoad ] = useState( true )
 
   const editReservation = (reservationId) => {
-    // props.navUpdateRoom(roomId)
+    props.navUpdateReservation(reservationId)
   }
 
   useEffect( () => {

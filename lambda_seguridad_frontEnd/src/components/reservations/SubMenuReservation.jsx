@@ -1,7 +1,7 @@
 import React, { useReducer, useState } from 'react'
 import CreateReservation from './CreateReservation';
 import ListReservation from './ListReservation';
-// import UpdateReservation from './UpdateReservation';
+import UpdateReservation from './UpdateReservation';
 
 //work here
 // when you push Operations menu show reservation frame subMenu Reservation
@@ -48,7 +48,7 @@ const SubMenuReservation = () => {
       </div>
         { menuReservationState.createReservation === true && <CreateReservation />}
         { menuReservationState.listReservation   === true && <ListReservation navUpdateReservation={navUpdateReservation} />}
-        {/* { menuReservationState.updateReservation === true && <UpdateReservation  reservationId={reservationId} listReservation={navListReservation}/>} */}
+        { menuReservationState.updateReservation === true && <UpdateReservation  reservationId={reservationId} listReservation={navListReservation}/>}
       </>
   )
 }

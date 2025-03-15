@@ -5,7 +5,6 @@ import { Input } from '../Input';
 import { P_Head } from '../P_Head';
 import { useGetReservation } from '../../reservations/hooks/useGetReservation';
 import Pagination from '../Pagination';
-// import { useDeleteRoom } from '../../rooms/hooks/useDeleteRoom';
 
 export const Table_reservation = ({ columns, rows, editData, deleteData, ...props}) => {
 
@@ -32,10 +31,6 @@ export const Table_reservation = ({ columns, rows, editData, deleteData, ...prop
   //   const urlReservation = `http://localhost:8080/reservation/${reservationId}`;
   //   useDeleteReservation(urlReservation, reservationId, {setOnLoad})
   // }
-
-  //WORK HERE!!!
-  //need to fill list reservation
-  //check
 
   const getReservations = () => {
     const urlReservation = `http://localhost:8080/reservation/?limit=${rowsByPage}&page=${page}&q=${search}`;
@@ -74,7 +69,7 @@ export const Table_reservation = ({ columns, rows, editData, deleteData, ...prop
                   <th>{reservation.ReservationDetails[0].nights_number}</th>
                   <th>{reservation.ReservationDetails[0].people_number}</th>
                   <th>{reservation.ReservationState.reservationState_name}</th>
-                  {/* <th><button className='btn btn-primary' type="button" onClick={ () => editData( reservation.id ) } >Editar</button></th> */}
+                  <th><button className='btn btn-primary' type="button" onClick={ () => editData( reservation.id ) } >Editar</button></th>
                   {/* <th><button className='btn btn-outline-danger' onClick={ () => deleteReservation(reservation.id, room.room_number, setOnLoad) }><i className='bi bi-trash3-fill'></i></button></th> */}
                 </tr>
               )

@@ -26,7 +26,7 @@ const getPeople = async( req, res) => {
         }
     }
 
-    const people = await paginate(Person, page, limit, search, order)
+    const people = await paginate(Person, page, limit, search, order);
     resSuccessful(res, people);
 }
 

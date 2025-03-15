@@ -19,22 +19,16 @@ const getReservations = async ( req, res ) => {
     let search = {};
     let order = [];
 
-    //WORK HERE !!!
-    //search doesnt work
-
-    // if (q){
-    //     search = {
-    //         where: {
-    //             role_name: {
-    //                 [Op.like]: `%${q}%`
-    //             }
-    //         }
-    //     }
-    // }
-    
     include = {
         include: [
-            {model: Person, attributes: ["person_names", "person_surnames"]},
+            {model: Person, attributes: ["person_names", "person_surnames"], 
+                where: {
+                    [Op.or]: [
+                        {person_names: {[Op.like]: `%${q}%`}},
+                        {person_surnames: {[Op.like]: `%${q}%`}}
+                    ]
+                }
+            },
             {model: ReservationDetail, attributes: ["date_in", "nights_number", "people_number"]},
             {model: ReservationState, attributes: ["reservationState_name"], where: {reservationState_name: ["Activa", "Registrada"]}}
         ]
@@ -59,8 +53,6 @@ const getReservation = async ( req, res ) => {
     resSuccessful(res, reservation)
 
 }
-
-
 
 
 const saveReservation =  async( req, res ) => {
@@ -93,12 +85,6 @@ const saveReservation =  async( req, res ) => {
         })
     }
 };
-
-
-
-
-
-
 
 const updateReservation =  async( req, res ) => {
     const { id } = req.params;
