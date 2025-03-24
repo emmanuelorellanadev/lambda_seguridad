@@ -30,7 +30,7 @@ const CreateRoom = () => {
         e.preventDefault();
         const urlRoom = `http://localhost:8080/room/`;
         useCreateRoom(urlRoom, createRoomData);
-        createRoomDispatch({type: 'RESET'});
+        // createRoomDispatch({type: 'RESET'});
         setOnLoad(true)
     }
 
@@ -39,6 +39,7 @@ const CreateRoom = () => {
         const urlRoomState = `http://localhost:8080/roomState/`;
         useGetBranch(urlBranch, { setBranches,  setNextPage, setPrevPage, setPage})
         useGetRoomStates(urlRoomState, { setRoomStatesRes,  setNextPage, setPrevPage, setPage});
+        console.log(createRoomData)
     }, [])
     
   return (
@@ -68,11 +69,11 @@ const CreateRoom = () => {
                 </div>
                 <div>
                     <Label lambdaClassLabel={""} text="Estado:"/>
-                    <Select data={roomStatesRes?.data} text="Selecciona Estado" onChange={  (e) => (createRoomDispatch({ type: "UPDATE_STATEID", stateId: e.target.value}))} />
+                    <Select data={roomStatesRes?.data} text="Selecciona Estado" value={createRoomData.stateId} onChange={  (e) => (createRoomDispatch({ type: "UPDATE_STATEID", stateId: e.target.value}))} />
                 </div>
                 <div>
                     <Label lambdaClassLabel={""} text="Sucursal:"/>
-                    <Select data={branches?.data} text="Selecciona Sucursal" value={1} onChange={  (e) => (createRoomDispatch({ type: "UPDATE_BRANCHID", branchId: e.target.value}))} disabled />
+                    <Select data={branches?.data} text="Selecciona Sucursal" value={createRoomData.BranchId} onChange={()=> {}} />
                 </div>
                 <div className='room_priceTable_container table-responsive roomTable_container'>
                     <P_Head className="p_h3" text="PRECIOS"/>

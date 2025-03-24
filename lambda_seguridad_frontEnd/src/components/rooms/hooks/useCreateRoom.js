@@ -20,10 +20,12 @@ export const useCreateRoom = async(urlRoom, createRoomData) => {
         "room_phone": createRoomData.phone,
         "room_info": createRoomData.info,
         "RoomStateId": createRoomData.stateId,
-        "BranchId": createRoomData.branchId,
+        "BranchId": createRoomData.BranchId,
         "services": idServices,
         "prices": idPrices
     }
+
+    console.log(roomData)
 
     await axios.post(urlRoom, roomData,
         {

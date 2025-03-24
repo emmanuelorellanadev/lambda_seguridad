@@ -7,8 +7,9 @@ export const initialCreateReservation = {
     cui: '',
     nit: '',
     BranchId: '',
-    ReservationStateId: '',
+    ReservationStateId: 1,
     UserId: '',
+    room_number: '',
     // reservationDetails: [{
         date_in: '',
         date_out: '',
@@ -83,7 +84,6 @@ export function reservationReducer (state, action) {
             return {
                 ...state,
                 date_in: action.date_in
-                // reservationDetails: {date_in: action.date_in}
             }
         }
         case "UPDATE_DATEOUT": {
@@ -104,7 +104,15 @@ export function reservationReducer (state, action) {
                 people_number: action.people_number
             }
         }
-        case "UPDATE_ROOM": {
+
+        case "UPDATE_ROOMNUMBER": {
+            return {
+                ...state,
+                room_number: action.room_number
+            }
+        }
+
+        case "UPDATE_ROOMID": {
             return {
                 ...state,
                 RoomId: action.RoomId
@@ -127,17 +135,22 @@ export function reservationReducer (state, action) {
 
         case "RESET": {
             return ( {
+                ...state,
+                query: '',
                 PersonId: '',
+                name: '',
+                phone: '',
+                cui: '',
+                nit: '',
                 BranchId: '',
-                ReservationStateId: '',
+                ReservationStateId: 1,
                 UserId: '',
-                reservationDetails: [{
-                    date_in: '',
-                    date_out: '',
-                    nights_number: '',
-                    people_number: '',
-                    RoomId: ''
-                }]
+                room_number: '',
+                date_in: '',
+                date_out: '',
+                nights_number: '',
+                people_number: '',
+                RoomId: ''
             } )
         }
         default: return state

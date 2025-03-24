@@ -43,14 +43,14 @@ const getReservations = async ( req, res ) => {
 const getReservation = async ( req, res ) => {
     const { id } = req.params;
 
-    const reservationData = await Reservation.findByPk( id, {include: [{model: ReservationState}]} );
+    const reservationData = await Reservation.findByPk( id, {include: [
+        {model: Person, params: ["person_names", "person_surnames", "cui", "nit", "BranchId"]},
+        {model: ReservationState, params: ["reservationState_name"]},
+        {model: ReservationDetail, include: [Room]}
+    ]} );
     if ( !reservationData ) { throw new GeneralError('Error. No se encontó la reservación') };
-    const reservation = reservationData.toJSON();
 
-    const reservationDetailData = await ReservationDetail.findByPk(reservation.id);
-    reservation.reservationDetail = reservationDetailData.toJSON();
-
-    resSuccessful(res, reservation)
+    resSuccessful(res, reservationData)
 
 }
 
@@ -61,7 +61,6 @@ const saveReservation =  async( req, res ) => {
     if ( !reservationAndDetailToSave.reservationDetails ) throw new GeneralError('Error. Detalle no encontrado.', 400);
 
     const { reservationDetails, ...reservationToSave} = reservationAndDetailToSave
-    
 
     //check if the room is available on the date sended
     const roomAvailability = await checkRoomAvailability(reservationToSave, reservationDetails)
@@ -77,7 +76,6 @@ const saveReservation =  async( req, res ) => {
             for(detail in reservationDetails){
                     
                 reservationDetails[detail].ReservationId = reservationSaved.id
-                    
                 await ReservationDetail.create(reservationDetails[detail], {transaction})
                     .catch( error => {throw new DBError(error, 'Error al guardar el detalle de la reservación')});    
             }            
@@ -87,6 +85,7 @@ const saveReservation =  async( req, res ) => {
 };
 
 const updateReservation =  async( req, res ) => {
+
     const { id } = req.params;
     const { reservationDetails, ...reservationToUpdate } = req.body;
     
@@ -110,14 +109,19 @@ const updateReservation =  async( req, res ) => {
 const deleteReservation =  async( req, res ) => {
 
     const { id } = req.params;
-
+    
     const reservation = await Reservation.findByPk(id)
     if( !reservation ) { throw new GeneralError('Error. Reservación no encontrada.')}
+    const reservationData = reservation.dataValues;
+    // change state of reservation to canceled = 4
+    reservationData.ReservationStateId = 4
+    await Reservation.update(reservationData, { where: {id: id} } )
+        .catch( error => console.log(error))
 
-    await Reservation.destroy({ where: {id: id} })
-        .catch(error => { throw new DBError(error, 'Error. No se pudo eliminar la reservación')});
+    // await Reservation.destroy({ where: {id: id} })
+    //     .catch(error => { throw new DBError(error, 'Error. No se pudo eliminar la reservación')});
 
-    resSuccessful(res, 'Reservación eliminada exitosamente');
+    resSuccessful(res, 'Reservación cancelada exitosamente.');
 
 }
 

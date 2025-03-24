@@ -8,6 +8,7 @@ const Room = require("../../models/room_model");
 const { Op, DATE } = require("sequelize");
 
 const checkRoomAvailability = async(reservationToSave, reservationDetails) => {
+    console.log(reservationDetails)
 
     //before save, check the room is abailable in the dates sended
     const reservationData = await Reservation.findAll({include: [

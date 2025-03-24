@@ -11,7 +11,7 @@ export const useAuth = async(urlAuth, user, pass, { setIsUser }) => {
             sessionStorage.setItem(`token-xL`, userData.token);
             sessionStorage.setItem(`user-xL`, sessionData.name);
             sessionStorage.setItem('role-xL', sessionData.role);
-            sessionStorage.setItem('uid-xL', userData.uid)
+            sessionStorage.setItem('uid-xL', sessionData.uid)
             setIsUser(true);
             document.getElementById('login_container').style.display = 'none';
 

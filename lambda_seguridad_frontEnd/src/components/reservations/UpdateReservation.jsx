@@ -2,88 +2,125 @@ import { useEffect, useState, useReducer } from 'react';
 
 import '../../css/reservation/reservation.css';
 import { Toaster } from 'react-hot-toast';
-import { initialCreateReservation, reservationReducer } from './reducer/reservationReducer';
 import { P_Head } from '../ui/P_Head';
 import { Label } from '../ui/Label';
 import { Input } from '../ui/Input';
-const UpdateReservation = () => {
-
-
-    //WORK HERE!!!
-    // Use reducer to management states of reservation
-    //You can do it !!!
-    const [createReservationData, createReservationDispatch] = useReducer(reservationReducer, initialCreateReservation)
-
-    // const [ roomStatesRes, setRoomStatesRes ] = useState('');
-    // const [ branches, setBranches ] = useState([])
-    //pagination
-    // const [ page, setPage ] = useState( 1 );
-    // const [ prevPage, setPrevPage ] = useState('');
-    // const [ nextPage, setNextPage ] = useState('');
+import { useSearchPerson } from '../people/hooks/useSearchPerson';
+import { initialCreateReservation, reservationReducer } from './reducer/reservationReducer';
+import Table_searchSelect_room from '../ui/tables/createReservation/Table_searchSelect_room';
+import { useUpdateReservation } from './hooks/useUpdateReservation';
+import { useGetReservation } from './hooks/useGetReservation';
+const UpdateReservation = (props) => {
 
     const [ onLoad, setOnLoad ] = useState(false);
-    
-    const saveButton = (e) => {
-        e.preventDefault();
-        console.log(createReservationData)
-        // const urlRoom = `http://localhost:8080/room/`;
-        // useCreateRoom(urlRoom, createReservationData);
-        createReservationDispatch({type: 'RESET'});
+    const [reservationData, reservationDispatch] = useReducer(reservationReducer, initialCreateReservation)
+
+    //WORK HERE !!!!
+    //show the rooms availables in that date
+
+    const searchPerson = async(q) => {
+        const urlPerson = `http://localhost:8080/person/?q=${q}`
+
+        reservationDispatch({ type: "UPDATE_QUERY", query: q})
+        await useSearchPerson( urlPerson, reservationDispatch );
         setOnLoad(true)
     }
 
+    const calculateNights = async(datein, dateout) => {
+        
+        let dateIn = '';
+        let dateOut = '';
+        if (datein) {
+            reservationDispatch({type: "UPDATE_DATEIN", date_in : datein});
+            dateIn = new Date(datein);
+        }
+        if (dateout) {
+            reservationDispatch({type: "UPDATE_DATEOUT", date_out: dateout});
+            dateOut = new Date(dateout);
+        }
+        if (datein && dateout){ 
+            const diff = (dateOut.getTime() - dateIn.getTime());
+            const nights = ((diff / (1000 * 60 * 60 * 24)));//calculate number of nights
+            reservationDispatch({ type: "UPDATE_NIGHTS", nights_number:  nights })
+        }
+        setOnLoad(true);
+
+    }
+    
+    const updateButton = (e) => {
+        e.preventDefault();
+        const urlReservation = `http://localhost:8080/reservation/${props.reservationId}`;
+        useUpdateReservation(urlReservation, reservationData);
+        setOnLoad(!onLoad)
+    }
+
     useEffect( () => {
-        // const urlBranch = `http://localhost:8080/branch/`;
-        // const urlRoomState = `http://localhost:8080/roomState/`;
-        // useGetBranch(urlBranch, { setBranches,  setNextPage, setPrevPage, setPage})
-        // useGetRoomStates(urlRoomState, { setRoomStatesRes,  setNextPage, setPrevPage, setPage});
-    }, [])
+        const urlReservation = `http://localhost:8080/reservation/${props.reservationId}`;
+        useGetReservation(urlReservation, reservationDispatch)
+        reservationDispatch({type: 'UPDATE_USER', UserId: sessionStorage.getItem('uid-xL')})
+        // console.log(reservationData)
+
+    }, [onLoad])
     
   return (
     <>
-        <div className='room_container'>
+        <div className='reservation_container'>
             <P_Head className="p_h1" text="Actualizar Reservación"/>
-            <form className='room_form' onSubmit={saveButton}>
+            <form className='reservation_form' onSubmit={updateButton}>
+                <section >
+                    {/* <div id='InputSearch'> */}
+                        {/* <Label lambdaClassLabel={""} text="Buscar:"/> */}
+                        <Input lambdaClassInput={""} type="search" name="cui" onChange={ (e) => { searchPerson(e.target.value) } } placeholder="Buscar Cliente" autoFocus />
+                    {/* </div> */}
+                    <div>
+                        <Label lambdaClassLabel={""} text="Nombre:"/>
+                        <Input lambdaClassInput={""} type="text" name="name" value={reservationData.name} onChange={ (e) => {  } } disabled required/>
+                    </div>
+                    <div>
+                        <Label lambdaClassLabel={""} text="Contacto:"/>
+                        <Input lambdaClassInput={""} type="number"  value={reservationData.phone} onChange={ () => { } } disabled required/>
+                    </div>
+                    <div>
+                        <Label lambdaClassLabel={""} text="CUI:"/>
+                        <Input lambdaClassInput={""} type="number"  value={reservationData.cui} onChange={ () => { } } disabled required/>
+                    </div>
+                    <div>
+                        <Label lambdaClassLabel={""} text="NIT:"/>
+                        <Input lambdaClassInput={""} type="number" value={reservationData.nit} onChange={ () => { } } disabled required/>
+                    </div>
+                </section>
                 <div>
-                    <Label lambdaClassLabel={""} text="Sucursal:"/>
-                    <Input lambdaClassInput={""} type="text" name="room_number" value={createReservationData.room} onChange={ (e) => { createReservationDispatch({type: "UPDATE_ROOM", room: e.target.value}) } } placeholder={"Nombre habitación"} autoFocus required />
+                    <Label lambdaClassLabel={""} text="Personas:"/>
+                    <Input lambdaClassInput={""} type="number" value={ reservationData.people_number } onChange={ (e) => { reservationDispatch({ type: 'UPDATE_PEOPLE', people_number: e.target.value}) } } />
                 </div>
-                {/* <div>
-                    <Label lambdaClassLabel={""} text="Camas:"/>
-                    <Input lambdaClassInput={""} type="number" name="room_beds" value={createReservationData.beds} onChange={ (e) => (createReservationDispatch({ type: "UPDATE_BEDS", beds: e.target.value}))} placeholder={"Número de camas"} required/>
-                </div> */}
-                {/* <div>
-                    <Label lambdaClassLabel={""} text="Máximo:"/>
-                    <Input lambdaClassInput={""} type="number" name="room_people" value={createReservationData.maxPeople} onChange={ (e) => (createReservationDispatch({ type: "UPDATE_MAXPEOPLE", maxPeople: e.target.value}))} placeholder={"Número de huespedes"} required/>
-                </div> */}
-                {/* <div>
-                    <Label lambdaClassLabel={""} text="Teléfono:"/>
-                    <Input lambdaClassInput={""} type="number" value={createReservationData.phone} onChange={  (e) => (createReservationDispatch({ type: "UPDATE_PHONE", phone: e.target.value}))} placeholder={"Número de teléfono"}/>
-                </div> */}
-                {/* <div>
-                    <Label lambdaClassLabel={""} text="Información:"/>
-                    <TextArea lambdaClassTextArea="" name="room_info" id="info" value={createReservationData.info} onChange={  (e) => (createReservationDispatch({ type: "UPDATE_INFO", info: e.target.value}))} required/>
-                </div> */}
-                {/* <div>
-                    <Label lambdaClassLabel={""} text="Estado:"/>
-                    <Select data={roomStatesRes?.data} text="Selecciona Estado" onChange={  (e) => (createReservationDispatch({ type: "UPDATE_STATEID", stateId: e.target.value}))} />
-                </div> */}
-                {/* <div>
-                    <Label lambdaClassLabel={""} text="Sucursal:"/>
-                    <Select data={branches?.data} text="Selecciona Sucursal" value={1} onChange={  (e) => (createReservationDispatch({ type: "UPDATE_BRANCHID", branchId: e.target.value}))} disabled />
-                </div> */}
-                {/* <div className='room_priceTable_container table-responsive roomTable_container'>
-                    <P_Head className="p_h3" text="PRESIOS"/>
-                    <Table_createRoom_price columns={["Precio", "Eliminar"]} onLoad={onLoad} setOnLoad={setOnLoad} roomData={createReservationData} dispatch={createReservationDispatch}/>
-                </div> */}
-                {/* <div className='room_priceTable_container table-responsive roomTable_container'>
-                    <P_Head className="p_h3" text="SERVICIOS"/>
-                    <Table_createRoom_service columns={["Servicios", "Eliminar"]} onLoad={onLoad} setOnLoad={setOnLoad} roomData={createReservationData}  dispatch={createReservationDispatch}/>
-                </div> */}
-                <div className='sendRoom_button'>
-                    <button className='btn btn-primary' id='saveButton' >Guardar</button>
+                <div>
+                    <Label lambdaClassLabel={""} text="Noches:"/>
+                    <Input lambdaClassInput={""} type="number" value={ reservationData.nights_number } onChange={ (e) => { reservationDispatch({ type: 'UPDATE_NIGHTS', nights: e.target.value}) } } disabled />
+                </div>
+                <div>
+                    <Label lambdaClassLabel={""} text="Fecha entrada:"/>
+                    <Input lambdaClassInput={""} type="date" value={reservationData.date_in} onChange={ (e) => {  calculateNights( e.target.value, reservationData.date_out ) } } required/>
+                </div>
+                <div>
+                    <Label lambdaClassLabel={""} text="Fecha salida:"/>
+                    <Input lambdaClassInput={""} type="date" value={reservationData.date_out} onChange={ (e) => {  calculateNights(reservationData.date_in, e.target.value) } } required/>
+                </div>
+                <div>
+                    <Label lambdaClassLabel={""} text="Habitación:"/>
+                    <Input lambdaClassInput={""} type="text" value={ reservationData.room_number } onChange={ (e) => { } } />
+                </div>
+                <div>
+                    <Label lambdaClassLabel={""} text="Servicios:"/>
+                    <Input lambdaClassInput={""} type="text" value={ reservationData.services } onChange={ (e) => {  } } />
+                </div>
+                <div className='sendReservation_button'>
+                    <button className='btn btn-primary' id='updateButton' >Guardar</button>
                 </div>
             </form>
+            <div className='table-responsive reservationTable_container'>
+                    {/* <P_Head className="p_h3" text="Habitaciones disponibles"/> */}
+                    <Table_searchSelect_room columns={["Habitación", "Camas", "Max Huespedes", "Información", "Reservar"]} dispatch={reservationDispatch}/>
+            </div>
         </div>
         <Toaster />
     </>

@@ -3,10 +3,10 @@ import Swal from "sweetalert2";
 import toast from "react-hot-toast";
 
 
-export const useDeleteRoom = async(urlRoom, roomId, roomNumber, { setOnLoad }) => {
+export const useDeleteReservation = async(urlReservation, onLoad, { setOnLoad }) => {
     Swal.fire({
         icon: 'question',
-        text: `Seguro que desea eliminar la habitación ${roomNumber} ?`,
+        text: `Seguro que desea cancelar la reservación?`,
         showCloseButton: true,
         showCancelButton: true,
         confirmButtonText: 'Eliminar',
@@ -14,9 +14,9 @@ export const useDeleteRoom = async(urlRoom, roomId, roomNumber, { setOnLoad }) =
         cancelButtonColor: '#dc3545'
     }).then( async( result ) => {
         if ( result.isConfirmed ) {
-            await axios.delete(urlRoom, {data: {"id": roomId}, headers:{'x-token': sessionStorage.getItem('token-xL')}} )  
+            await axios.delete(urlReservation, {headers:{'x-token': sessionStorage.getItem('token-xL')}} )  
             .then( (resp) => {
-                setOnLoad(false);
+                setOnLoad(!onLoad);
                 toast.success(resp.data.resData,{
                     duration: 3000,
                     position: "top-right",

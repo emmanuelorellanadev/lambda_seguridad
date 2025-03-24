@@ -36,7 +36,9 @@ router.put('/:id', [
 
 router.delete('/:id', [
     checkJWT,
-    requiredRole('ROLE_ADMINSYS', 'ROLE_ADMIN')
+    requiredRole('ROLE_ADMINSYS', 'ROLE_ADMIN'),
+    // check('id', 'Reservación no recibida.').not().isEmpty(),
+
 ], reservationController.deleteReservation);
 
 module.exports = router;

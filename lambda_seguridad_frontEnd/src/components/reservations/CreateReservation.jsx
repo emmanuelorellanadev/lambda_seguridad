@@ -8,6 +8,7 @@ import { Input } from '../ui/Input';
 import { useSearchPerson } from '../people/hooks/useSearchPerson';
 import { initialCreateReservation, reservationReducer } from './reducer/reservationReducer';
 import Table_searchSelect_room from '../ui/tables/createReservation/Table_searchSelect_room';
+import { useCreateReservation } from './hooks/useCreateReservation';
 const CreateReservation = () => {
 
 
@@ -30,36 +31,46 @@ const CreateReservation = () => {
         const urlPerson = `http://localhost:8080/person/?q=${q}`
 
         createReservationDispatch({ type: "UPDATE_QUERY", query: q})
-        await useSearchPerson( urlPerson, { createReservationDispatch } );
+        await useSearchPerson( urlPerson, createReservationDispatch );
         setOnLoad(true)
     }
 
 
-    //WORK HERE!!!
-    //problems to load nights on the field
-    const calculateNights = async() => {
-        const datein = new Date(createReservationData.date_in);
-        const dateout = new Date(createReservationData.date_out);
+//WORK HERE!!!
+    //problems to calculate and load nights on the field
+    const calculateNights = async(datein, dateout) => {
+        
+        let dateIn = '';
+        let dateOut = '';
+        if (datein) {
+            createReservationDispatch({type: "UPDATE_DATEIN", date_in : datein});
+            dateIn = new Date(datein);
+        }
+        if (dateout) {
+            createReservationDispatch({type: "UPDATE_DATEOUT", date_out: dateout});
+            dateOut = new Date(dateout);
+        }
+        if (datein && dateout){ 
+            const diff = (dateOut.getTime() - dateIn.getTime());
+            const nights = ((diff / (1000 * 60 * 60 * 24)));//calculate number of nights
+            createReservationDispatch({ type: "UPDATE_NIGHTS", nights_number:  nights })
+        }
+        setOnLoad(true);
 
-        const diff = (dateout.getTime() - datein.getTime());
-        console.log(diff);
-        const nights = ((diff / (1000 * 60 * 60 * 24)) + 1);//calculate number of nights
-        console.log(nights);
-        await createReservationDispatch({ type: "UPDATE_NIGHTS", nights_number: ( nights )})
-        // setOnLoad(true);
     }
     
     const saveButton = (e) => {
         e.preventDefault();
-        console.log('saveButton')
-        // const urlRoom = `http://localhost:8080/room/`;
-        // useCreateRoom(urlRoom, createReservationData);
-        // createReservationDispatch({type: 'RESET'});
-        // setOnLoad(true)
+        const urlReservation = `http://localhost:8080/reservation/`;
+        useCreateReservation(urlReservation, createReservationData);
+        createReservationDispatch({type: 'RESET'});
+        document.querySelector("#searchPerson").value = '';
+        setOnLoad(!onLoad)
     }
 
     useEffect( () => {
         setOnLoad(false)
+        createReservationDispatch({type: 'UPDATE_USER', UserId: sessionStorage.getItem('uid-xL')})
         // const urlBranch = `http://localhost:8080/branch/`;
         // const urlRoomState = `http://localhost:8080/roomState/`;
         // useGetBranch(urlBranch, { setBranches,  setNextPage, setPrevPage, setPage})
@@ -72,66 +83,60 @@ const CreateReservation = () => {
         <div className='reservation_container'>
             <P_Head className="p_h1" text="Crear Reservación"/>
             <form className='reservation_form' onSubmit={saveButton}>
+                <section >
+                    {/* <div id='InputSearch'> */}
+                        {/* <Label lambdaClassLabel={""} text="Buscar:"/> */}
+                        <Input lambdaClassInput={""} type="search" id={"searchPerson"} onChange={ (e) => { searchPerson(e.target.value) } } placeholder="Buscar Cliente" autoFocus required />
+                    {/* </div> */}
+                    <div>
+                        <Label lambdaClassLabel={""} text="Nombre:"/>
+                        <Input lambdaClassInput={""} type="text" name="name" value={createReservationData.name} onChange={ (e) => {  } } disabled required/>
+                    </div>
+                    <div>
+                        <Label lambdaClassLabel={""} text="Contacto:"/>
+                        <Input lambdaClassInput={""} type="number"  value={createReservationData.phone} onChange={ () => { } } disabled required/>
+                    </div>
+                    <div>
+                        <Label lambdaClassLabel={""} text="CUI:"/>
+                        <Input lambdaClassInput={""} type="number"  value={createReservationData.cui} onChange={ () => { } } disabled required/>
+                    </div>
+                    <div>
+                        <Label lambdaClassLabel={""} text="NIT:"/>
+                        <Input lambdaClassInput={""} type="number" value={createReservationData.nit} onChange={ () => { } } disabled required/>
+                    </div>
+                </section>
                 <div>
-                    <Label lambdaClassLabel={""} text="Buscar:"/>
-                    <Input lambdaClassInput={""} type="search" name="cui" onChange={ (e) => { searchPerson(e.target.value) } } autoFocus required />
+                    <Label lambdaClassLabel={""} text="Personas:"/>
+                    <Input lambdaClassInput={""} type="number" value={ createReservationData.people_number } onChange={ (e) => { createReservationDispatch({ type: 'UPDATE_PEOPLE', people_number: e.target.value}) } } />
                 </div>
                 <div>
-                    <Label lambdaClassLabel={""} text="Nombre:"/>
-                    <Input lambdaClassInput={""} type="text" name="name" value={createReservationData.name} onChange={ (e) => {  } } disabled/>
-                </div>
-                <div>
-                    <Label lambdaClassLabel={""} text="Contacto:"/>
-                    <Input lambdaClassInput={""} type="number"  value={createReservationData.phone} onChange={ () => { } } required/>
-                </div>
-                <div>
-                    <Label lambdaClassLabel={""} text="CUI:"/>
-                    <Input lambdaClassInput={""} type="number"  value={createReservationData.cui} onChange={ () => { } } required/>
-                </div>
-                <div>
-                    <Label lambdaClassLabel={""} text="NIT:"/>
-                    <Input lambdaClassInput={""} type="number" value={createReservationData.nit} onChange={ () => { } } />
+                    <Label lambdaClassLabel={""} text="Noches:"/>
+                    <Input lambdaClassInput={""} type="number" value={ createReservationData.nights_number } onChange={ (e) => { createReservationDispatch({ type: 'UPDATE_NIGHTS', nights: e.target.value}) } } disabled />
                 </div>
                 <div>
                     <Label lambdaClassLabel={""} text="Fecha entrada:"/>
-                    <Input lambdaClassInput={""} type="date" value={createReservationData.date_in} onChange={ (e) => { createReservationDispatch({type: "UPDATE_DATEIN", date_in : e.target.value}) } } required/>
+                    <Input lambdaClassInput={""} type="date" value={createReservationData.date_in} onChange={ (e) => {  calculateNights( e.target.value, createReservationData.date_out ) } } required/>
                 </div>
                 <div>
                     <Label lambdaClassLabel={""} text="Fecha salida:"/>
-                    <Input lambdaClassInput={""} type="date" value={createReservationData.date_out} onChange={ (e) => { createReservationDispatch({type: "UPDATE_DATEOUT", date_out: e.target.value}); calculateNights() } } required/>
+                    <Input lambdaClassInput={""} type="date" value={createReservationData.date_out} onChange={ (e) => {  calculateNights(createReservationData.date_in, e.target.value) } } required/>
                 </div>
                 <div>
-                    <Label lambdaClassLabel={""} text="Noches:"/>
-                    <Input lambdaClassInput={""} type="text" value={ createReservationData.nights_number } onChange={ () => { } } />
+                    <Label lambdaClassLabel={""} text="Habitación:"/>
+                    <Input lambdaClassInput={""} type="text" value={ createReservationData.room_number } onChange={ (e) => { } } />
                 </div>
-                <div className='table-responsive roomTable_container'>
-                    <P_Head className="p_h3" text="Habitaciones disponibles"/>
-                    <Table_searchSelect_room columns={["Habitación", "Camas", "Max Huespedes", "Información", "Reservar"]} onLoad={onLoad} setOnLoad={setOnLoad} dispatch={createReservationDispatch}/>
+                <div>
+                    <Label lambdaClassLabel={""} text="Servicios:"/>
+                    <Input lambdaClassInput={""} type="text" value={ createReservationData.services } onChange={ (e) => {  } } />
                 </div>
-                {/* <div>
-                    <Label lambdaClassLabel={""} text="Noches:"/>
-                    <Input lambdaClassInput={""} type="number" value={createReservationData.nights} onChange={ (e) => { createReservationDispatch({type: "UPDATE_NIGHTS", action: e.target.value})} } required/>
-                </div> */}
-                {/* <div>
-                    <Label lambdaClassLabel={""} text="Estado:"/>
-                    <Select data={roomStatesRes?.data} text="Selecciona Estado" onChange={  (e) => (createReservationDispatch({ type: "UPDATE_STATEID", stateId: e.target.value}))} />
-                </div> */}
-                {/* <div>
-                    <Label lambdaClassLabel={""} text="Sucursal:"/>
-                    <Select data={branches?.data} text="Selecciona Sucursal" value={1} onChange={  (e) => (createReservationDispatch({ type: "UPDATE_BRANCHID", branchId: e.target.value}))} disabled />
-                </div> */}
-                {/* <div className='room_priceTable_container table-responsive roomTable_container'>
-                    <P_Head className="p_h3" text="PRESIOS"/>
-                    <Table_createRoom_price columns={["Precio", "Eliminar"]} onLoad={onLoad} setOnLoad={setOnLoad} roomData={createReservationData} dispatch={createReservationDispatch}/>
-                </div> */}
-                {/* <div className='room_priceTable_container table-responsive roomTable_container'>
-                    <P_Head className="p_h3" text="SERVICIOS"/>
-                    <Table_createRoom_service columns={["Servicios", "Eliminar"]} onLoad={onLoad} setOnLoad={setOnLoad} roomData={createReservationData}  dispatch={createReservationDispatch}/>
-                </div> */}
-                <div className='sendRoom_button'>
+                <div className='sendReservation_button'>
                     <button className='btn btn-primary' id='saveButton' >Guardar</button>
                 </div>
             </form>
+            <div className='table-responsive reservationTable_container'>
+                    {/* <P_Head className="p_h3" text="Habitaciones disponibles"/> */}
+                    <Table_searchSelect_room columns={["Habitación", "Camas", "Max Huespedes", "Información", "Reservar"]} dispatch={createReservationDispatch}/>
+            </div>
         </div>
         <Toaster />
     </>

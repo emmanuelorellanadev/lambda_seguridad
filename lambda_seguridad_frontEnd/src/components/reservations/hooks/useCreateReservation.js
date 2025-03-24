@@ -1,31 +1,24 @@
 import axios from 'axios';
 import { toast } from 'react-hot-toast'
 
-export const useCreateRoom = async(urlRoom, createRoomData) => {
-    //get the pricesid
-    const idPrices = [];
-    createRoomData?.prices.map( priceSelected => {
-        idPrices.push(priceSelected.id)
-    })
-    //get the servicesid
-    const idServices = [];
-    createRoomData?.services.map( serviceSelected => {
-        idServices.push(serviceSelected.id)
-    })
-    
-    const roomData = {
-        "room_number": createRoomData.room,
-        "room_beds": createRoomData.beds,
-        "room_people": createRoomData.maxPeople,
-        "room_phone": createRoomData.phone,
-        "room_info": createRoomData.info,
-        "RoomStateId": createRoomData.stateId,
-        "BranchId": createRoomData.branchId,
-        "services": idServices,
-        "prices": idPrices
-    }
+export const useCreateReservation = async(urlReservation, createReservationData) => {
 
-    await axios.post(urlRoom, roomData,
+    
+    const reservationData = {
+        "PersonId": createReservationData.PersonId,
+        "BranchId": createReservationData.BranchId,
+        "ReservationStateId": createReservationData.ReservationStateId,
+        "UserId": createReservationData.UserId,
+        "reservationDetails":[{
+            "date_in": createReservationData.date_in,
+            "date_out": createReservationData.date_out,
+            "nights_number": createReservationData.nights_number,
+            "people_number": createReservationData.people_number,
+            "RoomId": createReservationData.RoomId,
+        }
+        ]
+    }
+    await axios.post(urlReservation, reservationData,
         {
             headers: {'x-token': sessionStorage.getItem('token-xL')}
         }).then( (resp) => {
@@ -40,7 +33,7 @@ export const useCreateRoom = async(urlRoom, createRoomData) => {
             })
         }).catch(error => {
             console.log(error)
-            toast.error(`${error.response.data.error} \n ${error.response.data.errorLambda}`, {
+            toast.error(`${error.response.data.error}`, {
                 duration: 4000,
                 position: "top-right",
                 style: {

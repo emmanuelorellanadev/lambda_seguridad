@@ -1,51 +1,53 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useReducer } from 'react';
 
 import '../../../css/ui/table.css'
 import { Input } from '../Input';
 import { P_Head } from '../P_Head';
 import { useGetReservation } from '../../reservations/hooks/useGetReservation';
-import Pagination from '../Pagination';
+import PaginationReducer from '../pagination/PaginationReducer';
+import { initialPagination, paginationReducer } from '../pagination/reducer/paginationReducer';
+import { useDeleteReservation } from '../../reservations/hooks/useDeleteReservation';
 
 export const Table_reservation = ({ columns, rows, editData, deleteData, ...props}) => {
 
-  const [ reservations, setReservations ] = useState([]);
-  const [ search, setSearch ] = useState('');
-  const [ rowsByPage, setRowsByPage ] = useState( 10 );
-  const [ page, setPage ] = useState( 1 );
-  const [ prevPage, setPrevPage ] = useState('');
-  const [ nextPage, setNextPage ] = useState('');
-  const [ onLoad, setOnLoad ] = useState(true);
+const [ onLoad, setOnLoad ] = useState(false);
+
+  const [paginationData, dispatchPagination] = useReducer(paginationReducer , initialPagination)
+
 
   if(editData && !columns.includes("Editar") ){
       columns.push("Editar")
-      columns.push("Eliminar")
+      columns.push("Cancelar")
   }
 
   const searchReservation = (query) => {
-    setSearch(query);
-    setPage(1);
-    setOnLoad(false);
+    dispatchPagination({type: "UPDATE_SEARCH", search: query})
+    setOnLoad(!onLoad);
   }
 
-  // const deleteReservation = (reservationId, roomNumber) => {
-  //   const urlReservation = `http://localhost:8080/reservation/${reservationId}`;
-  //   useDeleteReservation(urlReservation, reservationId, {setOnLoad})
-  // }
+  const cancelReservation = (reservationId) => {
+    const urlReservation = `http://localhost:8080/reservation/${reservationId}`;
+    useDeleteReservation(urlReservation, onLoad, {setOnLoad})
+  }
 
   const getReservations = () => {
-    const urlReservation = `http://localhost:8080/reservation/?limit=${rowsByPage}&page=${page}&q=${search}`;
-    useGetReservation(urlReservation, {setReservations, setNextPage, setPrevPage});
+    const urlReservation = `http://localhost:8080/reservation/?limit=${paginationData.rowsByPage}&page=${paginationData.page}&q=${paginationData.search}`;
+    useGetReservation(urlReservation, dispatchPagination);
   }
 
   useEffect( () => {
+    console.log(paginationData)
     setOnLoad(true);
     getReservations()
-  }, [onLoad, search]);
+  }, [onLoad]);
 
   return (
     <>
     <P_Head className="p_h1" text={'Listado de Reservaciones'}/>
-    <Input lambdaClassInput={"data_search"} type="search" value={search} onChange={ e => searchReservation(e.target.value)} placeholder="Buscar" />
+
+    {/* WORK HERE!!! */}
+    {/*  */}
+    {/* <Input lambdaClassInput={"data_search"} type="search" value={paginationData.search} onChange={ e => searchReservation(e.target.value)} placeholder="Buscar" /> */}
       <table className='table table-bordered table-hover table-striped' {...props}>
         <thead className='text-center t_header'>
           <tr key={0}>  
@@ -60,7 +62,7 @@ export const Table_reservation = ({ columns, rows, editData, deleteData, ...prop
         </thead>
         <tbody className='text-center align-baseline'>
           {
-            reservations.data?.map( ( reservation ) => {
+            paginationData.data?.map( ( reservation ) => {
               return (
                 <tr key={reservation.id}>
                   {/* <th>{reservation.id}</th> */}
@@ -70,14 +72,14 @@ export const Table_reservation = ({ columns, rows, editData, deleteData, ...prop
                   <th>{reservation.ReservationDetails[0].people_number}</th>
                   <th>{reservation.ReservationState.reservationState_name}</th>
                   <th><button className='btn btn-primary' type="button" onClick={ () => editData( reservation.id ) } >Editar</button></th>
-                  {/* <th><button className='btn btn-outline-danger' onClick={ () => deleteReservation(reservation.id, room.room_number, setOnLoad) }><i className='bi bi-trash3-fill'></i></button></th> */}
+                  <th><button className='btn btn-outline-danger' onClick={ () => cancelReservation(reservation.id) }>Cancelar</button></th>
                 </tr>
               )
             })
           }
         </tbody>
     </table>
-    <Pagination page={page} setPage={setPage} rowsByPage={rowsByPage} setRowsByPage={setRowsByPage} prevPage={prevPage} nextPage={nextPage} total={reservations.total} setOnLoad={setOnLoad}/>
+    <PaginationReducer  data={paginationData} dispatch={dispatchPagination} onLoad={onLoad} setOnLoad={setOnLoad}/>
   </>
   )
 }

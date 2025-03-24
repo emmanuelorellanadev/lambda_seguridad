@@ -6,11 +6,13 @@
         flex-flow: column wrap;
     }
 
-    .reservation_form{
-        display: flex;
-        flex-flow: column wrap;
-        width: 100%;
-    }
+        .reservation_form section div{
+            margin: .5rem auto;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
         .reservation_form div{
             margin: .5rem auto;
@@ -46,21 +48,24 @@
         justify-content: space-around;
     }
 
-    .reservationLogo_container section{
-        margin: auto;
-    }
-
-    .reservationData_container {
-        flex: 1 1 40%;
-        display: flex;
-        flex-flow: row wrap;
-    }
-
-    .reservationData_container div {
+    .reservation_form section{
+        /* border: 1px solid black; */
         flex: 1 1 90%;
         display: flex;
         flex-flow: row wrap;
         align-items: baseline;
+    }
+
+    section div {
+        flex: 1 1 40%;
+        display: flex;
+        flex-flow: row wrap;
+        /* align-items: baseline; */
+    }
+
+    #InputSearch {
+        border: 2px solid black;
+        width: 90%;
     }
 
     .reservation_form div{
@@ -69,10 +74,6 @@
         justify-content: space-between;
         align-items: center;
         min-width: 45%;
-    }
-
-    .reservation_form section{
-        width: 90%;
     }
 
     .reservationTable_container{

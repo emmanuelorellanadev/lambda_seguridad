@@ -1,7 +1,7 @@
 import axios from 'axios';
 import toast from 'react-hot-toast';
 
-export const useSearchPerson = async(urlPerson, {createReservationDispatch}) => {
+export const useSearchPerson = async(urlPerson, createReservationDispatch) => {
 
     // const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
     // console.log( arr.reduce((acumulator, current)=> { console.log(acumulator); return acumulator + current}) );
@@ -17,6 +17,7 @@ export const useSearchPerson = async(urlPerson, {createReservationDispatch}) => 
         createReservationDispatch({type: "UPDATE_PHONE", phone : `${data.data[0].person_phone}`});
     })
     .catch( error => {
+        console.log(error)
         toast('Cliente no encontrado. \n Registre nuevo cliente.',{
             duration: 3000,
             position: "top-right",

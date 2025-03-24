@@ -50,7 +50,7 @@ const saveRoom = async(req, res) => {
         const services = roomData.services;
     
         const t = await db_connection.transaction( async t => {
-
+            console.log(roomData)
             const room = await Room.create(roomData, {transaction: t})
                 .catch(error => {
                     throw new DBError(error, 'Error al guardar Habitación')

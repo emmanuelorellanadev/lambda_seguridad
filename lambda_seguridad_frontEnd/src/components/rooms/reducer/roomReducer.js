@@ -5,8 +5,8 @@ export const initialCreateRoom = {
     maxPeople: '',
     phone: '',
     info: '',
-    RoomStateId: 0,
-    BranchId: 0,
+    stateId: 1,
+    BranchId: 1,
     prices: [],
     services: []
 }
@@ -52,7 +52,7 @@ export function roomReducer (state, action) {
         case "UPDATE_BRANCHID": {
             return {
                 ...state,
-                branchId: action.branchId
+                BranchId: action.BranchId
             }
         }
         case "UPDATE_PRICES": {

@@ -1,35 +1,29 @@
 import axios from 'axios';
 import { toast } from 'react-hot-toast'
 
-export const useUpdateRoom = async(urlRoom, roomData) => {
-       
-        //get the pricesid
-        const idPrices = [];
-        roomData?.prices.map( priceSelected => {
-            idPrices.push(priceSelected.id)
-        })
-        //get the servicesid
-        const idServices = [];
-        roomData?.services.map( serviceSelected => {
-            idServices.push(serviceSelected.id)
-        })
+export const useUpdateReservation = async(urlReservation, reservationReducerData) => {
 
-    const roomDataUpdate = {
-        "room_number": roomData.room,
-        "room_beds": roomData.beds,
-        "room_people": roomData.maxPeople,
-        "room_phone": roomData.phone,
-        "room_info": roomData.info,
-        "RoomStateId": roomData.stateId,
-        "BranchId": roomData.branchId,
-        "services": idServices,
-        "prices": idPrices
+    
+    const reservationData = {
+        "PersonId": reservationReducerData.PersonId,
+        "BranchId": reservationReducerData.BranchId,
+        "ReservationStateId": reservationReducerData.ReservationStateId,
+        "UserId": reservationReducerData.UserId,
+        "reservationDetails":[{
+            "date_in": reservationReducerData.date_in,
+            "date_out": reservationReducerData.date_out,
+            "nights_number": reservationReducerData.nights_number,
+            "people_number": reservationReducerData.people_number,
+            "RoomId": reservationReducerData.RoomId,
+            }
+        ]
     }
 
-    await axios.put(urlRoom, roomDataUpdate,
-        {
-            headers: {'x-token': sessionStorage.getItem('token-xL')}
-        }).then( (resp) => {
+    await axios.put(urlReservation, reservationData, 
+        { 
+            headers: {'x-token': sessionStorage.getItem( 'token-xL' ) } 
+        } )
+        .then( (resp) => {
             toast.success(`${resp.data.resData}`,{
                 duration: 3000,
                 position: "top-right",
