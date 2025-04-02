@@ -1,4 +1,11 @@
-import { initialSubMenuState } from "../NavBar"
+
+export const initialSubMenuState = {
+    menuAdmin:      false, 
+    menuUser:       false, 
+    menuSecurity:   false, 
+    menuPerson:     false,
+    menuOperation:  false
+};
 
 export function subMenuReducer (state, action){
     switch (action.type) {

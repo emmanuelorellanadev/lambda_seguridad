@@ -20,28 +20,9 @@ import { NavBarSuper } from './NavBarSuper';
 import { NavBarAdmin } from './NavBarAdmin'
 import { NavBarAdminSys } from './NavBarAdminSys';
 import { UserProfile } from '../users/UserProfile';
-import { subMenuReducer } from './reducer/subMenuReducer.js';
-import { frameReducer } from './reducer/frameReducer.js';
+import { initialSubMenuState, subMenuReducer } from './reducer/subMenuReducer.js';
+import { frameReducer, initialFrameState } from './reducer/frameReducer.js';
 import SubMenuReservation from '../reservations/SubMenuReservation.jsx';
-
-export const initialSubMenuState = {menuAdmin:      false, 
-                                    menuUser:       false, 
-                                    menuSecurity:   false, 
-                                    menuPerson:     false,
-                                    menuOperation:  false};
-export const initialFrameState = {  profileFrame:       false, 
-                                    userFrame:          false, 
-                                    companyFrame:       false, 
-                                    branchTypeFrame:    false,
-                                    branchFrame:        false, 
-                                    personTypeFrame:    false, 
-                                    personFrame:        false,
-                                    roleFrame:          false, 
-                                    roomStateFrame:     false, 
-                                    serviceFrame:       false, 
-                                    priceFrame:         false,
-                                    reservationFrame:   false,
-                                    roomFrame:          false };
 
 
 export const NavBar = () => {
@@ -60,29 +41,24 @@ export const NavBar = () => {
     }
     //subMenu user, close session
     const subMenuUserVisibility = () => {
-        // setSubMenuUser(!subMenuUser);
         subMenuDispatch({type: 'SUBMENUUSER'})
     }
     //subMenu Admin
     const subMenuAdminVisibility = () => {
         subMenuDispatch({type: 'SUBMENUADMIN'})
-        // setSubMenuAdmin(!subMenuAdmin);
     }
     //subMenu security
     const subMenuSecurityVisibility = () => {
         subMenuDispatch({type: 'SUBMENUSECURITY'})
-        // setSubMenuSecurity(!subMenuSecurity);
     } 
     //subMenu Person
     const subMenuPersonVisibility = () => {
         subMenuDispatch({type: 'SUBMENUPERSON'})
-        // setSubMenuPerson(!subMenuPerson);
     }
 
     //subMenu Operation
     const subMenuOperationVisibility = () => {
         subMenuDispatch({type: 'SUBMENUOPERATION'})
-        // setSubMenuPerson(!subMenuPerson);
     }
 
     //subMenu Person
@@ -95,6 +71,8 @@ export const NavBar = () => {
         sessionStorage.removeItem('token-xL');
         sessionStorage.removeItem('user-xL');
         sessionStorage.removeItem('role-xL');
+        sessionStorage.removeItem('branchId-xL');
+        sessionStorage.removeItem('branch-xL');
     }
 
 

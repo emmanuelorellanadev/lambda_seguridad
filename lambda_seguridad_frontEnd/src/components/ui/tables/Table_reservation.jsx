@@ -36,9 +36,9 @@ const [ onLoad, setOnLoad ] = useState(false);
   }
 
   useEffect( () => {
-    console.log(paginationData)
+    console.log(paginationData.data)
     setOnLoad(true);
-    getReservations()
+    getReservations();
   }, [onLoad]);
 
   return (

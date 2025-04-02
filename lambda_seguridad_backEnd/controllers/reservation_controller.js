@@ -65,6 +65,8 @@ const saveReservation =  async( req, res ) => {
     //check if the room is available on the date sended
     const roomAvailability = await checkRoomAvailability(reservationToSave, reservationDetails)
 
+    console.log(reservationDetails);
+    //check and save reservation
     if ( roomAvailability ) {
         //transaction     
         await db_connection.transaction( async ( transaction ) => {
@@ -76,9 +78,13 @@ const saveReservation =  async( req, res ) => {
             for(detail in reservationDetails){
                     
                 reservationDetails[detail].ReservationId = reservationSaved.id
+                // reservationDetails[detail].date_in =  new Date(reservationDetails[detail].date_in);
+                // reservationDetails[detail].date_out =  new Date(reservationDetails[detail].date_out);
                 await ReservationDetail.create(reservationDetails[detail], {transaction})
                     .catch( error => {throw new DBError(error, 'Error al guardar el detalle de la reservación')});    
             }            
+            // console.log(reservationDetails[0].date_in.getUtcDate());
+
             resSuccessful(res, 'Reservación creada exitosamente.');
         })
     }

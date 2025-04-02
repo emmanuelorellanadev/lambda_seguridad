@@ -6,7 +6,12 @@ const { LoginError } = require('../errors_handler/errors');
 const { errorsHandler } = require('../errors_handler/errorsHandler');
 
 const checkJWT = async(req = request, res, next) => {
-    
+   
+
+// WORK HERE !!!
+//change trycatch by errors_handler/catchedAsync
+
+
     try {
         if( !req.header('x-token') ) throw new LoginError('Token no recibido', 400)
         

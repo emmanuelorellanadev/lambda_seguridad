@@ -1,4 +1,19 @@
-import { initialFrameState } from "../NavBar"
+
+export const initialFrameState = {  
+    profileFrame:       false, 
+    userFrame:          false, 
+    companyFrame:       false, 
+    branchTypeFrame:    false,
+    branchFrame:        false, 
+    personTypeFrame:    false, 
+    personFrame:        false,
+    roleFrame:          false, 
+    roomStateFrame:     false, 
+    serviceFrame:       false, 
+    priceFrame:         false,
+    reservationFrame:   false,
+    roomFrame:          false 
+};
 
 export function frameReducer (state, action){
     switch (action.type) {

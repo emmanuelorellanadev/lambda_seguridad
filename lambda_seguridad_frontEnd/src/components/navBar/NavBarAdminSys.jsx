@@ -12,7 +12,7 @@ export const NavBarAdminSys = (props) => {
             <li id='subMenuUser' onClick={props.subMenuUserVisibility}  onMouseLeave={props.subMenuReset}>
                 <img  id={'logoUsuario'} src={usuario} alt="" />
                 <ul className={props.subMenuState.menuUser ? 'subMenuVisible' : 'subMenuHide' }>
-                    <li><a href="#" onClick={props.showProfileFrame} >{sessionStorage.getItem('user-xL').toUpperCase()}</a></li>
+                    <li><a href="#" onClick={props.showProfileFrame} >{sessionStorage.getItem('user-xL') ? sessionStorage.getItem('user-xL').toUpperCase() : ''}</a></li>
                     <li><a href="/" onClick={props.closeSession} >Cerrar Sesion</a></li>
                 </ul>
             </li>    

@@ -12,20 +12,9 @@ import { useCreateReservation } from './hooks/useCreateReservation';
 const CreateReservation = () => {
 
 
-    //WORK HERE!!!
-    // Use reducer to management states of reservation
-    //You can do it !!!
-    const [createReservationData, createReservationDispatch] = useReducer(reservationReducer, initialCreateReservation)
-
-
+    const [createReservationData, createReservationDispatch] = useReducer(reservationReducer, initialCreateReservation);
 
     const [ onLoad, setOnLoad ] = useState(false);
-
-
-    //WORK HERE !!!!
-    //search the person and save relevant data
-    //select reservation data and calculate the nights
-    //show the rooms availables in that date
 
     const searchPerson = async(q) => {
         const urlPerson = `http://localhost:8080/person/?q=${q}`
@@ -35,20 +24,17 @@ const CreateReservation = () => {
         setOnLoad(true)
     }
 
-
-//WORK HERE!!!
-    //problems to calculate and load nights on the field
     const calculateNights = async(datein, dateout) => {
         
         let dateIn = '';
         let dateOut = '';
         if (datein) {
-            createReservationDispatch({type: "UPDATE_DATEIN", date_in : datein});
             dateIn = new Date(datein);
+            createReservationDispatch({type: "UPDATE_DATEIN", date_in : datein});
         }
         if (dateout) {
-            createReservationDispatch({type: "UPDATE_DATEOUT", date_out: dateout});
             dateOut = new Date(dateout);
+            createReservationDispatch({type: "UPDATE_DATEOUT", date_out: dateout});
         }
         if (datein && dateout){ 
             const diff = (dateOut.getTime() - dateIn.getTime());
@@ -69,13 +55,8 @@ const CreateReservation = () => {
     }
 
     useEffect( () => {
-        setOnLoad(false)
-        createReservationDispatch({type: 'UPDATE_USER', UserId: sessionStorage.getItem('uid-xL')})
-        // const urlBranch = `http://localhost:8080/branch/`;
-        // const urlRoomState = `http://localhost:8080/roomState/`;
-        // useGetBranch(urlBranch, { setBranches,  setNextPage, setPrevPage, setPage})
-        // useGetRoomStates(urlRoomState, { setRoomStatesRes,  setNextPage, setPrevPage, setPage});
-
+        setOnLoad(false);
+        createReservationDispatch({type: 'UPDATE_USER', UserId: sessionStorage.getItem('uid-xL')});
     }, [onLoad])
     
   return (

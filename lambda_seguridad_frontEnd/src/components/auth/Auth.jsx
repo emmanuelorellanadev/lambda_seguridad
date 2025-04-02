@@ -1,10 +1,11 @@
-import React, { useState } from'react'
+import React, { useState, useReducer } from'react'
 
 import '../../css/login.css'
 import login from'../../assets/img/login.png'
 import { NavBar } from'../navBar/NavBar.jsx'
 import { Toaster } from 'react-hot-toast';
 import { useAuth } from './hook/useAuth.js';
+import { globalReducer, initialGlobalReducer } from '../reducer/globalReducer.js';
 
 
 export const Auth = () => {
@@ -13,9 +14,12 @@ export const Auth = () => {
     const [user, setUser] = useState('emmanuel');
     const [pass, setPass] = useState('pass');
 
+    const [globalState, globalDispatch] = useReducer(globalReducer, initialGlobalReducer);
+
+
     const loginButton = async(e) => {
         e.preventDefault();
-        const urlAuth = 'http://localhost:8080/auth'
+        const urlAuth = `${globalState.urlLambda}/auth`
         useAuth(urlAuth, user, pass, {setIsUser})
         cleanAll();
     }
