@@ -1,7 +1,9 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
 import { useEffect, useState, useReducer } from 'react';
 
 import '../../../css/ui/table.css'
-import { Input } from '../Input';
+// import { Input } from '../Input';
 import { P_Head } from '../P_Head';
 import { useGetReservation } from '../../reservations/hooks/useGetReservation';
 import PaginationReducer from '../pagination/PaginationReducer';
@@ -66,7 +68,7 @@ const [ onLoad, setOnLoad ] = useState(false);
               return (
                 <tr key={reservation.id}>
                   {/* <th>{reservation.id}</th> */}
-                  <th>{reservation.Person.person_names} {' '}  {reservation.Person.person_surnames}</th>
+                  <th>{reservation.Person.person_names} {' '} {reservation.Person.person_surnames}</th>
                   <th>{reservation.ReservationDetails[0].date_in.split(" ")[0]}</th>
                   <th>{reservation.ReservationDetails[0].nights_number}</th>
                   <th>{reservation.ReservationDetails[0].people_number}</th>

@@ -1,5 +1,4 @@
 import axios from "axios";
-import toast from "react-hot-toast";
 
 export const useGetReservation = async( urlReservation, reservationDispatch) => {
   await axios(urlReservation, { headers: {"x-token": sessionStorage.getItem('token-xL')}})
