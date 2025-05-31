@@ -9,7 +9,7 @@ const { Sequelize } =  require('sequelize');
     dialect: 'mariadb', //DBMS type
     //used to set the time zone 
     dialectOptions: {
-        // useUTC: true, // -->Add this line. for reading from database
+        useUTC: false, // -->Add this line. for reading from database
         dateStrings: true,
         typeCast: function (field, next) { // for reading from database
           if (field.type === 'DATETIME') {
@@ -18,7 +18,7 @@ const { Sequelize } =  require('sequelize');
             return next()
           },
     },
-    // timezone: '-06:00', // -->Add this line. for writing to database
+    timezone: '-06:00', // -->Add this line. for writing to database
 
     // pool: {
     //     max: 10,
