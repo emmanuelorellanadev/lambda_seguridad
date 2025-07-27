@@ -8,7 +8,6 @@ const ReservationState = require('./reservationState_model');
 const Reservation = db_connection.define('Reservation', {
     reservation_date: {
         type: DataTypes.DATE,
-        defaultValue:  DataTypes.NOW,
         allowNull: false
     }
 },
