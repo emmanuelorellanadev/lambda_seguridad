@@ -69,7 +69,7 @@ const [ onLoad, setOnLoad ] = useState(false);
                 <tr key={reservation.id}>
                   {/* <th>{reservation.id}</th> */}
                   <th>{reservation.Person.person_names} {' '} {reservation.Person.person_surnames}</th>
-                  <th>{reservation.ReservationDetails[0].date_in.split(" ")[0]}</th>
+                  <th>{reservation.reservation_date}</th>
                   <th>{reservation.ReservationDetails[0].nights_number}</th>
                   <th>{reservation.ReservationDetails[0].people_number}</th>
                   <th>{reservation.ReservationState.reservationState_name}</th>

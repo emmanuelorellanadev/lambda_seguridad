@@ -48,15 +48,43 @@ const CreateReservation = () => {
     const saveButton = (e) => {
         e.preventDefault();
         const urlReservation = `http://localhost:8080/reservation/`;
+        
+        handleReservationDate();
         useCreateReservation(urlReservation, createReservationData);
-        createReservationDispatch({type: 'RESET'});
-        document.querySelector("#searchPerson").value = '';
+        // createReservationDispatch({type: 'RESET'});
+        // document.querySelector("#searchPerson").value = '';
         setOnLoad(!onLoad)
     }
+
+const handleReservationDate = async() => {
+    const date = new Date();
+
+    const month = await date.getMonth() + 1;
+    const year = await date.getFullYear();
+    const day = await date.getDate();
+    const hours = await date.getHours();
+    const minutes = await date.getMinutes();
+    const seconds = await date.getSeconds();
+
+    //format now date important UTC at the end
+    const now = `${year}-${month}-${day} ${hours}:${minutes}:${seconds} UTC`
+    
+
+    //WORK HERE!!!
+    //handleReservationDate is called on useEffect to fix problems whit the first date
+    if ( now.length > 4){
+        console.log(now + ' good');
+    }else{
+        console.log(now + ' bad')
+    }
+    await createReservationDispatch({type: 'UPDATE_RESERVATION_DATE', reservation_date: now});
+
+}
 
     useEffect( () => {
         setOnLoad(false);
         createReservationDispatch({type: 'UPDATE_USER', UserId: sessionStorage.getItem('uid-xL')});
+        handleReservationDate();
     }, [onLoad])
     
   return (

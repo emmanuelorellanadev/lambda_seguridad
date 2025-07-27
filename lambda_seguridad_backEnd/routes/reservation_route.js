@@ -19,6 +19,7 @@ router.get('/:id', [
 router.post('/', [
     checkJWT,
     requiredRole('ROLE_ADMINSYS', 'ROLE_ADMIN', 'ROLE_SUPERUSER', 'ROLE_USER'),
+    check('reservation_date', 'Fecha no recibida.').not().isEmpty(),
     check('PersonId', 'Persona no recibida.').not().isEmpty(),
     check('ReservationStateId', 'Estado de reservacion no recibido.').not().isEmpty(),
     check('UserId', 'Usuario no recibido.').not().isEmpty(),

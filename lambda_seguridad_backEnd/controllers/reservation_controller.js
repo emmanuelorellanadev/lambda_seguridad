@@ -59,14 +59,14 @@ const saveReservation =  async( req, res ) => {
     const reservationAndDetailToSave = req.body;
     //check details come on body
     if ( !reservationAndDetailToSave.reservationDetails ) throw new GeneralError('Error. Detalle no encontrado.', 400);
+    console.log(reservationAndDetailToSave);
 
     const { reservationDetails, ...reservationToSave} = reservationAndDetailToSave
 
     //check if the room is available on the date sended
     const roomAvailability = await checkRoomAvailability(reservationToSave, reservationDetails)
 
-    console.log(reservationDetails);
-    //check and save reservation
+    // check and save reservation
     if ( roomAvailability ) {
         //transaction     
         await db_connection.transaction( async ( transaction ) => {
@@ -83,7 +83,6 @@ const saveReservation =  async( req, res ) => {
                 await ReservationDetail.create(reservationDetails[detail], {transaction})
                     .catch( error => {throw new DBError(error, 'Error al guardar el detalle de la reservación')});    
             }            
-            // console.log(reservationDetails[0].date_in.getUtcDate());
 
             resSuccessful(res, 'Reservación creada exitosamente.');
         })

@@ -1,5 +1,6 @@
 
 export const initialCreateReservation = {
+    reservation_date: '',
     query: '',
     PersonId: '',
     name: '',
@@ -21,6 +22,14 @@ export const initialCreateReservation = {
 
 export function reservationReducer (state, action) {
     switch (action.type){
+
+        case "UPDATE_RESERVATION_DATE": {
+            return {
+                ...state,
+                reservation_date : action.reservation_date
+            }
+        }
+
         case "UPDATE_QUERY": {
             return {
                 ...state,
@@ -136,6 +145,7 @@ export function reservationReducer (state, action) {
         case "RESET": {
             return ( {
                 ...state,
+                reservation_date: '',
                 query: '',
                 PersonId: '',
                 name: '',

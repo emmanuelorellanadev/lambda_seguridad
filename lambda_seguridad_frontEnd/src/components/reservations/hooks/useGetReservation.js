@@ -34,15 +34,15 @@ export const useGetReservation = async( urlReservation, reservationDispatch) => 
     })
     .catch( error => {
       console.log(error)
-      // toast.error(`${error.response.data.error}`, {
-      //     duration: 4000,
-      //     position: "top-right",
-      //     style: {
-      //         background: "rgb(33, 157, 192)",
-      //         color: "#fff",
-      //         height: "4rem"
-      //     }
-      //   });
+      toast.error(`${error.response.data.error}`, {
+          duration: 4000,
+          position: "top-right",
+          style: {
+              background: "rgb(33, 157, 192)",
+              color: "#fff",
+              height: "4rem"
+          }
+        });
   })
 
 }
