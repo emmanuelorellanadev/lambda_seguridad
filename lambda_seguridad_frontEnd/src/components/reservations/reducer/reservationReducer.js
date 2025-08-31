@@ -15,9 +15,10 @@ export const initialCreateReservation = {
         date_in: '',
         date_out: '',
         nights_number: '',
-        people_number: '',
-        RoomId: ''
+        people_number: '1',
+        RoomId: '',
     // }]
+    peopleList: [],
 }
 
 export function reservationReducer (state, action) {
@@ -128,6 +129,14 @@ export function reservationReducer (state, action) {
             }
         }
 
+        case "UPDATE_PEOPLELIST": {
+            return {
+                ...state,
+                peopleList: action.peopleList
+            }
+        }
+
+
         // case "UPDATE_ALL": {
         //     return {
         //         room: action.roomData.room_number,
@@ -160,7 +169,8 @@ export function reservationReducer (state, action) {
                 date_out: '',
                 nights_number: '',
                 people_number: '',
-                RoomId: ''
+                RoomId: '',
+                peopleList: [],
             } )
         }
         default: return state

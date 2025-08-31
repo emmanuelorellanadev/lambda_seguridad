@@ -50,16 +50,25 @@
 
     .reservation_form section{
         /* border: 1px solid black; */
-        flex: 1 100%;
+        flex: 1 1 90%;
         display: flex;
         flex-flow: row wrap;
-        align-items: center;
-        margin-bottom: 10px;
-        box-shadow: 0 1px 5px 3px rgb(33, 157, 192);
-
+        align-items: baseline;
     }
 
-    .reservation_form .createReservationItem{
+    section div {
+        flex: 1 1 40%;
+        display: flex;
+        flex-flow: row wrap;
+        /* align-items: baseline; */
+    }
+
+    #InputSearch {
+        border: 2px solid black;
+        width: 90%;
+    }
+
+    .reservation_form div{
         margin: .5rem .5rem;
         display: flex;
         justify-content: space-between;

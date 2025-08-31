@@ -9,12 +9,15 @@ export const useSearchPerson = async(urlPerson, createReservationDispatch) => {
     await axios.get(urlPerson, {headers: {"x-token": sessionStorage.getItem('token-xL') }})
     .then( resp => resp.data.resData)
     .then( data => {
-        createReservationDispatch({type: "UPDATE_NAME", name: `${data.data[0].person_names} ${data.data[0].person_surnames}`});
-        createReservationDispatch({type: "UPDATE_CUI", cui: data.data[0].person_cui});
-        createReservationDispatch({type: "UPDATE_NIT", nit: `${data.data[0].person_nit}`});
-        createReservationDispatch({type: "UPDATE_PERSON", PersonId: `${data.data[0].id}`});
-        createReservationDispatch({type: "UPDATE_BRANCH", BranchId: `${data.data[0].BranchId}`});
-        createReservationDispatch({type: "UPDATE_PHONE", phone : `${data.data[0].person_phone}`});
+        if(data.id){
+            createReservationDispatch({type: "UPDATE_PERSON", PersonId: data.id});
+            createReservationDispatch({type: "UPDATE_NAME", name: `${data.person_names} ${data.person_surnames}`});
+            createReservationDispatch({type: "UPDATE_PHONE", phone: data.person_phone});
+            createReservationDispatch({type: "UPDATE_CUI", cui: data.person_cui});
+            createReservationDispatch({type: "UPDATE_NIT", nit: data.person_nit});
+        }else{
+            createReservationDispatch({type: "UPDATE_PEOPLELIST", peopleList: data.data});
+        }
     })
     .catch( error => {
         console.log(error)

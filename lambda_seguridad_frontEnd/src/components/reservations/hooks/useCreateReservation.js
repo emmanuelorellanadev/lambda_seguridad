@@ -20,8 +20,6 @@ export const useCreateReservation = async(urlReservation, createReservationData)
         ]
     }
 
-    console.log(reservationData)
-
     await axios.post(urlReservation, reservationData,
         {
             headers: {'x-token': sessionStorage.getItem('token-xL')}
