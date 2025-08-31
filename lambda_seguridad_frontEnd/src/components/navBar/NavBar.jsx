@@ -80,66 +80,79 @@ export const NavBar = () => {
     const showProfileFrame = ( ) => {
         frameDispatch({type: 'RESET_FRAME'});
         frameDispatch({type: 'PROFILE_FRAME'});
+        showMenu();
     }
 
     const showUserFrame = ( ) => {
         frameDispatch({type: 'RESET_FRAME'});
         frameDispatch({type: 'USER_FRAME'});
+        showMenu();
     }
 
     const showCompanyFrame = ( ) => {
         frameDispatch({type: 'RESET_FRAME'});
         frameDispatch({type: 'COMPANY_FRAME'});
+        showMenu();
     }
     
     const showBranchFrame = ( ) => {
         frameDispatch({type: 'RESET_FRAME'});
         frameDispatch({type: 'BRANCH_FRAME'});
+        showMenu();
     }
 
     const showBranchTypeFrame = ( ) => {
         frameDispatch({type: 'RESET_FRAME'});
         frameDispatch({type: 'BRANCHTYPE_FRAME'});
+        showMenu();
     }
 
     const showPersonTypeFrame = ( ) => {
         frameDispatch({type: 'RESET_FRAME'});
         frameDispatch({type: 'PERSONTYPE_FRAME'});
+        showMenu();
     }
     
     const showPersonFrame = ( ) => {
         frameDispatch({type: 'RESET_FRAME'});
         frameDispatch({type: 'PERSON_FRAME'});
+        showMenu();
     }
 
     const showRoleFrame = ( ) => {
         frameDispatch({type: 'RESET_FRAME'});
         frameDispatch({type: 'ROLE_FRAME'});
+        showMenu();
     }
     
     const showRoomStateFrame = ( ) => {
         frameDispatch({type: 'RESET_FRAME'});
         frameDispatch({type: 'ROOMSTATE_FRAME'});
+        showMenu();
     }
     
     const showServiceFrame = ( ) => {
         frameDispatch({type: 'RESET_FRAME'});
         frameDispatch({type: 'SERVICE_FRAME'});
+        showMenu();
     }
 
     const showPriceFrame = ( ) => {
         frameDispatch({type: 'RESET_FRAME'});
         frameDispatch({type: 'PRICE_FRAME'});
+        showMenu();
     }
 
     const showReservationFrame = ( ) => {
         frameDispatch({type: 'RESET_FRAME'});
         frameDispatch({type: 'RESERVATION_FRAME'});
+        showMenu();
     }
 
     const showRoomFrame = ( ) => {
         frameDispatch({type: 'RESET_FRAME'});
         frameDispatch({type: 'ROOM_FRAME'});
+        showMenu();
     }
     
     useEffect( () => {
@@ -188,13 +201,8 @@ export const NavBar = () => {
                         showBranchFrame={showBranchFrame}
                         showUserFrame={showUserFrame}
                         showCompanyFrame={showCompanyFrame}
-                        showBranchTypeFrame={showBranchTypeFrame}
-                        showPersonTypeFrame={showPersonTypeFrame}
                         showPersonFrame={showPersonFrame}
                         showRoleFrame={showRoleFrame}
-                        showRoomStateFrame={showRoomStateFrame}
-                        showServiceFrame={showServiceFrame}
-                        showPriceFrame={showPriceFrame}
                         showRoomFrame={showRoomFrame}
                         showReservationFrame={showReservationFrame}
                         closeSession={ closeSession } 
@@ -204,15 +212,17 @@ export const NavBar = () => {
         { frameState.userFrame       === true && <SubMenuUser/>}
         { frameState.profileFrame    === true && <UserProfile/>}
         { frameState.personTypeFrame === true && <SubMenuPersonType />}
-        { frameState.personFrame     === true && <SubMenuPerson />}
+        { frameState.personFrame     === true && <SubMenuPerson showPersonTypeFrame={showPersonTypeFrame}/>}
         { frameState.companyFrame    === true && <SubMenuCompany />}
-        { frameState.branchFrame     === true && <SubMenuBranch />}
+        { frameState.branchFrame     === true && <SubMenuBranch showBranchTypeFrame={showBranchTypeFrame}/>}
         { frameState.branchTypeFrame === true && <SubMenuBranchType />}
         { frameState.roleFrame       === true && <SubMenuRole />}
         { frameState.roomStateFrame  === true && <SubMenuRoomState />}
         { frameState.serviceFrame    === true && <SubMenuService />}
         { frameState.priceFrame      === true && <SubMenuPrice />}
-        { frameState.roomFrame       === true && <SubMenuRoom />}
+        { frameState.roomFrame       === true && <SubMenuRoom   showRoomStateFrame={showRoomStateFrame}
+                                                                showServiceFrame={showServiceFrame} 
+                                                                showPriceFrame={showPriceFrame}/>}
         { frameState.reservationFrame=== true && <SubMenuReservation />}
     </>
   )

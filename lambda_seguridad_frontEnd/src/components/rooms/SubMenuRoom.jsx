@@ -17,7 +17,7 @@ function menuRoomReducer (state, action) {
   } 
 }
 
-const SubMenuRoom = () => {
+const SubMenuRoom = (props) => {
 
   const initialState = { createRoom: false, listRoom: true, updateRoom: false}
 
@@ -42,6 +42,9 @@ const SubMenuRoom = () => {
         <ul>
           <li onClick={navCreateRoom}>Crear</li>
           <li onClick={navListRoom}>Listar</li>
+          <li onClick={props.showRoomStateFrame}>Estados</li>
+          <li onClick={props.showPriceFrame}>Precios</li>
+          <li onClick={props.showServiceFrame}>Servicios</li>
         </ul>
       </div>
         { menuRoomState.createRoom === true && <CreateRoom />}

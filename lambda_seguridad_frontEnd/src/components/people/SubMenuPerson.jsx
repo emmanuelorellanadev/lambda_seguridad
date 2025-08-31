@@ -5,7 +5,7 @@ import ListPerson from './ListPerson';
 import UpdatePerson from './UpdatePerson';
 
 
-const SubMenuPerson = () => {
+const SubMenuPerson = (props) => {
   const [ createPerson, setCreatePerson ] = useState(0);
   const [ listPerson, setListPerson ] = useState(1);
   const [ updatePerson, setUpdatePerson ] = useState(0);
@@ -37,6 +37,7 @@ const SubMenuPerson = () => {
       <ul>
         <li onClick={navCreatePerson}>Crear</li>
         <li onClick={navListPerson}>Listar</li>
+        <li onClick={props.showPersonTypeFrame}>Tipos</li>
       </ul>
     </div>
       { createPerson === 1 && <CreatePerson />}

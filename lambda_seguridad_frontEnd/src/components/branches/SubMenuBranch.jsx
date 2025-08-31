@@ -5,7 +5,7 @@ import CreateBranch from './CreateBranch';
 import UpdateBranch from './UpdateBranch';
 import ListBranchs from './ListBranchs';
 
-const SubMenuBranch = () => {
+const SubMenuBranch = (props) => {
 
   const [ createBranch, setCreateBranch ] = useState(0);
   const [ listBranchs, setListBranch ] = useState(1);
@@ -46,6 +46,7 @@ const SubMenuBranch = () => {
         <li onClick={navCreateBranch}>Crear</li>
         <li onClick={navListBranch}>Listar</li>
         <li onClick={navMainBranch}>Sucursal</li>
+        <li onClick={props.showBranchTypeFrame}>Tipo</li>
       </ul>
     </div>
 

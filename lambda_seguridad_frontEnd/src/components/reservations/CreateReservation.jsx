@@ -41,9 +41,9 @@ const CreateReservation = () => {
         const urlReservation = `http://localhost:8080/reservation/`;
         
         handleReservationDate();
-        // useCreateReservation(urlReservation, createReservationData);
-        // createReservationDispatch({type: 'RESET'});
-        // document.querySelector("#searchPerson").value = '';
+        useCreateReservation(urlReservation, createReservationData);
+        createReservationDispatch({type: 'RESET'});
+        document.querySelector("#searchPerson").value = '';
         setOnLoad(!onLoad)
     }
 
@@ -58,20 +58,21 @@ const handleReservationDate = async() => {
 
     //format now date important UTC at the end
     const now = `${year}-${month}-${day} ${hours}:${minutes}:${seconds} UTC`;
-    
     createReservationDispatch({type: 'UPDATE_RESERVATION_DATE', reservation_date: now});
 
     //WORK HERE!!!
     //check why is refreshing and deleting the date_in
     // createReservationDispatch({type: 'UPDATE_DATEIN', date_in: `2025-08-29`});
-    await createReservationDispatch({type: 'UPDATE_DATEIN', date_in: `${year}-${month}-${day}`});
+    
+    // don't let change date_in
+    // await createReservationDispatch({type: 'UPDATE_DATEIN', date_in: `${year}-${month}-${day}`})
 }
 
     useEffect( () => {
         setOnLoad(false);
         handleReservationDate();
         createReservationDispatch({type: 'UPDATE_USER', UserId: sessionStorage.getItem('uid-xL')});
-        console.log(createReservationData)
+        // console.log(createReservationData);
     }, [onLoad])
     
   return (
