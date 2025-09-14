@@ -1,7 +1,8 @@
 const bcrypt = require('bcryptjs');
 
 const encryptPass = (password) => {
-    const salt = bcrypt.genSaltSync(10);
+    // Increased salt rounds for better security (was 10, now 12)
+    const salt = bcrypt.genSaltSync(12);
     return bcrypt.hashSync( password, salt); 
 }
 

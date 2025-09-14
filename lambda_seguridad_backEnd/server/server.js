@@ -2,6 +2,8 @@
 
 const express   =   require('express');
 const cors      =   require('cors');
+const helmet    =   require('helmet');
+const rateLimit =   require('express-rate-limit');
                     require('dotenv').config();
                     require('colors');
 
@@ -28,20 +30,72 @@ class Server {
 
 //MIDDLEWARES
     middlewares(){
+        // Security headers
+        this.app.use(helmet({
+            contentSecurityPolicy: {
+                directives: {
+                    defaultSrc: ["'self'"],
+                    styleSrc: ["'self'", "'unsafe-inline'"],
+                    scriptSrc: ["'self'"],
+                    imgSrc: ["'self'", "data:"],
+                    fontSrc: ["'self'"]
+                }
+            },
+            hsts: {
+                maxAge: 31536000,
+                includeSubDomains: true,
+                preload: true
+            }
+        }));
 
-        this.app.use(express.json());
-        this.app.use(cors({ 
-            "Access-Control-Allow-Origin" : "*" 
+        this.app.use(express.json({ limit: '10mb' })); // Add size limit for security
+        
+        // Rate limiting for auth endpoints
+        const authLimiter = rateLimit({
+            windowMs: 15 * 60 * 1000, // 15 minutes
+            max: 5, // limit each IP to 5 requests per windowMs
+            message: {
+                error: 'Too many authentication attempts, please try again later.',
+                code: 'RATE_LIMIT_EXCEEDED'
+            },
+            standardHeaders: true,
+            legacyHeaders: false
+        });
+        
+        // General rate limiting
+        const generalLimiter = rateLimit({
+            windowMs: 15 * 60 * 1000,
+            max: 100, // limit each IP to 100 requests per windowMs
+            message: {
+                error: 'Too many requests, please try again later.',
+                code: 'RATE_LIMIT_EXCEEDED'
+            }
+        });
+        
+        this.app.use(generalLimiter);
+        
+        // Apply auth rate limiting before setting up auth routes
+        this.authLimiter = authLimiter;
+        
+        // Improved CORS configuration for security
+        this.app.use(cors({
+            origin: process.env.ALLOWED_ORIGINS?.split(',') || ['http://localhost:3000', 'http://localhost:5173'],
+            credentials: true,
+            optionsSuccessStatus: 200,
+            methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+            allowedHeaders: ['Content-Type', 'Authorization', 'x-token']
         }));
     }
 
 //ROUTES
     routes(){ 
-        // this.app.use('/', v1Router)
-        this.app.use('/auth',               require('../routes/auth_route'));
+        // Apply rate limiting to auth routes specifically
+        this.app.use('/auth',               this.authLimiter, require('../routes/auth_route'));
+        this.app.use('/changePassword',     this.authLimiter, require('../routes/changePassword_route'));
+        
+        // Other routes without specific rate limiting (general limiter still applies)
         this.app.use('/branch',             require('../routes/branch_route'));
         this.app.use('/branchType',         require('../routes/branchType_route'));
-        this.app.use('/changePassword',     require('../routes/changePassword_route'));
         this.app.use('/company',            require('../routes/company_route'));
         this.app.use('/payment',            require('../routes/payment_route'));
         this.app.use('/paymentState',       require('../routes/paymentState_route'));
