@@ -1,3 +1,4 @@
+import '../../css/ui/headings.css'; //hadle p_h1, p_h2, p_h3
 import React, { useEffect, useState } from 'react'
 
 import '../../css/person/person.css'

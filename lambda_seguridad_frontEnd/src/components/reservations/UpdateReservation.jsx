@@ -1,3 +1,4 @@
+import '../../css/ui/headings.css'; //hadle p_h1, p_h2, p_h3
 import { useEffect, useState, useReducer } from 'react';
 
 import '../../css/reservation/reservation.css';

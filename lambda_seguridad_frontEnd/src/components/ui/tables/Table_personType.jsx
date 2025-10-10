@@ -39,8 +39,11 @@ export const Table_personType = ({ columns, editData, deleteData, onLoad, setOnL
 
   return (
     <>
-    <Input lambdaClassInput={"data_search"} type="search" value={search} onChange={ e => searching(e.target.value)} placeholder="Buscar" />
-      <table className='table table-bordered table-hover table-striped' {...props}>
+    <div className="table-controls">
+      <Input lambdaClassInput={"data_search"} type="search" value={search} onChange={ e => searching(e.target.value)} placeholder="Buscar tipo de persona por nombre o estado" aria-label="Buscar tipo de persona" />
+    </div>
+    <div className="table-responsive">
+      <table className='table table-bordered table-hover table-striped user-table' {...props}>
         <thead className='text-center t_header'>
           <tr key={0}>  
             {
@@ -60,8 +63,8 @@ export const Table_personType = ({ columns, editData, deleteData, onLoad, setOnL
                   return (
                     <tr key={personType.id}>
                     <th>{personType.id}</th>
-                      <th>{personType.personType_name}</th>
-                      <th><input type='checkbox' checked={personType.personType_state} disabled/></th>
+                      <td data-label="Tipo">{personType.personType_name}</td>
+                      <td data-label="Estado"><input type='checkbox' checked={personType.personType_state} disabled/></td>
                       <th><button className='btn btn-primary' type="button" onClick={ () => editData( personType.id ) } >Editar</button></th>
                       <th><button className='btn btn-outline-danger' onClick={ () => deleteData(personType.id) }><i className='bi bi-trash3-fill'></i></button></th>
                     </tr>
@@ -70,8 +73,8 @@ export const Table_personType = ({ columns, editData, deleteData, onLoad, setOnL
                 return (
                     <tr key={personType.id}>
                     <th>{personType.id}</th>
-                    <th>{personType.personType_name}</th>
-                    <th><input type='checkbox' checked={personType.personType_state} disabled/></th>
+                    <td data-label="Tipo">{personType.personType_name}</td>
+                    <td data-label="Estado"><input type='checkbox' checked={personType.personType_state} disabled/></td>
                     <th><button className='btn btn-primary' type="button" onClick={ () => editData( personType.id ) } >Editar</button></th>
                   </tr>
                 )
@@ -79,15 +82,16 @@ export const Table_personType = ({ columns, editData, deleteData, onLoad, setOnL
                 return (
                     <tr key={personType.id}>
                     <th>{personType.id}</th>
-                    <th>{personType.personType_name}</th>
-                    <th><input type='checkbox' checked={personType.personType_state} disabled/></th>
+                    <td data-label="Tipo">{personType.personType_name}</td>
+                    <td data-label="Estado"><input type='checkbox' checked={personType.personType_state} disabled/></td>
                   </tr>
                 )
               }
               })
           }
         </tbody>
-    </table>
+      </table>
+    </div>
     <Pagination page={page} setPage={setPage} rowsByPage={rowsByPage} setRowsByPage={setRowsByPage} prevPage={prevPage} nextPage={nextPage} total={personTypes.total} setOnLoad={setOnLoad}/>
   </>
   )

@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { Label } from './Label';
+import '../../css/ui/pagination.css';
 
 const Pagination = ({page, setPage, rowsByPage, setRowsByPage, prevPage, nextPage, total, setOnLoad}) => {
 

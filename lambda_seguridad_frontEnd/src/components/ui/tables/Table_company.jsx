@@ -1,13 +1,15 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 
 import '../../../css/ui/table.css'
 import { Input } from '../Input';
-import Pagination from '../Pagination';
+import Pagination from '../Pagination.jsx';
 import { useGetCompany } from '../../companies/hooks/useGetCompany';
+import { GlobalContext } from '../../../context/GlobalContext.jsx';
 
 export const Table_company = ({ columns, editData, deleteData, setOnLoad, onLoad, ...props}) => {
 
   const [ companies, setCompanies ] = useState({});
+  const { urlLambda } = useContext(GlobalContext);
   const [ search, setSearch ] = useState('');
   const [ rowsByPage, setRowsByPage ] = useState( 10 );
   const [ page, setPage ] = useState( 1 );
@@ -23,7 +25,7 @@ export const Table_company = ({ columns, editData, deleteData, setOnLoad, onLoad
 }
 
   const getCompany = async() => {
-    const urlCompany = `http://localhost:8080/company/?limit=${rowsByPage}&page=${page}&q=${search}`;
+    const urlCompany = `${urlLambda}/company/?limit=${rowsByPage}&page=${page}&q=${encodeURIComponent(search)}`;
     await useGetCompany(urlCompany, {setCompanies, setNextPage, setPrevPage});
   }
   const searching = (query) => {
@@ -40,8 +42,11 @@ export const Table_company = ({ columns, editData, deleteData, setOnLoad, onLoad
 
   return (
     <>
-    <Input lambdaClassInput={"data_search"} type="search" value={search} onChange={ e => searching(e.target.value)} placeholder="Buscar" />
-      <table className='table table-bordered table-hover table-striped' {...props}>
+    <div className="table-controls">
+      <Input lambdaClassInput={"data_search"} type="search" value={search} onChange={ e => searching(e.target.value)} placeholder="Buscar empresa por nombre o dirección" aria-label="Buscar empresa" />
+    </div>
+    <div className="table-responsive">
+      <table className='table table-bordered table-hover table-striped user-table' {...props}>
         <thead className='text-center t_header'>
           <tr key={0}>  
             {
@@ -61,9 +66,9 @@ export const Table_company = ({ columns, editData, deleteData, setOnLoad, onLoad
                   return (
                     <tr key={values[0]}>
                       <th>{values[0]}</th>
-                      <th>{values[1]}</th>
-                      <th>{values[2]}</th>
-                      <th>{values[3]}</th>
+                      <td data-label="Empresa">{values[1]}</td>
+                      <td data-label="Dirección">{values[2]}</td>
+                      <td data-label="Teléfono">{values[3]}</td>
                       <th><button className='btn btn-primary' type="button" onClick={ () => editData( values[0] ) } >Editar</button></th>
                       <th><button className='btn btn-outline-danger' onClick={ () => deleteData(values[0], values[1], setOnLoad) }><i className='bi bi-trash3-fill'></i></button></th>
                     </tr>
@@ -72,9 +77,9 @@ export const Table_company = ({ columns, editData, deleteData, setOnLoad, onLoad
                 return (
                   <tr key={values[0]}>
                     <th>{values[0]}</th>
-                    <th>{values[1]}</th>
-                    <th>{values[2]}</th>
-                    <th>{values[3]}</th>
+                    <td data-label="Empresa">{values[1]}</td>
+                    <td data-label="Dirección">{values[2]}</td>
+                    <td data-label="Teléfono">{values[3]}</td>
                     <th><button className='btn btn-primary' type="button" onClick={ () => editData( values[0], values[1], setOnLoad ) } >Editar</button></th>
                   </tr>
                 )
@@ -82,16 +87,17 @@ export const Table_company = ({ columns, editData, deleteData, setOnLoad, onLoad
                 return (
                   <tr key={values[0]}>
                     <th>{values[0]}</th>
-                    <th>{values[1]}</th>
-                    <th>{values[2]}</th>
-                    <th>{values[3]}</th>
+                    <td data-label="Empresa">{values[1]}</td>
+                    <td data-label="Dirección">{values[2]}</td>
+                    <td data-label="Teléfono">{values[3]}</td>
                   </tr>
                 )
               }
               })
           }
         </tbody>
-    </table>
+      </table>
+    </div>
     <Pagination page={page} setPage={setPage} rowsByPage={rowsByPage} setRowsByPage={setRowsByPage} prevPage={prevPage} nextPage={nextPage} total={companies.total} setOnLoad={setOnLoad}/>
   </>
   )

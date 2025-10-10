@@ -6,15 +6,15 @@ export const useUserProfile = async(urlUser, {setUserName, setUserCreation, setU
     await axios.get( urlUser, { headers: {"x-token": sessionStorage.getItem("token-xL")}})
         .then(resp => resp.data.resData)
         .then( data => {
-            setUserName(data.user_name);
-            setUserCreation(data.user_creation);
-            setUserImg(data.user_img);
-            setRole(data.Role.role_name)
-            setBranch(data.Branches[0].branch_name)
+            setUserName?.(data.user_name);
+            setUserCreation?.(data.user_creation);
+            setUserImg?.(data.user_img);
+            setRole?.(data?.Role?.role_name);
+            setBranch?.(data?.Branches?.[0]?.branch_name);
         })
         .catch(error => {
             console.log(error)
-            toast.error(`${error.response.data.error} \n ${error.response.data.errorLambda}`,{
+            toast.error(`${error?.response?.data?.error || 'Error al recuperar perfil'} \n ${error?.response?.data?.errorLambda || ''}`.trim(),{
                 duration: 3000,
                 position: "top-right",
                 style: {

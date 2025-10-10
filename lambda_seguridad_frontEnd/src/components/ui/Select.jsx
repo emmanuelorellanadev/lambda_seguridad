@@ -5,7 +5,8 @@ import '../../css/ui/select.css'
 export const Select = ({data, text, ...props}) => {
     return(
         <>
-            <select className="form-select text-center select_container" {...props}>
+            {/* <select className={`form form-control input_container`} {...props}> */}
+            <select className={`input_container`} {...props}>
                 <option value='0'>{text}</option>
                 {
                     data?.map( d => {

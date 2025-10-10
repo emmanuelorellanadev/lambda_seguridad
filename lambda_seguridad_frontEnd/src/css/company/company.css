@@ -1,3 +1,246 @@
+:root {
+  --primary: #1976d2;
+  --primary-dark: #115293;
+  --secondary: #00bcd4;
+  --background: #f4f8fb;
+  --card-bg: #fff;
+  --border: #e0e0e0;
+  --input-bg: #f7fbff;
+  --input-focus: #e3f2fd;
+  --text: #222;
+  --label: #555;
+  --shadow: 0 4px 24px rgba(33, 150, 243, 0.10);
+}
+
+/* Contenedor principal */
+.company_container {
+  background: var(--card-bg);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  padding: 2.5rem 2rem;
+  margin: 2.5rem auto;
+  width: 96vw;
+  max-width: 950px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.2s;
+}
+
+.company_container:hover {
+  box-shadow: 0 8px 32px rgba(33, 150, 243, 0.13);
+}
+
+/* Título */
+.company_container .p_h1 {
+  color: var(--primary);
+  font-weight: bold;
+  font-size: 2rem;
+  letter-spacing: 0.7px;
+  text-align: center;
+  margin: 2rem auto 2rem auto;
+  font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+}
+
+/* Formulario de empresa */
+.company_form {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2.2rem 2.5rem;
+  background: var(--input-bg);
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(33, 150, 243, 0.06);
+  padding: 2.5rem 2rem;
+  width: 100%;
+  margin-bottom: 2.5rem;
+  border: 1.5px solid var(--border);
+  transition: box-shadow 0.2s, border 0.2s;
+}
+
+.company_form:hover {
+  box-shadow: 0 4px 24px rgba(33, 150, 243, 0.13);
+  border: 1.5px solid var(--secondary);
+}
+
+/* Logo de la empresa */
+.companyLogo_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  grid-row: 1 / span 2;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 6px rgba(33, 150, 243, 0.06);
+  padding: 1.5rem 1rem;
+  border: 1px solid var(--border);
+  min-width: 180px;
+  min-height: 180px;
+}
+
+.companyLogo_container img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 3px solid var(--primary);
+  background: var(--input-bg);
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.10);
+  margin-bottom: 0.5rem;
+  transition: box-shadow 0.15s, border-color 0.15s;
+}
+
+.companyLogo_container img:hover {
+  box-shadow: 0 4px 16px rgba(33, 150, 243, 0.18);
+  border-color: var(--secondary);
+}
+
+/* Datos de la empresa */
+.companyData_container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(33, 150, 243, 0.06);
+  padding: 1.1rem 1rem 1rem 1rem;
+  border: 1px solid var(--border);
+  min-width: 220px;
+}
+
+.companyData_container div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.4rem;
+  width: 100%;
+}
+
+.companyData_container label {
+  color: var(--primary-dark);
+  font-weight: 500;
+  font-size: 1.07rem;
+  margin-bottom: 0.1rem;
+  letter-spacing: 0.2px;
+  font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+  text-align: left;
+  width: 100%;
+}
+
+/* Misión y Visión */
+.companyMissionVision_container {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(33, 150, 243, 0.06);
+  padding: 1.1rem 1rem 1rem 1rem;
+  border: 1px solid var(--border);
+}
+
+.companyMissionVision_container > div {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.companyMissionVision_container label {
+  color: var(--primary-dark);
+  font-weight: 500;
+  font-size: 1.07rem;
+  margin-bottom: 0.1rem;
+  letter-spacing: 0.2px;
+  font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+  text-align: left;
+  width: 100%;
+}
+
+/* Tabla de sucursales */
+.companyTable_container {
+  width: 100%;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 1px 6px rgba(33, 150, 243, 0.06);
+  margin-top: 2rem;
+  padding: 1.5rem 1rem;
+}
+
+/* Botón de acciones */
+.sendCompany_button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.sendCompany_button button {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 2.2rem;
+  font-size: 1.08rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.18s;
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.10);
+}
+
+.sendCompany_button button:hover {
+  background: var(--primary-dark);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .company_container {
+    max-width: 99vw;
+    padding: 1.2rem 0.5rem;
+  }
+  .company_form {
+    grid-template-columns: 1fr;
+    padding: 1.2rem 0.5rem;
+  }
+  .companyMissionVision_container {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 0.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .company_container {
+    width: 98vw;
+    padding: 0.7rem 0.2rem;
+  }
+  .company_form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 1rem 0.2rem;
+  }
+  .companyLogo_container,
+  .companyData_container,
+  .companyMissionVision_container {
+    min-width: unset;
+    width: 100%;
+    padding: 1rem 0.2rem;
+    box-sizing: border-box;
+  }
+  .companyMissionVision_container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .companyMissionVision_container > div {
+    width: 100%;
+  }
+  .companyTable_container {
+    padding: 1rem 0.2rem;
+  }
+}
+
 @media (max-width: 576px){
     .company_container{
         width: 95%;

@@ -21,10 +21,10 @@ export const useUpdateUser = async (urlUser, state, props) => {
                     height: "4rem"
                 }
             })
-            props.navListUsers();
+            props?.navListUsers?.();
         })
         .catch( (error) => {
-            toast.error(`${error.response.data.error} \n ${error.response.data.errorLambda}`,{
+            toast.error(`${error?.response?.data?.error || 'Error al actualizar usuario'} \n ${error?.response?.data?.errorLambda || ''}`.trim(),{
                 duration: 4000,
                 position: "top-right",
                 style: {

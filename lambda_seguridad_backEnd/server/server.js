@@ -28,10 +28,14 @@ class Server {
 
 //MIDDLEWARES
     middlewares(){
-
         this.app.use(express.json());
-        this.app.use(cors({ 
-            "Access-Control-Allow-Origin" : "*" 
+        // Configuración segura de CORS: solo permite solicitudes desde dominios autorizados
+        // Cambia los dominios por los de tu frontend en producción
+        this.app.use(cors({
+            origin: ["http://localhost:3000", "http://localhost:5173", "http://bits.com"], // Agrega aquí los dominios permitidos
+            methods: ["GET", "POST", "PUT", "DELETE"],
+            allowedHeaders: ["Content-Type", "Authorization", "x-token"],
+            credentials: false // Cambia a true solo si usas cookies/sesiones
         }));
     }
 

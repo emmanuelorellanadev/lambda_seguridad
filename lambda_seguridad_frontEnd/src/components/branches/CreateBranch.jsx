@@ -1,3 +1,4 @@
+import '../../css/ui/headings.css'; //hadle p_h1, p_h2, p_h3
 import {useState, useEffect} from 'react'
 import { Toaster } from 'react-hot-toast'; 
 

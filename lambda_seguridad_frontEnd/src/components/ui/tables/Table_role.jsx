@@ -41,8 +41,11 @@ useEffect( () => {
 
   return (
     <>
-    <Input lambdaClassInput={"data_search"} type="search" value={search} onChange={ e => searching(e.target.value)} placeholder="Buscar" />
-      <table className='table table-bordered table-hover table-striped' {...props}>
+    <div className="table-controls">
+      <Input lambdaClassInput={"data_search"} type="search" value={search} onChange={ e => searching(e.target.value)} placeholder="Buscar rol por nombre o estado" aria-label="Buscar rol" />
+    </div>
+    <div className="table-responsive">
+      <table className='table table-bordered table-hover table-striped user-table' {...props}>
         <thead className='text-center t_header'>
           <tr key={0}>  
             {
@@ -61,8 +64,8 @@ useEffect( () => {
                   return (
                     <tr key={role.id}>
                       <th>{role.id}</th>
-                      <th>{role.role_name}</th>
-                      <th><input type='checkbox' checked={role.role_state} disabled/></th>
+                      <td data-label="Rol">{role.role_name}</td>
+                      <td data-label="Estado"><input type='checkbox' checked={role.role_state} disabled/></td>
                       <th><button className='btn btn-primary' type="button" onClick={ () => editData( role.id ) } >Editar</button></th>
                       <th><button className='btn btn-outline-danger' onClick={ () => deleteData(role.id, role.role_name) }><i className='bi bi-trash3-fill'></i></button></th>
                     </tr>
@@ -71,9 +74,8 @@ useEffect( () => {
                 return (
                     <tr key={role.id}>
                     <th>{role.id}</th>
-                    <th>{role.role_name}</th>
-                    <th>{role.role_name}</th>
-                    <th><input type='checkbox' checked={role.role_state} disabled/></th>
+                    <td data-label="Rol">{role.role_name}</td>
+                    <td data-label="Estado"><input type='checkbox' checked={role.role_state} disabled/></td>
                     <th><button className='btn btn-primary' type="button" onClick={ () => editData( role.id ) } >Editar</button></th>
                   </tr>
                 )
@@ -81,16 +83,16 @@ useEffect( () => {
                 return (
                     <tr key={role.id}>
                     <th>{role.id}</th>
-                    <th>{role.role_name}</th>
-                    <th>{role.role_name}</th>
-                    <th><input type='checkbox' checked={role.role_state} disabled/></th>
+                    <td data-label="Rol">{role.role_name}</td>
+                    <td data-label="Estado"><input type='checkbox' checked={role.role_state} disabled/></td>
                   </tr>
                 )
               }
               })
           }
         </tbody>
-    </table>
+      </table>
+    </div>
     <Pagination page={page} setPage={setPage} rowsByPage={rowsByPage} setRowsByPage={setRowsByPage} prevPage={prevPage} nextPage={nextPage} total={roles.total} setOnLoad={setOnLoad}/>
   </>
   )

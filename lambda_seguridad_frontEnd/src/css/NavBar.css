@@ -1,98 +1,202 @@
-@media (max-width: 576px){
+:root {
+    --primary: #1976d2;
+    --primary-dark: #115293;
+    --secondary: #00bcd4;
+    --background: #f4f8fb;
+    --card-bg: #f7fbff;
+    --border: #e0e0e0;
+    --input-bg: #f1f5f9;
+    --input-focus: #e3f2fd;
+    --text: #222;
+    --label: #555;
+    --danger: #e53935;
+    --success: #43a047;
+}
+
+#navBar {
+    /* background: var(--primary); */
+    color: #fff;
+    box-shadow: 0 2px 12px rgba(33, 150, 243, 0.10);
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1.5rem;
+    min-height: 56px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+#menu {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#menu li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background: transparent;
+    font-weight: 500;
+    padding: 0.4rem 1.1rem;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background 0.18s, color 0.18s, box-shadow 0.18s, transform 0.12s;
+    border: 1.5px solid transparent;
+    user-select: none;
+    outline: none;
+    font-size: 1rem;
+    min-width: 8rem;
+    box-shadow: 2px 4px 6px rgba(33, 157, 192, 0.10);
+}
+
+#menu li:hover,
+#menu li:focus {
+    background: var(--primary-dark);
+    color: var(--primary-dark);
+    box-shadow: 2.5px 5px 7px rgb(33, 157, 192);
+    border: 1.5px solid var(--primary-dark);
+}
+
+#menu li.selected,
+#menu li.active {
+    background: #fff;
+    color: var(--primary);
+    border: 1.5px solid var(--primary-dark);
+    box-shadow: 0 2px 8px rgba(33, 150, 243, 0.13);
+}
+
+#menu li a {
+    color: inherit;
+    background: transparent;
+    text-decoration: none;
+    border-radius: 5px;
+    padding: .5rem;
+    margin-left: .25rem;
+    margin-right: .25rem;
+    transition: color 0.18s;
+    display: block;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+@media (max-width: 700px) {
+    #menu {
+        flex-direction: column;
+        gap: 0.2rem;
+    }
     #navBar {
-        box-shadow:none;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0.3rem 0.2rem;
+        border-radius: 0 0 7px 7px;
+    }
+    #menu li {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.98rem;
+        min-width: unset;
+    }
+}
+
+@media (max-width: 576px){
+    #menu-icon{
+        display: flex;
+        width: 2.5rem;
+        height: 2.5rem;
+        border: 1px solid rgb(25, 83, 159);
+        padding: 0.25rem;
+        margin: 0;
+    }
+
+    #navBar ul{
+        background-color: rgb(255, 255, 255);
+        box-shadow: 2px 4px 6px rgb(33, 157, 192);
+        list-style: none;
+        display: none;
+        flex-wrap: wrap;
+        padding: 0;
+        right: 0.2rem;
+        border-radius: 5px;
+    }
+
+    #navBar .showMenu{
+        position: absolute;
+        display: flex;
+        top: 2.5rem;
+    }
+
+    #logoUsuario{
+        width: 3.5rem;
+    }
+
+    #menu li {
+        display: flex;
+        justify-content: center;
+        box-shadow: 2.5px 3px 3px rgb(33, 157, 192);
+        width: 10rem;
+        background: transparent;
+        color: var(--primary-dark);
+    }
+
+    #menu li a{
+        text-decoration: none;
+        text-align: center;
+        color: black;
+        padding: .5rem;
+    }
+
+    #menu #subMenuUser .subMenuVisible {
         display: flex;
         position: absolute;
-        border-bottom: none;
-        right: .25rem;
-        }   
+        right: 10rem;
+    }
 
-        #menu-icon{
-            display: flex;
-            width: 2.5rem;
-            height: 2.5rem;
-            border: 1px solid rgb(25, 83, 159);
-            padding: 0.25rem;
-            margin: 0;
-            }
+    #menu #subMenuAdmin .subMenuVisible {
+        display: flex;
+        position: absolute;
+        top: 3.7rem;
+        right: 10rem;
+    }
 
-            #navBar ul{
-                background-color: rgb(255, 255, 255);
-                box-shadow: 2px 4px 6px rgb(33, 157, 192);
-                list-style: none;
-                display: none;
-                flex-wrap: wrap;
-                padding: 0;
-                right: 0.2rem;
-                border-radius: 5px;
-                }
-        
-            #navBar .showMenu{
-                position: absolute;
-                display: flex;
-                top: 2.5rem;
-                }
+    #menu #subMenuSecurity .subMenuVisible {
+        display: flex;
+        position: absolute;
+        top: 6.2rem;
+        right: 10rem;
+    }
 
-                #logoUsuario{
-                    width: 3.5rem
-                }
+    #menu #subMenuPerson .subMenuVisible {
+        display: flex;
+        position: absolute;
+        top: 8.7rem;
+        right: 10rem;
+    }
 
-                #menu li {
-                    display: flex;
-                    justify-content: center;
-                    box-shadow: 2.5px 3px 3px rgb(33, 157, 192);
-                    width: 10rem;
-                    }
-        
-                    #menu li a{
-                        text-decoration: none;
-                        text-align: center;
-                        color: black;
-                        padding: .5rem;
-                        }
-                        
-                        #menu #subMenuUser .subMenuVisible {
-                            display: flex;
-                            position: absolute;
-                            right: 10rem;
-                        }
-        
-                        #menu #subMenuAdmin .subMenuVisible {
-                            display: flex;
-                            position: absolute;
-                            top: 3.7rem;
-                            right: 10rem;
-                        }
-        
-                        #menu #subMenuSecurity .subMenuVisible {
-                            display: flex;
-                            position: absolute;
-                            top: 6.2rem;
-                            right: 10rem;
-                        }
-        
-                        #menu #subMenuPerson .subMenuVisible {
-                            display: flex;
-                            position: absolute;
-                            top: 8.7rem;
-                            right: 10rem;
-                        } 
+    #menu li.selected,
+    #menu li.active {
+        background: var(--card-bg);
+        color: var(--primary);
+    }
 }
-/* CHECK THIS */
-/* MEDIA: CHECK THE CORRECT WIDTH FOR MOBILE DEVICES */
+
 @media (min-width: 577px) {
+    #navBar{
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        height: 6rem;
+        border-bottom: 1px solid rgb(33, 157, 192);
+        box-shadow: 2.5px 3px 3px rgb(33, 157, 192);
+    }
 
-#navBar{
-    display: flex;
-    flex-flow: row nowrap;
-    /* position: static; */
-    align-items: center;
-    height: 6rem;
-    border-bottom: 1px solid rgb(33, 157, 192);
-    box-shadow: 2.5px 3px 3px rgb(33, 157, 192);
-}
-
- #navBar #menu-icon{
+    #navBar #menu-icon{
         display: none;
     }
 
@@ -102,57 +206,88 @@
         display: flex;
         padding: .5rem;
         margin: auto;
-        }
-            #logoUsuario{
-                width: 2.5rem
-            }
-            #menu li{
-            box-shadow: 2.5 5px 7px rgb(33, 157, 192);
-            text-decoration: none;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            flex: 0 0 auto;
-            transition: .5s;
-        }
-        
-        #menu li:hover{
-            align-items: center;
-            justify-content: stretch;
-            margin: 0.1rem;
-            box-shadow: 2.5px 5px 7px rgb(33, 157, 192);
-            transition: .5s;
-        }     
-        
-            #menu li a{
-                text-decoration: none;
-                color: black;
-                border-radius: 5px;
-                padding: .5rem;
-                margin-left: .25rem;
-                margin-right: .25rem;
-                }
-
-            #menu li ul{
-                display: none;
-                position: relative;
-                top: 3.5rem;
-            } 
-
-             #menu li .subMenu{
-                display: none;
-                }
-
-            #menu li .subMenuVisible {
-                display: flex;
-                flex-flow: column wrap;
-                position: absolute;
-                top: 4rem;
-                width: 10rem;
-                background-color: rgb(255, 255, 255);
-                box-shadow: 2.5px 5px 7px rgb(33, 157, 192);
-                margin: 0;
-                padding: 0;
-                }
-
     }
+
+    #logoUsuario{
+        width: 2.5rem;
+    }
+
+    #menu li{
+        box-shadow: 2.5 5px 7px rgb(33, 157, 192);
+        text-decoration: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        flex: 0 0 auto;
+        transition: .5s;
+        background: transparent;
+        color: var(--primary-dark);
+        transition: background 0.18s, color 0.18s, box-shadow 0.18s, transform 0.12s;
+    }
+
+    #menu li:hover,
+    #menu li:focus {
+        align-items: center;
+        justify-content: stretch;
+        margin: 0.1rem;
+        box-shadow: 2.5px 5px 7px rgb(33, 157, 192);
+        transition: .5s;
+        background: var(--primary-dark);
+        color: #fff;
+    }     
+
+    #menu li a{
+        text-decoration: none;
+        color: black;
+        border-radius: 5px;
+        padding: .5rem;
+        margin-left: .25rem;
+        margin-right: .25rem;
+    }
+
+    #menu li ul{
+        display: none;
+        position: relative;
+        top: 3.5rem;
+    } 
+
+    #menu li .subMenu{
+        display: none;
+    }
+
+    #menu li .subMenuVisible {
+        display: flex;
+        flex-flow: column wrap;
+        position: absolute;
+        top: 4rem;
+        width: 10rem;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 2.5px 5px 7px rgb(33, 157, 192);
+        margin: 0;
+        padding: 0;
+    }
+
+    #menu li.selected,
+    #menu li.active {
+        background: var(--card-bg);
+        color: var(--primary);
+        border: 1.5px solid var(--secondary);
+        box-shadow: 0 2px 8px rgba(33, 150, 243, 0.13);
+    }
+
+    #menu li a {
+        color: inherit;
+        background: transparent;
+        text-decoration: none;
+        border-radius: 5px;
+        padding: .5rem;
+        margin-left: .25rem;
+        margin-right: .25rem;
+        transition: color 0.18s;
+    }
+
+    #menu li .subMenuVisible {
+        background: var(--card-bg);
+        box-shadow: 0 4px 16px rgba(33, 150, 243, 0.13);
+    }
+}

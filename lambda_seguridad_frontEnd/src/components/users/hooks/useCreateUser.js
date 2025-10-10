@@ -10,7 +10,7 @@ export const useCreateUser = async(urlUser, userImage, state, { setOnLoad }) => 
                     headers: { "x-token": sessionStorage.getItem('token-xL') }
                 })
                 .then( response => {
-                    setOnLoad(false);
+                    setOnLoad?.(false);
                     toast.success(`${response.data.resData}`,{
                         duration: 3000,
                         position: "top-right",
@@ -23,7 +23,7 @@ export const useCreateUser = async(urlUser, userImage, state, { setOnLoad }) => 
                 })
                 .catch( (error) => {
                     console.log(error)
-                    toast.error(`${error.response.data.error} \n ${error.response.data.errorLambda}`,{
+                    toast.error(`${error?.response?.data?.error || 'Error al crear usuario'} \n ${error?.response?.data?.errorLambda || ''}`.trim(),{
                         duration: 4000,
                         position: "top-right",
                         style: {

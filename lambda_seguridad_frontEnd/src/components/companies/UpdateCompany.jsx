@@ -1,3 +1,4 @@
+import '../../css/ui/headings.css'; //hadle p_h1, p_h2, p_h3
 import { useState, useEffect } from 'react';
 import { Toaster } from 'react-hot-toast';
 
@@ -37,7 +38,7 @@ const UpdateCompany = (props) => {
             <P_Head className="p_h1" text="Actualizar Empresa"/>
             <form encType='multipart/form-data' className='company_form' onSubmit={updateButton} >
                  <div className='companyLogo_container'>
-                    <img src={`http://localhost:8080/public/${logo}`} alt="" />
+                    {/* <img src={`http://localhost:8080/public/${logo}`} alt="" /> */}
                     <section>
                         <P_Head className="p_h3" text={'Cambiar Imágen'} />
                         <Input lambdaClassInput={""} type="file" name="img"  onChange={ (e) => setLogoFile(e.target.value)}/>

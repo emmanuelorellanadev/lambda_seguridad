@@ -1,0 +1,26 @@
+.p_h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary, #1976d2);
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.7px;
+  font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+}
+
+.p_h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-dark, #115293);
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+  font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+}
+
+.p_h3 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--secondary, #00bcd4);
+  margin-bottom: 0.8rem;
+  letter-spacing: 0.3px;
+  font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+}

@@ -34,7 +34,7 @@ export const useUpdatePass = async(urlUser, pass, passConfirm, currentPass) => {
             })
         })
         .catch( (error) => {
-            toast.error(`${error.response.data.error}`,{
+            toast.error(`${error?.response?.data?.error || 'Error al actualizar contraseña'}` ,{
                 duration: 4000,
                 position: "top-right",
                 style: {

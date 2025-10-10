@@ -33,6 +33,29 @@
         width: 100%;
         border-radius: 7px;
     }
+
+    #uploadUserImg {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    #uploadUserImg div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    #uploadUserImg img {
+        display: block;
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        margin: 0 auto;
+    }
 }
 
 @media (min-width: 577px){
@@ -76,5 +99,28 @@
 
     .sendUser_button button{
         margin: 3rem auto;
+    }
+
+    #uploadUserImg {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 95%;
+    }
+    #uploadUserImg div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    #uploadUserImg img {
+        display: block;
+        width: 140px;
+        height: 140px;
+        object-fit: cover;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        margin: 0 auto;
     }
 }

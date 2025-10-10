@@ -38,68 +38,71 @@ export const Table_person = ({ columns, rows, editData, deleteData, onLoad, setO
 
   return (
     <>
-      <Input lambdaClassInput={"data_search"} type="search" value={search} onChange={ e => searching(e.target.value)} placeholder="Buscar" />
-      <table className='table table-bordered table-hover table-striped' >
-        <thead className='text-center t_header'>
-          <tr key={0}>  
+      <div className="table-controls">
+        <Input lambdaClassInput={"data_search"} type="search" value={search} onChange={ e => searching(e.target.value)} placeholder="Buscar persona por nombre o documento" aria-label="Buscar persona" />
+      </div>
+      <div className="table-responsive">
+        <table className='table table-bordered table-hover table-striped user-table'>
+          <thead className='text-center t_header'>
+            <tr key={0}>  
+              {
+                columns.map( (column) => {
+                  return (
+                      <th key={column}>{column}</th>
+                  )
+                })
+              }
+              </tr>
+          </thead>
+          <tbody className='text-center align-baseline'>
             {
-              columns.map( (column) => {
-                return (
-                    <th key={column}>{column}</th>
-                )
-              })
-            }
-            </tr>
-        </thead>
-        <tbody className='text-center align-baseline'>
-          {
-            people.data?.map( ( person ) => {
-              let values = Object.values(person)
-              if(editData && deleteData){
+              people.data?.map( ( person ) => {
+                let values = Object.values(person)
+                if(editData && deleteData){
+                    return (
+                      <tr key={values[0]}>
+                        <th>{values[0]}</th>
+                        <td data-label="Nombre">{values[1]}</td>
+                        <td data-label="Documento">{values[2]}</td>
+                        <td data-label="Teléfono">{values[3]}</td>
+                        <td data-label="Correo">{values[4]}</td>
+                        <td data-label="Dirección">{values[5]}</td>
+                        <td data-label="Tipo">{values[6]}</td>
+                        <th><button className='btn btn-primary' type="button" onClick={ () => editData( values[0] ) } >Editar</button></th>
+                        <th><button className='btn btn-outline-danger' onClick={ () => deleteData(values[0], values[1]) }><i className='bi bi-trash3-fill'></i></button></th>
+                      </tr>
+                    )
+                }else if(editData){
                   return (
                     <tr key={values[0]}>
                       <th>{values[0]}</th>
-                      <th>{values[1]}</th>
-                      <th>{values[2]}</th>
-                      <th>{values[3]}</th>
-                      <th>{values[4]}</th>
-                      <th>{values[5]}</th>
-                      <th>{values[6]}</th>
+                      <td data-label="Nombre">{values[1]}</td>
+                      <td data-label="Documento">{values[2]}</td>
+                      <td data-label="Teléfono">{values[3]}</td>
+                      <td data-label="Correo">{values[4]}</td>
+                      <td data-label="Dirección">{values[5]}</td>
+                      <td data-label="Tipo">{values[6]}</td>
                       <th><button className='btn btn-primary' type="button" onClick={ () => editData( values[0] ) } >Editar</button></th>
-                      <th><button className='btn btn-outline-danger' onClick={ () => deleteData(values[0], values[1]) }><i className='bi bi-trash3-fill'></i></button></th>
                     </tr>
                   )
-              }else if(editData){
-                return (
-                  <tr key={values[0]}>
-                    <th>{values[0]}</th>
-                    <th>{values[1]}</th>
-                    <th>{values[2]}</th>
-                    <th>{values[3]}</th>
-                    <th>{values[4]}</th>
-                    <th>{values[5]}</th>
-                    <th>{values[6]}</th>
-                    <th><button className='btn btn-primary' type="button" onClick={ () => editData( values[0] ) } >Editar</button></th>
-                    {/* <th><button className='btn btn-outline-danger' onClick={ () => props.deleteElement(values[0], values[1]) }><i className='bi bi-trash3-fill'></i></button></th> */}
-                  </tr>
-                )
-              }else{
-                return (
-                  <tr key={values[0]}>
-                    <th>{values[0]}</th>
-                    <th>{values[1]}</th>
-                    <th>{values[2]}</th>
-                    <th>{values[3]}</th>
-                    <th>{values[4]}</th>
-                    <th>{values[5]}</th>
-                    <th>{values[6]}</th>
-                  </tr>
-                )
-              }
-              })
-          }
-        </tbody>
-    </table>
+                }else{
+                  return (
+                    <tr key={values[0]}>
+                      <th>{values[0]}</th>
+                      <td data-label="Nombre">{values[1]}</td>
+                      <td data-label="Documento">{values[2]}</td>
+                      <td data-label="Teléfono">{values[3]}</td>
+                      <td data-label="Correo">{values[4]}</td>
+                      <td data-label="Dirección">{values[5]}</td>
+                      <td data-label="Tipo">{values[6]}</td>
+                    </tr>
+                  )
+                }
+                })
+            }
+          </tbody>
+      </table>
+    </div>
     <Pagination page={page} setPage={setPage} rowsByPage={rowsByPage} setRowsByPage={setRowsByPage} prevPage={prevPage} nextPage={nextPage} total={people.total} setOnLoad={setOnLoad}/>
   </>
   )

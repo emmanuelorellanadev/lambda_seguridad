@@ -27,7 +27,6 @@ import SubMenuReservation from '../reservations/SubMenuReservation.jsx';
 
 export const NavBar = () => {
 
-
     const [ subMenuState, subMenuDispatch ] = useReducer(subMenuReducer, initialSubMenuState);
     const [ frameState, frameDispatch ] = useReducer(frameReducer, initialFrameState);
  

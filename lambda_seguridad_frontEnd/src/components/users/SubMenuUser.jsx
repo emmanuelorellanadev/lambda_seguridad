@@ -47,7 +47,7 @@ const SubMenuUser = () => {
     </div>
     { createUser === 1 && < CreateUser />}
     { listUsers === 1 && < ListUser navEditUser = {navEditUser} />}
-    { updateUser === 1 && < UpdateUser userToEdit={userToEdit} navListUsers = {navListUsers}/>}
+    { updateUser === 1 && < UpdateUser userToEdit={userToEdit} navListUsers = {navListUsers} />}
     </>
   )
 }

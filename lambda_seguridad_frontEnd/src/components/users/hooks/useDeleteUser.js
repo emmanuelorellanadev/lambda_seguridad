@@ -16,7 +16,7 @@ export const useDeleteUser = async(urlUser, userId, userName, { setOnLoad }) => 
         if ( result.isConfirmed ) {
             await axios.delete(urlUser, {data: {"id": userId}, headers:{'x-token': sessionStorage.getItem('token-xL')}} )  
             .then( (resp) => {
-                setOnLoad(false);
+                setOnLoad?.(false);
                 toast.success(resp.data.resData,{
                     duration: 3000,
                     position: "top-right",
@@ -29,7 +29,7 @@ export const useDeleteUser = async(urlUser, userId, userName, { setOnLoad }) => 
             })
             .catch( error => {
                 console.log(error)
-                toast.error(`${error.response.data.error} \n ${error.response.data.errorLambda}`,{
+                toast.error(`${error?.response?.data?.error || 'Error al eliminar usuario'} \n ${error?.response?.data?.errorLambda || ''}`.trim(),{
                     duration: 3000,
                     position: "top-right",
                     style: {

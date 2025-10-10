@@ -20,7 +20,8 @@ body{
 
 .App{
     border: 5px outset rgb(17, 85, 103);
-    background-color: #eee;
+    /* background-color: #eee; */
+    background-color: #f4f8fb;
     margin: 0;
     padding: 0;
     position: absolute;
@@ -30,32 +31,6 @@ body{
 
 }
 
-.p_h1{
-    margin: auto;
-    margin-bottom: 1rem;
-    padding: .5rem 1rem;
-    text-align: center;
-    border-bottom: 2px solid rgb(33, 157, 192);
-    font-size: 2rem;
-}
-
-.p_h2{
-    margin: auto;
-    margin-bottom: 1rem;
-    padding: .5rem 1rem;
-    text-align: center;
-    border-bottom: 1px solid rgb(33, 157, 192);
-    font-size: 1.5rem;
-}
-
-.p_h3{
-    margin: auto;
-    margin-bottom: 1rem;
-    padding: .5rem 1rem;
-    text-align: center;
-    border-bottom: 1px solid rgb(33, 157, 192);
-    font-size: 1rem;
-}
 
 .t_header{
     background-color: #25B2D9;

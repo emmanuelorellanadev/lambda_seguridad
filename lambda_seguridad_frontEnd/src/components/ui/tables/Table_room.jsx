@@ -42,8 +42,11 @@ export const Table_room = ({ columns, rows, editData, deleteData, ...props}) => 
   return (
     <>
     <P_Head className="p_h1" text={'Listado de Habitaciones'}/>
-    <Input lambdaClassInput={"data_search"} type="search" value={search} onChange={ e => searchUser(e.target.value)} placeholder="Buscar" />
-      <table className='table table-bordered table-hover table-striped' {...props}>
+    <div className="table-controls">
+      <Input lambdaClassInput={"data_search"} type="search" value={search} onChange={ e => searchUser(e.target.value)} placeholder="Buscar habitación por número o información" aria-label="Buscar habitación" />
+    </div>
+    <div className="table-responsive">
+      <table className='table table-bordered table-hover table-striped user-table' {...props}>
         <thead className='text-center t_header'>
           <tr key={0}>  
             {
@@ -61,9 +64,9 @@ export const Table_room = ({ columns, rows, editData, deleteData, ...props}) => 
               return (
                 <tr key={room.id}>
                   <th>{room.room_number}</th>
-                  <th>{room.room_beds}</th>
-                  <th>{room.room_people}</th>
-                  <th>{room.room_info}</th>
+                  <td data-label="Camas">{room.room_beds}</td>
+                  <td data-label="Personas">{room.room_people}</td>
+                  <td data-label="Info">{room.room_info}</td>
                   <th><button className='btn btn-primary' type="button" onClick={ () => editData( room.id ) } >Editar</button></th>
                   <th><button className='btn btn-outline-danger' onClick={ () => deleteRoom(room.id, room.room_number, setOnLoad) }><i className='bi bi-trash3-fill'></i></button></th>
                 </tr>
@@ -71,7 +74,8 @@ export const Table_room = ({ columns, rows, editData, deleteData, ...props}) => 
             })
           }
         </tbody>
-    </table>
+      </table>
+    </div>
     <Pagination page={page} setPage={setPage} rowsByPage={rowsByPage} setRowsByPage={setRowsByPage} prevPage={prevPage} nextPage={nextPage} total={rooms.total} setOnLoad={setOnLoad}/>
   </>
   )

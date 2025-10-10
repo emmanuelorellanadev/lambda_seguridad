@@ -40,8 +40,11 @@ export const Table_type = ({ columns, editData, deleteData, setOnLoad, onLoad, .
 
   return (
     <>
-    <Input lambdaClassInput={"data_search"} type="search" value={search} onChange={ e => searching(e.target.value)} placeholder="Buscar" />
-      <table className='table table-bordered table-hover table-striped' {...props}>
+    <div className="table-controls">
+      <Input lambdaClassInput={"data_search"} type="search" value={search} onChange={ e => searching(e.target.value)} placeholder="Buscar tipo de sucursal por nombre o estado" aria-label="Buscar tipo de sucursal" />
+    </div>
+    <div className="table-responsive">
+      <table className='table table-bordered table-hover table-striped user-table' {...props}>
         <thead className='text-center t_header'>
           <tr key={0}>  
             {
@@ -61,8 +64,8 @@ export const Table_type = ({ columns, editData, deleteData, setOnLoad, onLoad, .
                   return (
                     <tr key={values[0]}>
                       <th>{values[0]}</th>
-                      <th>{values[1]}</th>
-                      <th><input type='checkbox' checked={values[2]} disabled/></th>
+                      <td data-label="Tipo">{values[1]}</td>
+                      <td data-label="Estado"><input type='checkbox' checked={values[2]} disabled/></td>
                       <th><button className='btn btn-primary' type="button" onClick={ () => editData( values[0] ) } >Editar</button></th>
                       <th><button className='btn btn-outline-danger' onClick={ () => deleteData(values[0], values[1]) }><i className='bi bi-trash3-fill'></i></button></th>
                     </tr>
@@ -71,8 +74,8 @@ export const Table_type = ({ columns, editData, deleteData, setOnLoad, onLoad, .
                 return (
                   <tr key={values[0]}>
                     <th>{values[0]}</th>
-                    <th>{values[1]}</th>
-                    <th><input type='checkbox' checked={values[2]} disabled/></th>
+                    <td data-label="Tipo">{values[1]}</td>
+                    <td data-label="Estado"><input type='checkbox' checked={values[2]} disabled/></td>
                     <th><button className='btn btn-primary' type="button" onClick={ () => editData( values[0] ) } >Editar</button></th>
                   </tr>
                 )
@@ -80,15 +83,16 @@ export const Table_type = ({ columns, editData, deleteData, setOnLoad, onLoad, .
                 return (
                   <tr key={values[0]}>
                     <th>{values[0]}</th>
-                    <th>{values[1]}</th>
-                    <th><input type='checkbox' checked={values[2]} disabled/></th>
+                    <td data-label="Tipo">{values[1]}</td>
+                    <td data-label="Estado"><input type='checkbox' checked={values[2]} disabled/></td>
                   </tr>
                 )
               }
               })
           }
         </tbody>
-    </table>
+      </table>
+    </div>
     <Pagination page={page} setPage={setPage} rowsByPage={rowsByPage} setRowsByPage={setRowsByPage} prevPage={prevPage} nextPage={nextPage} total={branchTypes.total} setOnLoad={setOnLoad}/>
   </>
   )
