@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 
 import { CreateUser } from './CreateUser';
 import { ListUser } from './ListUser';
 import { UpdateUser } from './UpdateUser';
+import { GlobalContext } from '../../context/GlobalContext';
 
 const SubMenuUser = () => {
+    const {loggedRole} = useContext(GlobalContext);
+    
     const [createUser, setCreateUser] = useState(0);
     const [listUsers, setListUsers] = useState(1);
     const [updateUser, setUpdateUser] = useState(0);
@@ -30,7 +33,8 @@ const SubMenuUser = () => {
     }
 
     useEffect( () => {
-        setRole(sessionStorage.getItem('role-xL'))
+        // setRole(sessionStorage.getItem('role-xL'));
+        setRole(loggedRole);
     }, [])
 
   return (

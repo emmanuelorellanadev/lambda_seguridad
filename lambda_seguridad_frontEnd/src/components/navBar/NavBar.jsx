@@ -1,8 +1,9 @@
-import { useState, useEffect, useReducer} from 'react';
+import { useState, useEffect, useReducer, useContext} from 'react';
 
 import '../../css/NavBar.css';
 import '../../css/subMenu/subMenu.css';
 // import usuario from'../../assets/img/usuario.png';
+import { GlobalContext } from'../../context/GlobalContext.jsx';
 import menu from'../../assets/img/menu.png';
 import SubMenuBranch from '../branches/SubMenuBranch.jsx';
 import SubMenuBranchType from '../branchTypes/SubMenuBranchType.jsx';
@@ -17,7 +18,7 @@ import SubMenuPrice from '../prices/SubMenuPrice.jsx';
 import SubMenuRoom from '../rooms/SubMenuRoom.jsx';
 import { NavBarUser } from './NavBarUser';
 import { NavBarSuper } from './NavBarSuper';
-import { NavBarAdmin } from './NavBarAdmin'
+import { NavBarAdmin } from './NavBarAdmin';
 import { NavBarAdminSys } from './NavBarAdminSys';
 import { UserProfile } from '../users/UserProfile';
 import { initialSubMenuState, subMenuReducer } from './reducer/subMenuReducer.js';
@@ -26,6 +27,8 @@ import SubMenuReservation from '../reservations/SubMenuReservation.jsx';
 
 
 export const NavBar = () => {
+    
+    const { loggedRole } = useContext(GlobalContext);
 
     const [ subMenuState, subMenuDispatch ] = useReducer(subMenuReducer, initialSubMenuState);
     const [ frameState, frameDispatch ] = useReducer(frameReducer, initialFrameState);
@@ -153,10 +156,6 @@ export const NavBar = () => {
         frameDispatch({type: 'ROOM_FRAME'});
         showMenu();
     }
-    
-    useEffect( () => {
-        setRole(sessionStorage.getItem('role-xL'))
-    }, [])
 
     return (
     <>
@@ -164,12 +163,12 @@ export const NavBar = () => {
             {/* show menu icon in mobile vetrsion */}
                 <img id={'menu-icon'} src={menu} alt="" onClick={showMenu} />
 
-                    { role == '4' && < NavBarUser 
+                    { loggedRole == '4' && < NavBarUser 
                         subMenuUserVisibility={subMenuUserVisibility}
                         subMenuPersonVisibility={subMenuPersonVisibility}
                         closeSession={ closeSession } 
                     />}
-                    { role == '3' && < NavBarSuper 
+                    { loggedRole == '3' && < NavBarSuper 
                         subMenuAdminVisibility={subMenuAdminVisibility}
                         subMenuUserVisibility={subMenuUserVisibility}
                         subMenuPersonVisibility={subMenuPersonVisibility}
@@ -177,7 +176,7 @@ export const NavBar = () => {
                         closeSession={ closeSession } 
                         />}
 
-                    { role == '2' && < NavBarAdmin
+                    { loggedRole == '2' && < NavBarAdmin
                         subMenuAdminVisibility={subMenuAdminVisibility}
                         subMenuUserVisibility={subMenuUserVisibility}
                         subMenuPersonVisibility={subMenuPersonVisibility}
@@ -185,7 +184,7 @@ export const NavBar = () => {
                         closeSession={ closeSession } 
                     />}
 
-                    { role == '1' && < NavBarAdminSys 
+                    { loggedRole == '1' && < NavBarAdminSys 
                         showMenu={showMenu}
                         menuActive={menuActive}
                         setMenuActive={setMenuActive}

@@ -15,7 +15,7 @@ import { initialUserState, userReducer } from './reducers/userReducer.jsx';
 
 export const CreateUser = () => {
 
-    const { urlLambda } = useContext(GlobalContext);
+    const { urlLambda, token } = useContext(GlobalContext);
 
     const [state, dispatch] = useReducer(userReducer, initialUserState);
     const [onLoad, setOnLoad] = useState(true);
@@ -36,7 +36,7 @@ export const CreateUser = () => {
     const saveButton = (e) => {
         e.preventDefault();
         const urlUser = `${urlLambda}/user/`;
-        useCreateUser(urlUser, state.userImage, state.state, { setOnLoad });
+        useCreateUser(urlUser, state.userImage, state.state, { setOnLoad }, token);
         cleanForm();
     }
 

@@ -15,7 +15,7 @@ import { initialUserState, userReducer } from './reducers/userReducer';
 import { GlobalContext } from '../../context/GlobalContext';
 
 export const UpdateUser = (props) => {
-    const { urlLambda } = useContext(GlobalContext);
+    const { urlLambda, token } = useContext(GlobalContext);
     const [state, dispatch] = useReducer(userReducer, initialUserState); 
 
     const updateButton = (e) => {
@@ -42,7 +42,8 @@ export const UpdateUser = (props) => {
         useGetUser(
             urlUser,
             null,
-            dispatch
+            dispatch,
+            token
         );
         useGetCompany(urlCompany, {
             setCompanies: value => dispatch({ type: "SET_FIELD", field: "companies", value }),

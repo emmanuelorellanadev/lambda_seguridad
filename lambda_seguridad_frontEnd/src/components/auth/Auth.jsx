@@ -9,20 +9,20 @@ import { useAuth } from './hook/useAuth.js';
 import { globalReducer, initialGlobalReducer } from '../reducer/globalReducer.js';
 
 export const Auth = () => {
+    const { urlLambda, setToken, setLoggedUser, setLoggedRole, setUId } = useContext(GlobalContext);
 
     const [isUser, setIsUser] = useState(false);
     const [user, setUser] = useState('emmanuel');
     const [pass, setPass] = useState('pass');
 
-    //Delete when finish the migration to GlobalContext.urlLambda on all uris
+    // Delete when finish the migration to GlobalContext.urlLambda on all uris
     // const [globalState, globalDispatch] = useReducer(globalReducer, initialGlobalReducer);
-    const { urlLambda, token } = useContext(GlobalContext);
 
 
     const loginButton = async(e) => {
         e.preventDefault();
         const urlAuth = `${urlLambda}/auth`
-        useAuth(urlAuth, user, pass, {setIsUser})
+        await useAuth(urlAuth, user, pass, { setIsUser, setToken, setLoggedUser, setLoggedRole, setUId });
         cleanAll();
     }
     

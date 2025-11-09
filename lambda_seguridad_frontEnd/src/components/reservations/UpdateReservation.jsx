@@ -1,5 +1,5 @@
 import '../../css/ui/headings.css'; //hadle p_h1, p_h2, p_h3
-import { useEffect, useState, useReducer } from 'react';
+import { useEffect, useState, useReducer, useContext } from 'react';
 
 import '../../css/reservation/reservation.css';
 import { Toaster } from 'react-hot-toast';
@@ -11,7 +11,10 @@ import { initialCreateReservation, reservationReducer } from './reducer/reservat
 import Table_searchSelect_room from '../ui/tables/createReservation/Table_searchSelect_room';
 import { useUpdateReservation } from './hooks/useUpdateReservation';
 import { useGetReservation } from './hooks/useGetReservation';
+import { GlobalContext } from '../../context/GlobalContext';
+
 const UpdateReservation = (props) => {
+    const {uid, urlLambda} = useContext(GlobalContext);
 
     const [ onLoad, setOnLoad ] = useState(false);
     const [reservationData, reservationDispatch] = useReducer(reservationReducer, initialCreateReservation)
@@ -20,9 +23,9 @@ const UpdateReservation = (props) => {
     //show the rooms availables in that date
 
     const searchPerson = async(q) => {
-        const urlPerson = `http://localhost:8080/person/?q=${q}`
+        const urlPerson = `${urlLambda}/person/?q=${q}`;
 
-        reservationDispatch({ type: "UPDATE_QUERY", query: q})
+        reservationDispatch({ type: "UPDATE_QUERY", query: q});
         await useSearchPerson( urlPerson, reservationDispatch );
         setOnLoad(true)
     }
@@ -42,7 +45,7 @@ const UpdateReservation = (props) => {
         if (datein && dateout){ 
             const diff = (dateOut.getTime() - dateIn.getTime());
             const nights = ((diff / (1000 * 60 * 60 * 24)));//calculate number of nights
-            reservationDispatch({ type: "UPDATE_NIGHTS", nights_number:  nights })
+            reservationDispatch({ type: "UPDATE_NIGHTS", nights_number:  nights });
         }
         setOnLoad(true);
 
@@ -50,17 +53,15 @@ const UpdateReservation = (props) => {
     
     const updateButton = (e) => {
         e.preventDefault();
-        const urlReservation = `http://localhost:8080/reservation/${props.reservationId}`;
+        const urlReservation = `${urlLambda}/reservation/${props.reservationId}`;
         useUpdateReservation(urlReservation, reservationData);
         setOnLoad(!onLoad)
     }
 
     useEffect( () => {
-        const urlReservation = `http://localhost:8080/reservation/${props.reservationId}`;
-        useGetReservation(urlReservation, reservationDispatch)
-        reservationDispatch({type: 'UPDATE_USER', UserId: sessionStorage.getItem('uid-xL')})
-        // console.log(reservationData)
-
+        const urlReservation = `${urlLambda}/reservation/${props.reservationId}`;
+        useGetReservation(urlReservation, reservationDispatch);
+        reservationDispatch({type: 'UPDATE_USER', UserId: uid});
     }, [onLoad])
     
   return (

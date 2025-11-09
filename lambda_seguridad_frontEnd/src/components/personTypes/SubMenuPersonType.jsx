@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 
 import { CreateListPeopleType } from './CreateListPersonType';
 import { UpdatePeopleType} from './UpdatePeopleType';
+import { GlobalContext } from '../../context/GlobalContext';
 
 const SubMenuPersonType = () => {
+    const {loggedRole} = useContext(GlobalContext);
     const [createListPersonType, setCreateListPersonType] = useState(1);
     const [updatePersonType, setUpdatePersonType] = useState(0);
     const [personTypeToEdit, setPersonTypeToEdit] = useState(0);
@@ -21,7 +23,9 @@ const SubMenuPersonType = () => {
     }
 
     useEffect( () => {
-        setRole(sessionStorage.getItem('role-xL'))
+        //WORK HERE!!
+        // setRole(sessionStorage.getItem('role-xL'));
+        setRole(loggedRole);
     }, [])
 
   return (

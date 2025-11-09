@@ -1,4 +1,6 @@
 import React, { useContext } from 'react';
+import { GlobalContext } from'../../context/GlobalContext.jsx';
+
 
 import usuario from'../../assets/img/usuario.png';
 import SubMenuContext from '../../context/SubMenuContext';
@@ -6,13 +8,15 @@ import { FrameContext } from '../../context/FrameContext';
 
 export const NavBarAdminSys = (props) => {
 
+    const { loggedUser } = useContext(GlobalContext);
+
   return (
     <>
         <ul id='menu' className={ props.menuActive ? 'showMenu': ''} onMouseLeave={props.showMenu}>
             <li id='subMenuUser' onClick={props.subMenuUserVisibility}  onMouseLeave={props.subMenuReset}>
                 <img  id={'logoUsuario'} src={usuario} alt="" />
                 <ul className={props.subMenuState.menuUser ? 'subMenuVisible' : 'subMenuHide' }>
-                    <li><a href="#" onClick={props.showProfileFrame} >{sessionStorage.getItem('user-xL') ? sessionStorage.getItem('user-xL').toUpperCase() : ''}</a></li>
+                    <li><a href="#" onClick={props.showProfileFrame} >{loggedUser ? loggedUser.toUpperCase() : ''}</a></li>
                     <li><a href="/" onClick={props.closeSession} >Cerrar Sesion</a></li>
                 </ul>
             </li>    

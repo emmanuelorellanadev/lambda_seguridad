@@ -13,7 +13,7 @@ import PaginationReducer from '../pagination/PaginationReducer.jsx';
 
 export const Table_user = ({ columns, rows, editData, deleteData, ...props}) => {
 
-  const { urlLambda } = useContext(GlobalContext);
+  const { urlLambda, token } = useContext(GlobalContext);
   const [paginationData, paginationDispatch] = useReducer(paginationReducer , initialPagination)
 
   //WORK HERE!!!
@@ -22,15 +22,12 @@ export const Table_user = ({ columns, rows, editData, deleteData, ...props}) => 
   //Create an initial state for the reducer
   //check how to get better the prevPage and nextPage and include them in the pagination
 
+  //FIND THE WAY TO UNITE PAGINATION AND USERDATA FILTER
+
   const [users, setUsers] = useState([]);
   const [branches, setBranches] = useState([]);
   const [branch, setBranch] = useState(0);
   const [ search, setSearch ] = useState('');
-  
-  // const [ rowsByPage, setRowsByPage ] = useState( 10 );
-  // const [ page, setPage ] = useState( 1 );
-  // const [ prevPage, setPrevPage ] = useState('');
-  // const [ nextPage, setNextPage ] = useState('');
   const [ onLoad, setOnLoad ] = useState(true);
 
   if(editData && !columns.includes("Editar") ){
@@ -45,7 +42,9 @@ const selectBranch = (branchSelected) => {
   setBranch(branchSelected);
   if ( branchSelected != 0 ){
     const urlUsersByBranch = `${urlLambda}/usersByBranch/?id=${branchSelected}&q=${search}&limit=${paginationData.rowsByPage}&page=${paginationData.page}`;
-    useGetUser(urlUsersByBranch, paginationDispatch);
+    // useGetUser(urlUsersByBranch, paginationDispatch, null, token);
+    useGetUser(urlUsersByBranch, paginationDispatch, undefined, token);
+
   } else {
     setOnLoad(false)
   } 
@@ -53,13 +52,13 @@ const selectBranch = (branchSelected) => {
 
   const searchUser = (query) => {
     setSearch(query);
-    setPage(1);
     setOnLoad(false);
   }
 
   const getUsers = async() => {
     const urlUser = `${urlLambda}/user/?q=${search}&limit=${paginationData.rowsByPage}&page=${paginationData.page}`;
-    await useGetUser(urlUser, paginationDispatch );
+    // await useGetUser(urlUser, null, paginationDispatch, token );
+    await useGetUser(urlUser, paginationDispatch, undefined, token);
   }
 
   useEffect( () => {

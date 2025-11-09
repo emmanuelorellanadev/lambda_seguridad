@@ -1,4 +1,4 @@
-import { useEffect, useState, useReducer } from 'react';
+import { useEffect, useState, useReducer, useContext } from 'react';
 
 import '../../css/reservation/reservation.css';
 import { Toaster } from 'react-hot-toast';
@@ -9,7 +9,10 @@ import { initialCreateReservation, reservationReducer } from './reducer/reservat
 import Table_searchSelect_room from '../ui/tables/createReservation/Table_searchSelect_room';
 import { useCreateReservation } from './hooks/useCreateReservation';
 import { InputSearchPerson } from '../ui/inputSearch/InputSearchPerson';
+import { GlobalContext } from '../../context/GlobalContext';
+
 const CreateReservation = () => {
+    const {uid} = useContext(GlobalContext);
 
     const [createReservationData, createReservationDispatch] = useReducer(reservationReducer, initialCreateReservation);
 
@@ -71,8 +74,7 @@ const handleReservationDate = async() => {
     useEffect( () => {
         setOnLoad(false);
         handleReservationDate();
-        createReservationDispatch({type: 'UPDATE_USER', UserId: sessionStorage.getItem('uid-xL')});
-        // console.log(createReservationData);
+        createReservationDispatch({type: 'UPDATE_USER', UserId: uid});
     }, [onLoad])
     
   return (
