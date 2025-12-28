@@ -12,7 +12,7 @@ import { InputSearchPerson } from '../ui/inputSearch/InputSearchPerson';
 import { GlobalContext } from '../../context/GlobalContext';
 
 const CreateReservation = () => {
-    const {uid} = useContext(GlobalContext);
+    const {uid, urlLambda} = useContext(GlobalContext);
 
     const [createReservationData, createReservationDispatch] = useReducer(reservationReducer, initialCreateReservation);
 
@@ -41,7 +41,7 @@ const CreateReservation = () => {
     
     const saveButton = (e) => {
         e.preventDefault();
-        const urlReservation = `http://localhost:8080/reservation/`;
+        const urlReservation = `${urlLambda}/reservation/`;
         
         handleReservationDate();
         useCreateReservation(urlReservation, createReservationData);

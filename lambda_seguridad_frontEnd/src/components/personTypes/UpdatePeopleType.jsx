@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 
 import '../../css/personType/personType.css';
 import { P_Head } from '../ui/P_Head';
@@ -7,14 +7,16 @@ import { Input } from '../ui/Input';
 import useGetPersonType from './hooks/useGetPersonType';
 import useUpdatePeopleType from './hooks/useUpdatePeopleType';
 import { Toaster } from 'react-hot-toast';
+import { GlobalContext } from '../../context/GlobalContext';
 
 export const UpdatePeopleType = (props) => {
 
+  const { urlLambda } = useContext(GlobalContext);
   const [id, setId] = useState('');
   const [personTypeName, setPersonTypeName] = useState('');
   const [personTypeState, setPersonTypeState] = useState('');
 
-  const urlPersonType = `http://localhost:8080/personType/${props.id}`;
+  const urlPersonType = `${urlLambda}/personType/${props.id}`;
 
   const updatePersonType = (e) => {
     e.preventDefault();

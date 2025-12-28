@@ -2,8 +2,8 @@ import axios from 'axios'
 import toast from 'react-hot-toast';
 import Swal from 'sweetalert2'
 
-export const useDeletePersonType = async(id, { setOnLoad }) => {
-    const url = `http://localhost:8080/personType/${id}`;
+export const useDeletePersonType = async(urlLambda, id, { setOnLoad }) => {
+    const url = `${urlLambda}/personType/${id}`;
 
 
     Swal.fire({
