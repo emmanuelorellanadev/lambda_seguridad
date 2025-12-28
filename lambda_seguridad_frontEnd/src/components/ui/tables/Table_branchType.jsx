@@ -1,12 +1,14 @@
-import React, { useState, useEffect} from 'react';
+import React, { useContext, useState, useEffect} from 'react';
 
 import '../../../css/ui/table.css'
 import { Input } from '../Input';
 import Pagination from '../Pagination';
 import { useGetBranchType } from '../../branchTypes/hooks/useGetBranchType';
+import { GlobalContext } from '../../../context/GlobalContext';
 
 export const Table_type = ({ columns, editData, deleteData, setOnLoad, onLoad, ...props}) => {
 
+  const { urlLambda } = useContext(GlobalContext);
   const [ branchTypes, setBranchTypes ] = useState({});
   const [ search, setSearch ] = useState('');
   const [ rowsByPage, setRowsByPage ] = useState( 10 );
@@ -23,7 +25,7 @@ export const Table_type = ({ columns, editData, deleteData, setOnLoad, onLoad, .
 }
 
   const getBranchTypes = async() => {
-    const urlBranchType = `http://localhost:8080/branchType/?limit=${rowsByPage}&page=${page}&q=${search}`;
+    const urlBranchType = `${urlLambda}/branchType/?limit=${rowsByPage}&page=${page}&q=${search}`;
     await useGetBranchType(urlBranchType, {setBranchTypes, setNextPage, setPrevPage});
   }
   const searching = (query) => {

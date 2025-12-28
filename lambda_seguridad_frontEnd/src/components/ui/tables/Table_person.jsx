@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 import '../../../css/ui/table.css'
 import { Input } from '../Input';
 import { Label } from '../Label';
 import { useGetPerson } from '../../people/hooks/useGetPerson';
 import Pagination from '../Pagination';
+import { GlobalContext } from '../../../context/GlobalContext';
 
 export const Table_person = ({ columns, rows, editData, deleteData, onLoad, setOnLoad, ...props}) => {
 
+  const { urlLambda } = useContext(GlobalContext);
   const [ people, setPeople ] = useState([]);
   const [ search, setSearch ] = useState('');
   const [ rowsByPage, setRowsByPage ] = useState( 10 );
@@ -32,7 +34,7 @@ export const Table_person = ({ columns, rows, editData, deleteData, onLoad, setO
 
   useEffect( () => {
     // setOnLoad(true)
-    const urlPerson = `http://localhost:8080/person/?limit=${rowsByPage}&page=${page}&q=${search}`;
+    const urlPerson = `${urlLambda}/person/?limit=${rowsByPage}&page=${page}&q=${search}`;
     useGetPerson(urlPerson, {setPeople, setNextPage, setPrevPage});
   }, [onLoad, search])
 

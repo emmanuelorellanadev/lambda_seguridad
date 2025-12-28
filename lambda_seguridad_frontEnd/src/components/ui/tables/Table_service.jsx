@@ -1,13 +1,15 @@
-import React, { useEffect ,useState } from 'react';
+import React, { useContext, useEffect ,useState } from 'react';
 
 import '../../../css/ui/table.css'
 import { Input } from '../Input';
 import { useGetService } from '../../services/hooks/useGetService';
 import Pagination from '../Pagination';
+import { GlobalContext } from '../../../context/GlobalContext';
 
 
 export const Table_service = ({ columns, editData, deleteData, setOnLoad, onLoad, ...props}) => {
 
+  const { urlLambda } = useContext(GlobalContext);
   const [ services, setServices ] = useState({});
   const [ search, setSearch ] = useState('');
   const [ rowsByPage, setRowsByPage ] = useState( 10 );
@@ -24,7 +26,7 @@ export const Table_service = ({ columns, editData, deleteData, setOnLoad, onLoad
 }
 
   const getServices = async() => {
-    const urlService = `http://localhost:8080/service/?limit=${rowsByPage}&page=${page}&q=${search}`;
+    const urlService = `${urlLambda}/service/?limit=${rowsByPage}&page=${page}&q=${search}`;
     await useGetService(urlService, {setServices, setNextPage, setPrevPage});
   }
 

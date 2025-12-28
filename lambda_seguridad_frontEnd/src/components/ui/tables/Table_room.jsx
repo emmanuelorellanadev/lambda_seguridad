@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer, useState } from 'react';
+import React, { useContext, useEffect, useReducer, useState } from 'react';
 
 import '../../../css/ui/table.css'
 import { Input } from '../Input';
@@ -8,9 +8,11 @@ import { useGetRoom } from '../../rooms/hooks/useGetRoom';
 import PaginationReducer from '../pagination/PaginationReducer.jsx';
 import { useDeleteRoom } from '../../rooms/hooks/useDeleteRoom';
 import { initialPagination, paginationReducer } from '../pagination/reducer/paginationReducer.js';
+import { GlobalContext } from '../../../context/GlobalContext';
 
 export const Table_room = ({ columns, rows, editData, deleteData, ...props}) => {
 
+  const { urlLambda } = useContext(GlobalContext);
   const [ rooms, setRooms ] = useState([]);
   const [ search, setSearch ] = useState('');
   const [ rowsByPage, setRowsByPage ] = useState( 10 );
@@ -32,13 +34,13 @@ export const Table_room = ({ columns, rows, editData, deleteData, ...props}) => 
   }
 
   const deleteRoom = (roomId, roomNumber) => {
-    const urlRoom = `http://localhost:8080/room/${roomId}`;
+    const urlRoom = `${urlLambda}/room/${roomId}`;
     useDeleteRoom(urlRoom, roomId, roomNumber, {setOnLoad})
   }
 
   useEffect( () => {
     setOnLoad(true);
-    const urlRoom = `http://localhost:8080/room/?limit=${rowsByPage}&page=${page}&q=${search}`;
+    const urlRoom = `${urlLambda}/room/?limit=${rowsByPage}&page=${page}&q=${search}`;
     // useGetRoom(urlRoom, {setRooms, setNextPage, setPrevPage});
     useGetRoom(urlRoom, {setRooms});
   }, [onLoad, search]);

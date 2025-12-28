@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 import '../../../css/ui/table.css'
 import { Label } from '../Label';
 import { Input } from '../Input';
 import Pagination from '../Pagination';
 import { useGetRole } from '../../roles/hooks/useGetRole';
+import { GlobalContext } from '../../../context/GlobalContext';
 
 export const Table_role = ({ columns, rows, editData, deleteData, onLoad, setOnLoad, ...props}) => {
 
+  const { urlLambda } = useContext(GlobalContext);
   const [ roles, setRoles ] = useState({})
   const [search, setSearch] = useState('');
   const [ rowsByPage, setRowsByPage ] = useState( 10 );
@@ -24,7 +26,7 @@ export const Table_role = ({ columns, rows, editData, deleteData, onLoad, setOnL
 }
 
 const getRoles = async() => {
-  const urlRole = `http://localhost:8080/role/?limit=${rowsByPage}&page=${page}&q=${search}`;
+  const urlRole = `${urlLambda}/role/?limit=${rowsByPage}&page=${page}&q=${search}`;
   await useGetRole(urlRole, {setRoles, setNextPage, setPrevPage});
 }
 
