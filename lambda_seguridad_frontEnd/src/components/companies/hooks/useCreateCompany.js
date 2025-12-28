@@ -1,16 +1,16 @@
 import axios from 'axios';
 import { toast } from 'react-hot-toast'
 
-export const createCompany = async(logo) => {
+export const createCompany = async(logo, urlLambda, token) => {
         
-    const url = 'http://localhost:8080/company';
+    const url = `${urlLambda}/company`;
 
     const companyData = new FormData(document.querySelector('#CreateCompany_form'));
     companyData.append('img', logo);
 
     await axios.post(url, companyData,
         {
-            headers: {'x-token': sessionStorage.getItem('token-xL')}
+            headers: {'x-token': token}
         }).then( (resp) => {
             toast.success(`${resp.data.resData}`,{
                 duration: 3000,

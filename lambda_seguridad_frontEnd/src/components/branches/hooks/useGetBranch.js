@@ -3,7 +3,7 @@ import { toast } from 'react-hot-toast'
 
 
 export const useGetBranch = async (
-    urlBranch,
+    urlBranch, token,
     {
         setBranches,
         setBranch,
@@ -17,7 +17,7 @@ export const useGetBranch = async (
     }
 ) => {
     await axios
-        .get(urlBranch, { headers: { 'x-token': sessionStorage.getItem('token-xL') } })
+        .get(urlBranch, { headers: { 'x-token': token } })
         .then((resp) => resp.data.resData)
         .then((data) => {
             if (setBranches) {

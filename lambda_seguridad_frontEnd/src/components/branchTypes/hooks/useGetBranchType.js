@@ -2,11 +2,11 @@ import axios from "axios";
 import toast from "react-hot-toast";
 
 export const useGetBranchType = async (
-    urlBranchType,
+    urlBranchType, token,
     { setBranchTypes, setId, setBranchTypeName, setBranchTypeState, setNextPage, setPrevPage }
 ) => {
     await axios
-        .get(urlBranchType, { headers: { 'x-token': sessionStorage.getItem('token-xL') } })
+        .get(urlBranchType, { headers: { 'x-token': token } })
         .then((resp) => resp.data.resData)
         .then((data) => {
             if (setBranchTypeName) {

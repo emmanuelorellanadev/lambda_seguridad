@@ -2,7 +2,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 
 export const useGetCompany = async (
-  urlCompany,
+  urlCompany, token,
   {
     setCompanies,
     setCompany,
@@ -17,7 +17,8 @@ export const useGetCompany = async (
     setPrevPage,
   }
 ) => {
-  await axios(urlCompany, { headers: { 'x-token': sessionStorage.getItem('token-xL') } })
+  // await axios(urlCompany, { headers: { 'x-token': sessionStorage.getItem('token-xL') } })
+  await axios(urlCompany, { headers: { 'x-token': token } })
     .then((resp) => resp.data.resData)
     .then((data) => {
       if (setCompanies) {

@@ -1,7 +1,7 @@
 import axios from "axios";
 
-export const useGetReservation = async( urlReservation, reservationDispatch) => {
-  await axios(urlReservation, { headers: {"x-token": sessionStorage.getItem('token-xL')}})
+export const useGetReservation = async( urlReservation, reservationDispatch, token) => {
+  await axios(urlReservation, { headers: {"x-token": token}})
     .then( resp => resp.data.resData )
     .then( data => {
       if(data.data){

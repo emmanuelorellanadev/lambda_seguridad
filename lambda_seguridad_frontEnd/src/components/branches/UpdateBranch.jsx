@@ -1,5 +1,5 @@
 import '../../css/ui/headings.css'; //hadle p_h1, p_h2, p_h3
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { Toaster } from 'react-hot-toast';
 
 import '../../css/branch/branch.css';
@@ -11,10 +11,12 @@ import { useGetCompany } from '../companies/hooks/useGetCompany';
 import { useGetBranch } from './hooks/useGetBranch';
 import { useUpdateBranch } from './hooks/useUpdateBranch';
 import { useGetBranchType } from '../branchTypes/hooks/useGetBranchType';
+import { GlobalContext } from '../../context/GlobalContext.jsx';
 
 const UpdateBranch = (props) => {
 
-  const urlBranch = `http://localhost:8080/branch/${props.branchId}`;
+  const { urlLambda, token } = useContext(GlobalContext);
+  const urlBranch = `${urlLambda}/branch/${props.branchId}`;
 
   const [ branch, setBranch ]             = useState('');
   const [ address, setAddress ]           = useState('');
@@ -29,15 +31,15 @@ const UpdateBranch = (props) => {
 
   const updateButton = async(e) => {
     e.preventDefault();
-    useUpdateBranch(urlBranch, branch, address, phone, state, branchTypeId, companyId)
+    useUpdateBranch(urlBranch, token, branch, address, phone, state, branchTypeId, companyId)
   }
   
   useEffect( () => {
-    const urlCompany = "http://localhost:8080/company/";
-    const urlBranchType = `http://localhost:8080/branchType/`;
-    useGetCompany(urlCompany, { setCompanies, setNextPage, setPrevPage  });
-    useGetBranchType(urlBranchType, {setBranchTypes, setNextPage, setPrevPage });
-    useGetBranch(urlBranch, { setBranch, setAddress, setPhone, setState, setBranchTypeId, setCompanyId, setNextPage, setPrevPage  });
+    const urlCompany = `${urlLambda}/company/`;
+    const urlBranchType = `${urlLambda}/branchType/`;
+    useGetCompany(urlCompany, token, { setCompanies, setNextPage, setPrevPage  });
+    useGetBranchType(urlBranchType, token, {setBranchTypes, setNextPage, setPrevPage });
+    useGetBranch(urlBranch, token, { setBranch, setAddress, setPhone, setState, setBranchTypeId, setCompanyId, setNextPage, setPrevPage  });
   }, [])
 
   return (

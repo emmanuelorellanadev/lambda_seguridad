@@ -1,6 +1,7 @@
 import '../../css/ui/headings.css'; //hadle p_h1, p_h2, p_h3
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useContext} from 'react'
 import { Toaster } from 'react-hot-toast'; 
+import { GlobalContext } from '../../context/GlobalContext.jsx';
 
 import '../../css/branch/branch.css'
 import {P_Head} from'../ui/P_Head';
@@ -13,6 +14,7 @@ import { useGetBranchType } from '../branchTypes/hooks/useGetBranchType.js';
 
 const CreateBranch = () => {
 
+    const { urlLambda, token } = useContext(GlobalContext);
     const [ branch, setBranch ] = useState('');
     const [ address, setAddress ] = useState('');
     const [ phone, setPhone ] = useState('');
@@ -39,10 +41,10 @@ const CreateBranch = () => {
     }
 
     useEffect( () => {
-      const urlCompany = 'http://localhost:8080/company'
-      const urlBranchType = 'http://localhost:8080/branchType'
-      useGetCompany(urlCompany, { setCompanies, setNextPage, setPrevPage })
-      useGetBranchType(urlBranchType, {setBranchTypes, setNextPage, setPrevPage})
+      const urlCompany = `${urlLambda}/company`
+      const urlBranchType = `${urlLambda}/branchType`
+      useGetCompany(urlCompany, token, { setCompanies, setNextPage, setPrevPage })
+      useGetBranchType(urlBranchType, token, {setBranchTypes, setNextPage, setPrevPage})
     }, []);
  
   return (

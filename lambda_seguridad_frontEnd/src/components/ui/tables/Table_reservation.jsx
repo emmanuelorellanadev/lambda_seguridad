@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import { useEffect, useState, useReducer } from 'react';
+import { useEffect, useState, useReducer, useContext } from 'react';
 
 import '../../../css/ui/table.css'
 // import { Input } from '../Input';
@@ -9,10 +9,12 @@ import { useGetReservation } from '../../reservations/hooks/useGetReservation';
 import PaginationReducer from '../pagination/PaginationReducer';
 import { initialPagination, paginationReducer } from '../pagination/reducer/paginationReducer';
 import { useDeleteReservation } from '../../reservations/hooks/useDeleteReservation';
+import { GlobalContext } from '../../../context/GlobalContext';
 
 export const Table_reservation = ({ columns, rows, editData, deleteData, ...props}) => {
 
-const [ onLoad, setOnLoad ] = useState(false);
+  const { token } = useContext(GlobalContext);
+  const [ onLoad, setOnLoad ] = useState(false);
 
   const [paginationData, dispatchPagination] = useReducer(paginationReducer , initialPagination)
 
@@ -34,7 +36,7 @@ const [ onLoad, setOnLoad ] = useState(false);
 
   const getReservations = () => {
     const urlReservation = `http://localhost:8080/reservation/?limit=${paginationData.rowsByPage}&page=${paginationData.page}&q=${paginationData.search}`;
-    useGetReservation(urlReservation, dispatchPagination);
+    useGetReservation(urlReservation, dispatchPagination, token);
   }
 
   useEffect( () => {

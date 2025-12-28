@@ -1,10 +1,10 @@
-import axios from "axios"
-import Swal from "sweetalert2"
-import { toast } from 'react-hot-toast'
+import axios from "axios";
+import Swal from "sweetalert2";
+import { toast } from 'react-hot-toast';
 
-export const useDeleteCompany = (companyId, companyName, setOnLoad) => {
+export const useDeleteCompany = (urlLambda, token, companyId, companyName, setOnLoad) => {
 
-  const urlCompany = 'http://localhost:8080/company/';
+  const urlCompany = `${urlLambda}/company/`;
 
     Swal.fire({
       icon: 'question',
@@ -18,7 +18,7 @@ export const useDeleteCompany = (companyId, companyName, setOnLoad) => {
       if ( result.isConfirmed ) {
           await axios.delete(urlCompany+companyId, {
             data: {"id": companyId},
-            headers:{'x-token': sessionStorage.getItem('token-xL')}
+            headers:{'x-token': token}
             } )  
           .then( (resp) => {
             setOnLoad(false);

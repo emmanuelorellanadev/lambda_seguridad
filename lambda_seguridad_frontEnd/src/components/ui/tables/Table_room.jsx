@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useReducer, useState } from 'react';
 
 import '../../../css/ui/table.css'
 import { Input } from '../Input';
 import { P_Head } from '../P_Head';
 import { useGetRoom } from '../../rooms/hooks/useGetRoom';
-import Pagination from '../Pagination';
+// import Pagination from '../Pagination';
+import PaginationReducer from '../pagination/PaginationReducer.jsx';
 import { useDeleteRoom } from '../../rooms/hooks/useDeleteRoom';
+import { initialPagination, paginationReducer } from '../pagination/reducer/paginationReducer.js';
 
 export const Table_room = ({ columns, rows, editData, deleteData, ...props}) => {
 
@@ -13,9 +15,10 @@ export const Table_room = ({ columns, rows, editData, deleteData, ...props}) => 
   const [ search, setSearch ] = useState('');
   const [ rowsByPage, setRowsByPage ] = useState( 10 );
   const [ page, setPage ] = useState( 1 );
-  const [ prevPage, setPrevPage ] = useState('');
-  const [ nextPage, setNextPage ] = useState('');
+  // const [ prevPage, setPrevPage ] = useState('');
+  // const [ nextPage, setNextPage ] = useState('');
   const [ onLoad, setOnLoad ] = useState(true);
+  const [paginationData, paginationDispatch] = useReducer(paginationReducer , initialPagination)
 
   if(editData && !columns.includes("Editar") ){
       columns.push("Editar")
@@ -36,7 +39,8 @@ export const Table_room = ({ columns, rows, editData, deleteData, ...props}) => 
   useEffect( () => {
     setOnLoad(true);
     const urlRoom = `http://localhost:8080/room/?limit=${rowsByPage}&page=${page}&q=${search}`;
-    useGetRoom(urlRoom, {setRooms, setNextPage, setPrevPage});
+    // useGetRoom(urlRoom, {setRooms, setNextPage, setPrevPage});
+    useGetRoom(urlRoom, {setRooms});
   }, [onLoad, search]);
 
   return (
@@ -76,7 +80,9 @@ export const Table_room = ({ columns, rows, editData, deleteData, ...props}) => 
         </tbody>
       </table>
     </div>
-    <Pagination page={page} setPage={setPage} rowsByPage={rowsByPage} setRowsByPage={setRowsByPage} prevPage={prevPage} nextPage={nextPage} total={rooms.total} setOnLoad={setOnLoad}/>
+    {/* <Pagination     page={page} setPage={setPage} rowsByPage={rowsByPage} setRowsByPage={setRowsByPage} prevPage={prevPage} nextPage={nextPage} total={rooms.total} setOnLoad={setOnLoad}/> */}
+    <PaginationReducer  data={paginationData} dispatch={paginationDispatch} onLoad={onLoad} setOnLoad={setOnLoad}/>
+  
   </>
   )
 }

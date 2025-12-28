@@ -1,5 +1,7 @@
 import axios from "axios";
 import toast from "react-hot-toast";
+import { applyPaginationResponse } from "../../ui/pagination/utils/paginationUtils";
+// import { applyPaginationResponse } from "../../../ui/pagination/utils/paginationUtils";
 
 export const useGetRoom = async( urlRoom, { setRooms, roomDispatch, setOnLoad, dispatchPagination}) => {
   await axios(urlRoom, { headers: {"x-token": sessionStorage.getItem('token-xL')}})
@@ -8,17 +10,11 @@ export const useGetRoom = async( urlRoom, { setRooms, roomDispatch, setOnLoad, d
       if(setRooms){
         if(setOnLoad) setOnLoad(true)
         setRooms( data )
-        // setNextPage(data.nextPage) 
-        // setPrevPage(data.prevPage)
       }else if(roomDispatch){
         roomDispatch({ type: "UPDATE_ALL", roomData: data})
       }else if(dispatchPagination){
-        dispatchPagination({type: 'UPDATE_DATA', data: data.data})
-        dispatchPagination({type: 'UPDATE_NEXT', nextPage: data.nextPage})
-        dispatchPagination({type: 'UPDATE_PREV', prevPage: data.prevPage})
-        dispatchPagination({type: 'UPDATE_PAGE', page: data.currentPage})
-        dispatchPagination({type: 'UPDATE_TOTAL', total: data.total})
-        setOnLoad(true)
+        applyPaginationResponse(dispatchPagination, data);
+        if (setOnLoad) setOnLoad(true)
       }
     })
     .catch( error => {

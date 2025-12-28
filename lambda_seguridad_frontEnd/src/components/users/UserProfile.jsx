@@ -11,9 +11,10 @@ import { useUpdatePass } from './hooks/useUpdatePass';
 import { initialProfileState, profileReducer } from './reducers/profileReducer';
 
 export const UserProfile = () => {
-    const { urlLambda } = useContext(GlobalContext);
+    const { urlLambda, uid, token } = useContext(GlobalContext);
 
-    const sessionData = parseJwt(sessionStorage.getItem('token-xL'));
+    // const sessionData = parseJwt(sessionStorage.getItem('token-xL'));
+    const sessionData = parseJwt(token);
     const [state, dispatch] = useReducer(profileReducer, initialProfileState);
     const [onLoad, setOnLoad] = useState(true);    
     
@@ -31,14 +32,14 @@ export const UserProfile = () => {
     useEffect(() => {
         const urlUser = `${urlLambda}/user/${sessionData.uid}`;
         const urlCompany = `${urlLambda}/company/1`
-        useUserProfile(urlUser, {
+        useUserProfile(urlUser, token, {
             setUserName: value => dispatch({ type: "SET_FIELD", field: "userName", value }),
             setUserCreation: value => dispatch({ type: "SET_FIELD", field: "userCreation", value }),
             setUserImg: value => dispatch({ type: "SET_FIELD", field: "userImg", value }),
             setRole: value => dispatch({ type: "SET_FIELD", field: "role", value }),
             setBranch: value => dispatch({ type: "SET_FIELD", field: "branch", value }),
         });
-        useGetCompany(urlCompany, {
+        useGetCompany(urlCompany, token, {
             setCompanies: value => dispatch({ type: "SET_FIELD", field: "companies", value }),
             setNextPage: value => dispatch({ type: "SET_FIELD", field: "nextPage", value }),
             setPrevPage: value => dispatch({ type: "SET_FIELD", field: "prevPage", value }),

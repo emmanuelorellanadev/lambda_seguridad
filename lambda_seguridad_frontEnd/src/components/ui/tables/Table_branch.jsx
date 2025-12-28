@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 
 import '../../../css/ui/table.css'
 import { Input } from '../Input';
 import { useGetBranch } from '../../branches/hooks/useGetBranch';
 import Pagination from '../Pagination';
+import { GlobalContext } from '../../../context/GlobalContext';
 
 export const Table_branch = ({ columns, editData, deleteData, setOnLoad, onLoad}) => {
+
+const { urlLambda, token } = useContext(GlobalContext);  
 
 const [branches, setBranches] = useState({})
 
@@ -24,8 +27,8 @@ const [ search, setSearch ] = useState('');
 }
 
   const getBranches = async() => {
-    const urlBranch = `http://localhost:8080/branch/?limit=${rowsByPage}&page=${page}&q=${search}`;
-    await useGetBranch(urlBranch, {setBranches, setNextPage, setPrevPage});
+    const urlBranch = `${urlLambda}/branch/?limit=${rowsByPage}&page=${page}&q=${search}`;
+    await useGetBranch(urlBranch, token, {setBranches, setNextPage, setPrevPage});
   }
 
   const searching = (query) => {
@@ -69,7 +72,7 @@ const [ search, setSearch ] = useState('');
                         <td data-label="Dirección">{values[2]}</td>
                         <td data-label="Teléfono">{values[3]}</td>
                         <th><button className='btn btn-primary' type="button" onClick={ () => editData( values[0] ) } >Editar</button></th>
-                        <th><button className='btn btn-outline-danger' onClick={ () => deleteData(values[0], values[1], setOnLoad) }><i className='bi bi-trash3-fill'></i></button></th>
+                        <th><button className='btn btn-outline-danger' onClick={ () => deleteData(urlLambda, token, values[0], values[1], setOnLoad) }><i className='bi bi-trash3-fill'></i></button></th>
                       </tr>
                     )
                 }else if(editData){

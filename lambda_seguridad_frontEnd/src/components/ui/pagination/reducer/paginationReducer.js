@@ -61,14 +61,8 @@ export function paginationReducer (state, action) {
         }
 
         case "RESET": {
-            return ( {
-                prevPage: '',
-                nextPage: '',
-                limit: '',
-                total: '',
-                page: '',
-                rowsByPage: ''
-            } )
+            // Reset al estado inicial consistente con initialPagination
+            return { ...initialPagination }
         }
         default: return state
     }

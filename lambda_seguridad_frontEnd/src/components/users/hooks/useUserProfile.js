@@ -2,8 +2,9 @@ import axios from "axios";
 import toast from "react-hot-toast";
 
 
-export const useUserProfile = async(urlUser, {setUserName, setUserCreation, setUserImg, setRole, setBranch}) => {
-    await axios.get( urlUser, { headers: {"x-token": sessionStorage.getItem("token-xL")}})
+export const useUserProfile = async(urlUser, token, {setUserName, setUserCreation, setUserImg, setRole, setBranch}) => {
+    // await axios.get( urlUser, { headers: {"x-token": sessionStorage.getItem("token-xL")}})
+    await axios.get( urlUser, { headers: {"x-token": token}})
         .then(resp => resp.data.resData)
         .then( data => {
             setUserName?.(data.user_name);

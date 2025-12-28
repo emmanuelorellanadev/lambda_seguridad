@@ -1,4 +1,5 @@
 import axios from "axios";
+import { applyPaginationResponse } from "../../ui/pagination/utils/paginationUtils";
 
 // export const useGetUser = async(url, {setUsers, setUser, setPass, setRoleId, setState,  setBranchId, setNextPage, setPrevPage}) => {
 export const useGetUser = async(url, paginationDispatch, userDispatch, token) => {
@@ -21,13 +22,7 @@ export const useGetUser = async(url, paginationDispatch, userDispatch, token) =>
         // }
 
         if(data.data){
-            paginationDispatch({type: "UPDATE_PREV", prevPage: data.prevPage}),
-            paginationDispatch({type: "UPDATE_NEXT", nextPage: data.nextPage}),
-            paginationDispatch({type: "UPDATE_PAGE", page: data.currentPage}),
-            paginationDispatch({type: "UPDATE_ROWSBYPAGE", rowsByPage: data.limit}),
-            paginationDispatch({type: "UPDATE_TOTAL", total: data.total}),
-            paginationDispatch({type: "UPDATE_SEARCH", search: data.search}),
-            paginationDispatch({type: "UPDATE_DATA", data: data.data})
+            applyPaginationResponse(paginationDispatch, data);
         }else{
             if (userDispatch && data) {
                 userDispatch({
