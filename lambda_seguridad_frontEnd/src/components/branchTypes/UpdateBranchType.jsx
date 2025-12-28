@@ -1,5 +1,5 @@
 import '../../css/ui/headings.css'; //hadle p_h1, p_h2, p_h3
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Toaster } from 'react-hot-toast';
 
 import '../../css/branchType/branchType.css'
@@ -8,21 +8,23 @@ import { Label } from '../ui/Label';
 import { Input } from '../ui/Input';
 import { useGetBranchType } from './hooks/useGetBranchType';
 import { useUpdateBranchType } from './hooks/useUpdateBranchType';
+import { GlobalContext } from '../../context/GlobalContext';
 
 const UpdateBranchType = (props) => {
 
+    const { urlLambda } = useContext(GlobalContext);
     const [ id, setId] = useState('');
     const [ branchTypeName, setBranchTypeName ] = useState('');
     const [ branchTypeState, setBranchTypeState ] = useState(false);
 
     const updateBranchType = async(e ) => {
       e.preventDefault();
-      const urlBranchType = `http://localhost:8080/branchType/${props.branchTypeId}`;
+      const urlBranchType = `${urlLambda}/branchType/${props.branchTypeId}`;
       useUpdateBranchType( urlBranchType, id, branchTypeName, branchTypeState );
     }
     
     useEffect( () => {
-      const urlBranchType = `http://localhost:8080/branchType/${props.branchTypeId}`;
+      const urlBranchType = `${urlLambda}/branchType/${props.branchTypeId}`;
       useGetBranchType(urlBranchType, {setId, setBranchTypeName, setBranchTypeState})
     }, [])
 

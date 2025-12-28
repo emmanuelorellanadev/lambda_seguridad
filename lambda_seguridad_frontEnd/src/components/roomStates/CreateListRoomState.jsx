@@ -1,4 +1,4 @@
-import { useState, useEffect} from 'react';
+import { useContext, useState, useEffect} from 'react';
 import { Toaster } from 'react-hot-toast';
 
 import '../../css/roomState/roomState.css';
@@ -8,16 +8,18 @@ import { Input } from '../ui/Input';
 import { Table_roomState } from '../ui/tables/Table_roomState';
 import { useDeleteRoomState } from './hooks/useDeleteRoomState';
 import { useCreateRoomState } from './hooks/useCreateRoomState';
+import { GlobalContext } from '../../context/GlobalContext';
 
 const CreateListRoomState = ({ navUpdateRoomState}) => {
 
+    const { urlLambda } = useContext(GlobalContext);
     const [ roomStateName, setRoomStateName ] = useState('');
     const [ roomStateState, setRoomStateState ] = useState(true);
     const [ onLoad, setOnLoad ] = useState(true);
 
     const saveRoomState = (e) => {
         e.preventDefault();
-        const urlRoomState = `http://localhost:8080/roomState/`;
+        const urlRoomState = `${urlLambda}/roomState/`;
         useCreateRoomState(urlRoomState, roomStateName, roomStateState, { setOnLoad });
         setRoomStateName('');
         setRoomStateState(true)
@@ -28,7 +30,7 @@ const CreateListRoomState = ({ navUpdateRoomState}) => {
     }
 
     const deleteRoomState = (id, name, { setOnLoad }) => {
-        const urlRoomState = `http://localhost:8080/roomState/${id}`;
+        const urlRoomState = `${urlLambda}/roomState/${id}`;
         useDeleteRoomState(urlRoomState, setOnLoad );
     }
 

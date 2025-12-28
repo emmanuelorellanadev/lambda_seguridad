@@ -1,5 +1,5 @@
 import '../../css/ui/headings.css'; //hadle p_h1, p_h2, p_h3
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Toaster } from 'react-hot-toast';
 
 import '../../css/person/person.css';
@@ -10,9 +10,11 @@ import { P_Head } from '../ui/P_Head';
 import { Input } from '../ui/Input';
 import { Label } from '../ui/Label';
 import { Select } from '../ui/Select';
+import { GlobalContext } from '../../context/GlobalContext';
 
 const CreatePerson = () => {
   
+    const { urlLambda } = useContext(GlobalContext);
     const [personTypes, setPersonTypes] = useState([]);
     const [branches, setBranches] = useState([]);
     const [names, setNames] = useState('');
@@ -28,7 +30,7 @@ const CreatePerson = () => {
 
     const savePerson = async(e) => {
         e.preventDefault();
-        const urlPerson = 'http://localhost:8080/person/'
+        const urlPerson = `${urlLambda}/person/`
         useCreatePerson(urlPerson, names, surNames, cui, nit, phone, address, personTypeId, branchId);
         cleanForm()
     }
@@ -45,8 +47,8 @@ const CreatePerson = () => {
     }
 
     useEffect( () => {
-        const urlPersonType = "http://localhost:8080/personType/";
-        const urlBranch = "http://localhost:8080/branch/";
+        const urlPersonType = `${urlLambda}/personType/`;
+        const urlBranch = `${urlLambda}/branch/`;
         useGetPersonType( urlPersonType, { setPersonTypes, setNextPage, setPrevPage} );
         useGetBranch(urlBranch, {setBranches, setNextPage, setPrevPage})
     }, [])

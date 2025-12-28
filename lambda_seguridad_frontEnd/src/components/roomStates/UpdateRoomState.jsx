@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 
 import '../../css/personType/personType.css';
 import { P_Head } from '../ui/P_Head';
@@ -7,13 +7,15 @@ import { Input } from '../ui/Input';
 import { Toaster } from 'react-hot-toast';
 import { useGetRoomStates } from './hooks/useGetRoomStates';
 import { useUpdateRoomState } from './hooks/useUpdateRoomState';
+import { GlobalContext } from '../../context/GlobalContext';
 
 export const UpdateRoomState = (props) => {
 
+  const { urlLambda } = useContext(GlobalContext);
   const [roomStateName, setRoomStateName] = useState('');
   const [roomStateState, setRoomStateState] = useState(false);
 
-  const urlRoomState = `http://localhost:8080/roomState/${props.roomStateId}`;
+  const urlRoomState = `${urlLambda}/roomState/${props.roomStateId}`;
 
   const updateRoomState = (e) => {
     e.preventDefault();
