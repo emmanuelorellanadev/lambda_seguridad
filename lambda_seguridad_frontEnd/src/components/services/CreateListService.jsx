@@ -1,5 +1,5 @@
 import '../../css/ui/headings.css'; //hadle p_h1, p_h2, p_h3
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Toaster } from 'react-hot-toast';
 
 import '../../css/service/service.css';
@@ -9,9 +9,11 @@ import { Input } from '../ui/Input';
 import Table_service from '../ui/tables/Table_service';
 import { useCreateService } from './hooks/useCreateService';
 import { useDeleteService } from './hooks/useDeleteService';
+import { GlobalContext } from '../../context/GlobalContext';
 
 const CreateListService = (props) => {
 
+  const { urlLambda } = useContext(GlobalContext);
   const [ serviceName, setServiceName ] = useState('');
   const [ serviceState, setServiceState ] = useState(true);
   const [ onLoad, setOnLoad ] = useState(true);
@@ -19,7 +21,7 @@ const CreateListService = (props) => {
   // Create Service
   const saveService = async (e) => {
     e.preventDefault();
-    const urlService = 'http://localhost:8080/service/';
+    const urlService = `${urlLambda}/service/`;
     useCreateService(urlService, serviceName, serviceState, setOnLoad)
     cleanForm();
   }
@@ -29,7 +31,7 @@ const CreateListService = (props) => {
   }
   
   const deleteService = ( id, service ) => {
-    const urlService = `http://localhost:8080/service/${id}`;
+    const urlService = `${urlLambda}/service/${id}`;
     useDeleteService(urlService, id, service, { setOnLoad });
   }
 

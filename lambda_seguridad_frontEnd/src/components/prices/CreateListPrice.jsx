@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Toaster } from 'react-hot-toast';
 
 import '../../css/service/service.css';
@@ -8,9 +8,11 @@ import { Input } from '../ui/Input';
 import { useCreatePrice } from './hooks/useCreatePrice';
 import { useDeletePrice } from './hooks/useDeletePrice';
 import Table_price from '../ui/tables/Table_price';
+import { GlobalContext } from '../../context/GlobalContext';
 
 const CreateListPrice = (props) => {
 
+  const { urlLambda } = useContext(GlobalContext);
   const [ price, setPrice ] = useState('');
   const [ priceState, setPriceState ] = useState(true);
   const [ onLoad, setOnLoad ] = useState(true);
@@ -18,7 +20,7 @@ const CreateListPrice = (props) => {
   // Create Service
   const savePrice = async (e) => {
     e.preventDefault();
-    const urlPrice = 'http://localhost:8080/roomPrice/';
+    const urlPrice = `${urlLambda}/roomPrice/`;
     useCreatePrice(urlPrice, price, priceState, setOnLoad)
     cleanForm();
   }
@@ -28,7 +30,7 @@ const CreateListPrice = (props) => {
   }
   
   const deletePrice = ( id, service ) => {
-    const urlPrice = `http://localhost:8080/roomPrice/${id}`;
+    const urlPrice = `${urlLambda}/roomPrice/${id}`;
     useDeletePrice(urlPrice, id, service, { setOnLoad });
   }
 

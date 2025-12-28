@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Toaster } from 'react-hot-toast';
 
 import '../../css/role/role.css'
@@ -7,9 +7,11 @@ import { Label } from '../ui/Label';
 import { Input } from '../ui/Input';
 import { useGetRole } from './hooks/useGetRole';
 import { useUpdateRole } from './hooks/useUpdateRole';
+import { GlobalContext } from '../../context/GlobalContext';
 
 const UpdateRole = (props) => {
 
+    const { urlLambda } = useContext(GlobalContext);
     const [ id, setId] = useState('');
     const [ roleName, setRoleName ] = useState('');
     const [ roleState, setRoleState ] = useState(false);
@@ -17,12 +19,12 @@ const UpdateRole = (props) => {
     const updateRole = async(e ) => {
         e.preventDefault();
 
-        const urlRole = `http://localhost:8080/role/${props.roleId}`;
+        const urlRole = `${urlLambda}/role/${props.roleId}`;
         useUpdateRole(urlRole, id, roleName, roleState)
     }
     
     useEffect( () => {
-      const urlRole = `http://localhost:8080/role/${props.roleId}`
+      const urlRole = `${urlLambda}/role/${props.roleId}`
         useGetRole(urlRole, { setId, setRoleName, setRoleState })
     }, [])
 

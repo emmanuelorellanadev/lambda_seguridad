@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 
 import '../../css/role/role.css';
 import { P_Head } from '../ui/P_Head'; 
@@ -9,9 +9,11 @@ import { useGetRole } from './hooks/useGetRole';
 import { useDeleteRole } from './hooks/useDeleteRole';
 import { useCreateRole } from './hooks/useCreateRole';
 import { Toaster } from 'react-hot-toast';
+import { GlobalContext } from '../../context/GlobalContext';
 
 const CreateListRoles = (props) => {
 
+  const { urlLambda } = useContext(GlobalContext);
   const [ id, setId ] = useState('');
   const [ roleName, setRoleName ] = useState('');
   const [ roleState, setRoleState ] = useState(true);
@@ -19,7 +21,7 @@ const CreateListRoles = (props) => {
 
   const saveRole = async (e) => {
     e.preventDefault();
-    const urlRole = 'http://localhost:8080/role/';
+    const urlRole = `${urlLambda}/role/`;
     useCreateRole(urlRole, id, roleName, roleState, {setOnLoad})
     cleanForm();
   }
@@ -35,7 +37,7 @@ const CreateListRoles = (props) => {
   }
 
   const deleteRole = async ( id ) => {
-    const urlRole = `http://localhost:8080/role/${id}`;
+    const urlRole = `${urlLambda}/role/${id}`;
     useDeleteRole(urlRole, id, {setOnLoad})
   }
 
