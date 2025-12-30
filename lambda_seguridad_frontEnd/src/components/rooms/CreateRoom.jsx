@@ -1,5 +1,5 @@
 import '../../css/ui/headings.css'; //hadle p_h1, p_h2, p_h3
-import { useContext, useEffect, useReducer, useState } from 'react';
+import { useEffect, useReducer, useState } from 'react';
 
 import '../../css/room/room.css';
 import { initialCreateRoom, roomReducer } from './reducer/roomReducer.js';
@@ -13,11 +13,9 @@ import { useGetBranch } from '../branches/hooks/useGetBranch.js'
 import { useGetRoomStates } from '../roomStates/hooks/useGetRoomStates.js'
 import Table_createRoom_price from '../ui/tables/createRoom/Table_createRoom_price.jsx';
 import Table_createRoom_service from '../ui/tables/createRoom/Table_createRoom_service.jsx';
-import { GlobalContext } from '../../context/GlobalContext';
 
 const CreateRoom = () => {
 
-    const { urlLambda } = useContext(GlobalContext);
     const [createRoomData, createRoomDispatch] = useReducer(roomReducer, initialCreateRoom)
 
     const [ roomStatesRes, setRoomStatesRes ] = useState('');
@@ -31,15 +29,15 @@ const CreateRoom = () => {
     
     const saveButton = (e) => {
         e.preventDefault();
-        const urlRoom = `${urlLambda}/room/`;
+        const urlRoom = `http://localhost:8080/room/`;
         useCreateRoom(urlRoom, createRoomData);
         // createRoomDispatch({type: 'RESET'});
         setOnLoad(true)
     }
 
     useEffect( () => {
-        const urlBranch = `${urlLambda}/branch/`;
-        const urlRoomState = `${urlLambda}/roomState/`;
+        const urlBranch = `http://localhost:8080/branch/`;
+        const urlRoomState = `http://localhost:8080/roomState/`;
         useGetBranch(urlBranch, { setBranches,  setNextPage, setPrevPage, setPage})
         useGetRoomStates(urlRoomState, { setRoomStatesRes,  setNextPage, setPrevPage, setPage});
         console.log(createRoomData)

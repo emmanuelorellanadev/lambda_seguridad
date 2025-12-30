@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useReducer, useState } from 'react';
+import React, { useEffect, useReducer, useState } from 'react';
 
 import '../../../../css/ui/table.css'
 import { Input } from '../../Input';
@@ -6,12 +6,10 @@ import { P_Head } from '../../P_Head';
 import { useGetRoom } from '../../../rooms/hooks/useGetRoom';
 import { initialPagination, paginationReducer } from '../../pagination/reducer/paginationReducer';
 import PaginationReducer from '../../pagination/PaginationReducer';
-import { GlobalContext } from '../../../../context/GlobalContext';
 
 
 export const Table_searchSelect_room = ({ columns, rows, dispatch, ...props}) => {
 
-  const { urlLambda } = useContext(GlobalContext);
   const [ onLoad, setOnLoad ] = useState(false);
 
   const [paginationData, dispatchPagination] = useReducer(paginationReducer , initialPagination)
@@ -31,7 +29,7 @@ export const Table_searchSelect_room = ({ columns, rows, dispatch, ...props}) =>
     setOnLoad(true)}
 
   useEffect( () => {
-    const urlRoom = `${urlLambda}/room/?limit=${paginationData.rowsByPage}&page=${paginationData.page}&q=${paginationData.search}`;
+    const urlRoom = `http://localhost:8080/room/?limit=${paginationData.rowsByPage}&page=${paginationData.page}&q=${paginationData.search}`;
     useGetRoom(urlRoom, {dispatchPagination, setOnLoad});
   }, [onLoad]);
 

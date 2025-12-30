@@ -1,8 +1,8 @@
 import axios from 'axios'
 import { toast } from'react-hot-toast'
 
-export const useCreateBranch = async( urlLambda, branch, address, phone, state, branchTypeSelected, companySelected ) => {
-    const url = `${urlLambda}/branch`
+export const useCreateBranch = async( branch, address, phone, state, branchTypeSelected, companySelected ) => {
+    const url = 'http://localhost:8080/branch'
 
     await axios.post(url, {
       "branch_name": branch,

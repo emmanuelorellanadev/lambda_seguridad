@@ -1,15 +1,13 @@
-import React, { useContext, useEffect ,useState } from 'react';
+import React, { useEffect ,useState } from 'react';
 
 import '../../../css/ui/table.css'
 import { Input } from '../Input';
 import { useGetRoomStates } from '../../roomStates/hooks/useGetRoomStates';
 import Pagination from '../Pagination';
-import { GlobalContext } from '../../../context/GlobalContext';
 
 
 export const Table_roomState = ({ columns, editData, deleteData, setOnLoad, onLoad, ...props}) => {
 
-  const { urlLambda } = useContext(GlobalContext);
   const [ roomStatesRes, setRoomStatesRes ] = useState({});
   const [ search, setSearch ] = useState('');
   const [ rowsByPage, setRowsByPage ] = useState( 10 );
@@ -26,7 +24,7 @@ export const Table_roomState = ({ columns, editData, deleteData, setOnLoad, onLo
 }
 
   const getRoomStates = async() => {
-    const urlRoomState = `${urlLambda}/roomState/?limit=${rowsByPage}&page=${page}&q=${search}`;
+    const urlRoomState = `http://localhost:8080/roomState/?limit=${rowsByPage}&page=${page}&q=${search}`;
     await useGetRoomStates(urlRoomState, {setRoomStatesRes, setNextPage, setPrevPage});
   }
 

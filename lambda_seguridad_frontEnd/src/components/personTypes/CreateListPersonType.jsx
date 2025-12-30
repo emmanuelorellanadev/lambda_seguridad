@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import '../../css/personType/personType.css'
 import { P_Head } from '../ui/P_Head';
@@ -9,11 +9,9 @@ import useCreatePersonType from './hooks/useCreatePersonType';
 import Table_personType from '../ui/tables/Table_personType';
 import useDeletePersonType from './hooks/useDeletePersonType';
 import { Toaster } from 'react-hot-toast';
-import { GlobalContext } from '../../context/GlobalContext';
 
 export const CreateListPeopleType = (props) => {
   
-  const { urlLambda } = useContext(GlobalContext);
   const [personTypeName, setPersonTypeName] = useState('');
   const [personTypeState, setPersonTypeState] = useState(true);
   const [onLoad, setOnLoad] = useState(false);
@@ -21,7 +19,7 @@ export const CreateListPeopleType = (props) => {
   
   const savePersonType = (e) => {
     e.preventDefault();
-    const urlPersonType=`${urlLambda}/personType/`;
+    const urlPersonType="http://localhost:8080/personType/";
     useCreatePersonType(urlPersonType, personTypeName, personTypeState, {setOnLoad});
     cleanForm();
   }
@@ -31,7 +29,7 @@ export const CreateListPeopleType = (props) => {
   }
 
   const deletePersonType = (id) => {
-    useDeletePersonType(urlLambda, id, { setOnLoad });
+    useDeletePersonType(id, { setOnLoad });
   }
 
   const cleanForm = ( ) => {

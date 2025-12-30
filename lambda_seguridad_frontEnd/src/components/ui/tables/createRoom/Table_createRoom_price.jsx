@@ -1,15 +1,13 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 
 import '../../../../css/ui/table.css'
 import { Label } from '../../Label';
 import { Select } from '../../Select';
 import { useGetPrice } from '../../../prices/hooks/useGetPrice'
-import { GlobalContext } from '../../../../context/GlobalContext';
 
 export const Table_createRoom_price = ({ columns, deleteData, onLoad, setOnLoad, roomData, dispatch, ...props}) => {
 
-  const { urlLambda } = useContext(GlobalContext);
   const [ prices, setPrices ] = useState([]);
   const [ pricesSelected, setPricesSelected ] = useState([]);
 
@@ -23,7 +21,7 @@ export const Table_createRoom_price = ({ columns, deleteData, onLoad, setOnLoad,
 }
 
 const getPrices = async() => {
-  const urlPrice = `${urlLambda}/roomPrice/`;
+  const urlPrice = `http://localhost:8080/roomPrice/`;
   await useGetPrice(urlPrice, {setPrices, setNextPage, setPrevPage});
 }
 

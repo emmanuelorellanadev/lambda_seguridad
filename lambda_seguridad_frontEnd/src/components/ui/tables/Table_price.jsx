@@ -1,15 +1,13 @@
-import React, { useContext, useEffect ,useState } from 'react';
+import React, { useEffect ,useState } from 'react';
 
 import '../../../css/ui/table.css'
 import { Input } from '../Input';
 import { useGetPrice } from '../../prices/hooks/useGetPrice';
 import Pagination from '../Pagination';
-import { GlobalContext } from '../../../context/GlobalContext';
 
 
 export const Table_price = ({ columns, editData, deleteData, setOnLoad, onLoad, ...props}) => {
 
-  const { urlLambda } = useContext(GlobalContext);
   const [ prices, setPrices ] = useState({});
   const [ search, setSearch ] = useState('');
   const [ rowsByPage, setRowsByPage ] = useState( 10 );
@@ -26,7 +24,7 @@ export const Table_price = ({ columns, editData, deleteData, setOnLoad, onLoad, 
 }
 
   const getPrices = async() => {
-    const urlPrice = `${urlLambda}/roomPrice/?limit=${rowsByPage}&page=${page}&q=${search}`;
+    const urlPrice = `http://localhost:8080/roomPrice/?limit=${rowsByPage}&page=${page}&q=${search}`;
     await useGetPrice(urlPrice, {setPrices, setNextPage, setPrevPage});
   }
 

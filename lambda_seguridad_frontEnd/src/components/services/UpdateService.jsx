@@ -1,5 +1,5 @@
 import '../../css/ui/headings.css'; //hadle p_h1, p_h2, p_h3
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Toaster } from 'react-hot-toast';
 
 import '../../css/service/service.css'
@@ -8,23 +8,21 @@ import { Label } from '../ui/Label';
 import { Input } from '../ui/Input';
 import { useGetService } from './hooks/useGetService';
 import { useUpdateService } from './hooks/useUpdateService';
-import { GlobalContext } from '../../context/GlobalContext';
 
 const UpdateService = (props) => {
 
-    const { urlLambda } = useContext(GlobalContext);
     const [ id, setId] = useState('');
     const [ serviceName, setServiceName ] = useState('');
     const [ serviceState, setServiceState ] = useState(false);
 
     const updateService = async(e ) => {
       e.preventDefault();
-      const urlService = `${urlLambda}/service/${props.serviceId}`;
+      const urlService = `http://localhost:8080/service/${props.serviceId}`;
       useUpdateService( urlService, id, serviceName, serviceState );
     }
     
     useEffect( () => {
-      const urlService = `${urlLambda}/service/${props.serviceId}`;
+      const urlService = `http://localhost:8080/service/${props.serviceId}`;
       useGetService(urlService, {setId, setServiceName, setServiceState});
     }, [])
 

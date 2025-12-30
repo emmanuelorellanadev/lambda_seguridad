@@ -1,15 +1,11 @@
 import "../../../css/ui/inputSearchPerson.css"
 import { useSearchPerson } from '../../people/hooks/useSearchPerson';
-import { useContext } from 'react';
-import { GlobalContext } from '../../../context/GlobalContext';
 
 
 export const InputSearchPerson = ({dispatch, data, ...props}) => {
 
-  const { urlLambda } = useContext(GlobalContext);
-
   const searchPerson = async(q) => {
-          const urlPerson = `${urlLambda}/person/?q=${q}`
+          const urlPerson = `http://localhost:8080/person/?q=${q}`
           const searchContainer = document.querySelector('.search-input-box');
   
           dispatch({ type: "UPDATE_QUERY", query: q});
@@ -24,7 +20,7 @@ export const InputSearchPerson = ({dispatch, data, ...props}) => {
       }
 
       function selectPerson (personId) {
-        const urlPerson = `${urlLambda}/person/${personId}`
+        const urlPerson = `http://localhost:8080/person/${personId}`
 
         useSearchPerson(urlPerson, dispatch);
         dispatch({type: 'UPDATE_QUERY', query: data.name});

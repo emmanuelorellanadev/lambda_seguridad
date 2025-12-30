@@ -1,5 +1,5 @@
 import '../../css/ui/headings.css'; //hadle p_h1, p_h2, p_h3
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import { Toaster } from 'react-hot-toast';
 
 import '../../css/branchType/branchType.css';
@@ -9,11 +9,9 @@ import { Label } from '../ui/Label';
 import { Input } from '../ui/Input';
 import Table_branchType from '../ui/tables/Table_branchType';
 import { useDeleteBranchType } from './hooks/useDeleteBranchType';
-import { GlobalContext } from '../../context/GlobalContext';
 
 const CreateListRoles = (props) => {
 
-  const { urlLambda } = useContext(GlobalContext);
   const [ branchTypeName, setBranchTypeName ] = useState('');
   const [ branchTypeState, setBranchTypeState ] = useState(true);
   const [ onLoad, setOnLoad ] = useState(true);
@@ -21,7 +19,7 @@ const CreateListRoles = (props) => {
   //Create BranchType
   const saveBranchType = async (e) => {
     e.preventDefault();
-    const urlBranchType = `${urlLambda}/branchType/`;
+    const urlBranchType = 'http://localhost:8080/branchType/';
     useCreateBranchType(urlBranchType, branchTypeName, branchTypeState, setOnLoad)
     cleanForm();
   }
@@ -31,7 +29,7 @@ const CreateListRoles = (props) => {
   }
   
   const deleteRole = ( id, branchType ) => {
-    const urlBranchType = `${urlLambda}/branchType/${id}`;
+    const urlBranchType = `http://localhost:8080/branchType/${id}`;
     useDeleteBranchType(urlBranchType, id, branchType, setOnLoad);
   }
 

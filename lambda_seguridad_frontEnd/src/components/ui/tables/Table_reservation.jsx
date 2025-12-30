@@ -13,7 +13,7 @@ import { GlobalContext } from '../../../context/GlobalContext';
 
 export const Table_reservation = ({ columns, rows, editData, deleteData, ...props}) => {
 
-  const { token, urlLambda } = useContext(GlobalContext);
+  const { token } = useContext(GlobalContext);
   const [ onLoad, setOnLoad ] = useState(false);
 
   const [paginationData, dispatchPagination] = useReducer(paginationReducer , initialPagination)
@@ -30,12 +30,12 @@ export const Table_reservation = ({ columns, rows, editData, deleteData, ...prop
   }
 
   const cancelReservation = (reservationId) => {
-    const urlReservation = `${urlLambda}/reservation/${reservationId}`;
+    const urlReservation = `http://localhost:8080/reservation/${reservationId}`;
     useDeleteReservation(urlReservation, onLoad, {setOnLoad})
   }
 
   const getReservations = () => {
-    const urlReservation = `${urlLambda}/reservation/?limit=${paginationData.rowsByPage}&page=${paginationData.page}&q=${paginationData.search}`;
+    const urlReservation = `http://localhost:8080/reservation/?limit=${paginationData.rowsByPage}&page=${paginationData.page}&q=${paginationData.search}`;
     useGetReservation(urlReservation, dispatchPagination, token);
   }
 

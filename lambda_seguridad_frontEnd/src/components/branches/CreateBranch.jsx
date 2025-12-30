@@ -28,7 +28,7 @@ const CreateBranch = () => {
 
     const saveButton = (e) => {
         e.preventDefault();
-        useCreateBranch( urlLambda, branch, address, phone, state, branchTypeSelected, companySelected );
+        useCreateBranch( branch, address, phone, state, branchTypeSelected, companySelected );
         cleanForm();
     }
 

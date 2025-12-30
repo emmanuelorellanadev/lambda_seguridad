@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Toaster } from 'react-hot-toast';
 
 import '../../css/service/service.css'
@@ -7,23 +7,21 @@ import { Label } from '../ui/Label';
 import { Input } from '../ui/Input';
 import { useGetPrice } from './hooks/useGetPrice';
 import { useUpdatePrice } from './hooks/useUpdatePrice';
-import { GlobalContext } from '../../context/GlobalContext';
 
 const UpdatePrice = (props) => {
 
-    const { urlLambda } = useContext(GlobalContext);
     const [ id, setId] = useState('');
     const [ price, setPrice ] = useState('');
     const [ priceState, setPriceState ] = useState(false);
 
     const updatePrice = async(e ) => {
       e.preventDefault();
-      const urlPrice = `${urlLambda}/roomPrice/${props.priceId}`;
+      const urlPrice = `http://localhost:8080/roomPrice/${props.priceId}`;
       useUpdatePrice( urlPrice, id, price, priceState );
     }
     
     useEffect( () => {
-      const urlPrice = `${urlLambda}/roomPrice/${props.priceId}`;
+      const urlPrice = `http://localhost:8080/roomPrice/${props.priceId}`;
       useGetPrice(urlPrice, {setId, setPrice, setPriceState});
     }, [])
 

@@ -1,15 +1,13 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 
 import '../../../../css/ui/table.css'
 import { Label } from '../../Label';
 import { Select } from '../../Select';
 import { useGetService } from '../../../services/hooks/useGetService'
-import { GlobalContext } from '../../../../context/GlobalContext';
 
 export const Table_createRoom_service = ({ columns, deleteData, onLoad, setOnLoad, roomData, dispatch, ...props}) => {
 
-  const { urlLambda } = useContext(GlobalContext);
   const [ services, setServices ] = useState([]);
 
   const [ prevPage, setPrevPage ] = useState('');
@@ -22,7 +20,7 @@ export const Table_createRoom_service = ({ columns, deleteData, onLoad, setOnLoa
 }
 
 const getServices = async() => {
-  const urlService = `${urlLambda}/service/`;
+  const urlService = `http://localhost:8080/service/`;
   await useGetService(urlService, {setServices, setNextPage, setPrevPage});
 }
 

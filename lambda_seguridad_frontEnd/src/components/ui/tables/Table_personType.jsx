@@ -1,17 +1,15 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import '../../../css/ui/table.css'
 import { Input } from '../Input';
 import { Label } from '../Label';
 import useGetPersonType from '../../personTypes/hooks/useGetPersonType';
 import Pagination from '../Pagination';
-import { GlobalContext } from '../../../context/GlobalContext';
 
 // import { prevPage, nextPage, onSearchChange, filterData } from './filterTable_personType';
 
 export const Table_personType = ({ columns, editData, deleteData, onLoad, setOnLoad, ...props}) => {
 
-  const { urlLambda } = useContext(GlobalContext);
   const [personTypes, setPersonTypes] = useState([]);
   const [ search, setSearch ] = useState('');
   const [ rowsByPage, setRowsByPage ] = useState( 10 );
@@ -35,7 +33,7 @@ export const Table_personType = ({ columns, editData, deleteData, onLoad, setOnL
 
   useEffect( () => {
     setOnLoad(true)
-    const urlPersonType = `${urlLambda}/personType/?limit=${rowsByPage}&page=${page}&q=${search}`;
+    const urlPersonType = `http://localhost:8080/personType/?limit=${rowsByPage}&page=${page}&q=${search}`;
     useGetPersonType(urlPersonType, {setPersonTypes, setNextPage, setPrevPage})
   }, [onLoad, search])
 
