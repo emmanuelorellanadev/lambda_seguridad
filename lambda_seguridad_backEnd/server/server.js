@@ -65,6 +65,7 @@ class Server {
         this.app.use('/service',            require('../routes/service_route'));
         this.app.use('/user',               require('../routes/user_route'));
         this.app.use('/usersByBranch',      require('../routes/users_by_branch_route'));
+        this.app.use('/moisture-sensor',    require('../routes/moistureSensor_route'));
         // this.app.use('/*',                  require('../routes/error_route'));
             
     }

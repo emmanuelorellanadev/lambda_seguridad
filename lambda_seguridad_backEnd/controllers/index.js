@@ -20,4 +20,5 @@ module.exports = {
     roomStateController: require('./roomState_controller'),
     serviceController: require('./service_controller'),
     userController : require('./user_controller'),
+    moistureSensorController: require('./moistureSensor_controller'),
 }
