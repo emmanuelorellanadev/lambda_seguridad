@@ -1,22 +1,33 @@
 import axios from "axios";
 import toast from "react-hot-toast";
 
-export const useGetBranchType = async (
-    urlBranchType,
-    { setBranchTypes, setId, setBranchTypeName, setBranchTypeState, setNextPage, setPrevPage }
-) => {
+export const useGetBranchType = async (urlBranchType, token, paginationDispatch, branchTypeDispatch ) => {
     await axios
-        .get(urlBranchType, { headers: { 'x-token': sessionStorage.getItem('token-xL') } })
+        .get(urlBranchType, { headers: { 'x-token': token } })
         .then((resp) => resp.data.resData)
         .then((data) => {
-            if (setBranchTypeName) {
-                setId?.(data.id);
-                setBranchTypeName?.(data.branchType_name);
-                setBranchTypeState?.(data.branchType_state);
-            } else if (setBranchTypes) {
-                setBranchTypes?.(data);
-                setNextPage?.(data.nextPage);
-                setPrevPage?.(data.prevPage);
+            if (data.data) {
+                paginationDispatch({ type: 'UPDATE_PREV', prevPage: data.prevPage }),
+                paginationDispatch({ type: 'UPDATE_NEXT', nextPage: data.nextPage }),
+                paginationDispatch({ type: 'UPDATE_PAGE', page: data.currentPage }),
+                paginationDispatch({ type: 'UPDATE_ROWSBYPAGE', rowsByPage: data.limit }),
+                paginationDispatch({ type: 'UPDATE_TOTAL', total: data.total }),
+                paginationDispatch({ type: 'UPDATE_SEARCH', search: data.search }),
+                paginationDispatch({ type: 'UPDATE_DATA', data: data.data });
+            } else {
+                if (branchTypeDispatch && data) {
+                    branchTypeDispatch({
+                        type: 'SET_ALL',
+                        payload: {
+                            id: data.id ?? '',
+                            branchTypeName: data.branchType_name ?? '',
+                            branchTypeState:
+                                typeof data.branchType_state === 'boolean'
+                                    ? data.branchType_state
+                                    : !!data.branchType_state,
+                        },
+                    });
+                }
             }
         })
         .catch((error) => {

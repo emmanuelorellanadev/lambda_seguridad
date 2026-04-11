@@ -1,5 +1,5 @@
 import '../../css/ui/headings.css'; //hadle p_h1, p_h2, p_h3
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext, useReducer } from 'react';
 import { Toaster } from 'react-hot-toast';
 
 import '../../css/branch/branch.css';
@@ -11,34 +11,34 @@ import { useGetCompany } from '../companies/hooks/useGetCompany';
 import { useGetBranch } from './hooks/useGetBranch';
 import { useUpdateBranch } from './hooks/useUpdateBranch';
 import { useGetBranchType } from '../branchTypes/hooks/useGetBranchType';
+import { GlobalContext } from '../../context/GlobalContext';
+import { initialPagination, paginationReducer } from '../ui/pagination/reducer/paginationReducer.js';
+import { initialBranchState, branchReducer } from './reducer/BranchReducer';
 
 const UpdateBranch = (props) => {
+  const { urlLambda, token } = useContext(GlobalContext);
+  const urlBranch = `${urlLambda}/branch/${props.branchId}`;
+  
+  const [paginationData, paginationDispatch] = useReducer(paginationReducer , initialPagination)
+  const [branchState, branchDispatch] = useReducer(branchReducer, initialBranchState);
 
-  const urlBranch = `http://localhost:8080/branch/${props.branchId}`;
-
-  const [ branch, setBranch ]             = useState('');
-  const [ address, setAddress ]           = useState('');
-  const [ phone, setPhone ]               = useState('');
-  const [ state, setState ]               = useState(false);
-  const [ branchTypeId, setBranchTypeId ] = useState('');
   const [ companyId, setCompanyId ]       = useState('1');
   const [ companies, setCompanies ]       = useState([]);
-  const [ branchTypes, setBranchTypes ]   = useState([]);
   const [nextPage, setNextPage] = useState({});
   const [prevPage, setPrevPage] = useState({});
 
   const updateButton = async(e) => {
     e.preventDefault();
-    useUpdateBranch(urlBranch, branch, address, phone, state, branchTypeId, companyId)
+    useUpdateBranch(urlBranch, token, branchState, companyId)
   }
   
   useEffect( () => {
-    const urlCompany = "http://localhost:8080/company/";
-    const urlBranchType = `http://localhost:8080/branchType/`;
-    useGetCompany(urlCompany, { setCompanies, setNextPage, setPrevPage  });
-    useGetBranchType(urlBranchType, {setBranchTypes, setNextPage, setPrevPage });
-    useGetBranch(urlBranch, { setBranch, setAddress, setPhone, setState, setBranchTypeId, setCompanyId, setNextPage, setPrevPage  });
-  }, [])
+    const urlCompany = `${urlLambda}/company/`;
+    const urlBranchType = `${urlLambda}/branchType/`;
+    useGetCompany(urlCompany, token, { setCompanies, setNextPage, setPrevPage  }, token);
+    useGetBranchType(urlBranchType, token, paginationDispatch, null);
+    useGetBranch(urlBranch, token, null, branchDispatch);
+  }, [urlLambda, urlBranch, token])
 
   return (
     <>
@@ -47,19 +47,19 @@ const UpdateBranch = (props) => {
         <form className='branch_form' onSubmit={updateButton} >
                 <div>
                     <Label lambdaClassLabel="" text="Sucursal" />
-                    <Input lambdaClassInput={""} type="text" name="branch" id="branch"  value={branch} onChange={ (e) => setBranch(e.target.value)} required/>
+                    <Input lambdaClassInput={""} type="text" name="branch" id="branch"  value={branchState.branch} onChange={ (e) => branchDispatch({ type: "SET_FIELD", field: "branch", value: e.target.value })} required/>
                 </div>
                 <div>
                     <Label lambdaClassLabel="" text="Dirección" />
-                    <Input lambdaClassInput={""} type="text" name="address" id="address"  value={address} onChange={ (e) => setAddress(e.target.value)} required/>
+                    <Input lambdaClassInput={""} type="text" name="address" id="address"  value={branchState.address} onChange={ (e) => branchDispatch({ type: "SET_FIELD", field: "address", value: e.target.value })} required/>
                 </div>
                 <div>
                     <Label lambdaClassLabel="" text="Teléfono" />
-                    <Input lambdaClassInput={""} type="number" name="phone" id="phone" value={phone} onChange={ (e) => setPhone(e.target.value)}required/>
+                    <Input lambdaClassInput={""} type="number" name="phone" id="phone" value={branchState.phone} onChange={ (e) => branchDispatch({ type: "SET_FIELD", field: "phone", value: e.target.value })}required/>
                 </div>
                 <div>
                     <Label lambdaClassLabel="" text="Estado" />
-                    <Input lambdaClassInput={""} type='checkbox' id='branchStatus' onChange={ () => setState( !state ) } checked={state}  />  
+                    <Input lambdaClassInput={""} type='checkbox' id='branchStatus' onChange={ () => branchDispatch({ type: "SET_FIELD", field: "state", value: !branchState.state }) } checked={branchState.state}  />  
 
                 </div>
                 <div>
@@ -68,7 +68,7 @@ const UpdateBranch = (props) => {
                 </div>
                 <div>
                     <Label lambdaClassLabel="" text="Tipo" />
-                    <Select data={branchTypes.data} name="" id="" value={branchTypeId} onChange={ ( e ) => setBranchTypeId( e.target.value)} required />
+                  <Select data={paginationData.data}  text="Selecciona tipo sucursal" name="" id="" value={branchState.branchTypeId} onChange={ ( e ) => branchDispatch({ type: "SET_FIELD", field: "branchTypeId", value: e.target.value })} required />
                 </div>
                 <div className='sendBranch_button'>
                   <button className='btn btn-primary' >Actualizar</button>

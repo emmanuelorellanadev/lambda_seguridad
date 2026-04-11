@@ -11,15 +11,17 @@ import { useUpdatePass } from './hooks/useUpdatePass';
 import { initialProfileState, profileReducer } from './reducers/profileReducer';
 
 export const UserProfile = () => {
-    const { urlLambda } = useContext(GlobalContext);
+    const { urlLambda, token } = useContext(GlobalContext);
 
-    const sessionData = parseJwt(sessionStorage.getItem('token-xL'));
+    const sessionData = parseJwt(token);
+    const userId = sessionData?.uid;
     const [state, dispatch] = useReducer(profileReducer, initialProfileState);
     const [onLoad, setOnLoad] = useState(true);    
     
     const updatePassword = async(e) => {
         e.preventDefault();
-        const urlUser = `${urlLambda}/changePassword/${sessionData.uid}`;
+        if (!userId) return;
+        const urlUser = `${urlLambda}/changePassword/${userId}`;
         useUpdatePass(urlUser, state.pass, state.passConfirm, state.currentPass);
         cleanForm();
     }
@@ -29,27 +31,29 @@ export const UserProfile = () => {
     }
     
     useEffect(() => {
-        const urlUser = `${urlLambda}/user/${sessionData.uid}`;
+        if (!userId) return;
+        const urlUser = `${urlLambda}/user/${userId}`;
         const urlCompany = `${urlLambda}/company/1`
         useUserProfile(urlUser, {
+            token,
             setUserName: value => dispatch({ type: "SET_FIELD", field: "userName", value }),
             setUserCreation: value => dispatch({ type: "SET_FIELD", field: "userCreation", value }),
             setUserImg: value => dispatch({ type: "SET_FIELD", field: "userImg", value }),
             setRole: value => dispatch({ type: "SET_FIELD", field: "role", value }),
             setBranch: value => dispatch({ type: "SET_FIELD", field: "branch", value }),
         });
-        useGetCompany(urlCompany, {
+        useGetCompany(urlCompany, token,{
             setCompanies: value => dispatch({ type: "SET_FIELD", field: "companies", value }),
             setNextPage: value => dispatch({ type: "SET_FIELD", field: "nextPage", value }),
             setPrevPage: value => dispatch({ type: "SET_FIELD", field: "prevPage", value }),
             setOnLoad
         })
-    }, [ onLoad])
+    }, [ onLoad, urlLambda, userId, token])
 
     return (
     <>
         <div id='userProfile_container'>
-            <h1 className='p_h1' id='headerUserProfile' >Perfil de {sessionData.name ? sessionData.name : ''}</h1>
+            <h1 className='p_h1' id='headerUserProfile' >Perfil de {sessionData?.name ? sessionData.name : ''}</h1>
                 <P_Head className='p_h3' text="Datos de Usuario" />
             <form id="user_form">
                 <div id='userImg'>

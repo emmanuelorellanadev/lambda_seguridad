@@ -3,16 +3,11 @@ import toast from "react-hot-toast";
 import Swal from "sweetalert2";
 
 
-export const useDeleteBranchType = async(urlBranchType, id, branchType, setOnLoad) => {
-    
-    // await axios.get(urlBranchType, { headers: {"x-token": sessionStorage.getItem("token-xL")}})
-    //   .then( resp => resp.data.resData )
-    //   .then(role => setBranchTypeToDelete(role) )
-    //   .catch( error => console.log(error));
+export const useDeleteBranchType = async(urlBranchType, token, id, branchType, setOnLoad) => {
 
       Swal.fire({
         icon: 'question',
-        title: `Esta seguro que desea eliminar el rol?`,
+        title: `Esta seguro que desea eliminar el rol ${branchType}?`,
         showCloseButton: true,
         showCancelButton: true,
         confirmButtonText: 'Eliminar',
@@ -21,9 +16,9 @@ export const useDeleteBranchType = async(urlBranchType, id, branchType, setOnLoa
       })
         .then( async (result) =>{
           if( result.isConfirmed ){
-            await axios.delete(urlBranchType, {where: {id: id}})
+            await axios.delete(urlBranchType, { where: { id: id }, headers: { "x-token": token } })
               .then( (resp) => {
-                setOnLoad(false)
+                setOnLoad(true)
                 toast.success(resp.data.resData, {
                     duration: 4000,
                     position: "top-right",

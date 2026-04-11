@@ -1,5 +1,5 @@
 import '../../css/ui/headings.css'; //hadle p_h1, p_h2, p_h3
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 
 import '../../css/company/company.css';
 import { Toaster } from 'react-hot-toast'
@@ -7,8 +7,10 @@ import { createCompany } from './hooks/useCreateCompany.js';
 import { P_Head } from '../ui/P_Head.jsx';import { Input } from '../ui/Input';
 import { Label } from '../ui/Label';
 import { TextArea } from '../ui/TextArea.jsx';
+import { GlobalContext } from '../../context/GlobalContext';
 
 const CreateCompany = () => {
+    const { urlLambda, token } = useContext(GlobalContext);
 
     const [company, setCompany] = useState('');
     const [address, setAddress] = useState('');
@@ -20,7 +22,7 @@ const CreateCompany = () => {
 
     const saveButton = (e) => {
         e.preventDefault();
-        createCompany(logo);
+        createCompany(urlLambda, token, logo);
         cleanForm();
     }
 

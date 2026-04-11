@@ -1,5 +1,5 @@
 import '../../css/ui/headings.css'; //hadle p_h1, p_h2, p_h3
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 
 import '../../css/person/person.css'
 import { P_Head } from '../ui/P_Head';
@@ -11,8 +11,10 @@ import { useGetBranch } from '../branches/hooks/useGetBranch';
 import { useGetPerson } from './hooks/useGetPerson';
 import { useUpdatePerson } from './hooks/useUpdatePerson';
 import { Toaster } from 'react-hot-toast';
+import { GlobalContext } from '../../context/GlobalContext';
 
 const UpdatePerson = (props) => {
+  const { token } = useContext(GlobalContext);
 
   const urlPerson = `http://localhost:8080/person/${props.personId}`;
   const [names, setNames] =useState('');
@@ -38,7 +40,7 @@ const UpdatePerson = (props) => {
     const urlBranch = 'http://localhost:8080/branch/';
     useGetPerson(urlPerson, {setNames, setSurNames, setCui, setNit, setPhone, setAddress, setPersonTypeId, setBranchId });
     useGetPersonType(urlPersonType, { setPersonTypes, setNextPage, setPrevPage });
-    useGetBranch(urlBranch, { setBranches, setNextPage, setPrevPage });
+    useGetBranch(urlBranch, token, { setBranches, setNextPage, setPrevPage });
   },[])
 
   return (

@@ -9,7 +9,7 @@ import { GlobalContext } from '../../../context/GlobalContext.jsx';
 export const Table_company = ({ columns, editData, deleteData, setOnLoad, onLoad, ...props}) => {
 
   const [ companies, setCompanies ] = useState({});
-  const { urlLambda } = useContext(GlobalContext);
+  const { urlLambda, token } = useContext(GlobalContext);
   const [ search, setSearch ] = useState('');
   const [ rowsByPage, setRowsByPage ] = useState( 10 );
   const [ page, setPage ] = useState( 1 );
@@ -26,7 +26,7 @@ export const Table_company = ({ columns, editData, deleteData, setOnLoad, onLoad
 
   const getCompany = async() => {
     const urlCompany = `${urlLambda}/company/?limit=${rowsByPage}&page=${page}&q=${encodeURIComponent(search)}`;
-    await useGetCompany(urlCompany, {setCompanies, setNextPage, setPrevPage});
+    await useGetCompany(urlCompany, token, {setCompanies, setNextPage, setPrevPage});
   }
   const searching = (query) => {
     setSearch(query); 

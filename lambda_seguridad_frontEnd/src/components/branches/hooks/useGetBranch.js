@@ -4,33 +4,50 @@ import { toast } from 'react-hot-toast'
 
 export const useGetBranch = async (
     urlBranch,
-    {
-        setBranches,
-        setBranch,
-        setAddress,
-        setPhone,
-        setState,
-        setBranchTypeId,
-        setCompanyId,
-        setNextPage,
-        setPrevPage,
-    }
+    token,
+    paginationDispatch,
+    branchDispatch
 ) => {
     await axios
-        .get(urlBranch, { headers: { 'x-token': sessionStorage.getItem('token-xL') } })
+        .get(urlBranch, { headers: { 'x-token': token } })
         .then((resp) => resp.data.resData)
         .then((data) => {
-            if (setBranches) {
-                setBranches?.(data);
-                setNextPage?.(data.nextPage);
-                setPrevPage?.(data.prevPage);
-            } else if (setBranch) {
-                setBranch?.(data.branch_name);
-                setAddress?.(data.branch_address);
-                setPhone?.(data.branch_phone);
-                setState?.(data.branch_state);
-                setBranchTypeId?.(data.BranchTypeId);
-                setCompanyId?.(data.CompanyId);
+            if (data?.data) {
+                if (typeof paginationDispatch === 'function') {
+                    paginationDispatch({ type: 'UPDATE_PREV', prevPage: data.prevPage });
+                    paginationDispatch({ type: 'UPDATE_NEXT', nextPage: data.nextPage });
+                    paginationDispatch({ type: 'UPDATE_PAGE', page: data.currentPage });
+                    paginationDispatch({ type: 'UPDATE_ROWSBYPAGE', rowsByPage: data.limit });
+                    paginationDispatch({ type: 'UPDATE_TOTAL', total: data.total });
+                    paginationDispatch({ type: 'UPDATE_SEARCH', search: data.search });
+                    paginationDispatch({ type: 'UPDATE_DATA', data: data.data });
+                } else if (paginationDispatch && paginationDispatch.setBranches) {
+                    paginationDispatch.setBranches?.(data);
+                    paginationDispatch.setNextPage?.(data.nextPage);
+                    paginationDispatch.setPrevPage?.(data.prevPage);
+                }
+            } else if (branchDispatch && data) {
+                if (typeof branchDispatch === 'function') {
+                    branchDispatch({
+                        type: 'SET_ALL',
+                        payload: {
+                            branch: data.branch_name ?? '',
+                            address: data.branch_address ?? '',
+                            phone: data.branch_phone ?? '',
+                            state: typeof data.branch_state === 'boolean'
+                                ? data.branch_state
+                                : !!data.branch_state,
+                            branchTypeId: data.BranchTypeId ?? '',
+                        },
+                    });
+                } else {
+                    branchDispatch.setBranch?.(data.branch_name);
+                    branchDispatch.setAddress?.(data.branch_address);
+                    branchDispatch.setPhone?.(data.branch_phone);
+                    branchDispatch.setState?.(data.branch_state);
+                    branchDispatch.setBranchTypeId?.(data.BranchTypeId);
+                    branchDispatch.setCompanyId?.(data.CompanyId);
+                }
             }
         })
         .catch((error) => {

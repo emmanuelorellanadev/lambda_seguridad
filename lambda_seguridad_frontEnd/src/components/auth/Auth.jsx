@@ -9,7 +9,7 @@ import { useAuth } from './hook/useAuth.js';
 import { globalReducer, initialGlobalReducer } from '../reducer/globalReducer.js';
 
 export const Auth = () => {
-    const { urlLambda, setToken, setLoggedUser, setLoggedRole, setUId } = useContext(GlobalContext);
+    const { urlLambda, token, setToken, setLoggedUser, setLoggedRole, setUId } = useContext(GlobalContext);
 
     const [isUser, setIsUser] = useState(false);
     const [user, setUser] = useState('emmanuel');

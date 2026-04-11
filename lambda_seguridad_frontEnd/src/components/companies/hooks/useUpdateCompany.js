@@ -1,14 +1,14 @@
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
 
-export const useUpdateCompany = async(urlCompany, logoFile) => {
+export const useUpdateCompany = async(urlCompany, logoFile, token) => {
 
     const companyData = new FormData(document.querySelector('.company_form'))
     companyData.append('img', logoFile);
 
     axios.put(urlCompany, 
         companyData,
-        {headers: {"x-token": sessionStorage.getItem("token-xL")}})
+        {headers: {"x-token": token}})
     .then( (resp) => {
         toast.success(`${resp.data.resData}`, {
             duration: 3000,

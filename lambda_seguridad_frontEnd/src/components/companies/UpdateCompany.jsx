@@ -1,5 +1,5 @@
 import '../../css/ui/headings.css'; //hadle p_h1, p_h2, p_h3
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { Toaster } from 'react-hot-toast';
 
 import '../../css/company/company.css';
@@ -9,9 +9,11 @@ import { Label } from '../ui/Label';
 import { TextArea } from '../ui/TextArea';
 import { useUpdateCompany } from './hooks/useUpdateCompany';
 import { useGetCompany } from './hooks/useGetCompany';
+import { GlobalContext } from '../../context/GlobalContext';
 
 
 const UpdateCompany = (props) => {
+    const { urlLambda, token } = useContext(GlobalContext);
     const [company, setCompany]         = useState('');
     const [address, setAddress]         = useState('');
     const [phone, setPhone]             = useState('');
@@ -23,14 +25,14 @@ const UpdateCompany = (props) => {
 
     const updateButton = (e) => {
         e.preventDefault();
-        const urlCompany = `http://localhost:8080/company/${props.companyToEditId}`;
-        useUpdateCompany(urlCompany, logoFile)
+        const urlCompany = `${urlLambda}/company/${props.companyToEditId}`;
+        useUpdateCompany(urlCompany, logoFile, token)
     }
 
     useEffect( () => {
-        const urlCompany = `http://localhost:8080/company/${props.companyToEditId}`;
-        useGetCompany(urlCompany, { setCompany, setAddress, setPhone, setDescription, setMission, setVision, setLogo});
-    }, [])
+        const urlCompany = `${urlLambda}/company/${props.companyToEditId}`;
+        useGetCompany(urlCompany, token, { setCompany, setAddress, setPhone, setDescription, setMission, setVision, setLogo});
+    }, [urlLambda, props.companyToEditId, token])
 
   return (
     <>

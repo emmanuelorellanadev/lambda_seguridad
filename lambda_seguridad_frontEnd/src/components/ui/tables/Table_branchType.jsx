@@ -1,18 +1,17 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect, useContext, useReducer} from 'react';
 
 import '../../../css/ui/table.css'
 import { Input } from '../Input';
-import Pagination from '../Pagination';
+import PaginationReducer from '../pagination/PaginationReducer';
 import { useGetBranchType } from '../../branchTypes/hooks/useGetBranchType';
+import { GlobalContext } from '../../../context/GlobalContext';
+import { initialPagination, paginationReducer } from '../pagination/reducer/paginationReducer';
 
-export const Table_type = ({ columns, editData, deleteData, setOnLoad, onLoad, ...props}) => {
+export const Table_branchType = ({ columns, editData, deleteData, onLoad, setOnLoad, ...props}) => {
 
-  const [ branchTypes, setBranchTypes ] = useState({});
-  const [ search, setSearch ] = useState('');
-  const [ rowsByPage, setRowsByPage ] = useState( 10 );
-  const [ page, setPage ] = useState( 1 );
-  const [ prevPage, setPrevPage ] = useState('');
-  const [ nextPage, setNextPage ] = useState('');
+  const { urlLambda, token } = useContext(GlobalContext);
+  const [paginationData, paginationDispatch] = useReducer(paginationReducer , initialPagination)
+  
 
   if( editData && !columns.includes("Editar" ) ){
       columns.push("Editar")
@@ -23,25 +22,26 @@ export const Table_type = ({ columns, editData, deleteData, setOnLoad, onLoad, .
 }
 
   const getBranchTypes = async() => {
-    const urlBranchType = `http://localhost:8080/branchType/?limit=${rowsByPage}&page=${page}&q=${search}`;
-    await useGetBranchType(urlBranchType, {setBranchTypes, setNextPage, setPrevPage});
+    const searchValue = paginationData.search ?? '';
+    const urlBranchType = `${urlLambda}/branchType/?q=${encodeURIComponent(searchValue)}&limit=${paginationData.rowsByPage}&page=${paginationData.page}`;
+    await useGetBranchType(urlBranchType, token, paginationDispatch, undefined );
   }
   const searching = (query) => {
-    setSearch(query); 
-    setPage(1);
-    setOnLoad(false);
+    paginationDispatch({ type: 'UPDATE_SEARCH', search: query ?? '' });
+    paginationDispatch({ type: 'UPDATE_PAGE', page: 1 });
+    setOnLoad(true);
   }
 
   useEffect( () => {
-    setOnLoad(true)
+    setOnLoad(false)
     getBranchTypes()
-  }, [onLoad, search])
+  }, [onLoad])
 
 
   return (
     <>
     <div className="table-controls">
-      <Input lambdaClassInput={"data_search"} type="search" value={search} onChange={ e => searching(e.target.value)} placeholder="Buscar tipo de sucursal por nombre o estado" aria-label="Buscar tipo de sucursal" />
+      <Input lambdaClassInput={"data_search"} type="search" value={paginationData.search} onChange={ e => searching(e.target.value)} placeholder="Buscar tipo de sucursal por nombre o estado" aria-label="Buscar tipo de sucursal" />
     </div>
     <div className="table-responsive">
       <table className='table table-bordered table-hover table-striped user-table' {...props}>
@@ -58,7 +58,7 @@ export const Table_type = ({ columns, editData, deleteData, setOnLoad, onLoad, .
         </thead>
         <tbody className='text-center align-baseline'>
           {
-            branchTypes.data?.map( ( data ) => {
+            paginationData.data?.map( ( data ) => {
               let values = Object.values(data)
               if(editData && deleteData){
                   return (
@@ -67,7 +67,7 @@ export const Table_type = ({ columns, editData, deleteData, setOnLoad, onLoad, .
                       <td data-label="Tipo">{values[1]}</td>
                       <td data-label="Estado"><input type='checkbox' checked={values[2]} disabled/></td>
                       <th><button className='btn btn-primary' type="button" onClick={ () => editData( values[0] ) } >Editar</button></th>
-                      <th><button className='btn btn-outline-danger' onClick={ () => deleteData(values[0], values[1]) }><i className='bi bi-trash3-fill'></i></button></th>
+                      <th><button className='btn btn-outline-danger' onClick={ () => deleteData(values[0], values[1], setOnLoad) }><i className='bi bi-trash3-fill'></i></button></th>
                     </tr>
                   )
               }else if(editData){
@@ -93,9 +93,10 @@ export const Table_type = ({ columns, editData, deleteData, setOnLoad, onLoad, .
         </tbody>
       </table>
     </div>
-    <Pagination page={page} setPage={setPage} rowsByPage={rowsByPage} setRowsByPage={setRowsByPage} prevPage={prevPage} nextPage={nextPage} total={branchTypes.total} setOnLoad={setOnLoad}/>
+    <PaginationReducer data={paginationData} dispatch={paginationDispatch} onLoad={onLoad} setOnLoad={setOnLoad}/>
+  
   </>
   )
 }
 
-export default Table_type
+export default Table_branchType

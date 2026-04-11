@@ -1,5 +1,5 @@
 import '../../css/ui/headings.css'; //hadle p_h1, p_h2, p_h3
-import React, { useState } from 'react'
+import React, { useReducer, useContext, useState } from 'react'
 import { Toaster } from 'react-hot-toast';
 
 import '../../css/branchType/branchType.css';
@@ -9,18 +9,20 @@ import { Label } from '../ui/Label';
 import { Input } from '../ui/Input';
 import Table_branchType from '../ui/tables/Table_branchType';
 import { useDeleteBranchType } from './hooks/useDeleteBranchType';
+import { GlobalContext } from '../../context/GlobalContext';
+import { initialBranchTypeState, branchTypeReducer } from './reducer/BranchTypesReducer';
 
 const CreateListRoles = (props) => {
 
-  const [ branchTypeName, setBranchTypeName ] = useState('');
-  const [ branchTypeState, setBranchTypeState ] = useState(true);
-  const [ onLoad, setOnLoad ] = useState(true);
+  const [branchTypeState, branchTypeDispatch] = useReducer(branchTypeReducer, initialBranchTypeState);
+  const [ onLoad, setOnLoad ] = useState(false);
+  const { urlLambda, token } = useContext(GlobalContext);
 
   //Create BranchType
   const saveBranchType = async (e) => {
     e.preventDefault();
-    const urlBranchType = 'http://localhost:8080/branchType/';
-    useCreateBranchType(urlBranchType, branchTypeName, branchTypeState, setOnLoad)
+    const urlBranchType = `${urlLambda}/branchType/`;
+    useCreateBranchType(urlBranchType, token, branchTypeState.branchTypeName, branchTypeState.branchTypeState, setOnLoad)
     cleanForm();
   }
 
@@ -28,14 +30,13 @@ const CreateListRoles = (props) => {
     props.navUpdateBranchType( branchTypeId );
   }
   
-  const deleteRole = ( id, branchType ) => {
-    const urlBranchType = `http://localhost:8080/branchType/${id}`;
-    useDeleteBranchType(urlBranchType, id, branchType, setOnLoad);
+  const deleteBranchType = ( id, branchType, setOnLoad ) => {
+    const urlBranchType = `${urlLambda}/branchType/${id}`;
+    useDeleteBranchType(urlBranchType, token, id, branchType, setOnLoad);
   }
 
   const cleanForm = ( ) => {
-    setBranchTypeName('');
-    setBranchTypeState(true);
+    branchTypeDispatch({ type: "RESET_BRANCH_TYPE" });
   }
 
   return (
@@ -47,11 +48,11 @@ const CreateListRoles = (props) => {
         <form className={'branchType_form'} onSubmit={e => saveBranchType(e)}>
           <div>
             <Label lambdaClassLabel="" text="Tipo de Sucursal:"/>
-            <Input lambdaClassInput="" type="text"  value={branchTypeName} onChange={(e) => setBranchTypeName( e.target.value )} placeholder='Tipo de Sucursal' required autoFocus/>
+            <Input lambdaClassInput="" type="text"  value={branchTypeState.branchTypeName} onChange={(e) => branchTypeDispatch({ type: "SET_FIELD", field: "branchTypeName", value: e.target.value })} placeholder='Tipo de Sucursal' required autoFocus/>
           </div>
           <div>
             <Label lambdaClassLabel="" text="Estado:"/>
-            <Input lambdaClassInput="" type="checkbox" value={branchTypeState} onChange={ (e) => setBranchTypeState(!branchTypeState) } checked={branchTypeState} />
+            <Input lambdaClassInput="" type="checkbox" value={branchTypeState.branchTypeState} onChange={ () => branchTypeDispatch({ type: "SET_FIELD", field: "branchTypeState", value: !branchTypeState.branchTypeState }) } checked={branchTypeState.branchTypeState} />
           </div>
           <div></div>
           <div className='sendBranchType_button'>
@@ -61,7 +62,7 @@ const CreateListRoles = (props) => {
         {/* Table section */}
           <P_Head text={'Lista de Tipos de Sucursal'} className={'p_h2'}/>
         <div className='table-responsive branchTypeTable_container'>
-          <Table_branchType columns={["Id", "Nombre", "Estado"]} editData={editBranchType} deleteData={deleteRole} setOnLoad={setOnLoad} onLoad={onLoad}/>
+          <Table_branchType columns={["Id", "Nombre", "Estado"]} editData={editBranchType} deleteData={deleteBranchType} onLoad={onLoad} setOnLoad={setOnLoad}  />
         </div>
       </div>
       <Toaster/>

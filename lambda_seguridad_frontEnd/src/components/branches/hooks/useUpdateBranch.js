@@ -1,16 +1,16 @@
 import axios from "axios";
 import { toast } from 'react-hot-toast';
 
-export const useUpdateBranch = async(url, branch, address, phone, state, branchTypeId, companyId) => {
+export const useUpdateBranch = async(url, token, branchState, companyId) => {
 
     await axios.put(url, {
-        "branch_name": branch,
-        "branch_address": address,
-        "branch_phone": phone,
-        "branch_state": state,
+        "branch_name": branchState.branch,
+        "branch_address": branchState.address,
+        "branch_phone": branchState.phone,
+        "branch_state": branchState.state,
         "CompanyId": companyId,
-        "BranchTypeId": branchTypeId,
-      },{ headers:{'x-token': sessionStorage.getItem('token-xL')} })
+        "BranchTypeId": branchState.branch,
+    },{ headers:{'x-token': token} })
       .then( (resp) => {
         toast.success(`${resp.data.resData}`, {
             duration: 3000,

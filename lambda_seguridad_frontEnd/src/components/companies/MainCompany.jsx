@@ -9,17 +9,17 @@ import { TextArea } from '../ui/TextArea';
 import { Table_branch } from '../ui/tables/Table_branch.jsx';
 import { useGetCompany } from './hooks/useGetCompany.js';
 import { initialCompanyState, companyReducer } from './CreateCompanyReducer';
-import { initialGlobalReducer } from '../reducer/globalReducer';
+import { GlobalContext } from '../../context/GlobalContext';
 
 const MainCompany = () => {
 
   const [state, dispatch] = useReducer(companyReducer, initialCompanyState);
   const [onLoad, setOnLoad] = useState( false );
-  const urlLambda = initialGlobalReducer.urlLambda;
+  const { urlLambda, token } = useContext(GlobalContext);
 
   useEffect(() => {
     const urlCompany = `${urlLambda}/company/1`
-    useGetCompany(urlCompany, {
+    useGetCompany(urlCompany, token,{
       setCompany: value => dispatch({ type: "SET_FIELD", field: "company", value }),
       setAddress: value => dispatch({ type: "SET_FIELD", field: "address", value }),
       setPhone: value => dispatch({ type: "SET_FIELD", field: "phone", value }),
@@ -27,8 +27,8 @@ const MainCompany = () => {
       setMission: value => dispatch({ type: "SET_FIELD", field: "mission", value }),
       setVision: value => dispatch({ type: "SET_FIELD", field: "vision", value }),
       setLogo: value => dispatch({ type: "SET_FIELD", field: "logo", value }),
-    });
-  }, []);
+    }, token);
+  }, [urlLambda, token]);
 
   return (
     <>

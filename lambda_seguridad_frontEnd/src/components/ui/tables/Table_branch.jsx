@@ -1,19 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext, useReducer } from 'react';
 
 import '../../../css/ui/table.css'
 import { Input } from '../Input';
 import { useGetBranch } from '../../branches/hooks/useGetBranch';
-import Pagination from '../Pagination';
+import PaginationReducer from '../pagination/PaginationReducer';
+import { GlobalContext } from '../../../context/GlobalContext';
+import { initialPagination, paginationReducer } from '../pagination/reducer/paginationReducer';
 
 export const Table_branch = ({ columns, editData, deleteData, setOnLoad, onLoad}) => {
 
 const [branches, setBranches] = useState({})
-
-const [ search, setSearch ] = useState('');
-  const [ rowsByPage, setRowsByPage ] = useState( 10 );
-  const [ page, setPage ] = useState( 1 );
-  const [ prevPage, setPrevPage ] = useState('');
-  const [ nextPage, setNextPage ] = useState('');
+const [paginationData, paginationDispatch] = useReducer(paginationReducer, initialPagination);
+const { urlLambda, token } = useContext(GlobalContext);
 
   if( editData && !columns.includes("Editar" ) ){
       columns.push("Editar")
@@ -24,25 +22,27 @@ const [ search, setSearch ] = useState('');
 }
 
   const getBranches = async() => {
-    const urlBranch = `http://localhost:8080/branch/?limit=${rowsByPage}&page=${page}&q=${search}`;
-    await useGetBranch(urlBranch, {setBranches, setNextPage, setPrevPage});
+    const searchValue = paginationData.search ?? '';
+    const urlBranch = `${urlLambda}/branch/?q=${encodeURIComponent(searchValue)}&limit=${paginationData.rowsByPage}&page=${paginationData.page}`;
+    await useGetBranch(urlBranch, token, paginationDispatch, null);
+    // await useGetBranch(urlBranch, token, branchDispatch, undefined);
   }
 
   const searching = (query) => {
-    setSearch(query); 
-    setPage(1);
-    setOnLoad(false);
+    paginationDispatch({ type: 'UPDATE_SEARCH', search: query ?? '' });
+    paginationDispatch({ type: 'UPDATE_PAGE', page: 1 });
+    setOnLoad(true);
   }
 
   useEffect( () => {
-    setOnLoad(true)
+    setOnLoad(false)
     getBranches()
-  }, [onLoad, search])
+  }, [onLoad])
 
   return (
     <>
       <div className="table-controls">
-        <Input lambdaClassInput={"data_search"} type="search" value={search} onChange={ e => searching(e.target.value)} placeholder="Buscar sucursal por nombre o dirección" aria-label="Buscar sucursal" />
+        <Input lambdaClassInput={"data_search"} type="search" value={paginationData.search} onChange={ e => searching(e.target.value)} placeholder="Buscar sucursal por nombre o dirección" aria-label="Buscar sucursal" />
       </div>
       <div className="table-responsive">
         <table className='table table-bordered table-hover table-striped user-table'>
@@ -59,7 +59,7 @@ const [ search, setSearch ] = useState('');
           </thead>
           <tbody className='text-center align-baseline'>
             {
-              branches.data?.map( ( branch ) => {
+              paginationData.data?.map( ( branch ) => {
                 let values = Object.values(branch)
                 if(editData && deleteData){
                     return (
@@ -75,7 +75,7 @@ const [ search, setSearch ] = useState('');
                 }else if(editData){
                   return (
                     <tr key={values[0]}>
-                      <th>{values[0]}</th>
+                      <th key={values[0]}>{values[0]}</th>
                       <td data-label="Sucursal">{values[1]}</td>
                       <td data-label="Dirección">{values[2]}</td>
                       <td data-label="Teléfono">{values[3]}</td>
@@ -97,7 +97,7 @@ const [ search, setSearch ] = useState('');
           </tbody>
       </table>
     </div>
-    <Pagination page={page} setPage={setPage} rowsByPage={rowsByPage} setRowsByPage={setRowsByPage} prevPage={prevPage} nextPage={nextPage} total={branches.total} setOnLoad={setOnLoad}/>
+    <PaginationReducer data={paginationData} dispatch={paginationDispatch} onLoad={onLoad} setOnLoad={setOnLoad}/>
   </>
   )
 }

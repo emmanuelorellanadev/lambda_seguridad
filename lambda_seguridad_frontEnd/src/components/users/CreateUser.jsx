@@ -53,11 +53,11 @@ export const CreateUser = () => {
         useGetRole(urlRole, {
             setRoles: value => dispatch({ type: "SET_FIELD", field: "roles", value }),
         });
-        useGetCompany(urlCompany, {
+        useGetCompany(urlCompany, token, {
             setCompanies: value => dispatch({ type: "SET_FIELD", field: "companies", value }),
             setOnLoad
         });
-        useGetBranch(urlBranch, {
+        useGetBranch(urlBranch, token, {
             setBranches: value => dispatch({ type: "SET_FIELD", field: "branches", value }),
         });
     }, [onLoad, urlLambda]);

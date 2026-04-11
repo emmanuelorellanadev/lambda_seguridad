@@ -2,16 +2,16 @@ import axios from "axios";
 import { toast } from "react-hot-toast";
 
 
-export const useCreateBranchType = async(urlBranchType, branchType, branchTypeState, setOnLoad) => {
+export const useCreateBranchType = async(urlBranchType, token, branchType, branchTypeState, setOnLoad) => {
 
     await axios.post(urlBranchType, {
         // "id": id,
         "branchType_name": branchType,
         "branchType_state": branchTypeState
       }, 
-      { headers: { "x-token": sessionStorage.getItem("token-xL") } })
+      { headers: { "x-token": token } })
         .then( (resp) => {
-          setOnLoad(false)
+          setOnLoad(true)
           toast.success(`${resp.data.resData}`, {
             duration: 3000,
             position: "top-right",

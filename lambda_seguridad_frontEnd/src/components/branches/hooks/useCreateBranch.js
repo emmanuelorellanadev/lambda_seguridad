@@ -1,8 +1,8 @@
 import axios from 'axios'
 import { toast } from'react-hot-toast'
 
-export const useCreateBranch = async( branch, address, phone, state, branchTypeSelected, companySelected ) => {
-    const url = 'http://localhost:8080/branch'
+export const useCreateBranch = async( urlLambda, token, branch, address, phone, state, branchTypeSelected, companySelected ) => {
+    const url = `${urlLambda}/branch`
 
     await axios.post(url, {
       "branch_name": branch,
@@ -12,9 +12,9 @@ export const useCreateBranch = async( branch, address, phone, state, branchTypeS
       "BranchTypeId": branchTypeSelected,
       "CompanyId": companySelected
     },
-    {
-      headers: { "x-token": sessionStorage.getItem("token-xL") }
-    })
+        {
+            headers: { "x-token": token }
+        })
     .then( resp => {
         //WORK HERE!!!
         //show the message sended by backEnd and the error

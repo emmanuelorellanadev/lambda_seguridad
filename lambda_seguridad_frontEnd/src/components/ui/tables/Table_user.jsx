@@ -24,7 +24,7 @@ export const Table_user = ({ columns, rows, editData, deleteData, ...props}) => 
 
   //FIND THE WAY TO UNITE PAGINATION AND USERDATA FILTER
 
-  const [users, setUsers] = useState([]);
+  // const [users, setUsers] = useState([]);
   const [branches, setBranches] = useState([]);
   const [branch, setBranch] = useState(0);
   const [ search, setSearch ] = useState('');
@@ -64,7 +64,7 @@ const selectBranch = (branchSelected) => {
   useEffect( () => {
     setOnLoad(true);
     const urlBranch = `${urlLambda}/branch/`;
-    useGetBranch(urlBranch, {setBranches});
+    useGetBranch(urlBranch, token, {setBranches});
     if(branch != 0) {
       selectBranch(branch);
     }else{
@@ -153,7 +153,6 @@ const selectBranch = (branchSelected) => {
           </tbody>
       </table>
     </div>
-    {/* Pagination does not work when you go back and forth several times. The problem does not happen when a branch is selected. */}
     <PaginationReducer  data={paginationData} dispatch={paginationDispatch} onLoad={onLoad} setOnLoad={setOnLoad}/>
 
   </>

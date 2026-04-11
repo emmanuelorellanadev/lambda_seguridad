@@ -45,12 +45,12 @@ export const UpdateUser = (props) => {
             dispatch,
             token
         );
-        useGetCompany(urlCompany, {
+        useGetCompany(urlCompany, token, {
             setCompanies: value => dispatch({ type: "SET_FIELD", field: "companies", value }),
             setNextPage: value => dispatch({ type: "SET_FIELD", field: "nextPage", value }),
             setPrevPage: value => dispatch({ type: "SET_FIELD", field: "prevPage", value })
         });
-        useGetBranch(urlBranch, {
+        useGetBranch(urlBranch, token, {
             setBranches: value => dispatch({ type: "SET_FIELD", field: "branches", value }),
             setNextPage: value => dispatch({ type: "SET_FIELD", field: "nextPage", value }),
             setPrevPage: value => dispatch({ type: "SET_FIELD", field: "prevPage", value })
