@@ -8,7 +8,7 @@ import { Input } from '../ui/Input';
 import { TextArea } from '../ui/TextArea';
 import { Table_branch } from '../ui/tables/Table_branch.jsx';
 import { useGetCompany } from './hooks/useGetCompany.js';
-import { initialCompanyState, companyReducer } from './CreateCompanyReducer';
+import { initialCompanyState, companyReducer } from './reducer/CreateCompanyReducer';
 import { GlobalContext } from '../../context/GlobalContext';
 
 const MainCompany = () => {
@@ -19,15 +19,7 @@ const MainCompany = () => {
 
   useEffect(() => {
     const urlCompany = `${urlLambda}/company/1`
-    useGetCompany(urlCompany, token,{
-      setCompany: value => dispatch({ type: "SET_FIELD", field: "company", value }),
-      setAddress: value => dispatch({ type: "SET_FIELD", field: "address", value }),
-      setPhone: value => dispatch({ type: "SET_FIELD", field: "phone", value }),
-      setDescription: value => dispatch({ type: "SET_FIELD", field: "description", value }),
-      setMission: value => dispatch({ type: "SET_FIELD", field: "mission", value }),
-      setVision: value => dispatch({ type: "SET_FIELD", field: "vision", value }),
-      setLogo: value => dispatch({ type: "SET_FIELD", field: "logo", value }),
-    }, token);
+    useGetCompany(urlCompany, token, null, dispatch);
   }, [urlLambda, token]);
 
   return (

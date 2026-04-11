@@ -1,5 +1,5 @@
 import '../../css/ui/headings.css'; //hadle p_h1, p_h2, p_h3
-import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect, useReducer, useContext } from 'react';
 import { Toaster } from 'react-hot-toast';
 
 import '../../css/company/company.css';
@@ -10,18 +10,14 @@ import { TextArea } from '../ui/TextArea';
 import { useUpdateCompany } from './hooks/useUpdateCompany';
 import { useGetCompany } from './hooks/useGetCompany';
 import { GlobalContext } from '../../context/GlobalContext';
+import { initialCompanyState, companyReducer } from './reducer/CreateCompanyReducer';
 
 
 const UpdateCompany = (props) => {
     const { urlLambda, token } = useContext(GlobalContext);
-    const [company, setCompany]         = useState('');
-    const [address, setAddress]         = useState('');
-    const [phone, setPhone]             = useState('');
-    const [description, setDescription] = useState('');
-    const [mission, setMission]         = useState('');
-    const [vision, setVision]           = useState('');
-    const [logo, setLogo]               = useState('');
     const [logoFile, setLogoFile]       = useState('');
+    // Centralized form state for company fields
+    const [companyState, companyDispatch] = useReducer(companyReducer, initialCompanyState);
 
     const updateButton = (e) => {
         e.preventDefault();
@@ -31,7 +27,7 @@ const UpdateCompany = (props) => {
 
     useEffect( () => {
         const urlCompany = `${urlLambda}/company/${props.companyToEditId}`;
-        useGetCompany(urlCompany, token, { setCompany, setAddress, setPhone, setDescription, setMission, setVision, setLogo});
+        useGetCompany(urlCompany, token, null, companyDispatch);
     }, [urlLambda, props.companyToEditId, token])
 
   return (
@@ -49,29 +45,29 @@ const UpdateCompany = (props) => {
                 <div className='companyData_container'>
                     <div>
                         <Label lambdaClassLabel={""} text="Empresa:"/>
-                        <Input lambdaClassInput={""} type="text" name="company_name" id="company" value={company} onChange={ (e) => setCompany(e.target.value)} required/>
+                        <Input lambdaClassInput={""} type="text" name="company_name" id="company" value={companyState.company} onChange={ (e) => companyDispatch({ type: "SET_FIELD", field: "company", value: e.target.value })} required/>
                     </div>
                     <div>
                         <Label lambdaClassLabel={""} text="Dirección:"/>
-                        <Input lambdaClassInput={""} type="text" name="company_address" id="address"  value={address} onChange={ (e) => setAddress(e.target.value)} required/>
+                        <Input lambdaClassInput={""} type="text" name="company_address" id="address"  value={companyState.address} onChange={ (e) => companyDispatch({ type: "SET_FIELD", field: "address", value: e.target.value })} required/>
                     </div>
                     <div>
                         <Label lambdaClassLabel={""} text="Teléfono:"/>
-                        <Input lambdaClassInput={""} type="number" name="company_phone" id="phone" value={phone} onChange={ (e) => setPhone(e.target.value)}required/>
+                        <Input lambdaClassInput={""} type="number" name="company_phone" id="phone" value={companyState.phone} onChange={ (e) => companyDispatch({ type: "SET_FIELD", field: "phone", value: e.target.value })}required/>
                     </div>
                     <div>
                         <Label lambdaClassLabel={""} text="Descripción:"/>
-                        <Input lambdaClassInput={""} type="text" name="company_description" id="description" value={description} onChange={ (e) => setDescription(e.target.value)} required/>
+                        <Input lambdaClassInput={""} type="text" name="company_description" id="description" value={companyState.description} onChange={ (e) => companyDispatch({ type: "SET_FIELD", field: "description", value: e.target.value })} required/>
                     </div>
                 </div>
                 <div className='companyMissionVision_container'>
                     <div>
                         <Label lambdaClassLabel={""} text="Misión:"/>
-                        <TextArea lambdaClassTextArea="" type="text" name="company_mission" id="mission" value={mission} onChange={ (e) => setMission(e.target.value)} required/>
+                        <TextArea lambdaClassTextArea="" type="text" name="company_mission" id="mission" value={companyState.mission} onChange={ (e) => companyDispatch({ type: "SET_FIELD", field: "mission", value: e.target.value })} required/>
                     </div>
                     <div>
                         <Label lambdaClassLabel={""} text="Visión:"/>
-                        <TextArea lambdaClassTextArea="" type="area" name="company_vision" id="vision"  value={vision} onChange={ (e) => setVision(e.target.value)} required/>
+                        <TextArea lambdaClassTextArea="" type="area" name="company_vision" id="vision"  value={companyState.vision} onChange={ (e) => companyDispatch({ type: "SET_FIELD", field: "vision", value: e.target.value })} required/>
                     </div>
                 </div>
                 <div className='sendCompany_button'>

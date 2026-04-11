@@ -19,7 +19,7 @@ export const useGetBranch = async (
                     paginationDispatch({ type: 'UPDATE_PAGE', page: data.currentPage });
                     paginationDispatch({ type: 'UPDATE_ROWSBYPAGE', rowsByPage: data.limit });
                     paginationDispatch({ type: 'UPDATE_TOTAL', total: data.total });
-                    paginationDispatch({ type: 'UPDATE_SEARCH', search: data.search });
+                    paginationDispatch({ type: 'UPDATE_SEARCH', search: data.search ?? '' });
                     paginationDispatch({ type: 'UPDATE_DATA', data: data.data });
                 } else if (paginationDispatch && paginationDispatch.setBranches) {
                     paginationDispatch.setBranches?.(data);
