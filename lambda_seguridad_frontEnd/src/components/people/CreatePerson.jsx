@@ -1,21 +1,22 @@
 import '../../css/ui/headings.css'; //hadle p_h1, p_h2, p_h3
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState, useContext, useReducer } from 'react';
 import { Toaster } from 'react-hot-toast';
 
 import '../../css/person/person.css';
 import { useCreatePerson } from './hooks/useCreatePerson';
-import useGetPersonType  from '../personTypes/hooks/useGetPersonType';
+import { useGetPersonType } from '../personTypes/hooks/useGetPersonType';
 import { useGetBranch } from '../branches/hooks/useGetBranch';
 import { P_Head } from '../ui/P_Head';
 import { Input } from '../ui/Input';
 import { Label } from '../ui/Label';
 import { Select } from '../ui/Select';
 import { GlobalContext } from '../../context/GlobalContext';
+import { initialPagination, paginationReducer } from '../ui/pagination/reducer/paginationReducer';
 
 const CreatePerson = () => {
     const { urlLambda, token } = useContext(GlobalContext);
   
-    const [personTypes, setPersonTypes] = useState([]);
+    const [personTypePagination, personTypePaginationDispatch] = useReducer(paginationReducer, initialPagination);
     const [branches, setBranches] = useState([]);
     const [names, setNames] = useState('');
     const [surNames, setSurNames] = useState('');
@@ -49,7 +50,7 @@ const CreatePerson = () => {
     useEffect( () => {
         const urlPersonType = `${urlLambda}/personType/`;
         const urlBranch = `${urlLambda}/branch/`;
-        useGetPersonType( urlPersonType, { setPersonTypes, setNextPage, setPrevPage} );
+        useGetPersonType(urlPersonType, token, personTypePaginationDispatch, undefined);
         useGetBranch(urlBranch, token, {setBranches, setNextPage, setPrevPage})
     }, [urlLambda, token])
 
@@ -84,7 +85,7 @@ const CreatePerson = () => {
             </div>
             <div>
                 <Label lambdaClassLabel={''} text="Tipo:"/>
-                <Select data={personTypes.data} text={'Selecciona Tipo' } value={personTypeId} onChange={ (e) => {setPersonTypeId(e.target.value)}} required/>
+                <Select data={personTypePagination.data} text={'Selecciona Tipo' } value={personTypeId} onChange={ (e) => {setPersonTypeId(e.target.value)}} required/>
             </div>
             <div>
                 <Label lambdaClassLabel={''} text="Sucursal:"/>

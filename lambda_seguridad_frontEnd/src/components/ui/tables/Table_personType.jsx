@@ -1,21 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useContext, useReducer } from 'react';
 
 import '../../../css/ui/table.css'
 import { Input } from '../Input';
-import { Label } from '../Label';
-import useGetPersonType from '../../personTypes/hooks/useGetPersonType';
-import Pagination from '../Pagination';
+import { useGetPersonType } from '../../personTypes/hooks/useGetPersonType';
+import PaginationReducer from '../pagination/PaginationReducer';
+import { GlobalContext } from '../../../context/GlobalContext';
+import { initialPagination, paginationReducer } from '../pagination/reducer/paginationReducer';
 
 // import { prevPage, nextPage, onSearchChange, filterData } from './filterTable_personType';
 
 export const Table_personType = ({ columns, editData, deleteData, onLoad, setOnLoad, ...props}) => {
 
-  const [personTypes, setPersonTypes] = useState([]);
-  const [ search, setSearch ] = useState('');
-  const [ rowsByPage, setRowsByPage ] = useState( 10 );
-  const [ page, setPage ] = useState( 1 );
-  const [ prevPage, setPrevPage ] = useState('');
-  const [ nextPage, setNextPage ] = useState('');
+  const [paginationData, paginationDispatch] = useReducer(paginationReducer, initialPagination);
+  const { urlLambda, token } = useContext(GlobalContext);
 
   if(editData && !columns.includes("Editar") ){
       columns.push("Editar")
@@ -25,22 +22,27 @@ export const Table_personType = ({ columns, editData, deleteData, onLoad, setOnL
     columns.push("Eliminar")
 }
 
+  const getPersonTypes = async () => {
+    const searchValue = paginationData.search ?? '';
+    const urlPersonType = `${urlLambda}/personType/?q=${encodeURIComponent(searchValue)}&limit=${paginationData.rowsByPage}&page=${paginationData.page}`;
+    await useGetPersonType(urlPersonType, token, paginationDispatch, undefined);
+  }
+
   const searching = (query) => {
-    setSearch(query); 
-    setPage(1);
-    setOnLoad(false);
+    paginationDispatch({ type: 'UPDATE_SEARCH', search: query ?? '' });
+    paginationDispatch({ type: 'UPDATE_PAGE', page: 1 });
+    setOnLoad(true);
   }
 
   useEffect( () => {
-    setOnLoad(true)
-    const urlPersonType = `http://localhost:8080/personType/?limit=${rowsByPage}&page=${page}&q=${search}`;
-    useGetPersonType(urlPersonType, {setPersonTypes, setNextPage, setPrevPage})
-  }, [onLoad, search])
+    setOnLoad(false)
+    getPersonTypes();
+  }, [onLoad])
 
   return (
     <>
     <div className="table-controls">
-      <Input lambdaClassInput={"data_search"} type="search" value={search} onChange={ e => searching(e.target.value)} placeholder="Buscar tipo de persona por nombre o estado" aria-label="Buscar tipo de persona" />
+      <Input lambdaClassInput={"data_search"} type="search" value={paginationData.search} onChange={ e => searching(e.target.value)} placeholder="Buscar tipo de persona por nombre o estado" aria-label="Buscar tipo de persona" />
     </div>
     <div className="table-responsive">
       <table className='table table-bordered table-hover table-striped user-table' {...props}>
@@ -58,7 +60,7 @@ export const Table_personType = ({ columns, editData, deleteData, onLoad, setOnL
         <tbody className='text-center align-baseline'>
             
           {
-            personTypes.data?.map( ( personType ) => {
+            paginationData.data?.map( ( personType ) => {
               if(editData && deleteData){
                   return (
                     <tr key={personType.id}>
@@ -66,7 +68,7 @@ export const Table_personType = ({ columns, editData, deleteData, onLoad, setOnL
                       <td data-label="Tipo">{personType.personType_name}</td>
                       <td data-label="Estado"><input type='checkbox' checked={personType.personType_state} disabled/></td>
                       <th><button className='btn btn-primary' type="button" onClick={ () => editData( personType.id ) } >Editar</button></th>
-                      <th><button className='btn btn-outline-danger' onClick={ () => deleteData(personType.id) }><i className='bi bi-trash3-fill'></i></button></th>
+                      <th><button className='btn btn-outline-danger' onClick={ () => deleteData(personType.id, personType.personType_name, setOnLoad) }><i className='bi bi-trash3-fill'></i></button></th>
                     </tr>
                   )
               }else if(editData){
@@ -92,7 +94,7 @@ export const Table_personType = ({ columns, editData, deleteData, onLoad, setOnL
         </tbody>
       </table>
     </div>
-    <Pagination page={page} setPage={setPage} rowsByPage={rowsByPage} setRowsByPage={setRowsByPage} prevPage={prevPage} nextPage={nextPage} total={personTypes.total} setOnLoad={setOnLoad}/>
+    <PaginationReducer data={paginationData} dispatch={paginationDispatch} onLoad={onLoad} setOnLoad={setOnLoad}/>
   </>
   )
 }

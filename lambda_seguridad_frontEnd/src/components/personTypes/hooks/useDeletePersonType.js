@@ -2,9 +2,7 @@ import axios from 'axios'
 import toast from 'react-hot-toast';
 import Swal from 'sweetalert2'
 
-export const useDeletePersonType = async(id, { setOnLoad }) => {
-    const url = `http://localhost:8080/personType/${id}`;
-
+export const useDeletePersonType = async(urlPersonType, token, { setOnLoad }) => {
 
     Swal.fire({
         icon: 'question',
@@ -17,9 +15,9 @@ export const useDeletePersonType = async(id, { setOnLoad }) => {
       })
         .then( async (result) =>{
           if( result.isConfirmed ){
-    await axios.delete(url, {headers: {"x-token": sessionStorage.getItem("token-xL")}})
+        await axios.delete(urlPersonType, {headers: {"x-token": token}})
         .then( (resp) => {
-            setOnLoad(false);
+            setOnLoad(true);
             toast.success(resp.data.resData, {
                 duration: 3000,
                 position: "top-right",

@@ -1,12 +1,12 @@
 import axios from 'axios';
 import toast from 'react-hot-toast';
 
-const useCreatePersonType = async (url, personTypeName, personTypeState, {setOnLoad}) => {
+const useCreatePersonType = async (url, token, personTypeName, personTypeState, {setOnLoad}) => {
 
     await axios.post(url, {
         "personType_name": personTypeName,
         "personType_state": personTypeState
-    }, {headers:{"x-token": sessionStorage.getItem("token-xL")}})
+    }, {headers:{"x-token": token}})
         .then( (resp) => {
             setOnLoad(false)
             toast.success(resp.data.resData, {

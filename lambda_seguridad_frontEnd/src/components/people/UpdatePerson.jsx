@@ -1,17 +1,18 @@
 import '../../css/ui/headings.css'; //hadle p_h1, p_h2, p_h3
-import React, { useEffect, useState, useContext } from 'react'
+import React, { useEffect, useState, useContext, useReducer } from 'react'
 
 import '../../css/person/person.css'
 import { P_Head } from '../ui/P_Head';
 import { Input } from '../ui/Input';
 import { Label } from '../ui/Label';
 import { Select } from '../ui/Select';
-import useGetPersonType from '../personTypes/hooks/useGetPersonType';
+import { useGetPersonType } from '../personTypes/hooks/useGetPersonType';
 import { useGetBranch } from '../branches/hooks/useGetBranch';
 import { useGetPerson } from './hooks/useGetPerson';
 import { useUpdatePerson } from './hooks/useUpdatePerson';
 import { Toaster } from 'react-hot-toast';
 import { GlobalContext } from '../../context/GlobalContext';
+import { initialPagination, paginationReducer } from '../ui/pagination/reducer/paginationReducer';
 
 const UpdatePerson = (props) => {
   const { token } = useContext(GlobalContext);
@@ -25,7 +26,7 @@ const UpdatePerson = (props) => {
   const [address, setAddress] =useState('');
   const [branchId, setBranchId] =useState('');
   const [personTypeId, setPersonTypeId] =useState('');
-  const [personTypes, setPersonTypes] =useState([]);
+  const [personTypePagination, personTypePaginationDispatch] = useReducer(paginationReducer, initialPagination);
   const [branches, setBranches] =useState([]);
   const [nextPage, setNextPage ] = useState('');
   const [prevPage, setPrevPage ] = useState('');
@@ -39,9 +40,9 @@ const UpdatePerson = (props) => {
     const urlPersonType = 'http://localhost:8080/personType/';
     const urlBranch = 'http://localhost:8080/branch/';
     useGetPerson(urlPerson, {setNames, setSurNames, setCui, setNit, setPhone, setAddress, setPersonTypeId, setBranchId });
-    useGetPersonType(urlPersonType, { setPersonTypes, setNextPage, setPrevPage });
+    useGetPersonType(urlPersonType, token, personTypePaginationDispatch, undefined);
     useGetBranch(urlBranch, token, { setBranches, setNextPage, setPrevPage });
-  },[])
+  }, [token])
 
   return (
     <>
@@ -74,7 +75,7 @@ const UpdatePerson = (props) => {
             </div>
             <div>
               <Label lambdaClassLabel={""} text="Tipo"/>
-              <Select data={personTypes.data} text={'Selecciona Tipo'} value={personTypeId} onChange={ (e) => {setPersonTypeId(e.target.value)}} required />
+              <Select data={personTypePagination.data} text={'Selecciona Tipo'} value={personTypeId} onChange={ (e) => {setPersonTypeId(e.target.value)}} required />
               </div>            
               <div>
               <Label lambdaClassLabel={""} text="Sucursal"/>
